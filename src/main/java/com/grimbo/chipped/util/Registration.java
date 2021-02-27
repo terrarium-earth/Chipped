@@ -1,7 +1,6 @@
 package com.grimbo.chipped.util;
 
 import com.grimbo.chipped.Chipped;
-import com.grimbo.chipped.block.ModBlocks;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraftforge.eventbus.api.IEventBus;

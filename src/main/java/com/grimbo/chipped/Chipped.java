@@ -5,6 +5,9 @@ import com.grimbo.chipped.item.ModItems;
 import com.grimbo.chipped.util.Registration;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemGroup;
+import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -27,6 +30,12 @@ public class Chipped
 {
     // Directly reference a log4j logger.
     public static final String MOD_ID = "chipped";
+    public static final ItemGroup CHIPPED = new ItemGroup("chippedTab") {
+        @Override
+        public ItemStack createIcon() {
+            return new ItemStack(ModBlocks.BLACK_WOOL_1.get());
+        }
+    };
     private static final Logger LOGGER = LogManager.getLogger();
 
     public Chipped() {
