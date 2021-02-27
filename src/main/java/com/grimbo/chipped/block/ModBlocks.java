@@ -16,11 +16,11 @@ import java.util.function.Supplier;
 public class ModBlocks {
     public static final RegistryObject<Block> BLACK_WOOL_1 = register("black_wool_1",
             () -> new Block(AbstractBlock.Properties.create(Material.WOOL)
-                    .hardnessAndResistance(2f, 4f).sound(SoundType.SNOW)));
+                    .hardnessAndResistance(1f, 2f).sound(SoundType.CLOTH)));
 
     public static final RegistryObject<Block> BLACK_WOOL_2 = register("black_wool_2",
             () -> new Block(AbstractBlock.Properties.create(Material.WOOL)
-                    .hardnessAndResistance(2f, 4f).sound(SoundType.SNOW)));
+                    .hardnessAndResistance(1f, 2f).sound(SoundType.CLOTH)));
 
     public static void register() {}
 
