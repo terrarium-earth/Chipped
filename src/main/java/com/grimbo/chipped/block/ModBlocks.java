@@ -1,7 +1,11 @@
 package com.grimbo.chipped.block;
 
 import com.grimbo.chipped.util.Registration;
+import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
+import net.minecraft.block.SoundType;
+import net.minecraft.block.material.Material;
+import net.minecraft.client.audio.Sound;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
@@ -10,7 +14,11 @@ import net.minecraftforge.fml.RegistryObject;
 import java.util.function.Supplier;
 
 public class ModBlocks {
+    public static final RegistryObject<Block> BLACK_WOOL = register("black_wool_1",
+            () -> new Block(AbstractBlock.Properties.create(Material.WOOL)
+                    .hardnessAndResistance(2f, 4f).sound(SoundType.SNOW)));
 
+    public static void register() {}
 
 
     private  static <T extends Block>RegistryObject<T> register(String name, Supplier<T> block) {

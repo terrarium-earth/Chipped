@@ -1,6 +1,7 @@
 package com.grimbo.chipped;
 
 import com.grimbo.chipped.block.ModBlocks;
+import com.grimbo.chipped.item.ModItems;
 import com.grimbo.chipped.util.Registration;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
@@ -30,6 +31,8 @@ public class Chipped
 
     public Chipped() {
         Registration.register();
+        ModBlocks.register();
+        ModItems.register();
         // Register the setup method for modloading
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
         // Register the enqueueIMC method for modloading
