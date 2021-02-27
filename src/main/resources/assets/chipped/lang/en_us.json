@@ -1,4 +1,7 @@
 {
   "block.chipped.black_wool_1": "Black Wool",
-  "block.chipped.black_wool_2": "Black Wool"
+  "block.chipped.black_wool_2": "Black Wool",
+
+
+  "itemGroup.chippedTab": "Chipped"
 }
