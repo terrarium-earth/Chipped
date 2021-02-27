@@ -1,4 +1,4 @@
-package com.example.examplemod;
+package com.grimbo.chipped;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
@@ -19,13 +19,14 @@ import org.apache.logging.log4j.Logger;
 import java.util.stream.Collectors;
 
 // The value here should match an entry in the META-INF/mods.toml file
-@Mod("examplemod")
-public class ExampleMod
+@Mod(Chipped.MOD_ID)
+public class Chipped
 {
     // Directly reference a log4j logger.
+    public static final String MOD_ID = "chipped";
     private static final Logger LOGGER = LogManager.getLogger();
 
-    public ExampleMod() {
+    public Chipped() {
         // Register the setup method for modloading
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
         // Register the enqueueIMC method for modloading
