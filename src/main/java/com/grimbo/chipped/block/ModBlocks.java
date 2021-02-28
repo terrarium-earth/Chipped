@@ -236,11 +236,8 @@ public class ModBlocks {
             () -> new Block(AbstractBlock.Properties.create(Material.WOOL)
                     .hardnessAndResistance(1f, 2f).sound(SoundType.CLOTH)));
 
-    // Custom Cyan Wool
+    // Cyan Wool 18 Variations
 
-    public static final RegistryObject<Block> CYAN_WOOL = register("cyan_wool",
-            () -> new Block(AbstractBlock.Properties.create(Material.WOOL)
-                    .hardnessAndResistance(1f, 2f).sound(SoundType.CLOTH)));
 
     public static final RegistryObject<Block> CYAN_WOOL_1 = register("cyan_wool_1",
             () -> new Block(AbstractBlock.Properties.create(Material.WOOL)
