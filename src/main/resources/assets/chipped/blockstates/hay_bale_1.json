@@ -1,15 +1,15 @@
 {
   "variants": {
     "axis=x": {
-      "model": "chipped:block/hay_bale_horizontal_1",
+      "model": "chipped:block/hay_bale_side_1",
       "x": 90,
       "y": 90
     },
     "axis=y": {
-      "model": "chipped:block/hay_bale_1"
+      "model": "chipped:block/hay_bale_top_1"
     },
     "axis=z": {
-      "model": "chipped:block/hay_bale_horizontal_1",
+      "model": "chipped:block/hay_bale_side_1",
       "x": 90
     }
   }

@@ -5,6 +5,7 @@ import com.grimbo.chipped.item.ModItems;
 import com.grimbo.chipped.util.Registration;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
