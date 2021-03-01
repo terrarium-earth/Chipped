@@ -4,10 +4,13 @@ import com.grimbo.chipped.Chipped;
 import com.grimbo.chipped.util.Registration;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
+import net.minecraft.block.RotatedPillarBlock;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
+import net.minecraft.block.material.MaterialColor;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
+import net.minecraft.util.Direction;
 import net.minecraftforge.fml.RegistryObject;
 
 import java.util.function.Supplier;
@@ -391,8 +394,41 @@ public class ModBlocks {
                     .hardnessAndResistance(1f, 2f).sound(SoundType.CLOTH)));
 
     public static final RegistryObject<Block> HAY_BALE_1 = register("hay_bale_1",
-            () -> new Block(AbstractBlock.Properties.create(Material.EARTH)
-                    .hardnessAndResistance(1f, 2f).sound(SoundType.PLANT)));
+            () -> createHayBlock(MaterialColor.YELLOW, MaterialColor.YELLOW));
+
+    public static final RegistryObject<Block> HAY_BALE_2 = register("hay_bale_2",
+            () -> createHayBlock(MaterialColor.YELLOW, MaterialColor.YELLOW));
+
+    public static final RegistryObject<Block> HAY_BALE_3 = register("hay_bale_3",
+            () -> createHayBlock(MaterialColor.YELLOW, MaterialColor.YELLOW));
+
+    public static final RegistryObject<Block> HAY_BALE_4 = register("hay_bale_4",
+            () -> createHayBlock(MaterialColor.YELLOW, MaterialColor.YELLOW));
+
+    public static final RegistryObject<Block> HAY_BALE_5 = register("hay_bale_5",
+            () -> createHayBlock(MaterialColor.YELLOW, MaterialColor.YELLOW));
+
+    public static final RegistryObject<Block> HAY_BALE_6 = register("hay_bale_6",
+            () -> createHayBlock(MaterialColor.YELLOW, MaterialColor.YELLOW));
+
+    public static final RegistryObject<Block> HAY_BALE_7 = register("hay_bale_7",
+            () -> createHayBlock(MaterialColor.YELLOW, MaterialColor.YELLOW));
+
+    public static final RegistryObject<Block> HAY_BALE_8 = register("hay_bale_8",
+            () -> createHayBlock(MaterialColor.YELLOW, MaterialColor.YELLOW));
+
+    private static RotatedPillarBlock createHayBlock(MaterialColor topColor, MaterialColor sideColor) {
+        return new RotatedPillarBlock(AbstractBlock.Properties.create(Material.EARTH, (state) -> {
+            return state.get(RotatedPillarBlock.AXIS) == Direction.Axis.Y ? topColor : sideColor;
+        }).hardnessAndResistance(1.0F, 2.0F).sound(SoundType.PLANT));
+
+
+
+
+
+
+    }
+
 
 
 
