@@ -390,6 +390,9 @@ public class ModBlocks {
             () -> new Block(AbstractBlock.Properties.create(Material.WOOL)
                     .hardnessAndResistance(1f, 2f).sound(SoundType.CLOTH)));
 
+    public static final RegistryObject<Block> HAY_BALE_1 = register("hay_bale_1",
+            () -> new Block(AbstractBlock.Properties.create(Material.EARTH)
+                    .hardnessAndResistance(1f, 2f).sound(SoundType.PLANT)));
 
 
 
