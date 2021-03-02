@@ -1102,6 +1102,174 @@ public class ModBlocks {
             () -> new Block(AbstractBlock.Properties.create(Material.WOOL)
                     .hardnessAndResistance(1f, 2f).sound(SoundType.CLOTH)));
 
+    // Red Wool
+
+    public static final RegistryObject<Block> RED_WOOL_1 = register("red_wool_1",
+            () -> new Block(AbstractBlock.Properties.create(Material.WOOL)
+                    .hardnessAndResistance(1f, 2f).sound(SoundType.CLOTH)));
+
+    public static final RegistryObject<Block> RED_WOOL_2 = register("red_wool_2",
+            () -> new Block(AbstractBlock.Properties.create(Material.WOOL)
+                    .hardnessAndResistance(1f, 2f).sound(SoundType.CLOTH)));
+
+    public static final RegistryObject<Block> RED_WOOL_3 = register("red_wool_3",
+            () -> new Block(AbstractBlock.Properties.create(Material.WOOL)
+                    .hardnessAndResistance(1f, 2f).sound(SoundType.CLOTH)));
+
+    public static final RegistryObject<Block> RED_WOOL_4 = register("red_wool_4",
+            () -> new Block(AbstractBlock.Properties.create(Material.WOOL)
+                    .hardnessAndResistance(1f, 2f).sound(SoundType.CLOTH)));
+
+    public static final RegistryObject<Block> RED_WOOL_5 = register("red_wool_5",
+            () -> new Block(AbstractBlock.Properties.create(Material.WOOL)
+                    .hardnessAndResistance(1f, 2f).sound(SoundType.CLOTH)));
+
+    public static final RegistryObject<Block> RED_WOOL_6 = register("red_wool_6",
+            () -> new Block(AbstractBlock.Properties.create(Material.WOOL)
+                    .hardnessAndResistance(1f, 2f).sound(SoundType.CLOTH)));
+
+    public static final RegistryObject<Block> RED_WOOL_7 = register("red_wool_7",
+            () -> new Block(AbstractBlock.Properties.create(Material.WOOL)
+                    .hardnessAndResistance(1f, 2f).sound(SoundType.CLOTH)));
+
+    public static final RegistryObject<Block> RED_WOOL_8 = register("red_wool_8",
+            () -> new Block(AbstractBlock.Properties.create(Material.WOOL)
+                    .hardnessAndResistance(1f, 2f).sound(SoundType.CLOTH)));
+
+    public static final RegistryObject<Block> RED_WOOL_9 = register("red_wool_9",
+            () -> new Block(AbstractBlock.Properties.create(Material.WOOL)
+                    .hardnessAndResistance(1f, 2f).sound(SoundType.CLOTH)));
+
+    public static final RegistryObject<Block> RED_WOOL_10 = register("red_wool_10",
+            () -> new Block(AbstractBlock.Properties.create(Material.WOOL)
+                    .hardnessAndResistance(1f, 2f).sound(SoundType.CLOTH)));
+
+    public static final RegistryObject<Block> RED_WOOL_11 = register("red_wool_11",
+            () -> new Block(AbstractBlock.Properties.create(Material.WOOL)
+                    .hardnessAndResistance(1f, 2f).sound(SoundType.CLOTH)));
+
+    public static final RegistryObject<Block> RED_WOOL_12 = register("red_wool_12",
+            () -> new Block(AbstractBlock.Properties.create(Material.WOOL)
+                    .hardnessAndResistance(1f, 2f).sound(SoundType.CLOTH)));
+
+    public static final RegistryObject<Block> RED_WOOL_13 = register("red_wool_13",
+            () -> new Block(AbstractBlock.Properties.create(Material.WOOL)
+                    .hardnessAndResistance(1f, 2f).sound(SoundType.CLOTH)));
+
+
+    public static final RegistryObject<Block> RED_WOOL_14 = register("red_wool_14",
+            () -> new Block(AbstractBlock.Properties.create(Material.WOOL)
+                    .hardnessAndResistance(1f, 2f).sound(SoundType.CLOTH)));
+
+
+    public static final RegistryObject<Block> RED_WOOL_15 = register("red_wool_15",
+            () -> new Block(AbstractBlock.Properties.create(Material.WOOL)
+                    .hardnessAndResistance(1f, 2f).sound(SoundType.CLOTH)));
+
+
+    public static final RegistryObject<Block> RED_WOOL_16 = register("red_wool_16",
+            () -> new Block(AbstractBlock.Properties.create(Material.WOOL)
+                    .hardnessAndResistance(1f, 2f).sound(SoundType.CLOTH)));
+
+
+    public static final RegistryObject<Block> RED_WOOL_17 = register("red_wool_17",
+            () -> new Block(AbstractBlock.Properties.create(Material.WOOL)
+                    .hardnessAndResistance(1f, 2f).sound(SoundType.CLOTH)));
+
+    public static final RegistryObject<Block> RED_WOOL_18 = register("red_wool_18",
+            () -> new Block(AbstractBlock.Properties.create(Material.WOOL)
+                    .hardnessAndResistance(1f, 2f).sound(SoundType.CLOTH)));
+
+    // White Wool
+
+    public static final RegistryObject<Block> WHITE_WOOL_1 = register("white_wool_1",
+            () -> new Block(AbstractBlock.Properties.create(Material.WOOL)
+                    .hardnessAndResistance(1f, 2f).sound(SoundType.CLOTH)));
+
+    public static final RegistryObject<Block> WHITE_WOOL_2 = register("white_wool_2",
+            () -> new Block(AbstractBlock.Properties.create(Material.WOOL)
+                    .hardnessAndResistance(1f, 2f).sound(SoundType.CLOTH)));
+
+
+    public static final RegistryObject<Block> WHITE_WOOL_3 = register("white_wool_3",
+            () -> new Block(AbstractBlock.Properties.create(Material.WOOL)
+                    .hardnessAndResistance(1f, 2f).sound(SoundType.CLOTH)));
+
+
+    public static final RegistryObject<Block> WHITE_WOOL_4 = register("white_wool_4",
+            () -> new Block(AbstractBlock.Properties.create(Material.WOOL)
+                    .hardnessAndResistance(1f, 2f).sound(SoundType.CLOTH)));
+
+
+    public static final RegistryObject<Block> WHITE_WOOL_5 = register("white_wool_5",
+            () -> new Block(AbstractBlock.Properties.create(Material.WOOL)
+                    .hardnessAndResistance(1f, 2f).sound(SoundType.CLOTH)));
+
+
+    public static final RegistryObject<Block> WHITE_WOOL_6 = register("white_wool_6",
+            () -> new Block(AbstractBlock.Properties.create(Material.WOOL)
+                    .hardnessAndResistance(1f, 2f).sound(SoundType.CLOTH)));
+
+    public static final RegistryObject<Block> WHITE_WOOL_7 = register("white_wool_7",
+            () -> new Block(AbstractBlock.Properties.create(Material.WOOL)
+                    .hardnessAndResistance(1f, 2f).sound(SoundType.CLOTH)));
+
+
+    public static final RegistryObject<Block> WHITE_WOOL_8 = register("white_wool_8",
+            () -> new Block(AbstractBlock.Properties.create(Material.WOOL)
+                    .hardnessAndResistance(1f, 2f).sound(SoundType.CLOTH)));
+
+
+    public static final RegistryObject<Block> WHITE_WOOL_9 = register("white_wool_9",
+            () -> new Block(AbstractBlock.Properties.create(Material.WOOL)
+                    .hardnessAndResistance(1f, 2f).sound(SoundType.CLOTH)));
+
+
+    public static final RegistryObject<Block> WHITE_WOOL_10 = register("white_wool_10",
+            () -> new Block(AbstractBlock.Properties.create(Material.WOOL)
+                    .hardnessAndResistance(1f, 2f).sound(SoundType.CLOTH)));
+
+    public static final RegistryObject<Block> WHITE_WOOL_11 = register("white_wool_11",
+            () -> new Block(AbstractBlock.Properties.create(Material.WOOL)
+                    .hardnessAndResistance(1f, 2f).sound(SoundType.CLOTH)));
+
+    public static final RegistryObject<Block> WHITE_WOOL_12 = register("white_wool_12",
+            () -> new Block(AbstractBlock.Properties.create(Material.WOOL)
+                    .hardnessAndResistance(1f, 2f).sound(SoundType.CLOTH)));
+
+    public static final RegistryObject<Block> WHITE_WOOL_13 = register("white_wool_13",
+            () -> new Block(AbstractBlock.Properties.create(Material.WOOL)
+                    .hardnessAndResistance(1f, 2f).sound(SoundType.CLOTH)));
+
+    public static final RegistryObject<Block> WHITE_WOOL_14 = register("white_wool_14",
+            () -> new Block(AbstractBlock.Properties.create(Material.WOOL)
+                    .hardnessAndResistance(1f, 2f).sound(SoundType.CLOTH)));
+
+    public static final RegistryObject<Block> WHITE_WOOL_15 = register("white_wool_15",
+            () -> new Block(AbstractBlock.Properties.create(Material.WOOL)
+                    .hardnessAndResistance(1f, 2f).sound(SoundType.CLOTH)));
+
+    public static final RegistryObject<Block> WHITE_WOOL_16 = register("white_wool_16",
+            () -> new Block(AbstractBlock.Properties.create(Material.WOOL)
+                    .hardnessAndResistance(1f, 2f).sound(SoundType.CLOTH)));
+
+    public static final RegistryObject<Block> WHITE_WOOL_17 = register("white_wool_17",
+            () -> new Block(AbstractBlock.Properties.create(Material.WOOL)
+                    .hardnessAndResistance(1f, 2f).sound(SoundType.CLOTH)));
+
+    public static final RegistryObject<Block> WHITE_WOOL_18 = register("white_wool_18",
+            () -> new Block(AbstractBlock.Properties.create(Material.WOOL)
+                    .hardnessAndResistance(1f, 2f).sound(SoundType.CLOTH)));
+
+
+
+
+
+
+
+
+
+
 
 
 
