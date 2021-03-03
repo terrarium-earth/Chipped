@@ -2,18 +2,20 @@ package com.grimbo.chipped.block;
 
 import com.grimbo.chipped.Chipped;
 import com.grimbo.chipped.util.Registration;
-import net.minecraft.block.AbstractBlock;
-import net.minecraft.block.Block;
-import net.minecraft.block.RotatedPillarBlock;
-import net.minecraft.block.SoundType;
+import net.minecraft.block.*;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.material.MaterialColor;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.util.Direction;
+import net.minecraft.util.registry.Registry;
+import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.RegistryObject;
+import net.minecraftforge.registries.IForgeRegistry;
 
 import java.util.function.Supplier;
+
+import static javafx.scene.input.KeyCode.V;
 
 public class ModBlocks {
 
@@ -1261,8 +1263,10 @@ public class ModBlocks {
             () -> new Block(AbstractBlock.Properties.create(Material.WOOL)
                     .hardnessAndResistance(1f, 2f).sound(SoundType.CLOTH)));
 
-
-
+    // Glass
+    public static final RegistryObject<Block> GLASS_1 = register("glass_1",
+            () -> new Block(AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(1f, 2f).sound(SoundType.GLASS)));
 
 
 
@@ -1305,6 +1309,7 @@ public class ModBlocks {
         return new RotatedPillarBlock(AbstractBlock.Properties.create(Material.EARTH, (state) -> {
             return state.get(RotatedPillarBlock.AXIS) == Direction.Axis.Y ? topColor : sideColor;
         }).hardnessAndResistance(1.0F, 2.0F).sound(SoundType.PLANT));
+
 
 
 
