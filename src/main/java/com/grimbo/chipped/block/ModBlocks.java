@@ -5,17 +5,27 @@ import com.grimbo.chipped.util.Registration;
 import net.minecraft.block.*;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.material.MaterialColor;
+import net.minecraft.client.renderer.RenderType;
+import net.minecraft.client.renderer.RenderTypeLookup;
+import net.minecraft.entity.EntityType;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.util.Direction;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.registry.Registry;
+import net.minecraft.world.IBlockReader;
+import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.RegistryObject;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.loading.FMLEnvironment;
 import net.minecraftforge.registries.IForgeRegistry;
 
 import java.util.function.Supplier;
 
 import static javafx.scene.input.KeyCode.V;
+@Mod.EventBusSubscriber(modid = Chipped.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 
 public class ModBlocks {
 
@@ -1264,12 +1274,90 @@ public class ModBlocks {
                     .hardnessAndResistance(1f, 2f).sound(SoundType.CLOTH)));
 
     // Glass
+
     public static final RegistryObject<Block> GLASS_1 = register("glass_1",
             () -> new Block(AbstractBlock.Properties.create(Material.GLASS)
-                    .hardnessAndResistance(1f, 2f).sound(SoundType.GLASS)));
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
 
+    public static final RegistryObject<Block> GLASS_2 = register("glass_2",
+            () -> new Block(AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
 
+    public static final RegistryObject<Block> GLASS_3 = register("glass_3",
+            () -> new Block(AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
 
+    public static final RegistryObject<Block> GLASS_4 = register("glass_4",
+            () -> new Block(AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
+
+    public static final RegistryObject<Block> GLASS_5 = register("glass_5",
+            () -> new Block(AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
+
+    public static final RegistryObject<Block> GLASS_6 = register("glass_6",
+            () -> new Block(AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
+
+    public static final RegistryObject<Block> GLASS_7 = register("glass_7",
+            () -> new Block(AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
+
+    public static final RegistryObject<Block> GLASS_8 = register("glass_8",
+            () -> new Block(AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
+
+    public static final RegistryObject<Block> GLASS_9 = register("glass_9",
+            () -> new Block(AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
+
+    public static final RegistryObject<Block> GLASS_10 = register("glass_10",
+            () -> new Block(AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
+
+    public static final RegistryObject<Block> GLASS_11 = register("glass_11",
+            () -> new Block(AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
+
+    public static final RegistryObject<Block> GLASS_12 = register("glass_12",
+            () -> new Block(AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
+
+    public static final RegistryObject<Block> GLASS_13 = register("glass_13",
+            () -> new Block(AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
+
+    public static final RegistryObject<Block> GLASS_14 = register("glass_14",
+            () -> new Block(AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
+    @SubscribeEvent
+    public static void registerBlocks(final RegistryEvent.Register<Block> event) {
+        if (FMLEnvironment.dist == Dist.CLIENT) {
+            RenderType cutOutRenderType = RenderType.getCutout();
+            RenderTypeLookup.setRenderLayer(GLASS_1.get(), cutOutRenderType);
+            RenderTypeLookup.setRenderLayer(GLASS_2.get(), cutOutRenderType);
+            RenderTypeLookup.setRenderLayer(GLASS_3.get(), cutOutRenderType);
+            RenderTypeLookup.setRenderLayer(GLASS_4.get(), cutOutRenderType);
+            RenderTypeLookup.setRenderLayer(GLASS_5.get(), cutOutRenderType);
+            RenderTypeLookup.setRenderLayer(GLASS_6.get(), cutOutRenderType);
+            RenderTypeLookup.setRenderLayer(GLASS_7.get(), cutOutRenderType);
+            RenderTypeLookup.setRenderLayer(GLASS_8.get(), cutOutRenderType);
+            RenderTypeLookup.setRenderLayer(GLASS_9.get(), cutOutRenderType);
+            RenderTypeLookup.setRenderLayer(GLASS_10.get(), cutOutRenderType);
+            RenderTypeLookup.setRenderLayer(GLASS_11.get(), cutOutRenderType);
+            RenderTypeLookup.setRenderLayer(GLASS_12.get(), cutOutRenderType);
+            RenderTypeLookup.setRenderLayer(GLASS_13.get(), cutOutRenderType);
+            RenderTypeLookup.setRenderLayer(GLASS_14.get(), cutOutRenderType);
+        }
+    }
+
+    private static boolean isntSolid(BlockState state, IBlockReader reader, BlockPos pos) {
+        return false;
+    }
+
+    private static Boolean neverAllowSpawn(BlockState state, IBlockReader reader, BlockPos pos, EntityType<?> entity) {
+        return (boolean) false;
+    }
 
 
 
