@@ -1276,11 +1276,11 @@ public class ModBlocks {
     // Glass
 
     public static final RegistryObject<Block> GLASS_1 = register("glass_1",
-            () -> new Block(AbstractBlock.Properties.create(Material.GLASS)
+            () -> new GlassBlock(AbstractBlock.Properties.create(Material.GLASS)
                     .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
 
     public static final RegistryObject<Block> GLASS_2 = register("glass_2",
-            () -> new Block(AbstractBlock.Properties.create(Material.GLASS)
+            () -> new GlassBlock(AbstractBlock.Properties.create(Material.GLASS)
                     .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
 
     public static final RegistryObject<Block> GLASS_3 = register("glass_3",
@@ -1330,6 +1330,34 @@ public class ModBlocks {
     public static final RegistryObject<Block> GLASS_14 = register("glass_14",
             () -> new Block(AbstractBlock.Properties.create(Material.GLASS)
                     .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
+
+    public static final RegistryObject<Block> DARK_OAK_GLASS_1 = register("dark_oak_glass_1",
+            () -> new GlassBlock(AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
+
+    public static final RegistryObject<Block> DARK_OAK_GLASS_2 = register("dark_oak_glass_2",
+            () -> new GlassBlock(AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
+
+    public static final RegistryObject<Block> DARK_OAK_GLASS_3 = register("dark_oak_glass_3",
+            () -> new GlassBlock(AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
+
+    public static final RegistryObject<Block> DARK_OAK_GLASS_4 = register("dark_oak_glass_4",
+            () -> new GlassBlock(AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
+
+    public static final RegistryObject<Block> DARK_OAK_GLASS_5 = register("dark_oak_glass_5",
+            () -> new GlassBlock(AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
+
+    public static final RegistryObject<Block> DARK_OAK_GLASS_6 = register("dark_oak_glass_6",
+            () -> new GlassBlock(AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
+
+
+
+
     @SubscribeEvent
     public static void registerBlocks(final RegistryEvent.Register<Block> event) {
         if (FMLEnvironment.dist == Dist.CLIENT) {
@@ -1348,6 +1376,12 @@ public class ModBlocks {
             RenderTypeLookup.setRenderLayer(GLASS_12.get(), cutOutRenderType);
             RenderTypeLookup.setRenderLayer(GLASS_13.get(), cutOutRenderType);
             RenderTypeLookup.setRenderLayer(GLASS_14.get(), cutOutRenderType);
+            RenderTypeLookup.setRenderLayer(DARK_OAK_GLASS_1.get(), cutOutRenderType);
+            RenderTypeLookup.setRenderLayer(DARK_OAK_GLASS_2.get(), cutOutRenderType);
+            RenderTypeLookup.setRenderLayer(DARK_OAK_GLASS_3.get(), cutOutRenderType);
+            RenderTypeLookup.setRenderLayer(DARK_OAK_GLASS_4.get(), cutOutRenderType);
+            RenderTypeLookup.setRenderLayer(DARK_OAK_GLASS_5.get(), cutOutRenderType);
+            RenderTypeLookup.setRenderLayer(DARK_OAK_GLASS_6.get(), cutOutRenderType);
         }
     }
 
