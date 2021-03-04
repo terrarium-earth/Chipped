@@ -1355,6 +1355,30 @@ public class ModBlocks {
             () -> new GlassBlock(AbstractBlock.Properties.create(Material.GLASS)
                     .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
 
+    public static final RegistryObject<Block> WARPED_WOOD_GLASS_1 = register("warped_wood_glass_1",
+            () -> new GlassBlock(AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
+
+    public static final RegistryObject<Block> WARPED_WOOD_GLASS_2 = register("warped_wood_glass_2",
+            () -> new GlassBlock(AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
+
+    public static final RegistryObject<Block> WARPED_WOOD_GLASS_3 = register("warped_wood_glass_3",
+            () -> new GlassBlock(AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
+
+    public static final RegistryObject<Block> WARPED_WOOD_GLASS_4 = register("warped_wood_glass_4",
+            () -> new GlassBlock(AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
+
+    public static final RegistryObject<Block> WARPED_WOOD_GLASS_5 = register("warped_wood_glass_5",
+            () -> new GlassBlock(AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
+
+    public static final RegistryObject<Block> WARPED_WOOD_GLASS_6 = register("warped_wood_glass_6",
+            () -> new GlassBlock(AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
+
 
 
 
@@ -1382,6 +1406,12 @@ public class ModBlocks {
             RenderTypeLookup.setRenderLayer(DARK_OAK_GLASS_4.get(), cutOutRenderType);
             RenderTypeLookup.setRenderLayer(DARK_OAK_GLASS_5.get(), cutOutRenderType);
             RenderTypeLookup.setRenderLayer(DARK_OAK_GLASS_6.get(), cutOutRenderType);
+            RenderTypeLookup.setRenderLayer(WARPED_WOOD_GLASS_1.get(), cutOutRenderType);
+            RenderTypeLookup.setRenderLayer(WARPED_WOOD_GLASS_2.get(), cutOutRenderType);
+            RenderTypeLookup.setRenderLayer(WARPED_WOOD_GLASS_3.get(), cutOutRenderType);
+            RenderTypeLookup.setRenderLayer(WARPED_WOOD_GLASS_4.get(), cutOutRenderType);
+            RenderTypeLookup.setRenderLayer(WARPED_WOOD_GLASS_5.get(), cutOutRenderType);
+            RenderTypeLookup.setRenderLayer(WARPED_WOOD_GLASS_6.get(), cutOutRenderType);
         }
     }
 
