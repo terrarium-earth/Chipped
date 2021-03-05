@@ -1461,7 +1461,31 @@ public class ModBlocks {
             () -> new GlassBlock(AbstractBlock.Properties.create(Material.GLASS)
                     .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
 
+    // Jungle Wood Glass
 
+    public static final RegistryObject<Block> JUNGLE_WOOD_GLASS_1 = register("jungle_wood_glass_1",
+            () -> new GlassBlock(AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
+
+    public static final RegistryObject<Block> JUNGLE_WOOD_GLASS_2 = register("jungle_wood_glass_2",
+            () -> new GlassBlock(AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
+
+    public static final RegistryObject<Block> JUNGLE_WOOD_GLASS_3 = register("jungle_wood_glass_3",
+            () -> new GlassBlock(AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
+
+    public static final RegistryObject<Block> JUNGLE_WOOD_GLASS_4 = register("jungle_wood_glass_4",
+            () -> new GlassBlock(AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
+
+    public static final RegistryObject<Block> JUNGLE_WOOD_GLASS_5 = register("jungle_wood_glass_5",
+            () -> new GlassBlock(AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
+
+    public static final RegistryObject<Block> JUNGLE_WOOD_GLASS_6 = register("jungle_wood_glass_6",
+            () -> new GlassBlock(AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
 
 
     @SubscribeEvent
@@ -1518,7 +1542,13 @@ public class ModBlocks {
             RenderTypeLookup.setRenderLayer(BIRCH_WOOD_GLASS_4.get(), cutOutRenderType);
             RenderTypeLookup.setRenderLayer(BIRCH_WOOD_GLASS_5.get(), cutOutRenderType);
             RenderTypeLookup.setRenderLayer(BIRCH_WOOD_GLASS_6.get(), cutOutRenderType);
-
+            // Jungle
+            RenderTypeLookup.setRenderLayer(JUNGLE_WOOD_GLASS_1.get(), cutOutRenderType);
+            RenderTypeLookup.setRenderLayer(JUNGLE_WOOD_GLASS_2.get(), cutOutRenderType);
+            RenderTypeLookup.setRenderLayer(JUNGLE_WOOD_GLASS_3.get(), cutOutRenderType);
+            RenderTypeLookup.setRenderLayer(JUNGLE_WOOD_GLASS_4.get(), cutOutRenderType);
+            RenderTypeLookup.setRenderLayer(JUNGLE_WOOD_GLASS_5.get(), cutOutRenderType);
+            RenderTypeLookup.setRenderLayer(JUNGLE_WOOD_GLASS_6.get(), cutOutRenderType);
         }
     }
 

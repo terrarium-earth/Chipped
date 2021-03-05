@@ -1,0 +1,10 @@
+{
+    "ctm": {
+        "ctm_version": 1,
+        "type": "CTM",
+        "layer": "CUTOUT",
+        "textures": [
+            "chipped:block/jungle_wood_glass_1_ctm"
+        ]
+    }
+}
