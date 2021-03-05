@@ -1379,6 +1379,54 @@ public class ModBlocks {
             () -> new GlassBlock(AbstractBlock.Properties.create(Material.GLASS)
                     .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
 
+    public static final RegistryObject<Block> SPRUCE_WOOD_GLASS_1 = register("spruce_wood_glass_1",
+            () -> new GlassBlock(AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
+
+    public static final RegistryObject<Block> SPRUCE_WOOD_GLASS_2 = register("spruce_wood_glass_2",
+            () -> new GlassBlock(AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
+
+    public static final RegistryObject<Block> SPRUCE_WOOD_GLASS_3 = register("spruce_wood_glass_3",
+            () -> new GlassBlock(AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
+
+    public static final RegistryObject<Block> SPRUCE_WOOD_GLASS_4 = register("spruce_wood_glass_4",
+            () -> new GlassBlock(AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
+
+    public static final RegistryObject<Block> SPRUCE_WOOD_GLASS_5 = register("spruce_wood_glass_5",
+            () -> new GlassBlock(AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
+
+    public static final RegistryObject<Block> SPRUCE_WOOD_GLASS_6 = register("spruce_wood_glass_6",
+            () -> new GlassBlock(AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
+
+    public static final RegistryObject<Block> OAK_WOOD_GLASS_1 = register("oak_wood_glass_1",
+            () -> new GlassBlock(AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
+
+    public static final RegistryObject<Block> OAK_WOOD_GLASS_2 = register("oak_wood_glass_2",
+            () -> new GlassBlock(AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
+
+    public static final RegistryObject<Block> OAK_WOOD_GLASS_3 = register("oak_wood_glass_3",
+            () -> new GlassBlock(AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
+
+    public static final RegistryObject<Block> OAK_WOOD_GLASS_4 = register("oak_wood_glass_4",
+            () -> new GlassBlock(AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
+
+    public static final RegistryObject<Block> OAK_WOOD_GLASS_5 = register("oak_wood_glass_5",
+            () -> new GlassBlock(AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
+
+    public static final RegistryObject<Block> OAK_WOOD_GLASS_6 = register("oak_wood_glass_6",
+            () -> new GlassBlock(AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
+
 
 
 
@@ -1386,6 +1434,7 @@ public class ModBlocks {
     public static void registerBlocks(final RegistryEvent.Register<Block> event) {
         if (FMLEnvironment.dist == Dist.CLIENT) {
             RenderType cutOutRenderType = RenderType.getCutout();
+            // Normal
             RenderTypeLookup.setRenderLayer(GLASS_1.get(), cutOutRenderType);
             RenderTypeLookup.setRenderLayer(GLASS_2.get(), cutOutRenderType);
             RenderTypeLookup.setRenderLayer(GLASS_3.get(), cutOutRenderType);
@@ -1400,18 +1449,35 @@ public class ModBlocks {
             RenderTypeLookup.setRenderLayer(GLASS_12.get(), cutOutRenderType);
             RenderTypeLookup.setRenderLayer(GLASS_13.get(), cutOutRenderType);
             RenderTypeLookup.setRenderLayer(GLASS_14.get(), cutOutRenderType);
+            // Dark Oak
             RenderTypeLookup.setRenderLayer(DARK_OAK_GLASS_1.get(), cutOutRenderType);
             RenderTypeLookup.setRenderLayer(DARK_OAK_GLASS_2.get(), cutOutRenderType);
             RenderTypeLookup.setRenderLayer(DARK_OAK_GLASS_3.get(), cutOutRenderType);
             RenderTypeLookup.setRenderLayer(DARK_OAK_GLASS_4.get(), cutOutRenderType);
             RenderTypeLookup.setRenderLayer(DARK_OAK_GLASS_5.get(), cutOutRenderType);
             RenderTypeLookup.setRenderLayer(DARK_OAK_GLASS_6.get(), cutOutRenderType);
+            // Warped
             RenderTypeLookup.setRenderLayer(WARPED_WOOD_GLASS_1.get(), cutOutRenderType);
             RenderTypeLookup.setRenderLayer(WARPED_WOOD_GLASS_2.get(), cutOutRenderType);
             RenderTypeLookup.setRenderLayer(WARPED_WOOD_GLASS_3.get(), cutOutRenderType);
             RenderTypeLookup.setRenderLayer(WARPED_WOOD_GLASS_4.get(), cutOutRenderType);
             RenderTypeLookup.setRenderLayer(WARPED_WOOD_GLASS_5.get(), cutOutRenderType);
             RenderTypeLookup.setRenderLayer(WARPED_WOOD_GLASS_6.get(), cutOutRenderType);
+            // Spruce
+            RenderTypeLookup.setRenderLayer(SPRUCE_WOOD_GLASS_1.get(), cutOutRenderType);
+            RenderTypeLookup.setRenderLayer(SPRUCE_WOOD_GLASS_2.get(), cutOutRenderType);
+            RenderTypeLookup.setRenderLayer(SPRUCE_WOOD_GLASS_3.get(), cutOutRenderType);
+            RenderTypeLookup.setRenderLayer(SPRUCE_WOOD_GLASS_4.get(), cutOutRenderType);
+            RenderTypeLookup.setRenderLayer(SPRUCE_WOOD_GLASS_5.get(), cutOutRenderType);
+            RenderTypeLookup.setRenderLayer(SPRUCE_WOOD_GLASS_6.get(), cutOutRenderType);
+            // Oak
+            RenderTypeLookup.setRenderLayer(OAK_WOOD_GLASS_1.get(), cutOutRenderType);
+            RenderTypeLookup.setRenderLayer(OAK_WOOD_GLASS_2.get(), cutOutRenderType);
+            RenderTypeLookup.setRenderLayer(OAK_WOOD_GLASS_3.get(), cutOutRenderType);
+            RenderTypeLookup.setRenderLayer(OAK_WOOD_GLASS_4.get(), cutOutRenderType);
+            RenderTypeLookup.setRenderLayer(OAK_WOOD_GLASS_5.get(), cutOutRenderType);
+            RenderTypeLookup.setRenderLayer(OAK_WOOD_GLASS_6.get(), cutOutRenderType);
+
         }
     }
 
