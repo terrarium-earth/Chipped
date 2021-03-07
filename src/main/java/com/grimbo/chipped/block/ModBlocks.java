@@ -1625,7 +1625,7 @@ public class ModBlocks {
             RenderTypeLookup.setRenderLayer(ACACIA_WOOD_GLASS_5.get(), cutOutRenderType);
             RenderTypeLookup.setRenderLayer(ACACIA_WOOD_GLASS_6.get(), cutOutRenderType);
             // Black Stained Glass
-            RenderTypeLookup.setRenderLayer(BLACK_STAINED_GLASS_1.get(), cutOutRenderType);
+            RenderTypeLookup.setRenderLayer(BLACK_STAINED_GLASS_1.get(), RenderType.getTranslucent());
 
 
         }
