@@ -67,14 +67,6 @@ public class Chipped
         // do something that can only be done on the client
         LOGGER.info("Got game settings {}", event.getMinecraftSupplier().get().gameSettings);
         // Black Stained Glass
-        RenderTypeLookup.setRenderLayer(ModBlocks.BLACK_STAINED_GLASS_1.get(), RenderType.getTranslucent());
-        RenderTypeLookup.setRenderLayer(ModBlocks.BLACK_STAINED_GLASS_2.get(), RenderType.getTranslucent());
-        RenderTypeLookup.setRenderLayer(ModBlocks.BLACK_STAINED_GLASS_3.get(), RenderType.getTranslucent());
-        RenderTypeLookup.setRenderLayer(ModBlocks.BLACK_STAINED_GLASS_4.get(), RenderType.getTranslucent());
-        RenderTypeLookup.setRenderLayer(ModBlocks.BLACK_STAINED_GLASS_5.get(), RenderType.getTranslucent());
-        RenderTypeLookup.setRenderLayer(ModBlocks.BLACK_STAINED_GLASS_6.get(), RenderType.getTranslucent());
-        RenderTypeLookup.setRenderLayer(ModBlocks.BLACK_STAINED_GLASS_7.get(), RenderType.getTranslucent());
-        RenderTypeLookup.setRenderLayer(ModBlocks.BLACK_STAINED_GLASS_8.get(), RenderType.getTranslucent());
     }
 
     private void enqueueIMC(final InterModEnqueueEvent event)
