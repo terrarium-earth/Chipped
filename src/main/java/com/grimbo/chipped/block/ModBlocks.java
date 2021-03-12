@@ -1691,7 +1691,87 @@ public class ModBlocks {
             () -> new CarpetBlock(DyeColor.BLUE, AbstractBlock.Properties.create(Material.WOOL)
                     .hardnessAndResistance(0.3F).sound(SoundType.CLOTH)));
 
+    // Brown Carpet
+
+    public static final RegistryObject<Block> BROWN_CARPET_1 = register("brown_carpet_1",
+            () -> new CarpetBlock(DyeColor.BROWN, AbstractBlock.Properties.create(Material.WOOL)
+                    .hardnessAndResistance(0.3F).sound(SoundType.CLOTH)));
+
+    public static final RegistryObject<Block> BROWN_CARPET_2 = register("brown_carpet_2",
+            () -> new CarpetBlock(DyeColor.BROWN, AbstractBlock.Properties.create(Material.WOOL)
+                    .hardnessAndResistance(0.3F).sound(SoundType.CLOTH)));
+
+    public static final RegistryObject<Block> BROWN_CARPET_3 = register("brown_carpet_3",
+            () -> new CarpetBlock(DyeColor.BROWN, AbstractBlock.Properties.create(Material.WOOL)
+                    .hardnessAndResistance(0.3F).sound(SoundType.CLOTH)));
+
+    public static final RegistryObject<Block> BROWN_CARPET_4 = register("brown_carpet_4",
+            () -> new CarpetBlock(DyeColor.BROWN, AbstractBlock.Properties.create(Material.WOOL)
+                    .hardnessAndResistance(0.3F).sound(SoundType.CLOTH)));
+
+    public static final RegistryObject<Block> BROWN_CARPET_5 = register("brown_carpet_5",
+            () -> new CarpetBlock(DyeColor.BROWN, AbstractBlock.Properties.create(Material.WOOL)
+                    .hardnessAndResistance(0.3F).sound(SoundType.CLOTH)));
+
+    public static final RegistryObject<Block> BROWN_CARPET_6 = register("brown_carpet_6",
+            () -> new CarpetBlock(DyeColor.BROWN, AbstractBlock.Properties.create(Material.WOOL)
+                    .hardnessAndResistance(0.3F).sound(SoundType.CLOTH)));
+
+    public static final RegistryObject<Block> BROWN_CARPET_7 = register("brown_carpet_7",
+            () -> new CarpetBlock(DyeColor.BROWN, AbstractBlock.Properties.create(Material.WOOL)
+                    .hardnessAndResistance(0.3F).sound(SoundType.CLOTH)));
+
+    public static final RegistryObject<Block> BROWN_CARPET_8 = register("brown_carpet_8",
+            () -> new CarpetBlock(DyeColor.BROWN, AbstractBlock.Properties.create(Material.WOOL)
+                    .hardnessAndResistance(0.3F).sound(SoundType.CLOTH)));
+
+    public static final RegistryObject<Block> BROWN_CARPET_9 = register("brown_carpet_9",
+            () -> new CarpetBlock(DyeColor.BROWN, AbstractBlock.Properties.create(Material.WOOL)
+                    .hardnessAndResistance(0.3F).sound(SoundType.CLOTH)));
+
+    public static final RegistryObject<Block> BROWN_CARPET_10 = register("brown_carpet_10",
+            () -> new CarpetBlock(DyeColor.BROWN, AbstractBlock.Properties.create(Material.WOOL)
+                    .hardnessAndResistance(0.3F).sound(SoundType.CLOTH)));
+
+    public static final RegistryObject<Block> BROWN_CARPET_11 = register("brown_carpet_11",
+            () -> new CarpetBlock(DyeColor.BROWN, AbstractBlock.Properties.create(Material.WOOL)
+                    .hardnessAndResistance(0.3F).sound(SoundType.CLOTH)));
+
+    public static final RegistryObject<Block> BROWN_CARPET_12 = register("brown_carpet_12",
+            () -> new CarpetBlock(DyeColor.BROWN, AbstractBlock.Properties.create(Material.WOOL)
+                    .hardnessAndResistance(0.3F).sound(SoundType.CLOTH)));
+
+    public static final RegistryObject<Block> BROWN_CARPET_13 = register("brown_carpet_13",
+            () -> new CarpetBlock(DyeColor.BROWN, AbstractBlock.Properties.create(Material.WOOL)
+                    .hardnessAndResistance(0.3F).sound(SoundType.CLOTH)));
+
+    public static final RegistryObject<Block> BROWN_CARPET_14 = register("brown_carpet_14",
+            () -> new CarpetBlock(DyeColor.BROWN, AbstractBlock.Properties.create(Material.WOOL)
+                    .hardnessAndResistance(0.3F).sound(SoundType.CLOTH)));
+
+    public static final RegistryObject<Block> BROWN_CARPET_15 = register("brown_carpet_15",
+            () -> new CarpetBlock(DyeColor.BROWN, AbstractBlock.Properties.create(Material.WOOL)
+                    .hardnessAndResistance(0.3F).sound(SoundType.CLOTH)));
+
+    public static final RegistryObject<Block> BROWN_CARPET_16 = register("brown_carpet_16",
+            () -> new CarpetBlock(DyeColor.BROWN, AbstractBlock.Properties.create(Material.WOOL)
+                    .hardnessAndResistance(0.3F).sound(SoundType.CLOTH)));
+
+    public static final RegistryObject<Block> BROWN_CARPET_17 = register("brown_carpet_17",
+            () -> new CarpetBlock(DyeColor.BROWN, AbstractBlock.Properties.create(Material.WOOL)
+                    .hardnessAndResistance(0.3F).sound(SoundType.CLOTH)));
+
+    public static final RegistryObject<Block> BROWN_CARPET_18 = register("brown_carpet_18",
+            () -> new CarpetBlock(DyeColor.BROWN, AbstractBlock.Properties.create(Material.WOOL)
+                    .hardnessAndResistance(0.3F).sound(SoundType.CLOTH)));
+
     //
+
+
+
+
+
+
 
 
 
