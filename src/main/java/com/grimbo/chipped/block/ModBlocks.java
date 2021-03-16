@@ -2727,22 +2727,551 @@ public class ModBlocks {
             () -> new CarpetBlock(DyeColor.WHITE, AbstractBlock.Properties.create(Material.WOOL)
                     .hardnessAndResistance(0.3F).sound(SoundType.CLOTH)));
 
-    //
 
+    // Stained Glass
+    // Black Stained Glass
 
+    public static final RegistryObject<Block> BLACK_STAINED_GLASS_1 = register("black_stained_glass_1",
+            () -> new StainedGlassBlock(DyeColor.BLACK, AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
 
+    public static final RegistryObject<Block> BLACK_STAINED_GLASS_2 = register("black_stained_glass_2",
+            () -> new StainedGlassBlock(DyeColor.BLACK, AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
 
+    public static final RegistryObject<Block> BLACK_STAINED_GLASS_3 = register("black_stained_glass_3",
+            () -> new StainedGlassBlock(DyeColor.BLACK, AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
 
+    public static final RegistryObject<Block> BLACK_STAINED_GLASS_4 = register("black_stained_glass_4",
+            () -> new StainedGlassBlock(DyeColor.BLACK, AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
 
+    public static final RegistryObject<Block> BLACK_STAINED_GLASS_5 = register("black_stained_glass_5",
+            () -> new StainedGlassBlock(DyeColor.BLACK, AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
 
+    public static final RegistryObject<Block> BLACK_STAINED_GLASS_6 = register("black_stained_glass_6",
+            () -> new StainedGlassBlock(DyeColor.BLACK, AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
 
+    public static final RegistryObject<Block> BLACK_STAINED_GLASS_7 = register("black_stained_glass_7",
+            () -> new StainedGlassBlock(DyeColor.BLACK, AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
 
+    public static final RegistryObject<Block> BLACK_STAINED_GLASS_8 = register("black_stained_glass_8",
+            () -> new StainedGlassBlock(DyeColor.BLACK, AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
 
+    // Blue Stained Glass
 
+    public static final RegistryObject<Block> BLUE_STAINED_GLASS_1 = register("blue_stained_glass_1",
+            () -> new StainedGlassBlock(DyeColor.BLUE, AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
 
+    public static final RegistryObject<Block> BLUE_STAINED_GLASS_2 = register("blue_stained_glass_2",
+            () -> new StainedGlassBlock(DyeColor.BLUE, AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
 
+    public static final RegistryObject<Block> BLUE_STAINED_GLASS_3 = register("blue_stained_glass_3",
+            () -> new StainedGlassBlock(DyeColor.BLUE, AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
 
+    public static final RegistryObject<Block> BLUE_STAINED_GLASS_4 = register("blue_stained_glass_4",
+            () -> new StainedGlassBlock(DyeColor.BLUE, AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
 
+    public static final RegistryObject<Block> BLUE_STAINED_GLASS_5 = register("blue_stained_glass_5",
+            () -> new StainedGlassBlock(DyeColor.BLUE, AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
+
+    public static final RegistryObject<Block> BLUE_STAINED_GLASS_6 = register("blue_stained_glass_6",
+            () -> new StainedGlassBlock(DyeColor.BLUE, AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
+
+    public static final RegistryObject<Block> BLUE_STAINED_GLASS_7 = register("blue_stained_glass_7",
+            () -> new StainedGlassBlock(DyeColor.BLUE, AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
+
+    public static final RegistryObject<Block> BLUE_STAINED_GLASS_8 = register("blue_stained_glass_8",
+            () -> new StainedGlassBlock(DyeColor.BLUE, AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
+
+    // Brown SG
+
+    public static final RegistryObject<Block> BROWN_STAINED_GLASS_1 = register("brown_stained_glass_1",
+            () -> new StainedGlassBlock(DyeColor. BROWN, AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
+
+    public static final RegistryObject<Block> BROWN_STAINED_GLASS_2 = register("brown_stained_glass_2",
+            () -> new StainedGlassBlock(DyeColor.BROWN, AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
+
+    public static final RegistryObject<Block> BROWN_STAINED_GLASS_3 = register("brown_stained_glass_3",
+            () -> new StainedGlassBlock(DyeColor.BROWN, AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
+
+    public static final RegistryObject<Block> BROWN_STAINED_GLASS_4 = register("brown_stained_glass_4",
+            () -> new StainedGlassBlock(DyeColor.BROWN, AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
+
+    public static final RegistryObject<Block> BROWN_STAINED_GLASS_5 = register("brown_stained_glass_5",
+            () -> new StainedGlassBlock(DyeColor. BROWN, AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
+
+    public static final RegistryObject<Block> BROWN_STAINED_GLASS_6 = register("brown_stained_glass_6",
+            () -> new StainedGlassBlock(DyeColor.BROWN, AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
+
+    public static final RegistryObject<Block> BROWN_STAINED_GLASS_7 = register("brown_stained_glass_7",
+            () -> new StainedGlassBlock(DyeColor.BROWN, AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
+
+    public static final RegistryObject<Block> BROWN_STAINED_GLASS_8 = register("brown_stained_glass_8",
+            () -> new StainedGlassBlock(DyeColor.BROWN, AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
+
+    // Cyan SG
+
+    public static final RegistryObject<Block> CYAN_STAINED_GLASS_1 = register("cyan_stained_glass_1",
+            () -> new StainedGlassBlock(DyeColor.CYAN, AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
+
+    public static final RegistryObject<Block> CYAN_STAINED_GLASS_2 = register("cyan_stained_glass_2",
+            () -> new StainedGlassBlock(DyeColor.CYAN, AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
+
+    public static final RegistryObject<Block> CYAN_STAINED_GLASS_3 = register("cyan_stained_glass_3",
+            () -> new StainedGlassBlock(DyeColor.CYAN, AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
+
+    public static final RegistryObject<Block> CYAN_STAINED_GLASS_4 = register("cyan_stained_glass_4",
+            () -> new StainedGlassBlock(DyeColor.CYAN, AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
+
+    public static final RegistryObject<Block> CYAN_STAINED_GLASS_5 = register("cyan_stained_glass_5",
+            () -> new StainedGlassBlock(DyeColor.CYAN, AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
+
+    public static final RegistryObject<Block> CYAN_STAINED_GLASS_6 = register("cyan_stained_glass_6",
+            () -> new StainedGlassBlock(DyeColor.CYAN, AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
+
+    public static final RegistryObject<Block> CYAN_STAINED_GLASS_7 = register("cyan_stained_glass_7",
+            () -> new StainedGlassBlock(DyeColor.CYAN, AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
+
+    public static final RegistryObject<Block> CYAN_STAINED_GLASS_8 = register("cyan_stained_glass_8",
+            () -> new StainedGlassBlock(DyeColor.CYAN, AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
+
+    // Purple SG
+
+    public static final RegistryObject<Block> PURPLE_STAINED_GLASS_1 = register("purple_stained_glass_1",
+            () -> new StainedGlassBlock(DyeColor.PURPLE, AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
+
+    public static final RegistryObject<Block> PURPLE_STAINED_GLASS_2 = register("purple_stained_glass_2",
+            () -> new StainedGlassBlock(DyeColor.PURPLE, AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
+
+    public static final RegistryObject<Block> PURPLE_STAINED_GLASS_3 = register("purple_stained_glass_3",
+            () -> new StainedGlassBlock(DyeColor.PURPLE, AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
+
+    public static final RegistryObject<Block> PURPLE_STAINED_GLASS_4 = register("purple_stained_glass_4",
+            () -> new StainedGlassBlock(DyeColor.PURPLE, AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
+
+    public static final RegistryObject<Block> PURPLE_STAINED_GLASS_5 = register("purple_stained_glass_5",
+            () -> new StainedGlassBlock(DyeColor.PURPLE, AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
+
+    public static final RegistryObject<Block> PURPLE_STAINED_GLASS_6 = register("purple_stained_glass_6",
+            () -> new StainedGlassBlock(DyeColor.PURPLE, AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
+
+    public static final RegistryObject<Block> PURPLE_STAINED_GLASS_7 = register("purple_stained_glass_7",
+            () -> new StainedGlassBlock(DyeColor.PURPLE, AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
+
+    public static final RegistryObject<Block> PURPLE_STAINED_GLASS_8 = register("purple_stained_glass_8",
+            () -> new StainedGlassBlock(DyeColor.PURPLE, AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
+
+    // Gray SG
+
+    public static final RegistryObject<Block> GRAY_STAINED_GLASS_1 = register("gray_stained_glass_1",
+            () -> new StainedGlassBlock(DyeColor.GRAY, AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
+
+    public static final RegistryObject<Block> GRAY_STAINED_GLASS_2 = register("gray_stained_glass_2",
+            () -> new StainedGlassBlock(DyeColor.GRAY, AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
+
+    public static final RegistryObject<Block> GRAY_STAINED_GLASS_3 = register("gray_stained_glass_3",
+            () -> new StainedGlassBlock(DyeColor.GRAY, AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
+
+    public static final RegistryObject<Block> GRAY_STAINED_GLASS_4 = register("gray_stained_glass_4",
+            () -> new StainedGlassBlock(DyeColor.GRAY, AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
+
+    public static final RegistryObject<Block> GRAY_STAINED_GLASS_5 = register("gray_stained_glass_5",
+            () -> new StainedGlassBlock(DyeColor.GRAY, AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
+
+    public static final RegistryObject<Block> GRAY_STAINED_GLASS_6 = register("gray_stained_glass_6",
+            () -> new StainedGlassBlock(DyeColor.GRAY, AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
+
+    public static final RegistryObject<Block> GRAY_STAINED_GLASS_7 = register("gray_stained_glass_7",
+            () -> new StainedGlassBlock(DyeColor.GRAY, AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
+
+    public static final RegistryObject<Block> GRAY_STAINED_GLASS_8 = register("gray_stained_glass_8",
+            () -> new StainedGlassBlock(DyeColor.GRAY, AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
+
+    // Green SG
+
+    public static final RegistryObject<Block> GREEN_STAINED_GLASS_1 = register("green_stained_glass_1",
+            () -> new StainedGlassBlock(DyeColor.GREEN, AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
+
+    public static final RegistryObject<Block> GREEN_STAINED_GLASS_2 = register("green_stained_glass_2",
+            () -> new StainedGlassBlock(DyeColor.GREEN, AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
+
+    public static final RegistryObject<Block> GREEN_STAINED_GLASS_3 = register("green_stained_glass_3",
+            () -> new StainedGlassBlock(DyeColor.GREEN, AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
+
+    public static final RegistryObject<Block> GREEN_STAINED_GLASS_4 = register("green_stained_glass_4",
+            () -> new StainedGlassBlock(DyeColor.GREEN, AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
+
+    public static final RegistryObject<Block> GREEN_STAINED_GLASS_5 = register("green_stained_glass_5",
+            () -> new StainedGlassBlock(DyeColor.GREEN, AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
+
+    public static final RegistryObject<Block> GREEN_STAINED_GLASS_6 = register("green_stained_glass_6",
+            () -> new StainedGlassBlock(DyeColor.GREEN, AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
+
+    public static final RegistryObject<Block> GREEN_STAINED_GLASS_7 = register("green_stained_glass_7",
+            () -> new StainedGlassBlock(DyeColor.GREEN, AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
+
+    public static final RegistryObject<Block> GREEN_STAINED_GLASS_8 = register("green_stained_glass_8",
+            () -> new StainedGlassBlock(DyeColor.GREEN, AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
+
+    // Yellow SG
+
+    public static final RegistryObject<Block> YELLOW_STAINED_GLASS_1 = register("yellow_stained_glass_1",
+            () -> new StainedGlassBlock(DyeColor.YELLOW, AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
+
+    public static final RegistryObject<Block> YELLOW_STAINED_GLASS_2 = register("yellow_stained_glass_2",
+            () -> new StainedGlassBlock(DyeColor.YELLOW, AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
+
+    public static final RegistryObject<Block> YELLOW_STAINED_GLASS_3 = register("yellow_stained_glass_3",
+            () -> new StainedGlassBlock(DyeColor.YELLOW, AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
+
+    public static final RegistryObject<Block> YELLOW_STAINED_GLASS_4 = register("yellow_stained_glass_4",
+            () -> new StainedGlassBlock(DyeColor.YELLOW, AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
+
+    public static final RegistryObject<Block> YELLOW_STAINED_GLASS_5 = register("yellow_stained_glass_5",
+            () -> new StainedGlassBlock(DyeColor.YELLOW, AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
+
+    public static final RegistryObject<Block> YELLOW_STAINED_GLASS_6 = register("yellow_stained_glass_6",
+            () -> new StainedGlassBlock(DyeColor.YELLOW, AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
+
+    public static final RegistryObject<Block> YELLOW_STAINED_GLASS_7 = register("yellow_stained_glass_7",
+            () -> new StainedGlassBlock(DyeColor.YELLOW, AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
+
+    public static final RegistryObject<Block> YELLOW_STAINED_GLASS_8 = register("yellow_stained_glass_8",
+            () -> new StainedGlassBlock(DyeColor.YELLOW, AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
+
+    // Light Blue SG
+
+    public static final RegistryObject<Block> LIGHT_BLUE_STAINED_GLASS_1 = register("light_blue_stained_glass_1",
+            () -> new StainedGlassBlock(DyeColor.LIGHT_BLUE, AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
+
+    public static final RegistryObject<Block> LIGHT_BLUE_STAINED_GLASS_2 = register("light_blue_stained_glass_2",
+            () -> new StainedGlassBlock(DyeColor.LIGHT_BLUE, AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
+
+    public static final RegistryObject<Block> LIGHT_BLUE_STAINED_GLASS_3 = register("light_blue_stained_glass_3",
+            () -> new StainedGlassBlock(DyeColor.LIGHT_BLUE, AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
+
+    public static final RegistryObject<Block> LIGHT_BLUE_STAINED_GLASS_4 = register("light_blue_stained_glass_4",
+            () -> new StainedGlassBlock(DyeColor.LIGHT_BLUE, AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
+
+    public static final RegistryObject<Block> LIGHT_BLUE_STAINED_GLASS_5 = register("light_blue_stained_glass_5",
+            () -> new StainedGlassBlock(DyeColor.LIGHT_BLUE, AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
+
+    public static final RegistryObject<Block> LIGHT_BLUE_STAINED_GLASS_6 = register("light_blue_stained_glass_6",
+            () -> new StainedGlassBlock(DyeColor.LIGHT_BLUE, AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
+
+    public static final RegistryObject<Block> LIGHT_BLUE_STAINED_GLASS_7 = register("light_blue_stained_glass_7",
+            () -> new StainedGlassBlock(DyeColor.LIGHT_BLUE, AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
+
+    public static final RegistryObject<Block> LIGHT_BLUE_STAINED_GLASS_8 = register("light_blue_stained_glass_8",
+            () -> new StainedGlassBlock(DyeColor.LIGHT_BLUE, AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
+
+    // Light Gray SG
+
+    public static final RegistryObject<Block> LIGHT_GRAY_STAINED_GLASS_1 = register("light_gray_stained_glass_1",
+            () -> new StainedGlassBlock(DyeColor.LIGHT_GRAY, AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
+
+    public static final RegistryObject<Block> LIGHT_GRAY_STAINED_GLASS_2 = register("light_gray_stained_glass_2",
+            () -> new StainedGlassBlock(DyeColor.LIGHT_GRAY, AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
+
+    public static final RegistryObject<Block> LIGHT_GRAY_STAINED_GLASS_3 = register("light_gray_stained_glass_3",
+            () -> new StainedGlassBlock(DyeColor.LIGHT_GRAY, AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
+
+    public static final RegistryObject<Block> LIGHT_GRAY_STAINED_GLASS_4 = register("light_gray_stained_glass_4",
+            () -> new StainedGlassBlock(DyeColor.LIGHT_GRAY, AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
+
+    public static final RegistryObject<Block> LIGHT_GRAY_STAINED_GLASS_5 = register("light_gray_stained_glass_5",
+            () -> new StainedGlassBlock(DyeColor.LIGHT_GRAY, AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
+
+    public static final RegistryObject<Block> LIGHT_GRAY_STAINED_GLASS_6 = register("light_gray_stained_glass_6",
+            () -> new StainedGlassBlock(DyeColor.LIGHT_GRAY, AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
+
+    public static final RegistryObject<Block> LIGHT_GRAY_STAINED_GLASS_7 = register("light_gray_stained_glass_7",
+            () -> new StainedGlassBlock(DyeColor.LIGHT_GRAY, AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
+
+    public static final RegistryObject<Block> LIGHT_GRAY_STAINED_GLASS_8 = register("light_gray_stained_glass_8",
+            () -> new StainedGlassBlock(DyeColor.LIGHT_GRAY, AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
+
+    // Lime SG
+
+    public static final RegistryObject<Block> LIME_STAINED_GLASS_1 = register("lime_stained_glass_1",
+            () -> new StainedGlassBlock(DyeColor.LIME, AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
+
+    public static final RegistryObject<Block> LIME_STAINED_GLASS_2 = register("lime_stained_glass_2",
+            () -> new StainedGlassBlock(DyeColor.LIME, AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
+
+    public static final RegistryObject<Block> LIME_STAINED_GLASS_3 = register("lime_stained_glass_3",
+            () -> new StainedGlassBlock(DyeColor.LIME, AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
+
+    public static final RegistryObject<Block> LIME_STAINED_GLASS_4 = register("lime_stained_glass_4",
+            () -> new StainedGlassBlock(DyeColor.LIME, AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
+
+    public static final RegistryObject<Block> LIME_STAINED_GLASS_5 = register("lime_stained_glass_5",
+            () -> new StainedGlassBlock(DyeColor.LIME, AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
+
+    public static final RegistryObject<Block> LIME_STAINED_GLASS_6 = register("lime_stained_glass_6",
+            () -> new StainedGlassBlock(DyeColor.LIME, AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
+
+    public static final RegistryObject<Block> LIME_STAINED_GLASS_7 = register("lime_stained_glass_7",
+            () -> new StainedGlassBlock(DyeColor.LIME, AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
+
+    public static final RegistryObject<Block> LIME_STAINED_GLASS_8 = register("lime_stained_glass_8",
+            () -> new StainedGlassBlock(DyeColor.LIME, AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
+
+    // Magenta SG
+
+    public static final RegistryObject<Block> MAGENTA_STAINED_GLASS_1 = register("magenta_stained_glass_1",
+            () -> new StainedGlassBlock(DyeColor.MAGENTA, AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
+
+    public static final RegistryObject<Block> MAGENTA_STAINED_GLASS_2 = register("magenta_stained_glass_2",
+            () -> new StainedGlassBlock(DyeColor.MAGENTA, AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
+
+    public static final RegistryObject<Block> MAGENTA_STAINED_GLASS_3 = register("magenta_stained_glass_3",
+            () -> new StainedGlassBlock(DyeColor.MAGENTA, AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
+
+    public static final RegistryObject<Block> MAGENTA_STAINED_GLASS_4 = register("magenta_stained_glass_4",
+            () -> new StainedGlassBlock(DyeColor.MAGENTA, AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
+
+    public static final RegistryObject<Block> MAGENTA_STAINED_GLASS_5 = register("magenta_stained_glass_5",
+            () -> new StainedGlassBlock(DyeColor.MAGENTA, AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
+
+    public static final RegistryObject<Block> MAGENTA_STAINED_GLASS_6 = register("magenta_stained_glass_6",
+            () -> new StainedGlassBlock(DyeColor.MAGENTA, AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
+
+    public static final RegistryObject<Block> MAGENTA_STAINED_GLASS_7 = register("magenta_stained_glass_7",
+            () -> new StainedGlassBlock(DyeColor.MAGENTA, AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
+
+    public static final RegistryObject<Block> MAGENTA_STAINED_GLASS_8 = register("magenta_stained_glass_8",
+            () -> new StainedGlassBlock(DyeColor.MAGENTA, AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
+
+    // Orange SG
+
+    public static final RegistryObject<Block> ORANGE_STAINED_GLASS_1 = register("orange_stained_glass_1",
+            () -> new StainedGlassBlock(DyeColor.ORANGE, AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
+
+    public static final RegistryObject<Block> ORANGE_STAINED_GLASS_2 = register("orange_stained_glass_2",
+            () -> new StainedGlassBlock(DyeColor.ORANGE, AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
+
+    public static final RegistryObject<Block> ORANGE_STAINED_GLASS_3 = register("orange_stained_glass_3",
+            () -> new StainedGlassBlock(DyeColor.ORANGE, AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
+
+    public static final RegistryObject<Block> ORANGE_STAINED_GLASS_4 = register("orange_stained_glass_4",
+            () -> new StainedGlassBlock(DyeColor.ORANGE, AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
+
+    public static final RegistryObject<Block> ORANGE_STAINED_GLASS_5 = register("orange_stained_glass_5",
+            () -> new StainedGlassBlock(DyeColor.ORANGE, AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
+
+    public static final RegistryObject<Block> ORANGE_STAINED_GLASS_6 = register("orange_stained_glass_6",
+            () -> new StainedGlassBlock(DyeColor.ORANGE, AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
+
+    public static final RegistryObject<Block> ORANGE_STAINED_GLASS_7 = register("orange_stained_glass_7",
+            () -> new StainedGlassBlock(DyeColor.ORANGE, AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
+
+    public static final RegistryObject<Block> ORANGE_STAINED_GLASS_8 = register("orange_stained_glass_8",
+            () -> new StainedGlassBlock(DyeColor.ORANGE, AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
+
+    // Pink SG
+
+    public static final RegistryObject<Block> PINK_STAINED_GLASS_1 = register("pink_stained_glass_1",
+            () -> new StainedGlassBlock(DyeColor.PINK, AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
+
+    public static final RegistryObject<Block> PINK_STAINED_GLASS_2 = register("pink_stained_glass_2",
+            () -> new StainedGlassBlock(DyeColor.PINK, AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
+
+    public static final RegistryObject<Block> PINK_STAINED_GLASS_3 = register("pink_stained_glass_3",
+            () -> new StainedGlassBlock(DyeColor.PINK, AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
+
+    public static final RegistryObject<Block> PINK_STAINED_GLASS_4 = register("pink_stained_glass_4",
+            () -> new StainedGlassBlock(DyeColor.PINK, AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
+
+    public static final RegistryObject<Block> PINK_STAINED_GLASS_5 = register("pink_stained_glass_5",
+            () -> new StainedGlassBlock(DyeColor.PINK, AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
+
+    public static final RegistryObject<Block> PINK_STAINED_GLASS_6 = register("pink_stained_glass_6",
+            () -> new StainedGlassBlock(DyeColor.PINK, AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
+
+    public static final RegistryObject<Block> PINK_STAINED_GLASS_7 = register("pink_stained_glass_7",
+            () -> new StainedGlassBlock(DyeColor.PINK, AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
+
+    public static final RegistryObject<Block> PINK_STAINED_GLASS_8 = register("pink_stained_glass_8",
+            () -> new StainedGlassBlock(DyeColor.PINK, AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
+
+    // Red SG
+
+    public static final RegistryObject<Block> RED_STAINED_GLASS_1 = register("red_stained_glass_1",
+            () -> new StainedGlassBlock(DyeColor.RED, AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
+
+    public static final RegistryObject<Block> RED_STAINED_GLASS_2 = register("red_stained_glass_2",
+            () -> new StainedGlassBlock(DyeColor.RED, AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
+
+    public static final RegistryObject<Block> RED_STAINED_GLASS_3 = register("red_stained_glass_3",
+            () -> new StainedGlassBlock(DyeColor.RED, AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
+
+    public static final RegistryObject<Block> RED_STAINED_GLASS_4 = register("red_stained_glass_4",
+            () -> new StainedGlassBlock(DyeColor.RED, AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
+
+    public static final RegistryObject<Block> RED_STAINED_GLASS_5 = register("red_stained_glass_5",
+            () -> new StainedGlassBlock(DyeColor.RED, AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
+
+    public static final RegistryObject<Block> RED_STAINED_GLASS_6 = register("red_stained_glass_6",
+            () -> new StainedGlassBlock(DyeColor.RED, AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
+
+    public static final RegistryObject<Block> RED_STAINED_GLASS_7 = register("red_stained_glass_7",
+            () -> new StainedGlassBlock(DyeColor.RED, AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
+
+    public static final RegistryObject<Block> RED_STAINED_GLASS_8 = register("red_stained_glass_8",
+            () -> new StainedGlassBlock(DyeColor.RED, AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
+
+    // White SG
+
+    public static final RegistryObject<Block> WHITE_STAINED_GLASS_1 = register("white_stained_glass_1",
+            () -> new StainedGlassBlock(DyeColor.WHITE, AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
+
+    public static final RegistryObject<Block> WHITE_STAINED_GLASS_2 = register("white_stained_glass_2",
+            () -> new StainedGlassBlock(DyeColor.WHITE, AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
+
+    public static final RegistryObject<Block> WHITE_STAINED_GLASS_3 = register("white_stained_glass_3",
+            () -> new StainedGlassBlock(DyeColor.WHITE, AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
+
+    public static final RegistryObject<Block> WHITE_STAINED_GLASS_4 = register("white_stained_glass_4",
+            () -> new StainedGlassBlock(DyeColor.WHITE, AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
+
+    public static final RegistryObject<Block> WHITE_STAINED_GLASS_5 = register("white_stained_glass_5",
+            () -> new StainedGlassBlock(DyeColor.WHITE, AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
+
+    public static final RegistryObject<Block> WHITE_STAINED_GLASS_6 = register("white_stained_glass_6",
+            () -> new StainedGlassBlock(DyeColor.WHITE, AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
+
+    public static final RegistryObject<Block> WHITE_STAINED_GLASS_7 = register("white_stained_glass_7",
+            () -> new StainedGlassBlock(DyeColor.WHITE, AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
+
+    public static final RegistryObject<Block> WHITE_STAINED_GLASS_8 = register("white_stained_glass_8",
+            () -> new StainedGlassBlock(DyeColor.WHITE, AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
 
 
     @SubscribeEvent

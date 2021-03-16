@@ -67,6 +67,150 @@ public class Chipped
         // do something that can only be done on the client
         LOGGER.info("Got game settings {}", event.getMinecraftSupplier().get().gameSettings);
         // Black Stained Glass
+        RenderTypeLookup.setRenderLayer(ModBlocks.BLACK_STAINED_GLASS_1.get(), RenderType.getTranslucent());
+        RenderTypeLookup.setRenderLayer(ModBlocks.BLACK_STAINED_GLASS_2.get(), RenderType.getTranslucent());
+        RenderTypeLookup.setRenderLayer(ModBlocks.BLACK_STAINED_GLASS_3.get(), RenderType.getTranslucent());
+        RenderTypeLookup.setRenderLayer(ModBlocks.BLACK_STAINED_GLASS_4.get(), RenderType.getTranslucent());
+        RenderTypeLookup.setRenderLayer(ModBlocks.BLACK_STAINED_GLASS_5.get(), RenderType.getTranslucent());
+        RenderTypeLookup.setRenderLayer(ModBlocks.BLACK_STAINED_GLASS_6.get(), RenderType.getTranslucent());
+        RenderTypeLookup.setRenderLayer(ModBlocks.BLACK_STAINED_GLASS_7.get(), RenderType.getTranslucent());
+        RenderTypeLookup.setRenderLayer(ModBlocks.BLACK_STAINED_GLASS_8.get(), RenderType.getTranslucent());
+        // Blue SG
+        RenderTypeLookup.setRenderLayer(ModBlocks.BLUE_STAINED_GLASS_1.get(), RenderType.getTranslucent());
+        RenderTypeLookup.setRenderLayer(ModBlocks.BLUE_STAINED_GLASS_2.get(), RenderType.getTranslucent());
+        RenderTypeLookup.setRenderLayer(ModBlocks.BLUE_STAINED_GLASS_3.get(), RenderType.getTranslucent());
+        RenderTypeLookup.setRenderLayer(ModBlocks.BLUE_STAINED_GLASS_4.get(), RenderType.getTranslucent());
+        RenderTypeLookup.setRenderLayer(ModBlocks.BLUE_STAINED_GLASS_5.get(), RenderType.getTranslucent());
+        RenderTypeLookup.setRenderLayer(ModBlocks.BLUE_STAINED_GLASS_6.get(), RenderType.getTranslucent());
+        RenderTypeLookup.setRenderLayer(ModBlocks.BLUE_STAINED_GLASS_7.get(), RenderType.getTranslucent());
+        RenderTypeLookup.setRenderLayer(ModBlocks.BLUE_STAINED_GLASS_8.get(), RenderType.getTranslucent());
+        // Brown SG
+        RenderTypeLookup.setRenderLayer(ModBlocks.BROWN_STAINED_GLASS_1.get(), RenderType.getTranslucent());
+        RenderTypeLookup.setRenderLayer(ModBlocks.BROWN_STAINED_GLASS_2.get(), RenderType.getTranslucent());
+        RenderTypeLookup.setRenderLayer(ModBlocks.BROWN_STAINED_GLASS_3.get(), RenderType.getTranslucent());
+        RenderTypeLookup.setRenderLayer(ModBlocks.BROWN_STAINED_GLASS_4.get(), RenderType.getTranslucent());
+        RenderTypeLookup.setRenderLayer(ModBlocks.BROWN_STAINED_GLASS_5.get(), RenderType.getTranslucent());
+        RenderTypeLookup.setRenderLayer(ModBlocks.BROWN_STAINED_GLASS_6.get(), RenderType.getTranslucent());
+        RenderTypeLookup.setRenderLayer(ModBlocks.BROWN_STAINED_GLASS_7.get(), RenderType.getTranslucent());
+        RenderTypeLookup.setRenderLayer(ModBlocks.BROWN_STAINED_GLASS_8.get(), RenderType.getTranslucent());
+        // Cyan SG
+        RenderTypeLookup.setRenderLayer(ModBlocks.CYAN_STAINED_GLASS_1.get(), RenderType.getTranslucent());
+        RenderTypeLookup.setRenderLayer(ModBlocks.CYAN_STAINED_GLASS_2.get(), RenderType.getTranslucent());
+        RenderTypeLookup.setRenderLayer(ModBlocks.CYAN_STAINED_GLASS_3.get(), RenderType.getTranslucent());
+        RenderTypeLookup.setRenderLayer(ModBlocks.CYAN_STAINED_GLASS_4.get(), RenderType.getTranslucent());
+        RenderTypeLookup.setRenderLayer(ModBlocks.CYAN_STAINED_GLASS_5.get(), RenderType.getTranslucent());
+        RenderTypeLookup.setRenderLayer(ModBlocks.CYAN_STAINED_GLASS_6.get(), RenderType.getTranslucent());
+        RenderTypeLookup.setRenderLayer(ModBlocks.CYAN_STAINED_GLASS_7.get(), RenderType.getTranslucent());
+        RenderTypeLookup.setRenderLayer(ModBlocks.CYAN_STAINED_GLASS_8.get(), RenderType.getTranslucent());
+        // Purple SG
+        RenderTypeLookup.setRenderLayer(ModBlocks.PURPLE_STAINED_GLASS_1.get(), RenderType.getTranslucent());
+        RenderTypeLookup.setRenderLayer(ModBlocks.PURPLE_STAINED_GLASS_2.get(), RenderType.getTranslucent());
+        RenderTypeLookup.setRenderLayer(ModBlocks.PURPLE_STAINED_GLASS_3.get(), RenderType.getTranslucent());
+        RenderTypeLookup.setRenderLayer(ModBlocks.PURPLE_STAINED_GLASS_4.get(), RenderType.getTranslucent());
+        RenderTypeLookup.setRenderLayer(ModBlocks.PURPLE_STAINED_GLASS_5.get(), RenderType.getTranslucent());
+        RenderTypeLookup.setRenderLayer(ModBlocks.PURPLE_STAINED_GLASS_6.get(), RenderType.getTranslucent());
+        RenderTypeLookup.setRenderLayer(ModBlocks.PURPLE_STAINED_GLASS_7.get(), RenderType.getTranslucent());
+        RenderTypeLookup.setRenderLayer(ModBlocks.PURPLE_STAINED_GLASS_8.get(), RenderType.getTranslucent());
+        // Gray SG
+        RenderTypeLookup.setRenderLayer(ModBlocks.GRAY_STAINED_GLASS_1.get(), RenderType.getTranslucent());
+        RenderTypeLookup.setRenderLayer(ModBlocks.GRAY_STAINED_GLASS_2.get(), RenderType.getTranslucent());
+        RenderTypeLookup.setRenderLayer(ModBlocks.GRAY_STAINED_GLASS_3.get(), RenderType.getTranslucent());
+        RenderTypeLookup.setRenderLayer(ModBlocks.GRAY_STAINED_GLASS_4.get(), RenderType.getTranslucent());
+        RenderTypeLookup.setRenderLayer(ModBlocks.GRAY_STAINED_GLASS_5.get(), RenderType.getTranslucent());
+        RenderTypeLookup.setRenderLayer(ModBlocks.GRAY_STAINED_GLASS_6.get(), RenderType.getTranslucent());
+        RenderTypeLookup.setRenderLayer(ModBlocks.GRAY_STAINED_GLASS_7.get(), RenderType.getTranslucent());
+        RenderTypeLookup.setRenderLayer(ModBlocks.GRAY_STAINED_GLASS_8.get(), RenderType.getTranslucent());
+        // Green SG
+        RenderTypeLookup.setRenderLayer(ModBlocks.GREEN_STAINED_GLASS_1.get(), RenderType.getTranslucent());
+        RenderTypeLookup.setRenderLayer(ModBlocks.GREEN_STAINED_GLASS_2.get(), RenderType.getTranslucent());
+        RenderTypeLookup.setRenderLayer(ModBlocks.GREEN_STAINED_GLASS_3.get(), RenderType.getTranslucent());
+        RenderTypeLookup.setRenderLayer(ModBlocks.GREEN_STAINED_GLASS_4.get(), RenderType.getTranslucent());
+        RenderTypeLookup.setRenderLayer(ModBlocks.GREEN_STAINED_GLASS_5.get(), RenderType.getTranslucent());
+        RenderTypeLookup.setRenderLayer(ModBlocks.GREEN_STAINED_GLASS_6.get(), RenderType.getTranslucent());
+        RenderTypeLookup.setRenderLayer(ModBlocks.GREEN_STAINED_GLASS_7.get(), RenderType.getTranslucent());
+        RenderTypeLookup.setRenderLayer(ModBlocks.GREEN_STAINED_GLASS_8.get(), RenderType.getTranslucent());
+        // Yellow SG
+        RenderTypeLookup.setRenderLayer(ModBlocks.YELLOW_STAINED_GLASS_1.get(), RenderType.getTranslucent());
+        RenderTypeLookup.setRenderLayer(ModBlocks.YELLOW_STAINED_GLASS_2.get(), RenderType.getTranslucent());
+        RenderTypeLookup.setRenderLayer(ModBlocks.YELLOW_STAINED_GLASS_3.get(), RenderType.getTranslucent());
+        RenderTypeLookup.setRenderLayer(ModBlocks.YELLOW_STAINED_GLASS_4.get(), RenderType.getTranslucent());
+        RenderTypeLookup.setRenderLayer(ModBlocks.YELLOW_STAINED_GLASS_5.get(), RenderType.getTranslucent());
+        RenderTypeLookup.setRenderLayer(ModBlocks.YELLOW_STAINED_GLASS_6.get(), RenderType.getTranslucent());
+        RenderTypeLookup.setRenderLayer(ModBlocks.YELLOW_STAINED_GLASS_7.get(), RenderType.getTranslucent());
+        RenderTypeLookup.setRenderLayer(ModBlocks.YELLOW_STAINED_GLASS_8.get(), RenderType.getTranslucent());
+        // Light Blue SG
+        RenderTypeLookup.setRenderLayer(ModBlocks.LIGHT_BLUE_STAINED_GLASS_1.get(), RenderType.getTranslucent());
+        RenderTypeLookup.setRenderLayer(ModBlocks.LIGHT_BLUE_STAINED_GLASS_2.get(), RenderType.getTranslucent());
+        RenderTypeLookup.setRenderLayer(ModBlocks.LIGHT_BLUE_STAINED_GLASS_3.get(), RenderType.getTranslucent());
+        RenderTypeLookup.setRenderLayer(ModBlocks.LIGHT_BLUE_STAINED_GLASS_4.get(), RenderType.getTranslucent());
+        RenderTypeLookup.setRenderLayer(ModBlocks.LIGHT_BLUE_STAINED_GLASS_5.get(), RenderType.getTranslucent());
+        RenderTypeLookup.setRenderLayer(ModBlocks.LIGHT_BLUE_STAINED_GLASS_6.get(), RenderType.getTranslucent());
+        RenderTypeLookup.setRenderLayer(ModBlocks.LIGHT_BLUE_STAINED_GLASS_7.get(), RenderType.getTranslucent());
+        RenderTypeLookup.setRenderLayer(ModBlocks.LIGHT_BLUE_STAINED_GLASS_8.get(), RenderType.getTranslucent());
+        // Light Gray SG
+        RenderTypeLookup.setRenderLayer(ModBlocks.LIGHT_GRAY_STAINED_GLASS_1.get(), RenderType.getTranslucent());
+        RenderTypeLookup.setRenderLayer(ModBlocks.LIGHT_GRAY_STAINED_GLASS_2.get(), RenderType.getTranslucent());
+        RenderTypeLookup.setRenderLayer(ModBlocks.LIGHT_GRAY_STAINED_GLASS_3.get(), RenderType.getTranslucent());
+        RenderTypeLookup.setRenderLayer(ModBlocks.LIGHT_GRAY_STAINED_GLASS_4.get(), RenderType.getTranslucent());
+        RenderTypeLookup.setRenderLayer(ModBlocks.LIGHT_GRAY_STAINED_GLASS_5.get(), RenderType.getTranslucent());
+        RenderTypeLookup.setRenderLayer(ModBlocks.LIGHT_GRAY_STAINED_GLASS_6.get(), RenderType.getTranslucent());
+        RenderTypeLookup.setRenderLayer(ModBlocks.LIGHT_GRAY_STAINED_GLASS_7.get(), RenderType.getTranslucent());
+        RenderTypeLookup.setRenderLayer(ModBlocks.LIGHT_GRAY_STAINED_GLASS_8.get(), RenderType.getTranslucent());
+        // Lime SG
+        RenderTypeLookup.setRenderLayer(ModBlocks.LIME_STAINED_GLASS_1.get(), RenderType.getTranslucent());
+        RenderTypeLookup.setRenderLayer(ModBlocks.LIME_STAINED_GLASS_2.get(), RenderType.getTranslucent());
+        RenderTypeLookup.setRenderLayer(ModBlocks.LIME_STAINED_GLASS_3.get(), RenderType.getTranslucent());
+        RenderTypeLookup.setRenderLayer(ModBlocks.LIME_STAINED_GLASS_4.get(), RenderType.getTranslucent());
+        RenderTypeLookup.setRenderLayer(ModBlocks.LIME_STAINED_GLASS_5.get(), RenderType.getTranslucent());
+        RenderTypeLookup.setRenderLayer(ModBlocks.LIME_STAINED_GLASS_6.get(), RenderType.getTranslucent());
+        RenderTypeLookup.setRenderLayer(ModBlocks.LIME_STAINED_GLASS_7.get(), RenderType.getTranslucent());
+        RenderTypeLookup.setRenderLayer(ModBlocks.LIME_STAINED_GLASS_8.get(), RenderType.getTranslucent());
+        // Magenta SG
+        RenderTypeLookup.setRenderLayer(ModBlocks.MAGENTA_STAINED_GLASS_1.get(), RenderType.getTranslucent());
+        RenderTypeLookup.setRenderLayer(ModBlocks.MAGENTA_STAINED_GLASS_2.get(), RenderType.getTranslucent());
+        RenderTypeLookup.setRenderLayer(ModBlocks.MAGENTA_STAINED_GLASS_3.get(), RenderType.getTranslucent());
+        RenderTypeLookup.setRenderLayer(ModBlocks.MAGENTA_STAINED_GLASS_4.get(), RenderType.getTranslucent());
+        RenderTypeLookup.setRenderLayer(ModBlocks.MAGENTA_STAINED_GLASS_5.get(), RenderType.getTranslucent());
+        RenderTypeLookup.setRenderLayer(ModBlocks.MAGENTA_STAINED_GLASS_6.get(), RenderType.getTranslucent());
+        RenderTypeLookup.setRenderLayer(ModBlocks.MAGENTA_STAINED_GLASS_7.get(), RenderType.getTranslucent());
+        RenderTypeLookup.setRenderLayer(ModBlocks.MAGENTA_STAINED_GLASS_8.get(), RenderType.getTranslucent());
+        // Orange SG
+        RenderTypeLookup.setRenderLayer(ModBlocks.ORANGE_STAINED_GLASS_1.get(), RenderType.getTranslucent());
+        RenderTypeLookup.setRenderLayer(ModBlocks.ORANGE_STAINED_GLASS_2.get(), RenderType.getTranslucent());
+        RenderTypeLookup.setRenderLayer(ModBlocks.ORANGE_STAINED_GLASS_3.get(), RenderType.getTranslucent());
+        RenderTypeLookup.setRenderLayer(ModBlocks.ORANGE_STAINED_GLASS_4.get(), RenderType.getTranslucent());
+        RenderTypeLookup.setRenderLayer(ModBlocks.ORANGE_STAINED_GLASS_5.get(), RenderType.getTranslucent());
+        RenderTypeLookup.setRenderLayer(ModBlocks.ORANGE_STAINED_GLASS_6.get(), RenderType.getTranslucent());
+        RenderTypeLookup.setRenderLayer(ModBlocks.ORANGE_STAINED_GLASS_7.get(), RenderType.getTranslucent());
+        RenderTypeLookup.setRenderLayer(ModBlocks.ORANGE_STAINED_GLASS_8.get(), RenderType.getTranslucent());
+        // Pink SG
+        RenderTypeLookup.setRenderLayer(ModBlocks.PINK_STAINED_GLASS_1.get(), RenderType.getTranslucent());
+        RenderTypeLookup.setRenderLayer(ModBlocks.PINK_STAINED_GLASS_2.get(), RenderType.getTranslucent());
+        RenderTypeLookup.setRenderLayer(ModBlocks.PINK_STAINED_GLASS_3.get(), RenderType.getTranslucent());
+        RenderTypeLookup.setRenderLayer(ModBlocks.PINK_STAINED_GLASS_4.get(), RenderType.getTranslucent());
+        RenderTypeLookup.setRenderLayer(ModBlocks.PINK_STAINED_GLASS_5.get(), RenderType.getTranslucent());
+        RenderTypeLookup.setRenderLayer(ModBlocks.PINK_STAINED_GLASS_6.get(), RenderType.getTranslucent());
+        RenderTypeLookup.setRenderLayer(ModBlocks.PINK_STAINED_GLASS_7.get(), RenderType.getTranslucent());
+        RenderTypeLookup.setRenderLayer(ModBlocks.PINK_STAINED_GLASS_8.get(), RenderType.getTranslucent());
+        // Red SG
+        RenderTypeLookup.setRenderLayer(ModBlocks.RED_STAINED_GLASS_1.get(), RenderType.getTranslucent());
+        RenderTypeLookup.setRenderLayer(ModBlocks.RED_STAINED_GLASS_2.get(), RenderType.getTranslucent());
+        RenderTypeLookup.setRenderLayer(ModBlocks.RED_STAINED_GLASS_3.get(), RenderType.getTranslucent());
+        RenderTypeLookup.setRenderLayer(ModBlocks.RED_STAINED_GLASS_4.get(), RenderType.getTranslucent());
+        RenderTypeLookup.setRenderLayer(ModBlocks.RED_STAINED_GLASS_5.get(), RenderType.getTranslucent());
+        RenderTypeLookup.setRenderLayer(ModBlocks.RED_STAINED_GLASS_6.get(), RenderType.getTranslucent());
+        RenderTypeLookup.setRenderLayer(ModBlocks.RED_STAINED_GLASS_7.get(), RenderType.getTranslucent());
+        RenderTypeLookup.setRenderLayer(ModBlocks.RED_STAINED_GLASS_8.get(), RenderType.getTranslucent());
+        // White SG
+        RenderTypeLookup.setRenderLayer(ModBlocks.WHITE_STAINED_GLASS_1.get(), RenderType.getTranslucent());
+        RenderTypeLookup.setRenderLayer(ModBlocks.WHITE_STAINED_GLASS_2.get(), RenderType.getTranslucent());
+        RenderTypeLookup.setRenderLayer(ModBlocks.WHITE_STAINED_GLASS_3.get(), RenderType.getTranslucent());
+        RenderTypeLookup.setRenderLayer(ModBlocks.WHITE_STAINED_GLASS_4.get(), RenderType.getTranslucent());
+        RenderTypeLookup.setRenderLayer(ModBlocks.WHITE_STAINED_GLASS_5.get(), RenderType.getTranslucent());
+        RenderTypeLookup.setRenderLayer(ModBlocks.WHITE_STAINED_GLASS_6.get(), RenderType.getTranslucent());
+        RenderTypeLookup.setRenderLayer(ModBlocks.WHITE_STAINED_GLASS_7.get(), RenderType.getTranslucent());
+        RenderTypeLookup.setRenderLayer(ModBlocks.WHITE_STAINED_GLASS_8.get(), RenderType.getTranslucent());
+
     }
 
     private void enqueueIMC(final InterModEnqueueEvent event)
