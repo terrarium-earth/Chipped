@@ -3272,6 +3272,169 @@ public class ModBlocks {
     public static final RegistryObject<Block> WHITE_STAINED_GLASS_8 = register("white_stained_glass_8",
             () -> new StainedGlassBlock(DyeColor.WHITE, AbstractBlock.Properties.create(Material.GLASS)
                     .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ModBlocks::neverAllowSpawn).setOpaque(ModBlocks::isntSolid).setSuffocates(ModBlocks::isntSolid).setBlocksVision(ModBlocks::isntSolid)));
+    // Vines
+
+    public static final RegistryObject<Block> VINE_1 = register("vine_1",
+            () -> new VineBlock(AbstractBlock.Properties.create(Material.PLANTS)
+                    .hardnessAndResistance(0.2F).sound(SoundType.PLANT)));
+
+    // Andesite
+
+    public static final RegistryObject<Block> ANDESITE_1 = register("andesite_1",
+            () -> new Block(AbstractBlock.Properties.create(Material.ROCK)
+                    .hardnessAndResistance(2f, 3f).sound(SoundType.STONE)));
+
+    public static final RegistryObject<Block> ANDESITE_2 = register("andesite_2",
+            () -> new Block(AbstractBlock.Properties.create(Material.ROCK)
+                    .hardnessAndResistance(2f, 3f).sound(SoundType.STONE)));
+
+    public static final RegistryObject<Block> ANDESITE_3 = register("andesite_3",
+            () -> new Block(AbstractBlock.Properties.create(Material.ROCK)
+                    .hardnessAndResistance(2f, 3f).sound(SoundType.STONE)));
+
+    public static final RegistryObject<Block> ANDESITE_4 = register("andesite_4",
+            () -> new Block(AbstractBlock.Properties.create(Material.ROCK)
+                    .hardnessAndResistance(2f, 3f).sound(SoundType.STONE)));
+
+    public static final RegistryObject<Block> ANDESITE_5 = register("andesite_5",
+            () -> new Block(AbstractBlock.Properties.create(Material.ROCK)
+                    .hardnessAndResistance(2f, 3f).sound(SoundType.STONE)));
+
+    public static final RegistryObject<Block> ANDESITE_6 = register("andesite_6",
+            () -> new Block(AbstractBlock.Properties.create(Material.ROCK)
+                    .hardnessAndResistance(2f, 3f).sound(SoundType.STONE)));
+
+    public static final RegistryObject<Block> ANDESITE_7 = register("andesite_7",
+            () -> new Block(AbstractBlock.Properties.create(Material.ROCK)
+                    .hardnessAndResistance(2f, 3f).sound(SoundType.STONE)));
+
+    public static final RegistryObject<Block> ANDESITE_8 = register("andesite_8",
+            () -> new Block(AbstractBlock.Properties.create(Material.ROCK)
+                    .hardnessAndResistance(2f, 3f).sound(SoundType.STONE)));
+
+    public static final RegistryObject<Block> ANDESITE_9 = register("andesite_9",
+            () -> new Block(AbstractBlock.Properties.create(Material.ROCK)
+                    .hardnessAndResistance(2f, 3f).sound(SoundType.STONE)));
+
+    public static final RegistryObject<Block> ANDESITE_10 = register("andesite_10",
+            () -> new Block(AbstractBlock.Properties.create(Material.ROCK)
+                    .hardnessAndResistance(2f, 3f).sound(SoundType.STONE)));
+
+    public static final RegistryObject<Block> ANDESITE_11 = register("andesite_11",
+            () -> new Block(AbstractBlock.Properties.create(Material.ROCK)
+                    .hardnessAndResistance(2f, 3f).sound(SoundType.STONE)));
+
+    public static final RegistryObject<Block> ANDESITE_12 = register("andesite_12",
+            () -> new Block(AbstractBlock.Properties.create(Material.ROCK)
+                    .hardnessAndResistance(2f, 3f).sound(SoundType.STONE)));
+
+    public static final RegistryObject<Block> ANDESITE_13 = register("andesite_13",
+            () -> new Block(AbstractBlock.Properties.create(Material.ROCK)
+                    .hardnessAndResistance(2f, 3f).sound(SoundType.STONE)));
+
+    public static final RegistryObject<Block> ANDESITE_14 = register("andesite_14",
+            () -> new Block(AbstractBlock.Properties.create(Material.ROCK)
+                    .hardnessAndResistance(2f, 3f).sound(SoundType.STONE)));
+
+    public static final RegistryObject<Block> ANDESITE_15 = register("andesite_15",
+            () -> new Block(AbstractBlock.Properties.create(Material.ROCK)
+                    .hardnessAndResistance(2f, 3f).sound(SoundType.STONE)));
+
+    public static final RegistryObject<Block> ANDESITE_16 = register("andesite_16",
+            () -> new Block(AbstractBlock.Properties.create(Material.ROCK)
+                    .hardnessAndResistance(2f, 3f).sound(SoundType.STONE)));
+
+    public static final RegistryObject<Block> ANDESITE_17 = register("andesite_17",
+            () -> new Block(AbstractBlock.Properties.create(Material.ROCK)
+                    .hardnessAndResistance(2f, 3f).sound(SoundType.STONE)));
+
+    public static final RegistryObject<Block> ANDESITE_18 = register("andesite_18",
+            () -> new Block(AbstractBlock.Properties.create(Material.ROCK)
+                    .hardnessAndResistance(2f, 3f).sound(SoundType.STONE)));
+
+    // Clay
+
+
+    public static final RegistryObject<Block> CLAY_1 = register("clay_1",
+            () -> new Block(AbstractBlock.Properties.create(Material.CLAY)
+                    .hardnessAndResistance(2f, 3f).sound(SoundType.GROUND)));
+
+    public static final RegistryObject<Block> CLAY_2 = register("clay_2",
+            () -> new Block(AbstractBlock.Properties.create(Material.CLAY)
+                    .hardnessAndResistance(2f, 3f).sound(SoundType.GROUND)));
+
+    public static final RegistryObject<Block> CLAY_3 = register("clay_3",
+            () -> new Block(AbstractBlock.Properties.create(Material.CLAY)
+                    .hardnessAndResistance(2f, 3f).sound(SoundType.GROUND)));
+
+    public static final RegistryObject<Block> CLAY_4 = register("clay_4",
+            () -> new Block(AbstractBlock.Properties.create(Material.CLAY)
+                    .hardnessAndResistance(2f, 3f).sound(SoundType.GROUND)));
+
+    public static final RegistryObject<Block> CLAY_5 = register("clay_5",
+            () -> new Block(AbstractBlock.Properties.create(Material.CLAY)
+                    .hardnessAndResistance(2f, 3f).sound(SoundType.GROUND)));
+
+    public static final RegistryObject<Block> CLAY_6 = register("clay_6",
+            () -> new Block(AbstractBlock.Properties.create(Material.CLAY)
+                    .hardnessAndResistance(2f, 3f).sound(SoundType.GROUND)));
+
+    public static final RegistryObject<Block> CLAY_7 = register("clay_7",
+            () -> new Block(AbstractBlock.Properties.create(Material.CLAY)
+                    .hardnessAndResistance(2f, 3f).sound(SoundType.GROUND)));
+
+    public static final RegistryObject<Block> CLAY_8 = register("clay_8",
+            () -> new Block(AbstractBlock.Properties.create(Material.CLAY)
+                    .hardnessAndResistance(2f, 3f).sound(SoundType.GROUND)));
+
+    public static final RegistryObject<Block> CLAY_9 = register("clay_9",
+            () -> new Block(AbstractBlock.Properties.create(Material.CLAY)
+                    .hardnessAndResistance(2f, 3f).sound(SoundType.GROUND)));
+
+    public static final RegistryObject<Block> CLAY_10 = register("clay_10",
+            () -> new Block(AbstractBlock.Properties.create(Material.CLAY)
+                    .hardnessAndResistance(2f, 3f).sound(SoundType.GROUND)));
+
+    public static final RegistryObject<Block> CLAY_11 = register("clay_11",
+            () -> new Block(AbstractBlock.Properties.create(Material.CLAY)
+                    .hardnessAndResistance(2f, 3f).sound(SoundType.GROUND)));
+
+    public static final RegistryObject<Block> CLAY_12 = register("clay_12",
+            () -> new Block(AbstractBlock.Properties.create(Material.CLAY)
+                    .hardnessAndResistance(2f, 3f).sound(SoundType.GROUND)));
+
+    public static final RegistryObject<Block> CLAY_13 = register("clay_13",
+            () -> new Block(AbstractBlock.Properties.create(Material.CLAY)
+                    .hardnessAndResistance(2f, 3f).sound(SoundType.GROUND)));
+
+    public static final RegistryObject<Block> CLAY_14 = register("clay_14",
+            () -> new Block(AbstractBlock.Properties.create(Material.CLAY)
+                    .hardnessAndResistance(2f, 3f).sound(SoundType.GROUND)));
+
+    public static final RegistryObject<Block> CLAY_15 = register("clay_15",
+            () -> new Block(AbstractBlock.Properties.create(Material.CLAY)
+                    .hardnessAndResistance(2f, 3f).sound(SoundType.GROUND)));
+
+    public static final RegistryObject<Block> CLAY_16 = register("clay_16",
+            () -> new Block(AbstractBlock.Properties.create(Material.CLAY)
+                    .hardnessAndResistance(2f, 3f).sound(SoundType.GROUND)));
+
+    public static final RegistryObject<Block> CLAY_17 = register("clay_17",
+            () -> new Block(AbstractBlock.Properties.create(Material.CLAY)
+                    .hardnessAndResistance(2f, 3f).sound(SoundType.GROUND)));
+
+    public static final RegistryObject<Block> CLAY_18 = register("clay_18",
+            () -> new Block(AbstractBlock.Properties.create(Material.CLAY)
+                    .hardnessAndResistance(2f, 3f).sound(SoundType.GROUND)));
+
+    public static final RegistryObject<Block> CLAY_19 = register("clay_19",
+            () -> new Block(AbstractBlock.Properties.create(Material.CLAY)
+                    .hardnessAndResistance(2f, 3f).sound(SoundType.GROUND)));
+
+
+
+
+
 
 
     @SubscribeEvent

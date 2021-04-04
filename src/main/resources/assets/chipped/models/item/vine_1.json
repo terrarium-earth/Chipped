@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/vine",
+  "textures": {
+    "layer0": "chipped:block/vine_1"
+  }
+}

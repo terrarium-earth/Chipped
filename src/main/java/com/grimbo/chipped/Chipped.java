@@ -210,7 +210,8 @@ public class Chipped
         RenderTypeLookup.setRenderLayer(ModBlocks.WHITE_STAINED_GLASS_6.get(), RenderType.getTranslucent());
         RenderTypeLookup.setRenderLayer(ModBlocks.WHITE_STAINED_GLASS_7.get(), RenderType.getTranslucent());
         RenderTypeLookup.setRenderLayer(ModBlocks.WHITE_STAINED_GLASS_8.get(), RenderType.getTranslucent());
-
+        // Vines
+        RenderTypeLookup.setRenderLayer(ModBlocks.VINE_1.get(), RenderType.getTranslucent());
     }
 
     private void enqueueIMC(final InterModEnqueueEvent event)
