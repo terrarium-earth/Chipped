@@ -3506,7 +3506,81 @@ public class ModBlocks {
             () -> new Block(AbstractBlock.Properties.create(Material.ROCK)
                     .hardnessAndResistance(2f, 3f).sound(SoundType.STONE)));
 
-    
+    // Prismarine
+
+    public static final RegistryObject<Block> PRISMARINE_1 = register("prismarine_1",
+            () -> new Block(AbstractBlock.Properties.create(Material.ROCK)
+                    .hardnessAndResistance(2f, 3f).sound(SoundType.STONE)));
+
+    public static final RegistryObject<Block> PRISMARINE_2 = register("prismarine_2",
+            () -> new Block(AbstractBlock.Properties.create(Material.ROCK)
+                    .hardnessAndResistance(2f, 3f).sound(SoundType.STONE)));
+
+    public static final RegistryObject<Block> PRISMARINE_3 = register("prismarine_3",
+            () -> new Block(AbstractBlock.Properties.create(Material.ROCK)
+                    .hardnessAndResistance(2f, 3f).sound(SoundType.STONE)));
+
+    public static final RegistryObject<Block> PRISMARINE_4 = register("prismarine_4",
+            () -> new Block(AbstractBlock.Properties.create(Material.ROCK)
+                    .hardnessAndResistance(2f, 3f).sound(SoundType.STONE)));
+
+    public static final RegistryObject<Block> PRISMARINE_5 = register("prismarine_5",
+            () -> new Block(AbstractBlock.Properties.create(Material.ROCK)
+                    .hardnessAndResistance(2f, 3f).sound(SoundType.STONE)));
+
+    public static final RegistryObject<Block> PRISMARINE_6 = register("prismarine_6",
+            () -> new Block(AbstractBlock.Properties.create(Material.ROCK)
+                    .hardnessAndResistance(2f, 3f).sound(SoundType.STONE)));
+
+    public static final RegistryObject<Block> PRISMARINE_7 = register("prismarine_7",
+            () -> new Block(AbstractBlock.Properties.create(Material.ROCK)
+                    .hardnessAndResistance(2f, 3f).sound(SoundType.STONE)));
+
+    public static final RegistryObject<Block> PRISMARINE_8 = register("prismarine_8",
+            () -> new Block(AbstractBlock.Properties.create(Material.ROCK)
+                    .hardnessAndResistance(2f, 3f).sound(SoundType.STONE)));
+
+    public static final RegistryObject<Block> PRISMARINE_9 = register("prismarine_9",
+            () -> new Block(AbstractBlock.Properties.create(Material.ROCK)
+                    .hardnessAndResistance(2f, 3f).sound(SoundType.STONE)));
+
+    public static final RegistryObject<Block> PRISMARINE_10 = register("prismarine_10",
+            () -> new Block(AbstractBlock.Properties.create(Material.ROCK)
+                    .hardnessAndResistance(2f, 3f).sound(SoundType.STONE)));
+
+    public static final RegistryObject<Block> PRISMARINE_11 = register("prismarine_11",
+            () -> new Block(AbstractBlock.Properties.create(Material.ROCK)
+                    .hardnessAndResistance(2f, 3f).sound(SoundType.STONE)));
+
+    public static final RegistryObject<Block> PRISMARINE_12 = register("prismarine_12",
+            () -> new Block(AbstractBlock.Properties.create(Material.ROCK)
+                    .hardnessAndResistance(2f, 3f).sound(SoundType.STONE)));
+
+    public static final RegistryObject<Block> PRISMARINE_13 = register("prismarine_13",
+            () -> new Block(AbstractBlock.Properties.create(Material.ROCK)
+                    .hardnessAndResistance(2f, 3f).sound(SoundType.STONE)));
+
+    public static final RegistryObject<Block> PRISMARINE_14 = register("prismarine_14",
+            () -> new Block(AbstractBlock.Properties.create(Material.ROCK)
+                    .hardnessAndResistance(2f, 3f).sound(SoundType.STONE)));
+
+    public static final RegistryObject<Block> PRISMARINE_15 = register("prismarine_15",
+            () -> new Block(AbstractBlock.Properties.create(Material.ROCK)
+                    .hardnessAndResistance(2f, 3f).sound(SoundType.STONE)));
+
+    public static final RegistryObject<Block> PRISMARINE_16 = register("prismarine_16",
+            () -> new Block(AbstractBlock.Properties.create(Material.ROCK)
+                    .hardnessAndResistance(2f, 3f).sound(SoundType.STONE)));
+
+    public static final RegistryObject<Block> PRISMARINE_17 = register("prismarine_17",
+            () -> new Block(AbstractBlock.Properties.create(Material.ROCK)
+                    .hardnessAndResistance(2f, 3f).sound(SoundType.STONE)));
+
+    public static final RegistryObject<Block> PRISMARINE_18 = register("prismarine_18",
+            () -> new Block(AbstractBlock.Properties.create(Material.ROCK)
+                    .hardnessAndResistance(2f, 3f).sound(SoundType.STONE)));
+
+    //
 
 
 
