@@ -3431,6 +3431,85 @@ public class ModBlocks {
             () -> new Block(AbstractBlock.Properties.create(Material.CLAY)
                     .hardnessAndResistance(2f, 3f).sound(SoundType.GROUND)));
 
+    // Dark Prismarine
+
+
+    public static final RegistryObject<Block> DARKPRISMARINE_1 = register("darkprismarine_1",
+            () -> new Block(AbstractBlock.Properties.create(Material.ROCK)
+                    .hardnessAndResistance(2f, 3f).sound(SoundType.GROUND)));
+
+    public static final RegistryObject<Block> DARKPRISMARINE_2 = register("darkprismarine_2",
+            () -> new Block(AbstractBlock.Properties.create(Material.ROCK)
+                    .hardnessAndResistance(2f, 3f).sound(SoundType.GROUND)));
+
+    public static final RegistryObject<Block> DARKPRISMARINE_3 = register("darkprismarine_3",
+            () -> new Block(AbstractBlock.Properties.create(Material.ROCK)
+                    .hardnessAndResistance(2f, 3f).sound(SoundType.GROUND)));
+
+    public static final RegistryObject<Block> DARKPRISMARINE_4 = register("darkprismarine_4",
+            () -> new Block(AbstractBlock.Properties.create(Material.ROCK)
+                    .hardnessAndResistance(2f, 3f).sound(SoundType.GROUND)));
+
+    public static final RegistryObject<Block> DARKPRISMARINE_5 = register("darkprismarine_5",
+            () -> new Block(AbstractBlock.Properties.create(Material.ROCK)
+                    .hardnessAndResistance(2f, 3f).sound(SoundType.GROUND)));
+
+    public static final RegistryObject<Block> DARKPRISMARINE_6 = register("darkprismarine_6",
+            () -> new Block(AbstractBlock.Properties.create(Material.ROCK)
+                    .hardnessAndResistance(2f, 3f).sound(SoundType.GROUND)));
+
+    public static final RegistryObject<Block> DARKPRISMARINE_7 = register("darkprismarine_7",
+            () -> new Block(AbstractBlock.Properties.create(Material.ROCK)
+                    .hardnessAndResistance(2f, 3f).sound(SoundType.GROUND)));
+
+    public static final RegistryObject<Block> DARKPRISMARINE_8 = register("darkprismarine_8",
+            () -> new Block(AbstractBlock.Properties.create(Material.ROCK)
+                    .hardnessAndResistance(2f, 3f).sound(SoundType.GROUND)));
+
+    public static final RegistryObject<Block> DARKPRISMARINE_9 = register("darkprismarine_9",
+            () -> new Block(AbstractBlock.Properties.create(Material.ROCK)
+                    .hardnessAndResistance(2f, 3f).sound(SoundType.GROUND)));
+
+    public static final RegistryObject<Block> DARKPRISMARINE_10 = register("darkprismarine_10",
+            () -> new Block(AbstractBlock.Properties.create(Material.ROCK)
+                    .hardnessAndResistance(2f, 3f).sound(SoundType.GROUND)));
+
+    public static final RegistryObject<Block> DARKPRISMARINE_11 = register("darkprismarine_11",
+            () -> new Block(AbstractBlock.Properties.create(Material.ROCK)
+                    .hardnessAndResistance(2f, 3f).sound(SoundType.GROUND)));
+
+    public static final RegistryObject<Block> DARKPRISMARINE_12 = register("darkprismarine_12",
+            () -> new Block(AbstractBlock.Properties.create(Material.ROCK)
+                    .hardnessAndResistance(2f, 3f).sound(SoundType.GROUND)));
+
+    public static final RegistryObject<Block> DARKPRISMARINE_13 = register("darkprismarine_13",
+            () -> new Block(AbstractBlock.Properties.create(Material.ROCK)
+                    .hardnessAndResistance(2f, 3f).sound(SoundType.GROUND)));
+
+    public static final RegistryObject<Block> DARKPRISMARINE_14 = register("darkprismarine_14",
+            () -> new Block(AbstractBlock.Properties.create(Material.ROCK)
+                    .hardnessAndResistance(2f, 3f).sound(SoundType.GROUND)));
+
+    public static final RegistryObject<Block> DARKPRISMARINE_15 = register("darkprismarine_15",
+            () -> new Block(AbstractBlock.Properties.create(Material.ROCK)
+                    .hardnessAndResistance(2f, 3f).sound(SoundType.GROUND)));
+
+    public static final RegistryObject<Block> DARKPRISMARINE_16 = register("darkprismarine_16",
+            () -> new Block(AbstractBlock.Properties.create(Material.ROCK)
+                    .hardnessAndResistance(2f, 3f).sound(SoundType.GROUND)));
+
+    public static final RegistryObject<Block> DARKPRISMARINE_17 = register("darkprismarine_17",
+            () -> new Block(AbstractBlock.Properties.create(Material.ROCK)
+                    .hardnessAndResistance(2f, 3f).sound(SoundType.GROUND)));
+
+    public static final RegistryObject<Block> DARKPRISMARINE_18 = register("darkprismarine_18",
+            () -> new Block(AbstractBlock.Properties.create(Material.ROCK)
+                    .hardnessAndResistance(2f, 3f).sound(SoundType.GROUND)));
+
+    
+
+
+
 
 
 
