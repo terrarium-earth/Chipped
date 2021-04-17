@@ -29,11 +29,11 @@ public class Chipped
             return new ItemStack(ChippedBlocks.wools.get(0).get());
         }
     };
-    
+
     private static final Logger LOGGER = LogManager.getLogger();
 
     public Chipped() {
-    	IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
+        IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
         ChippedBlocks.BLOCKS.register(eventBus);
         ChippedBlocks.register();
         ChippedItems.ITEMS.register(eventBus);
@@ -43,9 +43,13 @@ public class Chipped
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::onClientSetupEvent);
         MinecraftForge.EVENT_BUS.register(this);
     }
+
     
     @SubscribeEvent
 	public void onClientSetupEvent(FMLClientSetupEvent event) {
     	ScreenManager.registerFactory(ChippedContainerType.BOTANIST_WORKBENCH.get(), ChippedScreen::new);
     }
 }
+
+}
+
