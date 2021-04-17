@@ -16,6 +16,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.IBlockReader;
 import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.common.ToolType;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.RegistryObject;
@@ -3580,7 +3581,241 @@ public class ModBlocks {
             () -> new Block(AbstractBlock.Properties.create(Material.ROCK)
                     .hardnessAndResistance(2f, 3f).sound(SoundType.STONE)));
 
-    //
+    // Sandstone
+
+    public static final RegistryObject<Block> SANDSTONE_1 = register("sandstone_1", () ->
+            new Block(AbstractBlock.Properties.create(Material.ROCK)));
+    public static final RegistryObject<Block> SANDSTONE_2 = register("sandstone_2", () ->
+            new Block(AbstractBlock.Properties.create(Material.ROCK)));
+    public static final RegistryObject<Block> SANDSTONE_3 = register("sandstone_3", () ->
+            new Block(AbstractBlock.Properties.create(Material.ROCK)));
+    public static final RegistryObject<Block> SANDSTONE_4 = register("sandstone_4", () ->
+            new Block(AbstractBlock.Properties.create(Material.ROCK)));
+    public static final RegistryObject<Block> SANDSTONE_5 = register("sandstone_5", () ->
+            new Block(AbstractBlock.Properties.create(Material.ROCK)));
+    public static final RegistryObject<Block> SANDSTONE_6 = register("sandstone_6", () ->
+            new Block(AbstractBlock.Properties.create(Material.ROCK)));
+    public static final RegistryObject<Block> SANDSTONE_7 = register("sandstone_7", () ->
+            new Block(AbstractBlock.Properties.create(Material.ROCK)));
+    public static final RegistryObject<Block> SANDSTONE_8 = register("sandstone_8", () ->
+            new Block(AbstractBlock.Properties.create(Material.ROCK)));
+    public static final RegistryObject<Block> SANDSTONE_9 = register("sandstone_9", () ->
+            new Block(AbstractBlock.Properties.create(Material.ROCK)));
+    public static final RegistryObject<Block> SANDSTONE_10 = register("sandstone_10", () ->
+            new Block(AbstractBlock.Properties.create(Material.ROCK)));
+    public static final RegistryObject<Block> SANDSTONE_11 = register("sandstone_11", () ->
+            new Block(AbstractBlock.Properties.create(Material.ROCK)));
+    public static final RegistryObject<Block> SANDSTONE_12 = register("sandstone_12", () ->
+            new Block(AbstractBlock.Properties.create(Material.ROCK)));
+    public static final RegistryObject<Block> SANDSTONE_13 = register("sandstone_13", () ->
+            new Block(AbstractBlock.Properties.create(Material.ROCK)));
+    public static final RegistryObject<Block> SANDSTONE_14 = register("sandstone_14", () ->
+            new Block(AbstractBlock.Properties.create(Material.ROCK)));
+    public static final RegistryObject<Block> SANDSTONE_15 = register("sandstone_15", () ->
+            new Block(AbstractBlock.Properties.create(Material.ROCK)));
+    public static final RegistryObject<Block> SANDSTONE_16 = register("sandstone_16", () ->
+            new Block(AbstractBlock.Properties.create(Material.ROCK)));
+    public static final RegistryObject<Block> SANDSTONE_17 = register("sandstone_17", () ->
+            new Block(AbstractBlock.Properties.create(Material.ROCK)));
+    public static final RegistryObject<Block> SANDSTONE_18 = register("sandstone_18", () ->
+            new Block(AbstractBlock.Properties.create(Material.ROCK)));
+
+    // Red Sandstone
+
+    public static final RegistryObject<Block> REDSANDSTONE_1 = register("redsandstone_1", () ->
+            new Block(AbstractBlock.Properties.create(Material.ROCK)));
+    public static final RegistryObject<Block> REDSANDSTONE_2 = register("redsandstone_2", () ->
+            new Block(AbstractBlock.Properties.create(Material.ROCK)));
+    public static final RegistryObject<Block> REDSANDSTONE_3 = register("redsandstone_3", () ->
+            new Block(AbstractBlock.Properties.create(Material.ROCK)));
+    public static final RegistryObject<Block> REDSANDSTONE_4 = register("redsandstone_4", () ->
+            new Block(AbstractBlock.Properties.create(Material.ROCK)));
+    public static final RegistryObject<Block> REDSANDSTONE_5 = register("redsandstone_5", () ->
+            new Block(AbstractBlock.Properties.create(Material.ROCK)));
+    public static final RegistryObject<Block> REDSANDSTONE_6 = register("redsandstone_6", () ->
+            new Block(AbstractBlock.Properties.create(Material.ROCK)));
+    public static final RegistryObject<Block> REDSANDSTONE_7 = register("redsandstone_7", () ->
+            new Block(AbstractBlock.Properties.create(Material.ROCK)));
+    public static final RegistryObject<Block> REDSANDSTONE_8 = register("redsandstone_8", () ->
+            new Block(AbstractBlock.Properties.create(Material.ROCK)));
+    public static final RegistryObject<Block> REDSANDSTONE_9 = register("redsandstone_9", () ->
+            new Block(AbstractBlock.Properties.create(Material.ROCK)));
+    public static final RegistryObject<Block> REDSANDSTONE_10 = register("redsandstone_10", () ->
+            new Block(AbstractBlock.Properties.create(Material.ROCK)));
+    public static final RegistryObject<Block> REDSANDSTONE_11 = register("redsandstone_11", () ->
+            new Block(AbstractBlock.Properties.create(Material.ROCK)));
+    public static final RegistryObject<Block> REDSANDSTONE_12 = register("redsandstone_12", () ->
+            new Block(AbstractBlock.Properties.create(Material.ROCK)));
+    public static final RegistryObject<Block> REDSANDSTONE_13 = register("redsandstone_13", () ->
+            new Block(AbstractBlock.Properties.create(Material.ROCK)));
+    public static final RegistryObject<Block> REDSANDSTONE_14 = register("redsandstone_14", () ->
+            new Block(AbstractBlock.Properties.create(Material.ROCK)));
+    public static final RegistryObject<Block> REDSANDSTONE_15 = register("redsandstone_15", () ->
+            new Block(AbstractBlock.Properties.create(Material.ROCK)));
+    public static final RegistryObject<Block> REDSANDSTONE_16 = register("redsandstone_16", () ->
+            new Block(AbstractBlock.Properties.create(Material.ROCK)));
+    public static final RegistryObject<Block> REDSANDSTONE_17 = register("redsandstone_17", () ->
+            new Block(AbstractBlock.Properties.create(Material.ROCK)));
+    public static final RegistryObject<Block> REDSANDSTONE_18 = register("redsandstone_18", () ->
+            new Block(AbstractBlock.Properties.create(Material.ROCK)));
+
+    // Netherbrick
+
+    public static final RegistryObject<Block> NETHERBRICK_1 = register("netherbrick_1", () ->
+            new Block(AbstractBlock.Properties.create(Material.ROCK)));
+    public static final RegistryObject<Block> NETHERBRICK_2 = register("netherbrick_2", () ->
+            new Block(AbstractBlock.Properties.create(Material.ROCK)));
+    public static final RegistryObject<Block> NETHERBRICK_3 = register("netherbrick_3", () ->
+            new Block(AbstractBlock.Properties.create(Material.ROCK)));
+    public static final RegistryObject<Block> NETHERBRICK_4 = register("netherbrick_4", () ->
+            new Block(AbstractBlock.Properties.create(Material.ROCK)));
+    public static final RegistryObject<Block> NETHERBRICK_5 = register("netherbrick_5", () ->
+            new Block(AbstractBlock.Properties.create(Material.ROCK)));
+    public static final RegistryObject<Block> NETHERBRICK_6 = register("netherbrick_6", () ->
+            new Block(AbstractBlock.Properties.create(Material.ROCK)));
+    public static final RegistryObject<Block> NETHERBRICK_7 = register("netherbrick_7", () ->
+            new Block(AbstractBlock.Properties.create(Material.ROCK)));
+    public static final RegistryObject<Block> NETHERBRICK_8 = register("netherbrick_8", () ->
+            new Block(AbstractBlock.Properties.create(Material.ROCK)));
+    public static final RegistryObject<Block> NETHERBRICK_9 = register("netherbrick_9", () ->
+            new Block(AbstractBlock.Properties.create(Material.ROCK)));
+    public static final RegistryObject<Block> NETHERBRICK_10 = register("netherbrick_10", () ->
+            new Block(AbstractBlock.Properties.create(Material.ROCK)));
+    public static final RegistryObject<Block> NETHERBRICK_11 = register("netherbrick_11", () ->
+            new Block(AbstractBlock.Properties.create(Material.ROCK)));
+    public static final RegistryObject<Block> NETHERBRICK_12 = register("netherbrick_12", () ->
+            new Block(AbstractBlock.Properties.create(Material.ROCK)));
+    public static final RegistryObject<Block> NETHERBRICK_13 = register("netherbrick_13", () ->
+            new Block(AbstractBlock.Properties.create(Material.ROCK)));
+    public static final RegistryObject<Block> NETHERBRICK_14 = register("netherbrick_14", () ->
+            new Block(AbstractBlock.Properties.create(Material.ROCK)));
+    public static final RegistryObject<Block> NETHERBRICK_15 = register("netherbrick_15", () ->
+            new Block(AbstractBlock.Properties.create(Material.ROCK)));
+    public static final RegistryObject<Block> NETHERBRICK_16 = register("netherbrick_16", () ->
+            new Block(AbstractBlock.Properties.create(Material.ROCK)));
+    public static final RegistryObject<Block> NETHERBRICK_17 = register("netherbrick_17", () ->
+            new Block(AbstractBlock.Properties.create(Material.ROCK)));
+    public static final RegistryObject<Block> NETHERBRICK_18 = register("netherbrick_18", () ->
+            new Block(AbstractBlock.Properties.create(Material.ROCK)));
+
+    //rednetherbrick
+
+    public static final RegistryObject<Block> REDNETHERBRICK_1 = register("rednetherbrick_1", () ->
+            new Block(AbstractBlock.Properties.create(Material.ROCK)));
+    public static final RegistryObject<Block> REDNETHERBRICK_2 = register("rednetherbrick_2", () ->
+            new Block(AbstractBlock.Properties.create(Material.ROCK)));
+    public static final RegistryObject<Block> REDNETHERBRICK_3 = register("rednetherbrick_3", () ->
+            new Block(AbstractBlock.Properties.create(Material.ROCK)));
+    public static final RegistryObject<Block> REDNETHERBRICK_4 = register("rednetherbrick_4", () ->
+            new Block(AbstractBlock.Properties.create(Material.ROCK)));
+    public static final RegistryObject<Block> REDNETHERBRICK_5 = register("rednetherbrick_5", () ->
+            new Block(AbstractBlock.Properties.create(Material.ROCK)));
+    public static final RegistryObject<Block> REDNETHERBRICK_6 = register("rednetherbrick_6", () ->
+            new Block(AbstractBlock.Properties.create(Material.ROCK)));
+    public static final RegistryObject<Block> REDNETHERBRICK_7 = register("rednetherbrick_7", () ->
+            new Block(AbstractBlock.Properties.create(Material.ROCK)));
+    public static final RegistryObject<Block> REDNETHERBRICK_8 = register("rednetherbrick_8", () ->
+            new Block(AbstractBlock.Properties.create(Material.ROCK)));
+    public static final RegistryObject<Block> REDNETHERBRICK_9 = register("rednetherbrick_9", () ->
+            new Block(AbstractBlock.Properties.create(Material.ROCK)));
+    public static final RegistryObject<Block> REDNETHERBRICK_10 = register("rednetherbrick_10", () ->
+            new Block(AbstractBlock.Properties.create(Material.ROCK)));
+    public static final RegistryObject<Block> REDNETHERBRICK_11 = register("rednetherbrick_11", () ->
+            new Block(AbstractBlock.Properties.create(Material.ROCK)));
+    public static final RegistryObject<Block> REDNETHERBRICK_12 = register("rednetherbrick_12", () ->
+            new Block(AbstractBlock.Properties.create(Material.ROCK)));
+    public static final RegistryObject<Block> REDNETHERBRICK_13 = register("rednetherbrick_13", () ->
+            new Block(AbstractBlock.Properties.create(Material.ROCK)));
+    public static final RegistryObject<Block> REDNETHERBRICK_14 = register("rednetherbrick_14", () ->
+            new Block(AbstractBlock.Properties.create(Material.ROCK)));
+    public static final RegistryObject<Block> REDNETHERBRICK_15 = register("rednetherbrick_15", () ->
+            new Block(AbstractBlock.Properties.create(Material.ROCK)));
+    public static final RegistryObject<Block> REDNETHERBRICK_16 = register("rednetherbrick_16", () ->
+            new Block(AbstractBlock.Properties.create(Material.ROCK)));
+    public static final RegistryObject<Block> REDNETHERBRICK_17 = register("rednetherbrick_17", () ->
+            new Block(AbstractBlock.Properties.create(Material.ROCK)));
+    public static final RegistryObject<Block> REDNETHERBRICK_18 = register("rednetherbrick_18", () ->
+            new Block(AbstractBlock.Properties.create(Material.ROCK)));
+
+    // quartz
+
+    public static final RegistryObject<Block> QUARTZ_1 = register("quartz_1", () ->
+            new Block(AbstractBlock.Properties.create(Material.ROCK)));
+    public static final RegistryObject<Block> QUARTZ_2 = register("quartz_2", () ->
+            new Block(AbstractBlock.Properties.create(Material.ROCK)));
+    public static final RegistryObject<Block> QUARTZ_3 = register("quartz_3", () ->
+            new Block(AbstractBlock.Properties.create(Material.ROCK)));
+    public static final RegistryObject<Block> QUARTZ_4 = register("quartz_4", () ->
+            new Block(AbstractBlock.Properties.create(Material.ROCK)));
+    public static final RegistryObject<Block> QUARTZ_5 = register("quartz_5", () ->
+            new Block(AbstractBlock.Properties.create(Material.ROCK)));
+    public static final RegistryObject<Block> QUARTZ_6 = register("quartz_6", () ->
+            new Block(AbstractBlock.Properties.create(Material.ROCK)));
+    public static final RegistryObject<Block> QUARTZ_7 = register("quartz_7", () ->
+            new Block(AbstractBlock.Properties.create(Material.ROCK)));
+    public static final RegistryObject<Block> QUARTZ_8 = register("quartz_8", () ->
+            new Block(AbstractBlock.Properties.create(Material.ROCK)));
+    public static final RegistryObject<Block> QUARTZ_9 = register("quartz_9", () ->
+            new Block(AbstractBlock.Properties.create(Material.ROCK)));
+    public static final RegistryObject<Block> QUARTZ_10 = register("quartz_10", () ->
+            new Block(AbstractBlock.Properties.create(Material.ROCK)));
+    public static final RegistryObject<Block> QUARTZ_11 = register("quartz_11", () ->
+            new Block(AbstractBlock.Properties.create(Material.ROCK)));
+    public static final RegistryObject<Block> QUARTZ_12 = register("quartz_12", () ->
+            new Block(AbstractBlock.Properties.create(Material.ROCK)));
+    public static final RegistryObject<Block> QUARTZ_13 = register("quartz_13", () ->
+            new Block(AbstractBlock.Properties.create(Material.ROCK)));
+    public static final RegistryObject<Block> QUARTZ_14 = register("quartz_14", () ->
+            new Block(AbstractBlock.Properties.create(Material.ROCK)));
+    public static final RegistryObject<Block> QUARTZ_15 = register("quartz_15", () ->
+            new Block(AbstractBlock.Properties.create(Material.ROCK)));
+    public static final RegistryObject<Block> QUARTZ_16 = register("quartz_16", () ->
+            new Block(AbstractBlock.Properties.create(Material.ROCK)));
+    public static final RegistryObject<Block> QUARTZ_17 = register("quartz_17", () ->
+            new Block(AbstractBlock.Properties.create(Material.ROCK)));
+    public static final RegistryObject<Block> QUARTZ_18 = register("quartz_18", () ->
+            new Block(AbstractBlock.Properties.create(Material.ROCK)));
+
+    // purpur
+
+    public static final RegistryObject<Block> PURPUR_1 = register("purpur_1", () ->
+            new Block(AbstractBlock.Properties.create(Material.ROCK)));
+    public static final RegistryObject<Block> PURPUR_2 = register("purpur_2", () ->
+            new Block(AbstractBlock.Properties.create(Material.ROCK)));
+    public static final RegistryObject<Block> PURPUR_3 = register("purpur_3", () ->
+            new Block(AbstractBlock.Properties.create(Material.ROCK)));
+    public static final RegistryObject<Block> PURPUR_4 = register("purpur_4", () ->
+            new Block(AbstractBlock.Properties.create(Material.ROCK)));
+    public static final RegistryObject<Block> PURPUR_5 = register("purpur_5", () ->
+            new Block(AbstractBlock.Properties.create(Material.ROCK)));
+    public static final RegistryObject<Block> PURPUR_6 = register("purpur_6", () ->
+            new Block(AbstractBlock.Properties.create(Material.ROCK)));
+    public static final RegistryObject<Block> PURPUR_7 = register("purpur_7", () ->
+            new Block(AbstractBlock.Properties.create(Material.ROCK)));
+    public static final RegistryObject<Block> PURPUR_8 = register("purpur_8", () ->
+            new Block(AbstractBlock.Properties.create(Material.ROCK)));
+    public static final RegistryObject<Block> PURPUR_9 = register("purpur_9", () ->
+            new Block(AbstractBlock.Properties.create(Material.ROCK)));
+    public static final RegistryObject<Block> PURPUR_10 = register("purpur_10", () ->
+            new Block(AbstractBlock.Properties.create(Material.ROCK)));
+    public static final RegistryObject<Block> PURPUR_11 = register("purpur_11", () ->
+            new Block(AbstractBlock.Properties.create(Material.ROCK)));
+    public static final RegistryObject<Block> PURPUR_12 = register("purpur_12", () ->
+            new Block(AbstractBlock.Properties.create(Material.ROCK)));
+    public static final RegistryObject<Block> PURPUR_13 = register("purpur_13", () ->
+            new Block(AbstractBlock.Properties.create(Material.ROCK)));
+    public static final RegistryObject<Block> PURPUR_14 = register("purpur_14", () ->
+            new Block(AbstractBlock.Properties.create(Material.ROCK)));
+    public static final RegistryObject<Block> PURPUR_15 = register("purpur_15", () ->
+            new Block(AbstractBlock.Properties.create(Material.ROCK)));
+    public static final RegistryObject<Block> PURPUR_16 = register("purpur_16", () ->
+            new Block(AbstractBlock.Properties.create(Material.ROCK)));
+    public static final RegistryObject<Block> PURPUR_17 = register("purpur_17", () ->
+            new Block(AbstractBlock.Properties.create(Material.ROCK)));
+    public static final RegistryObject<Block> PURPUR_18 = register("purpur_18", () ->
+            new Block(AbstractBlock.Properties.create(Material.ROCK)));
+
+
 
 
 
