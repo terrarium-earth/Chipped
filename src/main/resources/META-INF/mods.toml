@@ -5,6 +5,7 @@ issueTrackerURL="https://github.com/CookieCNetwork/Chipped/issues"
 [[mods]]
 modId="chipped"
 version="1.0.0"
+logoFile="Chipped Logo big Remastered.png"
 displayName="Chipped"
 credits="Grimbo for the code, Kekie6 for textures"
 authors="Grimbo"
