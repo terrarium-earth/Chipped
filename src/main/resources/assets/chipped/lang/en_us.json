@@ -1,4 +1,5 @@
 {
+  "block.chipped.botanist_workbench": "Botanist Workbench",
   "block.chipped.black_wool_1": "Black Wool",
   "block.chipped.black_wool_2": "Black Wool",
   "block.chipped.black_wool_3": "Black Wool",
@@ -955,15 +956,7 @@
   "block.chipped.quartz_17": "Quartz",
   "block.chipped.quartz_18": "Quartz",
 
-
-
-
-
-
-
-
-
-
+  "container.chipped.botanist_workbench": "Botanist Workbench",
 
   "itemGroup.chippedTab": "Chipped"
 }

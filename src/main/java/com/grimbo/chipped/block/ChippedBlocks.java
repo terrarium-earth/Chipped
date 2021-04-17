@@ -1,5 +1,10 @@
 package com.grimbo.chipped.block;
 
+
+import java.util.ArrayList;
+import java.util.function.Supplier;
+
+
 import com.grimbo.chipped.Chipped;
 import com.grimbo.chipped.item.ChippedItems;
 import net.minecraft.block.*;
@@ -27,6 +32,19 @@ import net.minecraftforge.registries.ForgeRegistries;
 import java.util.function.Supplier;
 
 public class ChippedBlocks {
+
+	public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, Chipped.MOD_ID);
+	
+	public static ArrayList<RegistryObject<Block>> wools = new ArrayList<RegistryObject<Block>>();
+	public static ArrayList<RegistryObject<Block>> carpets = new ArrayList<RegistryObject<Block>>();
+	
+	//Same order as vanilla's coding
+	public static String[] colors = {"white", "orange", "magenta", "light_blue", "yellow", "lime", "pink", "gray", "light_gray", "cyan", "purple", "blue", "brown", "green", "red", "black"};
+	
+	//Workbenches
+	public static final RegistryObject<Block> BOTANIST_WORKBENCH = register("botanist_workbench",
+            () -> new ChippedWorkbench(0, "container.chipped.botanist_workbench", AbstractBlock.Properties.create(Material.WOOD)
+                    .hardnessAndResistance(1f, 2f).sound(SoundType.WOOD).notSolid().setAllowsSpawn(ChippedBlocks::neverAllowSpawn).setOpaque(ChippedBlocks::isntSolid).setSuffocates(ChippedBlocks::isntSolid).setBlocksVision(ChippedBlocks::isntSolid)));
 
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, Chipped.MOD_ID);
 
@@ -2406,326 +2424,301 @@ public class ChippedBlocks {
             () -> new CarpetBlock(DyeColor.MAGENTA, AbstractBlock.Properties.create(Material.WOOL)
                     .hardnessAndResistance(0.3F).sound(SoundType.CLOTH)));
 
-    public static final RegistryObject<Block> MAGENTA_CARPET_13 = register("magenta_carpet_13",
-            () -> new CarpetBlock(DyeColor.MAGENTA, AbstractBlock.Properties.create(Material.WOOL)
-                    .hardnessAndResistance(0.3F).sound(SoundType.CLOTH)));
 
-    public static final RegistryObject<Block> MAGENTA_CARPET_14 = register("magenta_carpet_14",
-            () -> new CarpetBlock(DyeColor.MAGENTA, AbstractBlock.Properties.create(Material.WOOL)
-                    .hardnessAndResistance(0.3F).sound(SoundType.CLOTH)));
+    // 8 Hay Bale Variations
 
-    public static final RegistryObject<Block> MAGENTA_CARPET_15 = register("magenta_carpet_15",
-            () -> new CarpetBlock(DyeColor.MAGENTA, AbstractBlock.Properties.create(Material.WOOL)
-                    .hardnessAndResistance(0.3F).sound(SoundType.CLOTH)));
+    public static final RegistryObject<Block> HAY_BALE_1 = register("hay_bale_1",
+            () -> createHayBlock(MaterialColor.YELLOW, MaterialColor.YELLOW));
 
-    public static final RegistryObject<Block> MAGENTA_CARPET_16 = register("magenta_carpet_16",
-            () -> new CarpetBlock(DyeColor.MAGENTA, AbstractBlock.Properties.create(Material.WOOL)
-                    .hardnessAndResistance(0.3F).sound(SoundType.CLOTH)));
+    public static final RegistryObject<Block> HAY_BALE_2 = register("hay_bale_2",
+            () -> createHayBlock(MaterialColor.YELLOW, MaterialColor.YELLOW));
 
-    public static final RegistryObject<Block> MAGENTA_CARPET_17 = register("magenta_carpet_17",
-            () -> new CarpetBlock(DyeColor.MAGENTA, AbstractBlock.Properties.create(Material.WOOL)
-                    .hardnessAndResistance(0.3F).sound(SoundType.CLOTH)));
+    public static final RegistryObject<Block> HAY_BALE_3 = register("hay_bale_3",
+            () -> createHayBlock(MaterialColor.YELLOW, MaterialColor.YELLOW));
 
-    public static final RegistryObject<Block> MAGENTA_CARPET_18 = register("magenta_carpet_18",
-            () -> new CarpetBlock(DyeColor.MAGENTA, AbstractBlock.Properties.create(Material.WOOL)
-                    .hardnessAndResistance(0.3F).sound(SoundType.CLOTH)));
+    public static final RegistryObject<Block> HAY_BALE_4 = register("hay_bale_4",
+            () -> createHayBlock(MaterialColor.YELLOW, MaterialColor.YELLOW));
 
-    // Orange Carpet
+    public static final RegistryObject<Block> HAY_BALE_5 = register("hay_bale_5",
+            () -> createHayBlock(MaterialColor.YELLOW, MaterialColor.YELLOW));
 
-    public static final RegistryObject<Block> ORANGE_CARPET_1 = register("orange_carpet_1",
-            () -> new CarpetBlock(DyeColor.ORANGE, AbstractBlock.Properties.create(Material.WOOL)
-                    .hardnessAndResistance(0.3F).sound(SoundType.CLOTH)));
+    public static final RegistryObject<Block> HAY_BALE_6 = register("hay_bale_6",
+            () -> createHayBlock(MaterialColor.YELLOW, MaterialColor.YELLOW));
 
-    public static final RegistryObject<Block> ORANGE_CARPET_2 = register("orange_carpet_2",
-            () -> new CarpetBlock(DyeColor.ORANGE, AbstractBlock.Properties.create(Material.WOOL)
-                    .hardnessAndResistance(0.3F).sound(SoundType.CLOTH)));
+    public static final RegistryObject<Block> HAY_BALE_7 = register("hay_bale_7",
+            () -> createHayBlock(MaterialColor.YELLOW, MaterialColor.YELLOW));
 
-    public static final RegistryObject<Block> ORANGE_CARPET_3 = register("orange_carpet_3",
-            () -> new CarpetBlock(DyeColor.ORANGE, AbstractBlock.Properties.create(Material.WOOL)
-                    .hardnessAndResistance(0.3F).sound(SoundType.CLOTH)));
+    public static final RegistryObject<Block> HAY_BALE_8 = register("hay_bale_8",
+            () -> createHayBlock(MaterialColor.YELLOW, MaterialColor.YELLOW));
 
-    public static final RegistryObject<Block> ORANGE_CARPET_4 = register("orange_carpet_4",
-            () -> new CarpetBlock(DyeColor.ORANGE, AbstractBlock.Properties.create(Material.WOOL)
-                    .hardnessAndResistance(0.3F).sound(SoundType.CLOTH)));
+    // Glass
 
-    public static final RegistryObject<Block> ORANGE_CARPET_5 = register("orange_carpet_5",
-            () -> new CarpetBlock(DyeColor.ORANGE, AbstractBlock.Properties.create(Material.WOOL)
-                    .hardnessAndResistance(0.3F).sound(SoundType.CLOTH)));
+    public static final RegistryObject<Block> GLASS_1 = register("glass_1",
+            () -> new GlassBlock(AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ChippedBlocks::neverAllowSpawn).setOpaque(ChippedBlocks::isntSolid).setSuffocates(ChippedBlocks::isntSolid).setBlocksVision(ChippedBlocks::isntSolid)));
 
-    public static final RegistryObject<Block> ORANGE_CARPET_6 = register("orange_carpet_6",
-            () -> new CarpetBlock(DyeColor.ORANGE, AbstractBlock.Properties.create(Material.WOOL)
-                    .hardnessAndResistance(0.3F).sound(SoundType.CLOTH)));
+    public static final RegistryObject<Block> GLASS_2 = register("glass_2",
+            () -> new GlassBlock(AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ChippedBlocks::neverAllowSpawn).setOpaque(ChippedBlocks::isntSolid).setSuffocates(ChippedBlocks::isntSolid).setBlocksVision(ChippedBlocks::isntSolid)));
 
-    public static final RegistryObject<Block> ORANGE_CARPET_7 = register("orange_carpet_7",
-            () -> new CarpetBlock(DyeColor.ORANGE, AbstractBlock.Properties.create(Material.WOOL)
-                    .hardnessAndResistance(0.3F).sound(SoundType.CLOTH)));
+    public static final RegistryObject<Block> GLASS_3 = register("glass_3",
+            () -> new Block(AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ChippedBlocks::neverAllowSpawn).setOpaque(ChippedBlocks::isntSolid).setSuffocates(ChippedBlocks::isntSolid).setBlocksVision(ChippedBlocks::isntSolid)));
 
-    public static final RegistryObject<Block> ORANGE_CARPET_8 = register("orange_carpet_8",
-            () -> new CarpetBlock(DyeColor.ORANGE, AbstractBlock.Properties.create(Material.WOOL)
-                    .hardnessAndResistance(0.3F).sound(SoundType.CLOTH)));
+    public static final RegistryObject<Block> GLASS_4 = register("glass_4",
+            () -> new Block(AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ChippedBlocks::neverAllowSpawn).setOpaque(ChippedBlocks::isntSolid).setSuffocates(ChippedBlocks::isntSolid).setBlocksVision(ChippedBlocks::isntSolid)));
 
-    public static final RegistryObject<Block> ORANGE_CARPET_9 = register("orange_carpet_9",
-            () -> new CarpetBlock(DyeColor.ORANGE, AbstractBlock.Properties.create(Material.WOOL)
-                    .hardnessAndResistance(0.3F).sound(SoundType.CLOTH)));
+    public static final RegistryObject<Block> GLASS_5 = register("glass_5",
+            () -> new Block(AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ChippedBlocks::neverAllowSpawn).setOpaque(ChippedBlocks::isntSolid).setSuffocates(ChippedBlocks::isntSolid).setBlocksVision(ChippedBlocks::isntSolid)));
 
-    public static final RegistryObject<Block> ORANGE_CARPET_10 = register("orange_carpet_10",
-            () -> new CarpetBlock(DyeColor.ORANGE, AbstractBlock.Properties.create(Material.WOOL)
-                    .hardnessAndResistance(0.3F).sound(SoundType.CLOTH)));
+    public static final RegistryObject<Block> GLASS_6 = register("glass_6",
+            () -> new Block(AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ChippedBlocks::neverAllowSpawn).setOpaque(ChippedBlocks::isntSolid).setSuffocates(ChippedBlocks::isntSolid).setBlocksVision(ChippedBlocks::isntSolid)));
 
-    public static final RegistryObject<Block> ORANGE_CARPET_11 = register("orange_carpet_11",
-            () -> new CarpetBlock(DyeColor.ORANGE, AbstractBlock.Properties.create(Material.WOOL)
-                    .hardnessAndResistance(0.3F).sound(SoundType.CLOTH)));
+    public static final RegistryObject<Block> GLASS_7 = register("glass_7",
+            () -> new Block(AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ChippedBlocks::neverAllowSpawn).setOpaque(ChippedBlocks::isntSolid).setSuffocates(ChippedBlocks::isntSolid).setBlocksVision(ChippedBlocks::isntSolid)));
 
-    public static final RegistryObject<Block> ORANGE_CARPET_12 = register("orange_carpet_12",
-            () -> new CarpetBlock(DyeColor.ORANGE, AbstractBlock.Properties.create(Material.WOOL)
-                    .hardnessAndResistance(0.3F).sound(SoundType.CLOTH)));
+    public static final RegistryObject<Block> GLASS_8 = register("glass_8",
+            () -> new Block(AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ChippedBlocks::neverAllowSpawn).setOpaque(ChippedBlocks::isntSolid).setSuffocates(ChippedBlocks::isntSolid).setBlocksVision(ChippedBlocks::isntSolid)));
 
-    public static final RegistryObject<Block> ORANGE_CARPET_13 = register("orange_carpet_13",
-            () -> new CarpetBlock(DyeColor.ORANGE, AbstractBlock.Properties.create(Material.WOOL)
-                    .hardnessAndResistance(0.3F).sound(SoundType.CLOTH)));
+    public static final RegistryObject<Block> GLASS_9 = register("glass_9",
+            () -> new Block(AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ChippedBlocks::neverAllowSpawn).setOpaque(ChippedBlocks::isntSolid).setSuffocates(ChippedBlocks::isntSolid).setBlocksVision(ChippedBlocks::isntSolid)));
 
-    public static final RegistryObject<Block> ORANGE_CARPET_14 = register("orange_carpet_14",
-            () -> new CarpetBlock(DyeColor.ORANGE, AbstractBlock.Properties.create(Material.WOOL)
-                    .hardnessAndResistance(0.3F).sound(SoundType.CLOTH)));
+    public static final RegistryObject<Block> GLASS_10 = register("glass_10",
+            () -> new Block(AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ChippedBlocks::neverAllowSpawn).setOpaque(ChippedBlocks::isntSolid).setSuffocates(ChippedBlocks::isntSolid).setBlocksVision(ChippedBlocks::isntSolid)));
 
-    public static final RegistryObject<Block> ORANGE_CARPET_15 = register("orange_carpet_15",
-            () -> new CarpetBlock(DyeColor.ORANGE, AbstractBlock.Properties.create(Material.WOOL)
-                    .hardnessAndResistance(0.3F).sound(SoundType.CLOTH)));
+    public static final RegistryObject<Block> GLASS_11 = register("glass_11",
+            () -> new Block(AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ChippedBlocks::neverAllowSpawn).setOpaque(ChippedBlocks::isntSolid).setSuffocates(ChippedBlocks::isntSolid).setBlocksVision(ChippedBlocks::isntSolid)));
 
-    public static final RegistryObject<Block> ORANGE_CARPET_16 = register("orange_carpet_16",
-            () -> new CarpetBlock(DyeColor.ORANGE, AbstractBlock.Properties.create(Material.WOOL)
-                    .hardnessAndResistance(0.3F).sound(SoundType.CLOTH)));
+    public static final RegistryObject<Block> GLASS_12 = register("glass_12",
+            () -> new Block(AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ChippedBlocks::neverAllowSpawn).setOpaque(ChippedBlocks::isntSolid).setSuffocates(ChippedBlocks::isntSolid).setBlocksVision(ChippedBlocks::isntSolid)));
 
-    public static final RegistryObject<Block> ORANGE_CARPET_17 = register("orange_carpet_17",
-            () -> new CarpetBlock(DyeColor.ORANGE, AbstractBlock.Properties.create(Material.WOOL)
-                    .hardnessAndResistance(0.3F).sound(SoundType.CLOTH)));
+    public static final RegistryObject<Block> GLASS_13 = register("glass_13",
+            () -> new Block(AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ChippedBlocks::neverAllowSpawn).setOpaque(ChippedBlocks::isntSolid).setSuffocates(ChippedBlocks::isntSolid).setBlocksVision(ChippedBlocks::isntSolid)));
 
-    public static final RegistryObject<Block> ORANGE_CARPET_18 = register("orange_carpet_18",
-            () -> new CarpetBlock(DyeColor.ORANGE, AbstractBlock.Properties.create(Material.WOOL)
-                    .hardnessAndResistance(0.3F).sound(SoundType.CLOTH)));
+    public static final RegistryObject<Block> GLASS_14 = register("glass_14",
+            () -> new Block(AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ChippedBlocks::neverAllowSpawn).setOpaque(ChippedBlocks::isntSolid).setSuffocates(ChippedBlocks::isntSolid).setBlocksVision(ChippedBlocks::isntSolid)));
 
-    // Pink Carpet
+    // Dark Oak Glass
 
-    public static final RegistryObject<Block> PINK_CARPET_1 = register("pink_carpet_1",
-            () -> new CarpetBlock(DyeColor.PINK, AbstractBlock.Properties.create(Material.WOOL)
-                    .hardnessAndResistance(0.3F).sound(SoundType.CLOTH)));
+    public static final RegistryObject<Block> DARK_OAK_GLASS_1 = register("dark_oak_glass_1",
+            () -> new GlassBlock(AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ChippedBlocks::neverAllowSpawn).setOpaque(ChippedBlocks::isntSolid).setSuffocates(ChippedBlocks::isntSolid).setBlocksVision(ChippedBlocks::isntSolid)));
 
-    public static final RegistryObject<Block> PINK_CARPET_2 = register("pink_carpet_2",
-            () -> new CarpetBlock(DyeColor.PINK, AbstractBlock.Properties.create(Material.WOOL)
-                    .hardnessAndResistance(0.3F).sound(SoundType.CLOTH)));
+    public static final RegistryObject<Block> DARK_OAK_GLASS_2 = register("dark_oak_glass_2",
+            () -> new GlassBlock(AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ChippedBlocks::neverAllowSpawn).setOpaque(ChippedBlocks::isntSolid).setSuffocates(ChippedBlocks::isntSolid).setBlocksVision(ChippedBlocks::isntSolid)));
 
-    public static final RegistryObject<Block> PINK_CARPET_3 = register("pink_carpet_3",
-            () -> new CarpetBlock(DyeColor.PINK, AbstractBlock.Properties.create(Material.WOOL)
-                    .hardnessAndResistance(0.3F).sound(SoundType.CLOTH)));
+    public static final RegistryObject<Block> DARK_OAK_GLASS_3 = register("dark_oak_glass_3",
+            () -> new GlassBlock(AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ChippedBlocks::neverAllowSpawn).setOpaque(ChippedBlocks::isntSolid).setSuffocates(ChippedBlocks::isntSolid).setBlocksVision(ChippedBlocks::isntSolid)));
 
-    public static final RegistryObject<Block> PINK_CARPET_4 = register("pink_carpet_4",
-            () -> new CarpetBlock(DyeColor.PINK, AbstractBlock.Properties.create(Material.WOOL)
-                    .hardnessAndResistance(0.3F).sound(SoundType.CLOTH)));
+    public static final RegistryObject<Block> DARK_OAK_GLASS_4 = register("dark_oak_glass_4",
+            () -> new GlassBlock(AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ChippedBlocks::neverAllowSpawn).setOpaque(ChippedBlocks::isntSolid).setSuffocates(ChippedBlocks::isntSolid).setBlocksVision(ChippedBlocks::isntSolid)));
 
-    public static final RegistryObject<Block> PINK_CARPET_5 = register("pink_carpet_5",
-            () -> new CarpetBlock(DyeColor.PINK, AbstractBlock.Properties.create(Material.WOOL)
-                    .hardnessAndResistance(0.3F).sound(SoundType.CLOTH)));
+    public static final RegistryObject<Block> DARK_OAK_GLASS_5 = register("dark_oak_glass_5",
+            () -> new GlassBlock(AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ChippedBlocks::neverAllowSpawn).setOpaque(ChippedBlocks::isntSolid).setSuffocates(ChippedBlocks::isntSolid).setBlocksVision(ChippedBlocks::isntSolid)));
 
-    public static final RegistryObject<Block> PINK_CARPET_6 = register("pink_carpet_6",
-            () -> new CarpetBlock(DyeColor.PINK, AbstractBlock.Properties.create(Material.WOOL)
-                    .hardnessAndResistance(0.3F).sound(SoundType.CLOTH)));
+    public static final RegistryObject<Block> DARK_OAK_GLASS_6 = register("dark_oak_glass_6",
+            () -> new GlassBlock(AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ChippedBlocks::neverAllowSpawn).setOpaque(ChippedBlocks::isntSolid).setSuffocates(ChippedBlocks::isntSolid).setBlocksVision(ChippedBlocks::isntSolid)));
 
-    public static final RegistryObject<Block> PINK_CARPET_7 = register("pink_carpet_7",
-            () -> new CarpetBlock(DyeColor.PINK, AbstractBlock.Properties.create(Material.WOOL)
-                    .hardnessAndResistance(0.3F).sound(SoundType.CLOTH)));
+    // Warped Wood Glass
 
-    public static final RegistryObject<Block> PINK_CARPET_8 = register("pink_carpet_8",
-            () -> new CarpetBlock(DyeColor.PINK, AbstractBlock.Properties.create(Material.WOOL)
-                    .hardnessAndResistance(0.3F).sound(SoundType.CLOTH)));
+    public static final RegistryObject<Block> WARPED_WOOD_GLASS_1 = register("warped_wood_glass_1",
+            () -> new GlassBlock(AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ChippedBlocks::neverAllowSpawn).setOpaque(ChippedBlocks::isntSolid).setSuffocates(ChippedBlocks::isntSolid).setBlocksVision(ChippedBlocks::isntSolid)));
 
-    public static final RegistryObject<Block> PINK_CARPET_9 = register("pink_carpet_9",
-            () -> new CarpetBlock(DyeColor.PINK, AbstractBlock.Properties.create(Material.WOOL)
-                    .hardnessAndResistance(0.3F).sound(SoundType.CLOTH)));
+    public static final RegistryObject<Block> WARPED_WOOD_GLASS_2 = register("warped_wood_glass_2",
+            () -> new GlassBlock(AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ChippedBlocks::neverAllowSpawn).setOpaque(ChippedBlocks::isntSolid).setSuffocates(ChippedBlocks::isntSolid).setBlocksVision(ChippedBlocks::isntSolid)));
 
-    public static final RegistryObject<Block> PINK_CARPET_10 = register("pink_carpet_10",
-            () -> new CarpetBlock(DyeColor.PINK, AbstractBlock.Properties.create(Material.WOOL)
-                    .hardnessAndResistance(0.3F).sound(SoundType.CLOTH)));
+    public static final RegistryObject<Block> WARPED_WOOD_GLASS_3 = register("warped_wood_glass_3",
+            () -> new GlassBlock(AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ChippedBlocks::neverAllowSpawn).setOpaque(ChippedBlocks::isntSolid).setSuffocates(ChippedBlocks::isntSolid).setBlocksVision(ChippedBlocks::isntSolid)));
 
-    public static final RegistryObject<Block> PINK_CARPET_11 = register("pink_carpet_11",
-            () -> new CarpetBlock(DyeColor.PINK, AbstractBlock.Properties.create(Material.WOOL)
-                    .hardnessAndResistance(0.3F).sound(SoundType.CLOTH)));
+    public static final RegistryObject<Block> WARPED_WOOD_GLASS_4 = register("warped_wood_glass_4",
+            () -> new GlassBlock(AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ChippedBlocks::neverAllowSpawn).setOpaque(ChippedBlocks::isntSolid).setSuffocates(ChippedBlocks::isntSolid).setBlocksVision(ChippedBlocks::isntSolid)));
 
-    public static final RegistryObject<Block> PINK_CARPET_12 = register("pink_carpet_12",
-            () -> new CarpetBlock(DyeColor.PINK, AbstractBlock.Properties.create(Material.WOOL)
-                    .hardnessAndResistance(0.3F).sound(SoundType.CLOTH)));
+    public static final RegistryObject<Block> WARPED_WOOD_GLASS_5 = register("warped_wood_glass_5",
+            () -> new GlassBlock(AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ChippedBlocks::neverAllowSpawn).setOpaque(ChippedBlocks::isntSolid).setSuffocates(ChippedBlocks::isntSolid).setBlocksVision(ChippedBlocks::isntSolid)));
 
-    public static final RegistryObject<Block> PINK_CARPET_13 = register("pink_carpet_13",
-            () -> new CarpetBlock(DyeColor.PINK, AbstractBlock.Properties.create(Material.WOOL)
-                    .hardnessAndResistance(0.3F).sound(SoundType.CLOTH)));
+    public static final RegistryObject<Block> WARPED_WOOD_GLASS_6 = register("warped_wood_glass_6",
+            () -> new GlassBlock(AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ChippedBlocks::neverAllowSpawn).setOpaque(ChippedBlocks::isntSolid).setSuffocates(ChippedBlocks::isntSolid).setBlocksVision(ChippedBlocks::isntSolid)));
 
-    public static final RegistryObject<Block> PINK_CARPET_14 = register("pink_carpet_14",
-            () -> new CarpetBlock(DyeColor.PINK, AbstractBlock.Properties.create(Material.WOOL)
-                    .hardnessAndResistance(0.3F).sound(SoundType.CLOTH)));
+    // Spruce Wood Glass
 
-    public static final RegistryObject<Block> PINK_CARPET_15 = register("pink_carpet_15",
-            () -> new CarpetBlock(DyeColor.PINK, AbstractBlock.Properties.create(Material.WOOL)
-                    .hardnessAndResistance(0.3F).sound(SoundType.CLOTH)));
+    public static final RegistryObject<Block> SPRUCE_WOOD_GLASS_1 = register("spruce_wood_glass_1",
+            () -> new GlassBlock(AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ChippedBlocks::neverAllowSpawn).setOpaque(ChippedBlocks::isntSolid).setSuffocates(ChippedBlocks::isntSolid).setBlocksVision(ChippedBlocks::isntSolid)));
 
-    public static final RegistryObject<Block> PINK_CARPET_16 = register("pink_carpet_16",
-            () -> new CarpetBlock(DyeColor.PINK, AbstractBlock.Properties.create(Material.WOOL)
-                    .hardnessAndResistance(0.3F).sound(SoundType.CLOTH)));
+    public static final RegistryObject<Block> SPRUCE_WOOD_GLASS_2 = register("spruce_wood_glass_2",
+            () -> new GlassBlock(AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ChippedBlocks::neverAllowSpawn).setOpaque(ChippedBlocks::isntSolid).setSuffocates(ChippedBlocks::isntSolid).setBlocksVision(ChippedBlocks::isntSolid)));
 
-    public static final RegistryObject<Block> PINK_CARPET_17 = register("pink_carpet_17",
-            () -> new CarpetBlock(DyeColor.PINK, AbstractBlock.Properties.create(Material.WOOL)
-                    .hardnessAndResistance(0.3F).sound(SoundType.CLOTH)));
+    public static final RegistryObject<Block> SPRUCE_WOOD_GLASS_3 = register("spruce_wood_glass_3",
+            () -> new GlassBlock(AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ChippedBlocks::neverAllowSpawn).setOpaque(ChippedBlocks::isntSolid).setSuffocates(ChippedBlocks::isntSolid).setBlocksVision(ChippedBlocks::isntSolid)));
 
-    public static final RegistryObject<Block> PINK_CARPET_18 = register("pink_carpet_18",
-            () -> new CarpetBlock(DyeColor.PINK, AbstractBlock.Properties.create(Material.WOOL)
-                    .hardnessAndResistance(0.3F).sound(SoundType.CLOTH)));
+    public static final RegistryObject<Block> SPRUCE_WOOD_GLASS_4 = register("spruce_wood_glass_4",
+            () -> new GlassBlock(AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ChippedBlocks::neverAllowSpawn).setOpaque(ChippedBlocks::isntSolid).setSuffocates(ChippedBlocks::isntSolid).setBlocksVision(ChippedBlocks::isntSolid)));
 
-    // Red Carpet
+    public static final RegistryObject<Block> SPRUCE_WOOD_GLASS_5 = register("spruce_wood_glass_5",
+            () -> new GlassBlock(AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ChippedBlocks::neverAllowSpawn).setOpaque(ChippedBlocks::isntSolid).setSuffocates(ChippedBlocks::isntSolid).setBlocksVision(ChippedBlocks::isntSolid)));
 
-    public static final RegistryObject<Block> RED_CARPET_1 = register("red_carpet_1",
-            () -> new CarpetBlock(DyeColor.RED, AbstractBlock.Properties.create(Material.WOOL)
-                    .hardnessAndResistance(0.3F).sound(SoundType.CLOTH)));
+    public static final RegistryObject<Block> SPRUCE_WOOD_GLASS_6 = register("spruce_wood_glass_6",
+            () -> new GlassBlock(AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ChippedBlocks::neverAllowSpawn).setOpaque(ChippedBlocks::isntSolid).setSuffocates(ChippedBlocks::isntSolid).setBlocksVision(ChippedBlocks::isntSolid)));
 
-    public static final RegistryObject<Block> RED_CARPET_2 = register("red_carpet_2",
-            () -> new CarpetBlock(DyeColor.RED, AbstractBlock.Properties.create(Material.WOOL)
-                    .hardnessAndResistance(0.3F).sound(SoundType.CLOTH)));
+    // Oak Wood Glass
 
-    public static final RegistryObject<Block> RED_CARPET_3 = register("red_carpet_3",
-            () -> new CarpetBlock(DyeColor.RED, AbstractBlock.Properties.create(Material.WOOL)
-                    .hardnessAndResistance(0.3F).sound(SoundType.CLOTH)));
+    public static final RegistryObject<Block> OAK_WOOD_GLASS_1 = register("oak_wood_glass_1",
+            () -> new GlassBlock(AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ChippedBlocks::neverAllowSpawn).setOpaque(ChippedBlocks::isntSolid).setSuffocates(ChippedBlocks::isntSolid).setBlocksVision(ChippedBlocks::isntSolid)));
 
-    public static final RegistryObject<Block> RED_CARPET_4 = register("red_carpet_4",
-            () -> new CarpetBlock(DyeColor.RED, AbstractBlock.Properties.create(Material.WOOL)
-                    .hardnessAndResistance(0.3F).sound(SoundType.CLOTH)));
+    public static final RegistryObject<Block> OAK_WOOD_GLASS_2 = register("oak_wood_glass_2",
+            () -> new GlassBlock(AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ChippedBlocks::neverAllowSpawn).setOpaque(ChippedBlocks::isntSolid).setSuffocates(ChippedBlocks::isntSolid).setBlocksVision(ChippedBlocks::isntSolid)));
 
-    public static final RegistryObject<Block> RED_CARPET_5 = register("red_carpet_5",
-            () -> new CarpetBlock(DyeColor.RED, AbstractBlock.Properties.create(Material.WOOL)
-                    .hardnessAndResistance(0.3F).sound(SoundType.CLOTH)));
+    public static final RegistryObject<Block> OAK_WOOD_GLASS_3 = register("oak_wood_glass_3",
+            () -> new GlassBlock(AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ChippedBlocks::neverAllowSpawn).setOpaque(ChippedBlocks::isntSolid).setSuffocates(ChippedBlocks::isntSolid).setBlocksVision(ChippedBlocks::isntSolid)));
 
-    public static final RegistryObject<Block> RED_CARPET_6 = register("red_carpet_6",
-            () -> new CarpetBlock(DyeColor.RED, AbstractBlock.Properties.create(Material.WOOL)
-                    .hardnessAndResistance(0.3F).sound(SoundType.CLOTH)));
+    public static final RegistryObject<Block> OAK_WOOD_GLASS_4 = register("oak_wood_glass_4",
+            () -> new GlassBlock(AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ChippedBlocks::neverAllowSpawn).setOpaque(ChippedBlocks::isntSolid).setSuffocates(ChippedBlocks::isntSolid).setBlocksVision(ChippedBlocks::isntSolid)));
 
-    public static final RegistryObject<Block> RED_CARPET_7 = register("red_carpet_7",
-            () -> new CarpetBlock(DyeColor.RED, AbstractBlock.Properties.create(Material.WOOL)
-                    .hardnessAndResistance(0.3F).sound(SoundType.CLOTH)));
+    public static final RegistryObject<Block> OAK_WOOD_GLASS_5 = register("oak_wood_glass_5",
+            () -> new GlassBlock(AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ChippedBlocks::neverAllowSpawn).setOpaque(ChippedBlocks::isntSolid).setSuffocates(ChippedBlocks::isntSolid).setBlocksVision(ChippedBlocks::isntSolid)));
 
-    public static final RegistryObject<Block> RED_CARPET_8 = register("red_carpet_8",
-            () -> new CarpetBlock(DyeColor.RED, AbstractBlock.Properties.create(Material.WOOL)
-                    .hardnessAndResistance(0.3F).sound(SoundType.CLOTH)));
+    public static final RegistryObject<Block> OAK_WOOD_GLASS_6 = register("oak_wood_glass_6",
+            () -> new GlassBlock(AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ChippedBlocks::neverAllowSpawn).setOpaque(ChippedBlocks::isntSolid).setSuffocates(ChippedBlocks::isntSolid).setBlocksVision(ChippedBlocks::isntSolid)));
 
-    public static final RegistryObject<Block> RED_CARPET_9 = register("red_carpet_9",
-            () -> new CarpetBlock(DyeColor.RED, AbstractBlock.Properties.create(Material.WOOL)
-                    .hardnessAndResistance(0.3F).sound(SoundType.CLOTH)));
+    // Birch Wood Glass
 
-    public static final RegistryObject<Block> RED_CARPET_10 = register("red_carpet_10",
-            () -> new CarpetBlock(DyeColor.RED, AbstractBlock.Properties.create(Material.WOOL)
-                    .hardnessAndResistance(0.3F).sound(SoundType.CLOTH)));
+    public static final RegistryObject<Block> BIRCH_WOOD_GLASS_1 = register("birch_wood_glass_1",
+            () -> new GlassBlock(AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ChippedBlocks::neverAllowSpawn).setOpaque(ChippedBlocks::isntSolid).setSuffocates(ChippedBlocks::isntSolid).setBlocksVision(ChippedBlocks::isntSolid)));
 
-    public static final RegistryObject<Block> RED_CARPET_11 = register("red_carpet_11",
-            () -> new CarpetBlock(DyeColor.RED, AbstractBlock.Properties.create(Material.WOOL)
-                    .hardnessAndResistance(0.3F).sound(SoundType.CLOTH)));
+    public static final RegistryObject<Block> BIRCH_WOOD_GLASS_2 = register("birch_wood_glass_2",
+            () -> new GlassBlock(AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ChippedBlocks::neverAllowSpawn).setOpaque(ChippedBlocks::isntSolid).setSuffocates(ChippedBlocks::isntSolid).setBlocksVision(ChippedBlocks::isntSolid)));
 
-    public static final RegistryObject<Block> RED_CARPET_12 = register("red_carpet_12",
-            () -> new CarpetBlock(DyeColor.RED, AbstractBlock.Properties.create(Material.WOOL)
-                    .hardnessAndResistance(0.3F).sound(SoundType.CLOTH)));
+    public static final RegistryObject<Block> BIRCH_WOOD_GLASS_3 = register("birch_wood_glass_3",
+            () -> new GlassBlock(AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ChippedBlocks::neverAllowSpawn).setOpaque(ChippedBlocks::isntSolid).setSuffocates(ChippedBlocks::isntSolid).setBlocksVision(ChippedBlocks::isntSolid)));
 
-    public static final RegistryObject<Block> RED_CARPET_13 = register("red_carpet_13",
-            () -> new CarpetBlock(DyeColor.RED, AbstractBlock.Properties.create(Material.WOOL)
-                    .hardnessAndResistance(0.3F).sound(SoundType.CLOTH)));
+    public static final RegistryObject<Block> BIRCH_WOOD_GLASS_4 = register("birch_wood_glass_4",
+            () -> new GlassBlock(AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ChippedBlocks::neverAllowSpawn).setOpaque(ChippedBlocks::isntSolid).setSuffocates(ChippedBlocks::isntSolid).setBlocksVision(ChippedBlocks::isntSolid)));
 
-    public static final RegistryObject<Block> RED_CARPET_14 = register("red_carpet_14",
-            () -> new CarpetBlock(DyeColor.RED, AbstractBlock.Properties.create(Material.WOOL)
-                    .hardnessAndResistance(0.3F).sound(SoundType.CLOTH)));
+    public static final RegistryObject<Block> BIRCH_WOOD_GLASS_5 = register("birch_wood_glass_5",
+            () -> new GlassBlock(AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ChippedBlocks::neverAllowSpawn).setOpaque(ChippedBlocks::isntSolid).setSuffocates(ChippedBlocks::isntSolid).setBlocksVision(ChippedBlocks::isntSolid)));
 
-    public static final RegistryObject<Block> RED_CARPET_15 = register("red_carpet_15",
-            () -> new CarpetBlock(DyeColor.RED, AbstractBlock.Properties.create(Material.WOOL)
-                    .hardnessAndResistance(0.3F).sound(SoundType.CLOTH)));
+    public static final RegistryObject<Block> BIRCH_WOOD_GLASS_6 = register("birch_wood_glass_6",
+            () -> new GlassBlock(AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ChippedBlocks::neverAllowSpawn).setOpaque(ChippedBlocks::isntSolid).setSuffocates(ChippedBlocks::isntSolid).setBlocksVision(ChippedBlocks::isntSolid)));
 
-    public static final RegistryObject<Block> RED_CARPET_16 = register("red_carpet_16",
-            () -> new CarpetBlock(DyeColor.RED, AbstractBlock.Properties.create(Material.WOOL)
-                    .hardnessAndResistance(0.3F).sound(SoundType.CLOTH)));
+    // Jungle Wood Glass
 
-    public static final RegistryObject<Block> RED_CARPET_17 = register("red_carpet_17",
-            () -> new CarpetBlock(DyeColor.RED, AbstractBlock.Properties.create(Material.WOOL)
-                    .hardnessAndResistance(0.3F).sound(SoundType.CLOTH)));
+    public static final RegistryObject<Block> JUNGLE_WOOD_GLASS_1 = register("jungle_wood_glass_1",
+            () -> new GlassBlock(AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ChippedBlocks::neverAllowSpawn).setOpaque(ChippedBlocks::isntSolid).setSuffocates(ChippedBlocks::isntSolid).setBlocksVision(ChippedBlocks::isntSolid)));
 
-    public static final RegistryObject<Block> RED_CARPET_18 = register("red_carpet_18",
-            () -> new CarpetBlock(DyeColor.RED, AbstractBlock.Properties.create(Material.WOOL)
-                    .hardnessAndResistance(0.3F).sound(SoundType.CLOTH)));
+    public static final RegistryObject<Block> JUNGLE_WOOD_GLASS_2 = register("jungle_wood_glass_2",
+            () -> new GlassBlock(AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ChippedBlocks::neverAllowSpawn).setOpaque(ChippedBlocks::isntSolid).setSuffocates(ChippedBlocks::isntSolid).setBlocksVision(ChippedBlocks::isntSolid)));
 
-    // White Carpet
+    public static final RegistryObject<Block> JUNGLE_WOOD_GLASS_3 = register("jungle_wood_glass_3",
+            () -> new GlassBlock(AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ChippedBlocks::neverAllowSpawn).setOpaque(ChippedBlocks::isntSolid).setSuffocates(ChippedBlocks::isntSolid).setBlocksVision(ChippedBlocks::isntSolid)));
 
-    public static final RegistryObject<Block> WHITE_CARPET_1 = register("white_carpet_1",
-            () -> new CarpetBlock(DyeColor.WHITE, AbstractBlock.Properties.create(Material.WOOL)
-                    .hardnessAndResistance(0.3F).sound(SoundType.CLOTH)));
+    public static final RegistryObject<Block> JUNGLE_WOOD_GLASS_4 = register("jungle_wood_glass_4",
+            () -> new GlassBlock(AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ChippedBlocks::neverAllowSpawn).setOpaque(ChippedBlocks::isntSolid).setSuffocates(ChippedBlocks::isntSolid).setBlocksVision(ChippedBlocks::isntSolid)));
 
-    public static final RegistryObject<Block> WHITE_CARPET_2 = register("white_carpet_2",
-            () -> new CarpetBlock(DyeColor.WHITE, AbstractBlock.Properties.create(Material.WOOL)
-                    .hardnessAndResistance(0.3F).sound(SoundType.CLOTH)));
+    public static final RegistryObject<Block> JUNGLE_WOOD_GLASS_5 = register("jungle_wood_glass_5",
+            () -> new GlassBlock(AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ChippedBlocks::neverAllowSpawn).setOpaque(ChippedBlocks::isntSolid).setSuffocates(ChippedBlocks::isntSolid).setBlocksVision(ChippedBlocks::isntSolid)));
 
-    public static final RegistryObject<Block> WHITE_CARPET_3 = register("white_carpet_3",
-            () -> new CarpetBlock(DyeColor.WHITE, AbstractBlock.Properties.create(Material.WOOL)
-                    .hardnessAndResistance(0.3F).sound(SoundType.CLOTH)));
+    public static final RegistryObject<Block> JUNGLE_WOOD_GLASS_6 = register("jungle_wood_glass_6",
+            () -> new GlassBlock(AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ChippedBlocks::neverAllowSpawn).setOpaque(ChippedBlocks::isntSolid).setSuffocates(ChippedBlocks::isntSolid).setBlocksVision(ChippedBlocks::isntSolid)));
 
-    public static final RegistryObject<Block> WHITE_CARPET_4 = register("white_carpet_4",
-            () -> new CarpetBlock(DyeColor.WHITE, AbstractBlock.Properties.create(Material.WOOL)
-                    .hardnessAndResistance(0.3F).sound(SoundType.CLOTH)));
+    // Crimson Wood Glass
 
-    public static final RegistryObject<Block> WHITE_CARPET_5 = register("white_carpet_5",
-            () -> new CarpetBlock(DyeColor.WHITE, AbstractBlock.Properties.create(Material.WOOL)
-                    .hardnessAndResistance(0.3F).sound(SoundType.CLOTH)));
+    public static final RegistryObject<Block> CRIMSON_WOOD_GLASS_1 = register("crimson_wood_glass_1",
+            () -> new GlassBlock(AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ChippedBlocks::neverAllowSpawn).setOpaque(ChippedBlocks::isntSolid).setSuffocates(ChippedBlocks::isntSolid).setBlocksVision(ChippedBlocks::isntSolid)));
 
-    public static final RegistryObject<Block> WHITE_CARPET_6 = register("white_carpet_6",
-            () -> new CarpetBlock(DyeColor.WHITE, AbstractBlock.Properties.create(Material.WOOL)
-                    .hardnessAndResistance(0.3F).sound(SoundType.CLOTH)));
+    public static final RegistryObject<Block> CRIMSON_WOOD_GLASS_2 = register("crimson_wood_glass_2",
+            () -> new GlassBlock(AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ChippedBlocks::neverAllowSpawn).setOpaque(ChippedBlocks::isntSolid).setSuffocates(ChippedBlocks::isntSolid).setBlocksVision(ChippedBlocks::isntSolid)));
 
-    public static final RegistryObject<Block> WHITE_CARPET_7 = register("white_carpet_7",
-            () -> new CarpetBlock(DyeColor.WHITE, AbstractBlock.Properties.create(Material.WOOL)
-                    .hardnessAndResistance(0.3F).sound(SoundType.CLOTH)));
+    public static final RegistryObject<Block> CRIMSON_WOOD_GLASS_3 = register("crimson_wood_glass_3",
+            () -> new GlassBlock(AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ChippedBlocks::neverAllowSpawn).setOpaque(ChippedBlocks::isntSolid).setSuffocates(ChippedBlocks::isntSolid).setBlocksVision(ChippedBlocks::isntSolid)));
 
-    public static final RegistryObject<Block> WHITE_CARPET_8 = register("white_carpet_8",
-            () -> new CarpetBlock(DyeColor.WHITE, AbstractBlock.Properties.create(Material.WOOL)
-                    .hardnessAndResistance(0.3F).sound(SoundType.CLOTH)));
 
-    public static final RegistryObject<Block> WHITE_CARPET_9 = register("white_carpet_9",
-            () -> new CarpetBlock(DyeColor.WHITE, AbstractBlock.Properties.create(Material.WOOL)
-                    .hardnessAndResistance(0.3F).sound(SoundType.CLOTH)));
+    public static final RegistryObject<Block> CRIMSON_WOOD_GLASS_4 = register("crimson_wood_glass_4",
+            () -> new GlassBlock(AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ChippedBlocks::neverAllowSpawn).setOpaque(ChippedBlocks::isntSolid).setSuffocates(ChippedBlocks::isntSolid).setBlocksVision(ChippedBlocks::isntSolid)));
 
-    public static final RegistryObject<Block> WHITE_CARPET_10 = register("white_carpet_10",
-            () -> new CarpetBlock(DyeColor.WHITE, AbstractBlock.Properties.create(Material.WOOL)
-                    .hardnessAndResistance(0.3F).sound(SoundType.CLOTH)));
 
-    public static final RegistryObject<Block> WHITE_CARPET_11 = register("white_carpet_11",
-            () -> new CarpetBlock(DyeColor.WHITE, AbstractBlock.Properties.create(Material.WOOL)
-                    .hardnessAndResistance(0.3F).sound(SoundType.CLOTH)));
+    public static final RegistryObject<Block> CRIMSON_WOOD_GLASS_5 = register("crimson_wood_glass_5",
+            () -> new GlassBlock(AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ChippedBlocks::neverAllowSpawn).setOpaque(ChippedBlocks::isntSolid).setSuffocates(ChippedBlocks::isntSolid).setBlocksVision(ChippedBlocks::isntSolid)));
 
-    public static final RegistryObject<Block> WHITE_CARPET_12 = register("white_carpet_12",
-            () -> new CarpetBlock(DyeColor.WHITE, AbstractBlock.Properties.create(Material.WOOL)
-                    .hardnessAndResistance(0.3F).sound(SoundType.CLOTH)));
 
-    public static final RegistryObject<Block> WHITE_CARPET_13 = register("white_carpet_13",
-            () -> new CarpetBlock(DyeColor.WHITE, AbstractBlock.Properties.create(Material.WOOL)
-                    .hardnessAndResistance(0.3F).sound(SoundType.CLOTH)));
+    public static final RegistryObject<Block> CRIMSON_WOOD_GLASS_6 = register("crimson_wood_glass_6",
+            () -> new GlassBlock(AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ChippedBlocks::neverAllowSpawn).setOpaque(ChippedBlocks::isntSolid).setSuffocates(ChippedBlocks::isntSolid).setBlocksVision(ChippedBlocks::isntSolid)));
 
-    public static final RegistryObject<Block> WHITE_CARPET_14 = register("white_carpet_14",
-            () -> new CarpetBlock(DyeColor.WHITE, AbstractBlock.Properties.create(Material.WOOL)
-                    .hardnessAndResistance(0.3F).sound(SoundType.CLOTH)));
+    // Acacia Glass
 
-    public static final RegistryObject<Block> WHITE_CARPET_15 = register("white_carpet_15",
-            () -> new CarpetBlock(DyeColor.WHITE, AbstractBlock.Properties.create(Material.WOOL)
-                    .hardnessAndResistance(0.3F).sound(SoundType.CLOTH)));
+    public static final RegistryObject<Block> ACACIA_WOOD_GLASS_1 = register("acacia_wood_glass_1",
+            () -> new GlassBlock(AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ChippedBlocks::neverAllowSpawn).setOpaque(ChippedBlocks::isntSolid).setSuffocates(ChippedBlocks::isntSolid).setBlocksVision(ChippedBlocks::isntSolid)));
 
-    public static final RegistryObject<Block> WHITE_CARPET_16 = register("white_carpet_16",
-            () -> new CarpetBlock(DyeColor.WHITE, AbstractBlock.Properties.create(Material.WOOL)
-                    .hardnessAndResistance(0.3F).sound(SoundType.CLOTH)));
+    public static final RegistryObject<Block> ACACIA_WOOD_GLASS_2 = register("acacia_wood_glass_2",
+            () -> new GlassBlock(AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ChippedBlocks::neverAllowSpawn).setOpaque(ChippedBlocks::isntSolid).setSuffocates(ChippedBlocks::isntSolid).setBlocksVision(ChippedBlocks::isntSolid)));
 
-    public static final RegistryObject<Block> WHITE_CARPET_17 = register("white_carpet_17",
-            () -> new CarpetBlock(DyeColor.WHITE, AbstractBlock.Properties.create(Material.WOOL)
-                    .hardnessAndResistance(0.3F).sound(SoundType.CLOTH)));
+    public static final RegistryObject<Block> ACACIA_WOOD_GLASS_3 = register("acacia_wood_glass_3",
+            () -> new GlassBlock(AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ChippedBlocks::neverAllowSpawn).setOpaque(ChippedBlocks::isntSolid).setSuffocates(ChippedBlocks::isntSolid).setBlocksVision(ChippedBlocks::isntSolid)));
 
-    public static final RegistryObject<Block> WHITE_CARPET_18 = register("white_carpet_18",
-            () -> new CarpetBlock(DyeColor.WHITE, AbstractBlock.Properties.create(Material.WOOL)
-                    .hardnessAndResistance(0.3F).sound(SoundType.CLOTH)));
+    public static final RegistryObject<Block> ACACIA_WOOD_GLASS_4 = register("acacia_wood_glass_4",
+            () -> new GlassBlock(AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ChippedBlocks::neverAllowSpawn).setOpaque(ChippedBlocks::isntSolid).setSuffocates(ChippedBlocks::isntSolid).setBlocksVision(ChippedBlocks::isntSolid)));
 
+    public static final RegistryObject<Block> ACACIA_WOOD_GLASS_5 = register("acacia_wood_glass_5",
+            () -> new GlassBlock(AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ChippedBlocks::neverAllowSpawn).setOpaque(ChippedBlocks::isntSolid).setSuffocates(ChippedBlocks::isntSolid).setBlocksVision(ChippedBlocks::isntSolid)));
+
+    public static final RegistryObject<Block> ACACIA_WOOD_GLASS_6 = register("acacia_wood_glass_6",
+            () -> new GlassBlock(AbstractBlock.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ChippedBlocks::neverAllowSpawn).setOpaque(ChippedBlocks::isntSolid).setSuffocates(ChippedBlocks::isntSolid).setBlocksVision(ChippedBlocks::isntSolid)));
 
     // Stained Glass
     // Black Stained Glass
@@ -3818,6 +3811,7 @@ public class ChippedBlocks {
 
     @OnlyIn(Dist.CLIENT)
     public static void clientRender(final FMLClientSetupEvent event) {
+    	RenderTypeLookup.setRenderLayer(BOTANIST_WORKBENCH.get(), RenderType.getCutout());
         // Normal
         RenderTypeLookup.setRenderLayer(GLASS_1.get(), RenderType.getCutout());
         RenderTypeLookup.setRenderLayer(GLASS_2.get(), RenderType.getCutout());
@@ -4038,6 +4032,29 @@ public class ChippedBlocks {
         RenderTypeLookup.setRenderLayer(VINE_1.get(), RenderType.getTranslucent());
     }
 
+    public static void register() {
+    	registerWool();
+    	registerCarpet();
+    }
+    
+    private static void registerWool() {
+    	for (String color : colors) {
+    		for (int i = 1; i <= 18; i++) {
+    			wools.add(register(color + "_wool_" + i, () -> new Block(AbstractBlock.Properties.create(Material.WOOL)
+    	                    .hardnessAndResistance(1f, 2f).sound(SoundType.CLOTH))));
+    		}
+    	}
+    }
+    
+    private static void registerCarpet() {
+    	for (String color : colors) {
+    		for (int i = 1; i <= 18; i++) {
+    			carpets.add(register(color + "_carpet_" + i, () -> new CarpetBlock(DyeColor.byTranslationKey(color, DyeColor.BLACK), AbstractBlock.Properties.create(Material.WOOL)
+    					.hardnessAndResistance(0.3F).sound(SoundType.CLOTH))));
+    		}
+    	}
+    }
+    
     private static boolean isntSolid(BlockState state, IBlockReader reader, BlockPos pos) {
         return false;
     }
