@@ -23,11 +23,11 @@ public class Chipped
             return new ItemStack(ChippedBlocks.BLACK_WOOL_1.get());
         }
     };
-    
+
     private static final Logger LOGGER = LogManager.getLogger();
 
     public Chipped() {
-    	IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
+        IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
         ChippedBlocks.BLOCKS.register(eventBus);
         ChippedItems.ITEMS.register(eventBus);
         FMLJavaModLoadingContext.get().getModEventBus().addListener(ChippedBlocks::clientRender);
