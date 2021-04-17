@@ -1,12 +1,12 @@
-modLoader="javafml" #mandatory
-loaderVersion="[35,)" #mandatory
+modLoader="javafml"
+loaderVersion="[35,)"
 license="All rights reserved"
-[[mods]] #mandatory
-modId="chipped" #mandatory
-#version="1.0.0" #mandatory
-displayName="Chipped" #mandatory
-credits="Grimbo for the code, Kekie6 for textures" #optional
-authors="Grimbo" #optional
+issueTrackerURL="https://github.com/CookieCNetwork/Chipped/issues"
+[[mods]]
+modId="chipped"
+version="1.0.0"
+displayName="Chipped"
+credits="Grimbo for the code, Kekie6 for textures"
+authors="Grimbo"
 description='''
-This is a long form description of the mod. You can write whatever you want here
 '''
