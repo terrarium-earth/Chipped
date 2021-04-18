@@ -12,6 +12,6 @@ public class ChippedContainerType {
 
 	//Add new ContainerTypes here
 	public static final DeferredRegister<ContainerType<?>> CONTAINER = DeferredRegister.create(ForgeRegistries.CONTAINERS, Chipped.MOD_ID);
-	
+
 	public static final RegistryObject<ContainerType<ChippedContainer>> BOTANIST_WORKBENCH = CONTAINER.register("botanist_workbench", () -> IForgeContainerType.create(BotanistWorkbenchContainer::new));
 }
