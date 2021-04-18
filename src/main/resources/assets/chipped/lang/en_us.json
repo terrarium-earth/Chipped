@@ -1,5 +1,7 @@
 {
   "block.chipped.botanist_workbench": "Botanist Workbench",
+  "block.chipped.glassblower": "Glassblower",
+  "block.chipped.carpenters_table": "Carpenter's Table",
   "block.chipped.black_wool_1": "Black Wool",
   "block.chipped.black_wool_2": "Black Wool",
   "block.chipped.black_wool_3": "Black Wool",
@@ -1055,6 +1057,7 @@
 
 
   "container.chipped.botanist_workbench": "Botanist Workbench",
-
+  "container.chipped.glassblower": "Glass Blower",
+  "container.chipped.carpenters_table": "Carpenter's Table",
   "itemGroup.chippedTab": "Chipped"
 }

@@ -63,7 +63,12 @@ public class ChippedBlocks {
     public static final RegistryObject<Block> BOTANIST_WORKBENCH = register("botanist_workbench",
             () -> new ChippedWorkbench(0, "container.chipped.botanist_workbench", AbstractBlock.Properties.create(Material.WOOD)
                     .hardnessAndResistance(1f, 2f).sound(SoundType.WOOD).notSolid().setAllowsSpawn(ChippedBlocks::neverAllowSpawn).setOpaque(ChippedBlocks::isntSolid).setSuffocates(ChippedBlocks::isntSolid).setBlocksVision(ChippedBlocks::isntSolid)));
-
+    public static final RegistryObject<Block> GLASSBLOWER = register("glassblower",
+            () -> new ChippedWorkbench(1, "container.chipped.glassblower", AbstractBlock.Properties.create(Material.WOOD)
+                    .hardnessAndResistance(1f, 2f).sound(SoundType.WOOD).notSolid().setAllowsSpawn(ChippedBlocks::neverAllowSpawn).setOpaque(ChippedBlocks::isntSolid).setSuffocates(ChippedBlocks::isntSolid).setBlocksVision(ChippedBlocks::isntSolid)));
+    public static final RegistryObject<Block> CARPENTERS_TABLE = register("carpenters_table",
+            () -> new ChippedWorkbench(2, "container.chipped.carpenters_table", AbstractBlock.Properties.create(Material.WOOD)
+                    .hardnessAndResistance(1f, 2f).sound(SoundType.WOOD).notSolid().setAllowsSpawn(ChippedBlocks::neverAllowSpawn).setOpaque(ChippedBlocks::isntSolid).setSuffocates(ChippedBlocks::isntSolid).setBlocksVision(ChippedBlocks::isntSolid)));
     // 8 Hay Bale Variations
 
     public static final RegistryObject<Block> HAY_BALE_1 = register("hay_bale_1",
