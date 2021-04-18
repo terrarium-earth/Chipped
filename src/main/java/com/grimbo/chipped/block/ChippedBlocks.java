@@ -1618,7 +1618,19 @@ public class ChippedBlocks {
             new Block(AbstractBlock.Properties.create(Material.ROCK)));
     public static final RegistryObject<Block> STONE_18 = register("stone_18", () ->
             new Block(AbstractBlock.Properties.create(Material.ROCK)));
-
+    
+// gilded blackstone
+    
+    public static final RegistryObject<Block> GILDEDBLACKSTONE_1 = register("gildedblackstone_1", () ->
+            new Block(AbstractBlock.Properties.create(Material.ROCK)));
+    public static final RegistryObject<Block> GILDEDBLACKSTONE_2 = register("gildedblackstone_2", () ->
+            new Block(AbstractBlock.Properties.create(Material.ROCK)));
+    public static final RegistryObject<Block> GILDEDBLACKSTONE_3 = register("gildedblackstone_3", () ->
+            new Block(AbstractBlock.Properties.create(Material.ROCK)));
+    public static final RegistryObject<Block> GILDEDBLACKSTONE_4 = register("gildedblackstone_4", () ->
+            new Block(AbstractBlock.Properties.create(Material.ROCK)));
+    public static final RegistryObject<Block> GILDEDBLACKSTONE_5 = register("gildedblackstone_5", () ->
+            new Block(AbstractBlock.Properties.create(Material.ROCK)));
 
 
     @OnlyIn(Dist.CLIENT)
