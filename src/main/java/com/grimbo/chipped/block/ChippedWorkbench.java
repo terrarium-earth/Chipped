@@ -4,6 +4,8 @@ import javax.annotation.Nullable;
 
 import com.grimbo.chipped.container.BotanistWorkbenchContainer;
 
+import com.grimbo.chipped.container.CarpentersTableContainer;
+import com.grimbo.chipped.container.GlassblowerContainer;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockRenderType;
 import net.minecraft.block.BlockState;
@@ -58,6 +60,11 @@ public class ChippedWorkbench extends Block {
 			switch(containerId) {
 				case 0:
 					return new BotanistWorkbenchContainer(id, inventory, IWorldPosCallable.of(worldIn, pos));
+				case 1:
+					return new GlassblowerContainer(id, inventory, IWorldPosCallable.of(worldIn, pos));
+				case 2:
+					return new CarpentersTableContainer(id, inventory, IWorldPosCallable.of(worldIn, pos));
+
 			}
 			return null;
 		}, CONTAINER_NAME);

@@ -10,17 +10,17 @@ import net.minecraft.item.crafting.IRecipeType;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.util.IWorldPosCallable;
 
-public class BotanistWorkbenchContainer extends ChippedContainer {
+public class GlassblowerContainer extends ChippedContainer {
 
-    private static ContainerType<ChippedContainer> containerType = ChippedContainerType.BOTANIST_WORKBENCH.get();
-    private static IRecipeType<ChippedRecipe> recipeType = ChippedSerializer.BOTANIST_WORKBENCH_TYPE;
-    private static Block blockWorkbench = ChippedBlocks.BOTANIST_WORKBENCH.get();
+    private static ContainerType<ChippedContainer> containerType = ChippedContainerType.GLASSBLOWER.get();
+    private static IRecipeType<ChippedRecipe> recipeType = ChippedSerializer.GLASSBLOWER_TYPE;
+    private static Block blockWorkbench = ChippedBlocks.GLASSBLOWER.get();
 
-    public BotanistWorkbenchContainer(int windowId, PlayerInventory playerInventory, final IWorldPosCallable worldPosCallableIn) {
+    public GlassblowerContainer(int windowId, PlayerInventory playerInventory, final IWorldPosCallable worldPosCallableIn) {
         super(windowId, playerInventory, worldPosCallableIn, containerType, recipeType, blockWorkbench);
     }
 
-    public BotanistWorkbenchContainer(int windowId, PlayerInventory playerInventory, PacketBuffer extraData) {
+    public GlassblowerContainer(int windowId, PlayerInventory playerInventory, PacketBuffer extraData) {
         super(windowId, playerInventory, extraData, containerType, recipeType, blockWorkbench);
     }
 

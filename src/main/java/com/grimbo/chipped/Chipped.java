@@ -48,6 +48,7 @@ public class Chipped
     @SubscribeEvent
 	public void onClientSetupEvent(FMLClientSetupEvent event) {
     	ScreenManager.registerFactory(ChippedContainerType.BOTANIST_WORKBENCH.get(), ChippedScreen::new);
+        ScreenManager.registerFactory(ChippedContainerType.GLASSBLOWER.get(), ChippedScreen::new);
     }
 }
 
