@@ -34,6 +34,10 @@ public class ChippedRecipe extends SingleItemRecipe {
 		switch(serializerId) {
 		case 0:
 			return ChippedSerializer.BOTANIST_WORKBENCH.get();
+		case 1:
+			return ChippedSerializer.GLASSBLOWER.get();
+		case 2:
+			return ChippedSerializer.CARPENTERS_TABLE.get();
 		default:
 			return null;
 		}

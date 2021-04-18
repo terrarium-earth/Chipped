@@ -44,11 +44,12 @@ public class Chipped
         MinecraftForge.EVENT_BUS.register(this);
     }
 
-    
+    //Register containers and screens together here
     @SubscribeEvent
 	public void onClientSetupEvent(FMLClientSetupEvent event) {
     	ScreenManager.registerFactory(ChippedContainerType.BOTANIST_WORKBENCH.get(), ChippedScreen::new);
         ScreenManager.registerFactory(ChippedContainerType.GLASSBLOWER.get(), ChippedScreen::new);
+        ScreenManager.registerFactory(ChippedContainerType.CARPENTERS_TABLE.get(), ChippedScreen::new);
     }
 }
 

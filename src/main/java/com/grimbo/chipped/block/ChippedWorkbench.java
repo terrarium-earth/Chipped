@@ -29,7 +29,7 @@ import net.minecraft.world.World;
 public class ChippedWorkbench extends Block {
 
 	public static final DirectionProperty FACING = HorizontalBlock.HORIZONTAL_FACING;
-	private static ITextComponent CONTAINER_NAME;
+	private ITextComponent CONTAINER_NAME;
 	private int containerId;
 
 	public ChippedWorkbench(int id, String containerName, Properties properties) {
