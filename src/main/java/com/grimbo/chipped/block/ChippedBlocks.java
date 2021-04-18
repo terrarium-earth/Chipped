@@ -60,6 +60,16 @@ public class ChippedBlocks {
     public static String[] woodsList = {"oak", "birch", "spruce", "jungle", "acacia", "dark_oak", "warped", "crimson"};
     
     // Workbenches
+    /*
+     * To register a new workbench:
+     * 1. Add the workbench block to ChippedBlocks
+     * 2. Give it an id in ChippedWorkbench
+     * 3. Register a new ContainerType in ChippedContainerType
+     * 4. Create a new class file that extends ChippedContainer in chipped.container
+     * 6. Register the container and screen together in Chipped#onClientSetupEvent
+     * 7. Register a new IRecipeSerializer in ChippedSerializer
+     * 8. Give it an id again in ChippedRecipe
+     */
     public static final RegistryObject<Block> BOTANIST_WORKBENCH = register("botanist_workbench",
             () -> new ChippedWorkbench(0, "container.chipped.botanist_workbench", AbstractBlock.Properties.create(Material.WOOD)
                     .hardnessAndResistance(1f, 2f).sound(SoundType.WOOD).notSolid().setAllowsSpawn(ChippedBlocks::neverAllowSpawn).setOpaque(ChippedBlocks::isntSolid).setSuffocates(ChippedBlocks::isntSolid).setBlocksVision(ChippedBlocks::isntSolid)));
