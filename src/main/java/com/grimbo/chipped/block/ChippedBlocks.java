@@ -4,10 +4,18 @@ package com.grimbo.chipped.block;
 import java.util.ArrayList;
 import java.util.function.Supplier;
 
-
 import com.grimbo.chipped.Chipped;
 import com.grimbo.chipped.item.ChippedItems;
-import net.minecraft.block.*;
+
+import net.minecraft.block.AbstractBlock;
+import net.minecraft.block.Block;
+import net.minecraft.block.BlockState;
+import net.minecraft.block.CarpetBlock;
+import net.minecraft.block.GlassBlock;
+import net.minecraft.block.RotatedPillarBlock;
+import net.minecraft.block.SoundType;
+import net.minecraft.block.StainedGlassBlock;
+import net.minecraft.block.VineBlock;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.material.MaterialColor;
 import net.minecraft.client.renderer.RenderType;
@@ -23,7 +31,6 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
-
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 
@@ -38,7 +45,7 @@ public class ChippedBlocks {
     public static ArrayList<RegistryObject<Block>> glasses = new ArrayList<RegistryObject<Block>>();
     public static ArrayList<RegistryObject<Block>> woodGlasses = new ArrayList<RegistryObject<Block>>();
     public static ArrayList<RegistryObject<Block>> stainedGlasses = new ArrayList<RegistryObject<Block>>();
-
+    
     //General stones of hardness 1.5F, 6F
     public static String[] stonesList = {"stone", "granite", "diorite", "andesite", "prismarine", "dark_prismarine", "purpur"};
     //General rocks of hardness 1.5F, 6F
@@ -51,17 +58,12 @@ public class ChippedBlocks {
     public static String[] stones5List  = {"end_stone"};
     public static String[] colorsList = {"white", "orange", "magenta", "light_blue", "yellow", "lime", "pink", "gray", "light_gray", "cyan", "purple", "blue", "brown", "green", "red", "black"};
     public static String[] woodsList = {"oak", "birch", "spruce", "jungle", "acacia", "dark_oak", "warped", "crimson"};
-
+    
     // Workbenches
     public static final RegistryObject<Block> BOTANIST_WORKBENCH = register("botanist_workbench",
             () -> new ChippedWorkbench(0, "container.chipped.botanist_workbench", AbstractBlock.Properties.create(Material.WOOD)
                     .hardnessAndResistance(1f, 2f).sound(SoundType.WOOD).notSolid().setAllowsSpawn(ChippedBlocks::neverAllowSpawn).setOpaque(ChippedBlocks::isntSolid).setSuffocates(ChippedBlocks::isntSolid).setBlocksVision(ChippedBlocks::isntSolid)));
-    public static final RegistryObject<Block> GLASSBLOWER = register("glassblower",
-            () -> new ChippedWorkbench(1, "container.chipped.glassblower", AbstractBlock.Properties.create(Material.WOOD)
-                    .hardnessAndResistance(1f, 2f).sound(SoundType.WOOD).notSolid().setAllowsSpawn(ChippedBlocks::neverAllowSpawn).setOpaque(ChippedBlocks::isntSolid).setSuffocates(ChippedBlocks::isntSolid).setBlocksVision(ChippedBlocks::isntSolid)));
-    public static final RegistryObject<Block> CARPENTERS_TABLE = register("carpenters_table",
-            () -> new ChippedWorkbench(2, "container.chipped.carpenters_table", AbstractBlock.Properties.create(Material.WOOD)
-                    .hardnessAndResistance(1f, 2f).sound(SoundType.WOOD).notSolid().setAllowsSpawn(ChippedBlocks::neverAllowSpawn).setOpaque(ChippedBlocks::isntSolid).setSuffocates(ChippedBlocks::isntSolid).setBlocksVision(ChippedBlocks::isntSolid)));
+
     // 8 Hay Bale Variations
 
     public static final RegistryObject<Block> HAY_BALE_1 = register("hay_bale_1",
@@ -88,15 +90,11 @@ public class ChippedBlocks {
     public static final RegistryObject<Block> HAY_BALE_8 = register("hay_bale_8",
             () -> createHayBlock(MaterialColor.YELLOW, MaterialColor.YELLOW));
 
-    // Melon
-
     // Vines
 
     public static final RegistryObject<Block> VINE_1 = register("vine_1",
             () -> new VineBlock(AbstractBlock.Properties.create(Material.TALL_PLANTS)
-                    .doesNotBlockMovement().tickRandomly().hardnessAndResistance(0.2F).sound(SoundType.PLANT)));
-
-
+            		.doesNotBlockMovement().tickRandomly().hardnessAndResistance(0.2F).sound(SoundType.PLANT)));
     // Clay
 
 
@@ -175,8 +173,7 @@ public class ChippedBlocks {
     public static final RegistryObject<Block> CLAY_19 = register("clay_19",
             () -> new Block(AbstractBlock.Properties.create(Material.CLAY)
                     .hardnessAndResistance(2f, 3f).sound(SoundType.GROUND)));
-
-
+    
 // gilded blackstone
     
     public static final RegistryObject<Block> GILDEDBLACKSTONE_1 = register("gildedblackstone_1", () ->
@@ -194,84 +191,84 @@ public class ChippedBlocks {
     @OnlyIn(Dist.CLIENT)
     public static void clientRender(final FMLClientSetupEvent event) {
         RenderTypeLookup.setRenderLayer(BOTANIST_WORKBENCH.get(), RenderType.getCutout());
-
+        
         for (RegistryObject<Block> glass : glasses) {
-            RenderTypeLookup.setRenderLayer(glass.get(), RenderType.getCutout());
+        	RenderTypeLookup.setRenderLayer(glass.get(), RenderType.getCutout());
         }
 
         for (RegistryObject<Block> woodGlass : woodGlasses) {
-            RenderTypeLookup.setRenderLayer(woodGlass.get(), RenderType.getCutout());
+        	RenderTypeLookup.setRenderLayer(woodGlass.get(), RenderType.getCutout());
         }
 
         for (RegistryObject<Block> stainedGlass : stainedGlasses) {
-            RenderTypeLookup.setRenderLayer(stainedGlass.get(), RenderType.getTranslucent());
+        	RenderTypeLookup.setRenderLayer(stainedGlass.get(), RenderType.getTranslucent());
         }
-
+        
         // Vines
         RenderTypeLookup.setRenderLayer(VINE_1.get(), RenderType.getTranslucent());
     }
 
     public static void register() {
-        registerStones();
-        registerStones2();
-        registerStones3();
-        registerStones4();
-        registerStones5();
+    	registerStones();
+    	registerStones2();
+    	registerStones3();
+    	registerStones4();
+    	registerStones5();
         registerWools();
         registerCarpets();
         registerGlasses();
         registerWoodGlasses();
         registerStainedGlasses();
     }
-
+    
     private static void registerStones() {
-        for (String stone : stonesList) {
-            for (int i = 1; i <= 18; i++) {
-                stones.add(register(stone + "_" + i,
-                        () -> new Block(AbstractBlock.Properties.create(Material.ROCK)
-                                .setRequiresTool().hardnessAndResistance(1.5F, 6.0F))));
-            }
-        }
+    	for (String stone : stonesList) {
+        	for (int i = 1; i <= 18; i++) {
+        		stones.add(register(stone + "_" + i,
+                    () -> new Block(AbstractBlock.Properties.create(Material.ROCK)
+                    		.setRequiresTool().hardnessAndResistance(1.5F, 6.0F))));
+        	}
+    	}
     }
-
+    
     private static void registerStones2() {
-        for (String stone : stones2List) {
-            for (int i = 1; i <= 18; i++) {
-                stones.add(register(stone + "_" + i,
-                        () -> new Block(AbstractBlock.Properties.create(Material.ROCK)
-                                .setRequiresTool().hardnessAndResistance(2F, 6.0F))));
-            }
-        }
+    	for (String stone : stones2List) {
+        	for (int i = 1; i <= 18; i++) {
+        		stones.add(register(stone + "_" + i,
+                    () -> new Block(AbstractBlock.Properties.create(Material.ROCK)
+                    		.setRequiresTool().hardnessAndResistance(2F, 6.0F))));
+        	}
+    	}
     }
-
+    
     private static void registerStones3() {
-        for (String stone : stones3List) {
-            for (int i = 1; i <= 18; i++) {
-                stones.add(register(stone + "_" + i,
-                        () -> new Block(AbstractBlock.Properties.create(Material.ROCK)
-                                .setRequiresTool().hardnessAndResistance(0.8F))));
-            }
-        }
+    	for (String stone : stones3List) {
+        	for (int i = 1; i <= 18; i++) {
+        		stones.add(register(stone + "_" + i,
+                    () -> new Block(AbstractBlock.Properties.create(Material.ROCK)
+                    		.setRequiresTool().hardnessAndResistance(0.8F))));
+        	}
+    	}
     }
-
+    
     private static void registerStones4() {
-        for (String stone : stones4List) {
-            for (int i = 1; i <= 18; i++) {
-                stones.add(register(stone + "_" + i,
-                        () -> new Block(AbstractBlock.Properties.create(Material.ROCK)
-                                .setRequiresTool().hardnessAndResistance(2.0F, 6.0F).sound(SoundType.NETHER_BRICK))));
-            }
-        }
+    	for (String stone : stones4List) {
+        	for (int i = 1; i <= 18; i++) {
+        		stones.add(register(stone + "_" + i,
+                    () -> new Block(AbstractBlock.Properties.create(Material.ROCK)
+                    		.setRequiresTool().hardnessAndResistance(2.0F, 6.0F).sound(SoundType.NETHER_BRICK))));
+        	}
+    	}
     }
-
+    
     private static void registerStones5() {
-        for (String stone : stones5List) {
-            for (int i = 1; i <= 18; i++) {
-                stones.add(register(stone + "_" + i,
-                        () -> new Block(AbstractBlock.Properties.create(Material.ROCK)
-                                .setRequiresTool().hardnessAndResistance(3F, 9.0F))));
-            }
-        }
+    	for (String stone : stones5List) {
+        	for (int i = 1; i <= 18; i++) {
+        		stones.add(register(stone + "_" + i,
+                    () -> new Block(AbstractBlock.Properties.create(Material.ROCK)
+                    		.setRequiresTool().hardnessAndResistance(3F, 9.0F))));
+        	}
+    	}
     }
 
     private static void registerWools() {
@@ -291,29 +288,29 @@ public class ChippedBlocks {
             }
         }
     }
-
+    
     private static void registerGlasses() {
         for (int i = 1; i <= 14; i++) {
-            stainedGlasses.add(register("glass_" + i,
-                    () -> new GlassBlock(AbstractBlock.Properties.create(Material.GLASS)
-                            .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ChippedBlocks::neverAllowSpawn).setOpaque(ChippedBlocks::isntSolid).setSuffocates(ChippedBlocks::isntSolid).setBlocksVision(ChippedBlocks::isntSolid))));
+        	stainedGlasses.add(register("glass_" + i,
+        			 () -> new GlassBlock(AbstractBlock.Properties.create(Material.GLASS)
+        	                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ChippedBlocks::neverAllowSpawn).setOpaque(ChippedBlocks::isntSolid).setSuffocates(ChippedBlocks::isntSolid).setBlocksVision(ChippedBlocks::isntSolid))));
         }
     }
-
+    
     private static void registerWoodGlasses() {
         for (String wood : woodsList) {
             for (int i = 1; i <= 6; i++) {
-                stainedGlasses.add(register(wood + "_wood_glass_" + i,
-                        () -> new GlassBlock(AbstractBlock.Properties.create(Material.GLASS)
-                                .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ChippedBlocks::neverAllowSpawn).setOpaque(ChippedBlocks::isntSolid).setSuffocates(ChippedBlocks::isntSolid).setBlocksVision(ChippedBlocks::isntSolid))));
+            	stainedGlasses.add(register(wood + "_wood_glass_" + i,
+            			 () -> new GlassBlock(AbstractBlock.Properties.create(Material.GLASS)
+            	                    .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ChippedBlocks::neverAllowSpawn).setOpaque(ChippedBlocks::isntSolid).setSuffocates(ChippedBlocks::isntSolid).setBlocksVision(ChippedBlocks::isntSolid))));
             }
         }
     }
-
+    
     private static void registerStainedGlasses() {
         for (String color : colorsList) {
             for (int i = 1; i <= 8; i++) {
-                stainedGlasses.add(register(color + "_stained_glass_" + i,
+            	stainedGlasses.add(register(color + "_stained_glass_" + i,
                         () -> new StainedGlassBlock(DyeColor.byTranslationKey(color, DyeColor.BLACK), AbstractBlock.Properties.create(Material.GLASS)
                                 .hardnessAndResistance(0.3F).sound(SoundType.GLASS).notSolid().setAllowsSpawn(ChippedBlocks::neverAllowSpawn).setOpaque(ChippedBlocks::isntSolid).setSuffocates(ChippedBlocks::isntSolid).setBlocksVision(ChippedBlocks::isntSolid))));
             }

@@ -312,12 +312,12 @@
   "block.chipped.glass_12": "Glass",
   "block.chipped.glass_13": "Glass",
   "block.chipped.glass_14": "Glass",
-  "block.chipped.dark_oak_glass_1": "Glass",
-  "block.chipped.dark_oak_glass_2": "Glass",
-  "block.chipped.dark_oak_glass_3": "Glass",
-  "block.chipped.dark_oak_glass_4": "Glass",
-  "block.chipped.dark_oak_glass_5": "Glass",
-  "block.chipped.dark_oak_glass_6": "Glass",
+  "block.chipped.dark_oak_wood_glass_1": "Glass",
+  "block.chipped.dark_oak_wood_glass_2": "Glass",
+  "block.chipped.dark_oak_wood_glass_3": "Glass",
+  "block.chipped.dark_oak_wood_glass_4": "Glass",
+  "block.chipped.dark_oak_wood_glass_5": "Glass",
+  "block.chipped.dark_oak_wood_glass_6": "Glass",
   "block.chipped.warped_wood_glass_1": "Glass",
   "block.chipped.warped_wood_glass_2": "Glass",
   "block.chipped.warped_wood_glass_3": "Glass",
@@ -1052,6 +1052,7 @@
   "block.chipped.gildedblackstone_3": "Gilded Blackstone",
   "block.chipped.gildedblackstone_4": "Gilded Blackstone",
   "block.chipped.gildedblackstone_5": "Gilded Blackstone",
+  "block.chipped.vine_1": "Vine",
 
 
 
