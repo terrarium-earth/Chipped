@@ -38,6 +38,8 @@ public class ChippedRecipe extends SingleItemRecipe {
 			return ChippedSerializer.GLASSBLOWER.get();
 		case 2:
 			return ChippedSerializer.CARPENTERS_TABLE.get();
+			case 3: return ChippedSerializer.LOOM_TABLE.get();
+			case 4: return ChippedSerializer.MASON_TABLE.get();
 		default:
 			return null;
 		}

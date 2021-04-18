@@ -2,16 +2,15 @@ package com.grimbo.chipped.block;
 
 import javax.annotation.Nullable;
 
-import com.grimbo.chipped.container.BotanistWorkbenchContainer;
+import com.grimbo.chipped.container.*;
 
-import com.grimbo.chipped.container.CarpentersTableContainer;
-import com.grimbo.chipped.container.GlassblowerContainer;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockRenderType;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.HorizontalBlock;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.container.INamedContainerProvider;
+import net.minecraft.inventory.container.LoomContainer;
 import net.minecraft.inventory.container.SimpleNamedContainerProvider;
 import net.minecraft.item.BlockItemUseContext;
 import net.minecraft.state.DirectionProperty;
@@ -64,6 +63,10 @@ public class ChippedWorkbench extends Block {
 					return new GlassblowerContainer(id, inventory, IWorldPosCallable.of(worldIn, pos));
 				case 2:
 					return new CarpentersTableContainer(id, inventory, IWorldPosCallable.of(worldIn, pos));
+				case 3:
+					return new LoomTableContainer(id, inventory, IWorldPosCallable.of(worldIn, pos));
+				case 4:
+					return new MasonTableContainer(id, inventory, IWorldPosCallable.of(worldIn, pos));
 
 			}
 			return null;

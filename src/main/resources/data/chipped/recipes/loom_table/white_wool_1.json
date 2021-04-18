@@ -1,5 +1,5 @@
 {
-  "type": "chipped:botanist_workbench",
+  "type": "chipped:loom_table",
   "ingredient": {
     "item": "minecraft:white_wool"
   },

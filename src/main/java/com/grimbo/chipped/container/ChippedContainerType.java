@@ -16,4 +16,6 @@ public class ChippedContainerType {
 	public static final RegistryObject<ContainerType<ChippedContainer>> BOTANIST_WORKBENCH = CONTAINER.register("botanist_workbench", () -> IForgeContainerType.create(BotanistWorkbenchContainer::new));
 	public static final RegistryObject<ContainerType<ChippedContainer>> GLASSBLOWER = CONTAINER.register("glassblower", () -> IForgeContainerType.create(GlassblowerContainer::new));
 	public static final RegistryObject<ContainerType<ChippedContainer>> CARPENTERS_TABLE = CONTAINER.register("carpenters_table", () -> IForgeContainerType.create(CarpentersTableContainer::new));
+	public static final RegistryObject<ContainerType<ChippedContainer>> LOOM_TABLE = CONTAINER.register("loom_table", () -> IForgeContainerType.create(LoomTableContainer::new));
+	public static final RegistryObject<ContainerType<ChippedContainer>> MASON_TABLE = CONTAINER.register("mason_table", () -> IForgeContainerType.create(LoomTableContainer::new));
 }
