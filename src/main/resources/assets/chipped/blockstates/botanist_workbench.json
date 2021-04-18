@@ -1,6 +1,5 @@
 {
   "variants": {
-
     "facing=east": {
       "model": "chipped:block/botanist_workbench",
       "y": 90
@@ -17,12 +16,5 @@
       "model": "chipped:block/botanist_workbench",
       "y": 270
     }
-=======
-    "facing=north": { "model": "chipped:block/botanist_workbench"},
-    "facing=south": { "model": "chipped:block/botanist_workbench", "y":  180 },
-    "facing=west": { "model": "chipped:block/botanist_workbench", "y":  270 },
-    "facing=east": { "model": "chipped:block/botanist_workbench", "y": 90 }
-
-
   }
 }
