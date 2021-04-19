@@ -1,0 +1,8 @@
+{
+  "type": "chipped:mason_table",
+  "ingredient": {
+    "item": "minecraft:quartz"
+  },
+  "result": "chipped:quartz_7",
+  "count": 1
+}
