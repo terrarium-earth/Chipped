@@ -213,6 +213,7 @@ public class ChippedBlocks {
     @OnlyIn(Dist.CLIENT)
     public static void clientRender(final FMLClientSetupEvent event) {
         RenderTypeLookup.setRenderLayer(BOTANIST_WORKBENCH.get(), RenderType.getCutout());
+        RenderTypeLookup.setRenderLayer(LOOM_TABLE.get(), RenderType.getCutout());
         
         for (RegistryObject<Block> glass : glasses) {
         	RenderTypeLookup.setRenderLayer(glass.get(), RenderType.getCutout());
