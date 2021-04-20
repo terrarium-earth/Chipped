@@ -1,0 +1,8 @@
+{
+  "type": "chipped:loom_table",
+  "ingredient": {
+    "item": "minecraft:purple_carpet"
+  },
+  "result": "chipped:purple_carpet_2",
+  "count": 1
+}
