@@ -40,6 +40,7 @@ public class ChippedRecipe extends SingleItemRecipe {
 			return ChippedSerializer.CARPENTERS_TABLE.get();
 			case 3: return ChippedSerializer.LOOM_TABLE.get();
 			case 4: return ChippedSerializer.MASON_TABLE.get();
+			case 5: return ChippedSerializer.ALCHEMY_BENCH.get();
 		default:
 			return null;
 		}

@@ -52,6 +52,7 @@ public class Chipped
         ScreenManager.registerFactory(ChippedContainerType.CARPENTERS_TABLE.get(), ChippedScreen::new);
         ScreenManager.registerFactory(ChippedContainerType.LOOM_TABLE.get(), ChippedScreen::new);
         ScreenManager.registerFactory(ChippedContainerType.MASON_TABLE.get(), ChippedScreen::new);
+        ScreenManager.registerFactory(ChippedContainerType.ALCHEMY_BENCH.get(), ChippedScreen::new);
     }
 }
 

@@ -1,5 +1,5 @@
 {
-  "parent": "chipped:block/mason_table",
+  "parent": "chipped:block/alchemy_bench",
   "display": {
     "thirdperson_righthand": {
       "rotation": [84, 101, -17],

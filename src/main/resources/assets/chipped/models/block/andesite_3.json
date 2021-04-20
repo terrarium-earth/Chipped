@@ -1,7 +1,6 @@
 {
-  "parent": "minecraft:block/cube_column",
+  "parent": "block/cube_all",
   "textures": {
-    "end": "chipped:block/andesite_3_top",
-    "side": "chipped:block/andesite_3"
+    "all": "chipped:block/andesite_3"
   }
 }

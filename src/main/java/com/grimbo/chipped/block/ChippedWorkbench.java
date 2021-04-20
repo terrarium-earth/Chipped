@@ -67,6 +67,8 @@ public class ChippedWorkbench extends Block {
 					return new LoomTableContainer(id, inventory, IWorldPosCallable.of(worldIn, pos));
 				case 4:
 					return new MasonTableContainer(id, inventory, IWorldPosCallable.of(worldIn, pos));
+				case 5:
+					return new AlchemyBenchContainer(id, inventory, IWorldPosCallable.of(worldIn,pos));
 
 			}
 			return null;

@@ -85,6 +85,9 @@ public class ChippedBlocks {
     public static final RegistryObject<Block> MASON_TABLE = register("mason_table",
             () -> new ChippedWorkbench(4, "container.chipped.mason_table", AbstractBlock.Properties.create(Material.WOOD)
                     .hardnessAndResistance(1f, 2f).sound(SoundType.WOOD).notSolid().setAllowsSpawn(ChippedBlocks::neverAllowSpawn).setOpaque(ChippedBlocks::isntSolid).setSuffocates(ChippedBlocks::isntSolid).setBlocksVision(ChippedBlocks::isntSolid)));
+    public static final RegistryObject<Block> ALCHEMY_BENCH = register("alchemy_bench",
+            () -> new ChippedWorkbench(5, "container.chipped.alchemy_bench", AbstractBlock.Properties.create(Material.WOOD)
+                    .hardnessAndResistance(1f, 2f).sound(SoundType.WOOD).notSolid().setAllowsSpawn(ChippedBlocks::neverAllowSpawn).setOpaque(ChippedBlocks::isntSolid).setSuffocates(ChippedBlocks::isntSolid).setBlocksVision(ChippedBlocks::isntSolid)));
 
     // 8 Hay Bale Variations
 

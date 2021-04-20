@@ -17,6 +17,7 @@ public class ChippedSerializer {
 	public static final IRecipeType<ChippedRecipe> CARPENTERS_TABLE_TYPE = IRecipeType.register("carpenters_table");
 	public static final IRecipeType<ChippedRecipe> LOOM_TABLE_TYPE = IRecipeType.register("loom_table");
 	public static final IRecipeType<ChippedRecipe> MASON_TABLE_TYPE = IRecipeType.register("mason_table");
+	public static final IRecipeType<ChippedRecipe> ALCHEMY_BENCH_TYPE = IRecipeType.register("alchemy_bench");
 	
 	//Add new IRecipeSerializers here
 	public static final DeferredRegister<IRecipeSerializer<?>> SERIALIZER = DeferredRegister.create(ForgeRegistries.RECIPE_SERIALIZERS, Chipped.MOD_ID);
@@ -35,6 +36,9 @@ public class ChippedSerializer {
 
 	public static final RegistryObject<IRecipeSerializer<?>> MASON_TABLE = SERIALIZER.register("mason_table",
 			() -> new ChippedRecipe.Serializer(4, ChippedSerializer.MASON_TABLE_TYPE, ChippedBlocks.MASON_TABLE.get()));
+
+	public static final RegistryObject<IRecipeSerializer<?>> ALCHEMY_BENCH = SERIALIZER.register("alchemy_bench",
+			() -> new ChippedRecipe.Serializer(5, ChippedSerializer.ALCHEMY_BENCH_TYPE, ChippedBlocks.ALCHEMY_BENCH.get()));
 
 
 
