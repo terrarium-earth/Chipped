@@ -1,0 +1,8 @@
+{
+  "type": "chipped:glassblower",
+  "ingredient": {
+    "item": "minecraft:red_stained_glass"
+  },
+  "result": "chipped:red_stained_glass_4",
+  "count": 1
+}

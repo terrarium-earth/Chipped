@@ -1,0 +1,8 @@
+{
+  "type": "chipped:mason_table",
+  "ingredient": {
+    "item": "minecraft:red_sandstone"
+  },
+  "result": "chipped:red_sandstone_11",
+  "count": 1
+}

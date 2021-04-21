@@ -1,8 +1,0 @@
-{
-  "type": "chipped:botanist_workbench",
-  "ingredient": {
-    "item": "minecraft:white_wool"
-  },
-  "result": "chipped:white_wool_3",
-  "count": 1
-}
