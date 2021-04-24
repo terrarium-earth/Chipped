@@ -1,8 +1,0 @@
-{
-  "type": "chipped:botanist_workbench",
-  "ingredient": {
-    "item": "minecraft:hay_block"
-  },
-  "result": "chipped:hay_bale_6",
-  "count": 1
-}

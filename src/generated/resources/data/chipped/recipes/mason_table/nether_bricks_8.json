@@ -1,0 +1,8 @@
+{
+  "type": "chipped:mason_table",
+  "ingredient": {
+    "tag": "forge:stones/nether_bricks"
+  },
+  "result": "chipped:nether_bricks_8",
+  "count": 1
+}

@@ -1,0 +1,8 @@
+{
+  "type": "chipped:glassblower",
+  "ingredient": {
+    "tag": "forge:glasses/glass"
+  },
+  "result": "chipped:glass_8",
+  "count": 1
+}

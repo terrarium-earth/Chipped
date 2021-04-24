@@ -1,0 +1,8 @@
+{
+  "type": "chipped:glassblower",
+  "ingredient": {
+    "tag": "forge:stained_glasses/yellow_stained_glass"
+  },
+  "result": "chipped:yellow_stained_glass_3",
+  "count": 1
+}

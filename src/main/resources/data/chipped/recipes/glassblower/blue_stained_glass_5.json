@@ -1,8 +1,0 @@
-{
-  "type": "chipped:glassblower",
-  "ingredient": {
-    "item": "minecraft:blue_stained_glass"
-  },
-  "result": "chipped:blue_stained_glass_5",
-  "count": 1
-}

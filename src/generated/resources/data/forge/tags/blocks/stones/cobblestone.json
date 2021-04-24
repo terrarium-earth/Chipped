@@ -1,0 +1,24 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:cobblestone",
+    "chipped:cobblestone_1",
+    "chipped:cobblestone_2",
+    "chipped:cobblestone_3",
+    "chipped:cobblestone_4",
+    "chipped:cobblestone_5",
+    "chipped:cobblestone_6",
+    "chipped:cobblestone_7",
+    "chipped:cobblestone_8",
+    "chipped:cobblestone_9",
+    "chipped:cobblestone_10",
+    "chipped:cobblestone_11",
+    "chipped:cobblestone_12",
+    "chipped:cobblestone_13",
+    "chipped:cobblestone_14",
+    "chipped:cobblestone_15",
+    "chipped:cobblestone_16",
+    "chipped:cobblestone_17",
+    "chipped:cobblestone_18"
+  ]
+}

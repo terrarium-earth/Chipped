@@ -1,8 +1,0 @@
-{
-  "type": "chipped:mason_table",
-  "ingredient": {
-    "item": "minecraft:gilded_blackstone"
-  },
-  "result": "chipped:gildedblackstone_1",
-  "count": 1
-}

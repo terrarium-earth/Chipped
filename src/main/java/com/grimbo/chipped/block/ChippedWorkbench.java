@@ -159,6 +159,20 @@ public class ChippedWorkbench extends Block {
 		return new SimpleNamedContainerProvider((id, inventory, player) -> {
 			//Add new ids for each workbench container here
 			switch(containerId) {
+<<<<<<< HEAD
+				case 0:
+					return new BotanistWorkbenchContainer(id, inventory, IWorldPosCallable.of(worldIn, pos));
+				case 1:
+					return new GlassblowerContainer(id, inventory, IWorldPosCallable.of(worldIn, pos));
+				case 2:
+					return new CarpentersTableContainer(id, inventory, IWorldPosCallable.of(worldIn, pos));
+				case 3:
+					return new LoomTableContainer(id, inventory, IWorldPosCallable.of(worldIn, pos));
+				case 4:
+					return new MasonTableContainer(id, inventory, IWorldPosCallable.of(worldIn, pos));
+				case 5:
+					return new AlchemyBenchContainer(id, inventory, IWorldPosCallable.of(worldIn,pos));
+=======
 			case 0:
 				return new BotanistWorkbenchContainer(id, inventory, IWorldPosCallable.of(worldIn, pos));
 			case 1:
@@ -172,6 +186,7 @@ public class ChippedWorkbench extends Block {
 			case 5:
 				return new AlchemyBenchContainer(id, inventory, IWorldPosCallable.of(worldIn,pos));
 
+>>>>>>> f8148344ea775996d9129482903ed9e83a1aecd2
 			}
 			return null;
 		}, CONTAINER_NAME);

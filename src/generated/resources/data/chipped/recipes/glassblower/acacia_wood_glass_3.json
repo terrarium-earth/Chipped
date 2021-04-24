@@ -1,0 +1,8 @@
+{
+  "type": "chipped:glassblower",
+  "ingredient": {
+    "tag": "forge:glasses/acacia_wood_glass"
+  },
+  "result": "chipped:acacia_wood_glass_3",
+  "count": 1
+}

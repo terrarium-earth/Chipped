@@ -1,8 +1,0 @@
-{
-  "type": "chipped:mason_table",
-  "ingredient": {
-    "item": "minecraft:dark_prismarine"
-  },
-  "result": "chipped:dark_prismarine_18",
-  "count": 1
-}

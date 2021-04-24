@@ -1,0 +1,8 @@
+{
+  "type": "chipped:loom_table",
+  "ingredient": {
+    "tag": "forge:wools/red_wool"
+  },
+  "result": "chipped:red_wool_17",
+  "count": 1
+}

@@ -1,0 +1,8 @@
+{
+  "type": "chipped:glassblower",
+  "ingredient": {
+    "tag": "forge:glasses/dark_oak_wood_glass"
+  },
+  "result": "chipped:dark_oak_wood_glass_1",
+  "count": 1
+}

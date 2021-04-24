@@ -1,8 +1,0 @@
-{
-  "type": "chipped:glassblower",
-  "ingredient": {
-    "item": "minecraft:glass"
-  },
-  "result": "chipped:oak_wood_glass_6",
-  "count": 1
-}

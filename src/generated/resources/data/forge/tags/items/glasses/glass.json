@@ -1,0 +1,20 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:glass",
+    "chipped:glass_1",
+    "chipped:glass_2",
+    "chipped:glass_3",
+    "chipped:glass_4",
+    "chipped:glass_5",
+    "chipped:glass_6",
+    "chipped:glass_7",
+    "chipped:glass_8",
+    "chipped:glass_9",
+    "chipped:glass_10",
+    "chipped:glass_11",
+    "chipped:glass_12",
+    "chipped:glass_13",
+    "chipped:glass_14"
+  ]
+}

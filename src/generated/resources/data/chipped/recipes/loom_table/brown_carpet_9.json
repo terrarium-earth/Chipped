@@ -1,0 +1,8 @@
+{
+  "type": "chipped:loom_table",
+  "ingredient": {
+    "tag": "forge:carpets/brown_carpet"
+  },
+  "result": "chipped:brown_carpet_9",
+  "count": 1
+}

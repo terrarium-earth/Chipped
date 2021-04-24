@@ -1,8 +1,0 @@
-{
-  "type": "chipped:mason_table",
-  "ingredient": {
-    "item": "minecraft:stone"
-  },
-  "result": "chipped:stone_12",
-  "count": 1
-}

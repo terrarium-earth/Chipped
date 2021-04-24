@@ -1,0 +1,8 @@
+{
+  "type": "chipped:loom_table",
+  "ingredient": {
+    "tag": "forge:wools/orange_wool"
+  },
+  "result": "minecraft:orange_wool",
+  "count": 1
+}

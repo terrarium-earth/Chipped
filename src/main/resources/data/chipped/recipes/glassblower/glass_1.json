@@ -1,8 +1,0 @@
-{
-  "type": "chipped:glassblower",
-  "ingredient": {
-    "item": "minecraft:glass"
-  },
-  "result": "chipped:glass_1",
-  "count": 1
-}
