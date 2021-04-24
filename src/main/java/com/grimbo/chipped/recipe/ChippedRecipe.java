@@ -1,5 +1,8 @@
 package com.grimbo.chipped.recipe;
 
+import java.lang.reflect.Field;
+import java.util.ArrayList;
+
 import com.google.gson.JsonObject;
 
 import net.minecraft.block.Block;
@@ -14,6 +17,7 @@ import net.minecraft.util.JSONUtils;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.ForgeRegistryEntry;
 
 public class ChippedRecipe extends SingleItemRecipe {
@@ -29,21 +33,20 @@ public class ChippedRecipe extends SingleItemRecipe {
 		icon = block;
 	}
 	
-	//Add new ids for each workbench recipe here
 	public static IRecipeSerializer<?> fromId(int serializerId) {
-		switch(serializerId) {
-		case 0:
-			return ChippedSerializer.BOTANIST_WORKBENCH.get();
-		case 1:
-			return ChippedSerializer.GLASSBLOWER.get();
-		case 2:
-			return ChippedSerializer.CARPENTERS_TABLE.get();
-			case 3: return ChippedSerializer.LOOM_TABLE.get();
-			case 4: return ChippedSerializer.MASON_TABLE.get();
-			case 5: return ChippedSerializer.ALCHEMY_BENCH.get();
-		default:
-			return null;
+		ArrayList<RegistryObject<?>> fields = new ArrayList<RegistryObject<?>>();
+		for (Field field : ChippedSerializer.class.getFields()) {
+			if (field.getType().equals(RegistryObject.class)) {
+				try {
+					fields.add((RegistryObject<?>) field.get(RegistryObject.class));
+				} catch (IllegalArgumentException e) {
+					e.printStackTrace();
+				} catch (IllegalAccessException e) {
+					e.printStackTrace();
+				}
+			}
 		}
+		return (IRecipeSerializer<?>) fields.get(serializerId).get();
 	}
 
 	@Override

@@ -10,7 +10,6 @@ import net.minecraft.block.BlockState;
 import net.minecraft.block.HorizontalBlock;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.container.INamedContainerProvider;
-import net.minecraft.inventory.container.LoomContainer;
 import net.minecraft.inventory.container.SimpleNamedContainerProvider;
 import net.minecraft.item.BlockItemUseContext;
 import net.minecraft.state.DirectionProperty;
@@ -69,7 +68,6 @@ public class ChippedWorkbench extends Block {
 					return new MasonTableContainer(id, inventory, IWorldPosCallable.of(worldIn, pos));
 				case 5:
 					return new AlchemyBenchContainer(id, inventory, IWorldPosCallable.of(worldIn,pos));
-
 			}
 			return null;
 		}, CONTAINER_NAME);

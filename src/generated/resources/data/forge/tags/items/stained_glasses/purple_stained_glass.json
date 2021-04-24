@@ -1,0 +1,14 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:purple_stained_glass",
+    "chipped:purple_stained_glass_1",
+    "chipped:purple_stained_glass_2",
+    "chipped:purple_stained_glass_3",
+    "chipped:purple_stained_glass_4",
+    "chipped:purple_stained_glass_5",
+    "chipped:purple_stained_glass_6",
+    "chipped:purple_stained_glass_7",
+    "chipped:purple_stained_glass_8"
+  ]
+}

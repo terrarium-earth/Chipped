@@ -1,0 +1,12 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:air",
+    "chipped:oak_wood_glass_1",
+    "chipped:oak_wood_glass_2",
+    "chipped:oak_wood_glass_3",
+    "chipped:oak_wood_glass_4",
+    "chipped:oak_wood_glass_5",
+    "chipped:oak_wood_glass_6"
+  ]
+}

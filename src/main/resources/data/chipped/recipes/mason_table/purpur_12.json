@@ -1,8 +1,0 @@
-{
-  "type": "chipped:mason_table",
-  "ingredient": {
-    "item": "minecraft:purpur_block"
-  },
-  "result": "chipped:purpur_12",
-  "count": 1
-}

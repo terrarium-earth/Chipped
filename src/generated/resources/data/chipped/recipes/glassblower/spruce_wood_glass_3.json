@@ -1,0 +1,8 @@
+{
+  "type": "chipped:glassblower",
+  "ingredient": {
+    "tag": "forge:glasses/spruce_wood_glass"
+  },
+  "result": "chipped:spruce_wood_glass_3",
+  "count": 1
+}

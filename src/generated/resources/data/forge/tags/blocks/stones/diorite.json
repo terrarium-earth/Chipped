@@ -1,0 +1,24 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:diorite",
+    "chipped:diorite_1",
+    "chipped:diorite_2",
+    "chipped:diorite_3",
+    "chipped:diorite_4",
+    "chipped:diorite_5",
+    "chipped:diorite_6",
+    "chipped:diorite_7",
+    "chipped:diorite_8",
+    "chipped:diorite_9",
+    "chipped:diorite_10",
+    "chipped:diorite_11",
+    "chipped:diorite_12",
+    "chipped:diorite_13",
+    "chipped:diorite_14",
+    "chipped:diorite_15",
+    "chipped:diorite_16",
+    "chipped:diorite_17",
+    "chipped:diorite_18"
+  ]
+}

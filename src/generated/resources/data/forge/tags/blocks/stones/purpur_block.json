@@ -1,0 +1,24 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:purpur_block",
+    "chipped:purpur_block_1",
+    "chipped:purpur_block_2",
+    "chipped:purpur_block_3",
+    "chipped:purpur_block_4",
+    "chipped:purpur_block_5",
+    "chipped:purpur_block_6",
+    "chipped:purpur_block_7",
+    "chipped:purpur_block_8",
+    "chipped:purpur_block_9",
+    "chipped:purpur_block_10",
+    "chipped:purpur_block_11",
+    "chipped:purpur_block_12",
+    "chipped:purpur_block_13",
+    "chipped:purpur_block_14",
+    "chipped:purpur_block_15",
+    "chipped:purpur_block_16",
+    "chipped:purpur_block_17",
+    "chipped:purpur_block_18"
+  ]
+}

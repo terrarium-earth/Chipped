@@ -1,8 +1,0 @@
-{
-  "type": "chipped:loom_table",
-  "ingredient": {
-    "item": "minecraft:white_wool"
-  },
-  "result": "chipped:white_wool_7",
-  "count": 1
-}

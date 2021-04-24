@@ -1,0 +1,8 @@
+{
+  "type": "chipped:mason_table",
+  "ingredient": {
+    "tag": "forge:stones/granite"
+  },
+  "result": "chipped:granite_16",
+  "count": 1
+}

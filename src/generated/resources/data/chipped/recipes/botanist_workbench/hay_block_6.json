@@ -1,0 +1,8 @@
+{
+  "type": "chipped:botanist_workbench",
+  "ingredient": {
+    "tag": "forge:hay_blocks/hay_block"
+  },
+  "result": "chipped:hay_block_6",
+  "count": 1
+}

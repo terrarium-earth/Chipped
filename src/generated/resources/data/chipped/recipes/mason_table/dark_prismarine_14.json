@@ -1,0 +1,8 @@
+{
+  "type": "chipped:mason_table",
+  "ingredient": {
+    "tag": "forge:stones/dark_prismarine"
+  },
+  "result": "chipped:dark_prismarine_14",
+  "count": 1
+}

@@ -1,0 +1,8 @@
+{
+  "type": "chipped:mason_table",
+  "ingredient": {
+    "tag": "forge:stones/purpur_block"
+  },
+  "result": "chipped:purpur_block_1",
+  "count": 1
+}

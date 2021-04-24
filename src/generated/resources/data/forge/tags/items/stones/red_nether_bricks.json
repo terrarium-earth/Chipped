@@ -1,0 +1,24 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:red_nether_bricks",
+    "chipped:red_nether_bricks_1",
+    "chipped:red_nether_bricks_2",
+    "chipped:red_nether_bricks_3",
+    "chipped:red_nether_bricks_4",
+    "chipped:red_nether_bricks_5",
+    "chipped:red_nether_bricks_6",
+    "chipped:red_nether_bricks_7",
+    "chipped:red_nether_bricks_8",
+    "chipped:red_nether_bricks_9",
+    "chipped:red_nether_bricks_10",
+    "chipped:red_nether_bricks_11",
+    "chipped:red_nether_bricks_12",
+    "chipped:red_nether_bricks_13",
+    "chipped:red_nether_bricks_14",
+    "chipped:red_nether_bricks_15",
+    "chipped:red_nether_bricks_16",
+    "chipped:red_nether_bricks_17",
+    "chipped:red_nether_bricks_18"
+  ]
+}

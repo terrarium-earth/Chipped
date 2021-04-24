@@ -1,0 +1,25 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:clay",
+    "chipped:clay_1",
+    "chipped:clay_2",
+    "chipped:clay_3",
+    "chipped:clay_4",
+    "chipped:clay_5",
+    "chipped:clay_6",
+    "chipped:clay_7",
+    "chipped:clay_8",
+    "chipped:clay_9",
+    "chipped:clay_10",
+    "chipped:clay_11",
+    "chipped:clay_12",
+    "chipped:clay_13",
+    "chipped:clay_14",
+    "chipped:clay_15",
+    "chipped:clay_16",
+    "chipped:clay_17",
+    "chipped:clay_18",
+    "chipped:clay_19"
+  ]
+}
