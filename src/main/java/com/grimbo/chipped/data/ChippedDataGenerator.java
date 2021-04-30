@@ -15,8 +15,8 @@ public class ChippedDataGenerator {
 
 	/*
 	 * To add a new recipe for generic blocks
-	 * 1. Generate each block in ChippedBlockStateProvider::register
-	 * 2. Register the tags based off of a list or manually
+	 * 1. Generate each block in data.client.ChippedBlockStateProvider::register
+	 * 2. Register the tags based off of a list or manually in ChippedTags
 	 * 3. Generate each tag in ChippedBlockTagsProvider::register
 	 * 4. Generate each recipe in ChippedRecipeProvider::registerRecipes
 	 */
@@ -34,6 +34,7 @@ public class ChippedDataGenerator {
 		generate.addProvider(blockTags);
 		generate.addProvider(new ChippedItemTagsProvider(generate, blockTags, existingFileHelper));
 		
+		generate.addProvider(new ChippedLootTableProvider(generate));
 		generate.addProvider(new ChippedRecipeProvider(generate));
 	}	
 }

@@ -1,120 +1,120 @@
 {
   "variants": {
     "east=false,north=false,south=false,up=false,west=false": {
-      "model": "chipped:block/vine1/vine_1_1"
+      "model": "chipped:block/vine_1/vine_1_1"
     },
     "east=false,north=false,south=false,up=false,west=true": {
-      "model": "chipped:block/vine1/vine_1_1",
+      "model": "chipped:block/vine_1/vine_1_1",
       "y": 90
     },
     "east=false,north=false,south=false,up=true,west=false": {
-      "model": "chipped:block/vine1/vine_1_u"
+      "model": "chipped:block/vine_1/vine_1_u"
     },
     "east=false,north=false,south=false,up=true,west=true": {
-      "model": "chipped:block/vine1/vine_1_1u",
+      "model": "chipped:block/vine_1/vine_1_1u",
       "y": 90
     },
     "east=false,north=false,south=true,up=false,west=false": {
-      "model": "chipped:block/vine1/vine_1_1"
+      "model": "chipped:block/vine_1/vine_1_1"
     },
     "east=false,north=false,south=true,up=false,west=true": {
-      "model": "chipped:block/vine1/vine_1_2",
+      "model": "chipped:block/vine_1/vine_1_2",
       "y": 180
     },
     "east=false,north=false,south=true,up=true,west=false": {
-      "model": "chipped:block/vine1/vine_1_1u"
+      "model": "chipped:block/vine_1/vine_1_1u"
     },
     "east=false,north=false,south=true,up=true,west=true": {
-      "model": "chipped:block/vine1/vine_1_2u",
+      "model": "chipped:block/vine_1/vine_1_2u",
       "y": 180
     },
     "east=false,north=true,south=false,up=false,west=false": {
-      "model": "chipped:block/vine1/vine_1_1",
+      "model": "chipped:block/vine_1/vine_1_1",
       "y": 180
     },
     "east=false,north=true,south=false,up=false,west=true": {
-      "model": "chipped:block/vine1/vine_1_2",
+      "model": "chipped:block/vine_1/vine_1_2",
       "y": 270
     },
     "east=false,north=true,south=false,up=true,west=false": {
-      "model": "chipped:block/vine1/vine_1_1u",
+      "model": "chipped:block/vine_1/vine_1_1u",
       "y": 180
     },
     "east=false,north=true,south=false,up=true,west=true": {
-      "model": "chipped:block/vine1/vine_1_2u",
+      "model": "chipped:block/vine_1/vine_1_2u",
       "y": 270
     },
     "east=false,north=true,south=true,up=false,west=false": {
-      "model": "chipped:block/vine1/vine_1_2_opposite",
+      "model": "chipped:block/vine_1/vine_1_2_opposite",
       "y": 90
     },
     "east=false,north=true,south=true,up=false,west=true": {
-      "model": "chipped:block/vine1/vine_1_3",
+      "model": "chipped:block/vine_1/vine_1_3",
       "y": 180
     },
     "east=false,north=true,south=true,up=true,west=false": {
-      "model": "chipped:block/vine1/vine_1_2u_opposite",
+      "model": "chipped:block/vine_1/vine_1_2u_opposite",
       "y": 90
     },
     "east=false,north=true,south=true,up=true,west=true": {
-      "model": "chipped:block/vine1/vine_1_3u",
+      "model": "chipped:block/vine_1/vine_1_3u",
       "y": 180
     },
     "east=true,north=false,south=false,up=false,west=false": {
-      "model": "chipped:block/vine1/vine_1_1",
+      "model": "chipped:block/vine_1/vine_1_1",
       "y": 270
     },
     "east=true,north=false,south=false,up=false,west=true": {
-      "model": "chipped:block/vine1/vine_1_2_opposite"
+      "model": "chipped:block/vine_1/vine_1_2_opposite"
     },
     "east=true,north=false,south=false,up=true,west=false": {
-      "model": "chipped:block/vine1/vine_1_1u",
+      "model": "chipped:block/vine_1/vine_1_1u",
       "y": 270
     },
     "east=true,north=false,south=false,up=true,west=true": {
-      "model": "chipped:block/vine1/vine_1_2u_opposite"
+      "model": "chipped:block/vine_1/vine_1_2u_opposite"
     },
     "east=true,north=false,south=true,up=false,west=false": {
-      "model": "chipped:block/vine1/vine_1_2",
+      "model": "chipped:block/vine_1/vine_1_2",
       "y": 90
     },
     "east=true,north=false,south=true,up=false,west=true": {
-      "model": "chipped:block/vine1/vine_1_3",
+      "model": "chipped:block/vine_1/vine_1_3",
       "y": 90
     },
     "east=true,north=false,south=true,up=true,west=false": {
-      "model": "chipped:block/vine1/vine_1_2u",
+      "model": "chipped:block/vine_1/vine_1_2u",
       "y": 90
     },
     "east=true,north=false,south=true,up=true,west=true": {
-      "model": "chipped:block/vine1/vine_1_3u",
+      "model": "chipped:block/vine_1/vine_1_3u",
       "y": 90
     },
     "east=true,north=true,south=false,up=false,west=false": {
-      "model": "chipped:block/vine1/vine_1_2"
+      "model": "chipped:block/vine_1/vine_1_2"
     },
     "east=true,north=true,south=false,up=false,west=true": {
-      "model": "chipped:block/vine1/vine_1_3",
+      "model": "chipped:block/vine_1/vine_1_3",
       "y": 270
     },
     "east=true,north=true,south=false,up=true,west=false": {
-      "model": "chipped:block/vine1/vine_1_2u"
+      "model": "chipped:block/vine_1/vine_1_2u"
     },
     "east=true,north=true,south=false,up=true,west=true": {
-      "model": "chipped:block/vine1/vine_1_3u",
+      "model": "chipped:block/vine_1/vine_1_3u",
       "y": 270
     },
     "east=true,north=true,south=true,up=false,west=false": {
-      "model": "chipped:block/vine1/vine_1_3"
+      "model": "chipped:block/vine_1/vine_1_3"
     },
     "east=true,north=true,south=true,up=false,west=true": {
-      "model": "chipped:block/vine1/vine_1_4"
+      "model": "chipped:block/vine_1/vine_1_4"
     },
     "east=true,north=true,south=true,up=true,west=false": {
-      "model": "chipped:block/vine1/vine_1_3u"
+      "model": "chipped:block/vine_1/vine_1_3u"
     },
     "east=true,north=true,south=true,up=true,west=true": {
-      "model": "chipped:block/vine1/vine_1_4u"
+      "model": "chipped:block/vine_1/vine_1_4u"
     }
   }
 }
