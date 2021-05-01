@@ -66,5 +66,5 @@ public class Chipped
     }
 }
 
-
+// its the main class that forge looks at first, and the first thing it runs is public Chipped (its constructor)
 
