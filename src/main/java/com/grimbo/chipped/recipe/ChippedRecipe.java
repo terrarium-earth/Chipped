@@ -1,7 +1,7 @@
 package com.grimbo.chipped.recipe;
 
-import java.lang.reflect.Field;
-import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
 
 import com.google.gson.JsonObject;
 
@@ -34,19 +34,8 @@ public class ChippedRecipe extends SingleItemRecipe {
 	}
 	
 	public static IRecipeSerializer<?> fromId(int serializerId) {
-		ArrayList<RegistryObject<?>> fields = new ArrayList<RegistryObject<?>>();
-		for (Field field : ChippedSerializer.class.getFields()) {
-			if (field.getType().equals(RegistryObject.class)) {
-				try {
-					fields.add((RegistryObject<?>) field.get(RegistryObject.class));
-				} catch (IllegalArgumentException e) {
-					e.printStackTrace();
-				} catch (IllegalAccessException e) {
-					e.printStackTrace();
-				}
-			}
-		}
-		return (IRecipeSerializer<?>) fields.get(serializerId).get();
+		List<?> serializers = ChippedSerializer.SERIALIZER.getEntries().stream().map(RegistryObject::get).collect(Collectors.toList());
+		return (IRecipeSerializer<?>) serializers.get(serializerId);
 	}
 
 	@Override

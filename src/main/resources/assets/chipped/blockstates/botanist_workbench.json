@@ -1,36 +1,23 @@
 {
   "variants": {
-    "facing=east,part=foot": {
+    "facing=east,model=main": {
       "model": "chipped:block/botanist_workbench",
       "y": 90
     },
-    "facing=north,part=foot": {
+    "facing=north,model=main": {
       "model": "chipped:block/botanist_workbench",
       "y": 0
     },
-    "facing=south,part=foot": {
+    "facing=south,model=main": {
       "model": "chipped:block/botanist_workbench",
       "y": 180
     },
-    "facing=west,part=foot": {
+    "facing=west,model=main": {
       "model": "chipped:block/botanist_workbench",
       "y": 270
     },
-	"facing=east,part=head": {
-      "model": "chipped:block/empty_botanist",
-      "y": 90
-    },
-    "facing=north,part=head": {
-      "model": "chipped:block/empty_botanist",
-      "y": 0
-    },
-    "facing=south,part=head": {
-      "model": "chipped:block/empty_botanist",
-      "y": 180
-    },
-    "facing=west,part=head": {
-      "model": "chipped:block/empty_botanist",
-      "y": 270
+	"model=side": {
+      "model": "chipped:block/empty_botanist_workbench"
     }
   }
 }

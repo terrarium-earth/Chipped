@@ -1,20 +1,23 @@
 {
   "variants": {
-    "facing=east": {
+    "facing=east,model=main": {
       "model": "chipped:block/carpenters_table",
       "y": 90
     },
-    "facing=north": {
+    "facing=north,model=main": {
       "model": "chipped:block/carpenters_table",
       "y": 0
     },
-    "facing=south": {
+    "facing=south,model=main": {
       "model": "chipped:block/carpenters_table",
       "y": 180
     },
-    "facing=west": {
+    "facing=west,model=main": {
       "model": "chipped:block/carpenters_table",
       "y": 270
+    },
+	"model=side": {
+      "model": "chipped:block/empty_carpenters_table"
     }
   }
 }
