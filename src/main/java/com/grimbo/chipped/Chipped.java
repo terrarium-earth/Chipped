@@ -1,8 +1,6 @@
 package com.grimbo.chipped;
 
 import java.lang.reflect.Field;
-import java.util.List;
-import java.util.stream.Collectors;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -15,7 +13,6 @@ import com.grimbo.chipped.item.ChippedItems;
 import com.grimbo.chipped.recipe.ChippedSerializer;
 
 import net.minecraft.client.gui.ScreenManager;
-import net.minecraft.inventory.container.Container;
 import net.minecraft.inventory.container.ContainerType;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
@@ -50,17 +47,24 @@ public class Chipped
         eventBus.addListener(ChippedBlocks::clientRender);
         eventBus.addListener(this::onClientSetupEvent);
         MinecraftForge.EVENT_BUS.register(this);
-        
     }
 
     @SuppressWarnings("unchecked")
 	@SubscribeEvent
 	public void onClientSetupEvent(FMLClientSetupEvent event) {
-    	for (ContainerType<?> container : ChippedContainerType.CONTAINER.getEntries().stream().map(RegistryObject::get).collect(Collectors.toList())) {
-    		ScreenManager.registerFactory((ContainerType<ChippedContainer>) container, ChippedScreen::new);
+    	for (Field field : ChippedContainerType.class.getFields()) {
+    		if (!field.getName().equals("CONTAINER")) {
+				try {
+					ScreenManager.registerFactory(((RegistryObject<ContainerType<ChippedContainer>>) field.get(RegistryObject.class)).get(), ChippedScreen::new);
+				} catch (IllegalArgumentException e) {
+					e.printStackTrace();
+				} catch (IllegalAccessException e) {
+					e.printStackTrace();
+				}
+    		}
     	}
     }
 }
 
-
+// its the main class that forge looks at first, and the first thing it runs is public Chipped (its constructor)
 

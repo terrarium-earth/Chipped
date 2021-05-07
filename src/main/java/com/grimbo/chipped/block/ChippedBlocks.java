@@ -64,39 +64,29 @@ public class ChippedBlocks {
      * To register a new workbench:
      * 1. Add the workbench block to ChippedBlocks
      * 2. Give it an id in ChippedWorkbench
-     * 3. Register a new ContainerType in container.ChippedContainerType
+     * 3. Register a new ContainerType in ChippedContainerType
      * 4. Create a new class file that extends ChippedContainer in chipped.container
-     * 5. Register a new IRecipeSerializer in recipe.ChippedSerializer
-     * 6. Register it in integrations.jei.JEIPlugin
-     * 7. Give it both a block and container name in en_us.json
+     * 5. Register a new IRecipeSerializer in ChippedSerializer
      */
-    public static final RegistryObject<Block> BOTANIST_WORKBENCH = register(
-            () -> new ChippedWorkbench(0, "botanist_workbench", AbstractBlock.Properties.create(Material.WOOD)
+    public static final RegistryObject<Block> BOTANIST_WORKBENCH = register("botanist_workbench",
+            () -> new ChippedWorkbench(0, "container.chipped.botanist_workbench", AbstractBlock.Properties.create(Material.WOOD)
                     .hardnessAndResistance(1f, 2f).sound(SoundType.WOOD).notSolid().setAllowsSpawn(ChippedBlocks::neverAllowSpawn).setOpaque(ChippedBlocks::isntSolid).setSuffocates(ChippedBlocks::isntSolid).setBlocksVision(ChippedBlocks::isntSolid)));
-    public static final RegistryObject<Block> GLASSBLOWER = register(
-            () -> new ChippedWorkbench(1, "glassblower", AbstractBlock.Properties.create(Material.WOOD)
+    public static final RegistryObject<Block> GLASSBLOWER = register("glassblower",
+            () -> new ChippedWorkbench(1, "container.chipped.glassblower", AbstractBlock.Properties.create(Material.WOOD)
                     .hardnessAndResistance(1f, 2f).sound(SoundType.WOOD).notSolid().setAllowsSpawn(ChippedBlocks::neverAllowSpawn).setOpaque(ChippedBlocks::isntSolid).setSuffocates(ChippedBlocks::isntSolid).setBlocksVision(ChippedBlocks::isntSolid)));
-    public static final RegistryObject<Block> CARPENTERS_TABLE = register(
-            () -> new ChippedWorkbench(2, "carpenters_table", AbstractBlock.Properties.create(Material.WOOD)
+    public static final RegistryObject<Block> CARPENTERS_TABLE = register("carpenters_table",
+            () -> new ChippedWorkbench(2, "container.chipped.carpenters_table", AbstractBlock.Properties.create(Material.WOOD)
                     .hardnessAndResistance(1f, 2f).sound(SoundType.WOOD).notSolid().setAllowsSpawn(ChippedBlocks::neverAllowSpawn).setOpaque(ChippedBlocks::isntSolid).setSuffocates(ChippedBlocks::isntSolid).setBlocksVision(ChippedBlocks::isntSolid)));
-    public static final RegistryObject<Block> LOOM_TABLE = register(
-            () -> new ChippedWorkbench(3, "loom_table", AbstractBlock.Properties.create(Material.WOOD)
+    public static final RegistryObject<Block> LOOM_TABLE = register("loom_table",
+            () -> new ChippedWorkbench(3, "container.chipped.loom_table", AbstractBlock.Properties.create(Material.WOOD)
                     .hardnessAndResistance(1f, 2f).sound(SoundType.WOOD).notSolid().setAllowsSpawn(ChippedBlocks::neverAllowSpawn).setOpaque(ChippedBlocks::isntSolid).setSuffocates(ChippedBlocks::isntSolid).setBlocksVision(ChippedBlocks::isntSolid)));
-    public static final RegistryObject<Block> MASON_TABLE = register(
-            () -> new ChippedWorkbench(4, "mason_table", AbstractBlock.Properties.create(Material.IRON)
+    public static final RegistryObject<Block> MASON_TABLE = register("mason_table",
+            () -> new ChippedWorkbench(4, "container.chipped.mason_table", AbstractBlock.Properties.create(Material.WOOD)
                     .hardnessAndResistance(1f, 2f).sound(SoundType.WOOD).notSolid().setAllowsSpawn(ChippedBlocks::neverAllowSpawn).setOpaque(ChippedBlocks::isntSolid).setSuffocates(ChippedBlocks::isntSolid).setBlocksVision(ChippedBlocks::isntSolid)));
-    public static final RegistryObject<Block> ALCHEMY_BENCH = register(
-            () -> new ChippedWorkbench(5, "alchemy_bench", AbstractBlock.Properties.create(Material.WOOD)
+    public static final RegistryObject<Block> ALCHEMY_BENCH = register("alchemy_bench",
+            () -> new ChippedWorkbench(5, "container.chipped.alchemy_bench", AbstractBlock.Properties.create(Material.WOOD)
                     .hardnessAndResistance(1f, 2f).sound(SoundType.WOOD).notSolid().setAllowsSpawn(ChippedBlocks::neverAllowSpawn).setOpaque(ChippedBlocks::isntSolid).setSuffocates(ChippedBlocks::isntSolid).setBlocksVision(ChippedBlocks::isntSolid)));
 
-    /*
-     * To add blocks:
-     * 1. Register the RegistryObject here with properties (alternatively register it under this::register
-     * 2. Give it a client render if needed
-     * 3. Add it to the data generators in ChippedDataGenerator
-     * 4. Give it a block name in en_us.json
-     */
-     
     // Vines
     public static final RegistryObject<Block> VINE_1 = register("vine_1",
             () -> new VineBlock(AbstractBlock.Properties.create(Material.TALL_PLANTS)
@@ -264,20 +254,10 @@ public class ChippedBlocks {
         return (boolean) false;
     }
 
-    private static <T extends Block>RegistryObject<Block> register(String name, Supplier<T> block) {
-        RegistryObject<Block> toReturn = BLOCKS.register(name, block);
+    private  static <T extends Block>RegistryObject<T> register(String name, Supplier<T> block) {
+        RegistryObject<T> toReturn = BLOCKS.register(name, block);
         ChippedItems.ITEMS.register(name, () -> new BlockItem(toReturn.get(),
                 new Item.Properties().group(Chipped.CHIPPED)));
         return toReturn;
-    }
-    
-    /**
-     * Alternate registry of ChippedWorkbenches
-     * @param <T>
-     * @param block
-     * @return
-     */
-    private static <T extends Block>RegistryObject<Block> register(Supplier<ChippedWorkbench> block) {
-    	return register(block.get().ITEM_ID, block);
     }
 }
