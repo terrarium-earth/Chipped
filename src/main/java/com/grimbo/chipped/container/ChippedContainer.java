@@ -32,7 +32,7 @@ public class ChippedContainer extends Container {
     private final IWorldPosCallable worldPosCallable;
     private final IntReferenceHolder selectedRecipe = IntReferenceHolder.single();
     private final World world;
-    private List<ChippedRecipe> recipes = Lists.newArrayList();
+    private List <ChippedRecipe> recipes = Lists.newArrayList();
     private ItemStack itemStackInput = ItemStack.EMPTY;
     private long lastOnTake;
     final Slot inputInventorySlot;
@@ -113,7 +113,7 @@ public class ChippedContainer extends Container {
     }
 
     @OnlyIn(Dist.CLIENT)
-    public List<ChippedRecipe> getRecipeList() {
+    public List <ChippedRecipe> getRecipeList() {
         return this.recipes;
     }
 
@@ -150,6 +150,7 @@ public class ChippedContainer extends Container {
             this.itemStackInput = itemstack.copy();
             this.updateAvailableRecipes(inventoryIn, itemstack);
         }
+
     }
 
     private void updateAvailableRecipes(IInventory inventoryIn, ItemStack stack) {
@@ -159,6 +160,7 @@ public class ChippedContainer extends Container {
         if (!stack.isEmpty()) {
             this.recipes = this.world.getRecipeManager().getRecipes(recipeType, inventoryIn, this.world);
         }
+
     }
 
     private void updateRecipeResultSlot() {
