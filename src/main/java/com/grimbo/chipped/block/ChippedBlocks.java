@@ -261,4 +261,3 @@ public class ChippedBlocks {
         return toReturn;
     }
 }
-// give the proper properties :( ctrl + n allows u to open files in ur library
