@@ -1,0 +1,8 @@
+{
+  "type": "chipped:mason_table",
+  "ingredient": {
+    "tag": "forge:stones/quartz_block"
+  },
+  "result": "chipped:quartz_block_12",
+  "count": 1
+}

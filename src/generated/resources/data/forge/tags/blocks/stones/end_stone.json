@@ -1,0 +1,24 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:end_stone",
+    "chipped:end_stone_1",
+    "chipped:end_stone_2",
+    "chipped:end_stone_3",
+    "chipped:end_stone_4",
+    "chipped:end_stone_5",
+    "chipped:end_stone_6",
+    "chipped:end_stone_7",
+    "chipped:end_stone_8",
+    "chipped:end_stone_9",
+    "chipped:end_stone_10",
+    "chipped:end_stone_11",
+    "chipped:end_stone_12",
+    "chipped:end_stone_13",
+    "chipped:end_stone_14",
+    "chipped:end_stone_15",
+    "chipped:end_stone_16",
+    "chipped:end_stone_17",
+    "chipped:end_stone_18"
+  ]
+}
