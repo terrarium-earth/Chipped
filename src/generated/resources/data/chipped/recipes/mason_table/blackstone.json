@@ -1,0 +1,8 @@
+{
+  "type": "chipped:mason_table",
+  "ingredient": {
+    "tag": "forge:stones/blackstone"
+  },
+  "result": "minecraft:blackstone",
+  "count": 1
+}

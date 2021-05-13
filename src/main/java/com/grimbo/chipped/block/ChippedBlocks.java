@@ -61,8 +61,7 @@ public class ChippedBlocks {
     public static String[] stones4List = {"nether_bricks", "red_nether_bricks"};
     //End stones of hardness 3F, 9F
     public static String[] stones5List  = {"end_stone"};
-    // hardness of .4F
-    public static String[] stones7List = {"netherrack"};
+
     public static String[] colorsList = {"white", "orange", "magenta", "light_blue", "yellow", "lime", "pink", "gray", "light_gray", "cyan", "purple", "blue", "brown", "green", "red", "black"};
     public static String[] woodsList = {"oak", "birch", "spruce", "jungle", "acacia", "dark_oak", "warped", "crimson"};
 
@@ -146,6 +145,7 @@ public class ChippedBlocks {
         registerTerracottas();
         registerConcretes();
         registerWoods();
+        registerStones8();
     }
     
     private static void registerStones() {
@@ -199,17 +199,26 @@ public class ChippedBlocks {
     }
     
     private static void registerStones6() {
-    	for (int i = 1; i <= 5; i++) {
-    		stones.add(register("gilded_blackstone_" + i, 
+    	for (int i = 1; i <= 26; i++) {
+    		stones.add(register("gilded_blackstone_" + i,
     				() -> new Block(AbstractBlock.Properties.create(Material.ROCK)
-    						.setRequiresTool().hardnessAndResistance(1.5F, 6.0F))));
+    						.setRequiresTool().hardnessAndResistance(1.5F, 6.0F).sound(SoundType.GILDED_BLACKSTONE))));
     	}
     }
+
     private static void registerStones7() {
         for (int i = 1; i <= 18; i++) {
             stones.add(register("netherrack_" + i,
                     () -> new Block(AbstractBlock.Properties.create(Material.ROCK)
                             .setRequiresTool().hardnessAndResistance(0.4F).sound(SoundType.NETHERRACK))));
+        }
+    }
+
+    private static void registerStones8() {
+        for (int i = 1; i <= 21; i++) {
+            stones.add(register("blackstone_" + i,
+                    () -> new Block(AbstractBlock.Properties.create(Material.ROCK)
+                            .setRequiresTool().hardnessAndResistance(1.5F, 6.0F).sound(SoundType.GILDED_BLACKSTONE))));
         }
     }
 
@@ -279,7 +288,7 @@ public class ChippedBlocks {
         for (String color : colorsList) {
             for (int i = 1; i <= 18; i++) {
                 terracottas.add(register(color + "_terracotta_" + i, () -> new Block(AbstractBlock.Properties.create(Material.ROCK)
-                        .hardnessAndResistance(1.25f, 4.2f).sound(SoundType.STONE))));
+                        .hardnessAndResistance(1.25f, 4.2f).sound(SoundType.STONE).setRequiresTool())));
             }
         }
 
@@ -288,7 +297,7 @@ public class ChippedBlocks {
             for (String color : colorsList) {
                 for (int i = 1; i <= 18; i++) {
                     concretes.add(register(color + "_concrete_" + i, () -> new Block(AbstractBlock.Properties.create(Material.ROCK)
-                            .hardnessAndResistance(1.8f).sound(SoundType.STONE))));
+                            .hardnessAndResistance(1.8f).sound(SoundType.STONE).setRequiresTool())));
 
                 }
             }

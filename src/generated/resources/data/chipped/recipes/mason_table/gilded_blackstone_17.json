@@ -1,0 +1,8 @@
+{
+  "type": "chipped:mason_table",
+  "ingredient": {
+    "tag": "forge:stones/gilded_blackstone"
+  },
+  "result": "chipped:gilded_blackstone_17",
+  "count": 1
+}
