@@ -36,6 +36,7 @@ public class ChippedRecipeProvider extends RecipeProvider {
 		createRecipeFromList(ChippedBlocks.hayBlock, ChippedSerializer.BOTANIST_WORKBENCH.get(), consumer);
 		createRecipeFromList(ChippedBlocks.clays, ChippedSerializer.MASON_TABLE.get(), consumer);
 		createRecipeFromList(ChippedBlocks.terracottas, ChippedSerializer.MASON_TABLE.get(), consumer);
+		createRecipeFromList(ChippedBlocks.concretes, ChippedSerializer.MASON_TABLE.get(), consumer);
 		
 		//Glass + Wood Glass
 		chippedRecipe(ChippedSerializer.GLASSBLOWER.get(), 

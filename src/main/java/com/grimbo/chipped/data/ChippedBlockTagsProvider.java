@@ -31,6 +31,7 @@ public class ChippedBlockTagsProvider extends BlockTagsProvider {
 		createFromList(ChippedBlocks.hayBlock);
 		createFromList(ChippedBlocks.clays);
 		createFromList(ChippedBlocks.terracottas);
+		createFromList(ChippedBlocks.concretes);
 		
 		getOrCreateBuilder(ChippedTags.blocks.get("vine")).add(Blocks.VINE);
 		getOrCreateBuilder(ChippedTags.blocks.get("vine")).add(ChippedBlocks.VINE_1.get());

@@ -46,6 +46,8 @@ public class ChippedBlocks {
     public static ArrayList<RegistryObject<Block>> hayBlock = new ArrayList<RegistryObject<Block>>();
     public static ArrayList<RegistryObject<Block>> clays = new ArrayList<RegistryObject<Block>>();
     public static ArrayList<RegistryObject<Block>> terracottas = new ArrayList<RegistryObject<Block>>();
+    public static ArrayList<RegistryObject<Block>> concretes = new ArrayList<RegistryObject<Block>>();
+
     
     //General stones of hardness 1.5F, 6F
     public static String[] stonesList = {"stone", "granite", "diorite", "andesite", "prismarine", "dark_prismarine", "purpur_block"};
@@ -137,6 +139,7 @@ public class ChippedBlocks {
         registerHayBlocks();
         registerClays();
         registerTerracottas();
+        registerConcretes();
     }
     
     private static void registerStones() {
@@ -266,7 +269,18 @@ public class ChippedBlocks {
                         .hardnessAndResistance(1.25f, 4.2f).sound(SoundType.STONE))));
             }
         }
+
     }
+        private static void registerConcretes() {
+            for (String color : colorsList) {
+                for (int i = 1; i <= 18; i++) {
+                    concretes.add(register(color + "_concrete_" + i, () -> new Block(AbstractBlock.Properties.create(Material.ROCK)
+                            .hardnessAndResistance(1.8f).sound(SoundType.STONE))));
+
+                }
+            }
+        }
+
 
 
 

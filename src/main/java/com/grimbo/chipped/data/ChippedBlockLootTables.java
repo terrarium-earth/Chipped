@@ -37,6 +37,9 @@ public class ChippedBlockLootTables extends BlockLootTables {
 		for (RegistryObject<Block> block : ChippedBlocks.terracottas) {
 			registerDropSelfLootTable(block.get());
 		}
+		for (RegistryObject<Block> block : ChippedBlocks.concretes) {
+			registerDropSelfLootTable(block.get());
+		}
 		
 		registerDropSelfLootTable(ChippedBlocks.BOTANIST_WORKBENCH.get());
 		registerDropSelfLootTable(ChippedBlocks.GLASSBLOWER.get());

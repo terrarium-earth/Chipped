@@ -27,6 +27,7 @@ public class ChippedItemModelProvider extends ItemModelProvider {
 		createFromList(ChippedBlocks.hayBlock);
 		createFromList(ChippedBlocks.clays);
 		createFromList(ChippedBlocks.terracottas);
+		createFromList(ChippedBlocks.concretes);
 	}
 	
 	private void createFromList(ArrayList<RegistryObject<Block>> list) {
