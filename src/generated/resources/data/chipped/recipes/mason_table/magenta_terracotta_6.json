@@ -1,0 +1,8 @@
+{
+  "type": "chipped:mason_table",
+  "ingredient": {
+    "tag": "forge:terracottas/magenta_terracotta"
+  },
+  "result": "chipped:magenta_terracotta_6",
+  "count": 1
+}

@@ -20,6 +20,7 @@ public class ChippedDataGenerator {
 	 * 3. Generate each tag in ChippedBlockTagsProvider::register
 	 * 4. Generate each recipe in ChippedRecipeProvider::registerRecipes
 	 */
+
 	@SubscribeEvent
     public static void gatherData(final GatherDataEvent event) {
 		ChippedTags.register();
@@ -36,5 +37,6 @@ public class ChippedDataGenerator {
 		
 		generate.addProvider(new ChippedLootTableProvider(generate));
 		generate.addProvider(new ChippedRecipeProvider(generate));
+
 	}	
 }

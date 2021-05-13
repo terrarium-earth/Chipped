@@ -1,0 +1,8 @@
+{
+  "type": "chipped:mason_table",
+  "ingredient": {
+    "tag": "forge:terracottas/red_terracotta"
+  },
+  "result": "minecraft:red_terracotta",
+  "count": 1
+}

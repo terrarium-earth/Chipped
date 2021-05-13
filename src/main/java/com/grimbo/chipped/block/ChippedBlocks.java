@@ -45,6 +45,7 @@ public class ChippedBlocks {
     public static ArrayList<RegistryObject<Block>> stainedGlasses = new ArrayList<RegistryObject<Block>>();
     public static ArrayList<RegistryObject<Block>> hayBlock = new ArrayList<RegistryObject<Block>>();
     public static ArrayList<RegistryObject<Block>> clays = new ArrayList<RegistryObject<Block>>();
+    public static ArrayList<RegistryObject<Block>> terracottas = new ArrayList<RegistryObject<Block>>();
     
     //General stones of hardness 1.5F, 6F
     public static String[] stonesList = {"stone", "granite", "diorite", "andesite", "prismarine", "dark_prismarine", "purpur_block"};
@@ -58,7 +59,7 @@ public class ChippedBlocks {
     public static String[] stones5List  = {"end_stone"};
     public static String[] colorsList = {"white", "orange", "magenta", "light_blue", "yellow", "lime", "pink", "gray", "light_gray", "cyan", "purple", "blue", "brown", "green", "red", "black"};
     public static String[] woodsList = {"oak", "birch", "spruce", "jungle", "acacia", "dark_oak", "warped", "crimson"};
-    
+
     // Workbenches
     /*
      * To register a new workbench:
@@ -96,6 +97,7 @@ public class ChippedBlocks {
      * 3. Add it to the data generators in ChippedDataGenerator
      * 4. Give it a block name in en_us.json
      */
+
      
     // Vines
     public static final RegistryObject<Block> VINE_1 = register("vine_1",
@@ -134,6 +136,7 @@ public class ChippedBlocks {
         registerStainedGlasses();
         registerHayBlocks();
         registerClays();
+        registerTerracottas();
     }
     
     private static void registerStones() {
@@ -255,6 +258,17 @@ public class ChippedBlocks {
     	            		.hardnessAndResistance(0.6F).sound(SoundType.GROUND))));
     	}
     }
+
+    private static void registerTerracottas() {
+        for (String color : colorsList) {
+            for (int i = 1; i <= 18; i++) {
+                terracottas.add(register(color + "_terracotta_" + i, () -> new Block(AbstractBlock.Properties.create(Material.ROCK)
+                        .hardnessAndResistance(1.25f, 4.2f).sound(SoundType.STONE))));
+            }
+        }
+    }
+
+
 
     private static boolean isntSolid(BlockState state, IBlockReader reader, BlockPos pos) {
         return false;
