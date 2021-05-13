@@ -28,6 +28,7 @@ public class ChippedBlockStateProvider extends BlockStateProvider {
 		createCubeFromList(ChippedBlocks.clays);
 		createCubeFromList(ChippedBlocks.terracottas);
 		createCubeFromList(ChippedBlocks.concretes);
+		createCubeFromList(ChippedBlocks.woods);
 		
 		for (int i = 0; i < ChippedBlocks.carpets.size(); i++) {
 			Block block = ChippedBlocks.carpets.get(i).get();

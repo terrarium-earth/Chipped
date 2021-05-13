@@ -1,0 +1,8 @@
+{
+  "type": "chipped:carpenters_table",
+  "ingredient": {
+    "tag": "forge:woods/crimson_planks"
+  },
+  "result": "chipped:crimson_planks_12",
+  "count": 1
+}

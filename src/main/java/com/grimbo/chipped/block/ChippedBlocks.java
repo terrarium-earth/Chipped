@@ -48,6 +48,7 @@ public class ChippedBlocks {
     public static ArrayList<RegistryObject<Block>> clays = new ArrayList<RegistryObject<Block>>();
     public static ArrayList<RegistryObject<Block>> terracottas = new ArrayList<RegistryObject<Block>>();
     public static ArrayList<RegistryObject<Block>> concretes = new ArrayList<RegistryObject<Block>>();
+    public static ArrayList<RegistryObject<Block>> woods = new ArrayList<RegistryObject<Block>>();
 
     
     //General stones of hardness 1.5F, 6F
@@ -144,6 +145,7 @@ public class ChippedBlocks {
         registerClays();
         registerTerracottas();
         registerConcretes();
+        registerWoods();
     }
     
     private static void registerStones() {
@@ -291,7 +293,15 @@ public class ChippedBlocks {
                 }
             }
         }
-
+    private static void registerWoods() {
+        for (String wood : woodsList) {
+            for (int i = 1; i <= 18; i++) {
+                woods.add(register(wood + "_planks_" + i,
+                        () -> new GlassBlock(AbstractBlock.Properties.create(Material.WOOD)
+                                .hardnessAndResistance(2.0F, 3.0F).sound(SoundType.WOOD))));
+            }
+        }
+    }
 
 
 

@@ -1,0 +1,8 @@
+{
+  "type": "chipped:carpenters_table",
+  "ingredient": {
+    "tag": "forge:woods/jungle_planks"
+  },
+  "result": "chipped:jungle_planks_18",
+  "count": 1
+}
