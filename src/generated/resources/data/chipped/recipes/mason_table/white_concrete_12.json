@@ -1,0 +1,8 @@
+{
+  "type": "chipped:mason_table",
+  "ingredient": {
+    "tag": "forge:concretes/white_concrete"
+  },
+  "result": "chipped:white_concrete_12",
+  "count": 1
+}

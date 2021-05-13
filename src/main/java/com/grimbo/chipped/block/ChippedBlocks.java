@@ -17,6 +17,7 @@ import net.minecraft.block.StainedGlassBlock;
 import net.minecraft.block.VineBlock;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.material.MaterialColor;
+import net.minecraft.client.audio.Sound;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.RenderTypeLookup;
 import net.minecraft.entity.EntityType;
@@ -59,6 +60,8 @@ public class ChippedBlocks {
     public static String[] stones4List = {"nether_bricks", "red_nether_bricks"};
     //End stones of hardness 3F, 9F
     public static String[] stones5List  = {"end_stone"};
+    // hardness of .4F
+    public static String[] stones7List = {"netherrack"};
     public static String[] colorsList = {"white", "orange", "magenta", "light_blue", "yellow", "lime", "pink", "gray", "light_gray", "cyan", "purple", "blue", "brown", "green", "red", "black"};
     public static String[] woodsList = {"oak", "birch", "spruce", "jungle", "acacia", "dark_oak", "warped", "crimson"};
 
@@ -131,6 +134,7 @@ public class ChippedBlocks {
     	registerStones4();
     	registerStones5();
     	registerStones6();
+    	registerStones7();
         registerWools();
         registerCarpets();
         registerGlasses();
@@ -198,6 +202,13 @@ public class ChippedBlocks {
     				() -> new Block(AbstractBlock.Properties.create(Material.ROCK)
     						.setRequiresTool().hardnessAndResistance(1.5F, 6.0F))));
     	}
+    }
+    private static void registerStones7() {
+        for (int i = 1; i <= 18; i++) {
+            stones.add(register("netherrack_" + i,
+                    () -> new Block(AbstractBlock.Properties.create(Material.ROCK)
+                            .setRequiresTool().hardnessAndResistance(0.4F).sound(SoundType.NETHERRACK))));
+        }
     }
 
     private static void registerWools() {

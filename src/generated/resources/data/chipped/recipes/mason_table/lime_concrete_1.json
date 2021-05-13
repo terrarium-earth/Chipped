@@ -1,0 +1,8 @@
+{
+  "type": "chipped:mason_table",
+  "ingredient": {
+    "tag": "forge:concretes/lime_concrete"
+  },
+  "result": "chipped:lime_concrete_1",
+  "count": 1
+}
