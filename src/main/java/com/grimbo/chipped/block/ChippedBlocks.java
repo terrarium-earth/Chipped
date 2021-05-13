@@ -6,15 +6,7 @@ import java.util.function.Supplier;
 import com.grimbo.chipped.Chipped;
 import com.grimbo.chipped.item.ChippedItems;
 
-import net.minecraft.block.AbstractBlock;
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.CarpetBlock;
-import net.minecraft.block.GlassBlock;
-import net.minecraft.block.HayBlock;
-import net.minecraft.block.SoundType;
-import net.minecraft.block.StainedGlassBlock;
-import net.minecraft.block.VineBlock;
+import net.minecraft.block.*;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.material.MaterialColor;
 import net.minecraft.client.audio.Sound;
@@ -64,6 +56,7 @@ public class ChippedBlocks {
 
     public static String[] colorsList = {"white", "orange", "magenta", "light_blue", "yellow", "lime", "pink", "gray", "light_gray", "cyan", "purple", "blue", "brown", "green", "red", "black"};
     public static String[] woodsList = {"oak", "birch", "spruce", "jungle", "acacia", "dark_oak", "warped", "crimson"};
+
 
     // Workbenches
     /*
@@ -146,6 +139,9 @@ public class ChippedBlocks {
         registerConcretes();
         registerWoods();
         registerStones8();
+        registerCryingObsidians();
+        registerObsidians();
+        registerBasalts();
     }
     
     private static void registerStones() {
@@ -306,11 +302,36 @@ public class ChippedBlocks {
         for (String wood : woodsList) {
             for (int i = 1; i <= 18; i++) {
                 woods.add(register(wood + "_planks_" + i,
-                        () -> new GlassBlock(AbstractBlock.Properties.create(Material.WOOD)
+                        () -> new Block(AbstractBlock.Properties.create(Material.WOOD)
                                 .hardnessAndResistance(2.0F, 3.0F).sound(SoundType.WOOD))));
             }
         }
     }
+    private static void registerCryingObsidians() {
+            for (int i = 1; i <= 20; i++) {
+                stones.add(register("crying_obsidian_" + i,
+                        () -> new CryingObsidianBlock(AbstractBlock.Properties.create(Material.ROCK)
+                                .hardnessAndResistance(50.0F, 1200.0F).sound(SoundType.STONE).setRequiresTool().setLightLevel((state)  -> {
+                                    return 10; }))));
+                                }
+            }
+    private static void registerObsidians() {
+        for (int i = 1; i <= 20; i++) {
+            stones.add(register("obsidian_" + i,
+                    () -> new Block(AbstractBlock.Properties.create(Material.ROCK)
+                            .hardnessAndResistance(50.0F, 1200.0F).sound(SoundType.STONE).setRequiresTool())));
+
+        }
+    }
+    private static void registerBasalts() {
+        for (int i = 1; i <= 20; i++) {
+            stones.add(register("basalt_" + i,
+                    () -> new Block(AbstractBlock.Properties.create(Material.ROCK)
+                            .hardnessAndResistance(1.25F, 4.2F).sound(SoundType.BASALT).setRequiresTool())));
+        }
+    }
+
+
 
 
 

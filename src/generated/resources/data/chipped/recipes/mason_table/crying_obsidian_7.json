@@ -1,0 +1,8 @@
+{
+  "type": "chipped:mason_table",
+  "ingredient": {
+    "tag": "forge:stones/crying_obsidian"
+  },
+  "result": "chipped:crying_obsidian_7",
+  "count": 1
+}
