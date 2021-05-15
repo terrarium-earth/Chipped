@@ -45,13 +45,13 @@ public class JEIPlugin implements IModPlugin {
 	@SuppressWarnings("resource")
 	@Override
     public void registerRecipes(IRecipeRegistration registration) {
-		RecipeManager recipeManager = Minecraft.getInstance().world.getRecipeManager();
-		registration.addRecipes(recipeManager.getRecipesForType(ChippedSerializer.BOTANIST_WORKBENCH_TYPE), getUidFromId("botanist_workbench"));
-		registration.addRecipes(recipeManager.getRecipesForType(ChippedSerializer.GLASSBLOWER_TYPE), getUidFromId("glassblower"));
-		registration.addRecipes(recipeManager.getRecipesForType(ChippedSerializer.CARPENTERS_TABLE_TYPE), getUidFromId("carpenters_table"));
-		registration.addRecipes(recipeManager.getRecipesForType(ChippedSerializer.LOOM_TABLE_TYPE), getUidFromId("loom_table"));
-		registration.addRecipes(recipeManager.getRecipesForType(ChippedSerializer.MASON_TABLE_TYPE), getUidFromId("mason_table"));
-		registration.addRecipes(recipeManager.getRecipesForType(ChippedSerializer.ALCHEMY_BENCH_TYPE), getUidFromId("alchemy_bench"));
+		RecipeManager recipeManager = Minecraft.getInstance().level.getRecipeManager();
+		registration.addRecipes(recipeManager.getAllRecipesFor(ChippedSerializer.BOTANIST_WORKBENCH_TYPE), getUidFromId("botanist_workbench"));
+		registration.addRecipes(recipeManager.getAllRecipesFor(ChippedSerializer.GLASSBLOWER_TYPE), getUidFromId("glassblower"));
+		registration.addRecipes(recipeManager.getAllRecipesFor(ChippedSerializer.CARPENTERS_TABLE_TYPE), getUidFromId("carpenters_table"));
+		registration.addRecipes(recipeManager.getAllRecipesFor(ChippedSerializer.LOOM_TABLE_TYPE), getUidFromId("loom_table"));
+		registration.addRecipes(recipeManager.getAllRecipesFor(ChippedSerializer.MASON_TABLE_TYPE), getUidFromId("mason_table"));
+		registration.addRecipes(recipeManager.getAllRecipesFor(ChippedSerializer.ALCHEMY_BENCH_TYPE), getUidFromId("alchemy_bench"));
 	}
 
 	@Override

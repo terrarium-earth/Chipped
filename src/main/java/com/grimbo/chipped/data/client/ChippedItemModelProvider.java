@@ -30,7 +30,7 @@ public class ChippedItemModelProvider extends ItemModelProvider {
 		createFromList(ChippedBlocks.concretes);
 		createFromList(ChippedBlocks.woods);
 	}
-	
+
 	private void createFromList(ArrayList<RegistryObject<Block>> list) {
 		for (RegistryObject<Block> block : list) {
 			String name = block.get().getRegistryName().getPath();

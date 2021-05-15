@@ -10,12 +10,13 @@ import net.minecraftforge.common.data.ExistingFileHelper;
 
 public class ChippedItemTagsProvider extends ItemTagsProvider {
 
-	public ChippedItemTagsProvider(DataGenerator dataGenerator, BlockTagsProvider blockTagProvider, ExistingFileHelper existingFileHelper) {
+	public ChippedItemTagsProvider(DataGenerator dataGenerator, BlockTagsProvider blockTagProvider,
+			ExistingFileHelper existingFileHelper) {
 		super(dataGenerator, blockTagProvider, Chipped.MOD_ID, existingFileHelper);
 	}
-	
+
 	@Override
-	protected void registerTags() {
+	protected void addTags() {
 		for (String key : ChippedTags.blocks.keySet()) {
 			copy(ChippedTags.blocks.get(key), ChippedTags.items.get(key));
 		}

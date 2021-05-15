@@ -28,7 +28,7 @@ public class ChippedRecipeProvider extends RecipeProvider {
 	}
 
 	@Override
-	protected void registerRecipes(Consumer<IFinishedRecipe> consumer) {
+	protected void buildShapelessRecipes(Consumer<IFinishedRecipe> consumer) {
 		createRecipeFromList(ChippedBlocks.stones, ChippedSerializer.MASON_TABLE.get(), consumer);
 		createRecipeFromList(ChippedBlocks.wools, ChippedSerializer.LOOM_TABLE.get(), consumer);
 		createRecipeFromList(ChippedBlocks.carpets, ChippedSerializer.LOOM_TABLE.get(), consumer);
@@ -41,18 +41,18 @@ public class ChippedRecipeProvider extends RecipeProvider {
 		
 		//Glass + Wood Glass
 		chippedRecipe(ChippedSerializer.GLASSBLOWER.get(), 
-				Ingredient.fromTag(ChippedTags.items.get("glass")), 
+				Ingredient.of(ChippedTags.items.get("glass")), 
 				Blocks.GLASS)
-				.addCriterion("has_item", hasItem(Blocks.GLASS))
-				.build(consumer, new ResourceLocation(Chipped.MOD_ID, ChippedSerializer.GLASSBLOWER.get().getRegistryName().getPath() + "/glass"));
+				.unlocks("has_item", has(Blocks.GLASS))
+				.save(consumer, new ResourceLocation(Chipped.MOD_ID, ChippedSerializer.GLASSBLOWER.get().getRegistryName().getPath() + "/glass"));
 		for (RegistryObject<Block> block : ChippedBlocks.glasses) {
 			String name = block.get().getRegistryName().getPath();
 			String name2 = name.split("_([1-9])")[0];
 			chippedRecipe(ChippedSerializer.GLASSBLOWER.get(), 
-					Ingredient.fromTag(ChippedTags.items.get(name2)), 
+					Ingredient.of(ChippedTags.items.get(name2)), 
 					block.get())
-					.addCriterion("has_item", hasItem(Blocks.GLASS))
-					.build(consumer, new ResourceLocation(Chipped.MOD_ID, ChippedSerializer.GLASSBLOWER.get().getRegistryName().getPath() + "/" + name));
+					.unlocks("has_item", has(Blocks.GLASS))
+					.save(consumer, new ResourceLocation(Chipped.MOD_ID, ChippedSerializer.GLASSBLOWER.get().getRegistryName().getPath() + "/" + name));
 		}
 		
 		//Vines
@@ -63,10 +63,10 @@ public class ChippedRecipeProvider extends RecipeProvider {
 	private static void createRecipeFromBlock(Block block, IRecipeSerializer<?> serializer, Consumer<IFinishedRecipe> consumer) {
 		String name = block.getRegistryName().getPath();
 		chippedRecipe(serializer, 
-				Ingredient.fromTag(ChippedTags.items.get(name.split("_([1-9])")[0])), 
+				Ingredient.of(ChippedTags.items.get(name.split("_([1-9])")[0])), 
 				block)
-				.addCriterion("has_item", hasItem(ForgeRegistries.BLOCKS.getValue(new ResourceLocation("minecraft:" + name))))
-				.build(consumer, new ResourceLocation(Chipped.MOD_ID, serializer.getRegistryName().getPath() + "/" + name));
+				.unlocks("has_item", has(ForgeRegistries.BLOCKS.getValue(new ResourceLocation("minecraft:" + name))))
+				.save(consumer, new ResourceLocation(Chipped.MOD_ID, serializer.getRegistryName().getPath() + "/" + name));
 	}
 	
 	private static void createRecipeFromList(ArrayList<RegistryObject<Block>> list, IRecipeSerializer<?> serializer, Consumer<IFinishedRecipe> consumer) {
@@ -77,16 +77,16 @@ public class ChippedRecipeProvider extends RecipeProvider {
 			Block vanillaBlock = ForgeRegistries.BLOCKS.getValue(new ResourceLocation("minecraft:" + name2));
 			if (!previousName.equals(name2)) {
 				chippedRecipe(serializer, 
-						Ingredient.fromTag(ChippedTags.items.get(name2)), 
+						Ingredient.of(ChippedTags.items.get(name2)), 
 						vanillaBlock)
-						.addCriterion("has_item", hasItem(vanillaBlock))
-						.build(consumer, new ResourceLocation(Chipped.MOD_ID, serializer.getRegistryName().getPath() + "/" + name2));
+						.unlocks("has_item", has(vanillaBlock))
+						.save(consumer, new ResourceLocation(Chipped.MOD_ID, serializer.getRegistryName().getPath() + "/" + name2));
 			}
 			chippedRecipe(serializer, 
-					Ingredient.fromTag(ChippedTags.items.get(name2)), 
+					Ingredient.of(ChippedTags.items.get(name2)), 
 					block.get())
-					.addCriterion("has_item", hasItem(vanillaBlock))
-					.build(consumer, new ResourceLocation(Chipped.MOD_ID, serializer.getRegistryName().getPath() + "/" + name));
+					.unlocks("has_item", has(vanillaBlock))
+					.save(consumer, new ResourceLocation(Chipped.MOD_ID, serializer.getRegistryName().getPath() + "/" + name));
 			previousName = name2;
 		}
 	}
@@ -95,7 +95,8 @@ public class ChippedRecipeProvider extends RecipeProvider {
 	    return new SingleItemRecipeBuilder(serializer, ingredientIn, resultIn, 1);
 	}
 
-	public static SingleItemRecipeBuilder chippedRecipe(IRecipeSerializer<?> serializer, Ingredient ingredientIn, IItemProvider resultIn, int countIn) {
-	    return new SingleItemRecipeBuilder(serializer, ingredientIn, resultIn, countIn);
+	public static SingleItemRecipeBuilder chippedRecipe(IRecipeSerializer<?> serializer, Ingredient ingredientIn,
+			IItemProvider resultIn, int countIn) {
+		return new SingleItemRecipeBuilder(serializer, ingredientIn, resultIn, countIn);
 	}
 }

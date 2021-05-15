@@ -29,22 +29,22 @@ public class ChippedBlockStateProvider extends BlockStateProvider {
 		createCubeFromList(ChippedBlocks.terracottas);
 		createCubeFromList(ChippedBlocks.concretes);
 		createCubeFromList(ChippedBlocks.woods);
-		
+
 		for (int i = 0; i < ChippedBlocks.carpets.size(); i++) {
 			Block block = ChippedBlocks.carpets.get(i).get();
 			String name = block.getRegistryName().getPath();
 			String name2 = ChippedBlocks.wools.get(i).get().getRegistryName().getPath();
 			getVariantBuilder(block).partialState()
-			.setModels(new ConfiguredModel(models().carpet(name, modLoc("block/" + name2))));
+					.setModels(new ConfiguredModel(models().carpet(name, modLoc("block/" + name2))));
 		}
 		for (RegistryObject<Block> block : ChippedBlocks.hayBlock) {
-			axisBlock((RotatedPillarBlock) block.get());	
+			axisBlock((RotatedPillarBlock) block.get());
 		}
 	}
-	
+
 	private void createCubeFromList(ArrayList<RegistryObject<Block>> list) {
 		for (RegistryObject<Block> block : list) {
-			simpleBlock(block.get());	
+			simpleBlock(block.get());
 		}
 	}
 

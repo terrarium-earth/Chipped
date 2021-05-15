@@ -13,11 +13,11 @@ import net.minecraft.tags.ItemTags;
 import net.minecraftforge.fml.RegistryObject;
 
 public class ChippedTags {
-	
+
 	public static Hashtable<String, ITag.INamedTag<Block>> blocks = new Hashtable<>();
 	public static Hashtable<String, ITag.INamedTag<Item>> items = new Hashtable<>();
-	
-	//Todo: Get a proper naming convention for tags
+
+	// Todo: Get a proper naming convention for tags
 	public static void register() {
 		createFromList("stones", ChippedBlocks.stones);
 		createFromList("wools", ChippedBlocks.wools);
@@ -29,16 +29,16 @@ public class ChippedTags {
 		createFromList("terracottas", ChippedBlocks.terracottas);
 		createFromList("concretes", ChippedBlocks.concretes);
 		createFromList("woods", ChippedBlocks.woods);
-		
+
 		createFromBlock("vines", ChippedBlocks.VINE_1.get());
 	}
-	
+
 	private static void createFromBlock(String type, Block block) {
 		String blockName = block.getRegistryName().getPath().split("_([1-9])")[0];
 		blocks.put(blockName, Blocks.forge(type + "/" + blockName));
 		items.put(blockName, Items.forge(type + "/" + blockName));
 	}
-	
+
 	private static void createFromList(String type, ArrayList<RegistryObject<Block>> list) {
 		for (RegistryObject<Block> block : list) {
 			String blockName = block.get().getRegistryName().getPath().split("_([1-9])")[0];
@@ -46,33 +46,33 @@ public class ChippedTags {
 			items.put(blockName, Items.forge(type + "/" + blockName));
 		}
 	}
-	
+
 	private static void createFromList(String type, String[] list) {
 		for (String block : list) {
 			blocks.put(block, Blocks.forge(type + "/" + block));
 			items.put(block, Items.forge(type + "/" + block));
 		}
 	}
-	
+
 	public static class Blocks {
-		
+
 		private static ITag.INamedTag<Block> forge(String id) {
-			return BlockTags.makeWrapperTag("forge:" + id);
+			return BlockTags.bind("forge:" + id);
 		}
-		
+
 		private static ITag.INamedTag<Block> mod(String id) {
-			return BlockTags.makeWrapperTag(Chipped.MOD_ID + ":" + id);
+			return BlockTags.bind(Chipped.MOD_ID + ":" + id);
 		}
 	}
 
 	public static class Items {
-		
+
 		private static ITag.INamedTag<Item> forge(String id) {
-			return ItemTags.makeWrapperTag("forge:" + id);
+			return ItemTags.bind("forge:" + id);
 		}
-		
+
 		private static ITag.INamedTag<Item> mod(String id) {
-			return ItemTags.makeWrapperTag(Chipped.MOD_ID + ":" + id);
+			return ItemTags.bind(Chipped.MOD_ID + ":" + id);
 		}
 	}
 }

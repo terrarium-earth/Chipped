@@ -27,7 +27,7 @@ public class ChippedColors {
 
 		final IBlockColor grassColourHandler = (state, blockAccess, pos, tintIndex) -> {
 			if (blockAccess != null && pos != null) {
-				return BiomeColors.getGrassColor(blockAccess, pos);
+				return BiomeColors.getAverageGrassColor(blockAccess, pos);
 			}
 
 			return GrassColors.get(0.5d, 1.0d);
@@ -35,14 +35,14 @@ public class ChippedColors {
 
 		blockColors.register(grassColourHandler, ChippedBlocks.VINE_1.get());
 	}
-	
+
 	@SubscribeEvent
 	public static void registerItemColourHandlers(final ColorHandlerEvent.Item event) {
 		final BlockColors blockColors = event.getBlockColors();
 		final ItemColors itemColors = event.getItemColors();
 
 		final IItemColor itemBlockColourHandler = (stack, tintIndex) -> {
-			final BlockState state = ((BlockItem) stack.getItem()).getBlock().getDefaultState();
+			final BlockState state = ((BlockItem) stack.getItem()).getBlock().defaultBlockState();
 			return blockColors.getColor(state, null, null, tintIndex);
 		};
 

@@ -38,5 +38,5 @@ public class ChippedDataGenerator {
 		generate.addProvider(new ChippedLootTableProvider(generate));
 		generate.addProvider(new ChippedRecipeProvider(generate));
 
-	}	
+	}
 }
