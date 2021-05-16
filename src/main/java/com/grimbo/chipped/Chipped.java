@@ -43,7 +43,6 @@ public class Chipped {
 		ChippedItems.ITEMS.register(eventBus);
 		ChippedSerializer.SERIALIZER.register(eventBus);
 		ChippedContainerType.CONTAINER.register(eventBus);
-		eventBus.addListener(ChippedBlocks::clientRender);
 		eventBus.addListener(this::onClientSetupEvent);
 		MinecraftForge.EVENT_BUS.register(this);
 
@@ -52,6 +51,8 @@ public class Chipped {
 	@SuppressWarnings("unchecked")
 	@SubscribeEvent
 	public void onClientSetupEvent(FMLClientSetupEvent event) {
+		IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
+		eventBus.addListener(ChippedBlocks::clientRender);
 		for (ContainerType<?> container : ChippedContainerType.CONTAINER.getEntries().stream().map(RegistryObject::get)
 				.collect(Collectors.toList())) {
 			ScreenManager.register((ContainerType<ChippedContainer>) container, ChippedScreen::new);
