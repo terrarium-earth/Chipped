@@ -1,5 +1,6 @@
 {
   "credit": "Made with Blockbench",
+  "ambientocclusion": false,
   "textures": {
     "1": "chipped:block/woodtexture",
     "3": "chipped:block/rsz_green-fabric-texture",

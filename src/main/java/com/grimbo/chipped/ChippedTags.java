@@ -17,7 +17,7 @@ public class ChippedTags {
 	public static Hashtable<String, ITag.INamedTag<Block>> blocks = new Hashtable<>();
 	public static Hashtable<String, ITag.INamedTag<Item>> items = new Hashtable<>();
 
-	// Todo: Get a proper naming convention for tags
+	//TODO: Get a proper naming convention for tags
 	public static void register() {
 		createFromList("stones", ChippedBlocks.stones);
 		createFromList("wools", ChippedBlocks.wools);

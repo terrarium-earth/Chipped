@@ -32,7 +32,7 @@ public class Chipped {
 		public ItemStack makeIcon() {
 			return new ItemStack(ChippedBlocks.BOTANIST_WORKBENCH.get());
 		}
-	});// .setTabPath("chipped_tab");
+	}).setRecipeFolderName("chipped_tab");
 
 	private static final Logger LOGGER = LogManager.getLogger();
 

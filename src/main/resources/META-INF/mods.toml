@@ -1,10 +1,10 @@
 modLoader="javafml"
-loaderVersion="[35,)"
+loaderVersion="[36,)"
 license="All rights reserved"
 issueTrackerURL="https://github.com/CookieCNetwork/Chipped/issues"
 [[mods]]
 modId="chipped"
-version="1.0.0"
+version="1.0.2"
 logoFile="Chipped Logo big Remastered.png"
 displayName="Chipped"
 credits="grimbo for the code, kekie for textures"

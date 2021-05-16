@@ -14,27 +14,28 @@ import net.minecraftforge.fml.event.lifecycle.GatherDataEvent;
 public class ChippedDataGenerator {
 
 	/*
-	 * To add a new recipe for generic blocks
+	 * To make generated data for generic blocks
 	 * 1. Generate each block in data.client.ChippedBlockStateProvider::register
 	 * 2. Register the tags based off of a list or manually in ChippedTags
 	 * 3. Generate each tag in ChippedBlockTagsProvider::register
 	 * 4. Generate each recipe in ChippedRecipeProvider::registerRecipes
+	 * 5. Register drops in ChippedBlockLootTables
 	 */
 
 	@SubscribeEvent
-    public static void gatherData(final GatherDataEvent event) {
+	public static void gatherData(final GatherDataEvent event) {
 		ChippedTags.register();
-		
+
 		DataGenerator generate = event.getGenerator();
 		ExistingFileHelper existingFileHelper = event.getExistingFileHelper();
-		
+
 		generate.addProvider(new ChippedBlockStateProvider(generate, existingFileHelper));
 		generate.addProvider(new ChippedItemModelProvider(generate, existingFileHelper));
-		
+
 		ChippedBlockTagsProvider blockTags = new ChippedBlockTagsProvider(generate, existingFileHelper);
 		generate.addProvider(blockTags);
 		generate.addProvider(new ChippedItemTagsProvider(generate, blockTags, existingFileHelper));
-		
+
 		generate.addProvider(new ChippedLootTableProvider(generate));
 		generate.addProvider(new ChippedRecipeProvider(generate));
 

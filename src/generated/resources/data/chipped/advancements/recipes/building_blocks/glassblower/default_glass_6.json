@@ -2,7 +2,7 @@
   "parent": "minecraft:recipes/root",
   "rewards": {
     "recipes": [
-      "chipped:glassblower/glass"
+      "chipped:glassblower/default_glass_6"
     ]
   },
   "criteria": {
@@ -19,7 +19,7 @@
     "has_the_recipe": {
       "trigger": "minecraft:recipe_unlocked",
       "conditions": {
-        "recipe": "chipped:glassblower/glass"
+        "recipe": "chipped:glassblower/default_glass_6"
       }
     }
   },

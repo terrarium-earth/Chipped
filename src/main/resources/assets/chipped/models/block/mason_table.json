@@ -1,5 +1,6 @@
 {
 	"credit": "Made with Blockbench",
+	"ambientocclusion": false,
 	"texture_size": [128, 128],
 	"textures": {
 		"2": "chipped:block/mason_table",

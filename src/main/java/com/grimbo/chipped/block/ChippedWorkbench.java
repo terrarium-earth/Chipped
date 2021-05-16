@@ -49,14 +49,10 @@ public class ChippedWorkbench extends Block {
 
 	public static final DirectionProperty FACING = HorizontalBlock.FACING;
 
-	protected static final VoxelShape WORKBENCH_NORTH_SHAPE = Block.box(0.0D, 0.0D, 0.0D, 16.0D, 16.0D,
-			16.0D);
-	protected static final VoxelShape WORKBENCH_EAST_SHAPE = Block.box(0.0D, 0.0D, 0.0D, 16.0D, 16.0D,
-			16.0D);
-	protected static final VoxelShape WORKBENCH_WEST_SHAPE = Block.box(0.0D, 0.0D, 0.0D, 16.0D, 16.0D,
-			16.0D);
-	protected static final VoxelShape WORKBENCH_SOUTH_SHAPE = Block.box(0.0D, 0.0D, 0.0D, 16.0D, 16.0D,
-			16.0D);
+	protected static final VoxelShape WORKBENCH_NORTH_SHAPE = Block.box(0.0D, 0.0D, 0.0D, 16.0D, 16.0D, 16.0D);
+	protected static final VoxelShape WORKBENCH_EAST_SHAPE = Block.box(0.0D, 0.0D, 0.0D, 16.0D, 16.0D, 16.0D);
+	protected static final VoxelShape WORKBENCH_WEST_SHAPE = Block.box(0.0D, 0.0D, 0.0D, 16.0D, 16.0D, 16.0D);
+	protected static final VoxelShape WORKBENCH_SOUTH_SHAPE = Block.box(0.0D, 0.0D, 0.0D, 16.0D, 16.0D, 16.0D);
 
 	public enum WorkbenchModelType implements IStringSerializable {
 		MAIN, SIDE;
@@ -89,8 +85,8 @@ public class ChippedWorkbench extends Block {
 	}
 
 	@Override
-	public ActionResultType use(BlockState state, World worldIn, BlockPos pos, PlayerEntity player,
-			Hand handIn, BlockRayTraceResult hit) {
+	public ActionResultType use(BlockState state, World worldIn, BlockPos pos, PlayerEntity player, Hand handIn,
+			BlockRayTraceResult hit) {
 		if (worldIn.isClientSide) {
 			return ActionResultType.SUCCESS;
 		} else {
@@ -209,21 +205,17 @@ public class ChippedWorkbench extends Block {
 		builder.add(FACING, MODEL_TYPE);
 	}
 
-	// Can only be placed if air is adjacent, this could be fixed by using tile
-	// entities and .is
 	@Deprecated
 	@Override
 	public boolean canSurvive(BlockState state, IWorldReader worldIn, BlockPos pos) {
 		BlockPos otherpos = pos.relative(state.getValue(FACING).getClockWise());
-		if (!worldIn.getBlockState(otherpos).isAir()) {
-			return false;
-		}
-		return true;
+		return worldIn.getBlockState(otherpos).getMaterial().isReplaceable();
 	}
 
 	@Deprecated
 	@OnlyIn(Dist.CLIENT)
-	public float getAmbientOcclusionLightValue(BlockState state, IBlockReader worldIn, BlockPos pos) {
+	@Override
+	public float getShadeBrightness(BlockState state, IBlockReader worldIn, BlockPos pos) {
 		return 1;
 	}
 }

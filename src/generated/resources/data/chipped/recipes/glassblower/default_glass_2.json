@@ -1,0 +1,8 @@
+{
+  "type": "chipped:glassblower",
+  "ingredient": {
+    "tag": "forge:glasses/birch_wood_glass"
+  },
+  "result": "minecraft:glass",
+  "count": 1
+}

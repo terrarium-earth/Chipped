@@ -1,7 +1,7 @@
 {
   "replace": false,
   "values": [
-    "minecraft:air",
+    "minecraft:glass",
     "chipped:dark_oak_wood_glass_1",
     "chipped:dark_oak_wood_glass_2",
     "chipped:dark_oak_wood_glass_3",

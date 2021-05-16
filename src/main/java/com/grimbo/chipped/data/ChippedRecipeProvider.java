@@ -9,7 +9,6 @@ import com.grimbo.chipped.block.ChippedBlocks;
 import com.grimbo.chipped.recipe.ChippedSerializer;
 
 import net.minecraft.block.Block;
-import net.minecraft.block.Blocks;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.IFinishedRecipe;
 import net.minecraft.data.RecipeProvider;
@@ -32,28 +31,13 @@ public class ChippedRecipeProvider extends RecipeProvider {
 		createRecipeFromList(ChippedBlocks.stones, ChippedSerializer.MASON_TABLE.get(), consumer);
 		createRecipeFromList(ChippedBlocks.wools, ChippedSerializer.LOOM_TABLE.get(), consumer);
 		createRecipeFromList(ChippedBlocks.carpets, ChippedSerializer.LOOM_TABLE.get(), consumer);
+		createRecipeFromList(ChippedBlocks.glasses, "glass", ChippedSerializer.GLASSBLOWER.get(), consumer);
 		createRecipeFromList(ChippedBlocks.stainedGlasses, ChippedSerializer.GLASSBLOWER.get(), consumer);
 		createRecipeFromList(ChippedBlocks.hayBlock, ChippedSerializer.BOTANIST_WORKBENCH.get(), consumer);
 		createRecipeFromList(ChippedBlocks.clays, ChippedSerializer.MASON_TABLE.get(), consumer);
 		createRecipeFromList(ChippedBlocks.terracottas, ChippedSerializer.MASON_TABLE.get(), consumer);
 		createRecipeFromList(ChippedBlocks.concretes, ChippedSerializer.MASON_TABLE.get(), consumer);
 		createRecipeFromList(ChippedBlocks.woods, ChippedSerializer.CARPENTERS_TABLE.get(), consumer);
-		
-		//Glass + Wood Glass
-		chippedRecipe(ChippedSerializer.GLASSBLOWER.get(), 
-				Ingredient.of(ChippedTags.items.get("glass")), 
-				Blocks.GLASS)
-				.unlocks("has_item", has(Blocks.GLASS))
-				.save(consumer, new ResourceLocation(Chipped.MOD_ID, ChippedSerializer.GLASSBLOWER.get().getRegistryName().getPath() + "/glass"));
-		for (RegistryObject<Block> block : ChippedBlocks.glasses) {
-			String name = block.get().getRegistryName().getPath();
-			String name2 = name.split("_([1-9])")[0];
-			chippedRecipe(ChippedSerializer.GLASSBLOWER.get(), 
-					Ingredient.of(ChippedTags.items.get(name2)), 
-					block.get())
-					.unlocks("has_item", has(Blocks.GLASS))
-					.save(consumer, new ResourceLocation(Chipped.MOD_ID, ChippedSerializer.GLASSBLOWER.get().getRegistryName().getPath() + "/" + name));
-		}
 		
 		//Vines
 		//Currently no undo, waiting for new vines
@@ -62,32 +46,41 @@ public class ChippedRecipeProvider extends RecipeProvider {
 	
 	private static void createRecipeFromBlock(Block block, IRecipeSerializer<?> serializer, Consumer<IFinishedRecipe> consumer) {
 		String name = block.getRegistryName().getPath();
+		String name2 = name.split("_([1-9])")[0];
 		chippedRecipe(serializer, 
-				Ingredient.of(ChippedTags.items.get(name.split("_([1-9])")[0])), 
-				block)
-				.unlocks("has_item", has(ForgeRegistries.BLOCKS.getValue(new ResourceLocation("minecraft:" + name))))
+				Ingredient.of(ChippedTags.items.get(name2)), block)
+				.unlocks("has_item", has(ForgeRegistries.BLOCKS.getValue(new ResourceLocation("minecraft:" + name2))))
 				.save(consumer, new ResourceLocation(Chipped.MOD_ID, serializer.getRegistryName().getPath() + "/" + name));
 	}
 	
 	private static void createRecipeFromList(ArrayList<RegistryObject<Block>> list, IRecipeSerializer<?> serializer, Consumer<IFinishedRecipe> consumer) {
 		String previousName = "";
 		for (RegistryObject<Block> block : list) {
-			String name = block.get().getRegistryName().getPath();
-			String name2 = name.split("_([1-9])")[0];
-			Block vanillaBlock = ForgeRegistries.BLOCKS.getValue(new ResourceLocation("minecraft:" + name2));
-			if (!previousName.equals(name2)) {
-				chippedRecipe(serializer, 
-						Ingredient.of(ChippedTags.items.get(name2)), 
-						vanillaBlock)
-						.unlocks("has_item", has(vanillaBlock))
-						.save(consumer, new ResourceLocation(Chipped.MOD_ID, serializer.getRegistryName().getPath() + "/" + name2));
+			String name = block.get().getRegistryName().getPath().split("_([1-9])")[0];
+			Block vanillaBlock = ForgeRegistries.BLOCKS.getValue(new ResourceLocation("minecraft:" + name));
+			if (!previousName.equals(name)) {
+				createRecipeFromBlock(vanillaBlock, serializer, consumer);
 			}
-			chippedRecipe(serializer, 
-					Ingredient.of(ChippedTags.items.get(name2)), 
-					block.get())
-					.unlocks("has_item", has(vanillaBlock))
-					.save(consumer, new ResourceLocation(Chipped.MOD_ID, serializer.getRegistryName().getPath() + "/" + name));
-			previousName = name2;
+			createRecipeFromBlock(block.get(),serializer, consumer);
+			previousName = name;
+		}
+	}
+	
+	private static void createRecipeFromList(ArrayList<RegistryObject<Block>> list, String defaultBlock, IRecipeSerializer<?> serializer, Consumer<IFinishedRecipe> consumer) {
+		String previousName = "";
+		int i = 0;
+		for (RegistryObject<Block> block : list) {
+			String name = block.get().getRegistryName().getPath().split("_([1-9])")[0];
+			Block vanillaBlock = ForgeRegistries.BLOCKS.getValue(new ResourceLocation("minecraft:" + defaultBlock));
+			if (!previousName.equals(name)) {
+				chippedRecipe(serializer, 
+						Ingredient.of(ChippedTags.items.get(name)), vanillaBlock)
+						.unlocks("has_item", has(vanillaBlock))
+						.save(consumer, new ResourceLocation(Chipped.MOD_ID, serializer.getRegistryName().getPath() + "/default_" + defaultBlock + "_" + i));
+				i++;
+			}
+			createRecipeFromBlock(block.get(),serializer, consumer);
+			previousName = name;
 		}
 	}
 	
