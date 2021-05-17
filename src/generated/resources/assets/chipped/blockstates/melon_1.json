@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "chipped:block/melon_1_side",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "chipped:block/melon_1"
+    },
+    "axis=z": {
+      "model": "chipped:block/melon_1_side",
+      "x": 90
+    }
+  }
+}

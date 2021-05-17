@@ -34,6 +34,7 @@ public class ChippedBlockTagsProvider extends BlockTagsProvider {
 		tagFromList(ChippedBlocks.terracottas);
 		tagFromList(ChippedBlocks.concretes);
 		tagFromList(ChippedBlocks.woods);
+		tagFromList(ChippedBlocks.melons);
 
 		tag(ChippedTags.blocks.get("vine")).add(Blocks.VINE);
 		tag(ChippedTags.blocks.get("vine")).add(ChippedBlocks.VINE_1.get());

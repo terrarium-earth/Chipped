@@ -29,6 +29,7 @@ public class ChippedTags {
 		createFromList("terracottas", ChippedBlocks.terracottas);
 		createFromList("concretes", ChippedBlocks.concretes);
 		createFromList("woods", ChippedBlocks.woods);
+		createFromList("melons", ChippedBlocks.melons);
 
 		createFromBlock("vines", ChippedBlocks.VINE_1.get());
 	}

@@ -38,6 +38,7 @@ public class ChippedRecipeProvider extends RecipeProvider {
 		createRecipeFromList(ChippedBlocks.terracottas, ChippedSerializer.MASON_TABLE.get(), consumer);
 		createRecipeFromList(ChippedBlocks.concretes, ChippedSerializer.MASON_TABLE.get(), consumer);
 		createRecipeFromList(ChippedBlocks.woods, ChippedSerializer.CARPENTERS_TABLE.get(), consumer);
+		createRecipeFromList(ChippedBlocks.melons, ChippedSerializer.BOTANIST_WORKBENCH.get(), consumer);
 		
 		//Vines
 		//Currently no undo, waiting for new vines

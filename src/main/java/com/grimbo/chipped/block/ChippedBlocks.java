@@ -6,16 +6,7 @@ import java.util.function.Supplier;
 import com.grimbo.chipped.Chipped;
 import com.grimbo.chipped.item.ChippedItems;
 
-import net.minecraft.block.AbstractBlock;
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.CarpetBlock;
-import net.minecraft.block.CryingObsidianBlock;
-import net.minecraft.block.GlassBlock;
-import net.minecraft.block.HayBlock;
-import net.minecraft.block.SoundType;
-import net.minecraft.block.StainedGlassBlock;
-import net.minecraft.block.VineBlock;
+import net.minecraft.block.*;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.material.MaterialColor;
 import net.minecraft.client.renderer.RenderType;
@@ -50,6 +41,7 @@ public class ChippedBlocks {
 	public static ArrayList<RegistryObject<Block>> terracottas = new ArrayList<RegistryObject<Block>>();
 	public static ArrayList<RegistryObject<Block>> concretes = new ArrayList<RegistryObject<Block>>();
 	public static ArrayList<RegistryObject<Block>> woods = new ArrayList<RegistryObject<Block>>();
+	public static ArrayList<RegistryObject<Block>> melons = new ArrayList<>();
 
 	// General stones of hardness 1.5F, 6F
 	public static String[] stonesList = { "stone", "granite", "diorite", "andesite", "prismarine", "dark_prismarine",
@@ -67,6 +59,7 @@ public class ChippedBlocks {
 			"light_gray", "cyan", "purple", "blue", "brown", "green", "red", "black" };
 	public static String[] woodsList = { "oak", "birch", "spruce", "jungle", "acacia", "dark_oak", "warped",
 			"crimson" };
+
 
 	// Workbenches
 	/*
@@ -119,22 +112,28 @@ public class ChippedBlocks {
 	public static final RegistryObject<Block> VINE_1 = register("vine_1", () -> new VineBlock(AbstractBlock.Properties
 			.of(Material.REPLACEABLE_PLANT).noCollission().randomTicks().strength(0.2F).sound(SoundType.VINE)));
 
-	@OnlyIn(Dist.CLIENT)
-	public static void clientRender(final FMLClientSetupEvent event) {
-		RenderTypeLookup.setRenderLayer(BOTANIST_WORKBENCH.get(), RenderType.cutout());
-		RenderTypeLookup.setRenderLayer(LOOM_TABLE.get(), RenderType.cutout());
+	public static final RegistryObject<Block> VINE_2 = register("vine_2", () -> new VineBlock(AbstractBlock.Properties
+			.of(Material.REPLACEABLE_PLANT).noCollission().randomTicks().strength(0.2F).sound(SoundType.VINE)));
 
-		for (RegistryObject<Block> glass : glasses) {
-			RenderTypeLookup.setRenderLayer(glass.get(), RenderType.cutout());
-		}
+	public static final RegistryObject<Block> VINE_3 = register("vine_3", () -> new VineBlock(AbstractBlock.Properties
+			.of(Material.REPLACEABLE_PLANT).noCollission().randomTicks().strength(0.2F).sound(SoundType.VINE)));
 
-		for (RegistryObject<Block> stainedGlass : stainedGlasses) {
-			RenderTypeLookup.setRenderLayer(stainedGlass.get(), RenderType.translucent());
-		}
+	public static final RegistryObject<Block> VINE_4 = register("vine_4", () -> new VineBlock(AbstractBlock.Properties
+			.of(Material.REPLACEABLE_PLANT).noCollission().randomTicks().strength(0.2F).sound(SoundType.VINE)));
 
-		// Vines
-		RenderTypeLookup.setRenderLayer(VINE_1.get(), RenderType.translucent());
-	}
+	public static final RegistryObject<Block> VINE_5 = register("vine_5", () -> new VineBlock(AbstractBlock.Properties
+			.of(Material.REPLACEABLE_PLANT).noCollission().randomTicks().strength(0.2F).sound(SoundType.VINE)));
+
+	public static final RegistryObject<Block> VINE_6 = register("vine_6", () -> new VineBlock(AbstractBlock.Properties
+			.of(Material.REPLACEABLE_PLANT).noCollission().randomTicks().strength(0.2F).sound(SoundType.VINE)));
+
+	public static final RegistryObject<Block> VINE_7 = register("vine_7", () -> new VineBlock(AbstractBlock.Properties
+			.of(Material.REPLACEABLE_PLANT).noCollission().randomTicks().strength(0.2F).sound(SoundType.VINE)));
+
+	public static final RegistryObject<Block> VINE_8 = register("vine_8", () -> new VineBlock(AbstractBlock.Properties
+			.of(Material.REPLACEABLE_PLANT).noCollission().randomTicks().strength(0.2F).sound(SoundType.VINE)));
+
+
 
 	public static void register() {
 		// Register blocks
@@ -159,6 +158,7 @@ public class ChippedBlocks {
 		registerCryingObsidians();
 		registerObsidians();
 		registerBasalts();
+		registerMelons();
 	}
 
 	private static void registerStones() {
@@ -349,6 +349,13 @@ public class ChippedBlocks {
 					.strength(1.25F, 4.2F).sound(SoundType.BASALT).requiresCorrectToolForDrops())));
 		}
 	}
+	private static void registerMelons() {
+		for (int i = 1; i <= 10; i++) {
+			melons.add(register("melon_" + i, () -> new MelonBlock(AbstractBlock.Properties.of(Material.VEGETABLE)
+					.strength(1.0F).sound(SoundType.WOOD))));
+			}
+		}
+
 
 	private static boolean isntSolid(BlockState state, IBlockReader reader, BlockPos pos) {
 		return false;

@@ -42,6 +42,9 @@ public class ChippedBlockLootTables extends BlockLootTables {
 		for (RegistryObject<Block> block : ChippedBlocks.woods) {
 			dropSelf(block.get());
 		}
+		for (RegistryObject<Block> block: ChippedBlocks.melons) {
+			dropSelf(block.get());
+		}
 
 		dropSelf(ChippedBlocks.BOTANIST_WORKBENCH.get());
 		dropSelf(ChippedBlocks.GLASSBLOWER.get());

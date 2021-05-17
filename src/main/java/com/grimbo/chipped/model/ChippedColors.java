@@ -34,6 +34,14 @@ public class ChippedColors {
 		};
 
 		blockColors.register(grassColourHandler, ChippedBlocks.VINE_1.get());
+		blockColors.register(grassColourHandler, ChippedBlocks.VINE_2.get());
+		blockColors.register(grassColourHandler, ChippedBlocks.VINE_3.get());
+		blockColors.register(grassColourHandler, ChippedBlocks.VINE_4.get());
+		blockColors.register(grassColourHandler, ChippedBlocks.VINE_5.get());
+		blockColors.register(grassColourHandler, ChippedBlocks.VINE_6.get());
+		blockColors.register(grassColourHandler, ChippedBlocks.VINE_7.get());
+		blockColors.register(grassColourHandler, ChippedBlocks.VINE_8.get());
+
 	}
 
 	@SubscribeEvent
@@ -47,5 +55,12 @@ public class ChippedColors {
 		};
 
 		itemColors.register(itemBlockColourHandler, ChippedBlocks.VINE_1.get());
+		itemColors.register(itemBlockColourHandler, ChippedBlocks.VINE_2.get());
+		itemColors.register(itemBlockColourHandler, ChippedBlocks.VINE_3.get());
+		itemColors.register(itemBlockColourHandler, ChippedBlocks.VINE_4.get());
+		itemColors.register(itemBlockColourHandler, ChippedBlocks.VINE_5.get());
+		itemColors.register(itemBlockColourHandler, ChippedBlocks.VINE_6.get());
+		itemColors.register(itemBlockColourHandler, ChippedBlocks.VINE_7.get());
+		itemColors.register(itemBlockColourHandler, ChippedBlocks.VINE_8.get());
 	}
 }
