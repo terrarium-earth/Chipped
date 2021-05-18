@@ -1,7 +1,7 @@
 {
   "variants": {
     "axis=x": {
-      "model": "chipped:block/melon_1_side",
+      "model": "chipped:block/melon_1",
       "x": 90,
       "y": 90
     },
@@ -9,7 +9,7 @@
       "model": "chipped:block/melon_1"
     },
     "axis=z": {
-      "model": "chipped:block/melon_1_side",
+      "model": "chipped:block/melon_1",
       "x": 90
     }
   }
