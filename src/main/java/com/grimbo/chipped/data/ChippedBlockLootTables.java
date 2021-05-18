@@ -45,6 +45,9 @@ public class ChippedBlockLootTables extends BlockLootTables {
 		for (RegistryObject<Block> block: ChippedBlocks.melons) {
 			dropSelf(block.get());
 		}
+		for (RegistryObject<Block> block: ChippedBlocks.vines) {
+			dropSelf(block.get());
+		}
 
 		dropSelf(ChippedBlocks.BOTANIST_WORKBENCH.get());
 		dropSelf(ChippedBlocks.GLASSBLOWER.get());
@@ -52,8 +55,6 @@ public class ChippedBlockLootTables extends BlockLootTables {
 		dropSelf(ChippedBlocks.LOOM_TABLE.get());
 		dropSelf(ChippedBlocks.MASON_TABLE.get());
 		dropSelf(ChippedBlocks.ALCHEMY_BENCH.get());
-
-		dropSelf(ChippedBlocks.VINE_1.get());
 	}
 
 	@Override

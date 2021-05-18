@@ -3,6 +3,7 @@ package com.grimbo.chipped.model;
 import com.grimbo.chipped.Chipped;
 import com.grimbo.chipped.block.ChippedBlocks;
 
+import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.renderer.color.BlockColors;
 import net.minecraft.client.renderer.color.IBlockColor;
@@ -14,6 +15,7 @@ import net.minecraft.world.biome.BiomeColors;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.ColorHandlerEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus;
 
@@ -33,15 +35,9 @@ public class ChippedColors {
 			return GrassColors.get(0.5d, 1.0d);
 		};
 
-		blockColors.register(grassColourHandler, ChippedBlocks.VINE_1.get());
-		blockColors.register(grassColourHandler, ChippedBlocks.VINE_2.get());
-		blockColors.register(grassColourHandler, ChippedBlocks.VINE_3.get());
-		blockColors.register(grassColourHandler, ChippedBlocks.VINE_4.get());
-		blockColors.register(grassColourHandler, ChippedBlocks.VINE_5.get());
-		blockColors.register(grassColourHandler, ChippedBlocks.VINE_6.get());
-		blockColors.register(grassColourHandler, ChippedBlocks.VINE_7.get());
-		blockColors.register(grassColourHandler, ChippedBlocks.VINE_8.get());
-
+		for (RegistryObject<Block> vine : ChippedBlocks.vines) {
+			blockColors.register(grassColourHandler, vine.get());
+		}
 	}
 
 	@SubscribeEvent
@@ -54,13 +50,8 @@ public class ChippedColors {
 			return blockColors.getColor(state, null, null, tintIndex);
 		};
 
-		itemColors.register(itemBlockColourHandler, ChippedBlocks.VINE_1.get());
-		itemColors.register(itemBlockColourHandler, ChippedBlocks.VINE_2.get());
-		itemColors.register(itemBlockColourHandler, ChippedBlocks.VINE_3.get());
-		itemColors.register(itemBlockColourHandler, ChippedBlocks.VINE_4.get());
-		itemColors.register(itemBlockColourHandler, ChippedBlocks.VINE_5.get());
-		itemColors.register(itemBlockColourHandler, ChippedBlocks.VINE_6.get());
-		itemColors.register(itemBlockColourHandler, ChippedBlocks.VINE_7.get());
-		itemColors.register(itemBlockColourHandler, ChippedBlocks.VINE_8.get());
+		for (RegistryObject<Block> vine : ChippedBlocks.vines) {
+			itemColors.register(itemBlockColourHandler, vine.get());
+		}
 	}
 }

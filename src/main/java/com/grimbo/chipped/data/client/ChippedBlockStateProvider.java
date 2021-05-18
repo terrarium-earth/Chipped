@@ -6,11 +6,13 @@ import com.grimbo.chipped.Chipped;
 import com.grimbo.chipped.block.ChippedBlocks;
 
 import net.minecraft.block.Block;
-import net.minecraft.block.MelonBlock;
 import net.minecraft.block.RotatedPillarBlock;
 import net.minecraft.data.DataGenerator;
+import net.minecraft.util.Direction.Axis;
+import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.client.model.generators.ConfiguredModel;
+import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.fml.RegistryObject;
 
@@ -30,7 +32,6 @@ public class ChippedBlockStateProvider extends BlockStateProvider {
 		createCubeFromList(ChippedBlocks.terracottas);
 		createCubeFromList(ChippedBlocks.concretes);
 		createCubeFromList(ChippedBlocks.woods);
-		createCubeFromList(ChippedBlocks.melons);
 
 		for (int i = 0; i < ChippedBlocks.carpets.size(); i++) {
 			Block block = ChippedBlocks.carpets.get(i).get();
@@ -39,10 +40,8 @@ public class ChippedBlockStateProvider extends BlockStateProvider {
 			getVariantBuilder(block).partialState()
 					.setModels(new ConfiguredModel(models().carpet(name, modLoc("block/" + name2))));
 		}
+		
 		for (RegistryObject<Block> block : ChippedBlocks.hayBlock) {
-			axisBlock((RotatedPillarBlock) block.get());
-		}
-		for (RegistryObject<Block> block : ChippedBlocks.melons) {
 			axisBlock((RotatedPillarBlock) block.get());
 		}
 	}
@@ -52,5 +51,4 @@ public class ChippedBlockStateProvider extends BlockStateProvider {
 			simpleBlock(block.get());
 		}
 	}
-
 }

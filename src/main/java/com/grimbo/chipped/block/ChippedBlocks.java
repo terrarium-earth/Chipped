@@ -41,7 +41,8 @@ public class ChippedBlocks {
 	public static ArrayList<RegistryObject<Block>> terracottas = new ArrayList<RegistryObject<Block>>();
 	public static ArrayList<RegistryObject<Block>> concretes = new ArrayList<RegistryObject<Block>>();
 	public static ArrayList<RegistryObject<Block>> woods = new ArrayList<RegistryObject<Block>>();
-	public static ArrayList<RegistryObject<Block>> melons = new ArrayList<>();
+	public static ArrayList<RegistryObject<Block>> melons = new ArrayList<RegistryObject<Block>>();
+	public static ArrayList<RegistryObject<Block>> vines = new ArrayList<RegistryObject<Block>>();
 
 	// General stones of hardness 1.5F, 6F
 	public static String[] stonesList = { "stone", "granite", "diorite", "andesite", "prismarine", "dark_prismarine",
@@ -107,34 +108,6 @@ public class ChippedBlocks {
 	 * 3. Add it to the data generators in ChippedDataGenerator 
 	 * 4. Give it a block name in en_us.json
 	 */
-
-	// Vines
-	public static final RegistryObject<Block> VINE_1 = register("vine_1", () -> new VineBlock(AbstractBlock.Properties
-			.of(Material.REPLACEABLE_PLANT).noCollission().randomTicks().strength(0.2F).sound(SoundType.VINE)));
-
-	public static final RegistryObject<Block> VINE_2 = register("vine_2", () -> new VineBlock(AbstractBlock.Properties
-			.of(Material.REPLACEABLE_PLANT).noCollission().randomTicks().strength(0.2F).sound(SoundType.VINE)));
-
-	public static final RegistryObject<Block> VINE_3 = register("vine_3", () -> new VineBlock(AbstractBlock.Properties
-			.of(Material.REPLACEABLE_PLANT).noCollission().randomTicks().strength(0.2F).sound(SoundType.VINE)));
-
-	public static final RegistryObject<Block> VINE_4 = register("vine_4", () -> new VineBlock(AbstractBlock.Properties
-			.of(Material.REPLACEABLE_PLANT).noCollission().randomTicks().strength(0.2F).sound(SoundType.VINE)));
-
-	public static final RegistryObject<Block> VINE_5 = register("vine_5", () -> new VineBlock(AbstractBlock.Properties
-			.of(Material.REPLACEABLE_PLANT).noCollission().randomTicks().strength(0.2F).sound(SoundType.VINE)));
-
-	public static final RegistryObject<Block> VINE_6 = register("vine_6", () -> new VineBlock(AbstractBlock.Properties
-			.of(Material.REPLACEABLE_PLANT).noCollission().randomTicks().strength(0.2F).sound(SoundType.VINE)));
-
-	public static final RegistryObject<Block> VINE_7 = register("vine_7", () -> new VineBlock(AbstractBlock.Properties
-			.of(Material.REPLACEABLE_PLANT).noCollission().randomTicks().strength(0.2F).sound(SoundType.VINE)));
-
-	public static final RegistryObject<Block> VINE_8 = register("vine_8", () -> new VineBlock(AbstractBlock.Properties
-			.of(Material.REPLACEABLE_PLANT).noCollission().randomTicks().strength(0.2F).sound(SoundType.VINE)));
-
-
-
 	public static void register() {
 		// Register blocks
 		registerStones();
@@ -159,6 +132,7 @@ public class ChippedBlocks {
 		registerObsidians();
 		registerBasalts();
 		registerMelons();
+		registerVines();
 	}
 
 	private static void registerStones() {
@@ -349,12 +323,20 @@ public class ChippedBlocks {
 					.strength(1.25F, 4.2F).sound(SoundType.BASALT).requiresCorrectToolForDrops())));
 		}
 	}
+	
 	private static void registerMelons() {
 		for (int i = 1; i <= 10; i++) {
 			melons.add(register("melon_" + i, () -> new MelonBlock(AbstractBlock.Properties.of(Material.VEGETABLE)
 					.strength(1.0F).sound(SoundType.WOOD))));
 			}
+	}
+	
+	private static void registerVines() {
+		for (int i = 1; i <= 8; i++) {
+			vines.add(register("vine_" + i, () -> new VineBlock(AbstractBlock.Properties
+					.of(Material.REPLACEABLE_PLANT).noCollission().randomTicks().strength(0.2F).sound(SoundType.VINE))));
 		}
+	}
 
 
 	private static boolean isntSolid(BlockState state, IBlockReader reader, BlockPos pos) {

@@ -37,6 +37,20 @@ public class Chipped {
 		}
 	}).setRecipeFolderName("chipped_tab");
 
+	private static final Logger LOGGER = LogManager.getLogger();
+
+	public Chipped() {
+		IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
+		ChippedBlocks.BLOCKS.register(eventBus);
+		ChippedBlocks.register();
+		ChippedItems.ITEMS.register(eventBus);
+		ChippedSerializer.SERIALIZER.register(eventBus);
+		ChippedContainerType.CONTAINER.register(eventBus);
+		eventBus.addListener(this::clientRender);
+		eventBus.addListener(this::onClientSetupEvent);
+		MinecraftForge.EVENT_BUS.register(this);
+	}
+
 	@SubscribeEvent
 	public void clientRender(final FMLClientSetupEvent event) {
 		RenderTypeLookup.setRenderLayer(ChippedBlocks.BOTANIST_WORKBENCH.get(), RenderType.cutout());
@@ -50,36 +64,11 @@ public class Chipped {
 			RenderTypeLookup.setRenderLayer(stainedGlass.get(), RenderType.translucent());
 		}
 
-		// Vines
-		RenderTypeLookup.setRenderLayer(ChippedBlocks.VINE_1.get(), RenderType.translucent());
-		RenderTypeLookup.setRenderLayer(ChippedBlocks.VINE_2.get(), RenderType.translucent());
-		RenderTypeLookup.setRenderLayer(ChippedBlocks.VINE_3.get(), RenderType.translucent());
-		RenderTypeLookup.setRenderLayer(ChippedBlocks.VINE_4.get(), RenderType.translucent());
-		RenderTypeLookup.setRenderLayer(ChippedBlocks.VINE_5.get(), RenderType.translucent());
-		RenderTypeLookup.setRenderLayer(ChippedBlocks.VINE_6.get(), RenderType.translucent());
-		RenderTypeLookup.setRenderLayer(ChippedBlocks.VINE_7.get(), RenderType.translucent());
-		RenderTypeLookup.setRenderLayer(ChippedBlocks.VINE_8.get(), RenderType.translucent());
-
+		for (RegistryObject<Block> vine : ChippedBlocks.vines) {
+			RenderTypeLookup.setRenderLayer(vine.get(), RenderType.translucent());
+		}
 	}
-
-	private static final Logger LOGGER = LogManager.getLogger();
-
-	public Chipped() {
-		IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
-		eventBus.addListener(this::clientRender);
-		ChippedBlocks.BLOCKS.register(eventBus);
-		ChippedBlocks.register();
-		ChippedItems.ITEMS.register(eventBus);
-		ChippedSerializer.SERIALIZER.register(eventBus);
-		ChippedContainerType.CONTAINER.register(eventBus);
-		eventBus.addListener(this::onClientSetupEvent);
-		MinecraftForge.EVENT_BUS.register(this);
-
-
-
-
-	}
-
+	
 	@SuppressWarnings("unchecked")
 	@SubscribeEvent
 	public void onClientSetupEvent(FMLClientSetupEvent event) {
@@ -87,7 +76,6 @@ public class Chipped {
 				.collect(Collectors.toList())) {
 			ScreenManager.register((ContainerType<ChippedContainer>) container, ChippedScreen::new);
 		}
-
 
 	}
 }

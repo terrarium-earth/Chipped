@@ -39,10 +39,7 @@ public class ChippedRecipeProvider extends RecipeProvider {
 		createRecipeFromList(ChippedBlocks.concretes, ChippedSerializer.MASON_TABLE.get(), consumer);
 		createRecipeFromList(ChippedBlocks.woods, ChippedSerializer.CARPENTERS_TABLE.get(), consumer);
 		createRecipeFromList(ChippedBlocks.melons, ChippedSerializer.BOTANIST_WORKBENCH.get(), consumer);
-		
-		//Vines
-		//Currently no undo, waiting for new vines
-		createRecipeFromBlock(ChippedBlocks.VINE_1.get(), ChippedSerializer.BOTANIST_WORKBENCH.get(), consumer);
+		createRecipeFromList(ChippedBlocks.vines, ChippedSerializer.BOTANIST_WORKBENCH.get(), consumer);
 	}
 	
 	private static void createRecipeFromBlock(Block block, IRecipeSerializer<?> serializer, Consumer<IFinishedRecipe> consumer) {

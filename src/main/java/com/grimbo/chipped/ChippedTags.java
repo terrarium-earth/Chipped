@@ -30,8 +30,7 @@ public class ChippedTags {
 		createFromList("concretes", ChippedBlocks.concretes);
 		createFromList("woods", ChippedBlocks.woods);
 		createFromList("melons", ChippedBlocks.melons);
-
-		createFromBlock("vines", ChippedBlocks.VINE_1.get());
+		createFromList("vines", ChippedBlocks.vines);
 	}
 
 	private static void createFromBlock(String type, Block block) {
