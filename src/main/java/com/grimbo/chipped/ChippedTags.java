@@ -1,6 +1,5 @@
 package com.grimbo.chipped;
 
-import java.util.ArrayList;
 import java.util.Hashtable;
 
 import com.grimbo.chipped.block.ChippedBlocks;
@@ -10,52 +9,32 @@ import net.minecraft.item.Item;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ITag;
 import net.minecraft.tags.ItemTags;
-import net.minecraftforge.fml.RegistryObject;
 
 public class ChippedTags {
 
 	public static Hashtable<String, ITag.INamedTag<Block>> blocks = new Hashtable<>();
 	public static Hashtable<String, ITag.INamedTag<Item>> items = new Hashtable<>();
 
-	//TODO: Get a proper naming convention for tags
 	public static void register() {
-		createFromList("stones", ChippedBlocks.stones);
-		createFromList("wools", ChippedBlocks.wools);
-		createFromList("carpets", ChippedBlocks.carpets);
-		createFromList("glasses", ChippedBlocks.glasses);
-		createFromList("stained_glasses", ChippedBlocks.stainedGlasses);
-		createFromList("hay_blocks", ChippedBlocks.hayBlock);
-		createFromList("clays", ChippedBlocks.clays);
-		createFromList("terracottas", ChippedBlocks.terracottas);
-		createFromList("concretes", ChippedBlocks.concretes);
-		createFromList("woods", ChippedBlocks.woods);
-		createFromList("melons", ChippedBlocks.melons);
-		createFromList("vines", ChippedBlocks.vines);
-	}
-
-	private static void createFromBlock(String type, Block block) {
-		String blockName = block.getRegistryName().getPath().split("_([1-9])")[0];
-		blocks.put(blockName, Blocks.forge(type + "/" + blockName));
-		items.put(blockName, Items.forge(type + "/" + blockName));
-	}
-
-	private static void createFromList(String type, ArrayList<RegistryObject<Block>> list) {
-		for (RegistryObject<Block> block : list) {
-			String blockName = block.get().getRegistryName().getPath().split("_([1-9])")[0];
-			blocks.put(blockName, Blocks.forge(type + "/" + blockName));
-			items.put(blockName, Items.forge(type + "/" + blockName));
-		}
-	}
-
-	private static void createFromList(String type, String[] list) {
-		for (String block : list) {
-			blocks.put(block, Blocks.forge(type + "/" + block));
-			items.put(block, Items.forge(type + "/" + block));
+		for (String type : ChippedBlocks.blocksMap.keySet()) {
+			blocks.put(type, Blocks.mod(type));
+			items.put(type, Items.mod(type));
 		}
 	}
 
 	public static class Blocks {
 
+		public static final ITag.INamedTag<Block> PLANKS = vanilla("planks");
+		public static final ITag.INamedTag<Block> WOOL = vanilla("wool");
+		public static final ITag.INamedTag<Block> CARPETS = vanilla("carpets");
+		
+		public static final ITag.INamedTag<Block> DRAGON_IMMUNE = vanilla("dragon_immune");
+		public static final ITag.INamedTag<Block> CLIMBABLE = vanilla("climbable");
+		
+		private static ITag.INamedTag<Block> vanilla(String id) {
+			return BlockTags.bind("minecraft:" + id);
+		}
+		
 		private static ITag.INamedTag<Block> forge(String id) {
 			return BlockTags.bind("forge:" + id);
 		}
@@ -67,6 +46,16 @@ public class ChippedTags {
 
 	public static class Items {
 
+		public static final ITag.INamedTag<Item> PLANKS = vanilla("planks");
+		public static final ITag.INamedTag<Item> WOOL = vanilla("wool");
+		public static final ITag.INamedTag<Item> CARPETS = vanilla("carpets");
+		
+		public static final ITag.INamedTag<Item> STONE_CRAFTING_MATERIALS = vanilla("stone_crafting_materials");
+		
+		private static ITag.INamedTag<Item> vanilla(String id) {
+			return ItemTags.bind("minecraft:" + id);
+		}
+		
 		private static ITag.INamedTag<Item> forge(String id) {
 			return ItemTags.bind("forge:" + id);
 		}

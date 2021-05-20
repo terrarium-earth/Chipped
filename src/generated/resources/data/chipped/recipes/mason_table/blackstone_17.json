@@ -1,7 +1,7 @@
 {
   "type": "chipped:mason_table",
   "ingredient": {
-    "tag": "forge:stones/blackstone"
+    "tag": "chipped:blackstone"
   },
   "result": "chipped:blackstone_17",
   "count": 1

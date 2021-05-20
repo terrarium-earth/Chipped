@@ -1,0 +1,13 @@
+{
+  "replace": false,
+  "values": [
+    "#chipped:oak_planks",
+    "#chipped:birch_planks",
+    "#chipped:spruce_planks",
+    "#chipped:jungle_planks",
+    "#chipped:acacia_planks",
+    "#chipped:dark_oak_planks",
+    "#chipped:warped_planks",
+    "#chipped:crimson_planks"
+  ]
+}

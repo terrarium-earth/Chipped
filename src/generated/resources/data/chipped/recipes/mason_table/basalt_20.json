@@ -1,7 +1,7 @@
 {
   "type": "chipped:mason_table",
   "ingredient": {
-    "tag": "forge:stones/basalt"
+    "tag": "chipped:basalt"
   },
   "result": "chipped:basalt_20",
   "count": 1

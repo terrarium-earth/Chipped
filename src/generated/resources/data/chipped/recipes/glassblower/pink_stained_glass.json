@@ -1,7 +1,7 @@
 {
   "type": "chipped:glassblower",
   "ingredient": {
-    "tag": "forge:stained_glasses/pink_stained_glass"
+    "tag": "chipped:pink_stained_glass"
   },
   "result": "minecraft:pink_stained_glass",
   "count": 1

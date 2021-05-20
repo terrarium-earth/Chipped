@@ -1,6 +1,5 @@
 package com.grimbo.chipped.data;
 
-import java.util.ArrayList;
 import java.util.function.Consumer;
 
 import com.grimbo.chipped.Chipped;
@@ -28,57 +27,80 @@ public class ChippedRecipeProvider extends RecipeProvider {
 
 	@Override
 	protected void buildShapelessRecipes(Consumer<IFinishedRecipe> consumer) {
-		createRecipeFromList(ChippedBlocks.stones, ChippedSerializer.MASON_TABLE.get(), consumer);
-		createRecipeFromList(ChippedBlocks.wools, ChippedSerializer.LOOM_TABLE.get(), consumer);
-		createRecipeFromList(ChippedBlocks.carpets, ChippedSerializer.LOOM_TABLE.get(), consumer);
-		createRecipeFromList(ChippedBlocks.glasses, "glass", ChippedSerializer.GLASSBLOWER.get(), consumer);
-		createRecipeFromList(ChippedBlocks.stainedGlasses, ChippedSerializer.GLASSBLOWER.get(), consumer);
-		createRecipeFromList(ChippedBlocks.hayBlock, ChippedSerializer.BOTANIST_WORKBENCH.get(), consumer);
-		createRecipeFromList(ChippedBlocks.clays, ChippedSerializer.MASON_TABLE.get(), consumer);
-		createRecipeFromList(ChippedBlocks.terracottas, ChippedSerializer.MASON_TABLE.get(), consumer);
-		createRecipeFromList(ChippedBlocks.concretes, ChippedSerializer.MASON_TABLE.get(), consumer);
-		createRecipeFromList(ChippedBlocks.woods, ChippedSerializer.CARPENTERS_TABLE.get(), consumer);
-		createRecipeFromList(ChippedBlocks.melons, ChippedSerializer.BOTANIST_WORKBENCH.get(), consumer);
-		createRecipeFromList(ChippedBlocks.vines, ChippedSerializer.BOTANIST_WORKBENCH.get(), consumer);
-	}
-	
-	private static void createRecipeFromBlock(Block block, IRecipeSerializer<?> serializer, Consumer<IFinishedRecipe> consumer) {
-		String name = block.getRegistryName().getPath();
-		String name2 = name.split("_([1-9])")[0];
-		chippedRecipe(serializer, 
-				Ingredient.of(ChippedTags.items.get(name2)), block)
-				.unlocks("has_item", has(ForgeRegistries.BLOCKS.getValue(new ResourceLocation("minecraft:" + name2))))
-				.save(consumer, new ResourceLocation(Chipped.MOD_ID, serializer.getRegistryName().getPath() + "/" + name));
-	}
-	
-	private static void createRecipeFromList(ArrayList<RegistryObject<Block>> list, IRecipeSerializer<?> serializer, Consumer<IFinishedRecipe> consumer) {
-		String previousName = "";
-		for (RegistryObject<Block> block : list) {
-			String name = block.get().getRegistryName().getPath().split("_([1-9])")[0];
-			Block vanillaBlock = ForgeRegistries.BLOCKS.getValue(new ResourceLocation("minecraft:" + name));
-			if (!previousName.equals(name)) {
-				createRecipeFromBlock(vanillaBlock, serializer, consumer);
-			}
-			createRecipeFromBlock(block.get(),serializer, consumer);
-			previousName = name;
+		for (String type : ChippedBlocks.stonesList) {
+			createRecipeFromType(type, ChippedSerializer.MASON_TABLE.get(), consumer);
+		}
+		
+		for (String type : ChippedBlocks.stones2List) {
+			createRecipeFromType(type, ChippedSerializer.MASON_TABLE.get(), consumer);
+		}
+		
+		for (String type : ChippedBlocks.stones3List) {
+			createRecipeFromType(type, ChippedSerializer.MASON_TABLE.get(), consumer);
+		}
+		
+		for (String type : ChippedBlocks.stones4List) {
+			createRecipeFromType(type, ChippedSerializer.MASON_TABLE.get(), consumer);
+		}
+		
+		for (String type : ChippedBlocks.stones5List) {
+			createRecipeFromType(type, ChippedSerializer.MASON_TABLE.get(), consumer);
+		}
+		
+		createRecipeFromType("gilded_blackstone", ChippedSerializer.MASON_TABLE.get(), consumer);
+		createRecipeFromType("netherrack", ChippedSerializer.MASON_TABLE.get(), consumer);
+		createRecipeFromType("blackstone", ChippedSerializer.MASON_TABLE.get(), consumer);
+		createRecipeFromType("basalt", ChippedSerializer.MASON_TABLE.get(), consumer);
+		createRecipeFromType("obsidian", ChippedSerializer.MASON_TABLE.get(), consumer);
+		createRecipeFromType("crying_obsidian", ChippedSerializer.MASON_TABLE.get(), consumer);
+		createRecipeFromType("clay", ChippedSerializer.MASON_TABLE.get(), consumer);
+		
+		createRecipeFromType("glass", ChippedSerializer.GLASSBLOWER.get(), consumer);
+		
+		createRecipeFromType("hay_block", ChippedSerializer.BOTANIST_WORKBENCH.get(), consumer);
+		createRecipeFromType("melon", ChippedSerializer.BOTANIST_WORKBENCH.get(), consumer);
+		createRecipeFromType("vine", ChippedSerializer.BOTANIST_WORKBENCH.get(), consumer);
+		
+		for (String color : ChippedBlocks.colorsList) {
+			createRecipeFromType(color + "_terracotta", ChippedSerializer.MASON_TABLE.get(), consumer);
+			createRecipeFromType(color + "_concrete", ChippedSerializer.MASON_TABLE.get(), consumer);
+			createRecipeFromType(color + "_wool", ChippedSerializer.LOOM_TABLE.get(), consumer);
+			createRecipeFromType(color + "_carpet", ChippedSerializer.LOOM_TABLE.get(), consumer);
+			createRecipeFromType(color + "_stained_glass", ChippedSerializer.GLASSBLOWER.get(), consumer);
+		}
+		
+		for (String wood : ChippedBlocks.woodsList) {
+			createRecipeFromType(wood + "_wood_glass", "glass", ChippedSerializer.GLASSBLOWER.get(), consumer);
+			createRecipeFromType(wood + "_planks", ChippedSerializer.CARPENTERS_TABLE.get(), consumer);
 		}
 	}
 	
-	private static void createRecipeFromList(ArrayList<RegistryObject<Block>> list, String defaultBlock, IRecipeSerializer<?> serializer, Consumer<IFinishedRecipe> consumer) {
-		String previousName = "";
-		int i = 0;
-		for (RegistryObject<Block> block : list) {
-			String name = block.get().getRegistryName().getPath().split("_([1-9])")[0];
-			Block vanillaBlock = ForgeRegistries.BLOCKS.getValue(new ResourceLocation("minecraft:" + defaultBlock));
-			if (!previousName.equals(name)) {
-				chippedRecipe(serializer, 
-						Ingredient.of(ChippedTags.items.get(name)), vanillaBlock)
-						.unlocks("has_item", has(vanillaBlock))
-						.save(consumer, new ResourceLocation(Chipped.MOD_ID, serializer.getRegistryName().getPath() + "/default_" + defaultBlock + "_" + i));
-				i++;
-			}
-			createRecipeFromBlock(block.get(),serializer, consumer);
-			previousName = name;
+	private static void createRecipeFromType(String type, IRecipeSerializer<?> serializer, Consumer<IFinishedRecipe> consumer) {
+		chippedRecipe(serializer, 
+				Ingredient.of(ChippedTags.items.get(type)), ForgeRegistries.BLOCKS.getValue(new ResourceLocation("minecraft:" + type)))
+				.unlocks("has_item", has(ForgeRegistries.BLOCKS.getValue(new ResourceLocation("minecraft:" + type))))
+				.save(consumer, new ResourceLocation(Chipped.MOD_ID, serializer.getRegistryName().getPath() + "/" + type));
+		for (RegistryObject<Block> block : ChippedBlocks.blocksMap.get(type)) {
+			
+			String name = block.get().getRegistryName().getPath();
+			chippedRecipe(serializer, 
+					Ingredient.of(ChippedTags.items.get(type)), block.get())
+					.unlocks("has_item", has(ForgeRegistries.BLOCKS.getValue(new ResourceLocation("minecraft:" + type))))
+					.save(consumer, new ResourceLocation(Chipped.MOD_ID, serializer.getRegistryName().getPath() + "/" + name));
+		}
+	}
+	
+	private static void createRecipeFromType(String type, String type2, IRecipeSerializer<?> serializer, Consumer<IFinishedRecipe> consumer) {
+		chippedRecipe(serializer, 
+				Ingredient.of(ChippedTags.items.get(type)), ForgeRegistries.BLOCKS.getValue(new ResourceLocation("minecraft:" + type2)))
+				.unlocks("has_item", has(ForgeRegistries.BLOCKS.getValue(new ResourceLocation("minecraft:" + type2))))
+				.save(consumer, new ResourceLocation(Chipped.MOD_ID, serializer.getRegistryName().getPath() + "/" + "default_" + type));
+		for (RegistryObject<Block> block : ChippedBlocks.blocksMap.get(type)) {
+			String name = block.get().getRegistryName().getPath();
+			chippedRecipe(serializer, 
+					Ingredient.of(ChippedTags.items.get(type)), block.get())
+					.unlocks("has_item", has(ForgeRegistries.BLOCKS.getValue(new ResourceLocation("minecraft:" + type2))))
+					.save(consumer, new ResourceLocation(Chipped.MOD_ID, serializer.getRegistryName().getPath() + "/" + name));
 		}
 	}
 	

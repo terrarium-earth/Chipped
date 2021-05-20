@@ -1,0 +1,21 @@
+{
+  "replace": false,
+  "values": [
+    "#chipped:white_carpet",
+    "#chipped:orange_carpet",
+    "#chipped:magenta_carpet",
+    "#chipped:light_blue_carpet",
+    "#chipped:yellow_carpet",
+    "#chipped:lime_carpet",
+    "#chipped:pink_carpet",
+    "#chipped:gray_carpet",
+    "#chipped:light_gray_carpet",
+    "#chipped:cyan_carpet",
+    "#chipped:purple_carpet",
+    "#chipped:blue_carpet",
+    "#chipped:brown_carpet",
+    "#chipped:green_carpet",
+    "#chipped:red_carpet",
+    "#chipped:black_carpet"
+  ]
+}

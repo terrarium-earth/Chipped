@@ -1,7 +1,7 @@
 {
   "type": "chipped:loom_table",
   "ingredient": {
-    "tag": "forge:wools/purple_wool"
+    "tag": "chipped:purple_wool"
   },
   "result": "chipped:purple_wool_12",
   "count": 1

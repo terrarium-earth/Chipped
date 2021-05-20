@@ -1,7 +1,5 @@
 package com.grimbo.chipped.data.client;
 
-import java.util.ArrayList;
-
 import com.grimbo.chipped.Chipped;
 import com.grimbo.chipped.block.ChippedBlocks;
 
@@ -19,22 +17,18 @@ public class ChippedItemModelProvider extends ItemModelProvider {
 
 	@Override
 	protected void registerModels() {
-		createFromList(ChippedBlocks.stones);
-		createFromList(ChippedBlocks.wools);
-		createFromList(ChippedBlocks.carpets);
-		createFromList(ChippedBlocks.glasses);
-		createFromList(ChippedBlocks.stainedGlasses);
-		createFromList(ChippedBlocks.hayBlock);
-		createFromList(ChippedBlocks.clays);
-		createFromList(ChippedBlocks.terracottas);
-		createFromList(ChippedBlocks.concretes);
-		createFromList(ChippedBlocks.woods);
-	}
-
-	private void createFromList(ArrayList<RegistryObject<Block>> list) {
-		for (RegistryObject<Block> block : list) {
-			String name = block.get().getRegistryName().getPath();
-			withExistingParent(name, modLoc("block/" + name));
+		//Any blocks which has a custom model and does not need an auto generated one
+		String[] custom = {"vine"};
+		
+		for (String type : ChippedBlocks.blocksMap.keySet()) {
+			for (String skip : custom) {
+				if (!type.equals(skip)) {
+					for (RegistryObject<Block> block : ChippedBlocks.blocksMap.get(type)) {
+						String name = block.get().getRegistryName().getPath();
+						withExistingParent(name, modLoc("block/" + name));
+					}
+				}
+			}
 		}
 	}
 }

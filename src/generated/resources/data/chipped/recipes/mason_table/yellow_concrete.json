@@ -1,7 +1,7 @@
 {
   "type": "chipped:mason_table",
   "ingredient": {
-    "tag": "forge:concretes/yellow_concrete"
+    "tag": "chipped:yellow_concrete"
   },
   "result": "minecraft:yellow_concrete",
   "count": 1

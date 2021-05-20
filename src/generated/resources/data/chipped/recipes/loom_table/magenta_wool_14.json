@@ -1,7 +1,7 @@
 {
   "type": "chipped:loom_table",
   "ingredient": {
-    "tag": "forge:wools/magenta_wool"
+    "tag": "chipped:magenta_wool"
   },
   "result": "chipped:magenta_wool_14",
   "count": 1

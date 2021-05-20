@@ -1,7 +1,7 @@
 {
   "type": "chipped:loom_table",
   "ingredient": {
-    "tag": "forge:carpets/yellow_carpet"
+    "tag": "chipped:yellow_carpet"
   },
   "result": "chipped:yellow_carpet_13",
   "count": 1

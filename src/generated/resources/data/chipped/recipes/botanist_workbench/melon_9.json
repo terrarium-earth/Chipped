@@ -1,7 +1,7 @@
 {
   "type": "chipped:botanist_workbench",
   "ingredient": {
-    "tag": "forge:melons/melon"
+    "tag": "chipped:melon"
   },
   "result": "chipped:melon_9",
   "count": 1

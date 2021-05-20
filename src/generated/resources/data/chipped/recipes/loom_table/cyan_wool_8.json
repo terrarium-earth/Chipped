@@ -1,7 +1,7 @@
 {
   "type": "chipped:loom_table",
   "ingredient": {
-    "tag": "forge:wools/cyan_wool"
+    "tag": "chipped:cyan_wool"
   },
   "result": "chipped:cyan_wool_8",
   "count": 1

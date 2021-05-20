@@ -1,7 +1,7 @@
 {
   "type": "chipped:glassblower",
   "ingredient": {
-    "tag": "forge:stained_glasses/white_stained_glass"
+    "tag": "chipped:white_stained_glass"
   },
   "result": "minecraft:white_stained_glass",
   "count": 1

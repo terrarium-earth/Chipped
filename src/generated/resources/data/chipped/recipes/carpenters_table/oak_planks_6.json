@@ -1,7 +1,7 @@
 {
   "type": "chipped:carpenters_table",
   "ingredient": {
-    "tag": "forge:woods/oak_planks"
+    "tag": "chipped:oak_planks"
   },
   "result": "chipped:oak_planks_6",
   "count": 1

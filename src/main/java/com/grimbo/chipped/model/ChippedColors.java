@@ -35,7 +35,7 @@ public class ChippedColors {
 			return GrassColors.get(0.5d, 1.0d);
 		};
 
-		for (RegistryObject<Block> vine : ChippedBlocks.vines) {
+		for (RegistryObject<Block> vine : ChippedBlocks.blocksMap.get("vine")) {
 			blockColors.register(grassColourHandler, vine.get());
 		}
 	}
@@ -50,7 +50,7 @@ public class ChippedColors {
 			return blockColors.getColor(state, null, null, tintIndex);
 		};
 
-		for (RegistryObject<Block> vine : ChippedBlocks.vines) {
+		for (RegistryObject<Block> vine : ChippedBlocks.blocksMap.get("vine")) {
 			itemColors.register(itemBlockColourHandler, vine.get());
 		}
 	}

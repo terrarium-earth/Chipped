@@ -1,7 +1,7 @@
 {
   "type": "chipped:loom_table",
   "ingredient": {
-    "tag": "forge:wools/lime_wool"
+    "tag": "chipped:lime_wool"
   },
   "result": "chipped:lime_wool_3",
   "count": 1

@@ -12,40 +12,7 @@ public class ChippedBlockLootTables extends BlockLootTables {
 
 	@Override
 	protected void addTables() {
-		for (RegistryObject<Block> block : ChippedBlocks.stones) {
-			dropSelf(block.get());
-		}
-		for (RegistryObject<Block> block : ChippedBlocks.wools) {
-			dropSelf(block.get());
-		}
-		for (RegistryObject<Block> block : ChippedBlocks.carpets) {
-			dropSelf(block.get());
-		}
-		for (RegistryObject<Block> block : ChippedBlocks.glasses) {
-			dropSelf(block.get());
-		}
-		for (RegistryObject<Block> block : ChippedBlocks.stainedGlasses) {
-			dropSelf(block.get());
-		}
-		for (RegistryObject<Block> block : ChippedBlocks.hayBlock) {
-			dropSelf(block.get());
-		}
-		for (RegistryObject<Block> block : ChippedBlocks.clays) {
-			dropSelf(block.get());
-		}
-		for (RegistryObject<Block> block : ChippedBlocks.terracottas) {
-			dropSelf(block.get());
-		}
-		for (RegistryObject<Block> block : ChippedBlocks.concretes) {
-			dropSelf(block.get());
-		}
-		for (RegistryObject<Block> block : ChippedBlocks.woods) {
-			dropSelf(block.get());
-		}
-		for (RegistryObject<Block> block: ChippedBlocks.melons) {
-			dropSelf(block.get());
-		}
-		for (RegistryObject<Block> block: ChippedBlocks.vines) {
+		for (RegistryObject<Block> block : ChippedBlocks.blocksMap.values()) {
 			dropSelf(block.get());
 		}
 

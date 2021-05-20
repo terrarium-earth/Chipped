@@ -1,7 +1,7 @@
 {
   "type": "chipped:loom_table",
   "ingredient": {
-    "tag": "forge:carpets/purple_carpet"
+    "tag": "chipped:purple_carpet"
   },
   "result": "minecraft:purple_carpet",
   "count": 1

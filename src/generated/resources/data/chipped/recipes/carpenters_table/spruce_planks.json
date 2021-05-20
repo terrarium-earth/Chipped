@@ -1,7 +1,7 @@
 {
   "type": "chipped:carpenters_table",
   "ingredient": {
-    "tag": "forge:woods/spruce_planks"
+    "tag": "chipped:spruce_planks"
   },
   "result": "minecraft:spruce_planks",
   "count": 1

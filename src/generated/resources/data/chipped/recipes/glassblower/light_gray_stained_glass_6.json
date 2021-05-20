@@ -1,7 +1,7 @@
 {
   "type": "chipped:glassblower",
   "ingredient": {
-    "tag": "forge:stained_glasses/light_gray_stained_glass"
+    "tag": "chipped:light_gray_stained_glass"
   },
   "result": "chipped:light_gray_stained_glass_6",
   "count": 1

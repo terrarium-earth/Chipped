@@ -1,7 +1,7 @@
 {
   "type": "chipped:mason_table",
   "ingredient": {
-    "tag": "forge:concretes/magenta_concrete"
+    "tag": "chipped:magenta_concrete"
   },
   "result": "minecraft:magenta_concrete",
   "count": 1

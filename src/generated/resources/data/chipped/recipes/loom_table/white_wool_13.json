@@ -1,7 +1,7 @@
 {
   "type": "chipped:loom_table",
   "ingredient": {
-    "tag": "forge:wools/white_wool"
+    "tag": "chipped:white_wool"
   },
   "result": "chipped:white_wool_13",
   "count": 1

@@ -1,7 +1,7 @@
 {
   "type": "chipped:mason_table",
   "ingredient": {
-    "tag": "forge:stones/end_stone"
+    "tag": "chipped:end_stone"
   },
   "result": "chipped:end_stone_13",
   "count": 1

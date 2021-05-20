@@ -1,7 +1,7 @@
 {
   "type": "chipped:glassblower",
   "ingredient": {
-    "tag": "forge:stained_glasses/red_stained_glass"
+    "tag": "chipped:red_stained_glass"
   },
   "result": "chipped:red_stained_glass_1",
   "count": 1

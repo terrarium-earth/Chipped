@@ -14,14 +14,16 @@ import net.minecraftforge.fml.event.lifecycle.GatherDataEvent;
 public class ChippedDataGenerator {
 
 	/*
-	 * To make generated data for generic blocks
+	 * To make generated data for generic blocks:
 	 * 1. Generate each block in data.client.ChippedBlockStateProvider::register
 	 * 2. Register the tags based off of a list or manually in ChippedTags
-	 * 3. Generate each tag in ChippedBlockTagsProvider::register
 	 * 4. Generate each recipe in ChippedRecipeProvider::registerRecipes
-	 * 5. Register drops in ChippedBlockLootTables
+	 * 
+	 * Any abnormal blocks should additionally look into:
+	 * 1. ChippedTags
+	 * 2. ChippedBlockLootTables
+	 * 3. ChippedItemModelProvider
 	 */
-
 	@SubscribeEvent
 	public static void gatherData(final GatherDataEvent event) {
 		ChippedTags.register();

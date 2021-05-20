@@ -1,7 +1,7 @@
 {
   "type": "chipped:carpenters_table",
   "ingredient": {
-    "tag": "forge:woods/acacia_planks"
+    "tag": "chipped:acacia_planks"
   },
   "result": "chipped:acacia_planks_6",
   "count": 1

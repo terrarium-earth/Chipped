@@ -1,7 +1,7 @@
 {
   "type": "chipped:glassblower",
   "ingredient": {
-    "tag": "forge:glasses/crimson_wood_glass"
+    "tag": "chipped:crimson_wood_glass"
   },
   "result": "chipped:crimson_wood_glass_1",
   "count": 1

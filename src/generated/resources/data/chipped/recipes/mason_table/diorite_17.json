@@ -1,7 +1,7 @@
 {
   "type": "chipped:mason_table",
   "ingredient": {
-    "tag": "forge:stones/diorite"
+    "tag": "chipped:diorite"
   },
   "result": "chipped:diorite_17",
   "count": 1

@@ -1,8 +1,8 @@
 {
   "type": "chipped:mason_table",
   "ingredient": {
-    "tag": "forge:stones/stone"
+    "tag": "chipped:stone"
   },
-  "result": "minecraft:stone",
+  "result": "chipped:stone_1",
   "count": 1
 }

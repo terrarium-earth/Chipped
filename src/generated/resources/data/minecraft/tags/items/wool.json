@@ -1,0 +1,21 @@
+{
+  "replace": false,
+  "values": [
+    "#chipped:white_wool",
+    "#chipped:orange_wool",
+    "#chipped:magenta_wool",
+    "#chipped:light_blue_wool",
+    "#chipped:yellow_wool",
+    "#chipped:lime_wool",
+    "#chipped:pink_wool",
+    "#chipped:gray_wool",
+    "#chipped:light_gray_wool",
+    "#chipped:cyan_wool",
+    "#chipped:purple_wool",
+    "#chipped:blue_wool",
+    "#chipped:brown_wool",
+    "#chipped:green_wool",
+    "#chipped:red_wool",
+    "#chipped:black_wool"
+  ]
+}

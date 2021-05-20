@@ -1,7 +1,7 @@
 {
   "type": "chipped:mason_table",
   "ingredient": {
-    "tag": "forge:terracottas/green_terracotta"
+    "tag": "chipped:green_terracotta"
   },
   "result": "chipped:green_terracotta_18",
   "count": 1

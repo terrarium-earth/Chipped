@@ -2,9 +2,6 @@ package com.grimbo.chipped;
 
 import java.util.stream.Collectors;
 
-import net.minecraft.block.Block;
-import net.minecraft.client.renderer.RenderType;
-import net.minecraft.client.renderer.RenderTypeLookup;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -15,7 +12,10 @@ import com.grimbo.chipped.container.ChippedScreen;
 import com.grimbo.chipped.item.ChippedItems;
 import com.grimbo.chipped.recipe.ChippedSerializer;
 
+import net.minecraft.block.Block;
 import net.minecraft.client.gui.ScreenManager;
+import net.minecraft.client.renderer.RenderType;
+import net.minecraft.client.renderer.RenderTypeLookup;
 import net.minecraft.inventory.container.ContainerType;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
@@ -56,15 +56,23 @@ public class Chipped {
 		RenderTypeLookup.setRenderLayer(ChippedBlocks.BOTANIST_WORKBENCH.get(), RenderType.cutout());
 		RenderTypeLookup.setRenderLayer(ChippedBlocks.LOOM_TABLE.get(), RenderType.cutout());
 
-		for (RegistryObject<Block> glass : ChippedBlocks.glasses) {
+		for (RegistryObject<Block> glass : ChippedBlocks.blocksMap.get("glass")) {
 			RenderTypeLookup.setRenderLayer(glass.get(), RenderType.cutout());
 		}
-
-		for (RegistryObject<Block> stainedGlass : ChippedBlocks.stainedGlasses) {
-			RenderTypeLookup.setRenderLayer(stainedGlass.get(), RenderType.translucent());
+		
+		for (String wood : ChippedBlocks.woodsList) {
+			for (RegistryObject<Block> glass : ChippedBlocks.blocksMap.get(wood + "_glass")) {
+				RenderTypeLookup.setRenderLayer(glass.get(), RenderType.cutout());
+			}
 		}
 
-		for (RegistryObject<Block> vine : ChippedBlocks.vines) {
+		for (String color : ChippedBlocks.colorsList) {
+			for (RegistryObject<Block> stainedGlass : ChippedBlocks.blocksMap.get(color + "_glass")) {
+				RenderTypeLookup.setRenderLayer(stainedGlass.get(), RenderType.translucent());
+			}
+		}
+
+		for (RegistryObject<Block> vine : ChippedBlocks.blocksMap.get("vine")) {
 			RenderTypeLookup.setRenderLayer(vine.get(), RenderType.translucent());
 		}
 	}

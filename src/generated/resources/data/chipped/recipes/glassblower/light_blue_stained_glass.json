@@ -1,7 +1,7 @@
 {
   "type": "chipped:glassblower",
   "ingredient": {
-    "tag": "forge:stained_glasses/light_blue_stained_glass"
+    "tag": "chipped:light_blue_stained_glass"
   },
   "result": "minecraft:light_blue_stained_glass",
   "count": 1

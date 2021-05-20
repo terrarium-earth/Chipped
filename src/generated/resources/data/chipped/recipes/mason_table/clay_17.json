@@ -1,7 +1,7 @@
 {
   "type": "chipped:mason_table",
   "ingredient": {
-    "tag": "forge:clays/clay"
+    "tag": "chipped:clay"
   },
   "result": "chipped:clay_17",
   "count": 1

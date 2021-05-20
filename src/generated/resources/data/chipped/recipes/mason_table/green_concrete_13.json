@@ -1,7 +1,7 @@
 {
   "type": "chipped:mason_table",
   "ingredient": {
-    "tag": "forge:concretes/green_concrete"
+    "tag": "chipped:green_concrete"
   },
   "result": "chipped:green_concrete_13",
   "count": 1
