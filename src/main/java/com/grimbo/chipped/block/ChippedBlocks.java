@@ -69,22 +69,27 @@ public class ChippedBlocks {
 			AbstractBlock.Properties.of(Material.WOOD).strength(1F, 2F).sound(SoundType.WOOD).noOcclusion()
 					.isValidSpawn(ChippedBlocks::neverAllowSpawn).isRedstoneConductor(ChippedBlocks::isntSolid)
 					.isSuffocating(ChippedBlocks::isntSolid).isViewBlocking(ChippedBlocks::isntSolid)));
+
 	public static final RegistryObject<Block> GLASSBLOWER = register(() -> new ChippedWorkbench(1, "glassblower",
 			AbstractBlock.Properties.of(Material.WOOD).strength(1F, 2F).sound(SoundType.WOOD).noOcclusion()
 					.isValidSpawn(ChippedBlocks::neverAllowSpawn).isRedstoneConductor(ChippedBlocks::isntSolid)
 					.isSuffocating(ChippedBlocks::isntSolid).isViewBlocking(ChippedBlocks::isntSolid)));
+
 	public static final RegistryObject<Block> CARPENTERS_TABLE = register(() -> new ChippedWorkbench(2, "carpenters_table",
 			AbstractBlock.Properties.of(Material.WOOD).strength(1F, 2F).sound(SoundType.WOOD).noOcclusion()
 					.isValidSpawn(ChippedBlocks::neverAllowSpawn).isRedstoneConductor(ChippedBlocks::isntSolid)
 					.isSuffocating(ChippedBlocks::isntSolid).isViewBlocking(ChippedBlocks::isntSolid)));
+
 	public static final RegistryObject<Block> LOOM_TABLE = register(() -> new ChippedWorkbench(3, "loom_table",
 			AbstractBlock.Properties.of(Material.WOOD).strength(1F, 2F).sound(SoundType.WOOD).noOcclusion()
 					.isValidSpawn(ChippedBlocks::neverAllowSpawn).isRedstoneConductor(ChippedBlocks::isntSolid)
 					.isSuffocating(ChippedBlocks::isntSolid).isViewBlocking(ChippedBlocks::isntSolid)));
+
 	public static final RegistryObject<Block> MASON_TABLE = register(() -> new ChippedWorkbench(4, "mason_table",
 			AbstractBlock.Properties.of(Material.METAL).strength(5F, 6F).sound(SoundType.METAL).noOcclusion()
 					.isValidSpawn(ChippedBlocks::neverAllowSpawn).isRedstoneConductor(ChippedBlocks::isntSolid)
 					.isSuffocating(ChippedBlocks::isntSolid).isViewBlocking(ChippedBlocks::isntSolid).requiresCorrectToolForDrops()));
+
 	public static final RegistryObject<Block> ALCHEMY_BENCH = register(() -> new ChippedWorkbench(5, "alchemy_bench",
 			AbstractBlock.Properties.of(Material.WOOD).strength(1F, 2F).sound(SoundType.WOOD).noOcclusion()
 					.isValidSpawn(ChippedBlocks::neverAllowSpawn).isRedstoneConductor(ChippedBlocks::isntSolid)

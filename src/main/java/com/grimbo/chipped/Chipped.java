@@ -49,25 +49,29 @@ public class Chipped {
 		eventBus.addListener(this::clientRender);
 		eventBus.addListener(this::onClientSetupEvent);
 		MinecraftForge.EVENT_BUS.register(this);
+
+
+
 	}
 
 	@SubscribeEvent
 	public void clientRender(final FMLClientSetupEvent event) {
 		RenderTypeLookup.setRenderLayer(ChippedBlocks.BOTANIST_WORKBENCH.get(), RenderType.cutout());
 		RenderTypeLookup.setRenderLayer(ChippedBlocks.LOOM_TABLE.get(), RenderType.cutout());
+		RenderTypeLookup.setRenderLayer(ChippedBlocks.ALCHEMY_BENCH.get(), RenderType.cutout());
 
 		for (RegistryObject<Block> glass : ChippedBlocks.blocksMap.get("glass")) {
 			RenderTypeLookup.setRenderLayer(glass.get(), RenderType.cutout());
 		}
 		
 		for (String wood : ChippedBlocks.woodsList) {
-			for (RegistryObject<Block> glass : ChippedBlocks.blocksMap.get(wood + "_glass")) {
+			for (RegistryObject<Block> glass : ChippedBlocks.blocksMap.get(wood + "_wood_glass")) {
 				RenderTypeLookup.setRenderLayer(glass.get(), RenderType.cutout());
 			}
 		}
 
 		for (String color : ChippedBlocks.colorsList) {
-			for (RegistryObject<Block> stainedGlass : ChippedBlocks.blocksMap.get(color + "_glass")) {
+			for (RegistryObject<Block> stainedGlass : ChippedBlocks.blocksMap.get(color + "_stained_glass")) {
 				RenderTypeLookup.setRenderLayer(stainedGlass.get(), RenderType.translucent());
 			}
 		}
@@ -76,7 +80,7 @@ public class Chipped {
 			RenderTypeLookup.setRenderLayer(vine.get(), RenderType.translucent());
 		}
 	}
-	
+
 	@SuppressWarnings("unchecked")
 	@SubscribeEvent
 	public void onClientSetupEvent(FMLClientSetupEvent event) {
