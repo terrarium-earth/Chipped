@@ -1,0 +1,12 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:glass_pane",
+    "chipped:spruce_wood_glass_pane_1",
+    "chipped:spruce_wood_glass_pane_2",
+    "chipped:spruce_wood_glass_pane_3",
+    "chipped:spruce_wood_glass_pane_4",
+    "chipped:spruce_wood_glass_pane_5",
+    "chipped:spruce_wood_glass_pane_6"
+  ]
+}

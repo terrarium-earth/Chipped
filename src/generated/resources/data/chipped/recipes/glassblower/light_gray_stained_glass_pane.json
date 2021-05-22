@@ -1,0 +1,8 @@
+{
+  "type": "chipped:glassblower",
+  "ingredient": {
+    "tag": "chipped:light_gray_stained_glass_pane"
+  },
+  "result": "minecraft:light_gray_stained_glass_pane",
+  "count": 1
+}

@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/template_glass_pane_side_alt",
+  "textures": {
+    "pane": "chipped:block/yellow_stained_glass_1",
+    "edge": "chipped:block/yellow_stained_glass_1"
+  }
+}

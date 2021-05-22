@@ -7,6 +7,7 @@ import com.grimbo.chipped.Chipped;
 import com.grimbo.chipped.block.ChippedBlocks;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.FourWayBlock;
 import net.minecraft.block.RotatedPillarBlock;
 import net.minecraft.data.DataGenerator;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
@@ -50,6 +51,9 @@ public class ChippedBlockStateProvider extends BlockStateProvider {
 		createCubeFromList(ChippedBlocks.blocksMap.get("clay"));
 		createCubeFromList(ChippedBlocks.blocksMap.get("glass"));
 		
+		registerGlassPanes("glass_pane", "glass", "glass_pane_1_top", 1, 6);
+		registerGlassPanes("glass_pane", "glass", "glass_pane_2_top", 7, 14);
+		
 		for (String color : ChippedBlocks.colorsList) {
 			createCubeFromList(ChippedBlocks.blocksMap.get(color + "_terracotta"));
 			createCubeFromList(ChippedBlocks.blocksMap.get(color + "_concrete"));
@@ -62,11 +66,15 @@ public class ChippedBlockStateProvider extends BlockStateProvider {
 				String name2 = color + "_wool_" + i;
 				simpleBlock(blocks.get(i - 1).get(), models().carpet(name, modLoc("block/" + name2)));
 			}
+			
+			registerGlassPanes(color + "_stained_glass_pane", color + "_stained_glass", "glass_pane_2_top");
 		}
 		
 		for (String wood : ChippedBlocks.woodsList) {
 			createCubeFromList(ChippedBlocks.blocksMap.get(wood + "_wood_glass"));
 			createCubeFromList(ChippedBlocks.blocksMap.get(wood + "_planks"));
+			
+			registerGlassPanes(wood + "_wood_glass_pane", wood + "_wood_glass", wood + "_wood_glass_pane_top");
 		}
 		
 		for (RegistryObject<Block> block : ChippedBlocks.blocksMap.get("hay_block")) {
@@ -83,5 +91,65 @@ public class ChippedBlockStateProvider extends BlockStateProvider {
 		for (RegistryObject<Block> block : list) {
 			simpleBlock(block.get());
 		}
+	}
+	
+	private void registerGlassPanes(String type, String originalType, String topName, int start, int end) {
+		for (int i = start; i <= end; i++) {
+			ArrayList<RegistryObject<Block>> blocks = new ArrayList<RegistryObject<Block>>(ChippedBlocks.blocksMap.get(type));
+			String block = type + "_" + i;
+			String originalBlock = originalType + "_" + i;
+			getMultipartBuilder(blocks.get(i - 1).get())
+				.part()
+				.modelFile(models().panePost(block + "_post", modLoc("block/" + originalBlock), modLoc("block/" + topName)))
+				.addModel();
+			getMultipartBuilder(blocks.get(i - 1).get())
+				.part()
+				.modelFile(models().paneSide(block + "_side", modLoc("block/" + originalBlock), modLoc("block/" + topName)))
+				.addModel()
+				.condition(FourWayBlock.NORTH, true);
+			getMultipartBuilder(blocks.get(i - 1).get())
+				.part()
+				.modelFile(models().paneSide(block + "_side", modLoc("block/" + originalBlock), modLoc("block/" + topName)))
+				.rotationY(90)
+				.addModel()
+				.condition(FourWayBlock.EAST, true);
+			getMultipartBuilder(blocks.get(i - 1).get())
+				.part()
+				.modelFile(models().paneSideAlt(block + "_side_alt", modLoc("block/" + originalBlock), modLoc("block/" + topName)))
+				.addModel()
+				.condition(FourWayBlock.SOUTH, true);
+			getMultipartBuilder(blocks.get(i - 1).get())
+				.part()
+				.modelFile(models().paneSideAlt(block + "_side_alt", modLoc("block/" + originalBlock), modLoc("block/" + originalBlock)))
+				.rotationY(90)
+				.addModel()
+				.condition(FourWayBlock.WEST, true);
+			getMultipartBuilder(blocks.get(i - 1).get())
+				.part()
+				.modelFile(models().paneNoSide(block + "_noside", modLoc("block/" + originalBlock)))
+				.addModel()
+				.condition(FourWayBlock.NORTH, false);
+			getMultipartBuilder(blocks.get(i - 1).get())
+				.part()
+				.modelFile(models().paneNoSideAlt(block + "_noside_alt", modLoc("block/" + originalBlock)))
+				.addModel()
+				.condition(FourWayBlock.EAST, false);
+			getMultipartBuilder(blocks.get(i - 1).get())
+				.part()
+				.modelFile(models().paneNoSideAlt(block + "_noside_alt", modLoc("block/" + originalBlock)))
+				.rotationY(90)
+				.addModel()
+				.condition(FourWayBlock.SOUTH, false);
+			getMultipartBuilder(blocks.get(i - 1).get())
+				.part()
+				.modelFile(models().paneNoSide(block + "_noside", modLoc("block/" + originalBlock)))
+				.rotationY(270)
+				.addModel()
+				.condition(FourWayBlock.WEST, false);
+		}
+	}
+	
+	private void registerGlassPanes(String type, String originalType, String topName) {
+		registerGlassPanes(type, originalType, topName, 1, ChippedBlocks.blocksMap.get(type).size());
 	}
 }

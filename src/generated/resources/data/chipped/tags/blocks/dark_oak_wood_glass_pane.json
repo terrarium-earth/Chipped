@@ -1,0 +1,12 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:glass_pane",
+    "chipped:dark_oak_wood_glass_pane_1",
+    "chipped:dark_oak_wood_glass_pane_2",
+    "chipped:dark_oak_wood_glass_pane_3",
+    "chipped:dark_oak_wood_glass_pane_4",
+    "chipped:dark_oak_wood_glass_pane_5",
+    "chipped:dark_oak_wood_glass_pane_6"
+  ]
+}

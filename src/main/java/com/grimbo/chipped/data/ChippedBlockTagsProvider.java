@@ -7,7 +7,6 @@ import com.grimbo.chipped.block.ChippedBlocks;
 import net.minecraft.block.Block;
 import net.minecraft.data.BlockTagsProvider;
 import net.minecraft.data.DataGenerator;
-import net.minecraft.tags.Tag;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.data.ExistingFileHelper;
@@ -39,6 +38,12 @@ public class ChippedBlockTagsProvider extends BlockTagsProvider {
 			tag(ChippedTags.blocks.get(type)).add(ForgeRegistries.BLOCKS.getValue(new ResourceLocation("minecraft:glass")));
 			for (RegistryObject<Block> block : ChippedBlocks.blocksMap.get(type)) {
 				tag(ChippedTags.blocks.get(type)).add(block.get());
+			}
+			
+			String type2 = wood + "_wood_glass_pane";
+			tag(ChippedTags.blocks.get(type2)).add(ForgeRegistries.BLOCKS.getValue(new ResourceLocation("minecraft:glass_pane")));
+			for (RegistryObject<Block> block : ChippedBlocks.blocksMap.get(type2)) {
+				tag(ChippedTags.blocks.get(type2)).add(block.get());
 			}
 		}
 		

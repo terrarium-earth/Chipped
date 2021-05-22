@@ -16,8 +16,10 @@ import net.minecraft.block.CryingObsidianBlock;
 import net.minecraft.block.GlassBlock;
 import net.minecraft.block.HayBlock;
 import net.minecraft.block.MelonBlock;
+import net.minecraft.block.PaneBlock;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.StainedGlassBlock;
+import net.minecraft.block.StainedGlassPaneBlock;
 import net.minecraft.block.VineBlock;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.EntityType;
@@ -38,8 +40,7 @@ public class ChippedBlocks {
 	public static Multimap<String, RegistryObject<Block>> blocksMap = ArrayListMultimap.create();
 
 	// General stones of hardness 1.5F, 6F
-	public static String[] stonesList = { "stone", "granite", "diorite", "andesite", "prismarine", "dark_prismarine",
-			"purpur_block" };
+	public static String[] stonesList = { "stone", "granite", "diorite", "andesite", "prismarine", "dark_prismarine", "purpur_block" };
 	// General rocks of hardness 1.5F, 6F
 	public static String[] stones2List = { "cobblestone", "quartz_block" };
 	// Sandstones of hardness 0.8F
@@ -49,10 +50,8 @@ public class ChippedBlocks {
 	// End stones of hardness 3F, 9F
 	public static String[] stones5List = { "end_stone" };
 
-	public static String[] colorsList = { "white", "orange", "magenta", "light_blue", "yellow", "lime", "pink", "gray",
-			"light_gray", "cyan", "purple", "blue", "brown", "green", "red", "black" };
-	public static String[] woodsList = { "oak", "birch", "spruce", "jungle", "acacia", "dark_oak", "warped",
-			"crimson" };
+	public static String[] colorsList = { "white", "orange", "magenta", "light_blue", "yellow", "lime", "pink", "gray", "light_gray", "cyan", "purple", "blue", "brown", "green", "red", "black" };
+	public static String[] woodsList = { "oak", "birch", "spruce", "jungle", "acacia", "dark_oak", "warped", "crimson" };
 	
 	// Workbenches
 	/*
@@ -139,6 +138,8 @@ public class ChippedBlocks {
 					.strength(0.3F).sound(SoundType.GLASS).noOcclusion().isValidSpawn(ChippedBlocks::neverAllowSpawn)
 					.isRedstoneConductor(ChippedBlocks::isntSolid).isSuffocating(ChippedBlocks::isntSolid)
 					.isViewBlocking(ChippedBlocks::isntSolid))));
+			blocksMap.put("glass_pane", register("glass_pane_" + i, () -> new PaneBlock(AbstractBlock.Properties.of(Material.GLASS)
+					.strength(0.3F).sound(SoundType.GLASS).noOcclusion())));
 		}
 		
 		for (String wood : woodsList) {
@@ -147,6 +148,8 @@ public class ChippedBlocks {
 						.strength(0.3F).sound(SoundType.GLASS).noOcclusion().isValidSpawn(ChippedBlocks::neverAllowSpawn)
 						.isRedstoneConductor(ChippedBlocks::isntSolid).isSuffocating(ChippedBlocks::isntSolid)
 						.isViewBlocking(ChippedBlocks::isntSolid))));
+				blocksMap.put(wood + "_wood_glass_pane", register(wood + "_wood_glass_pane_" + i, () -> new PaneBlock(AbstractBlock.Properties.of(Material.GLASS)
+						.strength(0.3F).sound(SoundType.GLASS).noOcclusion())));
 			}
 		}
 
@@ -156,7 +159,9 @@ public class ChippedBlocks {
 						AbstractBlock.Properties.of(Material.GLASS).strength(0.3F).sound(SoundType.GLASS).noOcclusion()
 								.isValidSpawn(ChippedBlocks::neverAllowSpawn)
 								.isRedstoneConductor(ChippedBlocks::isntSolid).isSuffocating(ChippedBlocks::isntSolid)
-								.isViewBlocking(ChippedBlocks::isntSolid))));
+								.isViewBlocking(ChippedBlocks::isntSolid))));;
+				blocksMap.put(color + "_stained_glass_pane", register(color + "_stained_glass_pane_" + i, () -> new StainedGlassPaneBlock(DyeColor.byName(color, DyeColor.BLACK), 
+						AbstractBlock.Properties.of(Material.GLASS).strength(0.3F).sound(SoundType.GLASS).noOcclusion())));
 			}
 		}
 		

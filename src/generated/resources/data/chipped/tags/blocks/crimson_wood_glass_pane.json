@@ -1,0 +1,12 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:glass_pane",
+    "chipped:crimson_wood_glass_pane_1",
+    "chipped:crimson_wood_glass_pane_2",
+    "chipped:crimson_wood_glass_pane_3",
+    "chipped:crimson_wood_glass_pane_4",
+    "chipped:crimson_wood_glass_pane_5",
+    "chipped:crimson_wood_glass_pane_6"
+  ]
+}

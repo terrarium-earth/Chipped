@@ -1,0 +1,8 @@
+{
+  "type": "chipped:glassblower",
+  "ingredient": {
+    "tag": "chipped:glass_pane"
+  },
+  "result": "chipped:glass_pane_8",
+  "count": 1
+}

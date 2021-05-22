@@ -56,6 +56,7 @@ public class ChippedRecipeProvider extends RecipeProvider {
 		createRecipeFromType("clay", ChippedSerializer.MASON_TABLE.get(), consumer);
 		
 		createRecipeFromType("glass", ChippedSerializer.GLASSBLOWER.get(), consumer);
+		createRecipeFromType("glass_pane", ChippedSerializer.GLASSBLOWER.get(), consumer);
 		
 		createRecipeFromType("hay_block", ChippedSerializer.BOTANIST_WORKBENCH.get(), consumer);
 		createRecipeFromType("melon", ChippedSerializer.BOTANIST_WORKBENCH.get(), consumer);
@@ -67,10 +68,12 @@ public class ChippedRecipeProvider extends RecipeProvider {
 			createRecipeFromType(color + "_wool", ChippedSerializer.LOOM_TABLE.get(), consumer);
 			createRecipeFromType(color + "_carpet", ChippedSerializer.LOOM_TABLE.get(), consumer);
 			createRecipeFromType(color + "_stained_glass", ChippedSerializer.GLASSBLOWER.get(), consumer);
+			createRecipeFromType(color + "_stained_glass_pane", ChippedSerializer.GLASSBLOWER.get(), consumer);
 		}
 		
 		for (String wood : ChippedBlocks.woodsList) {
 			createRecipeFromType(wood + "_wood_glass", "glass", ChippedSerializer.GLASSBLOWER.get(), consumer);
+			createRecipeFromType(wood + "_wood_glass_pane", "glass_pane", ChippedSerializer.GLASSBLOWER.get(), consumer);
 			createRecipeFromType(wood + "_planks", ChippedSerializer.CARPENTERS_TABLE.get(), consumer);
 		}
 	}

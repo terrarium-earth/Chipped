@@ -49,9 +49,6 @@ public class Chipped {
 		eventBus.addListener(this::clientRender);
 		eventBus.addListener(this::onClientSetupEvent);
 		MinecraftForge.EVENT_BUS.register(this);
-
-
-
 	}
 
 	@SubscribeEvent
@@ -64,8 +61,16 @@ public class Chipped {
 			RenderTypeLookup.setRenderLayer(glass.get(), RenderType.cutout());
 		}
 		
+		for (RegistryObject<Block> glass : ChippedBlocks.blocksMap.get("glass_pane")) {
+			RenderTypeLookup.setRenderLayer(glass.get(), RenderType.cutout());
+		}
+		
 		for (String wood : ChippedBlocks.woodsList) {
 			for (RegistryObject<Block> glass : ChippedBlocks.blocksMap.get(wood + "_wood_glass")) {
+				RenderTypeLookup.setRenderLayer(glass.get(), RenderType.cutout());
+			}
+			
+			for (RegistryObject<Block> glass : ChippedBlocks.blocksMap.get(wood + "_wood_glass_pane")) {
 				RenderTypeLookup.setRenderLayer(glass.get(), RenderType.cutout());
 			}
 		}
@@ -73,6 +78,10 @@ public class Chipped {
 		for (String color : ChippedBlocks.colorsList) {
 			for (RegistryObject<Block> stainedGlass : ChippedBlocks.blocksMap.get(color + "_stained_glass")) {
 				RenderTypeLookup.setRenderLayer(stainedGlass.get(), RenderType.translucent());
+			}
+			
+			for (RegistryObject<Block> stainedGlassPane : ChippedBlocks.blocksMap.get(color + "_stained_glass_pane")) {
+				RenderTypeLookup.setRenderLayer(stainedGlassPane.get(), RenderType.translucent());
 			}
 		}
 
