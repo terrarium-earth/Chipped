@@ -1,0 +1,8 @@
+{
+  "type": "chipped:alchemy_bench",
+  "ingredient": {
+    "tag": "chipped:obsidian"
+  },
+  "result": "chipped:obsidian_18",
+  "count": 1
+}

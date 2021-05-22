@@ -1,8 +1,0 @@
-{
-  "type": "chipped:mason_table",
-  "ingredient": {
-    "tag": "chipped:crying_obsidian"
-  },
-  "result": "minecraft:crying_obsidian",
-  "count": 1
-}

@@ -1,8 +1,0 @@
-{
-  "type": "chipped:mason_table",
-  "ingredient": {
-    "tag": "chipped:obsidian"
-  },
-  "result": "chipped:obsidian_19",
-  "count": 1
-}
