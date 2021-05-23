@@ -22,28 +22,11 @@ public class ChippedBlockStateProvider extends BlockStateProvider {
 
 	@Override
 	protected void registerStatesAndModels() {
-		for (String type : ChippedBlocks.stonesList) {
-			createCubeFromList(ChippedBlocks.blocksMap.get(type));
-		}
-		
-		for (String type : ChippedBlocks.stones2List) {
-			createCubeFromList(ChippedBlocks.blocksMap.get(type));
-		}
-		
-		for (String type : ChippedBlocks.stones3List) {
-			createCubeFromList(ChippedBlocks.blocksMap.get(type));
-		}
-		
-		for (String type : ChippedBlocks.stones4List) {
-			createCubeFromList(ChippedBlocks.blocksMap.get(type));
-		}
-		
-		for (String type : ChippedBlocks.stones5List) {
+		for (String type : ChippedBlocks.stones18) {
 			createCubeFromList(ChippedBlocks.blocksMap.get(type));
 		}
 		
 		createCubeFromList(ChippedBlocks.blocksMap.get("gilded_blackstone"));
-		createCubeFromList(ChippedBlocks.blocksMap.get("netherrack"));
 		createCubeFromList(ChippedBlocks.blocksMap.get("blackstone"));
 		createCubeFromList(ChippedBlocks.blocksMap.get("basalt"));
 		createCubeFromList(ChippedBlocks.blocksMap.get("obsidian"));

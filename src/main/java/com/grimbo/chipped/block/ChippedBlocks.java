@@ -26,6 +26,7 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.DyeColor;
 import net.minecraft.item.Item;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockReader;
 import net.minecraftforge.fml.RegistryObject;
@@ -38,18 +39,11 @@ public class ChippedBlocks {
 			Chipped.MOD_ID);
 
 	public static Multimap<String, RegistryObject<Block>> blocksMap = ArrayListMultimap.create();
-
-	// General stones of hardness 1.5F, 6F
-	public static String[] stonesList = { "stone", "granite", "diorite", "andesite", "prismarine", "dark_prismarine", "purpur_block" };
-	// General rocks of hardness 1.5F, 6F
-	public static String[] stones2List = { "cobblestone", "quartz_block" };
-	// Sandstones of hardness 0.8F
-	public static String[] stones3List = { "sandstone", "red_sandstone" };
-	// Nether bricks of hardness 2F, 6F and nether bricks sounds
-	public static String[] stones4List = { "nether_bricks", "red_nether_bricks" };
-	// End stones of hardness 3F, 9F
-	public static String[] stones5List = { "end_stone" };
-
+	
+	//Simple Blocks which have 18 of its own variant
+	public static String[] stones18 = { "stone", "granite", "diorite", "andesite", "prismarine", "dark_prismarine", "purpur_block", 
+			"cobblestone", "quartz_block", "sandstone", "red_sandstone", "nether_bricks", "red_nether_bricks", "end_stone", "netherrack" };
+	
 	public static String[] colorsList = { "white", "orange", "magenta", "light_blue", "yellow", "lime", "pink", "gray", "light_gray", "cyan", "purple", "blue", "brown", "green", "red", "black" };
 	public static String[] woodsList = { "oak", "birch", "spruce", "jungle", "acacia", "dark_oak", "warped", "crimson" };
 	
@@ -103,20 +97,18 @@ public class ChippedBlocks {
 	 */
 	public static void register() {
 		// Register Stones
-		registerBlocks(stonesList, 18, Material.STONE, 1.5F, 6.0F);
-		registerBlocks(stones2List, 18, Material.STONE, 2.0F, 6.0F);
-		registerBlocks(stones3List, 18, Material.STONE, 0.8F);
-		registerBlocks(stones4List, 18, Material.STONE, 2.0F, 6.0F, SoundType.NETHER_BRICKS);
-		registerBlocks(stones5List, 18, Material.STONE, 3.0F, 9.0F);
-		registerBlocks("gilded_blackstone", 26, Material.STONE, 1.5F, 6.0F, SoundType.GILDED_BLACKSTONE);
-		registerBlocks("netherrack", 18, Material.STONE, 0.4F, SoundType.NETHERRACK);
-		registerBlocks("blackstone", 21, Material.STONE, 1.5F, 6.0F, SoundType.GILDED_BLACKSTONE);
-		registerBlocks("basalt", 20, Material.STONE, 1.25F, 4.2F);
-		registerBlocks("obsidian", 20, Material.STONE, 50.0F, 1200.0F);
+		for (String type : stones18) {
+			registerBlocks(type, 18);
+		}
+		
+		registerBlocks("gilded_blackstone", 26);
+		registerBlocks("blackstone", 21);
+		registerBlocks("basalt", 20);
+		registerBlocks("obsidian", 20);
 		
 		for (String color : colorsList) {
-			registerBlocks(color + "_terracotta", 18, Material.STONE, 1.25F, 4.2F);
-			registerBlocks(color + "_concrete", 18, Material.STONE, 1.8F);
+			registerBlocks(color + "_terracotta", 18);
+			registerBlocks(color + "_concrete", 18);
 		}
 		
 		for (int i = 1; i <= 20; i++) {
@@ -125,10 +117,10 @@ public class ChippedBlocks {
 		
 		//Register Wools and Carpets
 		for (String color : colorsList) {
-			registerBlocks(color + "_wool", 18, Material.WOOL, 1.0F, 2.0F, SoundType.WOOL);
+			registerBlocks(color + "_wool", 18);
 			for (int i = 1; i <= 18; i++) {
 				blocksMap.put(color + "_carpet", register(color + "_carpet_" + i, () -> new CarpetBlock(DyeColor.byName(color, DyeColor.BLACK), 
-						AbstractBlock.Properties.of(Material.WOOL).strength(0.3F).sound(SoundType.WOOL))));
+						AbstractBlock.Properties.of(Material.WOOL).strength(0.1F).sound(SoundType.WOOL))));
 			}
 		}
 		
@@ -166,7 +158,7 @@ public class ChippedBlocks {
 		}
 		
 		//Register Misc
-		registerBlocks("clay", 19, Material.CLAY, 0.6F, SoundType.GRAVEL);
+		registerBlocks("clay", 19);
 		
 		for (String wood : woodsList) {
 			for (int i = 1; i <= 18; i++) {
@@ -189,46 +181,16 @@ public class ChippedBlocks {
 	}
 
 	//Registries
-	private static void registerBlocks(String type, int count, Material material, float destroyTime, float resistance) {
+	/**
+	 * Only use if a vanilla block counterpart exists and the same properties should be used.
+	 * @param type
+	 * @param count
+	 */
+	private static void registerBlocks(String type, int count) {
+		Block vanillaBlock = ForgeRegistries.BLOCKS.getValue(new ResourceLocation("minecraft:" + type));
 		for (int i = 1; i <= count; i++) {
-			blocksMap.put(type, register(type + "_" + i, () -> new Block(AbstractBlock.Properties.of(material)
-					.requiresCorrectToolForDrops().strength(destroyTime, resistance))));
+			blocksMap.put(type, register(type + "_" + i, () -> new Block(AbstractBlock.Properties.copy(vanillaBlock))));
 		}
-	}
-	
-	private static void registerBlocks(String type, int count, Material material, float destroyTime, float resistance, SoundType sound) {
-		for (int i = 1; i <= count; i++) {
-			blocksMap.put(type, register(type + "_" + i, () -> new Block(AbstractBlock.Properties.of(material)
-					.requiresCorrectToolForDrops().strength(destroyTime, resistance).sound(SoundType.NETHER_BRICKS))));
-		}
-	}
-	
-	private static void registerBlocks(String[] typeList, int count, Material material, float destroyTime, float resistance) {
-		for (String block : typeList) {
-			registerBlocks(block, count, material, destroyTime, resistance);
-		}
-	}
-	
-	private static void registerBlocks(String[] typeList, int count, Material material, float destroyTime, float resistance, SoundType sound) {
-		for (String block : typeList) {
-			registerBlocks(block, count, material, destroyTime, resistance, sound);
-		}
-	}
-
-	private static void registerBlocks(String[] typeList, int count, Material material, float strength) {
-		registerBlocks(typeList, count, material, strength, strength);
-	}
-	
-	private static void registerBlocks(String[] typeList, int count, Material material, float strength, SoundType sound) {
-		registerBlocks(typeList, count, material, strength, strength, sound);
-	}
-	
-	private static void registerBlocks(String type, int count, Material material, float strength) {
-		registerBlocks(type, count, material, strength, strength);
-	}
-	
-	private static void registerBlocks(String type, int count, Material material, float strength, SoundType sound) {
-		registerBlocks(type, count, material, strength, strength, sound);
 	}
 
 	//Properties
@@ -248,8 +210,7 @@ public class ChippedBlocks {
 	}
 
 	/**
-	 * Alternate registry of ChippedWorkbenches
-	 * 
+	 * Alternate registry of ChippedWorkbenches.
 	 * @param <T>
 	 * @param block
 	 * @return

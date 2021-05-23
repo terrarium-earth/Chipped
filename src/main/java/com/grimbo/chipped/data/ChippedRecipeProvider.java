@@ -27,33 +27,17 @@ public class ChippedRecipeProvider extends RecipeProvider {
 
 	@Override
 	protected void buildShapelessRecipes(Consumer<IFinishedRecipe> consumer) {
-		for (String type : ChippedBlocks.stonesList) {
-			createRecipeFromType(type, ChippedSerializer.MASON_TABLE.get(), consumer);
-		}
-		
-		for (String type : ChippedBlocks.stones2List) {
-			createRecipeFromType(type, ChippedSerializer.MASON_TABLE.get(), consumer);
-		}
-		
-		for (String type : ChippedBlocks.stones3List) {
-			createRecipeFromType(type, ChippedSerializer.MASON_TABLE.get(), consumer);
-		}
-		
-		for (String type : ChippedBlocks.stones4List) {
-			createRecipeFromType(type, ChippedSerializer.MASON_TABLE.get(), consumer);
-		}
-		
-		for (String type : ChippedBlocks.stones5List) {
+		for (String type : ChippedBlocks.stones18) {
 			createRecipeFromType(type, ChippedSerializer.MASON_TABLE.get(), consumer);
 		}
 		
 		createRecipeFromType("gilded_blackstone", ChippedSerializer.MASON_TABLE.get(), consumer);
-		createRecipeFromType("netherrack", ChippedSerializer.MASON_TABLE.get(), consumer);
 		createRecipeFromType("blackstone", ChippedSerializer.MASON_TABLE.get(), consumer);
 		createRecipeFromType("basalt", ChippedSerializer.MASON_TABLE.get(), consumer);
-		createRecipeFromType("obsidian", ChippedSerializer.MASON_TABLE.get(), consumer);
-		createRecipeFromType("crying_obsidian", ChippedSerializer.MASON_TABLE.get(), consumer);
 		createRecipeFromType("clay", ChippedSerializer.MASON_TABLE.get(), consumer);
+		
+		createRecipeFromType("obsidian", ChippedSerializer.ALCHEMY_BENCH.get(), consumer);
+		createRecipeFromType("crying_obsidian", ChippedSerializer.ALCHEMY_BENCH.get(), consumer);
 		
 		createRecipeFromType("glass", ChippedSerializer.GLASSBLOWER.get(), consumer);
 		createRecipeFromType("glass_pane", ChippedSerializer.GLASSBLOWER.get(), consumer);

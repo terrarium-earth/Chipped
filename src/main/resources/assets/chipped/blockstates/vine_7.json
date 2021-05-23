@@ -49,7 +49,7 @@
       "y": 90
     },
     "east=false,north=true,south=true,up=false,west=true": {
-      "model": "chipped:block/vine_7/vine_7_7",
+      "model": "chipped:block/vine_7/vine_7_3",
       "y": 180
     },
     "east=false,north=true,south=true,up=true,west=false": {
@@ -57,7 +57,7 @@
       "y": 90
     },
     "east=false,north=true,south=true,up=true,west=true": {
-      "model": "chipped:block/vine_7/vine_7_7u",
+      "model": "chipped:block/vine_7/vine_7_3u",
       "y": 180
     },
     "east=true,north=false,south=false,up=false,west=false": {
@@ -79,7 +79,7 @@
       "y": 90
     },
     "east=true,north=false,south=true,up=false,west=true": {
-      "model": "chipped:block/vine_7/vine_7_7",
+      "model": "chipped:block/vine_7/vine_7_3",
       "y": 90
     },
     "east=true,north=false,south=true,up=true,west=false": {
@@ -87,31 +87,31 @@
       "y": 90
     },
     "east=true,north=false,south=true,up=true,west=true": {
-      "model": "chipped:block/vine_7/vine_7_7u",
+      "model": "chipped:block/vine_7/vine_7_3u",
       "y": 90
     },
     "east=true,north=true,south=false,up=false,west=false": {
       "model": "chipped:block/vine_7/vine_7_2"
     },
     "east=true,north=true,south=false,up=false,west=true": {
-      "model": "chipped:block/vine_7/vine_7_7",
+      "model": "chipped:block/vine_7/vine_7_3",
       "y": 270
     },
     "east=true,north=true,south=false,up=true,west=false": {
       "model": "chipped:block/vine_7/vine_7_2u"
     },
     "east=true,north=true,south=false,up=true,west=true": {
-      "model": "chipped:block/vine_7/vine_7_7u",
+      "model": "chipped:block/vine_7/vine_7_3u",
       "y": 270
     },
     "east=true,north=true,south=true,up=false,west=false": {
-      "model": "chipped:block/vine_7/vine_7_7"
+      "model": "chipped:block/vine_7/vine_7_3"
     },
     "east=true,north=true,south=true,up=false,west=true": {
       "model": "chipped:block/vine_7/vine_7_4"
     },
     "east=true,north=true,south=true,up=true,west=false": {
-      "model": "chipped:block/vine_7/vine_7_7u"
+      "model": "chipped:block/vine_7/vine_7_3u"
     },
     "east=true,north=true,south=true,up=true,west=true": {
       "model": "chipped:block/vine_7/vine_7_4u"

@@ -7,7 +7,13 @@ modId="chipped"
 version="${file.jarVersion}"
 logoFile="Chipped_Logo.png"
 displayName="Chipped"
-credits="grimbo for the code, kekie for textures"
+credits="Code: Grim, Inforno. Textures/Art: Kekie6, BrotherEarth967, Math, SunsetSoup, Valila, ArtistMonster"
 authors="grimbo"
 description='''
 '''
+
+[[dependencies.chipped]]
+modId="ctm"
+mandatory=false
+ordering="NONE"
+side="CLIENT"
