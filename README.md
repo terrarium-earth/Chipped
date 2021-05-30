@@ -12,7 +12,7 @@ You are free to use this mod in your modpacks! Please just provide credit (:
 
 ## Important Notes
 
-With the release of our newest update 1.05. We added a bunch of connected textures! To have these ctm textures work in-game, please download the mod found on the [Connected Textures Mod Curseforge page](https://www.curseforge.com/minecraft/mc-mods/chipped). We plan to release more cool blocks in future updates so stay tuned!
+With the release of our newest update 1.05. We added a bunch of connected textures! To have these ctm textures work in-game, please download the mod found on the [Connected Textures Mod Curseforge page](https://www.curseforge.com/minecraft/mc-mods/ctm). We plan to release more cool blocks in future updates so stay tuned!
 
 ## Credits
 
