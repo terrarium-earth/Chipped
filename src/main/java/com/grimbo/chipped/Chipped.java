@@ -56,6 +56,7 @@ public class Chipped {
 		RenderTypeLookup.setRenderLayer(ChippedBlocks.BOTANIST_WORKBENCH.get(), RenderType.cutout());
 		RenderTypeLookup.setRenderLayer(ChippedBlocks.LOOM_TABLE.get(), RenderType.cutout());
 		RenderTypeLookup.setRenderLayer(ChippedBlocks.ALCHEMY_BENCH.get(), RenderType.cutout());
+		RenderTypeLookup.setRenderLayer(ChippedBlocks.MECHANIST_WORKBENCH.get(), RenderType.cutout());
 
 		for (RegistryObject<Block> glass : ChippedBlocks.blocksMap.get("glass")) {
 			RenderTypeLookup.setRenderLayer(glass.get(), RenderType.cutout());

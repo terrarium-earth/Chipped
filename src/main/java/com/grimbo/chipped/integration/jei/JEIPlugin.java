@@ -38,7 +38,8 @@ public class JEIPlugin implements IModPlugin {
 				new ChippedRecipeCategory("carpenters_table", registry.getJeiHelpers().getGuiHelper()),
 				new ChippedRecipeCategory("loom_table", registry.getJeiHelpers().getGuiHelper()),
 				new ChippedRecipeCategory("mason_table", registry.getJeiHelpers().getGuiHelper()),
-				new ChippedRecipeCategory("alchemy_bench", registry.getJeiHelpers().getGuiHelper()));
+				new ChippedRecipeCategory("alchemy_bench", registry.getJeiHelpers().getGuiHelper()),
+				new ChippedRecipeCategory("mechanist_workbench", registry.getJeiHelpers().getGuiHelper()));
 	}
 
 	@SuppressWarnings("resource")
@@ -57,6 +58,8 @@ public class JEIPlugin implements IModPlugin {
 				getUidFromId("mason_table"));
 		registration.addRecipes(recipeManager.getAllRecipesFor(ChippedSerializer.ALCHEMY_BENCH_TYPE),
 				getUidFromId("alchemy_bench"));
+		registration.addRecipes(recipeManager.getAllRecipesFor(ChippedSerializer.MECHANIST_WORKBENCH_TYPE),
+				getUidFromId("mechanist_workbench"));
 	}
 
 	@Override
@@ -69,6 +72,7 @@ public class JEIPlugin implements IModPlugin {
 		registration.addRecipeCatalyst(new ItemStack(ChippedBlocks.LOOM_TABLE.get()), getUidFromId("loom_table"));
 		registration.addRecipeCatalyst(new ItemStack(ChippedBlocks.MASON_TABLE.get()), getUidFromId("mason_table"));
 		registration.addRecipeCatalyst(new ItemStack(ChippedBlocks.ALCHEMY_BENCH.get()), getUidFromId("alchemy_bench"));
+		registration.addRecipeCatalyst(new ItemStack(ChippedBlocks.MECHANIST_WORKBENCH.get()), getUidFromId("mechanist_workbench"));
 	}
 
 	private static ResourceLocation getUidFromId(String id) {

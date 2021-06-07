@@ -4,6 +4,7 @@
   "block.chipped.carpenters_table": "Carpenter's Table",
   "block.chipped.loom_table": "Loom",
   "block.chipped.alchemy_bench": "Alchemy Bench",
+  "block.chipped.mechanist_workbench": "Mechanist's Workbench",
   "block.chipped.mason_table": "Mason's Table",
   "block.chipped.black_wool_1": "Black Wool",
   "block.chipped.black_wool_2": "Black Wool",
@@ -2118,5 +2119,6 @@
   "container.chipped.loom_table": "Loom",
   "container.chipped.mason_table": "Mason's Table",
   "container.chipped.alchemy_bench": "Alchemy Bench",
+  "container.chipped.mechanist_workbench": "Mechanist's Workbench",
   "itemGroup.chippedTab": "Chipped"
 }

@@ -2,12 +2,7 @@ package com.grimbo.chipped.block;
 
 import javax.annotation.Nullable;
 
-import com.grimbo.chipped.container.AlchemyBenchContainer;
-import com.grimbo.chipped.container.BotanistWorkbenchContainer;
-import com.grimbo.chipped.container.CarpentersTableContainer;
-import com.grimbo.chipped.container.GlassblowerContainer;
-import com.grimbo.chipped.container.LoomTableContainer;
-import com.grimbo.chipped.container.MasonTableContainer;
+import com.grimbo.chipped.container.*;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockRenderType;
@@ -113,6 +108,8 @@ public class ChippedWorkbench extends Block {
 				return new MasonTableContainer(id, inventory, IWorldPosCallable.create(worldIn, pos));
 			case 5:
 				return new AlchemyBenchContainer(id, inventory, IWorldPosCallable.create(worldIn, pos));
+			case 6:
+				return new MechanistWorkbenchContainer(id, inventory, IWorldPosCallable.create(worldIn, pos));
 			}
 			return null;
 		}, CONTAINER_NAME);

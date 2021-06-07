@@ -88,6 +88,11 @@ public class ChippedBlocks {
 					.isValidSpawn(ChippedBlocks::neverAllowSpawn).isRedstoneConductor(ChippedBlocks::isntSolid)
 					.isSuffocating(ChippedBlocks::isntSolid).isViewBlocking(ChippedBlocks::isntSolid)));
 
+	public static final RegistryObject<Block> MECHANIST_WORKBENCH = register(() -> new ChippedWorkbench(6, "mechanist_workbench",
+			AbstractBlock.Properties.of(Material.WOOD).strength(1F, 2F).sound(SoundType.WOOD).noOcclusion()
+					.isValidSpawn(ChippedBlocks::neverAllowSpawn).isRedstoneConductor(ChippedBlocks::isntSolid)
+					.isSuffocating(ChippedBlocks::isntSolid).isViewBlocking(ChippedBlocks::isntSolid)));
+
 	/*
 	 * To add blocks: 
 	 * 1. Register the RegistryObject in this::register with properties (this::registerBlocks is for any basic blocks that extends Block)

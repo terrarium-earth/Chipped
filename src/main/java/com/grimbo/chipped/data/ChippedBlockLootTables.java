@@ -22,6 +22,7 @@ public class ChippedBlockLootTables extends BlockLootTables {
 		dropSelf(ChippedBlocks.LOOM_TABLE.get());
 		dropSelf(ChippedBlocks.MASON_TABLE.get());
 		dropSelf(ChippedBlocks.ALCHEMY_BENCH.get());
+		dropSelf(ChippedBlocks.MECHANIST_WORKBENCH.get());
 	}
 
 	@Override
