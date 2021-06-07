@@ -119,6 +119,9 @@ public class ChippedBlocks {
 		for (int i = 1; i <= 20; i++) {
 			blocksMap.put("crying_obsidian", register("crying_obsidian_" + i, () -> new CryingObsidianBlock(AbstractBlock.Properties.copy(Blocks.CRYING_OBSIDIAN))));
 		}
+		for (int i = 1; i <= 20; i++) {
+			blocksMap.put("glowstone", register("glowstone_" + i, () -> new Block(AbstractBlock.Properties.copy(Blocks.GLOWSTONE))));
+		}
 		
 		//Register Wools and Carpets
 		for (String color : colorsList) {
@@ -161,7 +164,8 @@ public class ChippedBlocks {
 						AbstractBlock.Properties.of(Material.GLASS).strength(0.3F).sound(SoundType.GLASS).noOcclusion())));
 			}
 		}
-		
+
+
 		//Register Misc
 		registerBlocks("clay", 19);
 		

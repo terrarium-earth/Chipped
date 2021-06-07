@@ -43,5 +43,6 @@ public class ChippedItemTagsProvider extends ItemTagsProvider {
 		tag(Tags.Items.GLASS).addTag(ChippedTags.items.get("glass"));
 		tag(Tags.Items.NETHERRACK).addTag(ChippedTags.items.get("netherrack"));
 		tag(Tags.Items.OBSIDIAN).addTag(ChippedTags.items.get("obsidian"));
+
 	}
 }
