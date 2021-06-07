@@ -6,11 +6,11 @@ import java.util.Collection;
 import com.grimbo.chipped.Chipped;
 import com.grimbo.chipped.block.ChippedBlocks;
 
-import net.minecraft.block.*;
+import net.minecraft.block.Block;
+import net.minecraft.block.FourWayBlock;
+import net.minecraft.block.RotatedPillarBlock;
 import net.minecraft.data.DataGenerator;
-import net.minecraft.util.Direction;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
-import net.minecraftforge.client.model.generators.ConfiguredModel;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.fml.RegistryObject;
 
@@ -71,11 +71,6 @@ public class ChippedBlockStateProvider extends BlockStateProvider {
 			String name = block.get().getRegistryName().getPath();
 			simpleBlock(block.get(), models().cubeColumn(name, modLoc("block/" + name + "_side"), modLoc("block/" + name + "_top")));
 		}
-
-
-		registerRedstoneTorch("redstone_torch");
-		registerRedstoneTorchWall("redstone_wall_torch");
-
 	}
 
 	private void createCubeFromList(Collection<RegistryObject<Block>> list) {
@@ -139,52 +134,6 @@ public class ChippedBlockStateProvider extends BlockStateProvider {
 				.condition(FourWayBlock.WEST, false);
 		}
 	}
-
-	private void registerRedstoneTorch(String type) {
-		ArrayList<RegistryObject<Block>> torches = new ArrayList<RegistryObject<Block>>(ChippedBlocks.blocksMap.get(type));
-		for (int i = 2; i <= torches.size() + 1; i++) {
-			getVariantBuilder(torches.get(i - 2).get())
-					.partialState()
-						.with(RedstoneTorchBlock.LIT, false)
-						.modelForState()
-							.modelFile(models().torch("redstone_torch_" + i + "_off", modLoc("block/redstone_torch_" + i + "_off")))
-						.addModel()
-					.partialState()
-						.with(RedstoneTorchBlock.LIT, true)
-						.modelForState()
-							.modelFile(models().torch("redstone_torch_" + i, modLoc("block/redstone_torch_" + i)))
-						.addModel();
-
-		}
-	}
-
-
-
-	private void registerRedstoneTorchWall(String type) {
-		ArrayList<RegistryObject<Block>> torches = new ArrayList<RegistryObject<Block>>(ChippedBlocks.blocksMap.get(type));
-		for (int i = 2; i <= torches.size() + 1; i++) {
-			for(Direction dir : RedstoneWallTorchBlock.FACING.getPossibleValues()) {
-				int angle = Chipped.getAngleFromDir(dir);
-				getVariantBuilder(torches.get(i - 2).get())
-					.partialState()
-						.with(RedstoneWallTorchBlock.FACING, dir)
-						.with(RedstoneTorchBlock.LIT, true)
-						.modelForState()
-							.modelFile(models().torchWall("redstone_wall_torch_" + i, modLoc("block/redstone_torch_" + i)))
-							.rotationY(angle)
-						.addModel()
-					.partialState()
-						.with(RedstoneWallTorchBlock.FACING, dir)
-						.with(RedstoneWallTorchBlock.LIT, false)
-						.modelForState()
-							.modelFile(models().torchWall("redstone_wall_torch_" + i + "_off", modLoc("block/redstone_torch_" + i + "_off")))
-							.rotationY(angle)
-						.addModel();
-			}
-
-		}
-	}
-
 	
 	private void registerGlassPanes(String type, String originalType, String topName) {
 		registerGlassPanes(type, originalType, topName, 1, ChippedBlocks.blocksMap.get(type).size());

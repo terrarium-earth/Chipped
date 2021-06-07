@@ -2,7 +2,6 @@ package com.grimbo.chipped;
 
 import java.util.stream.Collectors;
 
-import net.minecraft.util.Direction;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -90,14 +89,6 @@ public class Chipped {
 		for (RegistryObject<Block> vine : ChippedBlocks.blocksMap.get("vine")) {
 			RenderTypeLookup.setRenderLayer(vine.get(), RenderType.translucent());
 		}
-
-		for (RegistryObject<Block> torch : ChippedBlocks.blocksMap.get("redstone_torch")) {
-			RenderTypeLookup.setRenderLayer(torch.get(), RenderType.cutout());
-		}
-
-		for (RegistryObject<Block> torch : ChippedBlocks.blocksMap.get("redstone_wall_torch")) {
-			RenderTypeLookup.setRenderLayer(torch.get(), RenderType.cutout());
-		}
 	}
 
 	@SuppressWarnings("unchecked")
@@ -108,18 +99,5 @@ public class Chipped {
 			ScreenManager.register((ContainerType<ChippedContainer>) container, ChippedScreen::new);
 		}
 
-	}
-
-	public static int getAngleFromDir(Direction direction) {
-		switch (direction) {
-			case WEST:
-				return 180;
-			case NORTH:
-				return 270;
-			case SOUTH:
-				return 90;
-			default:
-				return 0;
-		}
 	}
 }
