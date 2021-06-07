@@ -122,7 +122,15 @@ public class ChippedBlocks {
 		for (int i = 1; i <= 20; i++) {
 			blocksMap.put("glowstone", register("glowstone_" + i, () -> new Block(AbstractBlock.Properties.copy(Blocks.GLOWSTONE))));
 		}
-		
+		for (int i = 1; i <= 16; i++) {
+			blocksMap.put("sea_lantern", register("sea_lantern_" + i, () -> new Block(AbstractBlock.Properties.copy(Blocks.SEA_LANTERN))));
+		}
+
+		for (int i = 1; i <= 16; i++) {
+			blocksMap.put("shroomlight", register("shroomlight_" + i, () -> new Block(AbstractBlock.Properties.copy(Blocks.SHROOMLIGHT))));
+		}
+
+
 		//Register Wools and Carpets
 		for (String color : colorsList) {
 			registerBlocks(color + "_wool", 18);
