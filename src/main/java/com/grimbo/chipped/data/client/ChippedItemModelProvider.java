@@ -44,6 +44,12 @@ public class ChippedItemModelProvider extends ItemModelProvider {
 				withExistingParent(wood + "_wood_glass_pane_" + i, mcLoc("generated")).texture("layer0", modLoc("block/" + wood + "_wood_glass_" + i));
 			}
 		}
+
+		custom.add("redstone_torch");
+		custom.add("redstone_wall_torch");
+		for (int i = 2; i <= ChippedBlocks.blocksMap.get("redstone_torch").size() + 1; i++) {
+			withExistingParent("redstone_torch_" + i, mcLoc("generated")).texture("layer0", modLoc("block/redstone_torch_" + i));
+		}
 		
 		for (String type : ChippedBlocks.blocksMap.keySet()) {
 			if (!custom.contains(type)) {
