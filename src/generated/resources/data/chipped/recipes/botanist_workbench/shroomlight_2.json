@@ -1,8 +1,0 @@
-{
-  "type": "chipped:botanist_workbench",
-  "ingredient": {
-    "tag": "chipped:shroomlight"
-  },
-  "result": "chipped:shroomlight_2",
-  "count": 1
-}

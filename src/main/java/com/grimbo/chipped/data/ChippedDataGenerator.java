@@ -1,6 +1,7 @@
 package com.grimbo.chipped.data;
 
 import com.grimbo.chipped.Chipped;
+import com.grimbo.chipped.ChippedTags;
 import com.grimbo.chipped.data.client.*;
 
 import net.minecraft.data.DataGenerator;

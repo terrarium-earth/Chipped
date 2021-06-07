@@ -1,8 +1,0 @@
-{
-  "type": "chipped:alchemy_bench",
-  "ingredient": {
-    "tag": "chipped:glowstone"
-  },
-  "result": "chipped:glowstone_15",
-  "count": 1
-}
