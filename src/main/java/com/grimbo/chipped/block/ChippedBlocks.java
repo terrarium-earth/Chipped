@@ -35,17 +35,25 @@ import net.minecraftforge.registries.ForgeRegistries;
 
 public class ChippedBlocks {
 
+	private static final AbstractBlock.Properties CRYING_OBSIDIAN_PROPERTIES = AbstractBlock.Properties.copy(Blocks.CRYING_OBSIDIAN);
+	private static final AbstractBlock.Properties GLOWSTONE_PROPERTIES = AbstractBlock.Properties.copy(Blocks.GLOWSTONE);
+	private static final AbstractBlock.Properties SEA_LANTERN_PROPERTIES = AbstractBlock.Properties.copy(Blocks.SEA_LANTERN);
+	private static final AbstractBlock.Properties SHROOMLIGHT_PROPERTIES = AbstractBlock.Properties.copy(Blocks.SHROOMLIGHT);
+	private static final AbstractBlock.Properties HAY_BLOCK_PROPERTIES = AbstractBlock.Properties.copy(Blocks.HAY_BLOCK);
+	private static final AbstractBlock.Properties MELON_PROPERTIES = AbstractBlock.Properties.copy(Blocks.MELON);
+	private static final AbstractBlock.Properties VINE_PROPERTIES = AbstractBlock.Properties.copy(Blocks.VINE);
+
 	public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS,
 			Chipped.MOD_ID);
 
 	public static Multimap<String, RegistryObject<Block>> blocksMap = ArrayListMultimap.create();
 	
 	//Simple Blocks which have 18 of its own variant
-	public static String[] stones18 = { "stone", "granite", "diorite", "andesite", "prismarine", "dark_prismarine", "purpur_block", 
+	public static final String[] stones18 = { "stone", "granite", "diorite", "andesite", "prismarine", "dark_prismarine", "purpur_block",
 			"cobblestone", "quartz_block", "sandstone", "red_sandstone", "nether_bricks", "red_nether_bricks", "end_stone", "netherrack" };
 	
-	public static String[] colorsList = { "white", "orange", "magenta", "light_blue", "yellow", "lime", "pink", "gray", "light_gray", "cyan", "purple", "blue", "brown", "green", "red", "black" };
-	public static String[] woodsList = { "oak", "birch", "spruce", "jungle", "acacia", "dark_oak", "warped", "crimson" };
+	public static final String[] colorsList = { "white", "orange", "magenta", "light_blue", "yellow", "lime", "pink", "gray", "light_gray", "cyan", "purple", "blue", "brown", "green", "red", "black" };
+	public static final String[] woodsList = { "oak", "birch", "spruce", "jungle", "acacia", "dark_oak", "warped", "crimson" };
 	
 	// Workbenches
 	/*
@@ -117,17 +125,17 @@ public class ChippedBlocks {
 		}
 		
 		for (int i = 1; i <= 20; i++) {
-			blocksMap.put("crying_obsidian", register("crying_obsidian_" + i, () -> new CryingObsidianBlock(AbstractBlock.Properties.copy(Blocks.CRYING_OBSIDIAN))));
+			blocksMap.put("crying_obsidian", register("crying_obsidian_" + i, () -> new CryingObsidianBlock(CRYING_OBSIDIAN_PROPERTIES)));
 		}
 		for (int i = 1; i <= 20; i++) {
-			blocksMap.put("glowstone", register("glowstone_" + i, () -> new Block(AbstractBlock.Properties.copy(Blocks.GLOWSTONE))));
+			blocksMap.put("glowstone", register("glowstone_" + i, () -> new Block(GLOWSTONE_PROPERTIES)));
 		}
 		for (int i = 1; i <= 16; i++) {
-			blocksMap.put("sea_lantern", register("sea_lantern_" + i, () -> new Block(AbstractBlock.Properties.copy(Blocks.SEA_LANTERN))));
+			blocksMap.put("sea_lantern", register("sea_lantern_" + i, () -> new Block(SEA_LANTERN_PROPERTIES)));
 		}
 
 		for (int i = 1; i <= 16; i++) {
-			blocksMap.put("shroomlight", register("shroomlight_" + i, () -> new Block(AbstractBlock.Properties.copy(Blocks.SHROOMLIGHT))));
+			blocksMap.put("shroomlight", register("shroomlight_" + i, () -> new Block(SHROOMLIGHT_PROPERTIES)));
 		}
 
 
@@ -185,15 +193,15 @@ public class ChippedBlocks {
 		}
 		
 		for (int i = 1; i <= 8; i++) {
-			blocksMap.put("hay_block", register("hay_block_" + i, () -> new HayBlock(AbstractBlock.Properties.copy(Blocks.HAY_BLOCK))));
+			blocksMap.put("hay_block", register("hay_block_" + i, () -> new HayBlock(HAY_BLOCK_PROPERTIES)));
 		}
 		
 		for (int i = 1; i <= 10; i++) {
-			blocksMap.put("melon", register("melon_" + i, () -> new MelonBlock(AbstractBlock.Properties.copy(Blocks.MELON))));
+			blocksMap.put("melon", register("melon_" + i, () -> new MelonBlock(MELON_PROPERTIES)));
 		}
 		
 		for (int i = 1; i <= 8; i++) {
-			blocksMap.put("vine", register("vine_" + i, () -> new VineBlock(AbstractBlock.Properties.copy(Blocks.VINE))));
+			blocksMap.put("vine", register("vine_" + i, () -> new VineBlock(VINE_PROPERTIES)));
 		}
 	}
 
@@ -205,8 +213,9 @@ public class ChippedBlocks {
 	 */
 	private static void registerBlocks(String type, int count) {
 		Block vanillaBlock = ForgeRegistries.BLOCKS.getValue(new ResourceLocation("minecraft:" + type));
+		AbstractBlock.Properties blockProperties = AbstractBlock.Properties.copy(vanillaBlock);
 		for (int i = 1; i <= count; i++) {
-			blocksMap.put(type, register(type + "_" + i, () -> new Block(AbstractBlock.Properties.copy(vanillaBlock))));
+			blocksMap.put(type, register(type + "_" + i, () -> new Block(blockProperties)));
 		}
 	}
 
@@ -216,7 +225,7 @@ public class ChippedBlocks {
 	}
 
 	private static Boolean neverAllowSpawn(BlockState state, IBlockReader reader, BlockPos pos, EntityType<?> entity) {
-		return (boolean) false;
+		return false;
 	}
 
 	private static <T extends Block> RegistryObject<Block> register(String name, Supplier<T> block) {

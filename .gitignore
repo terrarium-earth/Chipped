@@ -1,3 +1,18 @@
+# Gradle
+build
+.gradle
+
+# Idea
+out
+*.ipr
+*.iws
+*.iml
+.idea
+
+# Other
+run
+eclipse
+
 # Compiled class file
 *.class
 
