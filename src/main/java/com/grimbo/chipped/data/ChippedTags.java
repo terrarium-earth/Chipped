@@ -1,7 +1,8 @@
-package com.grimbo.chipped;
+package com.grimbo.chipped.data;
 
 import java.util.Hashtable;
 
+import com.grimbo.chipped.Chipped;
 import com.grimbo.chipped.block.ChippedBlocks;
 
 import net.minecraft.block.Block;

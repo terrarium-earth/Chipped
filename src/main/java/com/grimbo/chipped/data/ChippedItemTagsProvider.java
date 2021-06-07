@@ -1,7 +1,6 @@
 package com.grimbo.chipped.data;
 
 import com.grimbo.chipped.Chipped;
-import com.grimbo.chipped.ChippedTags;
 import com.grimbo.chipped.block.ChippedBlocks;
 
 import net.minecraft.data.BlockTagsProvider;

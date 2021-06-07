@@ -1,0 +1,8 @@
+{
+  "type": "chipped:alchemy_bench",
+  "ingredient": {
+    "tag": "chipped:sea_lantern"
+  },
+  "result": "chipped:sea_lantern_4",
+  "count": 1
+}
