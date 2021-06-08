@@ -2,6 +2,7 @@ package com.grimbo.chipped;
 
 import java.util.stream.Collectors;
 
+import net.minecraft.util.Direction;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

@@ -20,6 +20,7 @@ Credits to all the amazing people that helped create this mod! Coders:
 
 * Grim
 * Inforno
+* AudreyOooo
 
 Artists:
 

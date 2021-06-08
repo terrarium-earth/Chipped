@@ -70,29 +70,29 @@ public class ChippedRecipeProvider extends RecipeProvider {
 	
 	private static void createRecipeFromType(String type, IRecipeSerializer<?> serializer, Consumer<IFinishedRecipe> consumer) {
 		chippedRecipe(serializer, 
-				Ingredient.of(ChippedTags.items.get(type)), ForgeRegistries.BLOCKS.getValue(new ResourceLocation("minecraft:" + type)))
-				.unlocks("has_item", has(ForgeRegistries.BLOCKS.getValue(new ResourceLocation("minecraft:" + type))))
+				Ingredient.of(ChippedTags.items.get(type)), ForgeRegistries.BLOCKS.getValue(new ResourceLocation("minecraft", type)))
+				.unlocks("has_item", has(ForgeRegistries.BLOCKS.getValue(new ResourceLocation("minecraft", type))))
 				.save(consumer, new ResourceLocation(Chipped.MOD_ID, serializer.getRegistryName().getPath() + "/" + type));
 		for (RegistryObject<Block> block : ChippedBlocks.blocksMap.get(type)) {
 			
 			String name = block.get().getRegistryName().getPath();
 			chippedRecipe(serializer, 
 					Ingredient.of(ChippedTags.items.get(type)), block.get())
-					.unlocks("has_item", has(ForgeRegistries.BLOCKS.getValue(new ResourceLocation("minecraft:" + type))))
+					.unlocks("has_item", has(ForgeRegistries.BLOCKS.getValue(new ResourceLocation("minecraft", type))))
 					.save(consumer, new ResourceLocation(Chipped.MOD_ID, serializer.getRegistryName().getPath() + "/" + name));
 		}
 	}
 	
 	private static void createRecipeFromType(String type, String type2, IRecipeSerializer<?> serializer, Consumer<IFinishedRecipe> consumer) {
 		chippedRecipe(serializer, 
-				Ingredient.of(ChippedTags.items.get(type)), ForgeRegistries.BLOCKS.getValue(new ResourceLocation("minecraft:" + type2)))
-				.unlocks("has_item", has(ForgeRegistries.BLOCKS.getValue(new ResourceLocation("minecraft:" + type2))))
+				Ingredient.of(ChippedTags.items.get(type)), ForgeRegistries.BLOCKS.getValue(new ResourceLocation("minecraft", type2)))
+				.unlocks("has_item", has(ForgeRegistries.BLOCKS.getValue(new ResourceLocation("minecraft", type2))))
 				.save(consumer, new ResourceLocation(Chipped.MOD_ID, serializer.getRegistryName().getPath() + "/" + "default_" + type));
 		for (RegistryObject<Block> block : ChippedBlocks.blocksMap.get(type)) {
 			String name = block.get().getRegistryName().getPath();
 			chippedRecipe(serializer, 
 					Ingredient.of(ChippedTags.items.get(type)), block.get())
-					.unlocks("has_item", has(ForgeRegistries.BLOCKS.getValue(new ResourceLocation("minecraft:" + type2))))
+					.unlocks("has_item", has(ForgeRegistries.BLOCKS.getValue(new ResourceLocation("minecraft", type2))))
 					.save(consumer, new ResourceLocation(Chipped.MOD_ID, serializer.getRegistryName().getPath() + "/" + name));
 		}
 	}
