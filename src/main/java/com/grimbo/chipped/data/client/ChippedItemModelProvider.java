@@ -44,7 +44,9 @@ public class ChippedItemModelProvider extends ItemModelProvider {
 				withExistingParent(wood + "_wood_glass_pane_" + i, mcLoc("generated")).texture("layer0", modLoc("block/" + wood + "_wood_glass_" + i));
 			}
 		}
-		
+		custom.add("jack_o_lantern");
+		custom.add("carved_pumpkin");
+
 		for (String type : ChippedBlocks.blocksMap.keySet()) {
 			if (!custom.contains(type)) {
 				for (RegistryObject<Block> block : ChippedBlocks.blocksMap.get(type)) {

@@ -44,7 +44,7 @@ public class ChippedBlocks {
 	//Simple Blocks which have 18 of its own variant
 	public static final String[] stones18 = { "stone", "granite", "diorite", "andesite", "prismarine", "dark_prismarine", "purpur_block",
 			"cobblestone", "quartz_block", "sandstone", "red_sandstone", "nether_bricks", "red_nether_bricks", "end_stone", "netherrack" };
-	
+
 	public static final String[] colorsList = { "white", "orange", "magenta", "light_blue", "yellow", "lime", "pink", "gray", "light_gray",
 			"cyan", "purple", "blue", "brown", "green", "red", "black" };
 	public static final String[] woodsList = { "oak", "birch", "spruce", "jungle", "acacia", "dark_oak", "warped", "crimson" };
@@ -221,9 +221,9 @@ public class ChippedBlocks {
 		}
 
 		//Jack'o'Lantern & Carved Pumpkins
-		for (String carvedPumpkin : carvedPumpkinList) {
-			RegistryObject<Block> jackOLanternBlock = register("jack_o_lantern_" + carvedPumpkin, () -> new CarvedPumpkinBlock(JACK_O_LANTERN_PROPERTIES));
-			RegistryObject<Block> carvedPumpkinBlock = register("carved_pumpkin_" + carvedPumpkin, () -> new CarvedPumpkinBlock(PUMPKIN_PROPERTIES));
+		for (int i = 1; i <= carvedPumpkinList.length; i++) {
+			RegistryObject<Block> jackOLanternBlock = register("jack_o_lantern_" + i, () -> new CarvedPumpkinBlock(JACK_O_LANTERN_PROPERTIES));
+			RegistryObject<Block> carvedPumpkinBlock = register("carved_pumpkin_" + i, () -> new CarvedPumpkinBlock(PUMPKIN_PROPERTIES));
 			blocksMap.put("jack_o_lantern", jackOLanternBlock);
 			blocksMap.put("carved_pumpkin", carvedPumpkinBlock);
 			blocksMap.put("carved_pumpkin_vanilla", carvedPumpkinBlock);

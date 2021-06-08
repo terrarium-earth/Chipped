@@ -76,15 +76,20 @@ public class ChippedBlockStateProvider extends BlockStateProvider {
 		}
 		Direction[] directions = {Direction.NORTH, Direction.SOUTH, Direction.EAST, Direction.WEST};
 		ArrayList<RegistryObject<Block>> vanillaCarved = new ArrayList<RegistryObject<Block>>(ChippedBlocks.blocksMap.get("carved_pumpkin_vanilla"));
+		int index = 0;
 		for (int i = 0; i < ChippedBlocks.carvedPumpkinList.length * 2; i++) {
+			index = 1 + (i / 2);
 			for(Direction direction : directions) {
 				String carvedBlockName = vanillaCarved.get(i).get().getRegistryName().getPath();
-				//Vanilla Carved Pumpkin
+				System.out.println(carvedBlockName);
+				String carvedSubstring = carvedBlockName.substring(0, carvedBlockName.length() - (index >= 10 ? 2 : 1));
+				System.out.println(carvedSubstring + " index is " + index);
+				String blockPath = "block/" + carvedSubstring + ChippedBlocks.carvedPumpkinList[(i / 2) % ChippedBlocks.carvedPumpkinList.length];
 				getVariantBuilder(vanillaCarved.get(i).get())
 					.partialState()
 					.with(CarvedPumpkinBlock.FACING, direction)
 					.modelForState()
-						.modelFile(models().orientable(carvedBlockName, mcLoc("block/pumpkin_side"), modLoc("block/" + carvedBlockName), mcLoc("block/pumpkin_top")))
+						.modelFile(models().orientable(carvedBlockName, mcLoc("block/pumpkin_side"), modLoc(blockPath), mcLoc("block/pumpkin_top")))
 						.rotationY(Chipped.getAngleFromDir(direction))
 					.addModel();
 			}
@@ -180,7 +185,6 @@ public class ChippedBlockStateProvider extends BlockStateProvider {
 						.modelForState()
 							.modelFile(models().torch("redstone_torch_" + i, modLoc("block/redstone_torch_" + i)))
 						.addModel();
-
 		}
 	}
 
