@@ -11,6 +11,8 @@ import net.minecraft.block.Blocks;
 import net.minecraft.block.HorizontalBlock;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.player.PlayerInventory;
+import net.minecraft.inventory.container.Container;
 import net.minecraft.inventory.container.INamedContainerProvider;
 import net.minecraft.inventory.container.SimpleNamedContainerProvider;
 import net.minecraft.item.BlockItemUseContext;
@@ -18,12 +20,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.state.DirectionProperty;
 import net.minecraft.state.EnumProperty;
 import net.minecraft.state.StateContainer;
-import net.minecraft.util.ActionResultType;
-import net.minecraft.util.Direction;
-import net.minecraft.util.Hand;
-import net.minecraft.util.IStringSerializable;
-import net.minecraft.util.IWorldPosCallable;
-import net.minecraft.util.Rotation;
+import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.math.shapes.ISelectionContext;
@@ -35,42 +32,26 @@ import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
+import net.minecraftforge.registries.ForgeRegistries;
 
 public class ChippedWorkbench extends Block {
-
-	private final int CONTAINER_ID;
-	public final String ITEM_ID;
-	private final ITextComponent CONTAINER_NAME;
-
-	public static final DirectionProperty FACING = HorizontalBlock.FACING;
+    public static final DirectionProperty FACING = HorizontalBlock.FACING;
 
 	protected static final VoxelShape WORKBENCH_NORTH_SHAPE = Block.box(0.0D, 0.0D, 0.0D, 16.0D, 16.0D, 16.0D);
 	protected static final VoxelShape WORKBENCH_EAST_SHAPE = Block.box(0.0D, 0.0D, 0.0D, 16.0D, 16.0D, 16.0D);
 	protected static final VoxelShape WORKBENCH_WEST_SHAPE = Block.box(0.0D, 0.0D, 0.0D, 16.0D, 16.0D, 16.0D);
 	protected static final VoxelShape WORKBENCH_SOUTH_SHAPE = Block.box(0.0D, 0.0D, 0.0D, 16.0D, 16.0D, 16.0D);
 
-	public enum WorkbenchModelType implements IStringSerializable {
-		MAIN, SIDE;
+    public static final EnumProperty<WorkbenchModelType> MODEL_TYPE = EnumProperty.create("model",
+            WorkbenchModelType.class);
 
-		@Override
-		public String getSerializedName() {
-			return name().toLowerCase();
-		}
+    private final ContainerFactory factory;
+    private final LazyValue<ITextComponent> containerName;
 
-		@Override
-		public String toString() {
-			return getSerializedName();
-		}
-	}
-
-	public static final EnumProperty<WorkbenchModelType> MODEL_TYPE = EnumProperty.create("model",
-			WorkbenchModelType.class);
-
-	public ChippedWorkbench(int containerId, String itemId, Properties properties) {
+	public ChippedWorkbench(ContainerFactory factory, Properties properties) {
 		super(properties);
-		CONTAINER_ID = containerId;
-		ITEM_ID = itemId;
-		CONTAINER_NAME = new TranslationTextComponent("container.chipped." + itemId);
+        this.factory = factory;
+		containerName = new LazyValue<>(() -> new TranslationTextComponent("container.chipped." + ForgeRegistries.BLOCKS.getKey(ChippedWorkbench.this)));
 		this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH).setValue(MODEL_TYPE,
 				WorkbenchModelType.MAIN));
 	}
@@ -93,27 +74,11 @@ public class ChippedWorkbench extends Block {
 	@Nullable
 	@Override
 	public INamedContainerProvider getMenuProvider(BlockState state, World worldIn, BlockPos pos) {
-		return new SimpleNamedContainerProvider((id, inventory, player) -> {
-			// Add new ids for each workbench container here
-			switch (CONTAINER_ID) {
-			case 0:
-				return new BotanistWorkbenchContainer(id, inventory, IWorldPosCallable.create(worldIn, pos));
-			case 1:
-				return new GlassblowerContainer(id, inventory, IWorldPosCallable.create(worldIn, pos));
-			case 2:
-				return new CarpentersTableContainer(id, inventory, IWorldPosCallable.create(worldIn, pos));
-			case 3:
-				return new LoomTableContainer(id, inventory, IWorldPosCallable.create(worldIn, pos));
-			case 4:
-				return new MasonTableContainer(id, inventory, IWorldPosCallable.create(worldIn, pos));
-			case 5:
-				return new AlchemyBenchContainer(id, inventory, IWorldPosCallable.create(worldIn, pos));
-			case 6:
-				return new MechanistWorkbenchContainer(id, inventory, IWorldPosCallable.create(worldIn, pos));
-			}
-			return null;
-		}, CONTAINER_NAME);
-	}
+        return new SimpleNamedContainerProvider(
+                (id, inventory, player) -> factory.create(id, inventory, IWorldPosCallable.create(worldIn, pos)),
+                containerName.get()
+        );
+    }
 
 	@Override
 	public void playerWillDestroy(World worldIn, BlockPos pos, BlockState state, PlayerEntity player) {
@@ -215,4 +180,23 @@ public class ChippedWorkbench extends Block {
 	public float getShadeBrightness(BlockState state, IBlockReader worldIn, BlockPos pos) {
 		return 1;
 	}
+
+	@FunctionalInterface
+	public interface ContainerFactory {
+        Container create(int windowId, PlayerInventory inventory, IWorldPosCallable position);
+    }
+
+    public enum WorkbenchModelType implements IStringSerializable {
+        MAIN, SIDE;
+
+        @Override
+        public String getSerializedName() {
+            return name().toLowerCase();
+        }
+
+        @Override
+        public String toString() {
+            return getSerializedName();
+        }
+    }
 }
