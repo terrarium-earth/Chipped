@@ -100,4 +100,32 @@ public class Chipped {
 		}
 
 	}
+
+
+	public static int getTorchAngleFromDir(Direction direction) {
+		switch (direction) {
+			case WEST:
+				return 180;
+			case NORTH:
+				return 270;
+			case SOUTH:
+				return 90;
+			default:
+				return 0;
+		}
+	}
+
+	public static int getAngleFromDir(Direction direction) {
+		switch (direction) {
+			case WEST:
+				return 270;
+			case SOUTH:
+				return 180;
+			case EAST:
+				return 90;
+			default:
+				return 0;
+		}
+	}
+
 }

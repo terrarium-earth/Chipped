@@ -1,0 +1,8 @@
+{
+  "type": "chipped:botanist_workbench",
+  "ingredient": {
+    "tag": "chipped:pumpkin"
+  },
+  "result": "minecraft:pumpkin",
+  "count": 1
+}

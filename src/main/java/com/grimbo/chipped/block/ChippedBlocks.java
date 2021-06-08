@@ -42,6 +42,11 @@ public class ChippedBlocks {
 	private static final AbstractBlock.Properties HAY_BLOCK_PROPERTIES = AbstractBlock.Properties.copy(Blocks.HAY_BLOCK);
 	private static final AbstractBlock.Properties MELON_PROPERTIES = AbstractBlock.Properties.copy(Blocks.MELON);
 	private static final AbstractBlock.Properties VINE_PROPERTIES = AbstractBlock.Properties.copy(Blocks.VINE);
+	private static final AbstractBlock.Properties REDSTONE_TORCH_PROPERTIES = AbstractBlock.Properties.copy(Blocks.REDSTONE_TORCH);
+	private static final AbstractBlock.Properties REDSTONE_WALL_TORCH_PROPERTIES = AbstractBlock.Properties.copy(Blocks.REDSTONE_WALL_TORCH);
+	private static final AbstractBlock.Properties REDSTONE_LAMP_PROPERTIES = AbstractBlock.Properties.copy(Blocks.REDSTONE_LAMP);
+	private static final AbstractBlock.Properties PUMPKIN_PROPERTIES = AbstractBlock.Properties.copy(Blocks.PUMPKIN);
+	private static final AbstractBlock.Properties JACK_O_LANTERN_PROPERTIES = AbstractBlock.Properties.copy(Blocks.JACK_O_LANTERN);
 
 	public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS,
 			Chipped.MOD_ID);
@@ -52,9 +57,12 @@ public class ChippedBlocks {
 	public static final String[] stones18 = { "stone", "granite", "diorite", "andesite", "prismarine", "dark_prismarine", "purpur_block",
 			"cobblestone", "quartz_block", "sandstone", "red_sandstone", "nether_bricks", "red_nether_bricks", "end_stone", "netherrack" };
 	
-	public static final String[] colorsList = { "white", "orange", "magenta", "light_blue", "yellow", "lime", "pink", "gray", "light_gray", "cyan", "purple", "blue", "brown", "green", "red", "black" };
+	public static final String[] colorsList = { "white", "orange", "magenta", "light_blue", "yellow", "lime", "pink", "gray", "light_gray",
+			"cyan", "purple", "blue", "brown", "green", "red", "black" };
 	public static final String[] woodsList = { "oak", "birch", "spruce", "jungle", "acacia", "dark_oak", "warped", "crimson" };
-	
+	public static final String[] specialPumpkinList = {"end", "end2", "nether"};
+ 	public static final String[] carvedPumpkinList = {"happy", "angry", "bigeyes", "bighappy", "boo", "bruh", "classic", "enthusiastic",
+			"grinning", "kawaii", "mourn", "owo", "plotting", "sans", "scared", "smallhappy", "squashy", "stretchy", "upsidedown"};
 	// Workbenches
 	/*
 	 * To register a new workbench: 
@@ -203,6 +211,36 @@ public class ChippedBlocks {
 		for (int i = 1; i <= 8; i++) {
 			blocksMap.put("vine", register("vine_" + i, () -> new VineBlock(VINE_PROPERTIES)));
 		}
+		//Redstone Torches
+		for (int i = 2; i <= 51; i++) {
+			RegistryObject<Block> redstoneWallTorch = BLOCKS.register("redstone_wall_torch_" + i, () -> new RedstoneWallTorchBlock(REDSTONE_WALL_TORCH_PROPERTIES));
+			RegistryObject<Block> redstoneTorch = BLOCKS.register("redstone_torch_" + i, () -> new RedstoneTorchBlock(REDSTONE_TORCH_PROPERTIES));
+			ChippedItems.ITEMS.register("redstone_torch_" + i, () -> new WallOrFloorItem(redstoneTorch.get(), redstoneWallTorch.get(), new Item.Properties().tab(Chipped.CHIPPED)));
+			blocksMap.put("redstone_torch", redstoneTorch);
+			blocksMap.put("redstone_wall_torch", redstoneWallTorch);
+		}
+
+		//Pumpkins
+		for (String pumpkin : specialPumpkinList) {
+			RegistryObject<Block> pumpkinBlock = register("pumpkin_" + pumpkin, () -> new PumpkinBlock(PUMPKIN_PROPERTIES));
+			RegistryObject<Block> jackOLanternBlock = register("jack_o_lantern_" + pumpkin, () -> new CarvedPumpkinBlock(JACK_O_LANTERN_PROPERTIES));
+			RegistryObject<Block> carvedPumpkinBlock = register("carved_pumpkin_" + pumpkin, () -> new CarvedPumpkinBlock(PUMPKIN_PROPERTIES));
+			blocksMap.put("jack_o_lantern", jackOLanternBlock);
+			blocksMap.put("carved_pumpkin", carvedPumpkinBlock);
+			blocksMap.put("carved_pumpkin_special", jackOLanternBlock);
+			blocksMap.put("carved_pumpkin_special", carvedPumpkinBlock);
+			blocksMap.put("pumpkin", pumpkinBlock);
+		}
+
+		//Jack'o'Lantern & Carved Pumpkins
+		for (String carvedPumpkin : carvedPumpkinList) {
+			RegistryObject<Block> jackOLanternBlock = register("jack_o_lantern_" + carvedPumpkin, () -> new CarvedPumpkinBlock(JACK_O_LANTERN_PROPERTIES));
+			RegistryObject<Block> carvedPumpkinBlock = register("carved_pumpkin_" + carvedPumpkin, () -> new CarvedPumpkinBlock(PUMPKIN_PROPERTIES));
+			blocksMap.put("jack_o_lantern", jackOLanternBlock);
+			blocksMap.put("carved_pumpkin", carvedPumpkinBlock);
+			blocksMap.put("carved_pumpkin_vanilla", carvedPumpkinBlock);
+			blocksMap.put("carved_pumpkin_vanilla", jackOLanternBlock);
+		}
 	}
 
 	//Registries
@@ -212,7 +250,7 @@ public class ChippedBlocks {
 	 * @param count
 	 */
 	private static void registerBlocks(String type, int count) {
-		Block vanillaBlock = ForgeRegistries.BLOCKS.getValue(new ResourceLocation("minecraft:" + type));
+		Block vanillaBlock = ForgeRegistries.BLOCKS.getValue(new ResourceLocation("minecraft", type));
 		AbstractBlock.Properties blockProperties = AbstractBlock.Properties.copy(vanillaBlock);
 		for (int i = 1; i <= count; i++) {
 			blocksMap.put(type, register(type + "_" + i, () -> new Block(blockProperties)));
