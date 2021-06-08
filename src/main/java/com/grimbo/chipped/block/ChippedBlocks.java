@@ -46,6 +46,8 @@ public class ChippedBlocks {
     public static final String[] specialPumpkinList = {"end", "end2", "nether"};
     public static final String[] carvedPumpkinList = {"happy", "angry", "bigeyes", "bighappy", "boo", "bruh", "classic", "enthusiastic",
             "grinning", "kawaii", "mourn", "owo", "plotting", "sans", "scared", "smallhappy", "squashy", "stretchy", "upsidedown"};
+	public static final String[] colorsList = { "white", "orange", "magenta", "light_blue", "yellow", "lime", "pink", "gray", "light_gray",
+			"cyan", "purple", "blue", "brown", "green", "red", "black" };
 
     // Workbenches
     /*
@@ -156,6 +158,7 @@ public class ChippedBlocks {
 
         final AbstractBlock.Properties woodProperties = AbstractBlock.Properties.of(Material.WOOD)
                 .strength(2.0F, 3.0F).sound(SoundType.WOOD);
+
 
         for (String wood : woodsList) {
             registerBlocks(wood + "_planks", () -> new Block(woodProperties), 18);
