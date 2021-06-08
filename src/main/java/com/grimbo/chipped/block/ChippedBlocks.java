@@ -7,13 +7,25 @@ import com.google.common.collect.Multimap;
 import com.grimbo.chipped.Chipped;
 import com.grimbo.chipped.item.ChippedItems;
 
-import net.minecraft.block.*;
+import net.minecraft.block.AbstractBlock;
+import net.minecraft.block.Block;
+import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
+import net.minecraft.block.CarpetBlock;
+import net.minecraft.block.CryingObsidianBlock;
+import net.minecraft.block.GlassBlock;
+import net.minecraft.block.HayBlock;
+import net.minecraft.block.MelonBlock;
+import net.minecraft.block.PaneBlock;
+import net.minecraft.block.SoundType;
+import net.minecraft.block.StainedGlassBlock;
+import net.minecraft.block.StainedGlassPaneBlock;
+import net.minecraft.block.VineBlock;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.EntityType;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.DyeColor;
 import net.minecraft.item.Item;
-import net.minecraft.item.WallOrFloorItem;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockReader;
@@ -199,7 +211,6 @@ public class ChippedBlocks {
 		for (int i = 1; i <= 8; i++) {
 			blocksMap.put("vine", register("vine_" + i, () -> new VineBlock(VINE_PROPERTIES)));
 		}
-
 		//Redstone Torches
 		for (int i = 2; i <= 51; i++) {
 			RegistryObject<Block> redstoneWallTorch = BLOCKS.register("redstone_wall_torch_" + i, () -> new RedstoneWallTorchBlock(REDSTONE_WALL_TORCH_PROPERTIES));

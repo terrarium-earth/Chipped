@@ -1,8 +1,0 @@
-{
-  "type": "chipped:mechanist_workbench",
-  "ingredient": {
-    "tag": "chipped:redstone_torch"
-  },
-  "result": "minecraft:redstone_torch",
-  "count": 1
-}

@@ -6,9 +6,10 @@ import java.util.Collection;
 import com.grimbo.chipped.Chipped;
 import com.grimbo.chipped.block.ChippedBlocks;
 
-import net.minecraft.block.*;
+import net.minecraft.block.Block;
+import net.minecraft.block.FourWayBlock;
+import net.minecraft.block.RotatedPillarBlock;
 import net.minecraft.data.DataGenerator;
-import net.minecraft.util.Direction;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.fml.RegistryObject;
@@ -70,7 +71,6 @@ public class ChippedBlockStateProvider extends BlockStateProvider {
 			String name = block.get().getRegistryName().getPath();
 			simpleBlock(block.get(), models().cubeColumn(name, modLoc("block/" + name + "_side"), modLoc("block/" + name + "_top")));
 		}
-
 		for (RegistryObject<Block> block : ChippedBlocks.blocksMap.get("pumpkin")) {
 			String name = block.get().getRegistryName().getPath();
 			simpleBlock(block.get(), models().cubeColumn(name, modLoc("block/" + name + "_side"), modLoc("block/" + name + "_top")));
@@ -224,7 +224,6 @@ public class ChippedBlockStateProvider extends BlockStateProvider {
 					.addModel();
 		}
 	}
-
 	
 	private void registerGlassPanes(String type, String originalType, String topName) {
 		registerGlassPanes(type, originalType, topName, 1, ChippedBlocks.blocksMap.get(type).size());
