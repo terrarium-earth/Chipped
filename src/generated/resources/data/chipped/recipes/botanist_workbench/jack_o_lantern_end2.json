@@ -1,0 +1,8 @@
+{
+  "type": "chipped:botanist_workbench",
+  "ingredient": {
+    "tag": "chipped:jack_o_lantern"
+  },
+  "result": "chipped:jack_o_lantern_end2",
+  "count": 1
+}

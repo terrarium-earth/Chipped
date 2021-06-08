@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "chipped:block/jack_o_lantern_happy"
+    },
+    "facing=south": {
+      "model": "chipped:block/jack_o_lantern_happy",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "chipped:block/jack_o_lantern_happy",
+      "y": 270
+    },
+    "facing=east": {
+      "model": "chipped:block/jack_o_lantern_happy",
+      "y": 90
+    }
+  }
+}

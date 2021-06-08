@@ -1,0 +1,17 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:pumpkin",
+    "chipped:pumpkin_end",
+    "chipped:pumpkin_end2",
+    "chipped:pumpkin_nether",
+    "minecraft:pumpkin",
+    "chipped:pumpkin_end",
+    "chipped:pumpkin_end2",
+    "chipped:pumpkin_nether",
+    "minecraft:pumpkin",
+    "chipped:pumpkin_end",
+    "chipped:pumpkin_end2",
+    "chipped:pumpkin_nether"
+  ]
+}

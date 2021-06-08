@@ -10,7 +10,6 @@ import net.minecraft.block.*;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.util.Direction;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
-import net.minecraftforge.client.model.generators.ConfiguredModel;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.fml.RegistryObject;
 
@@ -72,6 +71,34 @@ public class ChippedBlockStateProvider extends BlockStateProvider {
 			simpleBlock(block.get(), models().cubeColumn(name, modLoc("block/" + name + "_side"), modLoc("block/" + name + "_top")));
 		}
 
+		for (RegistryObject<Block> block : ChippedBlocks.blocksMap.get("pumpkin")) {
+			String name = block.get().getRegistryName().getPath();
+			simpleBlock(block.get(), models().cubeColumn(name, modLoc("block/" + name + "_side"), modLoc("block/" + name + "_top")));
+		}
+		Direction[] directions = {Direction.NORTH, Direction.SOUTH, Direction.EAST, Direction.WEST};
+		ArrayList<RegistryObject<Block>> vanillaCarved = new ArrayList<RegistryObject<Block>>(ChippedBlocks.blocksMap.get("carved_pumpkin_vanilla"));
+		for (int i = 0; i < ChippedBlocks.carvedPumpkinList.length * 2; i++) {
+			for(Direction direction : directions) {
+				String carvedBlockName = vanillaCarved.get(i).get().getRegistryName().getPath();
+				//Vanilla Carved Pumpkin
+				getVariantBuilder(vanillaCarved.get(i).get())
+					.partialState()
+					.with(CarvedPumpkinBlock.FACING, direction)
+					.modelForState()
+						.modelFile(models().orientable(carvedBlockName, mcLoc("block/pumpkin_side"), modLoc("block/" + carvedBlockName), mcLoc("block/pumpkin_top")))
+						.rotationY(Chipped.getAngleFromDir(direction))
+					.addModel();
+			}
+		}
+
+		ArrayList<RegistryObject<Block>> specialCarved = new ArrayList<RegistryObject<Block>>(ChippedBlocks.blocksMap.get("carved_pumpkin_special"));
+		ArrayList<RegistryObject<Block>> specialPumpkins = new ArrayList<RegistryObject<Block>>(ChippedBlocks.blocksMap.get("pumpkin"));
+		for (int i = 0; i < ChippedBlocks.specialPumpkinList.length * 2; i+=2) {
+			registerSpecialPumpkins(specialCarved, specialPumpkins, directions, i);
+		}
+		for (int i = 1; i < ChippedBlocks.specialPumpkinList.length * 2; i+=2) {
+			registerSpecialPumpkins(specialCarved, specialPumpkins, directions, i);
+		}
 
 		registerRedstoneTorch("redstone_torch");
 		registerRedstoneTorchWall("redstone_wall_torch");
@@ -158,13 +185,11 @@ public class ChippedBlockStateProvider extends BlockStateProvider {
 		}
 	}
 
-
-
 	private void registerRedstoneTorchWall(String type) {
 		ArrayList<RegistryObject<Block>> torches = new ArrayList<RegistryObject<Block>>(ChippedBlocks.blocksMap.get(type));
 		for (int i = 2; i <= torches.size() + 1; i++) {
 			for(Direction dir : RedstoneWallTorchBlock.FACING.getPossibleValues()) {
-				int angle = Chipped.getAngleFromDir(dir);
+				int angle = Chipped.getTorchAngleFromDir(dir);
 				getVariantBuilder(torches.get(i - 2).get())
 					.partialState()
 						.with(RedstoneWallTorchBlock.FACING, dir)
@@ -181,7 +206,22 @@ public class ChippedBlockStateProvider extends BlockStateProvider {
 							.rotationY(angle)
 						.addModel();
 			}
+		}
+	}
 
+	private void registerSpecialPumpkins(ArrayList<RegistryObject<Block>> specialCarved, ArrayList<RegistryObject<Block>> specialPumpkins, Direction[] directions, int index) {
+		String carvedBlockName = specialCarved.get(index).get().getRegistryName().getPath();
+		Block specialPumpkin = specialPumpkins.get(index>>1).get();
+		String pumpkinName = specialPumpkin.getRegistryName().getPath();
+		for(Direction direction : directions) {
+			//Carved Pumpkin
+			getVariantBuilder(specialCarved.get(index).get())
+					.partialState()
+					.with(CarvedPumpkinBlock.FACING, direction)
+					.modelForState()
+						.modelFile(models().orientable(carvedBlockName, modLoc("block/" + pumpkinName + "_side"), modLoc("block/" + carvedBlockName), modLoc("block/" + pumpkinName + "_top")))
+						.rotationY(Chipped.getAngleFromDir(direction))
+					.addModel();
 		}
 	}
 
