@@ -31,6 +31,10 @@ public class ChippedBlocks {
     //private static final AbstractBlock.Properties REDSTONE_LAMP_PROPERTIES = AbstractBlock.Properties.copy(Blocks.REDSTONE_LAMP);
     private static final AbstractBlock.Properties PUMPKIN_PROPERTIES = AbstractBlock.Properties.copy(Blocks.PUMPKIN);
     private static final AbstractBlock.Properties JACK_O_LANTERN_PROPERTIES = AbstractBlock.Properties.copy(Blocks.JACK_O_LANTERN);
+    private static final AbstractBlock.Properties WOOD_PROPERTIES = AbstractBlock.Properties.of(Material.WOOD).strength(2.0F, 3.0F).sound(SoundType.WOOD);
+    private static final AbstractBlock.Properties GLASS_PANE_PROPERTIES = AbstractBlock.Properties.copy(Blocks.GLASS_PANE);
+    private static final AbstractBlock.Properties GLASS_PROPERTIES = AbstractBlock.Properties.copy(Blocks.GLASS);
+    private static final AbstractBlock.Properties WOOL_PROPERTIES = AbstractBlock.Properties.of(Material.WOOL).strength(0.1F).sound(SoundType.WOOL);
     private static final AbstractBlock.IPositionPredicate ALWAYS_FALSE_POSITION = (state, world, position) -> false;
     private static final AbstractBlock.IExtendedPositionPredicate<EntityType<?>> VALID_SPAWN = (state, world, position, type) -> false;
 
@@ -128,40 +132,29 @@ public class ChippedBlocks {
         for (int id = 0; id < 16; ++id) {
             DyeColor color = DyeColor.byId(id);
             registerVanillaBlocks(color + "_wool", 18);
-            registerBlocks(color + "_carpet", () -> new CarpetBlock(color, AbstractBlock.Properties.of(Material.WOOL).strength(0.1F).sound(SoundType.WOOL)), 18);
+            registerBlocks(color + "_carpet", () -> new CarpetBlock(color, WOOL_PROPERTIES), 18);
         }
 
-        final AbstractBlock.Properties glassProperties = AbstractBlock.Properties.of(Material.GLASS).strength(0.3F).sound(SoundType.GLASS).noOcclusion()
-                .isValidSpawn(VALID_SPAWN)
-                .isRedstoneConductor(ALWAYS_FALSE_POSITION).isSuffocating(ALWAYS_FALSE_POSITION)
-                .isViewBlocking(ALWAYS_FALSE_POSITION);
-
-        final AbstractBlock.Properties glassPaneProperties = AbstractBlock.Properties.of(Material.GLASS).strength(0.3F).sound(SoundType.GLASS).noOcclusion();
-
         //Register Glasses and Stained Glasses
-        registerBlocks("glass", () -> new GlassBlock(glassProperties), 14);
-        registerBlocks("glass_pane", () -> new GlassBlock(glassPaneProperties), 14);
+        registerBlocks("glass", () -> new GlassBlock(GLASS_PROPERTIES), 14);
+        registerBlocks("glass_pane", () -> new GlassBlock(GLASS_PANE_PROPERTIES), 14);
 
         for (String wood : woodsList) {
-            registerBlocks(wood + "_wood_glass", () -> new GlassBlock(glassProperties), 6);
-            registerBlocks(wood + "_wood_glass_pane", () -> new PaneBlock(glassPaneProperties), 6);
+            registerBlocks(wood + "_wood_glass", () -> new GlassBlock(GLASS_PROPERTIES), 6);
+            registerBlocks(wood + "_wood_glass_pane", () -> new PaneBlock(GLASS_PANE_PROPERTIES), 6);
         }
 
         for (int id = 0; id < 16; ++id) {
             DyeColor color = DyeColor.byId(id);
-            registerBlocks(color + "_stained_glass", () -> new StainedGlassBlock(color, glassProperties), 8);
-            registerBlocks(color + "_stained_glass_pane", () -> new StainedGlassPaneBlock(color, glassPaneProperties), 8);
+            registerBlocks(color + "_stained_glass", () -> new StainedGlassBlock(color, GLASS_PROPERTIES), 8);
+            registerBlocks(color + "_stained_glass_pane", () -> new StainedGlassPaneBlock(color, GLASS_PANE_PROPERTIES), 8);
         }
 
         //Register Misc
         registerVanillaBlocks(Blocks.CLAY, "clay", 19);
 
-        final AbstractBlock.Properties woodProperties = AbstractBlock.Properties.of(Material.WOOD)
-                .strength(2.0F, 3.0F).sound(SoundType.WOOD);
-
-
         for (String wood : woodsList) {
-            registerBlocks(wood + "_planks", () -> new Block(woodProperties), 18);
+            registerBlocks(wood + "_planks", () -> new Block(WOOD_PROPERTIES), 18);
         }
 
         registerBlocks("hay_block", () -> new HayBlock(HAY_BLOCK_PROPERTIES), 8);
@@ -237,8 +230,7 @@ public class ChippedBlocks {
 
     private static RegistryObject<Block> register(String name, Supplier<Block> block) {
         RegistryObject<Block> toReturn = BLOCKS.register(name, block);
-        ChippedItems.ITEMS.register(name,
-                () -> new BlockItem(toReturn.get(), new Item.Properties().tab(Chipped.CHIPPED)));
+        ChippedItems.ITEMS.register(name, () -> new BlockItem(toReturn.get(), new Item.Properties().tab(Chipped.CHIPPED)));
         return toReturn;
     }
 }

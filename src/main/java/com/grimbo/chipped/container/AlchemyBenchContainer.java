@@ -12,9 +12,9 @@ import net.minecraft.util.IWorldPosCallable;
 
 public class AlchemyBenchContainer extends ChippedContainer {
 
-    private static ContainerType<ChippedContainer> containerType = ChippedContainerType.ALCHEMY_BENCH.get();
-    private static IRecipeType<ChippedRecipe> recipeType = ChippedSerializer.ALCHEMY_BENCH_TYPE;
-    private static Block blockWorkbench = ChippedBlocks.ALCHEMY_BENCH.get();
+    private static final ContainerType<ChippedContainer> containerType = ChippedContainerType.ALCHEMY_BENCH.get();
+    private static final IRecipeType<ChippedRecipe> recipeType = ChippedSerializer.ALCHEMY_BENCH_TYPE;
+    private static final Block blockWorkbench = ChippedBlocks.ALCHEMY_BENCH.get();
 
     public AlchemyBenchContainer(int windowId, PlayerInventory playerInventory, final IWorldPosCallable worldPosCallableIn) {
         super(windowId, playerInventory, worldPosCallableIn, containerType, recipeType, blockWorkbench);

@@ -12,9 +12,9 @@ import net.minecraft.util.IWorldPosCallable;
 
 public class MasonTableContainer extends ChippedContainer {
 
-    private static ContainerType<ChippedContainer> containerType = ChippedContainerType.MASON_TABLE.get();
-    private static IRecipeType<ChippedRecipe> recipeType = ChippedSerializer.MASON_TABLE_TYPE;
-    private static Block blockWorkbench = ChippedBlocks.MASON_TABLE.get();
+    private static final ContainerType<ChippedContainer> containerType = ChippedContainerType.MASON_TABLE.get();
+    private static final IRecipeType<ChippedRecipe> recipeType = ChippedSerializer.MASON_TABLE_TYPE;
+    private static final Block blockWorkbench = ChippedBlocks.MASON_TABLE.get();
 
     public MasonTableContainer(int windowId, PlayerInventory playerInventory, final IWorldPosCallable worldPosCallableIn) {
         super(windowId, playerInventory, worldPosCallableIn, containerType, recipeType, blockWorkbench);

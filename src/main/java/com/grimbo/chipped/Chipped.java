@@ -103,11 +103,9 @@ public class Chipped {
 	@SuppressWarnings("unchecked")
 	@SubscribeEvent
 	public void onClientSetupEvent(FMLClientSetupEvent event) {
-		for (ContainerType<?> container : ChippedContainerType.CONTAINER.getEntries().stream().map(RegistryObject::get)
-				.collect(Collectors.toList())) {
+		for (ContainerType<?> container : ChippedContainerType.CONTAINER.getEntries().stream().map(RegistryObject::get).collect(Collectors.toList())) {
 			ScreenManager.register((ContainerType<ChippedContainer>) container, ChippedScreen::new);
 		}
-
 	}
 
 

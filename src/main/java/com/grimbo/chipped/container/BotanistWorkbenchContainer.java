@@ -12,9 +12,9 @@ import net.minecraft.util.IWorldPosCallable;
 
 public class BotanistWorkbenchContainer extends ChippedContainer {
 
-    private static ContainerType<ChippedContainer> containerType = ChippedContainerType.BOTANIST_WORKBENCH.get();
-    private static IRecipeType<ChippedRecipe> recipeType = ChippedSerializer.BOTANIST_WORKBENCH_TYPE;
-    private static Block blockWorkbench = ChippedBlocks.BOTANIST_WORKBENCH.get();
+    private static final ContainerType<ChippedContainer> containerType = ChippedContainerType.BOTANIST_WORKBENCH.get();
+    private static final IRecipeType<ChippedRecipe> recipeType = ChippedSerializer.BOTANIST_WORKBENCH_TYPE;
+    private static final Block blockWorkbench = ChippedBlocks.BOTANIST_WORKBENCH.get();
 
     public BotanistWorkbenchContainer(int windowId, PlayerInventory playerInventory, final IWorldPosCallable worldPosCallableIn) {
         super(windowId, playerInventory, worldPosCallableIn, containerType, recipeType, blockWorkbench);

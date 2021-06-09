@@ -12,9 +12,9 @@ import net.minecraft.util.IWorldPosCallable;
 
 public class GlassblowerContainer extends ChippedContainer {
 
-    private static ContainerType<ChippedContainer> containerType = ChippedContainerType.GLASSBLOWER.get();
-    private static IRecipeType<ChippedRecipe> recipeType = ChippedSerializer.GLASSBLOWER_TYPE;
-    private static Block blockWorkbench = ChippedBlocks.GLASSBLOWER.get();
+    private static final ContainerType<ChippedContainer> containerType = ChippedContainerType.GLASSBLOWER.get();
+    private static final IRecipeType<ChippedRecipe> recipeType = ChippedSerializer.GLASSBLOWER_TYPE;
+    private static final Block blockWorkbench = ChippedBlocks.GLASSBLOWER.get();
 
     public GlassblowerContainer(int windowId, PlayerInventory playerInventory, final IWorldPosCallable worldPosCallableIn) {
         super(windowId, playerInventory, worldPosCallableIn, containerType, recipeType, blockWorkbench);
