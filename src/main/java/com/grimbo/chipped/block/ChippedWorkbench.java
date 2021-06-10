@@ -42,8 +42,7 @@ public class ChippedWorkbench extends Block {
 	protected static final VoxelShape WORKBENCH_WEST_SHAPE = Block.box(0.0D, 0.0D, 0.0D, 16.0D, 16.0D, 16.0D);
 	protected static final VoxelShape WORKBENCH_SOUTH_SHAPE = Block.box(0.0D, 0.0D, 0.0D, 16.0D, 16.0D, 16.0D);
 
-    public static final EnumProperty<WorkbenchModelType> MODEL_TYPE = EnumProperty.create("model",
-            WorkbenchModelType.class);
+    public static final EnumProperty<WorkbenchModelType> MODEL_TYPE = EnumProperty.create("model", WorkbenchModelType.class);
 
     private final ContainerFactory factory;
     private final LazyValue<ITextComponent> containerName;
@@ -51,9 +50,8 @@ public class ChippedWorkbench extends Block {
 	public ChippedWorkbench(ContainerFactory factory, Properties properties) {
 		super(properties);
         this.factory = factory;
-		containerName = new LazyValue<>(() -> new TranslationTextComponent("container.chipped." + ForgeRegistries.BLOCKS.getKey(ChippedWorkbench.this)));
-		this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH).setValue(MODEL_TYPE,
-				WorkbenchModelType.MAIN));
+		containerName = new LazyValue<>(() -> new TranslationTextComponent("container.chipped." + ForgeRegistries.BLOCKS.getKey(ChippedWorkbench.this).getPath()));
+		this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH).setValue(MODEL_TYPE, WorkbenchModelType.MAIN));
 	}
 
 	public BlockState getStateForPlacement(BlockItemUseContext context) {
@@ -61,8 +59,7 @@ public class ChippedWorkbench extends Block {
 	}
 
 	@Override
-	public ActionResultType use(BlockState state, World worldIn, BlockPos pos, PlayerEntity player, Hand handIn,
-			BlockRayTraceResult hit) {
+	public ActionResultType use(BlockState state, World worldIn, BlockPos pos, PlayerEntity player, Hand handIn, BlockRayTraceResult hit) {
 		if (worldIn.isClientSide) {
 			return ActionResultType.SUCCESS;
 		} else {
@@ -105,8 +102,7 @@ public class ChippedWorkbench extends Block {
 	}
 
 	@Override
-	public void setPlacedBy(World worldIn, BlockPos pos, BlockState state, @Nullable LivingEntity placer,
-			ItemStack stack) {
+	public void setPlacedBy(World worldIn, BlockPos pos, BlockState state, @Nullable LivingEntity placer, ItemStack stack) {
 		super.setPlacedBy(worldIn, pos, state, placer, stack);
 		if (!worldIn.isClientSide) {
 			BlockPos blockpos = pos.relative(state.getValue(FACING).getClockWise());
@@ -118,24 +114,7 @@ public class ChippedWorkbench extends Block {
 
 	@Override
 	public VoxelShape getShape(BlockState state, IBlockReader worldIn, BlockPos pos, ISelectionContext context) {
-		Direction direction = state.getValue(FACING);
-		switch (direction) {
-		case NORTH:
-			return WORKBENCH_NORTH_SHAPE;
-		case SOUTH:
-			return WORKBENCH_SOUTH_SHAPE;
-		case WEST:
-			return WORKBENCH_WEST_SHAPE;
-		default:
-			return WORKBENCH_EAST_SHAPE;
-		}
-	}
-
-	@Override
-	public VoxelShape getCollisionShape(BlockState state, IBlockReader worldIn, BlockPos pos,
-			ISelectionContext context) {
-		Direction direction = state.getValue(FACING);
-		switch (direction) {
+		switch (state.getValue(FACING)) {
 		case NORTH:
 			return WORKBENCH_NORTH_SHAPE;
 		case SOUTH:

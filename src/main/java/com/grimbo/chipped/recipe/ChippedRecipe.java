@@ -22,23 +22,25 @@ import net.minecraftforge.registries.ForgeRegistryEntry;
 
 public class ChippedRecipe extends SingleItemRecipe {
 
-	private Block icon;
+	private final Block icon;
 
-	public ChippedRecipe(int serializerId, IRecipeType<?> type, ResourceLocation id, String group,
-			Ingredient ingredient, ItemStack result, Block block) {
+	public ChippedRecipe(int serializerId, IRecipeType<?> type, ResourceLocation id, String group, Ingredient ingredient, ItemStack result, Block block) {
 		this(type, fromId(serializerId), id, group, ingredient, result, block);
 	}
 
-	public ChippedRecipe(IRecipeType<?> type, IRecipeSerializer<?> serializer, ResourceLocation id, String group,
-			Ingredient ingredient, ItemStack result, Block block) {
+	public ChippedRecipe(IRecipeType<?> type, IRecipeSerializer<?> serializer, ResourceLocation id, String group, Ingredient ingredient, ItemStack result, Block block) {
 		super(type, serializer, id, group, ingredient, result);
-		icon = block;
+		this.icon = block;
 	}
 
 	public static IRecipeSerializer<?> fromId(int serializerId) {
-		List<?> serializers = ChippedSerializer.SERIALIZER.getEntries().stream().map(RegistryObject::get)
-				.collect(Collectors.toList());
-		return (IRecipeSerializer<?>) serializers.get(serializerId);
+		List<IRecipeSerializer<?>> serializers = ChippedSerializer.SERIALIZER.getEntries().stream().map(RegistryObject::get).collect(Collectors.toList());
+		return serializers.get(serializerId);
+	}
+
+	@Override
+	public ItemStack getToastSymbol() {
+		return new ItemStack(icon);
 	}
 
 	@Override
@@ -46,16 +48,11 @@ public class ChippedRecipe extends SingleItemRecipe {
 		return this.ingredient.test(inv.getItem(0));
 	}
 
-	public ItemStack getIcon() {
-		return new ItemStack(icon);
-	}
+	public static class Serializer extends ForgeRegistryEntry<IRecipeSerializer<?>> implements IRecipeSerializer<ChippedRecipe> {
 
-	public static class Serializer extends ForgeRegistryEntry<IRecipeSerializer<?>>
-			implements IRecipeSerializer<ChippedRecipe> {
-
-		private int id;
-		private IRecipeType<?> type;
-		private Block icon;
+		private final int id;
+		private final IRecipeType<?> type;
+		private final Block icon;
 
 		public Serializer(int id, IRecipeType<?> type, Block icon) {
 			this.id = id;

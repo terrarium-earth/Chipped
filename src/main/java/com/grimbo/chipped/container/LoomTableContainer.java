@@ -12,9 +12,9 @@ import net.minecraft.util.IWorldPosCallable;
 
 public class LoomTableContainer extends ChippedContainer {
 
-    private static ContainerType<ChippedContainer> containerType = ChippedContainerType.LOOM_TABLE.get();
-    private static IRecipeType<ChippedRecipe> recipeType = ChippedSerializer.LOOM_TABLE_TYPE;
-    private static Block blockWorkbench = ChippedBlocks.LOOM_TABLE.get();
+    private static final ContainerType<ChippedContainer> containerType = ChippedContainerType.LOOM_TABLE.get();
+    private static final IRecipeType<ChippedRecipe> recipeType = ChippedSerializer.LOOM_TABLE_TYPE;
+    private static final Block blockWorkbench = ChippedBlocks.LOOM_TABLE.get();
 
     public LoomTableContainer(int windowId, PlayerInventory playerInventory, final IWorldPosCallable worldPosCallableIn) {
         super(windowId, playerInventory, worldPosCallableIn, containerType, recipeType, blockWorkbench);

@@ -37,8 +37,7 @@ public class ChippedContainer extends Container {
 	private long lastSoundTime;
 	final Slot inputSlot;
 	final Slot resultSlot;
-	private Runnable slotUpdateListener = () -> {
-	};
+	private Runnable slotUpdateListener = () -> {};
 	public final IInventory container = new Inventory(1) {
 		public void setChanged() {
 			super.setChanged();
@@ -54,27 +53,23 @@ public class ChippedContainer extends Container {
 	private IRecipeType<ChippedRecipe> recipeType;
 	private Block blockWorkbench;
 
-	public ChippedContainer(int windowIdIn, PlayerInventory playerInventoryIn,
-			final IWorldPosCallable worldPosCallableIn, ContainerType<ChippedContainer> container,
-			IRecipeType<ChippedRecipe> recipe, Block block) {
-		this(container, windowIdIn, playerInventoryIn, worldPosCallableIn);
+	public ChippedContainer(int id, PlayerInventory inventory, final IWorldPosCallable posCallable, ContainerType<ChippedContainer> container, IRecipeType<ChippedRecipe> recipe, Block block) {
+		this(container, id, inventory, posCallable);
 		recipeType = recipe;
 		blockWorkbench = block;
 	}
 
-	public ChippedContainer(int windowIdIn, PlayerInventory playerInventoryIn, PacketBuffer extraData,
-			ContainerType<ChippedContainer> container, IRecipeType<ChippedRecipe> recipe, Block block) {
-		this(container, windowIdIn, playerInventoryIn, IWorldPosCallable.NULL);
+	public ChippedContainer(int id, PlayerInventory inventory, PacketBuffer extraData, ContainerType<ChippedContainer> container, IRecipeType<ChippedRecipe> recipe, Block block) {
+		this(container, id, inventory, IWorldPosCallable.NULL);
 		recipeType = recipe;
 		blockWorkbench = block;
 	}
 
-	public ChippedContainer(ContainerType<ChippedContainer> container, int p_i50060_1_, PlayerInventory p_i50060_2_,
-			final IWorldPosCallable p_i50060_3_) {
-		super(container, p_i50060_1_);
+	public ChippedContainer(ContainerType<ChippedContainer> container, int id, PlayerInventory inventory, final IWorldPosCallable posCallable) {
+		super(container, id);
 		containerType = container;
-		this.access = p_i50060_3_;
-		this.level = p_i50060_2_.player.level;
+		this.access = posCallable;
+		this.level = inventory.player.level;
 		this.inputSlot = this.addSlot(new Slot(this.container, 0, 20, 33));
 		this.resultSlot = this.addSlot(new Slot(this.resultContainer, 1, 143, 33) {
 			public boolean mayPlace(ItemStack p_75214_1_) {
@@ -89,10 +84,10 @@ public class ChippedContainer extends Container {
 					ChippedContainer.this.setupResultSlot();
 				}
 
-				p_i50060_3_.execute((p_216954_1_, p_216954_2_) -> {
+				posCallable.execute((p_216954_1_, p_216954_2_) -> {
 					long l = p_216954_1_.getGameTime();
 					if (ChippedContainer.this.lastSoundTime != l) {
-						p_216954_1_.playSound((PlayerEntity) null, p_216954_2_, SoundEvents.UI_STONECUTTER_TAKE_RESULT,
+						p_216954_1_.playSound(null, p_216954_2_, SoundEvents.UI_STONECUTTER_TAKE_RESULT,
 								SoundCategory.BLOCKS, 1.0F, 1.0F);
 						ChippedContainer.this.lastSoundTime = l;
 					}
@@ -104,12 +99,12 @@ public class ChippedContainer extends Container {
 
 		for (int i = 0; i < 3; ++i) {
 			for (int j = 0; j < 9; ++j) {
-				this.addSlot(new Slot(p_i50060_2_, j + i * 9 + 9, 8 + j * 18, 84 + i * 18));
+				this.addSlot(new Slot(inventory, j + i * 9 + 9, 8 + j * 18, 84 + i * 18));
 			}
 		}
 
 		for (int k = 0; k < 9; ++k) {
-			this.addSlot(new Slot(p_i50060_2_, k, 8 + k * 18, 142));
+			this.addSlot(new Slot(inventory, k, 8 + k * 18, 142));
 		}
 
 		this.addDataSlot(this.selectedRecipeIndex);
@@ -135,9 +130,8 @@ public class ChippedContainer extends Container {
 		return this.inputSlot.hasItem() && !this.recipes.isEmpty();
 	}
 
-	public boolean stillValid(PlayerEntity p_75145_1_) {
-		return stillValid(this.access, p_75145_1_, blockWorkbench);
-	}
+	@Override
+	public boolean stillValid(PlayerEntity p_75145_1_) { return stillValid(this.access, p_75145_1_, blockWorkbench); }
 
 	public boolean clickMenuButton(PlayerEntity p_75140_1_, int p_75140_2_) {
 		if (this.isValidRecipeIndex(p_75140_2_)) {
@@ -152,6 +146,7 @@ public class ChippedContainer extends Container {
 		return p_241818_1_ >= 0 && p_241818_1_ < this.recipes.size();
 	}
 
+	@Override
 	public void slotsChanged(IInventory p_75130_1_) {
 		ItemStack itemstack = this.inputSlot.getItem();
 		if (itemstack.getItem() != this.input.getItem()) {
@@ -183,6 +178,7 @@ public class ChippedContainer extends Container {
 		this.broadcastChanges();
 	}
 
+	@Override
 	public ContainerType<?> getType() {
 		return containerType;
 	}
@@ -192,10 +188,12 @@ public class ChippedContainer extends Container {
 		this.slotUpdateListener = p_217071_1_;
 	}
 
+	@Override
 	public boolean canTakeItemForPickAll(ItemStack p_94530_1_, Slot p_94530_2_) {
 		return p_94530_2_.container != this.resultContainer && super.canTakeItemForPickAll(p_94530_1_, p_94530_2_);
 	}
 
+	@Override
 	public ItemStack quickMoveStack(PlayerEntity p_82846_1_, int p_82846_2_) {
 		ItemStack itemstack = ItemStack.EMPTY;
 		Slot slot = this.slots.get(p_82846_2_);
@@ -243,6 +241,7 @@ public class ChippedContainer extends Container {
 		return itemstack;
 	}
 
+	@Override
 	public void removed(PlayerEntity p_75134_1_) {
 		super.removed(p_75134_1_);
 		this.resultContainer.removeItemNoUpdate(1);
