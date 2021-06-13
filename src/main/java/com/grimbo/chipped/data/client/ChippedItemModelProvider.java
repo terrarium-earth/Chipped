@@ -1,15 +1,14 @@
 package com.grimbo.chipped.data.client;
 
-import java.util.ArrayList;
-
 import com.grimbo.chipped.Chipped;
 import com.grimbo.chipped.block.ChippedBlocks;
-
 import net.minecraft.block.Block;
 import net.minecraft.data.DataGenerator;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.fml.RegistryObject;
+
+import java.util.ArrayList;
 
 public class ChippedItemModelProvider extends ItemModelProvider {
 
@@ -44,8 +43,19 @@ public class ChippedItemModelProvider extends ItemModelProvider {
 				withExistingParent(wood + "_wood_glass_pane_" + i, mcLoc("generated")).texture("layer0", modLoc("block/" + wood + "_wood_glass_" + i));
 			}
 		}
+		custom.add("redstone_torch");
+		for (int i = 2; i <=51 ; i++) {
+			withExistingParent("redstone_torch_" + i, mcLoc("generated")).texture("layer0", modLoc("block/redstone_torch_"+ i));
+		}
+		custom.add("torch");
+		for (int i = 1; i <=9 ; i++) {
+			withExistingParent("torch_" + i, mcLoc("generated")).texture("layer0", modLoc("block/torch_"+ i));
+		}
+
 		custom.add("jack_o_lantern");
 		custom.add("carved_pumpkin");
+		custom.add("wall_torch");
+		custom.add("redstone_wall_torch");
 
 		for (String type : ChippedBlocks.blocksMap.keySet()) {
 			if (!custom.contains(type)) {

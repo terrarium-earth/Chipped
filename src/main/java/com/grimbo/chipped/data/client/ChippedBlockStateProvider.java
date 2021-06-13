@@ -1,11 +1,7 @@
 package com.grimbo.chipped.data.client;
 
-import java.util.ArrayList;
-import java.util.Collection;
-
 import com.grimbo.chipped.Chipped;
 import com.grimbo.chipped.block.ChippedBlocks;
-
 import net.minecraft.block.*;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.util.Direction;
@@ -13,7 +9,11 @@ import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.fml.RegistryObject;
 
+import java.util.ArrayList;
+import java.util.Collection;
+
 public class ChippedBlockStateProvider extends BlockStateProvider {
+	Direction[] directions = {Direction.NORTH, Direction.SOUTH, Direction.EAST, Direction.WEST};
 
 	public ChippedBlockStateProvider(DataGenerator gen, ExistingFileHelper exFileHelper) {
 		super(gen, Chipped.MOD_ID, exFileHelper);
@@ -24,7 +24,7 @@ public class ChippedBlockStateProvider extends BlockStateProvider {
 		for (String type : ChippedBlocks.stones18) {
 			createCubeFromList(ChippedBlocks.blocksMap.get(type));
 		}
-		
+
 		createCubeFromList(ChippedBlocks.blocksMap.get("gilded_blackstone"));
 		createCubeFromList(ChippedBlocks.blocksMap.get("blackstone"));
 		createCubeFromList(ChippedBlocks.blocksMap.get("basalt"));
@@ -35,37 +35,37 @@ public class ChippedBlockStateProvider extends BlockStateProvider {
 		createCubeFromList(ChippedBlocks.blocksMap.get("glowstone"));
 		createCubeFromList(ChippedBlocks.blocksMap.get("sea_lantern"));
 		createCubeFromList(ChippedBlocks.blocksMap.get("shroomlight"));
-		
+
 		registerGlassPanes("glass_pane", "glass", "glass_pane_1_top", 1, 6);
 		registerGlassPanes("glass_pane", "glass", "glass_pane_2_top", 7, 14);
-		
+
 		for (String color : ChippedBlocks.colorsList) {
 			createCubeFromList(ChippedBlocks.blocksMap.get(color + "_terracotta"));
 			createCubeFromList(ChippedBlocks.blocksMap.get(color + "_concrete"));
 			createCubeFromList(ChippedBlocks.blocksMap.get(color + "_wool"));
 			createCubeFromList(ChippedBlocks.blocksMap.get(color + "_stained_glass"));
-			
+
 			for (int i = 1; i <= ChippedBlocks.blocksMap.get(color + "_carpet").size(); i++) {
 				ArrayList<RegistryObject<Block>> blocks = new ArrayList<RegistryObject<Block>>(ChippedBlocks.blocksMap.get(color + "_carpet"));
 				String name = color + "_carpet_" + i;
 				String name2 = color + "_wool_" + i;
 				simpleBlock(blocks.get(i - 1).get(), models().carpet(name, modLoc("block/" + name2)));
 			}
-			
+
 			registerGlassPanes(color + "_stained_glass_pane", color + "_stained_glass", "glass_pane_2_top");
 		}
-		
+
 		for (String wood : ChippedBlocks.woodsList) {
 			createCubeFromList(ChippedBlocks.blocksMap.get(wood + "_wood_glass"));
 			createCubeFromList(ChippedBlocks.blocksMap.get(wood + "_planks"));
-			
+
 			registerGlassPanes(wood + "_wood_glass_pane", wood + "_wood_glass", wood + "_wood_glass_pane_top");
 		}
-		
+
 		for (RegistryObject<Block> block : ChippedBlocks.blocksMap.get("hay_block")) {
 			axisBlock((RotatedPillarBlock) block.get());
 		}
-		
+
 		for (RegistryObject<Block> block : ChippedBlocks.blocksMap.get("melon")) {
 			String name = block.get().getRegistryName().getPath();
 			simpleBlock(block.get(), models().cubeColumn(name, modLoc("block/" + name + "_side"), modLoc("block/" + name + "_top")));
@@ -74,16 +74,32 @@ public class ChippedBlockStateProvider extends BlockStateProvider {
 			String name = block.get().getRegistryName().getPath();
 			simpleBlock(block.get(), models().cubeColumn(name, modLoc("block/" + name + "_side"), modLoc("block/" + name + "_top")));
 		}
-		Direction[] directions = {Direction.NORTH, Direction.SOUTH, Direction.EAST, Direction.WEST};
+
+		for (int i = 1; i <= 9; i++) {
+			ArrayList<RegistryObject<Block>> torches = new ArrayList<RegistryObject<Block>>(ChippedBlocks.blocksMap.get("torch"));
+			Block torchBlock = torches.get(i-1).get();
+			simpleBlock(torchBlock, models().torch(torchBlock.getRegistryName().getPath(), modLoc("block/torch_"+i)));
+			ArrayList<RegistryObject<Block>> wallTorches = new ArrayList<RegistryObject<Block>>(ChippedBlocks.blocksMap.get("wall_torch"));
+			Block wallTorchBlock = wallTorches.get(i-1).get();
+			for(Direction dir : RedstoneWallTorchBlock.FACING.getPossibleValues()) {
+				int angle = Chipped.getTorchAngleFromDir(dir);
+				getVariantBuilder(wallTorchBlock)
+						.partialState()
+						.with(RedstoneWallTorchBlock.FACING, dir)
+						.modelForState()
+						.modelFile(models().torchWall("wall_torch_" + i, modLoc("block/torch_" + i)))
+						.rotationY(angle)
+						.addModel();
+			}
+		}
+
 		ArrayList<RegistryObject<Block>> vanillaCarved = new ArrayList<RegistryObject<Block>>(ChippedBlocks.blocksMap.get("carved_pumpkin_vanilla"));
 		int index = 0;
 		for (int i = 0; i < ChippedBlocks.carvedPumpkinList.length * 2; i++) {
 			index = 1 + (i / 2);
 			for(Direction direction : directions) {
 				String carvedBlockName = vanillaCarved.get(i).get().getRegistryName().getPath();
-				System.out.println(carvedBlockName);
 				String carvedSubstring = carvedBlockName.substring(0, carvedBlockName.length() - (index >= 10 ? 2 : 1));
-				System.out.println(carvedSubstring + " index is " + index);
 				String blockPath = "block/" + carvedSubstring + ChippedBlocks.carvedPumpkinList[(i / 2) % ChippedBlocks.carvedPumpkinList.length];
 				getVariantBuilder(vanillaCarved.get(i).get())
 					.partialState()

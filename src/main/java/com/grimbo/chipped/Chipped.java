@@ -1,18 +1,11 @@
 package com.grimbo.chipped;
 
-import java.util.stream.Collectors;
-
-import net.minecraft.util.Direction;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-
 import com.grimbo.chipped.block.ChippedBlocks;
 import com.grimbo.chipped.container.ChippedContainer;
 import com.grimbo.chipped.container.ChippedContainerType;
 import com.grimbo.chipped.container.ChippedScreen;
 import com.grimbo.chipped.item.ChippedItems;
 import com.grimbo.chipped.recipe.ChippedSerializer;
-
 import net.minecraft.block.Block;
 import net.minecraft.client.gui.ScreenManager;
 import net.minecraft.client.renderer.RenderType;
@@ -20,6 +13,7 @@ import net.minecraft.client.renderer.RenderTypeLookup;
 import net.minecraft.inventory.container.ContainerType;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.Direction;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -27,6 +21,10 @@ import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+import java.util.stream.Collectors;
 
 @Mod(Chipped.MOD_ID)
 public class Chipped {
@@ -98,6 +96,22 @@ public class Chipped {
 		for (RegistryObject<Block> redstoneWallTorch : ChippedBlocks.blocksMap.get("redstone_wall_torch")) {
 			RenderTypeLookup.setRenderLayer(redstoneWallTorch.get(), RenderType.cutout());
 		}
+		for (RegistryObject<Block> torch : ChippedBlocks.blocksMap.get("torch")) {
+			RenderTypeLookup.setRenderLayer(torch.get(), RenderType.cutout());
+		}
+		for (RegistryObject<Block> wallTorch : ChippedBlocks.blocksMap.get("wall_torch")) {
+			RenderTypeLookup.setRenderLayer(wallTorch.get(), RenderType.cutout());
+		}
+
+		for (RegistryObject<Block> lantern : ChippedBlocks.blocksMap.get("lantern")) {
+			RenderTypeLookup.setRenderLayer(lantern.get(), RenderType.cutout());
+		}
+
+		for (RegistryObject<Block> lantern : ChippedBlocks.blocksMap.get("soul_lantern")) {
+			RenderTypeLookup.setRenderLayer(lantern.get(), RenderType.cutout());
+		}
+
+
 	}
 
 	@SuppressWarnings("unchecked")

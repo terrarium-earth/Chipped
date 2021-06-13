@@ -1,0 +1,18 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "chipped:block/lantern_2"
+    },
+    "facing=south": {
+      "model": "chipped:block/lantern_2"
+    },
+    "facing=west": {
+      "model": "chipped:block/lantern_2",
+      "y": 90
+    },
+    "facing=east": {
+      "model": "chipped:block/lantern_2",
+      "y": 90
+    }
+  }
+}

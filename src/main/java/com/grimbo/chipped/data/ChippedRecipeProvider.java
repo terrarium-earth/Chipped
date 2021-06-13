@@ -1,12 +1,9 @@
 package com.grimbo.chipped.data;
 
-import java.util.function.Consumer;
-
 import com.grimbo.chipped.Chipped;
 import com.grimbo.chipped.ChippedTags;
 import com.grimbo.chipped.block.ChippedBlocks;
 import com.grimbo.chipped.recipe.ChippedSerializer;
-
 import net.minecraft.block.Block;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.IFinishedRecipe;
@@ -18,6 +15,8 @@ import net.minecraft.util.IItemProvider;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.ForgeRegistries;
+
+import java.util.function.Consumer;
 
 public class ChippedRecipeProvider extends RecipeProvider {
 
@@ -52,6 +51,9 @@ public class ChippedRecipeProvider extends RecipeProvider {
 		createRecipeFromType("pumpkin", ChippedSerializer.BOTANIST_WORKBENCH.get(), consumer);
 		createRecipeFromType("jack_o_lantern", ChippedSerializer.BOTANIST_WORKBENCH.get(), consumer);
 		createRecipeFromType("carved_pumpkin", ChippedSerializer.BOTANIST_WORKBENCH.get(), consumer);
+		createRecipeFromType("lantern", ChippedSerializer.MECHANIST_WORKBENCH.get(), consumer);
+		createRecipeFromType("soul_lantern", ChippedSerializer.MECHANIST_WORKBENCH.get(), consumer);
+
 		for (String color : ChippedBlocks.colorsList) {
 			createRecipeFromType(color + "_terracotta", ChippedSerializer.MASON_TABLE.get(), consumer);
 			createRecipeFromType(color + "_concrete", ChippedSerializer.MASON_TABLE.get(), consumer);
