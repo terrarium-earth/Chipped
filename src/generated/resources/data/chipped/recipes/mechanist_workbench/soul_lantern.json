@@ -1,0 +1,8 @@
+{
+  "type": "chipped:mechanist_workbench",
+  "ingredient": {
+    "tag": "chipped:soul_lantern"
+  },
+  "result": "minecraft:soul_lantern",
+  "count": 1
+}

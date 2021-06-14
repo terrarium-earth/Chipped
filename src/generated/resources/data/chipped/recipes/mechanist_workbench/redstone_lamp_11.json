@@ -1,0 +1,8 @@
+{
+  "type": "chipped:mechanist_workbench",
+  "ingredient": {
+    "tag": "chipped:redstone_lamp"
+  },
+  "result": "chipped:redstone_lamp_11",
+  "count": 1
+}

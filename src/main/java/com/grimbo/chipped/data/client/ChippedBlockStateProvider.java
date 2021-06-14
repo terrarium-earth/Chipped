@@ -74,6 +74,22 @@ public class ChippedBlockStateProvider extends BlockStateProvider {
 			String name = block.get().getRegistryName().getPath();
 			simpleBlock(block.get(), models().cubeColumn(name, modLoc("block/" + name + "_side"), modLoc("block/" + name + "_top")));
 		}
+		for (int i = 1; i <= 18; i++) {
+			ArrayList<RegistryObject<Block>> lamps = new ArrayList<>(ChippedBlocks.blocksMap.get("redstone_lamp"));
+			Block lamp = lamps.get(i-1).get();
+			getVariantBuilder(lamp)
+					.partialState()
+					.with(RedstoneLampBlock.LIT, false)
+					.modelForState()
+					.modelFile(models().cubeAll("redstone_lamp_" + i, modLoc("block/redstone_lamp_off_" + i)))
+					.addModel();
+			getVariantBuilder(lamp)
+					.partialState()
+					.with(RedstoneLampBlock.LIT, true)
+					.modelForState()
+					.modelFile(models().cubeAll("redstone_lamp_on_" + i, modLoc("block/redstone_lamp_on_" + i)))
+					.addModel();
+		}
 
 		for (int i = 1; i <= 9; i++) {
 			ArrayList<RegistryObject<Block>> torches = new ArrayList<RegistryObject<Block>>(ChippedBlocks.blocksMap.get("torch"));

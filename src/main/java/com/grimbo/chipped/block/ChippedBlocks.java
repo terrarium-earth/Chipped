@@ -30,8 +30,7 @@ public class ChippedBlocks {
     private static final AbstractBlock.Properties VINE_PROPERTIES = AbstractBlock.Properties.copy(Blocks.VINE);
     private static final AbstractBlock.Properties REDSTONE_TORCH_PROPERTIES = AbstractBlock.Properties.copy(Blocks.REDSTONE_TORCH);
     private static final AbstractBlock.Properties REDSTONE_WALL_TORCH_PROPERTIES = AbstractBlock.Properties.copy(Blocks.REDSTONE_WALL_TORCH);
-    // Unused so commented out.
-    //private static final AbstractBlock.Properties REDSTONE_LAMP_PROPERTIES = AbstractBlock.Properties.copy(Blocks.REDSTONE_LAMP);
+    private static final AbstractBlock.Properties REDSTONE_LAMP_PROPERTIES = AbstractBlock.Properties.copy(Blocks.REDSTONE_LAMP);
     private static final AbstractBlock.Properties TORCH_PROPERTIES = AbstractBlock.Properties.copy(Blocks.TORCH);
     private static final AbstractBlock.Properties WALL_TORCH_PROPERTIES = AbstractBlock.Properties.copy(Blocks.WALL_TORCH);
     private static final AbstractBlock.Properties PUMPKIN_PROPERTIES = AbstractBlock.Properties.copy(Blocks.PUMPKIN);
@@ -136,6 +135,7 @@ public class ChippedBlocks {
         registerVanillaBlocks(Blocks.GLOWSTONE, "glowstone", 20);
         registerVanillaBlocks(Blocks.SEA_LANTERN, "sea_lantern", 16);
         registerVanillaBlocks(Blocks.SHROOMLIGHT, "shroomlight", 16);
+        registerBlocks( "redstone_lamp", () -> new RedstoneLampBlock(REDSTONE_LAMP_PROPERTIES), 18);
 
         //Register Wools and Carpets
         for (int id = 0; id < 16; ++id) {
@@ -170,22 +170,22 @@ public class ChippedBlocks {
         registerBlocks("melon", () -> new MelonBlock(MELON_PROPERTIES), 10);
         registerBlocks("vine", () -> new VineBlock(VINE_PROPERTIES), 8);
 
-        RegistryObject<Block> lantern1 = BLOCKS.register("lantern_1", () -> new ChippedLantern(LANTERN_PROPERTIES, CHONK_LANTERN_SHAPE));
-        RegistryObject<Block> lantern2 = BLOCKS.register("lantern_2", () -> new ChippedLantern(LANTERN_PROPERTIES, DONUT_LANTERN_SHAPE_EAST, DONUT_LANTERN_SHAPE_NORTH));
-        RegistryObject<Block> lantern3 = BLOCKS.register("lantern_3", () -> new ChippedLantern(LANTERN_PROPERTIES, TALL_LANTERN_SHAPE));
+        RegistryObject<Block> lantern1 = register("lantern_1", () -> new ChippedLantern(LANTERN_PROPERTIES, CHONK_LANTERN_SHAPE));
+        RegistryObject<Block> lantern2 = register("lantern_2", () -> new ChippedLantern(LANTERN_PROPERTIES, DONUT_LANTERN_SHAPE_EAST, DONUT_LANTERN_SHAPE_NORTH));
+        RegistryObject<Block> lantern3 = register("lantern_3", () -> new ChippedLantern(LANTERN_PROPERTIES, TALL_LANTERN_SHAPE));
         blocksMap.put("lantern", lantern1);
         blocksMap.put("lantern", lantern2);
         blocksMap.put("lantern", lantern3);
 
-        RegistryObject<Block> soul_lantern_1 = BLOCKS.register("soul_lantern_1", () -> new ChippedLantern(LANTERN_PROPERTIES, CHONK_LANTERN_SHAPE));
-        RegistryObject<Block> soul_lantern_2 = BLOCKS.register("soul_lantern_2", () -> new ChippedLantern(LANTERN_PROPERTIES, DONUT_LANTERN_SHAPE_EAST, DONUT_LANTERN_SHAPE_NORTH));
-        RegistryObject<Block> soul_lantern_3 = BLOCKS.register("soul_lantern_3", () -> new ChippedLantern(LANTERN_PROPERTIES, TALL_LANTERN_SHAPE));
+        RegistryObject<Block> soul_lantern_1 = register("soul_lantern_1", () -> new ChippedLantern(LANTERN_PROPERTIES, CHONK_LANTERN_SHAPE));
+        RegistryObject<Block> soul_lantern_2 = register("soul_lantern_2", () -> new ChippedLantern(LANTERN_PROPERTIES, DONUT_LANTERN_SHAPE_EAST, DONUT_LANTERN_SHAPE_NORTH));
+        RegistryObject<Block> soul_lantern_3 = register("soul_lantern_3", () -> new ChippedLantern(LANTERN_PROPERTIES, TALL_LANTERN_SHAPE));
         blocksMap.put("soul_lantern", soul_lantern_1);
         blocksMap.put("soul_lantern", soul_lantern_2);
         blocksMap.put("soul_lantern", soul_lantern_3);
 
         //Redstone Torches
-        for (int i = 2; i <= 51; i++) {
+        for (int i = 2; i <= 6; i++) {
             RegistryObject<Block> redstoneWallTorch = BLOCKS.register("redstone_wall_torch_" + i, () -> new RedstoneWallTorchBlock(REDSTONE_WALL_TORCH_PROPERTIES));
             RegistryObject<Block> redstoneTorch = BLOCKS.register("redstone_torch_" + i, () -> new RedstoneTorchBlock(REDSTONE_TORCH_PROPERTIES));
             ChippedItems.ITEMS.register("redstone_torch_" + i, () -> new WallOrFloorItem(redstoneTorch.get(), redstoneWallTorch.get(), new Item.Properties().tab(Chipped.CHIPPED)));

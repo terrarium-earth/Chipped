@@ -44,7 +44,7 @@ public class ChippedItemModelProvider extends ItemModelProvider {
 			}
 		}
 		custom.add("redstone_torch");
-		for (int i = 2; i <=51 ; i++) {
+		for (int i = 2; i <=6 ; i++) {
 			withExistingParent("redstone_torch_" + i, mcLoc("generated")).texture("layer0", modLoc("block/redstone_torch_"+ i));
 		}
 		custom.add("torch");
@@ -56,6 +56,8 @@ public class ChippedItemModelProvider extends ItemModelProvider {
 		custom.add("carved_pumpkin");
 		custom.add("wall_torch");
 		custom.add("redstone_wall_torch");
+		custom.add("lantern");
+		custom.add("soul_lantern");
 
 		for (String type : ChippedBlocks.blocksMap.keySet()) {
 			if (!custom.contains(type)) {
