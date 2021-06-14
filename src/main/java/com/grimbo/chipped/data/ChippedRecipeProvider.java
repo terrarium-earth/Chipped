@@ -54,6 +54,7 @@ public class ChippedRecipeProvider extends RecipeProvider {
 		createRecipeFromType("lantern", ChippedSerializer.MECHANIST_WORKBENCH.get(), consumer);
 		createRecipeFromType("soul_lantern", ChippedSerializer.MECHANIST_WORKBENCH.get(), consumer);
 		createRecipeFromType("redstone_lamp", ChippedSerializer.MECHANIST_WORKBENCH.get(), consumer);
+		createRecipeFromType("torch", ChippedSerializer.CARPENTERS_TABLE.get(), consumer);
 
 		for (String color : ChippedBlocks.colorsList) {
 			createRecipeFromType(color + "_terracotta", ChippedSerializer.MASON_TABLE.get(), consumer);
