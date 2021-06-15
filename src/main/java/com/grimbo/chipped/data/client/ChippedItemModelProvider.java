@@ -20,10 +20,8 @@ public class ChippedItemModelProvider extends ItemModelProvider {
 	protected void registerModels() {
 		//Any blocks which has a custom model and does not need an auto generated one
 		ArrayList<String> custom = new ArrayList<String>();
+		
 		custom.add("vine");
-		for (int i = 1; i <= ChippedBlocks.blocksMap.get("vine").size(); i++) {
-			withExistingParent("vine_" + i, mcLoc("generated")).texture("layer0", modLoc("block/vine_" + i));
-		}
 		
 		custom.add("glass_pane");
 		for (int i = 1; i <= ChippedBlocks.blocksMap.get("glass_pane").size(); i++) {

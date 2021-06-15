@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "chipped:block/vine_1",
+	"layer1": "chipped:block/vine_1_overlay_2"
+  }
+}
