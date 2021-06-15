@@ -30,6 +30,7 @@ public class ChippedTags {
 		
 		public static final ITag.INamedTag<Block> DRAGON_IMMUNE = vanilla("dragon_immune");
 		public static final ITag.INamedTag<Block> CLIMBABLE = vanilla("climbable");
+		public static final ITag.INamedTag<Block> WALL_POST_OVERRIDE = vanilla("wall_post_override");
 		
 		private static ITag.INamedTag<Block> vanilla(String id) {
 			return BlockTags.bind("minecraft:" + id);

@@ -78,7 +78,6 @@ public class ChippedRecipeProvider extends RecipeProvider {
 				.unlocks("has_item", has(ForgeRegistries.BLOCKS.getValue(new ResourceLocation("minecraft", type))))
 				.save(consumer, new ResourceLocation(Chipped.MOD_ID, serializer.getRegistryName().getPath() + "/" + type));
 		for (RegistryObject<Block> block : ChippedBlocks.blocksMap.get(type)) {
-			
 			String name = block.get().getRegistryName().getPath();
 			chippedRecipe(serializer, 
 					Ingredient.of(ChippedTags.items.get(type)), block.get())

@@ -1,8 +1,10 @@
 {
     "ambientocclusion": false,
     "textures": {
-        "particle": "chipped:block/vine_5",
-        "vine": "chipped:block/vine_5"
+        "particle": "chipped:block/vine_3",
+        "vine": "chipped:block/vine_3",
+		"overlay": "chipped:block/vine_3_overlay_1",
+		"overlay_2": "chipped:block/vine_3_overlay_2"
     },
     "elements": [
         {   "from": [ 15.2, 0, 0 ],
@@ -19,6 +21,38 @@
             "faces": {
                 "west": { "uv": [ 0, 0, 16, 16 ], "texture": "#vine", "tintindex": 0 },
                 "east": { "uv": [ 0, 0, 16, 16 ], "texture": "#vine", "tintindex": 0 }
+            }
+        },
+        {   "from": [ 15.2, 0, 0 ],
+            "to": [ 15.2, 16, 16 ],
+            "shade": false,
+            "faces": {
+                "west": { "uv": [ 0, 0, 16, 16 ], "texture": "#overlay", "tintindex": 0 },
+                "east": { "uv": [ 0, 0, 16, 16 ], "texture": "#overlay", "tintindex": 0 }
+            }
+        },
+        {   "from": [ 0.8, 0, 0 ],
+            "to": [ 0.8, 16, 16 ],
+            "shade": false,
+            "faces": {
+                "west": { "uv": [ 0, 0, 16, 16 ], "texture": "#overlay", "tintindex": 0 },
+                "east": { "uv": [ 0, 0, 16, 16 ], "texture": "#overlay", "tintindex": 0 }
+            }
+        },
+        {   "from": [ 15.2, 0, 0 ],
+            "to": [ 15.2, 16, 16 ],
+            "shade": false,
+            "faces": {
+                "west": { "uv": [ 0, 0, 16, 16 ], "texture": "#overlay_2" },
+                "east": { "uv": [ 0, 0, 16, 16 ], "texture": "#overlay_2" }
+            }
+        },
+        {   "from": [ 0.8, 0, 0 ],
+            "to": [ 0.8, 16, 16 ],
+            "shade": false,
+            "faces": {
+                "west": { "uv": [ 0, 0, 16, 16 ], "texture": "#overlay_2" },
+                "east": { "uv": [ 0, 0, 16, 16 ], "texture": "#overlay_2" }
             }
         }
     ]

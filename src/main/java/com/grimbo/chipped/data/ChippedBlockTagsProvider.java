@@ -23,9 +23,9 @@ public class ChippedBlockTagsProvider extends BlockTagsProvider {
 	@Override
 	protected void addTags() {
 		//All blocks with a vanilla variant
-		for (String type : ChippedBlocks.blocksMap.keys()) {
-			if (ForgeRegistries.BLOCKS.containsKey(new ResourceLocation("minecraft:" + type))) {
-				tag(ChippedTags.blocks.get(type)).add(ForgeRegistries.BLOCKS.getValue(new ResourceLocation("minecraft:" + type)));
+		for (String type : ChippedBlocks.blocksMap.keySet()) {
+			if (ForgeRegistries.BLOCKS.containsKey(new ResourceLocation("minecraft", type))) {
+				tag(ChippedTags.blocks.get(type)).add(ForgeRegistries.BLOCKS.getValue(new ResourceLocation("minecraft", type)));
 				for (RegistryObject<Block> block : ChippedBlocks.blocksMap.get(type)) {
 					tag(ChippedTags.blocks.get(type)).add(block.get());
 				}
@@ -35,13 +35,13 @@ public class ChippedBlockTagsProvider extends BlockTagsProvider {
 		//Wood Glasses
 		for (String wood : ChippedBlocks.woodsList) {
 			String type = wood + "_wood_glass";
-			tag(ChippedTags.blocks.get(type)).add(ForgeRegistries.BLOCKS.getValue(new ResourceLocation("minecraft:glass")));
+			tag(ChippedTags.blocks.get(type)).add(ForgeRegistries.BLOCKS.getValue(new ResourceLocation("minecraft", "glass")));
 			for (RegistryObject<Block> block : ChippedBlocks.blocksMap.get(type)) {
 				tag(ChippedTags.blocks.get(type)).add(block.get());
 			}
 			
 			String type2 = wood + "_wood_glass_pane";
-			tag(ChippedTags.blocks.get(type2)).add(ForgeRegistries.BLOCKS.getValue(new ResourceLocation("minecraft:glass_pane")));
+			tag(ChippedTags.blocks.get(type2)).add(ForgeRegistries.BLOCKS.getValue(new ResourceLocation("minecraft", "glass_pane")));
 			for (RegistryObject<Block> block : ChippedBlocks.blocksMap.get(type2)) {
 				tag(ChippedTags.blocks.get(type2)).add(block.get());
 			}
@@ -61,6 +61,9 @@ public class ChippedBlockTagsProvider extends BlockTagsProvider {
 		tag(ChippedTags.Blocks.DRAGON_IMMUNE).addTag(ChippedTags.blocks.get("crying_obsidian"));
 		
 		tag(ChippedTags.Blocks.CLIMBABLE).addTag(ChippedTags.blocks.get("vine"));
+		
+		tag(ChippedTags.Blocks.WALL_POST_OVERRIDE).addTag(ChippedTags.blocks.get("torch"));
+		tag(ChippedTags.Blocks.WALL_POST_OVERRIDE).addTag(ChippedTags.blocks.get("redstone_torch"));
 		
 		//Default Forge tags
 		tag(Tags.Blocks.STONE).addTag(ChippedTags.blocks.get("stone"));

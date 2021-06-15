@@ -1,8 +1,8 @@
 {
     "ambientocclusion": false,
     "textures": {
-        "particle": "chipped:block/vine_7",
-        "vine": "chipped:block/vine_7"
+        "particle": "chipped:block/vine_4",
+        "vine": "chipped:block/vine_4"
     },
     "elements": [
         {   "from": [ 15.2, 0, 0 ],
