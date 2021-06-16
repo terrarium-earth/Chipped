@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "id": "chipped",
+  "version": "${version}",
+
+  "name": "Chipped",
+  "description": "Chipped is a building mod that expands on the variety of blocks you can use in-game",
+  "authors": [
+    "Grim",
+    "Inforno",
+    "AudreyOooo"
+  ],
+  "contributors": [
+    "Kekie6",
+    "BrotherEarth967",
+    "Math",
+    "SunsetSoup",
+    "Valila", 
+    "ArtistMonster"
+  ],
+  "contact": {
+    "homepage": "",
+    "sources": "https://github.com/CookieCNetwork/Chipped"
+  },
+
+  "license": "CC0-1.0",
+  "icon": "chipped_logo.png",
+
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.grimbo.chipped.Chipped"
+    ],
+    "client": [
+      "com.grimbo.chipped.ChippedClient"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=0.7.4",
+    "fabric": "*",
+    "minecraft": "1.16.x"
+  }
+}

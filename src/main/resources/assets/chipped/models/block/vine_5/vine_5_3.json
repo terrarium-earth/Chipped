@@ -1,10 +1,8 @@
 {
     "ambientocclusion": false,
     "textures": {
-        "particle": "chipped:block/vine_3",
-        "vine": "chipped:block/vine_3",
-		"overlay": "chipped:block/vine_3_overlay_1",
-		"overlay_2": "chipped:block/vine_3_overlay_2"
+        "particle": "chipped:block/vine_5",
+        "vine": "chipped:block/vine_5"
     },
     "elements": [
         {   "from": [ 15.2, 0, 0 ],
@@ -29,54 +27,6 @@
             "faces": {
                 "north": { "uv": [ 0, 0, 16, 16 ], "texture": "#vine", "tintindex": 0 },
                 "south": { "uv": [ 0, 0, 16, 16 ], "texture": "#vine", "tintindex": 0 }
-            }
-        },
-        {   "from": [ 15.2, 0, 0 ],
-            "to": [ 15.2, 16, 16 ],
-            "shade": false,
-            "faces": {
-                "west": { "uv": [ 0, 0, 16, 16 ], "texture": "#overlay", "tintindex": 0 },
-                "east": { "uv": [ 0, 0, 16, 16 ], "texture": "#overlay", "tintindex": 0 }
-            }
-        },
-        {   "from": [ 0, 0, 15.2 ],
-            "to": [ 16, 16, 15.2 ],
-            "shade": false,
-            "faces": {
-                "north": { "uv": [ 0, 0, 16, 16 ], "texture": "#overlay", "tintindex": 0 },
-                "south": { "uv": [ 0, 0, 16, 16 ], "texture": "#overlay", "tintindex": 0 }
-            }
-        },
-        {   "from": [ 0, 0, 0.8 ],
-            "to": [ 16, 16, 0.8 ],
-            "shade": false,
-            "faces": {
-                "north": { "uv": [ 0, 0, 16, 16 ], "texture": "#overlay", "tintindex": 0 },
-                "south": { "uv": [ 0, 0, 16, 16 ], "texture": "#overlay", "tintindex": 0 }
-            }
-        },
-        {   "from": [ 15.2, 0, 0 ],
-            "to": [ 15.2, 16, 16 ],
-            "shade": false,
-            "faces": {
-                "west": { "uv": [ 0, 0, 16, 16 ], "texture": "#overlay_2" },
-                "east": { "uv": [ 0, 0, 16, 16 ], "texture": "#overlay_2" }
-            }
-        },
-        {   "from": [ 0, 0, 15.2 ],
-            "to": [ 16, 16, 15.2 ],
-            "shade": false,
-            "faces": {
-                "north": { "uv": [ 0, 0, 16, 16 ], "texture": "#overlay_2" },
-                "south": { "uv": [ 0, 0, 16, 16 ], "texture": "#overlay_2" }
-            }
-        },
-        {   "from": [ 0, 0, 0.8 ],
-            "to": [ 16, 16, 0.8 ],
-            "shade": false,
-            "faces": {
-                "north": { "uv": [ 0, 0, 16, 16 ], "texture": "#overlay_2" },
-                "south": { "uv": [ 0, 0, 16, 16 ], "texture": "#overlay_2" }
             }
         }
     ]
