@@ -78,6 +78,7 @@ public class ChippedMenu extends AbstractContainerMenu {
 				access.execute((level, blockPos) -> {
 					long l = level.getGameTime();
 					if (ChippedMenu.this.lastSoundTime != l) {
+						level.playSound((Player)null, (BlockPos)blockPos, SoundEvents.UI_STONECUTTER_TAKE_RESULT, SoundSource.BLOCKS, 1.0F, 1.0F);
 						ChippedMenu.this.lastSoundTime = l;
 					}
 
