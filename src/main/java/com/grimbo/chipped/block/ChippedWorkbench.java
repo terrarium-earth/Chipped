@@ -1,6 +1,7 @@
 package com.grimbo.chipped.block;
 
 import com.grimbo.chipped.menus.ChippedMenu;
+import com.grimbo.chipped.recipe.ChippedRecipe;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.core.BlockPos;
@@ -20,6 +21,8 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.ContainerLevelAccess;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.BlockPlaceContext;
+import net.minecraft.world.inventory.MenuType;
+import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.*;
@@ -42,12 +45,14 @@ public class ChippedWorkbench extends Block {
 
 	public static final EnumProperty<WorkbenchModelType> MODEL_TYPE = EnumProperty.create("model", WorkbenchModelType.class);
 
-    private final ContainerFactory factory;
+    private final MenuType<ChippedMenu> menuType;
+    private final RecipeType<ChippedRecipe> recipeType;
     private final LazyLoadedValue<Component> containerName;
 
-	public ChippedWorkbench(ContainerFactory factory, Properties properties) {
+	public ChippedWorkbench(MenuType<ChippedMenu> menuType, RecipeType<ChippedRecipe> recipeType, Properties properties) {
 		super(properties);
-        this.factory = factory;
+        this.menuType = menuType;
+        this.recipeType = recipeType;
 		containerName = new LazyLoadedValue<>(() -> new TranslatableComponent("container.chipped." + Registry.BLOCK.getKey(ChippedWorkbench.this).getPath()));
 		this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH).setValue(MODEL_TYPE, WorkbenchModelType.MAIN));
 	}
@@ -70,7 +75,7 @@ public class ChippedWorkbench extends Block {
 	@Override
 	public MenuProvider getMenuProvider(BlockState state, Level worldIn, BlockPos pos) {
         return new SimpleMenuProvider(
-                (id, inventory, player) -> factory.create(id, inventory, ContainerLevelAccess.create(worldIn, pos)),
+                (id, inventory, player) -> new ChippedMenu(id, inventory, menuType, recipeType, ContainerLevelAccess.create(worldIn, pos), this),
                 containerName.get()
         );
     }

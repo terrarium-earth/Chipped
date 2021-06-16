@@ -4,6 +4,7 @@ import com.google.common.collect.Lists;
 import com.grimbo.chipped.recipe.ChippedRecipe;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
+import net.minecraft.core.BlockPos;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.Container;
@@ -47,6 +48,8 @@ public class ChippedMenu extends AbstractContainerMenu {
 	public ChippedMenu(int id, Inventory inventory, MenuType<ChippedMenu> menuType, RecipeType<ChippedRecipe> recipeType, ContainerLevelAccess access, Block block) {
 		super(menuType, id);
 		this.selectedRecipeIndex = DataSlot.standalone();
+		this.slotUpdateListener = () -> {
+		};
 		this.container = new SimpleContainer(1) {
 			public void setChanged() {
 				super.setChanged();
@@ -60,30 +63,26 @@ public class ChippedMenu extends AbstractContainerMenu {
 		this.recipeType = recipeType;
 		this.blockWorkbench = block;
 		this.inputSlot = this.addSlot(new Slot(this.container, 0, 20, 33));
-
 		this.resultSlot = this.addSlot(new Slot(this.resultContainer, 1, 143, 33) {
-			public boolean mayPlace(ItemStack p_75214_1_) {
+			public boolean mayPlace(ItemStack itemStack) {
 				return false;
 			}
-
-			public ItemStack onTake(Player p_190901_1_, ItemStack p_190901_2_) {
-				p_190901_2_.onCraftedBy(p_190901_1_.level, p_190901_1_, p_190901_2_.getCount());
-				ChippedMenu.this.resultContainer.awardUsedRecipes(p_190901_1_);
-				ItemStack itemstack = ChippedMenu.this.inputSlot.remove(1);
-				if (!itemstack.isEmpty()) {
+			public void onTake(Player player, ItemStack itemStack) {
+				itemStack.onCraftedBy(player.level, player, itemStack.getCount());
+				ChippedMenu.this.resultContainer.awardUsedRecipes(player);
+				ItemStack itemStack2 = ChippedMenu.this.inputSlot.remove(1);
+				if (!itemStack2.isEmpty()) {
 					ChippedMenu.this.setupResultSlot();
 				}
 
-				access.execute((p_216954_1_, p_216954_2_) -> {
-					long l = p_216954_1_.getGameTime();
+				access.execute((level, blockPos) -> {
+					long l = level.getGameTime();
 					if (ChippedMenu.this.lastSoundTime != l) {
-						p_216954_1_.playSound(null, p_216954_2_, SoundEvents.UI_STONECUTTER_TAKE_RESULT,
-								SoundSource.BLOCKS, 1.0F, 1.0F);
 						ChippedMenu.this.lastSoundTime = l;
 					}
 
 				});
-				return super.onTake(p_190901_1_, p_190901_2_);
+				super.onTake(player, itemStack);
 			}
 		});
 
@@ -233,7 +232,7 @@ public class ChippedMenu extends AbstractContainerMenu {
 		super.removed(player);
 		this.resultContainer.removeItemNoUpdate(1);
 		this.access.execute((level, blockPos) -> {
-			this.clearContainer(player, player.level, this.container);
+			this.clearContainer(player, this.container);
 		});
 	}
 }

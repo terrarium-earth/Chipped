@@ -75,44 +75,37 @@ public class ChippedBlocks {
      * 6. Register it in integrations.jei.JEIPlugin
      * 7. Give it both a block and container name in en_us.json
      */
-    public static final Block BOTANIST_WORKBENCH = register("botanist_workbench", new ChippedWorkbench(
-            (id, inventory, position) -> new ChippedMenu(id, inventory, ChippedMenuType.botanistWorkbench, ChippedSerializer.BOTANIST_WORKBENCH_TYPE, position, ChippedBlocks.BOTANIST_WORKBENCH),
+    public static final Block BOTANIST_WORKBENCH = register("botanist_workbench", new ChippedWorkbench(ChippedMenuType.botanistWorkbench, ChippedSerializer.BOTANIST_WORKBENCH_TYPE,
             FabricBlockSettings.of(Material.WOOD).strength(1F, 2F).sound(SoundType.WOOD).noOcclusion()
                     .isValidSpawn(VALID_SPAWN).isRedstoneConductor(ALWAYS_FALSE_POSITION)
                     .isSuffocating(ALWAYS_FALSE_POSITION).isViewBlocking(ALWAYS_FALSE_POSITION)));
 
-    public static final Block GLASSBLOWER = register("glassblower", new ChippedWorkbench(
-            (windowId, inventory, access) -> new ChippedMenu(windowId, inventory, ChippedMenuType.glassblower, ChippedSerializer.GLASSBLOWER_TYPE, access, ChippedBlocks.GLASSBLOWER),
+    public static final Block GLASSBLOWER = register("glassblower", new ChippedWorkbench(ChippedMenuType.glassblower, ChippedSerializer.GLASSBLOWER_TYPE,
             FabricBlockSettings.of(Material.WOOD).strength(1F, 2F).sound(SoundType.WOOD).noOcclusion()
                     .isValidSpawn(VALID_SPAWN).isRedstoneConductor(ALWAYS_FALSE_POSITION)
                     .isSuffocating(ALWAYS_FALSE_POSITION).isViewBlocking(ALWAYS_FALSE_POSITION)));
 
-    public static final Block CARPENTERS_TABLE = register("carpenters_table", new ChippedWorkbench(
-            (windowId, inventory, access) -> new ChippedMenu(windowId, inventory, ChippedMenuType.carpentersTable, ChippedSerializer.CARPENTERS_TABLE_TYPE, access, ChippedBlocks.CARPENTERS_TABLE),
+    public static final Block CARPENTERS_TABLE = register("carpenters_table", new ChippedWorkbench(ChippedMenuType.carpentersTable, ChippedSerializer.CARPENTERS_TABLE_TYPE,
             FabricBlockSettings.of(Material.WOOD).strength(1F, 2F).sound(SoundType.WOOD).noOcclusion()
                     .isValidSpawn(VALID_SPAWN).isRedstoneConductor(ALWAYS_FALSE_POSITION)
                     .isSuffocating(ALWAYS_FALSE_POSITION).isViewBlocking(ALWAYS_FALSE_POSITION)));
 
-    public static final Block LOOM_TABLE = register("loom_table", new ChippedWorkbench(
-            (windowId, inventory, access) -> new ChippedMenu(windowId, inventory, ChippedMenuType.loomTable, ChippedSerializer.LOOM_TABLE_TYPE, access, ChippedBlocks.LOOM_TABLE),
+    public static final Block LOOM_TABLE = register("loom_table", new ChippedWorkbench(ChippedMenuType.loomTable, ChippedSerializer.LOOM_TABLE_TYPE,
             FabricBlockSettings.of(Material.WOOD).strength(1F, 2F).sound(SoundType.WOOD).noOcclusion()
                     .isValidSpawn(VALID_SPAWN).isRedstoneConductor(ALWAYS_FALSE_POSITION)
                     .isSuffocating(ALWAYS_FALSE_POSITION).isViewBlocking(ALWAYS_FALSE_POSITION)));
 
-    public static final Block MASON_TABLE = register("mason_table", new ChippedWorkbench(
-            (windowId, inventory, access) -> new ChippedMenu(windowId, inventory, ChippedMenuType.masonTable, ChippedSerializer.MASON_TABLE_TYPE, access, ChippedBlocks.MASON_TABLE),
+    public static final Block MASON_TABLE = register("mason_table", new ChippedWorkbench(ChippedMenuType.masonTable, ChippedSerializer.MASON_TABLE_TYPE,
             FabricBlockSettings.of(Material.METAL).strength(5F, 6F).sound(SoundType.METAL).noOcclusion()
                     .isValidSpawn(VALID_SPAWN).isRedstoneConductor(ALWAYS_FALSE_POSITION)
                     .isSuffocating(ALWAYS_FALSE_POSITION).isViewBlocking(ALWAYS_FALSE_POSITION).requiresCorrectToolForDrops()));
 
-    public static final Block ALCHEMY_BENCH = register("alchemy_bench", new ChippedWorkbench(
-            (windowId, inventory, access) -> new ChippedMenu(windowId, inventory, ChippedMenuType.alchemyBench, ChippedSerializer.ALCHEMY_BENCH_TYPE, access, ChippedBlocks.ALCHEMY_BENCH),
+    public static final Block ALCHEMY_BENCH = register("alchemy_bench", new ChippedWorkbench(ChippedMenuType.alchemyBench, ChippedSerializer.ALCHEMY_BENCH_TYPE,
             FabricBlockSettings.of(Material.WOOD).strength(1F, 2F).sound(SoundType.WOOD).noOcclusion()
                     .isValidSpawn(VALID_SPAWN).isRedstoneConductor(ALWAYS_FALSE_POSITION)
                     .isSuffocating(ALWAYS_FALSE_POSITION).isViewBlocking(ALWAYS_FALSE_POSITION)));
 
-    public static final Block MECHANIST_WORKBENCH = register("mechanist_workbench", new ChippedWorkbench(
-            (windowId, inventory, access) -> new ChippedMenu(windowId, inventory, ChippedMenuType.mechanistWorkbench, ChippedSerializer.MECHANIST_WORKBENCH_TYPE, access, ChippedBlocks.MECHANIST_WORKBENCH),
+    public static final Block MECHANIST_WORKBENCH = register("mechanist_workbench", new ChippedWorkbench(ChippedMenuType.mechanistWorkbench, ChippedSerializer.MECHANIST_WORKBENCH_TYPE,
             FabricBlockSettings.of(Material.WOOD).strength(1F, 2F).sound(SoundType.WOOD).noOcclusion()
                     .isValidSpawn(VALID_SPAWN).isRedstoneConductor(ALWAYS_FALSE_POSITION)
                     .isSuffocating(ALWAYS_FALSE_POSITION).isViewBlocking(ALWAYS_FALSE_POSITION)));

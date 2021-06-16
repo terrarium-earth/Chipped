@@ -1,9 +1,12 @@
 package com.grimbo.chipped;
 
 import com.grimbo.chipped.block.ChippedBlocks;
+import com.grimbo.chipped.menus.ChippedMenuType;
+import com.grimbo.chipped.menus.ChippedScreen;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.rendering.v1.ColorProviderRegistry;
+import net.fabricmc.fabric.api.client.screenhandler.v1.ScreenRegistry;
 import net.minecraft.client.color.block.BlockColor;
 import net.minecraft.client.color.item.ItemColor;
 import net.minecraft.client.renderer.BiomeColors;
@@ -94,5 +97,13 @@ public class ChippedClient implements ClientModInitializer {
         for (Block vine : ChippedBlocks.blocksMap.get("vine")) {
             ColorProviderRegistry.ITEM.register(itemBlockColorHandler, vine);
         }
+
+        ScreenRegistry.register(ChippedMenuType.botanistWorkbench, ChippedScreen::new);
+        ScreenRegistry.register(ChippedMenuType.glassblower, ChippedScreen::new);
+        ScreenRegistry.register(ChippedMenuType.carpentersTable, ChippedScreen::new);
+        ScreenRegistry.register(ChippedMenuType.loomTable, ChippedScreen::new);
+        ScreenRegistry.register(ChippedMenuType.masonTable, ChippedScreen::new);
+        ScreenRegistry.register(ChippedMenuType.alchemyBench, ChippedScreen::new);
+        ScreenRegistry.register(ChippedMenuType.mechanistWorkbench, ChippedScreen::new);
     }
 }

@@ -1,3 +1,4 @@
+/*
 package com.grimbo.chipped.integration;
 
 import com.grimbo.chipped.Chipped;
@@ -55,7 +56,7 @@ public class REIChippedPlugin implements REIPluginV0 {
         registerWorkingStation(recipeHelper, ChippedBlocks.ALCHEMY_BENCH);
         registerWorkingStation(recipeHelper, ChippedBlocks.MECHANIST_WORKBENCH);
     }
-    
+
     private void registerWorkingStation(RecipeHelper recipeHelper, Block block) {
         recipeHelper.registerWorkingStations(Registry.BLOCK.getKey(block), EntryStack.create(new ItemStack(block)));
     }
@@ -65,3 +66,4 @@ public class REIChippedPlugin implements REIPluginV0 {
         return new ResourceLocation(Chipped.MOD_ID, "recipes_plugin");
     }
 }
+*/

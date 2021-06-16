@@ -1,3 +1,4 @@
+/*
 package com.grimbo.chipped.integration;
 
 import com.google.common.collect.Lists;
@@ -95,3 +96,4 @@ public class ChippedRecipeCategory implements RecipeCategory<ChippedRecipeCatego
     }
 }
 
+*/

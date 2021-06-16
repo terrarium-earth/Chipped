@@ -4,10 +4,7 @@ import com.grimbo.chipped.Chipped;
 import com.grimbo.chipped.block.ChippedBlocks;
 import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.item.crafting.Recipe;
-import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.item.crafting.RecipeType;
-import net.minecraft.world.level.block.Block;
 
 public class ChippedSerializer {
 	//Add new RecipeTypes here
@@ -29,3 +26,4 @@ public class ChippedSerializer {
         Registry.register(Registry.RECIPE_SERIALIZER, new ResourceLocation(Chipped.MOD_ID, "mechanist_workbench"), new ChippedRecipe.Serializer(MECHANIST_WORKBENCH_TYPE, ChippedBlocks.MECHANIST_WORKBENCH));
     }
 }
+
