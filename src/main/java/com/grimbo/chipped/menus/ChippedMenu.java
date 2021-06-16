@@ -4,7 +4,6 @@ import com.google.common.collect.Lists;
 import com.grimbo.chipped.recipe.ChippedRecipe;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
-import net.minecraft.core.BlockPos;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.Container;
@@ -78,7 +77,7 @@ public class ChippedMenu extends AbstractContainerMenu {
 				access.execute((level, blockPos) -> {
 					long l = level.getGameTime();
 					if (ChippedMenu.this.lastSoundTime != l) {
-						level.playSound((Player)null, (BlockPos)blockPos, SoundEvents.UI_STONECUTTER_TAKE_RESULT, SoundSource.BLOCKS, 1.0F, 1.0F);
+						level.playSound(null, blockPos, SoundEvents.UI_STONECUTTER_TAKE_RESULT, SoundSource.BLOCKS, 1.0F, 1.0F);
 						ChippedMenu.this.lastSoundTime = l;
 					}
 
