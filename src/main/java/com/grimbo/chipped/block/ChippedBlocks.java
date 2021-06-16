@@ -266,8 +266,6 @@ public class ChippedBlocks {
     private static void registerBlocks(String name, Supplier<Block> block, int count) {
         for (int i = 1; i <= count; i++) {
             String newName = name + "_" + i;
-            System.out.println(newName);
-            new Throwable().printStackTrace();
             blocksMap.put(name, register(newName, block.get()));
         }
     }

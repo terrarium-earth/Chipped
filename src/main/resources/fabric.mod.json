@@ -33,6 +33,9 @@
     ],
     "client": [
       "com.grimbo.chipped.ChippedClient"
+    ],
+    "rei_plugins": [
+      "com.grimbo.chipped.integration.REIChippedPlugin"
     ]
   },
   "depends": {

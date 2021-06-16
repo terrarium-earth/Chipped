@@ -2,6 +2,7 @@ package com.grimbo.chipped;
 
 import com.grimbo.chipped.block.ChippedBlocks;
 import com.grimbo.chipped.menus.ChippedMenuType;
+import com.grimbo.chipped.recipe.ChippedSerializer;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
 import net.minecraft.resources.ResourceLocation;
@@ -19,5 +20,6 @@ public class Chipped implements ModInitializer {
     public void onInitialize() {
         ChippedMenuType.register();
         ChippedBlocks.register();
+        ChippedSerializer.register();
     }
 }

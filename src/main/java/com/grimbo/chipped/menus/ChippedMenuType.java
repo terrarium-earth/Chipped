@@ -18,6 +18,7 @@ public class ChippedMenuType {
 	public static MenuType<ChippedMenu> masonTable;
 	public static MenuType<ChippedMenu> alchemyBench;
 	public static MenuType<ChippedMenu> mechanistWorkbench;
+
 	public static void register() {
 		botanistWorkbench = ScreenHandlerRegistry.registerSimple(new ResourceLocation(Chipped.MOD_ID, "botanist_workbench"),
 				(id, inventory) -> new ChippedMenu(id, inventory, botanistWorkbench, ChippedSerializer.BOTANIST_WORKBENCH_TYPE, ChippedBlocks.BOTANIST_WORKBENCH));
