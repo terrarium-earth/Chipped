@@ -23,6 +23,10 @@ public class ChippedRecipe extends SingleItemRecipe {
         super(type, serializer, id, group, ingredient, result);
         this.icon = block;
     }
+    @Override
+    public boolean isSpecial() {
+        return true;
+    }
 
     @Override
     public ItemStack getToastSymbol() {
@@ -34,18 +38,11 @@ public class ChippedRecipe extends SingleItemRecipe {
         return this.ingredient.test(inv.getItem(0));
     }
 
-    public static class Serializer implements RecipeSerializer<ChippedRecipe> {
 
-        private final RecipeType<?> type;
-        private final Block icon;
-
-        public Serializer(RecipeType<?> type, Block icon) {
-            this.type = type;
-            this.icon = icon;
-        }
+    public record Serializer(RecipeType<?> type, Block icon) implements RecipeSerializer<ChippedRecipe> {
 
         public ChippedRecipe fromJson(ResourceLocation recipeId, JsonObject json) {
-            String s = JsonUtils.getStringOr( "group", json,"");
+            String s = JsonUtils.getStringOr("group", json, "");
             Ingredient ingredient;
             if (GsonHelper.isArrayNode(json, "ingredient")) {
                 ingredient = Ingredient.fromJson(GsonHelper.getAsJsonArray(json, "ingredient"));

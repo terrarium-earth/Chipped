@@ -135,21 +135,21 @@ public class ChippedMenu extends AbstractContainerMenu {
 		return index >= 0 && index < this.recipes.size();
 	}
 
-	public void slotsChanged(Inventory inventory) {
+	@Override
+	public void slotsChanged(Container container) {
 		ItemStack itemstack = this.inputSlot.getItem();
 		if (itemstack.getItem() != this.input.getItem()) {
 			this.input = itemstack.copy();
-			this.setupRecipeList(inventory, itemstack);
+			this.setupRecipeList(container, itemstack);
 		}
-
 	}
 
-	private void setupRecipeList(Inventory inventory, ItemStack p_217074_2_) {
+	private void setupRecipeList(Container container, ItemStack p_217074_2_) {
 		this.recipes.clear();
 		this.selectedRecipeIndex.set(-1);
 		this.resultSlot.set(ItemStack.EMPTY);
 		if (!p_217074_2_.isEmpty()) {
-			this.recipes = this.level.getRecipeManager().getRecipesFor(recipeType, inventory, this.level);
+			this.recipes = this.level.getRecipeManager().getRecipesFor(recipeType, container, this.level);
 		}
 
 	}
