@@ -18,16 +18,16 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.Nullable;
 
 
-public class ChippedLantern extends Block implements SimpleWaterloggedBlock {
+public class ChippedLanternBlock extends Block implements SimpleWaterloggedBlock {
     public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
     private final VoxelShape toEast;
     private final VoxelShape toNorth;
-    public ChippedLantern(Properties properties, VoxelShape shape) {
+    public ChippedLanternBlock(Properties properties, VoxelShape shape) {
         super(properties);
         this.toEast = shape;
         this.toNorth = shape;
     }
-    public ChippedLantern(Properties properties, VoxelShape toEast, VoxelShape toNorth) {
+    public ChippedLanternBlock(Properties properties, VoxelShape toEast, VoxelShape toNorth) {
         super(properties);
         this.toEast = toEast;
         this.toNorth = toNorth;

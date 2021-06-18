@@ -1,7 +1,5 @@
 package com.grimbo.chipped.block;
 
-import com.google.common.collect.ArrayListMultimap;
-import com.google.common.collect.Multimap;
 import com.grimbo.chipped.Chipped;
 import com.grimbo.chipped.menus.ChippedMenu;
 import com.grimbo.chipped.menus.ChippedMenuType;
@@ -23,6 +21,7 @@ import net.minecraft.world.level.material.Material;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
+import java.util.*;
 import java.util.function.Supplier;
 
 
@@ -51,18 +50,30 @@ public class ChippedBlocks {
     protected static final VoxelShape DONUT_LANTERN_SHAPE_NORTH = Block.box(1.0D, 0.0D, 5.0D, 15.0D, 15.0D, 11.0D);
     protected static final VoxelShape TALL_LANTERN_SHAPE = Block.box(5, 0, 5, 11, 15, 11);
 
-    public static Multimap<String, Block> blocksMap = ArrayListMultimap.create();
+    public static final List<GlassBlock> GLASSES = new ArrayList<>();
+    public static final List<IronBarsBlock> GLASS_PANES = new ArrayList<>();
+    public static final EnumMap<ChippedWoodType, List<GlassBlock>> WOOD_GLASSES = new EnumMap<>(ChippedWoodType.class);
+    public static final EnumMap<ChippedWoodType, List<IronBarsBlock>> WOOD_GLASS_PANES = new EnumMap<>(ChippedWoodType.class);
+    public static final EnumMap<DyeColor, List<StainedGlassBlock>> STAINED_GLASSES = new EnumMap<>(DyeColor.class);
+    public static final EnumMap<DyeColor, List<StainedGlassPaneBlock>> STAINED_GLASS_PANES = new EnumMap<>(DyeColor.class);
+
+    public static final List<VineBlock> VINES = new ArrayList<>();
+
+    public static final List<ChippedLanternBlock> LANTERNS = new ArrayList<>();
+    public static final List<ChippedLanternBlock> SOUL_LANTERNS = new ArrayList<>();
+
+    public static final List<RedstoneTorchBlock> REDSTONE_TORCHES = new ArrayList<>();
+    public static final List<RedstoneWallTorchBlock> REDSTONE_WALL_TORCHES = new ArrayList<>();
+    public static final List<TorchBlock> TORCHES = new ArrayList<>();
+    public static final List<WallTorchBlock> WALL_TORCHES = new ArrayList<>();
 
     //Simple Blocks which have 18 of its own variant
     public static final String[] stones18 = {"stone", "granite", "diorite", "andesite", "prismarine", "dark_prismarine", "purpur_block",
             "cobblestone", "quartz_block", "sandstone", "red_sandstone", "nether_bricks", "red_nether_bricks", "end_stone", "netherrack"};
 
-    public static final String[] woodsList = {"oak", "birch", "spruce", "jungle", "acacia", "dark_oak", "warped", "crimson"};
     public static final String[] specialPumpkinList = {"end", "end2", "nether"};
     public static final String[] carvedPumpkinList = {"happy", "angry", "bigeyes", "bighappy", "boo", "bruh", "classic", "enthusiastic",
             "grinning", "kawaii", "mourn", "owo", "plotting", "sans", "scared", "smallhappy", "squashy", "stretchy", "upsidedown"};
-	public static final String[] colorsList = { "white", "orange", "magenta", "light_blue", "yellow", "lime", "pink", "gray", "light_gray",
-			"cyan", "purple", "blue", "brown", "green", "red", "black" };
 
     // Workbenches
     /*
@@ -145,92 +156,84 @@ public class ChippedBlocks {
         registerVanillaBlocks(Blocks.GLOWSTONE, "glowstone", 20);
         registerVanillaBlocks(Blocks.SEA_LANTERN, "sea_lantern", 16);
         registerVanillaBlocks(Blocks.SHROOMLIGHT, "shroomlight", 16);
-        registerBlocks( "redstone_lamp", () -> new RedstoneLampBlock(REDSTONE_LAMP_PROPERTIES), 18);
+        registerBlocks("redstone_lamp", () -> new RedstoneLampBlock(REDSTONE_LAMP_PROPERTIES), 18);
 
         //Register Wools and Carpets
         for (int id = 0; id < 16; ++id) {
             DyeColor color = DyeColor.byId(id);
             registerVanillaBlocks(color + "_wool", 18);
-            registerBlocks(color + "_carpet", () -> new WoolCarpetBlock(color, WOOL_PROPERTIES){}, 18);
+            registerBlocks(color + "_carpet", () -> new WoolCarpetBlock(color, WOOL_PROPERTIES) {
+            }, 18);
         }
 
         //Register Glasses and Stained Glasses
-        registerBlocks("glass", () -> new GlassBlock(GLASS_PROPERTIES), 14);
-        registerBlocks("glass_pane", () -> new IronBarsBlock(GLASS_PANE_PROPERTIES){}, 14);
+        registerBlocks("glass", () -> new GlassBlock(GLASS_PROPERTIES), 14, GLASSES);
+        registerBlocks("glass_pane", () -> new IronBarsBlock(GLASS_PANE_PROPERTIES) {}, 14, GLASS_PANES);
 
-        for (String wood : woodsList) {
-            registerBlocks(wood + "_wood_glass", () -> new GlassBlock(GLASS_PROPERTIES), 6);
-            registerBlocks(wood + "_wood_glass_pane",  () -> new IronBarsBlock(GLASS_PANE_PROPERTIES){}, 6);
+        for (ChippedWoodType type : ChippedWoodType.VALUES) {
+            registerBlocks(type + "_wood_glass", () -> new GlassBlock(GLASS_PROPERTIES), 6, WOOD_GLASSES.computeIfAbsent(type, k -> new ArrayList<>()));
+            registerBlocks(type + "_wood_glass_pane", () -> new IronBarsBlock(GLASS_PANE_PROPERTIES) {}, 6, WOOD_GLASS_PANES.computeIfAbsent(type, k -> new ArrayList<>()));
         }
 
         for (int id = 0; id < 16; ++id) {
             DyeColor color = DyeColor.byId(id);
-            registerBlocks(color + "_stained_glass", () -> new StainedGlassBlock(color, GLASS_PROPERTIES), 8);
-            registerBlocks(color + "_stained_glass_pane",  () -> new StainedGlassPaneBlock(color, GLASS_PANE_PROPERTIES), 8);
+            registerBlocks(color + "_stained_glass", () -> new StainedGlassBlock(color, GLASS_PROPERTIES), 8, STAINED_GLASSES.computeIfAbsent(color, k -> new ArrayList<>()));
+            registerBlocks(color + "_stained_glass_pane", () -> new StainedGlassPaneBlock(color, GLASS_PANE_PROPERTIES), 8, STAINED_GLASS_PANES.computeIfAbsent(color, k -> new ArrayList<>()));
         }
 
         //Register Misc
         registerVanillaBlocks(Blocks.CLAY, "clay", 19);
 
-        for (String wood : woodsList) {
-            registerBlocks(wood + "_planks", () -> new Block(WOOD_PROPERTIES), 18);
+        for (ChippedWoodType type : ChippedWoodType.VALUES) {
+            registerBlocks(type + "_planks", () -> new Block(WOOD_PROPERTIES), 18);
         }
 
         registerBlocks("hay_block", () -> new HayBlock(HAY_BLOCK_PROPERTIES), 8);
-        registerBlocks("melon", () -> new MelonBlock(MELON_PROPERTIES){}, 10);
-        registerBlocks("vine", () -> new VineBlock(VINE_PROPERTIES), 8);
+        registerBlocks("melon", () -> new MelonBlock(MELON_PROPERTIES) {}, 10);
+        registerBlocks("vine", () -> new VineBlock(VINE_PROPERTIES), 8, VINES);
 
-        Block lantern1 = register("lantern_1", new ChippedLantern(LANTERN_PROPERTIES, CHONK_LANTERN_SHAPE));
-        Block lantern2 = register("lantern_2", new ChippedLantern(LANTERN_PROPERTIES, DONUT_LANTERN_SHAPE_EAST, DONUT_LANTERN_SHAPE_NORTH));
-        Block lantern3 = register("lantern_3", new ChippedLantern(LANTERN_PROPERTIES, TALL_LANTERN_SHAPE));
-        blocksMap.put("lantern", lantern1);
-        blocksMap.put("lantern", lantern2);
-        blocksMap.put("lantern", lantern3);
+        Collections.addAll(LANTERNS,
+                register("lantern_1", new ChippedLanternBlock(LANTERN_PROPERTIES, CHONK_LANTERN_SHAPE)),
+                register("lantern_2", new ChippedLanternBlock(LANTERN_PROPERTIES, DONUT_LANTERN_SHAPE_EAST, DONUT_LANTERN_SHAPE_NORTH)),
+                register("lantern_3", new ChippedLanternBlock(LANTERN_PROPERTIES, TALL_LANTERN_SHAPE))
+        );
 
-        Block soul_lantern_1 = register("soul_lantern_1", new ChippedLantern(LANTERN_PROPERTIES, CHONK_LANTERN_SHAPE));
-        Block soul_lantern_2 = register("soul_lantern_2", new ChippedLantern(LANTERN_PROPERTIES, DONUT_LANTERN_SHAPE_EAST, DONUT_LANTERN_SHAPE_NORTH));
-        Block soul_lantern_3 = register("soul_lantern_3", new ChippedLantern(LANTERN_PROPERTIES, TALL_LANTERN_SHAPE));
-        blocksMap.put("soul_lantern", soul_lantern_1);
-        blocksMap.put("soul_lantern", soul_lantern_2);
-        blocksMap.put("soul_lantern", soul_lantern_3);
+        Collections.addAll(SOUL_LANTERNS,
+                register("soul_lantern_1", new ChippedLanternBlock(LANTERN_PROPERTIES, CHONK_LANTERN_SHAPE)),
+                register("soul_lantern_2", new ChippedLanternBlock(LANTERN_PROPERTIES, DONUT_LANTERN_SHAPE_EAST, DONUT_LANTERN_SHAPE_NORTH)),
+                register("soul_lantern_3", new ChippedLanternBlock(LANTERN_PROPERTIES, TALL_LANTERN_SHAPE))
+        );
 
         //Redstone Torches
         for (int i = 2; i <= 6; i++) {
-            Block redstoneWallTorch = Registry.register(Registry.BLOCK, new ResourceLocation(Chipped.MOD_ID,"redstone_wall_torch_" + i), new RedstoneWallTorchBlock(REDSTONE_WALL_TORCH_PROPERTIES){});
-            Block redstoneTorch = Registry.register(Registry.BLOCK, new ResourceLocation(Chipped.MOD_ID,"redstone_torch_" + i), new RedstoneTorchBlock(REDSTONE_TORCH_PROPERTIES){});
+            RedstoneWallTorchBlock redstoneWallTorch = Registry.register(Registry.BLOCK, new ResourceLocation(Chipped.MOD_ID, "redstone_wall_torch_" + i), new RedstoneWallTorchBlock(REDSTONE_WALL_TORCH_PROPERTIES) {});
+            RedstoneTorchBlock redstoneTorch = Registry.register(Registry.BLOCK, new ResourceLocation(Chipped.MOD_ID, "redstone_torch_" + i), new RedstoneTorchBlock(REDSTONE_TORCH_PROPERTIES) {});
             Registry.register(Registry.ITEM, "redstone_torch_" + i, new StandingAndWallBlockItem(redstoneTorch, redstoneWallTorch, new Item.Properties().tab(Chipped.CHIPPED)));
-            blocksMap.put("redstone_torch", redstoneTorch);
-            blocksMap.put("redstone_wall_torch", redstoneWallTorch);
+
+            REDSTONE_TORCHES.add(redstoneTorch);
+            REDSTONE_WALL_TORCHES.add(redstoneWallTorch);
         }
+
         //Regular Torches
         for (int i = 1; i <= 9; i++) {
-            Block wallTorch = Registry.register(Registry.BLOCK, new ResourceLocation(Chipped.MOD_ID, "wall_torch_" + i), new WallTorchBlock(TORCH_PROPERTIES, ParticleTypes.FLAME){});
-            Block torch = Registry.register(Registry.BLOCK, new ResourceLocation(Chipped.MOD_ID, "torch" + i), new TorchBlock(TORCH_PROPERTIES, ParticleTypes.FLAME){});
+            WallTorchBlock wallTorch = Registry.register(Registry.BLOCK, new ResourceLocation(Chipped.MOD_ID, "wall_torch_" + i), new WallTorchBlock(TORCH_PROPERTIES, ParticleTypes.FLAME) {});
+            TorchBlock torch = Registry.register(Registry.BLOCK, new ResourceLocation(Chipped.MOD_ID, "torch" + i), new TorchBlock(TORCH_PROPERTIES, ParticleTypes.FLAME) {});
             Registry.register(Registry.ITEM, "torch_" + i, new StandingAndWallBlockItem(torch, wallTorch, new Item.Properties().tab(Chipped.CHIPPED)));
-            blocksMap.put("torch", torch);
-            blocksMap.put("wall_torch", wallTorch);
+            TORCHES.add(torch);
+            WALL_TORCHES.add(wallTorch);
         }
 
         //Pumpkins
         for (String pumpkin : specialPumpkinList) {
-            Block pumpkinBlock = register("pumpkin_" + pumpkin, new PumpkinBlock(PUMPKIN_PROPERTIES){});
-            Block jackOLanternBlock = register("jack_o_lantern_" + pumpkin, new CarvedPumpkinBlock(JACK_O_LANTERN_PROPERTIES){});
-            Block carvedPumpkinBlock = register("carved_pumpkin_" + pumpkin, new CarvedPumpkinBlock(PUMPKIN_PROPERTIES){});
-            blocksMap.put("jack_o_lantern", jackOLanternBlock);
-            blocksMap.put("carved_pumpkin", carvedPumpkinBlock);
-            blocksMap.put("carved_pumpkin_special", jackOLanternBlock);
-            blocksMap.put("carved_pumpkin_special", carvedPumpkinBlock);
-            blocksMap.put("pumpkin", pumpkinBlock);
+            register("pumpkin_" + pumpkin, new PumpkinBlock(PUMPKIN_PROPERTIES) {});
+            register("jack_o_lantern_" + pumpkin, new CarvedPumpkinBlock(JACK_O_LANTERN_PROPERTIES) {});
+            register("carved_pumpkin_" + pumpkin, new CarvedPumpkinBlock(PUMPKIN_PROPERTIES) {});
         }
 
         //Jack'o'Lantern & Carved Pumpkins
         for (int i = 1; i <= carvedPumpkinList.length; i++) {
-            Block jackOLanternBlock = register("jack_o_lantern_" + i,  new CarvedPumpkinBlock(JACK_O_LANTERN_PROPERTIES){});
-            Block carvedPumpkinBlock = register("carved_pumpkin_" + i, new CarvedPumpkinBlock(PUMPKIN_PROPERTIES){});
-            blocksMap.put("jack_o_lantern", jackOLanternBlock);
-            blocksMap.put("carved_pumpkin", carvedPumpkinBlock);
-            blocksMap.put("carved_pumpkin_vanilla", carvedPumpkinBlock);
-            blocksMap.put("carved_pumpkin_vanilla", jackOLanternBlock);
+            register("jack_o_lantern_" + i, new CarvedPumpkinBlock(JACK_O_LANTERN_PROPERTIES) {});
+            register("carved_pumpkin_" + i, new CarvedPumpkinBlock(PUMPKIN_PROPERTIES) {});
         }
     }
 
@@ -257,16 +260,21 @@ public class ChippedBlocks {
         registerBlocks(name, () -> new Block(FabricBlockSettings.copy(vanillaBlock)), count);
     }
 
+    private static <T extends Block> void registerBlocks(String name, Supplier<T> block, int count) {
+        registerBlocks(name, block, count, null);
+    }
+
     /**
      * Only use if a vanilla block counterpart exists and the same properties should be used.
      *
      * @param name  The registry name to be used.
      * @param count How many of the block should be registered, the index is used as the suffix.
      */
-    private static void registerBlocks(String name, Supplier<Block> block, int count) {
+    private static <T extends Block> void registerBlocks(String name, Supplier<T> block, int count, List<T> list) {
         for (int i = 1; i <= count; i++) {
             String newName = name + "_" + i;
-            blocksMap.put(name, register(newName, block.get()));
+            final T registered = register(newName, block.get());
+            if (list != null) list.add(registered);
         }
     }
 
@@ -276,8 +284,8 @@ public class ChippedBlocks {
 //        return toReturn;
 //    }
 
-    private static Block register(String name, Block block) {
-        Block toReturn = Registry.register(Registry.BLOCK, new ResourceLocation(Chipped.MOD_ID, name), block);
+    private static <T extends Block> T register(String name, T block) {
+        T toReturn = Registry.register(Registry.BLOCK, new ResourceLocation(Chipped.MOD_ID, name), block);
         Registry.register(Registry.ITEM, new ResourceLocation(Chipped.MOD_ID, name), new BlockItem(block, new Item.Properties().tab(Chipped.CHIPPED)));
         return toReturn;
     }

@@ -1,6 +1,8 @@
 package com.grimbo.chipped;
 
 import com.grimbo.chipped.block.ChippedBlocks;
+import com.grimbo.chipped.block.ChippedLanternBlock;
+import com.grimbo.chipped.block.ChippedWoodType;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.rendering.v1.ColorProviderRegistry;
@@ -8,8 +10,9 @@ import net.minecraft.client.color.block.BlockColor;
 import net.minecraft.client.color.item.ItemColor;
 import net.minecraft.client.renderer.BiomeColors;
 import net.minecraft.client.renderer.RenderType;
+import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.level.GrassColor;
-import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockState;
 
 public class ChippedClient implements ClientModInitializer {
@@ -20,57 +23,56 @@ public class ChippedClient implements ClientModInitializer {
         BlockRenderLayerMap.INSTANCE.putBlock(ChippedBlocks.ALCHEMY_BENCH, RenderType.cutout());
         BlockRenderLayerMap.INSTANCE.putBlock(ChippedBlocks.MECHANIST_WORKBENCH, RenderType.cutout());
 
-        for (Block glass : ChippedBlocks.blocksMap.get("glass")) {
+        for (GlassBlock glass : ChippedBlocks.GLASSES) {
             BlockRenderLayerMap.INSTANCE.putBlock(glass, RenderType.cutout());
         }
 
-        for (Block glass : ChippedBlocks.blocksMap.get("glass_pane")) {
+        for (IronBarsBlock glass : ChippedBlocks.GLASS_PANES) {
             BlockRenderLayerMap.INSTANCE.putBlock(glass, RenderType.cutout());
         }
 
-        for (String wood : ChippedBlocks.woodsList) {
-            for (Block glass : ChippedBlocks.blocksMap.get(wood + "_wood_glass")) {
+        for (ChippedWoodType wood : ChippedWoodType.VALUES) {
+            for (GlassBlock glass : ChippedBlocks.WOOD_GLASSES.get(wood)) {
                 BlockRenderLayerMap.INSTANCE.putBlock(glass, RenderType.cutout());
             }
 
-            for (Block glass : ChippedBlocks.blocksMap.get(wood + "_wood_glass_pane")) {
+            for (IronBarsBlock glass : ChippedBlocks.WOOD_GLASS_PANES.get(wood)) {
                 BlockRenderLayerMap.INSTANCE.putBlock(glass, RenderType.cutout());
             }
-
-
         }
 
-        for (String color : ChippedBlocks.colorsList) {
-            for (Block stainedGlass : ChippedBlocks.blocksMap.get(color + "_stained_glass")) {
+        for (int i = 0; i < 16; i++) {
+            DyeColor color = DyeColor.byId(i);
+            for (StainedGlassBlock stainedGlass : ChippedBlocks.STAINED_GLASSES.get(color)) {
                 BlockRenderLayerMap.INSTANCE.putBlock(stainedGlass, RenderType.translucent());
             }
 
-            for (Block stainedGlassPane : ChippedBlocks.blocksMap.get(color + "_stained_glass_pane")) {
+            for (StainedGlassPaneBlock stainedGlassPane : ChippedBlocks.STAINED_GLASS_PANES.get(color)) {
                 BlockRenderLayerMap.INSTANCE.putBlock(stainedGlassPane, RenderType.translucent());
             }
         }
 
-        for (Block vine : ChippedBlocks.blocksMap.get("vine")) {
+        for (VineBlock vine : ChippedBlocks.VINES) {
             BlockRenderLayerMap.INSTANCE.putBlock(vine, RenderType.translucent());
         }
-        for (Block redstoneTorch : ChippedBlocks.blocksMap.get("redstone_torch")) {
+        for (RedstoneTorchBlock redstoneTorch : ChippedBlocks.REDSTONE_TORCHES) {
             BlockRenderLayerMap.INSTANCE.putBlock(redstoneTorch, RenderType.cutout());
         }
-        for (Block redstoneWallTorch : ChippedBlocks.blocksMap.get("redstone_wall_torch")) {
+        for (RedstoneWallTorchBlock redstoneWallTorch : ChippedBlocks.REDSTONE_WALL_TORCHES) {
             BlockRenderLayerMap.INSTANCE.putBlock(redstoneWallTorch, RenderType.cutout());
         }
-        for (Block torch : ChippedBlocks.blocksMap.get("torch")) {
+        for (TorchBlock torch : ChippedBlocks.TORCHES) {
             BlockRenderLayerMap.INSTANCE.putBlock(torch, RenderType.cutout());
         }
-        for (Block wallTorch : ChippedBlocks.blocksMap.get("wall_torch")) {
+        for (WallTorchBlock wallTorch : ChippedBlocks.WALL_TORCHES) {
             BlockRenderLayerMap.INSTANCE.putBlock(wallTorch, RenderType.cutout());
         }
 
-        for (Block lantern : ChippedBlocks.blocksMap.get("lantern")) {
+        for (ChippedLanternBlock lantern : ChippedBlocks.LANTERNS) {
             BlockRenderLayerMap.INSTANCE.putBlock(lantern, RenderType.cutout());
         }
 
-        for (Block lantern : ChippedBlocks.blocksMap.get("soul_lantern")) {
+        for (ChippedLanternBlock lantern : ChippedBlocks.SOUL_LANTERNS) {
             BlockRenderLayerMap.INSTANCE.putBlock(lantern, RenderType.cutout());
         }
 
@@ -82,16 +84,13 @@ public class ChippedClient implements ClientModInitializer {
             return GrassColor.get(0.5d, 1.0d);
         };
 
-        for (Block vine : ChippedBlocks.blocksMap.get("vine")) {
-            ColorProviderRegistry.BLOCK.register(grassColourHandler, vine);
-        }
-
         final ItemColor itemBlockColorHandler = (stack, tintIndex) -> {
             final BlockState state = Block.byItem(stack.getItem()).defaultBlockState();
             return ColorProviderRegistry.BLOCK.get(state.getBlock()).getColor(state, null, null, tintIndex);
         };
 
-        for (Block vine : ChippedBlocks.blocksMap.get("vine")) {
+        for (Block vine : ChippedBlocks.VINES) {
+            ColorProviderRegistry.BLOCK.register(grassColourHandler, vine);
             ColorProviderRegistry.ITEM.register(itemBlockColorHandler, vine);
         }
     }
