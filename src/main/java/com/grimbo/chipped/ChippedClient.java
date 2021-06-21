@@ -1,7 +1,7 @@
 package com.grimbo.chipped;
 
-import com.grimbo.chipped.block.ChippedBlocks;
-import com.grimbo.chipped.menus.ChippedMenuType;
+import com.grimbo.chipped.registry.ChippedBlocks;
+import com.grimbo.chipped.registry.ChippedMenuType;
 import com.grimbo.chipped.menus.ChippedScreen;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;

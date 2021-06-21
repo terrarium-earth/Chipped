@@ -1,8 +1,7 @@
-package com.grimbo.chipped.menus;
+package com.grimbo.chipped.registry;
 
 import com.grimbo.chipped.Chipped;
-import com.grimbo.chipped.block.ChippedBlocks;
-import com.grimbo.chipped.recipe.ChippedSerializer;
+import com.grimbo.chipped.menus.ChippedMenu;
 import net.fabricmc.fabric.api.screenhandler.v1.ScreenHandlerRegistry;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.inventory.MenuType;

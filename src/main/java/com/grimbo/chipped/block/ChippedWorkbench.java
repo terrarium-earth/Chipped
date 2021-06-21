@@ -19,12 +19,11 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.ContainerLevelAccess;
+import net.minecraft.world.inventory.MenuType;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.BlockPlaceContext;
-import net.minecraft.world.inventory.MenuType;
 import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.level.BlockGetter;
-import net.minecraft.world.level.Explosion;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockState;
@@ -59,7 +58,11 @@ public class ChippedWorkbench extends Block {
 	}
 
 	public BlockState getStateForPlacement(BlockPlaceContext context) {
-		return this.defaultBlockState().setValue(FACING, context.getHorizontalDirection().getOpposite());
+		/*Direction direction = blockPlaceContext.getHorizontalDirection();
+		BlockPos blockPos = blockPlaceContext.getClickedPos();
+		BlockPos blockPos2 = blockPos.relative(direction);
+		return blockPlaceContext.getLevel().getBlockState(blockPos2).canBeReplaced(blockPlaceContext) ? (BlockState)this.defaultBlockState().setValue(FACING, direction) : null;
+		*/return this.defaultBlockState().setValue(FACING, context.getHorizontalDirection().getOpposite());
 	}
 
 	@Override

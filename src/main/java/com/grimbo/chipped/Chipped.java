@@ -1,8 +1,8 @@
 package com.grimbo.chipped;
 
-import com.grimbo.chipped.block.ChippedBlocks;
-import com.grimbo.chipped.menus.ChippedMenuType;
-import com.grimbo.chipped.recipe.ChippedSerializer;
+import com.grimbo.chipped.registry.ChippedBlocks;
+import com.grimbo.chipped.registry.ChippedMenuType;
+import com.grimbo.chipped.registry.ChippedSerializer;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
 import net.minecraft.resources.ResourceLocation;
