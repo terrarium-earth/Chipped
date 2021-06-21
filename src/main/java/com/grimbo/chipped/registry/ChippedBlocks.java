@@ -1,11 +1,10 @@
-package com.grimbo.chipped.block;
+package com.grimbo.chipped.registry;
 
 import com.google.common.collect.ArrayListMultimap;
 import com.google.common.collect.Multimap;
 import com.grimbo.chipped.Chipped;
-import com.grimbo.chipped.menus.ChippedMenu;
-import com.grimbo.chipped.menus.ChippedMenuType;
-import com.grimbo.chipped.recipe.ChippedSerializer;
+import com.grimbo.chipped.block.ChippedUniqueLantern;
+import com.grimbo.chipped.block.ChippedWorkbench;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.core.Registry;
 import net.minecraft.core.particles.ParticleTypes;
@@ -36,7 +35,6 @@ public class ChippedBlocks {
     private static final Properties REDSTONE_WALL_TORCH_PROPERTIES = FabricBlockSettings.copy(Blocks.REDSTONE_WALL_TORCH);
     private static final Properties REDSTONE_LAMP_PROPERTIES = FabricBlockSettings.copy(Blocks.REDSTONE_LAMP);
     private static final Properties TORCH_PROPERTIES = FabricBlockSettings.copy(Blocks.TORCH);
-    private static final Properties WALL_TORCH_PROPERTIES = FabricBlockSettings.copy(Blocks.WALL_TORCH);
     private static final Properties PUMPKIN_PROPERTIES = FabricBlockSettings.copy(Blocks.PUMPKIN);
     private static final Properties JACK_O_LANTERN_PROPERTIES = FabricBlockSettings.copy(Blocks.JACK_O_LANTERN);
     private static final Properties WOOD_PROPERTIES = FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sound(SoundType.WOOD);
@@ -173,16 +171,16 @@ public class ChippedBlocks {
         registerBlocks("melon", () -> new MelonBlock(MELON_PROPERTIES){}, 10);
         registerBlocks("vine", () -> new VineBlock(VINE_PROPERTIES), 8);
 
-        Block lantern1 = register("lantern_1", new ChippedLantern(LANTERN_PROPERTIES, CHONK_LANTERN_SHAPE));
-        Block lantern2 = register("lantern_2", new ChippedLantern(LANTERN_PROPERTIES, DONUT_LANTERN_SHAPE_EAST, DONUT_LANTERN_SHAPE_NORTH));
-        Block lantern3 = register("lantern_3", new ChippedLantern(LANTERN_PROPERTIES, TALL_LANTERN_SHAPE));
+        Block lantern1 = register("lantern_1", new ChippedUniqueLantern(LANTERN_PROPERTIES, CHONK_LANTERN_SHAPE));
+        Block lantern2 = register("lantern_2", new ChippedUniqueLantern(LANTERN_PROPERTIES, DONUT_LANTERN_SHAPE_EAST, DONUT_LANTERN_SHAPE_NORTH));
+        Block lantern3 = register("lantern_3", new ChippedUniqueLantern(LANTERN_PROPERTIES, TALL_LANTERN_SHAPE));
         blocksMap.put("lantern", lantern1);
         blocksMap.put("lantern", lantern2);
         blocksMap.put("lantern", lantern3);
 
-        Block soul_lantern_1 = register("soul_lantern_1", new ChippedLantern(LANTERN_PROPERTIES, CHONK_LANTERN_SHAPE));
-        Block soul_lantern_2 = register("soul_lantern_2", new ChippedLantern(LANTERN_PROPERTIES, DONUT_LANTERN_SHAPE_EAST, DONUT_LANTERN_SHAPE_NORTH));
-        Block soul_lantern_3 = register("soul_lantern_3", new ChippedLantern(LANTERN_PROPERTIES, TALL_LANTERN_SHAPE));
+        Block soul_lantern_1 = register("soul_lantern_1", new ChippedUniqueLantern(LANTERN_PROPERTIES, CHONK_LANTERN_SHAPE));
+        Block soul_lantern_2 = register("soul_lantern_2", new ChippedUniqueLantern(LANTERN_PROPERTIES, DONUT_LANTERN_SHAPE_EAST, DONUT_LANTERN_SHAPE_NORTH));
+        Block soul_lantern_3 = register("soul_lantern_3", new ChippedUniqueLantern(LANTERN_PROPERTIES, TALL_LANTERN_SHAPE));
         blocksMap.put("soul_lantern", soul_lantern_1);
         blocksMap.put("soul_lantern", soul_lantern_2);
         blocksMap.put("soul_lantern", soul_lantern_3);
@@ -191,15 +189,15 @@ public class ChippedBlocks {
         for (int i = 2; i <= 6; i++) {
             Block redstoneWallTorch = Registry.register(Registry.BLOCK, new ResourceLocation(Chipped.MOD_ID,"redstone_wall_torch_" + i), new RedstoneWallTorchBlock(REDSTONE_WALL_TORCH_PROPERTIES){});
             Block redstoneTorch = Registry.register(Registry.BLOCK, new ResourceLocation(Chipped.MOD_ID,"redstone_torch_" + i), new RedstoneTorchBlock(REDSTONE_TORCH_PROPERTIES){});
-            Registry.register(Registry.ITEM, "redstone_torch_" + i, new StandingAndWallBlockItem(redstoneTorch, redstoneWallTorch, new Item.Properties().tab(Chipped.CHIPPED)));
+            Registry.register(Registry.ITEM, new ResourceLocation(Chipped.MOD_ID, "redstone_torch_" + i), new StandingAndWallBlockItem(redstoneTorch, redstoneWallTorch, new Item.Properties().tab(Chipped.CHIPPED)));
             blocksMap.put("redstone_torch", redstoneTorch);
             blocksMap.put("redstone_wall_torch", redstoneWallTorch);
         }
         //Regular Torches
         for (int i = 1; i <= 9; i++) {
             Block wallTorch = Registry.register(Registry.BLOCK, new ResourceLocation(Chipped.MOD_ID, "wall_torch_" + i), new WallTorchBlock(TORCH_PROPERTIES, ParticleTypes.FLAME){});
-            Block torch = Registry.register(Registry.BLOCK, new ResourceLocation(Chipped.MOD_ID, "torch" + i), new TorchBlock(TORCH_PROPERTIES, ParticleTypes.FLAME){});
-            Registry.register(Registry.ITEM, "torch_" + i, new StandingAndWallBlockItem(torch, wallTorch, new Item.Properties().tab(Chipped.CHIPPED)));
+            Block torch = Registry.register(Registry.BLOCK, new ResourceLocation(Chipped.MOD_ID, "torch_" + i), new TorchBlock(TORCH_PROPERTIES, ParticleTypes.FLAME){});
+            Registry.register(Registry.ITEM, new ResourceLocation(Chipped.MOD_ID, "torch_" + i), new StandingAndWallBlockItem(torch, wallTorch, new Item.Properties().tab(Chipped.CHIPPED)));
             blocksMap.put("torch", torch);
             blocksMap.put("wall_torch", wallTorch);
         }
