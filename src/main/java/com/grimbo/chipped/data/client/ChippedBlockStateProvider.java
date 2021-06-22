@@ -67,11 +67,11 @@ public class ChippedBlockStateProvider extends BlockStateProvider {
 		}
 
 		for (RegistryObject<Block> block : ChippedBlocks.blocksMap.get("melon")) {
-			String name = block.get().getRegistryName().getPath();
+			String name = block.getId().getPath();
 			simpleBlock(block.get(), models().cubeColumn(name, modLoc("block/" + name + "_side"), modLoc("block/" + name + "_top")));
 		}
 		for (RegistryObject<Block> block : ChippedBlocks.blocksMap.get("pumpkin")) {
-			String name = block.get().getRegistryName().getPath();
+			String name = block.getId().getPath();
 			simpleBlock(block.get(), models().cubeColumn(name, modLoc("block/" + name + "_side"), modLoc("block/" + name + "_top")));
 		}
 		for (int i = 1; i <= 18; i++) {
@@ -114,7 +114,7 @@ public class ChippedBlockStateProvider extends BlockStateProvider {
 		for (int i = 0; i < ChippedBlocks.carvedPumpkinList.length * 2; i++) {
 			index = 1 + (i / 2);
 			for(Direction direction : directions) {
-				String carvedBlockName = vanillaCarved.get(i).get().getRegistryName().getPath();
+				String carvedBlockName = vanillaCarved.get(i).getId().getPath();
 				String carvedSubstring = carvedBlockName.substring(0, carvedBlockName.length() - (index >= 10 ? 2 : 1));
 				String blockPath = "block/" + carvedSubstring + ChippedBlocks.carvedPumpkinList[(i / 2) % ChippedBlocks.carvedPumpkinList.length];
 				getVariantBuilder(vanillaCarved.get(i).get())
@@ -245,7 +245,7 @@ public class ChippedBlockStateProvider extends BlockStateProvider {
 	}
 
 	private void registerSpecialPumpkins(ArrayList<RegistryObject<Block>> specialCarved, ArrayList<RegistryObject<Block>> specialPumpkins, Direction[] directions, int index) {
-		String carvedBlockName = specialCarved.get(index).get().getRegistryName().getPath();
+		String carvedBlockName = specialCarved.get(index).getId().getPath();
 		Block specialPumpkin = specialPumpkins.get(index>>1).get();
 		String pumpkinName = specialPumpkin.getRegistryName().getPath();
 		for(Direction direction : directions) {

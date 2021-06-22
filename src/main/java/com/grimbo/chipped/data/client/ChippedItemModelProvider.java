@@ -60,7 +60,7 @@ public class ChippedItemModelProvider extends ItemModelProvider {
 		for (String type : ChippedBlocks.blocksMap.keySet()) {
 			if (!custom.contains(type)) {
 				for (RegistryObject<Block> block : ChippedBlocks.blocksMap.get(type)) {
-					String name = block.get().getRegistryName().getPath();
+					String name = block.getId().getPath();
 					withExistingParent(name, modLoc("block/" + name));
 				}
 			}
