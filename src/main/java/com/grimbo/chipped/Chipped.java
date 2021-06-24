@@ -107,6 +107,14 @@ public class Chipped {
 			RenderTypeLookup.setRenderLayer(lantern.get(), RenderType.cutout());
 		}
 
+		for (RegistryObject<Block> lantern : ChippedBlocks.blocksMap.get("special_lantern")) {
+			RenderTypeLookup.setRenderLayer(lantern.get(), RenderType.cutout());
+		}
+
+		for (RegistryObject<Block> lantern : ChippedBlocks.blocksMap.get("special_soul_lantern")) {
+			RenderTypeLookup.setRenderLayer(lantern.get(), RenderType.cutout());
+		}
+
 
 	}
 

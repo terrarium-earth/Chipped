@@ -46,15 +46,18 @@ public class ChippedBlocks {
     private static final AbstractBlock.IPositionPredicate ALWAYS_FALSE_POSITION = (state, world, position) -> false;
     private static final AbstractBlock.IExtendedPositionPredicate<EntityType<?>> VALID_SPAWN = (state, world, position, type) -> false;
     protected static final VoxelShape CHONK_LANTERN_SHAPE = VoxelShapes.or(Block.box(2.0D, 0.0D, 2.0D, 14.0D, 1.0D, 14.0D), Block.box(1, 1, 1, 15, 15, 15));
+    protected static final VoxelShape THICC_LANTERN_SHAPE = VoxelShapes.or(Block.box(2.0D, 0.0D, 2.0D, 14.0D, 1.0D, 14.0D), Block.box(1, 1, 1, 15, 15, 15));
     protected static final VoxelShape DONUT_LANTERN_SHAPE_EAST = Block.box(5.0D, 0.0D, 1.0D, 11.0D, 15.0D, 15.0D);
     protected static final VoxelShape DONUT_LANTERN_SHAPE_NORTH = Block.box(1.0D, 0.0D, 5.0D, 15.0D, 15.0D, 11.0D);
     protected static final VoxelShape TALL_LANTERN_SHAPE = Block.box(5, 0, 5, 11, 15, 11);
-    protected static final VoxelShape HANGING_WOOD_LANTERN = VoxelShapes.or(Block.box(5.0D, 1.0D, 5.0D, 11.0D, 14.0D, 11.0D), Block.box(4, 13, 4, 12, 13, 12), Block.box(4, 2, 4, 12, 2, 12));
-    protected static final VoxelShape WOOD_LANTERN = VoxelShapes.or(Block.box(5.0D, 1D, 5.0D, 11.0D, 13.0D, 11.0D), Block.box(4, 11, 4, 12, 12, 12), Block.box(4, 0, 4, 12, 1, 12));
-    protected static final VoxelShape HANGING_JAR_LANTERN  = VoxelShapes.or(Block.box(5.0D, 2D, 5.0D, 11.0D, 14.0D, 11.0D), Block.box(4, 11, 4, 12, 12, 12), Block.box(4, 0, 4, 12, 1, 12));
-    protected static final VoxelShape JAR_LANTERN = VoxelShapes.or(Block.box(7.0D, 11D, 7.0D, 9.0D, 12.0D, 9.0D), Block.box(6, 5, 6, 10, 11, 10));
-    protected static final VoxelShape HANGING_PAPER_LANTERN = VoxelShapes.or(Block.box(4, 9, 4, 12, 15, 12), Block.box(5, 1, 5, 11, 5, 11), Block.box(6, 0, 6, 10, 1, 10), Block.box(6, 5, 6, 10, 6, 10));
-    protected static final VoxelShape PAPER_LANTERN = VoxelShapes.or(Block.box(4, 5, 4, 12, 14, 12), Block.box(5, 3, 5, 11, 5, 11), Block.box(5, 14, 5, 11, 16, 11), Block.box(4, 0, 4, 12, 2, 12));
+    protected static final VoxelShape HANGING_WOOD_LANTERN = VoxelShapes.or(Block.box(5.0D, 2.0D, 5.0D, 11.0D, 12.0D, 11.0D), Block.box(4, 12, 4, 12, 13, 12), Block.box(4, 1, 4, 12, 2, 12),  Block.box(5, 13, 5, 11, 14, 11));
+    protected static final VoxelShape WOOD_LANTERN = VoxelShapes.or(Block.box(5.0D, 1D, 5.0D, 11.0D, 11.0D, 11.0D), Block.box(4, 11, 4, 12, 12, 12), Block.box(4, 0, 4, 12, 1, 12), Block.box(5, 12, 5, 11, 13, 11));
+    protected static final VoxelShape HANGING_JAR_LANTERN = VoxelShapes.or(Block.box(7.0D, 11D, 7.0D, 9.0D, 12.0D, 9.0D), Block.box(6, 5, 6, 10, 11, 10));
+    protected static final VoxelShape JAR_LANTERN  = VoxelShapes.or(Block.box(7.0D, 6D, 7.0D, 9.0D, 7.0D, 9.0D), Block.box(6, 0, 6, 10, 6, 10));
+    protected static final VoxelShape HANGING_PAPER_LANTERN = VoxelShapes.or(Block.box(4, 5, 4, 12, 14, 12), Block.box(5, 3, 5, 11, 5, 11), Block.box(5, 14, 5, 11, 16, 11));
+    protected static final VoxelShape PAPER_LANTERN = VoxelShapes.or(Block.box(4, 3, 4, 12, 12, 12), Block.box(5, 1, 5, 11, 3, 11),Block.box(5, 12, 5, 11, 14, 11), Block.box(4, 0, 4, 12, 2, 12));
+    protected static final VoxelShape HANGING_PAPER_LANTERN_2 = VoxelShapes.or(Block.box(4, 9, 4, 12, 15, 12), Block.box(5, 1 ,5, 11, 5, 11), Block.box(6, 0, 6, 10, 1, 10), Block.box(6, 5, 6, 10, 6, 10), Block.box(5, 15, 5, 11, 16, 11), Block.box(5, 8, 5, 11, 9 ,11));
+    protected static final VoxelShape PAPER_LANTERN_2 = VoxelShapes.or(Block.box(4, 3, 4, 12, 9, 12), Block.box(5, 9, 5, 11, 10, 11), Block.box(5, 2, 5, 11, 3, 11), Block.box(4, 0, 4, 12, 2, 12));
 
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, Chipped.MOD_ID);
 
@@ -183,16 +186,20 @@ public class ChippedBlocks {
         RegistryObject<Block> lantern1 = register("special_lantern_1", () -> new ChippedLantern(LANTERN_PROPERTIES, CHONK_LANTERN_SHAPE));
         RegistryObject<Block> lantern2 = register("special_lantern_2", () -> new ChippedLantern(LANTERN_PROPERTIES, DONUT_LANTERN_SHAPE_EAST, DONUT_LANTERN_SHAPE_NORTH));
         RegistryObject<Block> lantern3 = register("special_lantern_3", () -> new ChippedLantern(LANTERN_PROPERTIES, TALL_LANTERN_SHAPE));
+        RegistryObject<Block> lantern4 = register("special_lantern_4", () -> new ChippedLantern(LANTERN_PROPERTIES, THICC_LANTERN_SHAPE));
         blocksMap.put("special_lantern", lantern1);
         blocksMap.put("special_lantern", lantern2);
         blocksMap.put("special_lantern", lantern3);
+        blocksMap.put("special_lantern", lantern4);
 
         RegistryObject<Block> soul_lantern_1 = register("special_soul_lantern_1", () -> new ChippedLantern(LANTERN_PROPERTIES, CHONK_LANTERN_SHAPE));
         RegistryObject<Block> soul_lantern_2 = register("special_soul_lantern_2", () -> new ChippedLantern(LANTERN_PROPERTIES, DONUT_LANTERN_SHAPE_EAST, DONUT_LANTERN_SHAPE_NORTH));
         RegistryObject<Block> soul_lantern_3 = register("special_soul_lantern_3", () -> new ChippedLantern(LANTERN_PROPERTIES, TALL_LANTERN_SHAPE));
+        RegistryObject<Block> soul_lantern_4 = register("special_soul_lantern_4", () -> new ChippedLantern(LANTERN_PROPERTIES, THICC_LANTERN_SHAPE));
         blocksMap.put("special_soul_lantern", soul_lantern_1);
         blocksMap.put("special_soul_lantern", soul_lantern_2);
         blocksMap.put("special_soul_lantern", soul_lantern_3);
+        blocksMap.put("special_soul_lantern", soul_lantern_4);
 
         /*//Lanterns
         for (int i = 1; i <= 14; i++) {
@@ -212,44 +219,25 @@ public class ChippedBlocks {
             blocksMap.put("lantern", lantern);
         }
 
+        registerSpecialLantern(new int[]{2}, "lantern", HANGING_WOOD_LANTERN, WOOD_LANTERN);
+        //registerSpecialLantern(new int[]{5, 7, 8}, "lantern", HANGING_CLEAR_LANTERN, CLEAR_LANTERN);
+        registerSpecialLantern(new int[]{6}, "lantern", HANGING_JAR_LANTERN, JAR_LANTERN);
+        registerSpecialLantern(new int[]{9, 10, 11, 12, 13, 14}, "lantern", HANGING_PAPER_LANTERN, PAPER_LANTERN);
+
         //Regular Soul Lanterns
         for(int i: new int[]{1, 3}) {
             RegistryObject<Block> lantern = register("soul_lantern_" + i, () -> new LanternBlock(LANTERN_PROPERTIES));
             blocksMap.put("soul_lantern", lantern);
         }
 
-        //Wood Lantern
-        for(int i: new int[]{2}) {
-            RegistryObject<Block> lantern = register("lantern_" + i, () -> new LanternBlock(LANTERN_PROPERTIES){
-                @Override
-                public VoxelShape getShape(BlockState blockState, IBlockReader blockReader, BlockPos pos, ISelectionContext selectionContext) {
-                    return blockState.getValue(HANGING) ? ChippedBlocks.HANGING_WOOD_LANTERN : ChippedBlocks.WOOD_LANTERN;
-                }
-            });
-            blocksMap.put("lantern", lantern);
-        }
+        registerSpecialLantern(new int[]{2}, "soul_lantern", HANGING_WOOD_LANTERN, WOOD_LANTERN);
+        registerSpecialLantern(new int[]{5}, "soul_lantern", HANGING_JAR_LANTERN, JAR_LANTERN);
+        //registerSpecialLantern(new int[]{4}, "soul_lantern", HANGING_CLEAR_LANTERN, CLEAR_LANTERN);
+        registerSpecialLantern(new int[]{6, 7, 8, 9, 10, 11}, "soul_lantern", HANGING_PAPER_LANTERN_2, PAPER_LANTERN_2);
 
-        //Wood Soul Lantern
-        for(int i: new int[]{2}) {
-            RegistryObject<Block> lantern = register("soul_lantern_" + i, () -> new LanternBlock(LANTERN_PROPERTIES){
-                @Override
-                public VoxelShape getShape(BlockState blockState, IBlockReader blockReader, BlockPos pos, ISelectionContext selectionContext) {
-                    return blockState.getValue(HANGING) ? ChippedBlocks.HANGING_WOOD_LANTERN : ChippedBlocks.WOOD_LANTERN;
-                }
-            });
-            blocksMap.put("soul_lantern", lantern);
-        }
 
-        //Jar Lantern
-        for(int i: new int[]{6}) {
-            RegistryObject<Block> lantern = register("soul_lantern_" + i, () -> new LanternBlock(LANTERN_PROPERTIES){
-                @Override
-                public VoxelShape getShape(BlockState blockState, IBlockReader blockReader, BlockPos pos, ISelectionContext selectionContext) {
-                    return blockState.getValue(HANGING) ? ChippedBlocks.HANGING_JAR_LANTERN : ChippedBlocks.JAR_LANTERN;
-                }
-            });
-            blocksMap.put("soul_lantern", lantern);
-        }
+
+
 
         //Redstone Torches
         for (int i = 2; i <= 6; i++) {
@@ -293,7 +281,17 @@ public class ChippedBlocks {
     }
 
     //Registries
-
+    private static void registerSpecialLantern(int[] indexes, String name, VoxelShape hangingShape, VoxelShape normalShape) {
+        for(int i: indexes) {
+            RegistryObject<Block> lantern = register(name + "_" + i, () -> new LanternBlock(LANTERN_PROPERTIES){
+                @Override
+                public VoxelShape getShape(BlockState blockState, IBlockReader blockReader, BlockPos pos, ISelectionContext selectionContext) {
+                    return blockState.getValue(HANGING) ? hangingShape : normalShape;
+                }
+            });
+            blocksMap.put(name, lantern);
+        }
+    }
     /**
      * Only use if a vanilla block counterpart exists and the same properties should be used.
      *
