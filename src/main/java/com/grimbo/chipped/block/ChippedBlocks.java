@@ -183,23 +183,6 @@ public class ChippedBlocks {
         registerBlocks("melon", () -> new MelonBlock(MELON_PROPERTIES), 10);
         registerBlocks("vine", () -> new VineBlock(VINE_PROPERTIES), 8);
 
-        RegistryObject<Block> lantern1 = register("special_lantern_1", () -> new ChippedLantern(LANTERN_PROPERTIES, CHONK_LANTERN_SHAPE));
-        RegistryObject<Block> lantern2 = register("special_lantern_2", () -> new ChippedLantern(LANTERN_PROPERTIES, DONUT_LANTERN_SHAPE_EAST, DONUT_LANTERN_SHAPE_NORTH));
-        RegistryObject<Block> lantern3 = register("special_lantern_3", () -> new ChippedLantern(LANTERN_PROPERTIES, TALL_LANTERN_SHAPE));
-        RegistryObject<Block> lantern4 = register("special_lantern_4", () -> new ChippedLantern(LANTERN_PROPERTIES, THICC_LANTERN_SHAPE));
-        blocksMap.put("special_lantern", lantern1);
-        blocksMap.put("special_lantern", lantern2);
-        blocksMap.put("special_lantern", lantern3);
-        blocksMap.put("special_lantern", lantern4);
-
-        RegistryObject<Block> soul_lantern_1 = register("special_soul_lantern_1", () -> new ChippedLantern(LANTERN_PROPERTIES, CHONK_LANTERN_SHAPE));
-        RegistryObject<Block> soul_lantern_2 = register("special_soul_lantern_2", () -> new ChippedLantern(LANTERN_PROPERTIES, DONUT_LANTERN_SHAPE_EAST, DONUT_LANTERN_SHAPE_NORTH));
-        RegistryObject<Block> soul_lantern_3 = register("special_soul_lantern_3", () -> new ChippedLantern(LANTERN_PROPERTIES, TALL_LANTERN_SHAPE));
-        RegistryObject<Block> soul_lantern_4 = register("special_soul_lantern_4", () -> new ChippedLantern(LANTERN_PROPERTIES, THICC_LANTERN_SHAPE));
-        blocksMap.put("special_soul_lantern", soul_lantern_1);
-        blocksMap.put("special_soul_lantern", soul_lantern_2);
-        blocksMap.put("special_soul_lantern", soul_lantern_3);
-        blocksMap.put("special_soul_lantern", soul_lantern_4);
 
         /*//Lanterns
         for (int i = 1; i <= 14; i++) {
@@ -235,6 +218,23 @@ public class ChippedBlocks {
         //registerSpecialLantern(new int[]{4}, "soul_lantern", HANGING_CLEAR_LANTERN, CLEAR_LANTERN);
         registerSpecialLantern(new int[]{6, 7, 8, 9, 10, 11}, "soul_lantern", HANGING_PAPER_LANTERN_2, PAPER_LANTERN_2);
 
+        RegistryObject<Block> lantern1 = register("special_lantern_1", () -> new ChippedLantern(LANTERN_PROPERTIES, CHONK_LANTERN_SHAPE));
+        RegistryObject<Block> lantern2 = register("special_lantern_2", () -> new ChippedLantern(LANTERN_PROPERTIES, DONUT_LANTERN_SHAPE_EAST, DONUT_LANTERN_SHAPE_NORTH));
+        RegistryObject<Block> lantern3 = register("special_lantern_3", () -> new ChippedLantern(LANTERN_PROPERTIES, TALL_LANTERN_SHAPE));
+        RegistryObject<Block> lantern4 = register("special_lantern_4", () -> new ChippedLantern(LANTERN_PROPERTIES, THICC_LANTERN_SHAPE));
+        blocksMap.put("lantern", lantern1);
+        blocksMap.put("lantern", lantern2);
+        blocksMap.put("lantern", lantern3);
+        blocksMap.put("lantern", lantern4);
+
+        RegistryObject<Block> soul_lantern_1 = register("special_soul_lantern_1", () -> new ChippedLantern(LANTERN_PROPERTIES, CHONK_LANTERN_SHAPE));
+        RegistryObject<Block> soul_lantern_2 = register("special_soul_lantern_2", () -> new ChippedLantern(LANTERN_PROPERTIES, DONUT_LANTERN_SHAPE_EAST, DONUT_LANTERN_SHAPE_NORTH));
+        RegistryObject<Block> soul_lantern_3 = register("special_soul_lantern_3", () -> new ChippedLantern(LANTERN_PROPERTIES, TALL_LANTERN_SHAPE));
+        RegistryObject<Block> soul_lantern_4 = register("special_soul_lantern_4", () -> new ChippedLantern(LANTERN_PROPERTIES, THICC_LANTERN_SHAPE));
+        blocksMap.put("soul_lantern", soul_lantern_1);
+        blocksMap.put("soul_lantern", soul_lantern_2);
+        blocksMap.put("soul_lantern", soul_lantern_3);
+        blocksMap.put("soul_lantern", soul_lantern_4);
 
 
 

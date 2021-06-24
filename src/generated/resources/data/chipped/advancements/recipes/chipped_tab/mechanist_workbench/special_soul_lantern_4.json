@@ -2,7 +2,7 @@
   "parent": "minecraft:recipes/root",
   "rewards": {
     "recipes": [
-      "chipped:mechanist_workbench/special_soul_lantern_2"
+      "chipped:mechanist_workbench/special_soul_lantern_4"
     ]
   },
   "criteria": {
@@ -19,7 +19,7 @@
     "has_the_recipe": {
       "trigger": "minecraft:recipe_unlocked",
       "conditions": {
-        "recipe": "chipped:mechanist_workbench/special_soul_lantern_2"
+        "recipe": "chipped:mechanist_workbench/special_soul_lantern_4"
       }
     }
   },

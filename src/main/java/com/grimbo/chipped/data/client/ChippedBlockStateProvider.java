@@ -76,7 +76,10 @@ public class ChippedBlockStateProvider extends BlockStateProvider {
 			simpleBlock(block.get(), models().cubeColumn(name, modLoc("block/" + name + "_side"), modLoc("block/" + name + "_top")));
 		}
 
-		for (RegistryObject<Block> block : ChippedBlocks.blocksMap.get("lantern")) {
+
+		for (int i = 0; i < ChippedBlocks.blocksMap.get("lantern").size() - 4; i++) {
+			ArrayList<RegistryObject<Block>> blocks = new ArrayList<>(ChippedBlocks.blocksMap.get("lantern"));
+			RegistryObject<Block> block = blocks.get(i);
 			String name = block.get().getRegistryName().getPath();
 			getVariantBuilder(block.get())
 					.partialState()
@@ -92,7 +95,9 @@ public class ChippedBlockStateProvider extends BlockStateProvider {
 					.addModel();
 		}
 
-		for (RegistryObject<Block> block : ChippedBlocks.blocksMap.get("soul_lantern")) {
+		for (int i = 0; i < ChippedBlocks.blocksMap.get("soul_lantern").size() - 4; i++) {
+			ArrayList<RegistryObject<Block>> blocks = new ArrayList<>(ChippedBlocks.blocksMap.get("soul_lantern"));
+			RegistryObject<Block> block = blocks.get(i);
 			String name = block.get().getRegistryName().getPath();
 			getVariantBuilder(block.get())
 					.partialState()
