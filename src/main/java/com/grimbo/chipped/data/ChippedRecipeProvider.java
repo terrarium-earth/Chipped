@@ -52,7 +52,9 @@ public class ChippedRecipeProvider extends RecipeProvider {
 		createRecipeFromType("jack_o_lantern", ChippedSerializer.BOTANIST_WORKBENCH.get(), consumer);
 		createRecipeFromType("carved_pumpkin", ChippedSerializer.BOTANIST_WORKBENCH.get(), consumer);
 		createRecipeFromType("lantern", ChippedSerializer.MECHANIST_WORKBENCH.get(), consumer);
+		createRecipeFromType("special_lantern", "lantern", ChippedSerializer.MECHANIST_WORKBENCH.get(), consumer);
 		createRecipeFromType("soul_lantern", ChippedSerializer.MECHANIST_WORKBENCH.get(), consumer);
+		createRecipeFromType("special_soul_lantern", "lantern", ChippedSerializer.MECHANIST_WORKBENCH.get(), consumer);
 		createRecipeFromType("redstone_lamp", ChippedSerializer.MECHANIST_WORKBENCH.get(), consumer);
 		createRecipeFromType("torch", ChippedSerializer.CARPENTERS_TABLE.get(), consumer);
 

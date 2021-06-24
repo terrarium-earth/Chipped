@@ -21,8 +21,6 @@ import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 import java.util.stream.Collectors;
 
@@ -35,8 +33,6 @@ public class Chipped {
 			return new ItemStack(ChippedBlocks.BOTANIST_WORKBENCH.get());
 		}
 	}).setRecipeFolderName("chipped_tab");
-
-	private static final Logger LOGGER = LogManager.getLogger();
 
 	public Chipped() {
 		IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();

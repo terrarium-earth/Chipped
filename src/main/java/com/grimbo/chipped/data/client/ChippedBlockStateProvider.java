@@ -5,6 +5,7 @@ import com.grimbo.chipped.block.ChippedBlocks;
 import net.minecraft.block.*;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.util.Direction;
+import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.fml.RegistryObject;
@@ -73,6 +74,38 @@ public class ChippedBlockStateProvider extends BlockStateProvider {
 		for (RegistryObject<Block> block : ChippedBlocks.blocksMap.get("pumpkin")) {
 			String name = block.getId().getPath();
 			simpleBlock(block.get(), models().cubeColumn(name, modLoc("block/" + name + "_side"), modLoc("block/" + name + "_top")));
+		}
+
+		for (RegistryObject<Block> block : ChippedBlocks.blocksMap.get("lantern")) {
+			String name = block.get().getRegistryName().getPath();
+			getVariantBuilder(block.get())
+					.partialState()
+					.with(LanternBlock.HANGING, false)
+					.modelForState()
+					.modelFile(models().getExistingFile(new ResourceLocation(Chipped.MOD_ID, "block/lanterns/" + name)))
+					.addModel();
+			getVariantBuilder(block.get())
+					.partialState()
+					.with(LanternBlock.HANGING, true)
+					.modelForState()
+					.modelFile(models().getExistingFile(new ResourceLocation(Chipped.MOD_ID, "block/lanterns/" + name + "_hanging")))
+					.addModel();
+		}
+
+		for (RegistryObject<Block> block : ChippedBlocks.blocksMap.get("soul_lantern")) {
+			String name = block.get().getRegistryName().getPath();
+			getVariantBuilder(block.get())
+					.partialState()
+					.with(LanternBlock.HANGING, false)
+					.modelForState()
+					.modelFile(models().getExistingFile(new ResourceLocation(Chipped.MOD_ID, "block/lanterns/" + name)))
+					.addModel();
+			getVariantBuilder(block.get())
+					.partialState()
+					.with(LanternBlock.HANGING, true)
+					.modelForState()
+					.modelFile(models().getExistingFile(new ResourceLocation(Chipped.MOD_ID, "block/lanterns/" + name + "_hanging")))
+					.addModel();
 		}
 		for (int i = 1; i <= 18; i++) {
 			ArrayList<RegistryObject<Block>> lamps = new ArrayList<>(ChippedBlocks.blocksMap.get("redstone_lamp"));

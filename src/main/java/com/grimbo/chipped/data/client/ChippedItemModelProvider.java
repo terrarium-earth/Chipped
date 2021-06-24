@@ -49,13 +49,21 @@ public class ChippedItemModelProvider extends ItemModelProvider {
 		for (int i = 1; i <=9 ; i++) {
 			withExistingParent("torch_" + i, mcLoc("generated")).texture("layer0", modLoc("block/torch_"+ i));
 		}
+		custom.add("soul_lantern");
+		for (int i = 1; i <=11 ; i++) {
+			withExistingParent("soul_lantern_" + i, mcLoc("generated")).texture("layer0", modLoc("item/soul_lantern_"+ i));
+		}
+		custom.add("lantern");
+		for (int i = 1; i <=14 ; i++) {
+			withExistingParent("lantern_" + i, mcLoc("generated")).texture("layer0", modLoc("item/lantern_"+ i));
+		}
 
 		custom.add("jack_o_lantern");
 		custom.add("carved_pumpkin");
 		custom.add("wall_torch");
 		custom.add("redstone_wall_torch");
-		custom.add("lantern");
-		custom.add("soul_lantern");
+		custom.add("special_lantern");
+		custom.add("special_soul_lantern");
 
 		for (String type : ChippedBlocks.blocksMap.keySet()) {
 			if (!custom.contains(type)) {

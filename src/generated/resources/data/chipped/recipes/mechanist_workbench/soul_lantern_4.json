@@ -1,0 +1,8 @@
+{
+  "type": "chipped:mechanist_workbench",
+  "ingredient": {
+    "tag": "chipped:soul_lantern"
+  },
+  "result": "chipped:soul_lantern_4",
+  "count": 1
+}

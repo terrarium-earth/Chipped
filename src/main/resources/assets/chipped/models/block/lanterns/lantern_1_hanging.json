@@ -1,0 +1,6 @@
+{
+	"parent": "chipped:block/lanterns/cross_lantern_hanging",
+	"textures": {
+		"0": "chipped:block/lanterns/lantern_1"
+	}
+}
