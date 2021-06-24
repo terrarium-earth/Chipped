@@ -57,6 +57,14 @@ public class ChippedItemModelProvider extends ItemModelProvider {
 		for (int i = 1; i <=14 ; i++) {
 			withExistingParent("lantern_" + i, mcLoc("generated")).texture("layer0", modLoc("item/lantern_"+ i));
 		}
+		custom.add("special_lantern");
+		for (int i = 1; i <=4 ; i++) {
+			withExistingParent("special_lantern_" + i, mcLoc("generated")).texture("layer0", modLoc("item/special_lantern_"+ i));
+		}
+		custom.add("special_soul_lantern");
+		for (int i = 1; i <=4 ; i++) {
+			withExistingParent("special_soul_lantern_" + i, mcLoc("generated")).texture("layer0", modLoc("item/special_soul_lantern_"+ i));
+		}
 
 		custom.add("jack_o_lantern");
 		custom.add("carved_pumpkin");
