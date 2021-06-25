@@ -11,11 +11,9 @@ version = project.mod_version
 group = project.maven_group
 
 repositories {
-	// Add repositories to retrieve artifacts from in here.
-	// You should only use this when depending on other mods because
-	// Loom adds the essential maven repositories to download Minecraft and libraries from automatically.
-	// See https://docs.gradle.org/current/userguide/declaring_repositories.html
-	// for more information about repositories.
+//	repositories {
+//		maven { url "https://maven.shedaniel.me/" }
+//	}
 }
 
 dependencies {
@@ -26,7 +24,8 @@ dependencies {
 
 	// Fabric API. This is technically optional, but you probably want it anyway.
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
-
+//	modCompileOnly "me.shedaniel:RoughlyEnoughItems-api-fabric:6.0.251-alpha"
+//	modRuntime "me.shedaniel:RoughlyEnoughItems-fabric:6.0.251-alpha"
 	// PSA: Some older mods, compiled on Loom 0.2.1, might have outdated Maven POMs.
 	// You may need to force-disable transitiveness on them.
 }

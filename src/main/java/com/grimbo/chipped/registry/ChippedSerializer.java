@@ -1,7 +1,7 @@
-package com.grimbo.chipped.recipe;
+package com.grimbo.chipped.registry;
 
 import com.grimbo.chipped.Chipped;
-import com.grimbo.chipped.block.ChippedBlocks;
+import com.grimbo.chipped.recipe.ChippedRecipe;
 import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.crafting.RecipeType;
