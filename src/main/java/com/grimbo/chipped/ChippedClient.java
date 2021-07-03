@@ -39,8 +39,6 @@ public class ChippedClient implements ClientModInitializer {
             for (Block glass : ChippedBlocks.blocksMap.get(wood + "_wood_glass_pane")) {
                 BlockRenderLayerMap.INSTANCE.putBlock(glass, RenderType.cutout());
             }
-
-
         }
 
         for (String color : ChippedBlocks.colorsList) {

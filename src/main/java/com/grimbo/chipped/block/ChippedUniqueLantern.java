@@ -1,7 +1,5 @@
 package com.grimbo.chipped.block;
 
-
-
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.item.context.BlockPlaceContext;
@@ -12,21 +10,23 @@ import net.minecraft.world.level.block.HorizontalDirectionalBlock;
 import net.minecraft.world.level.block.SimpleWaterloggedBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.Nullable;
 
-
 public class ChippedUniqueLantern extends Block implements SimpleWaterloggedBlock {
     public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
     private final VoxelShape toEast;
     private final VoxelShape toNorth;
+
     public ChippedUniqueLantern(Properties properties, VoxelShape shape) {
         super(properties);
         this.toEast = shape;
         this.toNorth = shape;
     }
+
     public ChippedUniqueLantern(Properties properties, VoxelShape toEast, VoxelShape toNorth) {
         super(properties);
         this.toEast = toEast;
@@ -66,6 +66,6 @@ public class ChippedUniqueLantern extends Block implements SimpleWaterloggedBloc
     }
 
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
-        builder.add(FACING);
+        builder.add(FACING, BlockStateProperties.WATERLOGGED);
     }
 }
