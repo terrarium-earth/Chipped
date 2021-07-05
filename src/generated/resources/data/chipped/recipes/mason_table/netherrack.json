@@ -1,8 +1,0 @@
-{
-  "type": "chipped:mason_table",
-  "ingredient": {
-    "tag": "chipped:netherrack"
-  },
-  "result": "minecraft:netherrack",
-  "count": 1
-}

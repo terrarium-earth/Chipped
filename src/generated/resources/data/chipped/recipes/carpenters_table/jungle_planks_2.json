@@ -1,8 +1,0 @@
-{
-  "type": "chipped:carpenters_table",
-  "ingredient": {
-    "tag": "chipped:jungle_planks"
-  },
-  "result": "chipped:jungle_planks_2",
-  "count": 1
-}

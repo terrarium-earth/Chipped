@@ -1,8 +1,0 @@
-{
-  "type": "chipped:carpenters_table",
-  "ingredient": {
-    "tag": "chipped:torch"
-  },
-  "result": "chipped:torch_8",
-  "count": 1
-}

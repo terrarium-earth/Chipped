@@ -1,8 +1,0 @@
-{
-  "type": "chipped:mason_table",
-  "ingredient": {
-    "tag": "chipped:basalt"
-  },
-  "result": "chipped:basalt_10",
-  "count": 1
-}

@@ -1,8 +1,0 @@
-{
-  "type": "chipped:mason_table",
-  "ingredient": {
-    "tag": "chipped:brown_terracotta"
-  },
-  "result": "minecraft:brown_terracotta",
-  "count": 1
-}

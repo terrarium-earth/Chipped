@@ -1,8 +1,0 @@
-{
-  "type": "chipped:mason_table",
-  "ingredient": {
-    "tag": "chipped:white_concrete"
-  },
-  "result": "chipped:white_concrete_9",
-  "count": 1
-}

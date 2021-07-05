@@ -10,6 +10,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.audio.SimpleSound;
 import net.minecraft.client.gui.screen.inventory.ContainerScreen;
 import net.minecraft.entity.player.PlayerInventory;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.MathHelper;
@@ -59,14 +60,14 @@ public class ChippedScreen extends ContainerScreen<ChippedContainer> {
 			int i = this.leftPos + 52;
 			int j = this.topPos + 14;
 			int k = this.startIndex + 12;
-			List<ChippedRecipe> list = this.menu.getRecipes();
+			List<ItemStack> list = this.menu.getResults();
 
-			for (int l = this.startIndex; l < k && l < this.menu.getNumRecipes(); ++l) {
+			for (int l = this.startIndex; l < k && l < list.size(); ++l) {
 				int i1 = l - this.startIndex;
 				int j1 = i + i1 % 4 * 16;
 				int k1 = j + i1 / 4 * 18 + 2;
 				if (mouseX >= j1 && mouseX < j1 + 16 && mouseY >= k1 && mouseY < k1 + 18) {
-					this.renderTooltip(matrix, list.get(l).getResultItem(), mouseX, mouseY);
+					this.renderTooltip(matrix, list.get(l), mouseX, mouseY);
 				}
 			}
 		}
@@ -74,13 +75,13 @@ public class ChippedScreen extends ContainerScreen<ChippedContainer> {
 	}
 
 	private void renderButtons(MatrixStack matrix, int mouseX, int mouseY, int p_238853_4_, int p_238853_5_, int p_238853_6_) {
-		for (int i = this.startIndex; i < p_238853_6_ && i < this.menu.getNumRecipes(); ++i) {
+		for (int i = this.startIndex; i < p_238853_6_ && i < this.menu.getResults().size(); ++i) {
 			int j = i - this.startIndex;
 			int k = p_238853_4_ + j % 4 * 16;
 			int l = j / 4;
 			int i1 = p_238853_5_ + l * 18 + 2;
 			int j1 = this.imageHeight;
-			if (i == this.menu.getSelectedRecipeIndex()) {
+			if (i == this.menu.getSelectedIndex()) {
 				j1 += 18;
 			} else if (mouseX >= k && mouseY >= i1 && mouseX < k + 16 && mouseY < i1 + 18) {
 				j1 += 36;
@@ -92,14 +93,14 @@ public class ChippedScreen extends ContainerScreen<ChippedContainer> {
 	}
 
 	private void renderRecipes(int p_214142_1_, int p_214142_2_, int p_214142_3_) {
-		List<ChippedRecipe> list = this.menu.getRecipes();
+		List<ItemStack> list = this.menu.getResults();
 
-		for (int i = this.startIndex; i < p_214142_3_ && i < this.menu.getNumRecipes(); ++i) {
+		for (int i = this.startIndex; i < p_214142_3_ && i < list.size(); ++i) {
 			int j = i - this.startIndex;
 			int k = p_214142_1_ + j % 4 * 16;
 			int l = j / 4;
 			int i1 = p_214142_2_ + l * 18 + 2;
-			this.minecraft.getItemRenderer().renderAndDecorateItem(list.get(i).getResultItem(), k, i1);
+			this.minecraft.getItemRenderer().renderAndDecorateItem(list.get(i), k, i1);
 		}
 
 	}
@@ -163,11 +164,11 @@ public class ChippedScreen extends ContainerScreen<ChippedContainer> {
 	}
 
 	private boolean isScrollBarActive() {
-		return this.displayRecipes && this.menu.getNumRecipes() > 12;
+		return this.displayRecipes && this.menu.getResults().size() > 12;
 	}
 
 	protected int getOffscreenRows() {
-		return (this.menu.getNumRecipes() + 4 - 1) / 4 - 3;
+		return (this.menu.getResults().size() + 4 - 1) / 4 - 3;
 	}
 
 	private void containerChanged() {

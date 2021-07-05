@@ -1,7 +1,11 @@
 package com.grimbo.chipped.container;
 
+import java.util.Collections;
 import java.util.List;
+import java.util.function.Supplier;
+import java.util.stream.Collectors;
 
+import com.google.common.base.Suppliers;
 import com.google.common.collect.Lists;
 import com.grimbo.chipped.recipe.ChippedRecipe;
 
@@ -32,7 +36,8 @@ public class ChippedContainer extends Container {
 	private final IWorldPosCallable access;
 	private final IntReferenceHolder selectedRecipeIndex = IntReferenceHolder.standalone();
 	private final World level;
-	private List<ChippedRecipe> recipes = Lists.newArrayList();
+	private ChippedRecipe recipe;
+	private Supplier<List<ItemStack>> results;
 	private ItemStack input = ItemStack.EMPTY;
 	private long lastSoundTime;
 	final Slot inputSlot;
@@ -110,40 +115,32 @@ public class ChippedContainer extends Container {
 		this.addDataSlot(this.selectedRecipeIndex);
 	}
 
-	@OnlyIn(Dist.CLIENT)
-	public int getSelectedRecipeIndex() {
+	public int getSelectedIndex() {
 		return this.selectedRecipeIndex.get();
 	}
 
-	@OnlyIn(Dist.CLIENT)
-	public List<ChippedRecipe> getRecipes() {
-		return this.recipes;
+	public List<ItemStack> getResults() {
+		return results == null ? Collections.emptyList() : results.get();
 	}
 
-	@OnlyIn(Dist.CLIENT)
-	public int getNumRecipes() {
-		return this.recipes.size();
-	}
-
-	@OnlyIn(Dist.CLIENT)
 	public boolean hasInputItem() {
-		return this.inputSlot.hasItem() && !this.recipes.isEmpty();
+		return this.inputSlot.hasItem() && results != null;
 	}
 
 	@Override
 	public boolean stillValid(PlayerEntity p_75145_1_) { return stillValid(this.access, p_75145_1_, blockWorkbench); }
 
-	public boolean clickMenuButton(PlayerEntity p_75140_1_, int p_75140_2_) {
-		if (this.isValidRecipeIndex(p_75140_2_)) {
-			this.selectedRecipeIndex.set(p_75140_2_);
+	public boolean clickMenuButton(PlayerEntity player, int index) {
+		if (this.isValidRecipeIndex(index)) {
+			this.selectedRecipeIndex.set(index);
 			this.setupResultSlot();
 		}
 
 		return true;
 	}
 
-	private boolean isValidRecipeIndex(int p_241818_1_) {
-		return p_241818_1_ >= 0 && p_241818_1_ < this.recipes.size();
+	private boolean isValidRecipeIndex(int index) {
+		return index >= 0 && index < getResults().size();
 	}
 
 	@Override
@@ -156,21 +153,20 @@ public class ChippedContainer extends Container {
 
 	}
 
-	private void setupRecipeList(IInventory p_217074_1_, ItemStack p_217074_2_) {
-		this.recipes.clear();
+	private void setupRecipeList(IInventory inventory, ItemStack stack) {
+		results = null;
 		this.selectedRecipeIndex.set(-1);
 		this.resultSlot.set(ItemStack.EMPTY);
-		if (!p_217074_2_.isEmpty()) {
-			this.recipes = this.level.getRecipeManager().getRecipesFor(recipeType, p_217074_1_, this.level);
+		if (!stack.isEmpty()) {
+			this.recipe = this.level.getRecipeManager().getRecipeFor(recipeType, inventory, this.level).orElse(null);
+			results = Suppliers.memoize(() -> recipe.getResults(inventory).collect(Collectors.toList()));
 		}
-
 	}
 
 	private void setupResultSlot() {
-		if (!this.recipes.isEmpty() && this.isValidRecipeIndex(this.selectedRecipeIndex.get())) {
-			ChippedRecipe chippedrecipe = this.recipes.get(this.selectedRecipeIndex.get());
-			this.resultContainer.setRecipeUsed(chippedrecipe);
-			this.resultSlot.set(chippedrecipe.assemble(this.container));
+		if (recipe != null && results != null && !this.results.get().isEmpty() && this.isValidRecipeIndex(this.selectedRecipeIndex.get())) {
+			this.resultContainer.setRecipeUsed(recipe);
+			this.resultSlot.set(results.get().get(selectedRecipeIndex.get()));
 		} else {
 			this.resultSlot.set(ItemStack.EMPTY);
 		}

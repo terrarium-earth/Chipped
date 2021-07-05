@@ -1,8 +1,0 @@
-{
-  "type": "chipped:glassblower",
-  "ingredient": {
-    "tag": "chipped:magenta_stained_glass_pane"
-  },
-  "result": "chipped:magenta_stained_glass_pane_4",
-  "count": 1
-}
