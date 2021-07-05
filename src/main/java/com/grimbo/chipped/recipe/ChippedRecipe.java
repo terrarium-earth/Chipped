@@ -1,72 +1,145 @@
 package com.grimbo.chipped.recipe;
 
+import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
+import com.google.gson.JsonSyntaxException;
 import com.mojang.realmsclient.util.JsonUtils;
 import net.minecraft.core.Registry;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.SerializationTags;
+import net.minecraft.tags.Tag;
 import net.minecraft.util.GsonHelper;
 import net.minecraft.world.Container;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.item.crafting.Recipe;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.item.crafting.RecipeType;
-import net.minecraft.world.item.crafting.SingleItemRecipe;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 
-public class ChippedRecipe extends SingleItemRecipe {
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+import java.util.stream.Stream;
 
-    private final Block icon;
-
-    public ChippedRecipe(RecipeType<?> type, RecipeSerializer<?> serializer, ResourceLocation id, String group, Ingredient ingredient, ItemStack result, Block block) {
-        super(type, serializer, id, group, ingredient, result);
-        this.icon = block;
+public record ChippedRecipe(
+        Serializer serializer,
+        ResourceLocation id,
+        String group,
+        List<Tag<Item>> tags,
+        Block icon
+) implements Recipe<Container> {
+    @Override
+    public boolean matches(Container container, Level level) {
+        ItemStack stack = container.getItem(0);
+        for (Tag<Item> tag : tags) {
+            if (stack.is(tag)) {
+                return true;
+            }
+        }
+        return false;
     }
+
+    public Stream<ItemStack> getResults(Container container) {
+        ItemStack current = container.getItem(0);
+        if (!current.isEmpty()) {
+            for (Tag<Item> tag : tags) {
+                if (current.is(tag)) {
+                    return tag.getValues().stream().filter(item -> item != current.getItem()).map(ItemStack::new);
+                }
+            }
+        }
+        return Stream.empty();
+    }
+
+    @Override
+    public ItemStack assemble(Container container) {
+        return getResultItem();
+    }
+
+    @Override
+    public boolean canCraftInDimensions(int i, int j) {
+        return true;
+    }
+
+    @Override
+    public ItemStack getResultItem() {
+        return ItemStack.EMPTY;
+    }
+
     @Override
     public boolean isSpecial() {
         return true;
     }
 
-    @Override
+    public String getGroup() {
+        return group;
+    }
+
     public ItemStack getToastSymbol() {
         return new ItemStack(icon);
     }
 
     @Override
-    public boolean matches(Container inv, Level worldIn) {
-        return this.ingredient.test(inv.getItem(0));
+    public ResourceLocation getId() {
+        return id;
     }
 
+    @Override
+    public RecipeSerializer<?> getSerializer() {
+        return serializer;
+    }
+
+    @Override
+    public RecipeType<?> getType() {
+        return serializer.type();
+    }
 
     public record Serializer(RecipeType<?> type, Block icon) implements RecipeSerializer<ChippedRecipe> {
-
         public ChippedRecipe fromJson(ResourceLocation recipeId, JsonObject json) {
             String s = JsonUtils.getStringOr("group", json, "");
-            Ingredient ingredient;
-            if (GsonHelper.isArrayNode(json, "ingredient")) {
-                ingredient = Ingredient.fromJson(GsonHelper.getAsJsonArray(json, "ingredient"));
-            } else {
-                ingredient = Ingredient.fromJson(GsonHelper.getAsJsonObject(json, "ingredient"));
+            List<Tag<Item>> tags = new ArrayList<>();
+            JsonArray tagArray = GsonHelper.getAsJsonArray(json, "tags");
+            for (int i = 0; i < tagArray.size(); ++i) {
+                String tagName = GsonHelper.convertToString(tagArray.get(i), "tags[" + i + "]");
+                Tag<Item> tag = SerializationTags.getInstance().getTagOrThrow(
+                        Registry.ITEM_REGISTRY,
+                        new ResourceLocation(tagName),
+                        id -> new JsonSyntaxException("Unknown item tag '" + id + "'")
+                );
+                tags.add(tag);
             }
-
-            String s1 = GsonHelper.getAsString(json, "result");
-            int i = GsonHelper.getAsInt(json, "count");
-            ItemStack itemstack = new ItemStack(Registry.ITEM.get(new ResourceLocation(s1)), i);
-            return new ChippedRecipe(type, this, recipeId, s, ingredient, itemstack, icon);
+            return new ChippedRecipe(this, recipeId, s, tags, icon);
         }
 
         public ChippedRecipe fromNetwork(ResourceLocation recipeId, FriendlyByteBuf buffer) {
             String s = buffer.readUtf(32767);
-            Ingredient ingredient = Ingredient.fromNetwork(buffer);
-            ItemStack itemstack = buffer.readItem();
-            return new ChippedRecipe(type, this, recipeId, s, ingredient, itemstack, icon);
+            int tagCount = buffer.readVarInt();
+            List<Tag<Item>> tags = new ArrayList<>(tagCount);
+            for (int i = 0; i < tagCount; i++) {
+                int itemCount = buffer.readVarInt();
+                Set<Item> items = new HashSet<>(itemCount);
+                for (int j = 0; j < itemCount; j++) {
+                    items.add(Item.byId(buffer.readVarInt()));
+                }
+                tags.add(Tag.fromSet(items));
+            }
+            return new ChippedRecipe(this, recipeId, s, tags, icon);
         }
 
         public void toNetwork(FriendlyByteBuf buffer, ChippedRecipe recipe) {
             buffer.writeUtf(recipe.group);
-            recipe.ingredient.toNetwork(buffer);
-            buffer.writeItem(recipe.result);
+            buffer.writeVarInt(recipe.tags.size());
+            for (Tag<Item> tag : recipe.tags) {
+                List<Item> values = tag.getValues();
+                buffer.writeVarInt(values.size());
+                for (Item item : values) {
+                    buffer.writeVarInt(Item.getId(item));
+                }
+            }
         }
     }
 }

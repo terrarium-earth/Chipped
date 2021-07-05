@@ -1,6 +1,6 @@
 package com.grimbo.chipped.menus;
 
-import com.google.common.collect.Lists;
+import com.google.common.base.Suppliers;
 import com.grimbo.chipped.recipe.ChippedRecipe;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
@@ -17,7 +17,10 @@ import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 
+import java.util.Collections;
 import java.util.List;
+import java.util.function.Supplier;
+import java.util.stream.Collectors;
 
 //Pulled from net.minecraft.inventory.container.ChippedContainer
 public class ChippedMenu extends AbstractContainerMenu {
@@ -25,7 +28,8 @@ public class ChippedMenu extends AbstractContainerMenu {
 	private final ContainerLevelAccess access;
 	private final DataSlot selectedRecipeIndex;
 	private final Level level;
-	private List<ChippedRecipe> recipes = Lists.newArrayList();
+	private ChippedRecipe recipe;
+	private Supplier<List<ItemStack>> results;
 	private ItemStack input = ItemStack.EMPTY;
 	private long lastSoundTime;
 	final Slot inputSlot;
@@ -99,32 +103,24 @@ public class ChippedMenu extends AbstractContainerMenu {
 		this.addDataSlot(this.selectedRecipeIndex);
 	}
 
-	@Environment(EnvType.CLIENT)
-	public int getSelectedRecipeIndex() {
+	public int getSelectedIndex() {
 		return this.selectedRecipeIndex.get();
 	}
 
-	@Environment(EnvType.CLIENT)
-	public List<ChippedRecipe> getRecipes() {
-		return this.recipes;
+	public List<ItemStack> getResults() {
+		return results == null ? Collections.emptyList() : results.get();
 	}
 
-	@Environment(EnvType.CLIENT)
-	public int getNumRecipes() {
-		return this.recipes.size();
-	}
-
-	@Environment(EnvType.CLIENT)
 	public boolean hasInputItem() {
-		return this.inputSlot.hasItem() && !this.recipes.isEmpty();
+		return this.inputSlot.hasItem() && results != null;
 	}
 
 	@Override
 	public boolean stillValid(Player player) { return stillValid(this.access, player, blockWorkbench); }
 
-	public boolean clickMenuButton(Player player, int p_75140_2_) {
-		if (this.isValidRecipeIndex(p_75140_2_)) {
-			this.selectedRecipeIndex.set(p_75140_2_);
+	public boolean clickMenuButton(Player player, int index) {
+		if (this.isValidRecipeIndex(index)) {
+			this.selectedRecipeIndex.set(index);
 			this.setupResultSlot();
 		}
 
@@ -132,7 +128,7 @@ public class ChippedMenu extends AbstractContainerMenu {
 	}
 
 	private boolean isValidRecipeIndex(int index) {
-		return index >= 0 && index < this.recipes.size();
+		return index >= 0 && index < getResults().size();
 	}
 
 	@Override
@@ -144,21 +140,20 @@ public class ChippedMenu extends AbstractContainerMenu {
 		}
 	}
 
-	private void setupRecipeList(Container container, ItemStack p_217074_2_) {
-		this.recipes.clear();
+	private void setupRecipeList(Container container, ItemStack stack) {
+		results = null;
 		this.selectedRecipeIndex.set(-1);
 		this.resultSlot.set(ItemStack.EMPTY);
-		if (!p_217074_2_.isEmpty()) {
-			this.recipes = this.level.getRecipeManager().getRecipesFor(recipeType, container, this.level);
+		if (!stack.isEmpty()) {
+			this.recipe = this.level.getRecipeManager().getRecipeFor(recipeType, container, this.level).orElse(null);
+			results = Suppliers.memoize(() -> recipe.getResults(container).collect(Collectors.toList()));
 		}
-
 	}
 
 	private void setupResultSlot() {
-		if (!this.recipes.isEmpty() && this.isValidRecipeIndex(this.selectedRecipeIndex.get())) {
-			ChippedRecipe chippedrecipe = this.recipes.get(this.selectedRecipeIndex.get());
-			this.resultContainer.setRecipeUsed(chippedrecipe);
-			this.resultSlot.set(chippedrecipe.assemble(this.container));
+		if (recipe != null && results != null && !this.results.get().isEmpty() && this.isValidRecipeIndex(this.selectedRecipeIndex.get())) {
+			this.resultContainer.setRecipeUsed(recipe);
+			this.resultSlot.set(results.get().get(selectedRecipeIndex.get()));
 		} else {
 			this.resultSlot.set(ItemStack.EMPTY);
 		}

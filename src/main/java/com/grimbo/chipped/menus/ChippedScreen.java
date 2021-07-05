@@ -12,6 +12,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.Mth;
 import net.minecraft.world.entity.player.Inventory;
+import net.minecraft.world.item.ItemStack;
 
 import java.util.List;
 
@@ -57,14 +58,14 @@ public class ChippedScreen extends AbstractContainerScreen<ChippedMenu> {
 			int k = this.leftPos + 52;
 			int l = this.topPos + 14;
 			int m = this.startIndex + 12;
-			List<ChippedRecipe> list = this.menu.getRecipes();
+			List<ItemStack> list = this.menu.getResults();
 
-			for(int n = this.startIndex; n < m && n < (this.menu).getNumRecipes(); ++n) {
+			for(int n = this.startIndex; n < m && n < list.size(); ++n) {
 				int o = n - this.startIndex;
 				int p = k + o % 4 * 16;
 				int q = l + o / 4 * 18 + 2;
 				if (i >= p && i < p + 16 && j >= q && j < q + 18) {
-					this.renderTooltip(poseStack, (list.get(n)).getResultItem(), i, j);
+					this.renderTooltip(poseStack, list.get(n), i, j);
 				}
 			}
 		}
@@ -72,13 +73,13 @@ public class ChippedScreen extends AbstractContainerScreen<ChippedMenu> {
 	}
 
 	private void renderButtons(PoseStack poseStack, int i, int j, int k, int l, int m) {
-		for(int n = this.startIndex; n < m && n < (this.menu).getNumRecipes(); ++n) {
+		for(int n = this.startIndex; n < m && n < menu.getResults().size(); ++n) {
 			int o = n - this.startIndex;
 			int p = k + o % 4 * 16;
 			int q = o / 4;
 			int r = l + q * 18 + 2;
 			int s = this.imageHeight;
-			if (n == (this.menu).getSelectedRecipeIndex()) {
+			if (n == this.menu.getSelectedIndex()) {
 				s += 18;
 			} else if (i >= p && j >= r && i < p + 16 && j < r + 18) {
 				s += 36;
@@ -90,14 +91,14 @@ public class ChippedScreen extends AbstractContainerScreen<ChippedMenu> {
 	}
 
 	private void renderRecipes(int i, int j, int k) {
-		List<ChippedRecipe> list = (this.menu).getRecipes();
+		List<ItemStack> list = (this.menu).getResults();
 
-		for(int l = this.startIndex; l < k && l < (this.menu).getNumRecipes(); ++l) {
+		for(int l = this.startIndex; l < k && l < list.size(); ++l) {
 			int m = l - this.startIndex;
 			int n = i + m % 4 * 16;
 			int o = m / 4;
 			int p = j + o * 18 + 2;
-			this.minecraft.getItemRenderer().renderAndDecorateItem((list.get(l)).getResultItem(), n, p);
+			this.minecraft.getItemRenderer().renderAndDecorateItem(list.get(l), n, p);
 		}
 
 	}
@@ -155,11 +156,11 @@ public class ChippedScreen extends AbstractContainerScreen<ChippedMenu> {
 	}
 
 	private boolean isScrollBarActive() {
-		return this.displayRecipes && (this.menu).getNumRecipes() > 12;
+		return this.displayRecipes && menu.getResults().size() > 12;
 	}
 
 	protected int getOffscreenRows() {
-		return ((this.menu).getNumRecipes() + 4 - 1) / 4 - 3;
+		return (menu.getResults().size() + 4 - 1) / 4 - 3;
 	}
 
 	private void containerChanged() {
