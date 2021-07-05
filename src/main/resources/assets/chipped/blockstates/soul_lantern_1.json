@@ -1,18 +1,10 @@
 {
   "variants": {
-    "facing=north": {
-      "model": "chipped:block/soul_lantern_1"
+    "hanging=false": {
+      "model": "chipped:block/lanterns/soul_lantern_1"
     },
-    "facing=south": {
-      "model": "chipped:block/soul_lantern_1"
-    },
-    "facing=west": {
-      "model": "chipped:block/soul_lantern_1",
-      "y": 90
-    },
-    "facing=east": {
-      "model": "chipped:block/soul_lantern_1",
-      "y": 90
+    "hanging=true": {
+      "model": "chipped:block/lanterns/soul_lantern_1_hanging"
     }
   }
 }

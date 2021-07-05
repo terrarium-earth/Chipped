@@ -254,7 +254,7 @@ public class ChippedBlocks {
         for (int i = 2; i <= 6; i++) {
             RedstoneWallTorchBlock redstoneWallTorch = Registry.register(Registry.BLOCK, new ResourceLocation(Chipped.MOD_ID, "redstone_wall_torch_" + i), new RedstoneWallTorchBlock(REDSTONE_WALL_TORCH_PROPERTIES) {});
             RedstoneTorchBlock redstoneTorch = Registry.register(Registry.BLOCK, new ResourceLocation(Chipped.MOD_ID, "redstone_torch_" + i), new RedstoneTorchBlock(REDSTONE_TORCH_PROPERTIES) {});
-            Registry.register(Registry.ITEM, "redstone_torch_" + i, new StandingAndWallBlockItem(redstoneTorch, redstoneWallTorch, new Item.Properties().tab(Chipped.CHIPPED)));
+            Registry.register(Registry.ITEM, new ResourceLocation(Chipped.MOD_ID,"redstone_torch_" + i), new StandingAndWallBlockItem(redstoneTorch, redstoneWallTorch, new Item.Properties().tab(Chipped.CHIPPED)));
 
             REDSTONE_TORCHES.add(redstoneTorch);
             REDSTONE_WALL_TORCHES.add(redstoneWallTorch);
@@ -264,7 +264,7 @@ public class ChippedBlocks {
         for (int i = 1; i <= 9; i++) {
             WallTorchBlock wallTorch = Registry.register(Registry.BLOCK, new ResourceLocation(Chipped.MOD_ID, "wall_torch_" + i), new WallTorchBlock(TORCH_PROPERTIES, ParticleTypes.FLAME) {});
             TorchBlock torch = Registry.register(Registry.BLOCK, new ResourceLocation(Chipped.MOD_ID, "torch_" + i), new TorchBlock(TORCH_PROPERTIES, ParticleTypes.FLAME) {});
-            Registry.register(Registry.ITEM, "torch_" + i, new StandingAndWallBlockItem(torch, wallTorch, new Item.Properties().tab(Chipped.CHIPPED)));
+            Registry.register(Registry.ITEM, new ResourceLocation(Chipped.MOD_ID, "torch_" + i), new StandingAndWallBlockItem(torch, wallTorch, new Item.Properties().tab(Chipped.CHIPPED)));
             TORCHES.add(torch);
             WALL_TORCHES.add(wallTorch);
         }
