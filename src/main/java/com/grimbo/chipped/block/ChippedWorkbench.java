@@ -10,6 +10,7 @@ import net.minecraft.core.Direction;
 import net.minecraft.core.Registry;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TranslatableComponent;
+import net.minecraft.util.LazyLoadedValue;
 import net.minecraft.util.StringRepresentable;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
@@ -47,24 +48,18 @@ public class ChippedWorkbench extends Block {
 
 	public static final EnumProperty<WorkbenchModelType> MODEL_TYPE = EnumProperty.create("model", WorkbenchModelType.class);
 
-	private final MenuType<ChippedMenu> menuType;
-	private final RecipeType<ChippedRecipe> recipeType;
-	private final Supplier<Component> containerName;
+	private final ContainerFactory factory;
+	private final LazyLoadedValue<Component> containerName;
 
-	public ChippedWorkbench(MenuType<ChippedMenu> menuType, RecipeType<ChippedRecipe> recipeType, Properties properties) {
+	public ChippedWorkbench(ContainerFactory factory, Properties properties) {
 		super(properties);
-		this.menuType = menuType;
-		this.recipeType = recipeType;
-		containerName = Suppliers.memoize(() -> new TranslatableComponent("container.chipped." + Registry.BLOCK.getKey(ChippedWorkbench.this).getPath()));
+		this.factory = factory;
+		containerName = new LazyLoadedValue<>(() -> new TranslatableComponent("container.chipped." + Registry.BLOCK.getKey(ChippedWorkbench.this).getPath()));
 		this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH).setValue(MODEL_TYPE, WorkbenchModelType.MAIN));
 	}
 
 	public BlockState getStateForPlacement(BlockPlaceContext context) {
-		/*Direction direction = blockPlaceContext.getHorizontalDirection();
-		BlockPos blockPos = blockPlaceContext.getClickedPos();
-		BlockPos blockPos2 = blockPos.relative(direction);
-		return blockPlaceContext.getLevel().getBlockState(blockPos2).canBeReplaced(blockPlaceContext) ? (BlockState)this.defaultBlockState().setValue(FACING, direction) : null;
-		*/return this.defaultBlockState().setValue(FACING, context.getHorizontalDirection().getOpposite());
+		return this.defaultBlockState().setValue(FACING, context.getHorizontalDirection().getOpposite());
 	}
 
 	@Override
@@ -81,7 +76,7 @@ public class ChippedWorkbench extends Block {
 	@Override
 	public MenuProvider getMenuProvider(BlockState state, Level worldIn, BlockPos pos) {
 		return new SimpleMenuProvider(
-				(id, inventory, player) -> new ChippedMenu(id, inventory, menuType, recipeType, ContainerLevelAccess.create(worldIn, pos), this),
+				(id, inventory, player) -> factory.create(id, inventory, ContainerLevelAccess.create(worldIn, pos)),
 				containerName.get()
 		);
 	}
@@ -165,6 +160,11 @@ public class ChippedWorkbench extends Block {
 	@Environment(EnvType.CLIENT)
 	public float getShadeBrightness(BlockState state, Level worldIn, BlockPos pos) {
 		return 1;
+	}
+
+	@FunctionalInterface
+	public interface ContainerFactory {
+		ChippedMenu create(int windowId, Inventory inventory, ContainerLevelAccess access);
 	}
 
 	public enum WorkbenchModelType implements StringRepresentable {
