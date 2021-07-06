@@ -57,6 +57,10 @@ public class ChippedRecipe implements IRecipe<IInventory> {
 		return false;
 	}
 
+	public List<ITag<Item>> getTags() {
+		return tags;
+	}
+
 	public Stream<ItemStack> getResults(IInventory container) {
 		Item current = container.getItem(0).getItem();
 		if (current != Items.AIR) {

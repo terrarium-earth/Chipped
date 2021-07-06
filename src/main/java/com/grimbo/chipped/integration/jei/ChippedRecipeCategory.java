@@ -10,9 +10,14 @@ import mezz.jei.api.ingredients.IIngredients;
 import mezz.jei.api.recipe.category.IRecipeCategory;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.crafting.Ingredient;
+import net.minecraft.tags.ITag;
 import net.minecraft.util.ResourceLocation;
 
-public class ChippedRecipeCategory implements IRecipeCategory<ChippedRecipe> {
+import java.util.Collections;
+
+public class ChippedRecipeCategory implements IRecipeCategory<ChippedRecipeCategory.FlattenedRecipe> {
 
 	private static final ResourceLocation TEXTURE = new ResourceLocation("jei", "textures/gui/gui_vanilla.png");
 
@@ -35,8 +40,8 @@ public class ChippedRecipeCategory implements IRecipeCategory<ChippedRecipe> {
 	}
 
 	@Override
-	public Class<? extends ChippedRecipe> getRecipeClass() {
-		return ChippedRecipe.class;
+	public Class<? extends FlattenedRecipe> getRecipeClass() {
+		return FlattenedRecipe.class;
 	}
 
 	@Override
@@ -55,17 +60,26 @@ public class ChippedRecipeCategory implements IRecipeCategory<ChippedRecipe> {
 	}
 
 	@Override
-	public void setIngredients(ChippedRecipe recipe, IIngredients ingredients) {
-		ingredients.setInputIngredients(recipe.getIngredients());
-		ingredients.setOutput(VanillaTypes.ITEM, recipe.getResultItem());
+	public void setIngredients(FlattenedRecipe recipe, IIngredients ingredients) {
+		ingredients.setInputIngredients(Collections.singletonList(Ingredient.of(recipe.tag)));
+		ingredients.setOutput(VanillaTypes.ITEM, recipe.result);
 	}
 
 	@Override
-	public void setRecipe(IRecipeLayout recipeLayout, ChippedRecipe recipe, IIngredients ingredients) {
+	public void setRecipe(IRecipeLayout recipeLayout, FlattenedRecipe recipe, IIngredients ingredients) {
 		IGuiItemStackGroup guiItemStacks = recipeLayout.getItemStacks();
 		guiItemStacks.init(0, true, 0, 8);
 		guiItemStacks.init(1, false, 60, 8);
 		guiItemStacks.set(ingredients);
 	}
 
+	public static class FlattenedRecipe {
+		private final ITag<Item> tag;
+		private final ItemStack result;
+
+		public FlattenedRecipe(ITag<Item> tag, ItemStack result) {
+			this.tag = tag;
+			this.result = result;
+		}
+	}
 }
