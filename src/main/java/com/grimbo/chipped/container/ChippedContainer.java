@@ -159,7 +159,9 @@ public class ChippedContainer extends Container {
 		this.resultSlot.set(ItemStack.EMPTY);
 		if (!stack.isEmpty()) {
 			this.recipe = this.level.getRecipeManager().getRecipeFor(recipeType, inventory, this.level).orElse(null);
-			results = Suppliers.memoize(() -> recipe.getResults(inventory).collect(Collectors.toList()));
+			if (recipe != null) {
+				this.results = Suppliers.memoize(() -> recipe.getResults(inventory).collect(Collectors.toList()));
+			}
 		}
 	}
 
