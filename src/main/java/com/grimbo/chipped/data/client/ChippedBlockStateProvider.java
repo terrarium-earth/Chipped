@@ -12,6 +12,7 @@ import net.minecraftforge.fml.RegistryObject;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 
 public class ChippedBlockStateProvider extends BlockStateProvider {
 	Direction[] directions = {Direction.NORTH, Direction.SOUTH, Direction.EAST, Direction.WEST};
@@ -57,10 +58,9 @@ public class ChippedBlockStateProvider extends BlockStateProvider {
 		}
 
 		for (String wood : ChippedBlocks.woodsList) {
-			createCubeFromList(ChippedBlocks.blocksMap.get(wood + "_wood_glass"));
 			createCubeFromList(ChippedBlocks.blocksMap.get(wood + "_planks"));
 
-			registerGlassPanes(wood + "_wood_glass_pane", wood + "_wood_glass", wood + "_wood_glass_pane_top");
+			registerGlassPanes("glass_pane", wood + "wood_glass_pane", wood + "_wood_glass", wood + "_wood_glass_pane_top");
 		}
 
 		for (RegistryObject<Block> block : ChippedBlocks.blocksMap.get("hay_block")) {
@@ -78,7 +78,7 @@ public class ChippedBlockStateProvider extends BlockStateProvider {
 
 
 		for (int i = 0; i < ChippedBlocks.blocksMap.get("lantern").size() - 4; i++) {
-			ArrayList<RegistryObject<Block>> blocks = new ArrayList<>(ChippedBlocks.blocksMap.get("lantern"));
+			List<RegistryObject<Block>> blocks = ChippedBlocks.blocksMap.get("lantern");
 			RegistryObject<Block> block = blocks.get(i);
 			String name = block.get().getRegistryName().getPath();
 			getVariantBuilder(block.get())
@@ -147,7 +147,7 @@ public class ChippedBlockStateProvider extends BlockStateProvider {
 			}
 		}
 
-		ArrayList<RegistryObject<Block>> vanillaCarved = new ArrayList<RegistryObject<Block>>(ChippedBlocks.blocksMap.get("carved_pumpkin_vanilla"));
+		List<RegistryObject<Block>> vanillaCarved = ChippedBlocks.blocksMap.get("carved_pumpkin_vanilla");
 		int index = 0;
 		for (int i = 0; i < ChippedBlocks.carvedPumpkinList.length * 2; i++) {
 			index = 1 + (i / 2);
@@ -184,11 +184,15 @@ public class ChippedBlockStateProvider extends BlockStateProvider {
 			simpleBlock(block.get());
 		}
 	}
-	
-	private void registerGlassPanes(String type, String originalType, String topName, int start, int end) {
+
+	private void registerGlassPanes(String typeAndName, String originalType, String topName, int start, int end) {
+		registerGlassPanes(typeAndName, typeAndName, originalType, topName, start, end);
+	}
+
+	private void registerGlassPanes(String type, String glassPaneName, String originalType, String topName, int start, int end) {
 		for (int i = start; i <= end; i++) {
-			ArrayList<RegistryObject<Block>> blocks = new ArrayList<RegistryObject<Block>>(ChippedBlocks.blocksMap.get(type));
-			String block = type + "_" + i;
+			List<RegistryObject<Block>> blocks = ChippedBlocks.blocksMap.get(type);
+			String block = glassPaneName + "_" + i;
 			String originalBlock = originalType + "_" + i;
 			getMultipartBuilder(blocks.get(i - 1).get())
 				.part()
@@ -242,19 +246,19 @@ public class ChippedBlockStateProvider extends BlockStateProvider {
 	}
 
 	private void registerRedstoneTorch(String type) {
-		ArrayList<RegistryObject<Block>> torches = new ArrayList<RegistryObject<Block>>(ChippedBlocks.blocksMap.get(type));
+		List<RegistryObject<Block>> torches = ChippedBlocks.blocksMap.get(type);
 		for (int i = 2; i <= torches.size() + 1; i++) {
 			getVariantBuilder(torches.get(i - 2).get())
 					.partialState()
-						.with(RedstoneTorchBlock.LIT, false)
-						.modelForState()
-							.modelFile(models().torch("redstone_torch_" + i + "_off", modLoc("block/redstone_torch_" + i + "_off")))
-						.addModel()
+					.with(RedstoneTorchBlock.LIT, false)
+					.modelForState()
+					.modelFile(models().torch("redstone_torch_" + i + "_off", modLoc("block/redstone_torch_" + i + "_off")))
+					.addModel()
 					.partialState()
-						.with(RedstoneTorchBlock.LIT, true)
-						.modelForState()
-							.modelFile(models().torch("redstone_torch_" + i, modLoc("block/redstone_torch_" + i)))
-						.addModel();
+					.with(RedstoneTorchBlock.LIT, true)
+					.modelForState()
+					.modelFile(models().torch("redstone_torch_" + i, modLoc("block/redstone_torch_" + i)))
+					.addModel();
 		}
 	}
 
@@ -300,5 +304,8 @@ public class ChippedBlockStateProvider extends BlockStateProvider {
 	
 	private void registerGlassPanes(String type, String originalType, String topName) {
 		registerGlassPanes(type, originalType, topName, 1, ChippedBlocks.blocksMap.get(type).size());
+	}
+	private void registerGlassPanes(String type, String paneName, String originalType, String topName) {
+		registerGlassPanes(type, paneName, originalType, topName, 1, ChippedBlocks.blocksMap.get(type).size());
 	}
 }

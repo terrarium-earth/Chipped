@@ -9,6 +9,7 @@ import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.fml.RegistryObject;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class ChippedItemModelProvider extends ItemModelProvider {
 
@@ -25,7 +26,9 @@ public class ChippedItemModelProvider extends ItemModelProvider {
 		
 		custom.add("glass_pane");
 		for (int i = 1; i <= ChippedBlocks.blocksMap.get("glass_pane").size(); i++) {
-			withExistingParent("glass_pane_" + i, mcLoc("generated")).texture("layer0", modLoc("block/glass_" + i));
+			List<RegistryObject<Block>> blocks = ChippedBlocks.blocksMap.get("glass_pane");
+			String block = blocks.get(i).getId().getPath();
+			withExistingParent(block, mcLoc("generated")).texture("layer0", modLoc("block/" + block));
 		}
 		
 		for (String color : ChippedBlocks.colorsList) {
@@ -34,13 +37,7 @@ public class ChippedItemModelProvider extends ItemModelProvider {
 				withExistingParent(color + "_stained_glass_pane_" + i, mcLoc("generated")).texture("layer0", modLoc("block/" + color + "_stained_glass_" + i));
 			}
 		}
-		
-		for (String wood : ChippedBlocks.woodsList) {
-			custom.add(wood + "_wood_glass_pane");
-			for (int i = 1; i <= ChippedBlocks.blocksMap.get(wood + "_wood_glass_pane").size(); i++) {
-				withExistingParent(wood + "_wood_glass_pane_" + i, mcLoc("generated")).texture("layer0", modLoc("block/" + wood + "_wood_glass_" + i));
-			}
-		}
+
 		custom.add("redstone_torch");
 		for (int i = 2; i <=6 ; i++) {
 			withExistingParent("redstone_torch_" + i, mcLoc("generated")).texture("layer0", modLoc("block/redstone_torch_"+ i));

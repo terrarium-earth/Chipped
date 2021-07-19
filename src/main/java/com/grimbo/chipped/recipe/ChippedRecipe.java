@@ -62,17 +62,17 @@ public class ChippedRecipe implements IRecipe<IInventory> {
 	}
 
 	public Stream<ItemStack> getResults(IInventory container) {
-		Item current = container.getItem(0).getItem();
-		if (current != Items.AIR) {
-			for (ITag<Item> tag : tags) {
-				if (current.is(tag)) {
-					return tag.getValues().stream().filter(item -> item != current).map(ItemStack::new);
-				}
-			}
+		ItemStack current = container.getItem(0);
+		if (!current.isEmpty()) {
+			Item item = current.getItem();
+			return tags.stream()
+					.filter(item::is)
+					.flatMap(tag -> tag.getValues().stream())
+					.filter(value -> value != item)
+					.map(ItemStack::new);
 		}
 		return Stream.empty();
 	}
-
 	@Override
 	public ItemStack assemble(IInventory inventory) {
 		return getResultItem();

@@ -69,8 +69,6 @@ public class Chipped {
 			for (RegistryObject<Block> glass : ChippedBlocks.blocksMap.get(wood + "_wood_glass_pane")) {
 				RenderTypeLookup.setRenderLayer(glass.get(), RenderType.cutout());
 			}
-
-
 		}
 
 		for (String color : ChippedBlocks.colorsList) {

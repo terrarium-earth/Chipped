@@ -1,6 +1,7 @@
 package com.grimbo.chipped.block;
 
 import com.google.common.collect.ArrayListMultimap;
+import com.google.common.collect.ListMultimap;
 import com.google.common.collect.Multimap;
 import com.grimbo.chipped.Chipped;
 import com.grimbo.chipped.container.*;
@@ -61,7 +62,7 @@ public class ChippedBlocks {
 
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, Chipped.MOD_ID);
 
-    public static Multimap<String, RegistryObject<Block>> blocksMap = ArrayListMultimap.create();
+    public static ListMultimap<String, RegistryObject<Block>> blocksMap = ArrayListMultimap.create();
 
     //Simple Blocks which have 18 of its own variant
     public static final String[] stones18 = {"stone", "granite", "diorite", "andesite", "prismarine", "dark_prismarine", "purpur_block",
@@ -162,8 +163,8 @@ public class ChippedBlocks {
         registerBlocks("glass_pane", () -> new PaneBlock(GLASS_PANE_PROPERTIES), 14);
 
         for (String wood : woodsList) {
-            registerBlocks(wood + "_wood_glass", () -> new GlassBlock(GLASS_PROPERTIES), 6);
-            registerBlocks(wood + "_wood_glass_pane", () -> new PaneBlock(GLASS_PANE_PROPERTIES), 6);
+            registerBlocks("glass",wood + "_wood_glass", () -> new GlassBlock(GLASS_PROPERTIES), 6);
+            registerBlocks("glass_pane", wood + "_wood_glass_pane", () -> new PaneBlock(GLASS_PANE_PROPERTIES), 6);
         }
 
         for (int id = 0; id < 16; ++id) {
@@ -320,10 +321,16 @@ public class ChippedBlocks {
      * @param count How many of the block should be registered, the index is used as the suffix.
      */
     private static void registerBlocks(String name, Supplier<Block> block, int count) {
+        registerBlocks(name, name, block, count);
+    }
+
+    private static void registerBlocks(String type, String name, Supplier<Block> block, int count) {
         for (int i = 1; i <= count; i++) {
-            blocksMap.put(name, register(name + "_" + i, block));
+            blocksMap.put(type, register(name + "_" + i, block));
         }
     }
+
+
 
     private static RegistryObject<Block> register(String name, Supplier<Block> block) {
         RegistryObject<Block> toReturn = BLOCKS.register(name, block);
