@@ -1,8 +1,0 @@
-{
-  "type": "chipped:mason_table",
-  "ingredient": {
-    "tag": "chipped:orange_terracotta"
-  },
-  "result": "minecraft:orange_terracotta",
-  "count": 1
-}

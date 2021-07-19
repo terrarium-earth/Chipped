@@ -1,8 +1,0 @@
-{
-  "type": "chipped:mason_table",
-  "ingredient": {
-    "tag": "chipped:basalt"
-  },
-  "result": "minecraft:basalt",
-  "count": 1
-}

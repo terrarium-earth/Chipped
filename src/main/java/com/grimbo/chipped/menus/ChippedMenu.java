@@ -146,7 +146,9 @@ public class ChippedMenu extends AbstractContainerMenu {
 		this.resultSlot.set(ItemStack.EMPTY);
 		if (!stack.isEmpty()) {
 			this.recipe = this.level.getRecipeManager().getRecipeFor(recipeType, container, this.level).orElse(null);
-			results = Suppliers.memoize(() -> recipe.getResults(container).collect(Collectors.toList()));
+			if(recipe != null) {
+				results = Suppliers.memoize(() -> recipe.getResults(container).collect(Collectors.toList()));
+			}
 		}
 	}
 

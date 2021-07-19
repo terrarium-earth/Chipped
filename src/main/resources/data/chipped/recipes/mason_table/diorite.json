@@ -1,8 +1,0 @@
-{
-  "type": "chipped:mason_table",
-  "ingredient": {
-    "tag": "chipped:diorite"
-  },
-  "result": "minecraft:diorite",
-  "count": 1
-}

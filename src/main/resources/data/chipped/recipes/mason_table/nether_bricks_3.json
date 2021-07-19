@@ -1,8 +1,0 @@
-{
-  "type": "chipped:mason_table",
-  "ingredient": {
-    "tag": "chipped:nether_bricks"
-  },
-  "result": "chipped:nether_bricks_3",
-  "count": 1
-}

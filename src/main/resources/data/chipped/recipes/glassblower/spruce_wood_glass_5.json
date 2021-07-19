@@ -1,8 +1,0 @@
-{
-  "type": "chipped:glassblower",
-  "ingredient": {
-    "tag": "chipped:spruce_wood_glass"
-  },
-  "result": "chipped:spruce_wood_glass_5",
-  "count": 1
-}

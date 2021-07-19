@@ -1,8 +1,0 @@
-{
-  "type": "chipped:botanist_workbench",
-  "ingredient": {
-    "tag": "chipped:melon"
-  },
-  "result": "chipped:melon_3",
-  "count": 1
-}

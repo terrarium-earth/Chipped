@@ -1,8 +1,0 @@
-{
-  "type": "chipped:glassblower",
-  "ingredient": {
-    "tag": "chipped:jungle_wood_glass_pane"
-  },
-  "result": "chipped:jungle_wood_glass_pane_1",
-  "count": 1
-}

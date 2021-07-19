@@ -1,8 +1,0 @@
-{
-  "type": "chipped:botanist_workbench",
-  "ingredient": {
-    "tag": "chipped:vine"
-  },
-  "result": "chipped:vine_8",
-  "count": 1
-}

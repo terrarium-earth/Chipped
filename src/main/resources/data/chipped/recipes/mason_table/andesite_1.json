@@ -1,8 +1,0 @@
-{
-  "type": "chipped:mason_table",
-  "ingredient": {
-    "tag": "chipped:andesite"
-  },
-  "result": "chipped:andesite_1",
-  "count": 1
-}

@@ -1,8 +1,0 @@
-{
-  "type": "chipped:loom_table",
-  "ingredient": {
-    "tag": "chipped:lime_wool"
-  },
-  "result": "chipped:lime_wool_4",
-  "count": 1
-}

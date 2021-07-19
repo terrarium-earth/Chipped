@@ -1,8 +1,0 @@
-{
-  "type": "chipped:glassblower",
-  "ingredient": {
-    "tag": "chipped:cyan_stained_glass"
-  },
-  "result": "minecraft:cyan_stained_glass",
-  "count": 1
-}
