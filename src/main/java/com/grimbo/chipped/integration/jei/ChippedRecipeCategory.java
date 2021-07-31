@@ -1,6 +1,5 @@
 package com.grimbo.chipped.integration.jei;
 
-import com.grimbo.chipped.recipe.ChippedRecipe;
 import mezz.jei.api.constants.VanillaTypes;
 import mezz.jei.api.gui.IRecipeLayout;
 import mezz.jei.api.gui.drawable.IDrawable;
@@ -14,6 +13,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.Ingredient;
 import net.minecraft.tags.ITag;
 import net.minecraft.util.ResourceLocation;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.Collections;
 
@@ -35,27 +35,27 @@ public class ChippedRecipeCategory implements IRecipeCategory<ChippedRecipeCateg
 	}
 
 	@Override
-	public ResourceLocation getUid() {
+	public @NotNull ResourceLocation getUid() {
 		return UID;
 	}
 
 	@Override
-	public Class<? extends FlattenedRecipe> getRecipeClass() {
+	public @NotNull Class<? extends FlattenedRecipe> getRecipeClass() {
 		return FlattenedRecipe.class;
 	}
 
 	@Override
-	public String getTitle() {
+	public @NotNull String getTitle() {
 		return localizedName;
 	}
 
 	@Override
-	public IDrawable getBackground() {
+	public @NotNull IDrawable getBackground() {
 		return background;
 	}
 
 	@Override
-	public IDrawable getIcon() {
+	public @NotNull IDrawable getIcon() {
 		return icon;
 	}
 
@@ -66,7 +66,7 @@ public class ChippedRecipeCategory implements IRecipeCategory<ChippedRecipeCateg
 	}
 
 	@Override
-	public void setRecipe(IRecipeLayout recipeLayout, FlattenedRecipe recipe, IIngredients ingredients) {
+	public void setRecipe(IRecipeLayout recipeLayout, @NotNull FlattenedRecipe recipe, @NotNull IIngredients ingredients) {
 		IGuiItemStackGroup guiItemStacks = recipeLayout.getItemStacks();
 		guiItemStacks.init(0, true, 0, 8);
 		guiItemStacks.init(1, false, 60, 8);

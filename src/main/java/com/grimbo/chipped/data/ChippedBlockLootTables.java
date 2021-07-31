@@ -2,17 +2,19 @@ package com.grimbo.chipped.data;
 
 import java.util.stream.Collectors;
 
+import com.grimbo.chipped.api.BlockRegistry;
 import com.grimbo.chipped.block.ChippedBlocks;
 
 import net.minecraft.block.Block;
 import net.minecraft.data.loot.BlockLootTables;
 import net.minecraftforge.fml.RegistryObject;
+import org.jetbrains.annotations.NotNull;
 
 public class ChippedBlockLootTables extends BlockLootTables {
 
 	@Override
 	protected void addTables() {
-		for (RegistryObject<Block> block : ChippedBlocks.blocksMap.values()) {
+		for (RegistryObject<Block> block : BlockRegistry.getBlocks()) {
 			dropSelf(block.get());
 		}
 
@@ -26,7 +28,7 @@ public class ChippedBlockLootTables extends BlockLootTables {
 	}
 
 	@Override
-	protected Iterable<Block> getKnownBlocks() {
+	protected @NotNull Iterable<Block> getKnownBlocks() {
 		return ChippedBlocks.BLOCKS.getEntries().stream().map(RegistryObject::get).collect(Collectors.toList());
 	}
 }

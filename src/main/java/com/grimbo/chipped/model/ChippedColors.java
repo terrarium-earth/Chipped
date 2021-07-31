@@ -1,16 +1,10 @@
 package com.grimbo.chipped.model;
 
+import com.google.common.base.Suppliers;
 import com.grimbo.chipped.Chipped;
-import com.grimbo.chipped.block.ChippedBlocks;
-
+import com.grimbo.chipped.api.BlockRegistry;
 import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
-import net.minecraft.client.renderer.color.BlockColors;
-import net.minecraft.client.renderer.color.IBlockColor;
-import net.minecraft.client.renderer.color.IItemColor;
-import net.minecraft.client.renderer.color.ItemColors;
-import net.minecraft.item.BlockItem;
-import net.minecraft.world.GrassColors;
+import net.minecraft.world.FoliageColors;
 import net.minecraft.world.biome.BiomeColors;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.ColorHandlerEvent;
@@ -19,39 +13,24 @@ import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus;
 
-//Pulled from Choonster's choonster.testmod3.client.model.ModColourManager
+import java.util.function.Supplier;
+
 @Mod.EventBusSubscriber(modid = Chipped.MOD_ID, value = Dist.CLIENT, bus = Bus.MOD)
 public class ChippedColors {
 
+	public static final Supplier<Block[]> vines = Suppliers.memoize(() -> BlockRegistry.getBlocks("vine").stream().map(RegistryObject::get).toArray(Block[]::new));
+
 	@SubscribeEvent
-	public static void registerBlockColourHandlers(final ColorHandlerEvent.Block event) {
-		final BlockColors blockColors = event.getBlockColors();
-
-		final IBlockColor grassColourHandler = (state, blockAccess, pos, tintIndex) -> {
-			if (blockAccess != null && pos != null) {
-				return BiomeColors.getAverageGrassColor(blockAccess, pos);
-			}
-
-			return GrassColors.get(0.5d, 1.0d);
-		};
-
-		for (RegistryObject<Block> vine : ChippedBlocks.blocksMap.get("vine")) {
-			blockColors.register(grassColourHandler, vine.get());
-		}
+	public static void registerBlockColourHandlers(ColorHandlerEvent.Block event) {
+		event.getBlockColors().register((state, blockAccess, pos, tintIndex) ->
+				blockAccess != null && pos != null ? BiomeColors.getAverageGrassColor(blockAccess, pos) : FoliageColors.getDefaultColor(),
+				vines.get());
 	}
 
 	@SubscribeEvent
-	public static void registerItemColourHandlers(final ColorHandlerEvent.Item event) {
-		final BlockColors blockColors = event.getBlockColors();
-		final ItemColors itemColors = event.getItemColors();
-
-		final IItemColor itemBlockColourHandler = (stack, tintIndex) -> {
-			final BlockState state = ((BlockItem) stack.getItem()).getBlock().defaultBlockState();
-			return blockColors.getColor(state, null, null, tintIndex);
-		};
-
-		for (RegistryObject<Block> vine : ChippedBlocks.blocksMap.get("vine")) {
-			itemColors.register(itemBlockColourHandler, vine.get());
-		}
+	public static void registerItemColourHandlers(ColorHandlerEvent.Item event) {
+		event.getItemColors().register((stack, tintIndex) ->
+				event.getBlockColors().getColor(Block.byItem(stack.getItem()).defaultBlockState(), null, null, tintIndex),
+				vines.get());
 	}
 }

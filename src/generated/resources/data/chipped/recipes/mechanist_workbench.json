@@ -1,9 +1,9 @@
 {
   "type": "chipped:mechanist_workbench",
   "tags": [
-    "chipped:redstone_torch",
+    "chipped:redstone_lamp",
     "chipped:lantern",
     "chipped:soul_lantern",
-    "chipped:redstone_lamp"
+    "chipped:redstone_torch"
   ]
 }

@@ -1,14 +1,7 @@
 package com.grimbo.chipped.recipe;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
-import java.util.stream.Stream;
-
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
-
 import com.google.gson.JsonSyntaxException;
 import com.mojang.realmsclient.util.JsonUtils;
 import net.minecraft.block.Block;
@@ -19,15 +12,20 @@ import net.minecraft.item.Items;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.item.crafting.IRecipeSerializer;
 import net.minecraft.item.crafting.IRecipeType;
-import net.minecraft.item.crafting.SingleItemRecipe;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.tags.ITag;
-import net.minecraft.tags.Tag;
 import net.minecraft.tags.TagCollectionManager;
 import net.minecraft.util.JSONUtils;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
 import net.minecraftforge.registries.ForgeRegistryEntry;
+import org.jetbrains.annotations.NotNull;
+
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+import java.util.stream.Stream;
 
 public class ChippedRecipe implements IRecipe<IInventory> {
 	private final Serializer serializer;
@@ -45,7 +43,7 @@ public class ChippedRecipe implements IRecipe<IInventory> {
 	}
 
 	@Override
-	public boolean matches(IInventory inventory, World world) {
+	public boolean matches(IInventory inventory, @NotNull World world) {
 		Item item = inventory.getItem(0).getItem();
 		if (item != Items.AIR) {
 			for (ITag<Item> tag : tags) {
@@ -74,7 +72,7 @@ public class ChippedRecipe implements IRecipe<IInventory> {
 		return Stream.empty();
 	}
 	@Override
-	public ItemStack assemble(IInventory inventory) {
+	public @NotNull ItemStack assemble(@NotNull IInventory inventory) {
 		return getResultItem();
 	}
 
@@ -84,7 +82,7 @@ public class ChippedRecipe implements IRecipe<IInventory> {
 	}
 
 	@Override
-	public ItemStack getResultItem() {
+	public @NotNull ItemStack getResultItem() {
 		return ItemStack.EMPTY;
 	}
 
@@ -93,26 +91,26 @@ public class ChippedRecipe implements IRecipe<IInventory> {
 		return true;
 	}
 
-	public String getGroup() {
+	public @NotNull String getGroup() {
 		return group;
 	}
 
-	public ItemStack getToastSymbol() {
+	public @NotNull ItemStack getToastSymbol() {
 		return new ItemStack(icon);
 	}
 
 	@Override
-	public ResourceLocation getId() {
+	public @NotNull ResourceLocation getId() {
 		return id;
 	}
 
 	@Override
-	public IRecipeSerializer<?> getSerializer() {
+	public @NotNull IRecipeSerializer<?> getSerializer() {
 		return serializer;
 	}
 
 	@Override
-	public IRecipeType<?> getType() {
+	public @NotNull IRecipeType<?> getType() {
 		return serializer.getType();
 	}
 
@@ -126,7 +124,7 @@ public class ChippedRecipe implements IRecipe<IInventory> {
 		}
 
 		@Override
-		public ChippedRecipe fromJson(ResourceLocation recipeId, JsonObject json) {
+		public @NotNull ChippedRecipe fromJson(@NotNull ResourceLocation recipeId, @NotNull JsonObject json) {
 			String s = JsonUtils.getStringOr("group", json, "");
 			List<ITag<Item>> tags = new ArrayList<>();
 			JsonArray tagArray = JSONUtils.getAsJsonArray(json, "tags");
@@ -143,7 +141,7 @@ public class ChippedRecipe implements IRecipe<IInventory> {
 		}
 
 		@Override
-		public ChippedRecipe fromNetwork(ResourceLocation recipeId, PacketBuffer buffer) {
+		public ChippedRecipe fromNetwork(@NotNull ResourceLocation recipeId, PacketBuffer buffer) {
 			String s = buffer.readUtf(32767);
 			int tagCount = buffer.readVarInt();
 			List<ITag<Item>> tags = new ArrayList<>(tagCount);
@@ -159,7 +157,7 @@ public class ChippedRecipe implements IRecipe<IInventory> {
 		}
 
 		@Override
-		public void toNetwork(PacketBuffer buffer, ChippedRecipe recipe) {
+		public void toNetwork(PacketBuffer buffer, @NotNull ChippedRecipe recipe) {
 			buffer.writeUtf(recipe.group);
 			buffer.writeVarInt(recipe.tags.size());
 			for (ITag<Item> tag : recipe.tags) {

@@ -1,6 +1,7 @@
 package com.grimbo.chipped.data.client;
 
 import com.grimbo.chipped.Chipped;
+import com.grimbo.chipped.api.BlockRegistry;
 import com.grimbo.chipped.block.ChippedBlocks;
 import net.minecraft.block.*;
 import net.minecraft.data.DataGenerator;
@@ -13,9 +14,9 @@ import net.minecraftforge.fml.RegistryObject;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class ChippedBlockStateProvider extends BlockStateProvider {
-	Direction[] directions = {Direction.NORTH, Direction.SOUTH, Direction.EAST, Direction.WEST};
 
 	public ChippedBlockStateProvider(DataGenerator gen, ExistingFileHelper exFileHelper) {
 		super(gen, Chipped.MOD_ID, exFileHelper);
@@ -24,31 +25,31 @@ public class ChippedBlockStateProvider extends BlockStateProvider {
 	@Override
 	protected void registerStatesAndModels() {
 		for (String type : ChippedBlocks.stones18) {
-			createCubeFromList(ChippedBlocks.blocksMap.get(type));
+			createCubeFromList(BlockRegistry.getBlocks(type));
 		}
 
-		createCubeFromList(ChippedBlocks.blocksMap.get("gilded_blackstone"));
-		createCubeFromList(ChippedBlocks.blocksMap.get("blackstone"));
-		createCubeFromList(ChippedBlocks.blocksMap.get("basalt"));
-		createCubeFromList(ChippedBlocks.blocksMap.get("obsidian"));
-		createCubeFromList(ChippedBlocks.blocksMap.get("crying_obsidian"));
-		createCubeFromList(ChippedBlocks.blocksMap.get("clay"));
-		createCubeFromList(ChippedBlocks.blocksMap.get("glass"));
-		createCubeFromList(ChippedBlocks.blocksMap.get("glowstone"));
-		createCubeFromList(ChippedBlocks.blocksMap.get("sea_lantern"));
-		createCubeFromList(ChippedBlocks.blocksMap.get("shroomlight"));
+		createCubeFromList(BlockRegistry.getBlocks("gilded_blackstone"));
+		createCubeFromList(BlockRegistry.getBlocks("blackstone"));
+		createCubeFromList(BlockRegistry.getBlocks("basalt"));
+		createCubeFromList(BlockRegistry.getBlocks("obsidian"));
+		createCubeFromList(BlockRegistry.getBlocks("crying_obsidian"));
+		createCubeFromList(BlockRegistry.getBlocks("clay"));
+		createCubeFromList(BlockRegistry.getBlocks("glass"));
+		createCubeFromList(BlockRegistry.getBlocks("glowstone"));
+		createCubeFromList(BlockRegistry.getBlocks("sea_lantern"));
+		createCubeFromList(BlockRegistry.getBlocks("shroomlight"));
 
 		registerGlassPanes("glass_pane", "glass", "glass_pane_1_top", 1, 6);
 		registerGlassPanes("glass_pane", "glass", "glass_pane_2_top", 7, 14);
 
 		for (String color : ChippedBlocks.colorsList) {
-			createCubeFromList(ChippedBlocks.blocksMap.get(color + "_terracotta"));
-			createCubeFromList(ChippedBlocks.blocksMap.get(color + "_concrete"));
-			createCubeFromList(ChippedBlocks.blocksMap.get(color + "_wool"));
-			createCubeFromList(ChippedBlocks.blocksMap.get(color + "_stained_glass"));
+			createCubeFromList(BlockRegistry.getBlocks(color + "_terracotta"));
+			createCubeFromList(BlockRegistry.getBlocks(color + "_concrete"));
+			createCubeFromList(BlockRegistry.getBlocks(color + "_wool"));
+			createCubeFromList(BlockRegistry.getBlocks(color + "_stained_glass"));
 
-			for (int i = 1; i <= ChippedBlocks.blocksMap.get(color + "_carpet").size(); i++) {
-				ArrayList<RegistryObject<Block>> blocks = new ArrayList<RegistryObject<Block>>(ChippedBlocks.blocksMap.get(color + "_carpet"));
+			for (int i = 1; i <= BlockRegistry.getBlocks(color + "_carpet").size(); i++) {
+				ArrayList<RegistryObject<Block>> blocks = new ArrayList<>(BlockRegistry.getBlocks(color + "_carpet"));
 				String name = color + "_carpet_" + i;
 				String name2 = color + "_wool_" + i;
 				simpleBlock(blocks.get(i - 1).get(), models().carpet(name, modLoc("block/" + name2)));
@@ -58,47 +59,45 @@ public class ChippedBlockStateProvider extends BlockStateProvider {
 		}
 
 		for (String wood : ChippedBlocks.woodsList) {
-			createCubeFromList(ChippedBlocks.blocksMap.get(wood + "_planks"));
+			createCubeFromList(BlockRegistry.getBlocks(wood + "_planks"));
 
-			registerGlassPanes("glass_pane", wood + "wood_glass_pane", wood + "_wood_glass", wood + "_wood_glass_pane_top");
+			registerGlassPanes("glass_pane", wood + "_wood_glass_pane", wood + "_wood_glass", wood + "_wood_glass_pane_top", 1, 6);
 		}
 
-		for (RegistryObject<Block> block : ChippedBlocks.blocksMap.get("hay_block")) {
+		for (RegistryObject<Block> block : BlockRegistry.getBlocks("hay_block")) {
 			axisBlock((RotatedPillarBlock) block.get());
 		}
 
-		for (RegistryObject<Block> block : ChippedBlocks.blocksMap.get("melon")) {
+		for (RegistryObject<Block> block : BlockRegistry.getBlocks("melon")) {
 			String name = block.getId().getPath();
 			simpleBlock(block.get(), models().cubeColumn(name, modLoc("block/" + name + "_side"), modLoc("block/" + name + "_top")));
 		}
-		for (RegistryObject<Block> block : ChippedBlocks.blocksMap.get("pumpkin")) {
+		for (RegistryObject<Block> block : BlockRegistry.getBlocks("pumpkin")) {
 			String name = block.getId().getPath();
 			simpleBlock(block.get(), models().cubeColumn(name, modLoc("block/" + name + "_side"), modLoc("block/" + name + "_top")));
 		}
 
 
-		for (int i = 0; i < ChippedBlocks.blocksMap.get("lantern").size() - 4; i++) {
-			List<RegistryObject<Block>> blocks = ChippedBlocks.blocksMap.get("lantern");
+		for (int i = 0; i < BlockRegistry.getBlocks("lantern").size() - 4; i++) {
+			List<RegistryObject<Block>> blocks = BlockRegistry.getBlocks("lantern");
 			RegistryObject<Block> block = blocks.get(i);
-			String name = block.get().getRegistryName().getPath();
 			getVariantBuilder(block.get())
 					.partialState()
 					.with(LanternBlock.HANGING, false)
 					.modelForState()
-					.modelFile(models().getExistingFile(new ResourceLocation(Chipped.MOD_ID, "block/lanterns/" + name)))
+					.modelFile(models().getExistingFile(new ResourceLocation(Chipped.MOD_ID, "block/lanterns/" + block.getId().getPath())))
 					.addModel();
 			getVariantBuilder(block.get())
 					.partialState()
 					.with(LanternBlock.HANGING, true)
 					.modelForState()
-					.modelFile(models().getExistingFile(new ResourceLocation(Chipped.MOD_ID, "block/lanterns/" + name + "_hanging")))
+					.modelFile(models().getExistingFile(new ResourceLocation(Chipped.MOD_ID, "block/lanterns/" + block.getId().getPath() + "_hanging")))
 					.addModel();
 		}
 
-		for (int i = 0; i < ChippedBlocks.blocksMap.get("soul_lantern").size() - 4; i++) {
-			ArrayList<RegistryObject<Block>> blocks = new ArrayList<>(ChippedBlocks.blocksMap.get("soul_lantern"));
-			RegistryObject<Block> block = blocks.get(i);
-			String name = block.get().getRegistryName().getPath();
+		for (int i = 0; i < BlockRegistry.getBlocks("soul_lantern").size() - 4; i++) {
+			RegistryObject<Block> block = BlockRegistry.getBlocks("soul_lantern").get(i);
+			String name = block.getId().getPath();
 			getVariantBuilder(block.get())
 					.partialState()
 					.with(LanternBlock.HANGING, false)
@@ -113,7 +112,7 @@ public class ChippedBlockStateProvider extends BlockStateProvider {
 					.addModel();
 		}
 		for (int i = 1; i <= 18; i++) {
-			ArrayList<RegistryObject<Block>> lamps = new ArrayList<>(ChippedBlocks.blocksMap.get("redstone_lamp"));
+			ArrayList<RegistryObject<Block>> lamps = new ArrayList<>(BlockRegistry.getBlocks("redstone_lamp"));
 			Block lamp = lamps.get(i-1).get();
 			getVariantBuilder(lamp)
 					.partialState()
@@ -130,10 +129,10 @@ public class ChippedBlockStateProvider extends BlockStateProvider {
 		}
 
 		for (int i = 1; i <= 9; i++) {
-			ArrayList<RegistryObject<Block>> torches = new ArrayList<RegistryObject<Block>>(ChippedBlocks.blocksMap.get("torch"));
-			Block torchBlock = torches.get(i-1).get();
-			simpleBlock(torchBlock, models().torch(torchBlock.getRegistryName().getPath(), modLoc("block/torch_"+i)));
-			ArrayList<RegistryObject<Block>> wallTorches = new ArrayList<RegistryObject<Block>>(ChippedBlocks.blocksMap.get("wall_torch"));
+			ArrayList<RegistryObject<Block>> torches = new ArrayList<>(BlockRegistry.getBlocks("torch"));
+			RegistryObject<Block> torchBlock = torches.get(i-1);
+			simpleBlock(torchBlock.get(), models().torch(torchBlock.getId().getPath(), modLoc("block/torch_"+i)));
+			ArrayList<RegistryObject<Block>> wallTorches = new ArrayList<>(BlockRegistry.getBlocks("wall_torch"));
 			Block wallTorchBlock = wallTorches.get(i-1).get();
 			for(Direction dir : RedstoneWallTorchBlock.FACING.getPossibleValues()) {
 				int angle = Chipped.getTorchAngleFromDir(dir);
@@ -147,13 +146,11 @@ public class ChippedBlockStateProvider extends BlockStateProvider {
 			}
 		}
 
-		List<RegistryObject<Block>> vanillaCarved = ChippedBlocks.blocksMap.get("carved_pumpkin_vanilla");
-		int index = 0;
+		List<RegistryObject<Block>> vanillaCarved = BlockRegistry.getBlocks("carved_pumpkin_vanilla");
 		for (int i = 0; i < ChippedBlocks.carvedPumpkinList.length * 2; i++) {
-			index = 1 + (i / 2);
-			for(Direction direction : directions) {
+			for(Direction direction : Direction.Plane.HORIZONTAL) {
 				String carvedBlockName = vanillaCarved.get(i).getId().getPath();
-				String carvedSubstring = carvedBlockName.substring(0, carvedBlockName.length() - (index >= 10 ? 2 : 1));
+				String carvedSubstring = carvedBlockName.substring(0, carvedBlockName.length() - (1 + (i / 2) >= 10 ? 2 : 1));
 				String blockPath = "block/" + carvedSubstring + ChippedBlocks.carvedPumpkinList[(i / 2) % ChippedBlocks.carvedPumpkinList.length];
 				getVariantBuilder(vanillaCarved.get(i).get())
 					.partialState()
@@ -165,13 +162,13 @@ public class ChippedBlockStateProvider extends BlockStateProvider {
 			}
 		}
 
-		ArrayList<RegistryObject<Block>> specialCarved = new ArrayList<RegistryObject<Block>>(ChippedBlocks.blocksMap.get("carved_pumpkin_special"));
-		ArrayList<RegistryObject<Block>> specialPumpkins = new ArrayList<RegistryObject<Block>>(ChippedBlocks.blocksMap.get("pumpkin"));
+		ArrayList<RegistryObject<Block>> specialCarved = new ArrayList<>(BlockRegistry.getBlocks("carved_pumpkin_special"));
+		ArrayList<RegistryObject<Block>> specialPumpkins = new ArrayList<>(BlockRegistry.getBlocks("pumpkin"));
 		for (int i = 0; i < ChippedBlocks.specialPumpkinList.length * 2; i+=2) {
-			registerSpecialPumpkins(specialCarved, specialPumpkins, directions, i);
+			registerSpecialPumpkins(specialCarved, specialPumpkins, i);
 		}
 		for (int i = 1; i < ChippedBlocks.specialPumpkinList.length * 2; i+=2) {
-			registerSpecialPumpkins(specialCarved, specialPumpkins, directions, i);
+			registerSpecialPumpkins(specialCarved, specialPumpkins, i);
 		}
 
 		registerRedstoneTorch("redstone_torch");
@@ -190,8 +187,8 @@ public class ChippedBlockStateProvider extends BlockStateProvider {
 	}
 
 	private void registerGlassPanes(String type, String glassPaneName, String originalType, String topName, int start, int end) {
+		List<RegistryObject<Block>> blocks = BlockRegistry.getBlocks(type, glassPaneName).collect(Collectors.toList());
 		for (int i = start; i <= end; i++) {
-			List<RegistryObject<Block>> blocks = ChippedBlocks.blocksMap.get(type);
 			String block = glassPaneName + "_" + i;
 			String originalBlock = originalType + "_" + i;
 			getMultipartBuilder(blocks.get(i - 1).get())
@@ -246,7 +243,7 @@ public class ChippedBlockStateProvider extends BlockStateProvider {
 	}
 
 	private void registerRedstoneTorch(String type) {
-		List<RegistryObject<Block>> torches = ChippedBlocks.blocksMap.get(type);
+		List<RegistryObject<Block>> torches = BlockRegistry.getBlocks(type);
 		for (int i = 2; i <= torches.size() + 1; i++) {
 			getVariantBuilder(torches.get(i - 2).get())
 					.partialState()
@@ -263,7 +260,7 @@ public class ChippedBlockStateProvider extends BlockStateProvider {
 	}
 
 	private void registerRedstoneTorchWall(String type) {
-		ArrayList<RegistryObject<Block>> torches = new ArrayList<RegistryObject<Block>>(ChippedBlocks.blocksMap.get(type));
+		ArrayList<RegistryObject<Block>> torches = new ArrayList<>(BlockRegistry.getBlocks(type));
 		for (int i = 2; i <= torches.size() + 1; i++) {
 			for(Direction dir : RedstoneWallTorchBlock.FACING.getPossibleValues()) {
 				int angle = Chipped.getTorchAngleFromDir(dir);
@@ -272,40 +269,37 @@ public class ChippedBlockStateProvider extends BlockStateProvider {
 						.with(RedstoneWallTorchBlock.FACING, dir)
 						.with(RedstoneTorchBlock.LIT, true)
 						.modelForState()
-							.modelFile(models().torchWall("redstone_wall_torch_" + i, modLoc("block/redstone_torch_" + i)))
-							.rotationY(angle)
+						.modelFile(models().torchWall("redstone_wall_torch_" + i, modLoc("block/redstone_torch_" + i)))
+						.rotationY(angle)
 						.addModel()
 					.partialState()
 						.with(RedstoneWallTorchBlock.FACING, dir)
 						.with(RedstoneWallTorchBlock.LIT, false)
 						.modelForState()
-							.modelFile(models().torchWall("redstone_wall_torch_" + i + "_off", modLoc("block/redstone_torch_" + i + "_off")))
-							.rotationY(angle)
+						.modelFile(models().torchWall("redstone_wall_torch_" + i + "_off", modLoc("block/redstone_torch_" + i + "_off")))
+						.rotationY(angle)
 						.addModel();
 			}
 		}
 	}
 
-	private void registerSpecialPumpkins(ArrayList<RegistryObject<Block>> specialCarved, ArrayList<RegistryObject<Block>> specialPumpkins, Direction[] directions, int index) {
+	private void registerSpecialPumpkins(ArrayList<RegistryObject<Block>> specialCarved, ArrayList<RegistryObject<Block>> specialPumpkins, int index) {
 		String carvedBlockName = specialCarved.get(index).getId().getPath();
-		Block specialPumpkin = specialPumpkins.get(index>>1).get();
-		String pumpkinName = specialPumpkin.getRegistryName().getPath();
-		for(Direction direction : directions) {
+		String pumpkinName = specialPumpkins.get(index>>1).getId().getPath();
+		for(Direction direction : Direction.Plane.HORIZONTAL) {
 			//Carved Pumpkin
 			getVariantBuilder(specialCarved.get(index).get())
 					.partialState()
 					.with(CarvedPumpkinBlock.FACING, direction)
 					.modelForState()
-						.modelFile(models().orientable(carvedBlockName, modLoc("block/" + pumpkinName + "_side"), modLoc("block/" + carvedBlockName), modLoc("block/" + pumpkinName + "_top")))
-						.rotationY(Chipped.getAngleFromDir(direction))
+					.modelFile(models().orientable(carvedBlockName, modLoc("block/" + pumpkinName + "_side"), modLoc("block/" + carvedBlockName), modLoc("block/" + pumpkinName + "_top")))
+					.rotationY(Chipped.getAngleFromDir(direction))
 					.addModel();
 		}
 	}
 	
 	private void registerGlassPanes(String type, String originalType, String topName) {
-		registerGlassPanes(type, originalType, topName, 1, ChippedBlocks.blocksMap.get(type).size());
+		registerGlassPanes(type, originalType, topName, 1, BlockRegistry.getBlocks(type).size());
 	}
-	private void registerGlassPanes(String type, String paneName, String originalType, String topName) {
-		registerGlassPanes(type, paneName, originalType, topName, 1, ChippedBlocks.blocksMap.get(type).size());
-	}
+
 }

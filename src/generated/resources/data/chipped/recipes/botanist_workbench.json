@@ -1,12 +1,14 @@
 {
   "type": "chipped:botanist_workbench",
   "tags": [
+    "chipped:shroomlight",
     "chipped:hay_block",
     "chipped:melon",
     "chipped:vine",
-    "chipped:shroomlight",
-    "chipped:pumpkin",
     "chipped:jack_o_lantern",
-    "chipped:carved_pumpkin"
+    "chipped:carved_pumpkin",
+    "chipped:carved_pumpkin_special",
+    "chipped:pumpkin",
+    "chipped:carved_pumpkin_vanilla"
   ]
 }

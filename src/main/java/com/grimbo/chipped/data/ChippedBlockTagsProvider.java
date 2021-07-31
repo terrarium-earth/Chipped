@@ -2,16 +2,21 @@ package com.grimbo.chipped.data;
 
 import com.grimbo.chipped.Chipped;
 import com.grimbo.chipped.ChippedTags;
+import com.grimbo.chipped.api.BlockRegistry;
 import com.grimbo.chipped.block.ChippedBlocks;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.Blocks;
 import net.minecraft.data.BlockTagsProvider;
 import net.minecraft.data.DataGenerator;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.ForgeRegistries;
+
+import java.util.stream.Collectors;
 
 public class ChippedBlockTagsProvider extends BlockTagsProvider {
 
@@ -23,54 +28,39 @@ public class ChippedBlockTagsProvider extends BlockTagsProvider {
 	@Override
 	protected void addTags() {
 		//All blocks with a vanilla variant
-		for (String type : ChippedBlocks.blocksMap.keySet()) {
-			if (ForgeRegistries.BLOCKS.containsKey(new ResourceLocation("minecraft", type))) {
-				tag(ChippedTags.blocks.get(type)).add(ForgeRegistries.BLOCKS.getValue(new ResourceLocation("minecraft", type)));
-				for (RegistryObject<Block> block : ChippedBlocks.blocksMap.get(type)) {
-					tag(ChippedTags.blocks.get(type)).add(block.get());
-				}
+
+		BlockRegistry.getBlockMap().asMap().forEach((type, blocks) -> {
+			Block block = ForgeRegistries.BLOCKS.getValue(new ResourceLocation(type));
+			if (block != null && !block.equals(Blocks.AIR)) {
+				tag(ChippedTags.tags.get(type).getFirst()).add(block);
+				tag(ChippedTags.tags.get(type).getFirst()).add(blocks.stream().map(RegistryObject::get).toArray(Block[]::new));
 			}
-		}
-		
-		//Wood Glasses
-		for (String wood : ChippedBlocks.woodsList) {
-			String type = wood + "_wood_glass";
-			tag(ChippedTags.blocks.get(type)).add(ForgeRegistries.BLOCKS.getValue(new ResourceLocation("minecraft", "glass")));
-			for (RegistryObject<Block> block : ChippedBlocks.blocksMap.get(type)) {
-				tag(ChippedTags.blocks.get(type)).add(block.get());
-			}
-			
-			String type2 = wood + "_wood_glass_pane";
-			tag(ChippedTags.blocks.get(type2)).add(ForgeRegistries.BLOCKS.getValue(new ResourceLocation("minecraft", "glass_pane")));
-			for (RegistryObject<Block> block : ChippedBlocks.blocksMap.get(type2)) {
-				tag(ChippedTags.blocks.get(type2)).add(block.get());
-			}
-		}
+		});
 		
 		//Default Vanilla tags
 		for (String wood : ChippedBlocks.woodsList) {
-			tag(ChippedTags.Blocks.PLANKS).addTag(ChippedTags.blocks.get(wood + "_planks"));
+			tag(BlockTags.PLANKS).addTag(ChippedTags.tags.get(wood + "_planks").getFirst());
 		}
 		
 		for (String color : ChippedBlocks.colorsList) {
-			tag(ChippedTags.Blocks.WOOL).addTag(ChippedTags.blocks.get(color + "_wool"));
-			tag(ChippedTags.Blocks.CARPETS).addTag(ChippedTags.blocks.get(color + "_carpet"));
+			tag(BlockTags.WOOL).addTag(ChippedTags.tags.get(color + "_wool").getFirst());
+			tag(BlockTags.CARPETS).addTag(ChippedTags.tags.get(color + "_carpet").getFirst());
 		}
 
-		tag(ChippedTags.Blocks.DRAGON_IMMUNE).addTag(ChippedTags.blocks.get("obsidian"));
-		tag(ChippedTags.Blocks.DRAGON_IMMUNE).addTag(ChippedTags.blocks.get("crying_obsidian"));
+		tag(BlockTags.DRAGON_IMMUNE).addTag(ChippedTags.tags.get("obsidian").getFirst());
+		tag(BlockTags.DRAGON_IMMUNE).addTag(ChippedTags.tags.get("crying_obsidian").getFirst());
 		
-		tag(ChippedTags.Blocks.CLIMBABLE).addTag(ChippedTags.blocks.get("vine"));
+		tag(BlockTags.CLIMBABLE).addTag(ChippedTags.tags.get("vine").getFirst());
 		
-		tag(ChippedTags.Blocks.WALL_POST_OVERRIDE).addTag(ChippedTags.blocks.get("torch"));
-		tag(ChippedTags.Blocks.WALL_POST_OVERRIDE).addTag(ChippedTags.blocks.get("redstone_torch"));
+		tag(BlockTags.WALL_POST_OVERRIDE).addTag(ChippedTags.tags.get("torch").getFirst());
+		tag(BlockTags.WALL_POST_OVERRIDE).addTag(ChippedTags.tags.get("redstone_torch").getFirst());
 		
 		//Default Forge tags
-		tag(Tags.Blocks.STONE).addTag(ChippedTags.blocks.get("stone"));
-		tag(Tags.Blocks.COBBLESTONE).addTag(ChippedTags.blocks.get("cobblestone"));
-		tag(Tags.Blocks.END_STONES).addTag(ChippedTags.blocks.get("end_stone"));
-		tag(Tags.Blocks.GLASS).addTag(ChippedTags.blocks.get("glass"));
-		tag(Tags.Blocks.NETHERRACK).addTag(ChippedTags.blocks.get("netherrack"));
-		tag(Tags.Blocks.OBSIDIAN).addTag(ChippedTags.blocks.get("obsidian"));
+		tag(Tags.Blocks.STONE).addTag(ChippedTags.tags.get("stone").getFirst());
+		tag(Tags.Blocks.COBBLESTONE).addTag(ChippedTags.tags.get("cobblestone").getFirst());
+		tag(Tags.Blocks.END_STONES).addTag(ChippedTags.tags.get("end_stone").getFirst());
+		tag(Tags.Blocks.GLASS).addTag(ChippedTags.tags.get("glass").getFirst());
+		tag(Tags.Blocks.NETHERRACK).addTag(ChippedTags.tags.get("netherrack").getFirst());
+		tag(Tags.Blocks.OBSIDIAN).addTag(ChippedTags.tags.get("obsidian").getFirst());
 	}
 }

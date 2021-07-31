@@ -1,6 +1,7 @@
 package com.grimbo.chipped.data.client;
 
 import com.grimbo.chipped.Chipped;
+import com.grimbo.chipped.api.BlockRegistry;
 import com.grimbo.chipped.block.ChippedBlocks;
 import net.minecraft.block.Block;
 import net.minecraft.data.DataGenerator;
@@ -20,20 +21,20 @@ public class ChippedItemModelProvider extends ItemModelProvider {
 	@Override
 	protected void registerModels() {
 		//Any blocks which has a custom model and does not need an auto generated one
-		ArrayList<String> custom = new ArrayList<String>();
+		ArrayList<String> custom = new ArrayList<>();
 		
 		custom.add("vine");
 		
 		custom.add("glass_pane");
-		for (int i = 1; i <= ChippedBlocks.blocksMap.get("glass_pane").size(); i++) {
-			List<RegistryObject<Block>> blocks = ChippedBlocks.blocksMap.get("glass_pane");
-			String block = blocks.get(i).getId().getPath();
-			withExistingParent(block, mcLoc("generated")).texture("layer0", modLoc("block/" + block));
+		for (int i = 1; i <= BlockRegistry.getBlocks("glass_pane").size(); i++) {
+			List<RegistryObject<Block>> blocks = BlockRegistry.getBlocks("glass_pane");
+			String block = blocks.get(i - 1).getId().getPath();
+			withExistingParent(block, mcLoc("generated")).texture("layer0", modLoc("block/" + BlockRegistry.getBlocks("glass").get(i-1).getId().getPath()));
 		}
 		
 		for (String color : ChippedBlocks.colorsList) {
 			custom.add(color + "_stained_glass_pane");
-			for (int i = 1; i <= ChippedBlocks.blocksMap.get(color + "_stained_glass_pane").size(); i++) {
+			for (int i = 1; i <= BlockRegistry.getBlocks(color + "_stained_glass_pane").size(); i++) {
 				withExistingParent(color + "_stained_glass_pane_" + i, mcLoc("generated")).texture("layer0", modLoc("block/" + color + "_stained_glass_" + i));
 			}
 		}
@@ -68,9 +69,9 @@ public class ChippedItemModelProvider extends ItemModelProvider {
 		custom.add("special_lantern");
 		custom.add("special_soul_lantern");
 
-		for (String type : ChippedBlocks.blocksMap.keySet()) {
+		for (String type : BlockRegistry.getBlockTypes()) {
 			if (!custom.contains(type)) {
-				for (RegistryObject<Block> block : ChippedBlocks.blocksMap.get(type)) {
+				for (RegistryObject<Block> block : BlockRegistry.getBlocks(type)) {
 					String name = block.getId().getPath();
 					withExistingParent(name, modLoc("block/" + name));
 				}
