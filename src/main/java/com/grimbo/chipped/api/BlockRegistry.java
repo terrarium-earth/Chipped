@@ -6,16 +6,19 @@ import net.minecraft.block.Block;
 import net.minecraftforge.fml.RegistryObject;
 
 import java.util.Collection;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Stream;
 
 public class BlockRegistry {
 
+    private static final Set<String> TAGS = new HashSet<>();
     private static final ListMultimap<String, RegistryObject<Block>> BLOCKS = ArrayListMultimap.create();
     private static final SetMultimap<BenchType, String> BENCH_TAGS = LinkedHashMultimap.create();
 
     public static void addBlock(BenchType type, String id, RegistryObject<Block> block){
+        TAGS.add(id);
         BLOCKS.put(id, block);
         BENCH_TAGS.put(type, Chipped.MOD_ID + ":" + id);
     }
@@ -38,6 +41,10 @@ public class BlockRegistry {
 
     public static Set<String> getBlockTypes() {
         return BLOCKS.keySet();
+    }
+
+    public static boolean doesHaveTag(String id) {
+        return TAGS.contains(id);
     }
 
     public static ListMultimap<String, RegistryObject<Block>> getBlockMap() {

@@ -1,11 +1,11 @@
 package com.grimbo.chipped.api;
 
 public enum BenchType {
+    ALCHEMY,
     BOTANIST,
-    GLASSBLOWER,
     CARPENTERS,
+    GLASSBLOWER,
     LOOM,
     MASON,
-    ALCHEMY,
     MECHANIST
 }

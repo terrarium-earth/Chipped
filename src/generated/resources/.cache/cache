@@ -9945,7 +9945,6 @@ b2b8a9527258afc528cb7a165d283486b088644c data/chipped/tags/blocks/red_stained_gl
 bab8d606b46dd6371f4df7ac3ea98fb4c684f058 data/chipped/tags/blocks/red_wool.json
 a3537e0f28a29a661b468d38689794fd34a4f85d data/chipped/tags/blocks/redstone_lamp.json
 016ed08b1347c0a53865729fc4f553e0e91febe9 data/chipped/tags/blocks/redstone_torch.json
-cb8f14fc58732f25d7aebe1d5bc7030a6c50ed6e data/chipped/tags/blocks/redstone_wall_torch.json
 52b053f0a8a9b26fa1c11c1ab7db6cc9d4429ed7 data/chipped/tags/blocks/sandstone.json
 3594bba6ff41680232c5c7450dbd8b560d57c0fe data/chipped/tags/blocks/sea_lantern.json
 94db9bae4d2a571a230dfd15e457efcf22c7e822 data/chipped/tags/blocks/shroomlight.json
@@ -9954,7 +9953,6 @@ cb8f14fc58732f25d7aebe1d5bc7030a6c50ed6e data/chipped/tags/blocks/redstone_wall_
 748f1b2fdd8ed32471b87e6bad8430ed6145857a data/chipped/tags/blocks/stone.json
 8c596263c0c055370ea06be56e8985ca8aa86a75 data/chipped/tags/blocks/torch.json
 ca5949698cb5129c7f24b2967ee3304e3031200e data/chipped/tags/blocks/vine.json
-d112fc8a2a0cc9387efba576e490808c9850e198 data/chipped/tags/blocks/wall_torch.json
 bf87989ab1d0e993767fb03301dc2b77e8176f73 data/chipped/tags/blocks/warped_planks.json
 5bcc00aadf1535e2dfd386dc0c472ca533103a91 data/chipped/tags/blocks/white_carpet.json
 8a3a50e54027d3f3b9f7b64ab37523e6b50f7d10 data/chipped/tags/blocks/white_concrete.json
@@ -10090,7 +10088,6 @@ b2b8a9527258afc528cb7a165d283486b088644c data/chipped/tags/items/red_stained_gla
 bab8d606b46dd6371f4df7ac3ea98fb4c684f058 data/chipped/tags/items/red_wool.json
 a3537e0f28a29a661b468d38689794fd34a4f85d data/chipped/tags/items/redstone_lamp.json
 016ed08b1347c0a53865729fc4f553e0e91febe9 data/chipped/tags/items/redstone_torch.json
-cb8f14fc58732f25d7aebe1d5bc7030a6c50ed6e data/chipped/tags/items/redstone_wall_torch.json
 52b053f0a8a9b26fa1c11c1ab7db6cc9d4429ed7 data/chipped/tags/items/sandstone.json
 3594bba6ff41680232c5c7450dbd8b560d57c0fe data/chipped/tags/items/sea_lantern.json
 94db9bae4d2a571a230dfd15e457efcf22c7e822 data/chipped/tags/items/shroomlight.json
@@ -10099,7 +10096,6 @@ cb8f14fc58732f25d7aebe1d5bc7030a6c50ed6e data/chipped/tags/items/redstone_wall_t
 748f1b2fdd8ed32471b87e6bad8430ed6145857a data/chipped/tags/items/stone.json
 8c596263c0c055370ea06be56e8985ca8aa86a75 data/chipped/tags/items/torch.json
 ca5949698cb5129c7f24b2967ee3304e3031200e data/chipped/tags/items/vine.json
-d112fc8a2a0cc9387efba576e490808c9850e198 data/chipped/tags/items/wall_torch.json
 bf87989ab1d0e993767fb03301dc2b77e8176f73 data/chipped/tags/items/warped_planks.json
 5bcc00aadf1535e2dfd386dc0c472ca533103a91 data/chipped/tags/items/white_carpet.json
 8a3a50e54027d3f3b9f7b64ab37523e6b50f7d10 data/chipped/tags/items/white_concrete.json

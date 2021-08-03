@@ -6,7 +6,6 @@ import java.util.function.Supplier;
 import java.util.stream.Collectors;
 
 import com.google.common.base.Suppliers;
-import com.google.common.collect.Lists;
 import com.grimbo.chipped.recipe.ChippedRecipe;
 
 import net.minecraft.block.Block;
@@ -29,6 +28,7 @@ import net.minecraft.util.SoundEvents;
 import net.minecraft.world.World;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
+import org.jetbrains.annotations.NotNull;
 
 //Pulled from net.minecraft.inventory.container.ChippedContainer
 public class ChippedContainer extends Container {
@@ -54,7 +54,7 @@ public class ChippedContainer extends Container {
 	private final CraftResultInventory resultContainer = new CraftResultInventory();
 
 	//Stores dynamic container data
-	private ContainerType<ChippedContainer> containerType;
+	private final ContainerType<ChippedContainer> containerType;
 	private IRecipeType<ChippedRecipe> recipeType;
 	private Block blockWorkbench;
 
@@ -77,13 +77,13 @@ public class ChippedContainer extends Container {
 		this.level = inventory.player.level;
 		this.inputSlot = this.addSlot(new Slot(this.container, 0, 20, 33));
 		this.resultSlot = this.addSlot(new Slot(this.resultContainer, 1, 143, 33) {
-			public boolean mayPlace(ItemStack p_75214_1_) {
+			public boolean mayPlace(@NotNull ItemStack stack) {
 				return false;
 			}
 
-			public ItemStack onTake(PlayerEntity p_190901_1_, ItemStack p_190901_2_) {
-				p_190901_2_.onCraftedBy(p_190901_1_.level, p_190901_1_, p_190901_2_.getCount());
-				ChippedContainer.this.resultContainer.awardUsedRecipes(p_190901_1_);
+			public @NotNull ItemStack onTake(@NotNull PlayerEntity player, @NotNull ItemStack stack) {
+				stack.onCraftedBy(player.level, player, stack.getCount());
+				ChippedContainer.this.resultContainer.awardUsedRecipes(player);
 				ItemStack itemstack = ChippedContainer.this.inputSlot.remove(1);
 				if (!itemstack.isEmpty()) {
 					ChippedContainer.this.setupResultSlot();
@@ -98,7 +98,7 @@ public class ChippedContainer extends Container {
 					}
 
 				});
-				return super.onTake(p_190901_1_, p_190901_2_);
+				return super.onTake(player, stack);
 			}
 		});
 
@@ -128,9 +128,9 @@ public class ChippedContainer extends Container {
 	}
 
 	@Override
-	public boolean stillValid(PlayerEntity p_75145_1_) { return stillValid(this.access, p_75145_1_, blockWorkbench); }
+	public boolean stillValid(@NotNull PlayerEntity player) { return stillValid(this.access, player, blockWorkbench); }
 
-	public boolean clickMenuButton(PlayerEntity player, int index) {
+	public boolean clickMenuButton(@NotNull PlayerEntity player, int index) {
 		if (this.isValidRecipeIndex(index)) {
 			this.selectedRecipeIndex.set(index);
 			this.setupResultSlot();
@@ -144,11 +144,11 @@ public class ChippedContainer extends Container {
 	}
 
 	@Override
-	public void slotsChanged(IInventory p_75130_1_) {
+	public void slotsChanged(@NotNull IInventory inventory) {
 		ItemStack itemstack = this.inputSlot.getItem();
 		if (itemstack.getItem() != this.input.getItem()) {
 			this.input = itemstack.copy();
-			this.setupRecipeList(p_75130_1_, itemstack);
+			this.setupRecipeList(inventory, itemstack);
 		}
 
 	}
@@ -168,7 +168,7 @@ public class ChippedContainer extends Container {
 	private void setupResultSlot() {
 		if (recipe != null && results != null && !this.results.get().isEmpty() && this.isValidRecipeIndex(this.selectedRecipeIndex.get())) {
 			this.resultContainer.setRecipeUsed(recipe);
-			this.resultSlot.set(results.get().get(selectedRecipeIndex.get()));
+			this.resultSlot.set(results.get().get(selectedRecipeIndex.get()).copy());
 		} else {
 			this.resultSlot.set(ItemStack.EMPTY);
 		}
@@ -177,7 +177,7 @@ public class ChippedContainer extends Container {
 	}
 
 	@Override
-	public ContainerType<?> getType() {
+	public @NotNull ContainerType<?> getType() {
 		return containerType;
 	}
 
@@ -187,12 +187,12 @@ public class ChippedContainer extends Container {
 	}
 
 	@Override
-	public boolean canTakeItemForPickAll(ItemStack p_94530_1_, Slot p_94530_2_) {
-		return p_94530_2_.container != this.resultContainer && super.canTakeItemForPickAll(p_94530_1_, p_94530_2_);
+	public boolean canTakeItemForPickAll(@NotNull ItemStack stack, Slot slot) {
+		return slot.container != this.resultContainer && super.canTakeItemForPickAll(stack, slot);
 	}
 
 	@Override
-	public ItemStack quickMoveStack(PlayerEntity p_82846_1_, int p_82846_2_) {
+	public @NotNull ItemStack quickMoveStack(@NotNull PlayerEntity player, int p_82846_2_) {
 		ItemStack itemstack = ItemStack.EMPTY;
 		Slot slot = this.slots.get(p_82846_2_);
 		if (slot != null && slot.hasItem()) {
@@ -200,7 +200,7 @@ public class ChippedContainer extends Container {
 			Item item = itemstack1.getItem();
 			itemstack = itemstack1.copy();
 			if (p_82846_2_ == 1) {
-				item.onCraftedBy(itemstack1, p_82846_1_.level, p_82846_1_);
+				item.onCraftedBy(itemstack1, player.level, player);
 				if (!this.moveItemStackTo(itemstack1, 2, 38, true)) {
 					return ItemStack.EMPTY;
 				}
@@ -215,11 +215,11 @@ public class ChippedContainer extends Container {
 				if (!this.moveItemStackTo(itemstack1, 0, 1, false)) {
 					return ItemStack.EMPTY;
 				}
-			} else if (p_82846_2_ >= 2 && p_82846_2_ < 29) {
+			} else if (p_82846_2_ < 29) {
 				if (!this.moveItemStackTo(itemstack1, 29, 38, false)) {
 					return ItemStack.EMPTY;
 				}
-			} else if (p_82846_2_ >= 29 && p_82846_2_ < 38 && !this.moveItemStackTo(itemstack1, 2, 29, false)) {
+			} else if (p_82846_2_ < 38 && !this.moveItemStackTo(itemstack1, 2, 29, false)) {
 				return ItemStack.EMPTY;
 			}
 
@@ -232,7 +232,7 @@ public class ChippedContainer extends Container {
 				return ItemStack.EMPTY;
 			}
 
-			slot.onTake(p_82846_1_, itemstack1);
+			slot.onTake(player, itemstack1);
 			this.broadcastChanges();
 		}
 
@@ -240,11 +240,9 @@ public class ChippedContainer extends Container {
 	}
 
 	@Override
-	public void removed(PlayerEntity p_75134_1_) {
-		super.removed(p_75134_1_);
+	public void removed(@NotNull PlayerEntity player) {
+		super.removed(player);
 		this.resultContainer.removeItemNoUpdate(1);
-		this.access.execute((p_217079_2_, p_217079_3_) -> {
-			this.clearContainer(p_75134_1_, p_75134_1_.level, this.container);
-		});
+		this.access.execute((p_217079_2_, p_217079_3_) -> this.clearContainer(player, player.level, this.container));
 	}
 }

@@ -13,6 +13,7 @@ import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.IWorldReader;
+import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.Nullable;
 
@@ -32,7 +33,7 @@ public class ChippedLantern extends Block implements IWaterLoggable {
     }
 
     @Override
-    public VoxelShape getShape(BlockState blockState, IBlockReader reader, BlockPos pos, ISelectionContext selectionContext) {
+    public @NotNull VoxelShape getShape(@NotNull BlockState blockState, @NotNull IBlockReader reader, @NotNull BlockPos pos, @NotNull ISelectionContext selectionContext) {
         return getShape(blockState);
     }
 

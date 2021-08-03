@@ -1,8 +1,5 @@
 package com.grimbo.chipped.block;
 
-import com.google.common.collect.ArrayListMultimap;
-import com.google.common.collect.ListMultimap;
-import com.google.common.collect.Multimap;
 import com.grimbo.chipped.Chipped;
 import com.grimbo.chipped.api.BenchType;
 import com.grimbo.chipped.api.BlockRegistry;
@@ -279,7 +276,7 @@ public class ChippedBlocks {
         for(int i: indexes) {
             RegistryObject<Block> lantern = register(name + "_" + i, () -> new LanternBlock(LANTERN_PROPERTIES){
                 @Override
-                public @NotNull VoxelShape getShape(@NotNull BlockState blockState, IBlockReader blockReader, BlockPos pos, ISelectionContext selectionContext) {
+                public @NotNull VoxelShape getShape(@NotNull BlockState blockState, @NotNull IBlockReader blockReader, @NotNull BlockPos pos, @NotNull ISelectionContext selectionContext) {
                     return blockState.getValue(HANGING) ? hangingShape : normalShape;
                 }
             });

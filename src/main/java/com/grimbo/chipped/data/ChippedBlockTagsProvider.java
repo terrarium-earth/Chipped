@@ -16,8 +16,6 @@ import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.ForgeRegistries;
 
-import java.util.stream.Collectors;
-
 public class ChippedBlockTagsProvider extends BlockTagsProvider {
 
 	public ChippedBlockTagsProvider(DataGenerator generatorIn, ExistingFileHelper existingFileHelper) {
@@ -30,10 +28,12 @@ public class ChippedBlockTagsProvider extends BlockTagsProvider {
 		//All blocks with a vanilla variant
 
 		BlockRegistry.getBlockMap().asMap().forEach((type, blocks) -> {
-			Block block = ForgeRegistries.BLOCKS.getValue(new ResourceLocation(type));
-			if (block != null && !block.equals(Blocks.AIR)) {
-				tag(ChippedTags.tags.get(type).getFirst()).add(block);
-				tag(ChippedTags.tags.get(type).getFirst()).add(blocks.stream().map(RegistryObject::get).toArray(Block[]::new));
+			if (BlockRegistry.doesHaveTag(type)) {
+				Block block = ForgeRegistries.BLOCKS.getValue(new ResourceLocation(type));
+				if (block != null && !block.equals(Blocks.AIR)) {
+					tag(ChippedTags.tags.get(type).getFirst()).add(block);
+					tag(ChippedTags.tags.get(type).getFirst()).add(blocks.stream().map(RegistryObject::get).toArray(Block[]::new));
+				}
 			}
 		});
 		

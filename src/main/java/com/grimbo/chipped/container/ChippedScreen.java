@@ -2,7 +2,6 @@ package com.grimbo.chipped.container;
 
 import java.util.List;
 
-import com.grimbo.chipped.recipe.ChippedRecipe;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.systems.RenderSystem;
 
@@ -15,6 +14,7 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.text.ITextComponent;
+import org.jetbrains.annotations.NotNull;
 
 //Pulled from net.minecraft.client.gui.screen.inventory.StonecutterScreen
 public class ChippedScreen extends ContainerScreen<ChippedContainer> {
@@ -31,13 +31,13 @@ public class ChippedScreen extends ContainerScreen<ChippedContainer> {
 	}
 
 	@Override
-	public void render(MatrixStack matrix, int mouseX, int mouseY, float partialTicks) {
+	public void render(@NotNull MatrixStack matrix, int mouseX, int mouseY, float partialTicks) {
 		super.render(matrix, mouseX, mouseY, partialTicks);
 		this.renderTooltip(matrix, mouseX, mouseY);
 	}
 
 	@Override
-	protected void renderBg(MatrixStack matrix, float partialTicks, int mouseX, int mouseY) {
+	protected void renderBg(@NotNull MatrixStack matrix, float partialTicks, int mouseX, int mouseY) {
 		this.renderBackground(matrix);
 		RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
 		this.minecraft.getTextureManager().bind(BG_LOCATION);
@@ -54,7 +54,7 @@ public class ChippedScreen extends ContainerScreen<ChippedContainer> {
 	}
 
 	@Override
-	protected void renderTooltip(MatrixStack matrix, int mouseX, int mouseY) {
+	protected void renderTooltip(@NotNull MatrixStack matrix, int mouseX, int mouseY) {
 		super.renderTooltip(matrix, mouseX, mouseY);
 		if (this.displayRecipes) {
 			int i = this.leftPos + 52;

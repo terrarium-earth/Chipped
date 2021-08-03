@@ -2,7 +2,6 @@ package com.grimbo.chipped.block;
 
 import javax.annotation.Nullable;
 
-import com.grimbo.chipped.container.*;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockRenderType;
@@ -33,6 +32,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.registries.ForgeRegistries;
+import org.jetbrains.annotations.NotNull;
 
 public class ChippedWorkbench extends Block {
     public static final DirectionProperty FACING = HorizontalBlock.FACING;
@@ -59,7 +59,7 @@ public class ChippedWorkbench extends Block {
 	}
 
 	@Override
-	public ActionResultType use(BlockState state, World worldIn, BlockPos pos, PlayerEntity player, Hand handIn, BlockRayTraceResult hit) {
+	public @NotNull ActionResultType use(@NotNull BlockState state, World worldIn, @NotNull BlockPos pos, @NotNull PlayerEntity player, @NotNull Hand handIn, @NotNull BlockRayTraceResult hit) {
 		if (worldIn.isClientSide) {
 			return ActionResultType.SUCCESS;
 		} else {
@@ -70,7 +70,7 @@ public class ChippedWorkbench extends Block {
 
 	@Nullable
 	@Override
-	public INamedContainerProvider getMenuProvider(BlockState state, World worldIn, BlockPos pos) {
+	public INamedContainerProvider getMenuProvider(@NotNull BlockState state, @NotNull World worldIn, @NotNull BlockPos pos) {
         return new SimpleNamedContainerProvider(
                 (id, inventory, player) -> factory.create(id, inventory, IWorldPosCallable.create(worldIn, pos)),
                 containerName.get()
