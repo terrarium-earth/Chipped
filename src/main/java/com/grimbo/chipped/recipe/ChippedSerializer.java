@@ -12,13 +12,13 @@ import net.minecraftforge.registries.ForgeRegistries;
 public class ChippedSerializer {
 
 	//Add new IRecipeTypes here
-	public static final IRecipeType<ChippedRecipe> BOTANIST_WORKBENCH_TYPE = IRecipeType.register("botanist_workbench");
-	public static final IRecipeType<ChippedRecipe> GLASSBLOWER_TYPE = IRecipeType.register("glassblower");
-	public static final IRecipeType<ChippedRecipe> CARPENTERS_TABLE_TYPE = IRecipeType.register("carpenters_table");
-	public static final IRecipeType<ChippedRecipe> LOOM_TABLE_TYPE = IRecipeType.register("loom_table");
-	public static final IRecipeType<ChippedRecipe> MASON_TABLE_TYPE = IRecipeType.register("mason_table");
-	public static final IRecipeType<ChippedRecipe> ALCHEMY_BENCH_TYPE = IRecipeType.register("alchemy_bench");
-	public static final IRecipeType<ChippedRecipe> MECHANIST_WORKBENCH_TYPE = IRecipeType.register("mechanist_workbench");
+	public static final IRecipeType<ChippedRecipe> BOTANIST_WORKBENCH_TYPE = IRecipeType.register(Chipped.MOD_ID +":botanist_workbench");
+	public static final IRecipeType<ChippedRecipe> GLASSBLOWER_TYPE = IRecipeType.register(Chipped.MOD_ID +":glassblower");
+	public static final IRecipeType<ChippedRecipe> CARPENTERS_TABLE_TYPE = IRecipeType.register(Chipped.MOD_ID +":carpenters_table");
+	public static final IRecipeType<ChippedRecipe> LOOM_TABLE_TYPE = IRecipeType.register(Chipped.MOD_ID +":loom_table");
+	public static final IRecipeType<ChippedRecipe> MASON_TABLE_TYPE = IRecipeType.register(Chipped.MOD_ID +":mason_table");
+	public static final IRecipeType<ChippedRecipe> ALCHEMY_BENCH_TYPE = IRecipeType.register(Chipped.MOD_ID +":alchemy_bench");
+	public static final IRecipeType<ChippedRecipe> MECHANIST_WORKBENCH_TYPE = IRecipeType.register(Chipped.MOD_ID +":mechanist_workbench");
 	
 	//Add new IRecipeSerializers here, must keep ids in numerical order for ChippedRecipe::fromId
 	public static final DeferredRegister<IRecipeSerializer<?>> SERIALIZER = DeferredRegister.create(ForgeRegistries.RECIPE_SERIALIZERS, Chipped.MOD_ID);

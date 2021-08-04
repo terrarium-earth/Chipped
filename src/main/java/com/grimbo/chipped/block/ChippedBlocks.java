@@ -73,17 +73,6 @@ public class ChippedBlocks {
 	public static final String[] colorsList = { "white", "orange", "magenta", "light_blue", "yellow", "lime", "pink", "gray", "light_gray",
 			"cyan", "purple", "blue", "brown", "green", "red", "black" };
 
-    // Workbenches
-    /*
-     * To register a new workbench:
-     * 1. Add the workbench block to ChippedBlocks
-     * 2. Give it an id in ChippedWorkbench
-     * 3. Register a new ContainerType in container.ChippedContainerType
-     * 4. Create a new class file that extends ChippedContainer in chipped.container
-     * 5. Register a new IRecipeSerializer in recipe.ChippedSerializer
-     * 6. Register it in integrations.jei.JEIPlugin
-     * 7. Give it both a block and container name in en_us.json
-     */
     public static final RegistryObject<Block> BOTANIST_WORKBENCH = register("botanist_workbench", () -> new ChippedWorkbench(BotanistWorkbenchContainer::new,
             AbstractBlock.Properties.of(Material.WOOD).strength(1F, 2F).sound(SoundType.WOOD).noOcclusion()
                     .isValidSpawn(VALID_SPAWN).isRedstoneConductor(ALWAYS_FALSE_POSITION)
@@ -119,13 +108,6 @@ public class ChippedBlocks {
                     .isValidSpawn(VALID_SPAWN).isRedstoneConductor(ALWAYS_FALSE_POSITION)
                     .isSuffocating(ALWAYS_FALSE_POSITION).isViewBlocking(ALWAYS_FALSE_POSITION)));
 
-    /*
-     * To add blocks:
-     * 1. Register the RegistryObject in ChippedBlocks::register with properties (ChippedBlocks::registerBlocks is for any basic blocks that extends Block)
-     * 2. Give it a client render if needed in Chipped::clientRender
-     * 3. Add it to the data generators in ChippedDataGenerator
-     * 4. Give it a block name in en_us.json
-     */
     public static void register() {
         // Register Stones
         for (String type : stones18) {
@@ -283,33 +265,15 @@ public class ChippedBlocks {
             BlockRegistry.addBlock(BenchType.MECHANIST, name, lantern);
         }
     }
-    /**
-     * Only use if a vanilla block counterpart exists and the same properties should be used.
-     *
-     * @param name  The registry name to be used, and to infer which vanilla block should be used.
-     * @param count How many of the block should be registered, the index is used as the suffix.
-     */
+
     private static void registerVanillaBlocks(BenchType bench, String name, int count) {
         registerVanillaBlocks(bench, ForgeRegistries.BLOCKS.getValue(new ResourceLocation("minecraft", name)), name, count);
     }
 
-    /**
-     * Only use if a vanilla block counterpart exists and the same properties should be used.
-     *
-     * @param vanillaBlock The vanilla equivalent, passed explicitly 'cause explicit > implicit.
-     * @param name         The registry name to be used.
-     * @param count        How many of the block should be registered, the index is used as the suffix.
-     */
     private static void registerVanillaBlocks(BenchType bench, Block vanillaBlock, String name, int count) {
         registerBlocks(bench, name, () -> new Block(AbstractBlock.Properties.copy(vanillaBlock)), count);
     }
 
-    /**
-     * Only use if a vanilla block counterpart exists and the same properties should be used.
-     *
-     * @param name  The registry name to be used.
-     * @param count How many of the block should be registered, the index is used as the suffix.
-     */
     private static void registerBlocks(BenchType bench, String name, Supplier<Block> block, int count) {
         registerBlocks(bench, name, name, block, count);
     }
