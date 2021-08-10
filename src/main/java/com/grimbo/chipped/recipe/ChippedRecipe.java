@@ -44,10 +44,10 @@ public class ChippedRecipe implements IRecipe<IInventory> {
 
 	@Override
 	public boolean matches(IInventory inventory, @NotNull World world) {
-		Item item = inventory.getItem(0).getItem();
-		if (item != Items.AIR) {
+		ItemStack item = inventory.getItem(0);
+		if (!item.isEmpty()) {
 			for (ITag<Item> tag : tags) {
-				if (item.is(tag)) {
+				if (item.getItem().is(tag)) {
 					return true;
 				}
 			}

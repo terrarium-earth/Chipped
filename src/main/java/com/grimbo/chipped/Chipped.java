@@ -1,17 +1,20 @@
 package com.grimbo.chipped;
 
 import com.grimbo.chipped.api.BlockRegistry;
+import com.grimbo.chipped.api.ChippedBlockType;
+import com.grimbo.chipped.block.ChippedBlockTypes;
 import com.grimbo.chipped.block.ChippedBlocks;
 import com.grimbo.chipped.container.ChippedContainer;
 import com.grimbo.chipped.container.ChippedContainerType;
 import com.grimbo.chipped.container.ChippedScreen;
 import com.grimbo.chipped.item.ChippedItems;
 import com.grimbo.chipped.recipe.ChippedSerializer;
-import net.minecraft.block.Block;
+import net.minecraft.block.*;
 import net.minecraft.client.gui.ScreenManager;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.RenderTypeLookup;
 import net.minecraft.inventory.container.ContainerType;
+import net.minecraft.item.DyeColor;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Direction;
@@ -55,55 +58,50 @@ public class Chipped {
 		RenderTypeLookup.setRenderLayer(ChippedBlocks.ALCHEMY_BENCH.get(), RenderType.cutout());
 		RenderTypeLookup.setRenderLayer(ChippedBlocks.MECHANIST_WORKBENCH.get(), RenderType.cutout());
 
-		for (RegistryObject<Block> glass : BlockRegistry.getBlocks("glass")) {
+		for (RegistryObject<GlassBlock> glass : ChippedBlockTypes.GLASSES) {
 			RenderTypeLookup.setRenderLayer(glass.get(), RenderType.cutout());
 		}
 
-		for (RegistryObject<Block> glass : BlockRegistry.getBlocks("glass_pane")) {
-			RenderTypeLookup.setRenderLayer(glass.get(), RenderType.cutout());
+		for (RegistryObject<PaneBlock> glassPane : ChippedBlockTypes.GLASS_PANES) {
+			RenderTypeLookup.setRenderLayer(glassPane.get(), RenderType.cutout());
 		}
 
-		for (String wood : ChippedBlocks.woodsList) {
-			for (RegistryObject<Block> glass : BlockRegistry.getBlocks(wood + "_wood_glass")) {
-				RenderTypeLookup.setRenderLayer(glass.get(), RenderType.cutout());
-			}
-
-			for (RegistryObject<Block> glass : BlockRegistry.getBlocks(wood + "_wood_glass_pane")) {
-				RenderTypeLookup.setRenderLayer(glass.get(), RenderType.cutout());
-			}
-		}
-
-		for (String color : ChippedBlocks.colorsList) {
-			for (RegistryObject<Block> stainedGlass : BlockRegistry.getBlocks(color + "_stained_glass")) {
+		for (int id = 0; id < 16; id++) {
+			DyeColor color = DyeColor.byId(id);
+			for (RegistryObject<StainedGlassBlock> stainedGlass : ChippedBlockTypes.STAINED_GLASSES.get(color)) {
 				RenderTypeLookup.setRenderLayer(stainedGlass.get(), RenderType.translucent());
 			}
 
-			for (RegistryObject<Block> stainedGlassPane : BlockRegistry.getBlocks(color + "_stained_glass_pane")) {
+			for (RegistryObject<StainedGlassPaneBlock> stainedGlassPane : ChippedBlockTypes.STAINED_GLASS_PANES.get(color)) {
 				RenderTypeLookup.setRenderLayer(stainedGlassPane.get(), RenderType.translucent());
 			}
 		}
 
-		for (RegistryObject<Block> vine : BlockRegistry.getBlocks("vine")) {
+		for (RegistryObject<VineBlock> vine : ChippedBlockTypes.VINES) {
 			RenderTypeLookup.setRenderLayer(vine.get(), RenderType.translucent());
 		}
-		for (RegistryObject<Block> redstoneTorch : BlockRegistry.getBlocks("redstone_torch")) {
+
+		for (RegistryObject<RedstoneTorchBlock> redstoneTorch : ChippedBlockTypes.REDSTONE_TORCHES) {
 			RenderTypeLookup.setRenderLayer(redstoneTorch.get(), RenderType.cutout());
 		}
-		for (RegistryObject<Block> redstoneWallTorch : BlockRegistry.getBlocks("redstone_wall_torch")) {
+
+		for (RegistryObject<RedstoneWallTorchBlock> redstoneWallTorch : ChippedBlocks.REDSTONE_WALL_TORCHES) {
 			RenderTypeLookup.setRenderLayer(redstoneWallTorch.get(), RenderType.cutout());
 		}
-		for (RegistryObject<Block> torch : BlockRegistry.getBlocks("torch")) {
+
+		for (RegistryObject<TorchBlock> torch : ChippedBlockTypes.TORCHES) {
 			RenderTypeLookup.setRenderLayer(torch.get(), RenderType.cutout());
 		}
-		for (RegistryObject<Block> wallTorch : BlockRegistry.getBlocks("wall_torch")) {
+
+		for (RegistryObject<WallTorchBlock> wallTorch : ChippedBlocks.WALL_TORCHES) {
 			RenderTypeLookup.setRenderLayer(wallTorch.get(), RenderType.cutout());
 		}
 
-		for (RegistryObject<Block> lantern : BlockRegistry.getBlocks("lantern")) {
+		for (RegistryObject<Block> lantern : ChippedBlockTypes.LANTERNS) {
 			RenderTypeLookup.setRenderLayer(lantern.get(), RenderType.cutout());
 		}
 
-		for (RegistryObject<Block> lantern : BlockRegistry.getBlocks("soul_lantern")) {
+		for (RegistryObject<Block> lantern : ChippedBlockTypes.SOUL_LANTERNS) {
 			RenderTypeLookup.setRenderLayer(lantern.get(), RenderType.cutout());
 		}
 	}
@@ -115,7 +113,6 @@ public class Chipped {
 			ScreenManager.register((ContainerType<ChippedContainer>) container, ChippedScreen::new);
 		}
 	}
-
 
 	public static int getTorchAngleFromDir(Direction direction) {
 		switch (direction) {
@@ -142,5 +139,4 @@ public class Chipped {
 				return 0;
 		}
 	}
-
 }

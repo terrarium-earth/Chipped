@@ -1,16 +1,16 @@
 package com.grimbo.chipped.data;
 
 import com.grimbo.chipped.Chipped;
-import com.grimbo.chipped.ChippedTags;
-import com.grimbo.chipped.block.ChippedBlocks;
+import com.grimbo.chipped.api.BlockRegistry;
+import com.grimbo.chipped.api.ChippedBlockType;
+import com.grimbo.chipped.api.ChippedWoodType;
+import com.grimbo.chipped.block.ChippedBlockTypes;
 
-import com.mojang.datafixers.util.Pair;
 import net.minecraft.block.Block;
 import net.minecraft.data.BlockTagsProvider;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.ItemTagsProvider;
-import net.minecraft.item.Item;
-import net.minecraft.tags.ITag;
+import net.minecraft.item.DyeColor;
 import net.minecraft.tags.ItemTags;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.data.ExistingFileHelper;
@@ -24,30 +24,30 @@ public class ChippedItemTagsProvider extends ItemTagsProvider {
 
 	@Override
 	protected void addTags() {
-		for (Pair<ITag.INamedTag<Block>, ITag.INamedTag<Item>> tag : ChippedTags.tags.values()) {
-			copy(tag.getFirst(), tag.getSecond());
+		for (ChippedBlockType<Block> type : BlockRegistry.getBlockTypes()) {
+			copy(type.getBlockTag(), type.getItemTag());
 		}
-		
+
 		//Default Vanilla tags
-		for (String wood : ChippedBlocks.woodsList) {
-			tag(ItemTags.PLANKS).addTag(ChippedTags.tags.get(wood + "_planks").getSecond());
+		for (ChippedWoodType wood : ChippedWoodType.VALUES) {
+			tag(ItemTags.PLANKS).addTag(ChippedBlockTypes.PLANKS.get(wood).getItemTag());
 		}
-		
-		for (String color : ChippedBlocks.colorsList) {
-			tag(ItemTags.WOOL).addTag(ChippedTags.tags.get(color + "_wool").getSecond());
-			tag(ItemTags.CARPETS).addTag(ChippedTags.tags.get(color + "_carpet").getSecond());
+
+		for (int i = 0; i < 16; i++) {
+			DyeColor color = DyeColor.byId(i);
+			tag(ItemTags.WOOL).addTag(ChippedBlockTypes.WOOL.get(color).getItemTag());
+			tag(ItemTags.CARPETS).addTag(ChippedBlockTypes.CARPETS.get(color).getItemTag());
 		}
-		
-		tag(ItemTags.STONE_CRAFTING_MATERIALS).addTag(ChippedTags.tags.get("cobblestone").getSecond());
-		tag(ItemTags.STONE_CRAFTING_MATERIALS).addTag(ChippedTags.tags.get("blackstone").getSecond());
+
+		tag(ItemTags.STONE_CRAFTING_MATERIALS).addTag(ChippedBlockTypes.COBBLESTONE.getItemTag());
+		tag(ItemTags.STONE_CRAFTING_MATERIALS).addTag(ChippedBlockTypes.BLACKSTONES.getItemTag());
 
 		//Default Forge tags
-		tag(Tags.Items.STONE).addTag(ChippedTags.tags.get("stone").getSecond());
-		tag(Tags.Items.COBBLESTONE).addTag(ChippedTags.tags.get("cobblestone").getSecond());
-		tag(Tags.Items.END_STONES).addTag(ChippedTags.tags.get("end_stone").getSecond());
-		tag(Tags.Items.GLASS).addTag(ChippedTags.tags.get("glass").getSecond());
-		tag(Tags.Items.NETHERRACK).addTag(ChippedTags.tags.get("netherrack").getSecond());
-		tag(Tags.Items.OBSIDIAN).addTag(ChippedTags.tags.get("obsidian").getSecond());
-
+		tag(Tags.Items.STONE).addTag(ChippedBlockTypes.STONE.getItemTag());
+		tag(Tags.Items.COBBLESTONE).addTag(ChippedBlockTypes.COBBLESTONE.getItemTag());
+		tag(Tags.Items.END_STONES).addTag(ChippedBlockTypes.END_STONE.getItemTag());
+		tag(Tags.Items.GLASS).addTag(ChippedBlockTypes.GLASSES.getItemTag());
+		tag(Tags.Items.NETHERRACK).addTag(ChippedBlockTypes.NETHERRACK.getItemTag());
+		tag(Tags.Items.OBSIDIAN).addTag(ChippedBlockTypes.OBSIDIAN.getItemTag());
 	}
 }

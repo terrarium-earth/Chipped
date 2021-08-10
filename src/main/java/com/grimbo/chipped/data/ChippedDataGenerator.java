@@ -1,7 +1,6 @@
 package com.grimbo.chipped.data;
 
 import com.grimbo.chipped.Chipped;
-import com.grimbo.chipped.ChippedTags;
 import com.grimbo.chipped.data.client.*;
 
 import net.minecraft.data.DataGenerator;
@@ -26,8 +25,6 @@ public class ChippedDataGenerator {
 	 */
 	@SubscribeEvent
 	public static void gatherData(final GatherDataEvent event) {
-		ChippedTags.register();
-
 		DataGenerator generate = event.getGenerator();
 		ExistingFileHelper existingFileHelper = event.getExistingFileHelper();
 
@@ -40,6 +37,5 @@ public class ChippedDataGenerator {
 
 		generate.addProvider(new ChippedLootTableProvider(generate));
 		generate.addProvider(new ChippedRecipeProvider(generate));
-
 	}
 }

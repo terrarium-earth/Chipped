@@ -21,11 +21,13 @@ public class ChippedLantern extends Block implements IWaterLoggable {
     public static final DirectionProperty FACING = HorizontalBlock.FACING;
     private final VoxelShape toEast;
     private final VoxelShape toNorth;
+
     public ChippedLantern(Properties properties, VoxelShape shape) {
         super(properties);
         this.toEast = shape;
         this.toNorth = shape;
     }
+
     public ChippedLantern(Properties properties, VoxelShape toEast, VoxelShape toNorth) {
         super(properties);
         this.toEast = toEast;

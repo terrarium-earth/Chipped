@@ -3,6 +3,7 @@ package com.grimbo.chipped.model;
 import com.google.common.base.Suppliers;
 import com.grimbo.chipped.Chipped;
 import com.grimbo.chipped.api.BlockRegistry;
+import com.grimbo.chipped.block.ChippedBlockTypes;
 import net.minecraft.block.Block;
 import net.minecraft.world.FoliageColors;
 import net.minecraft.world.biome.BiomeColors;
@@ -18,7 +19,7 @@ import java.util.function.Supplier;
 @Mod.EventBusSubscriber(modid = Chipped.MOD_ID, value = Dist.CLIENT, bus = Bus.MOD)
 public class ChippedColors {
 
-	public static final Supplier<Block[]> vines = Suppliers.memoize(() -> BlockRegistry.getBlocks("vine").stream().map(RegistryObject::get).toArray(Block[]::new));
+	private static final Supplier<Block[]> vines = Suppliers.memoize(() -> ChippedBlockTypes.VINES.getBlocks().stream().map(RegistryObject::get).toArray(Block[]::new));
 
 	@SubscribeEvent
 	public static void registerBlockColourHandlers(ColorHandlerEvent.Block event) {
