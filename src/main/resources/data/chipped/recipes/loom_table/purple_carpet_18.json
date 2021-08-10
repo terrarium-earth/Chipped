@@ -1,8 +1,0 @@
-{
-  "type": "chipped:loom_table",
-  "ingredient": {
-    "tag": "chipped:purple_carpet"
-  },
-  "result": "chipped:purple_carpet_18",
-  "count": 1
-}

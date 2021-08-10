@@ -2280,5 +2280,5 @@
   "container.chipped.mason_table": "Mason's Table",
   "container.chipped.alchemy_bench": "Alchemy Bench",
   "container.chipped.mechanist_workbench": "Mechanist's Workbench",
-  "itemGroup.chipped.chipped": "Chipped"
+  "itemGroup.chippedTab": "Chipped"
 }

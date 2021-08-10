@@ -1,8 +1,0 @@
-{
-  "type": "chipped:mason_table",
-  "ingredient": {
-    "tag": "chipped:granite"
-  },
-  "result": "chipped:granite_1",
-  "count": 1
-}

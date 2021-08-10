@@ -1,8 +1,0 @@
-{
-  "type": "chipped:botanist_workbench",
-  "ingredient": {
-    "tag": "chipped:hay_block"
-  },
-  "result": "chipped:hay_block_8",
-  "count": 1
-}

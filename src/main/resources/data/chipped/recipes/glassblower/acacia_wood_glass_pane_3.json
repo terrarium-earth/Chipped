@@ -1,8 +1,0 @@
-{
-  "type": "chipped:glassblower",
-  "ingredient": {
-    "tag": "chipped:acacia_wood_glass_pane"
-  },
-  "result": "chipped:acacia_wood_glass_pane_3",
-  "count": 1
-}

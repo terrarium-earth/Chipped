@@ -1,8 +1,0 @@
-{
-  "type": "chipped:carpenters_table",
-  "ingredient": {
-    "tag": "chipped:torch"
-  },
-  "result": "minecraft:torch",
-  "count": 1
-}

@@ -1,8 +1,0 @@
-{
-  "type": "chipped:loom_table",
-  "ingredient": {
-    "tag": "chipped:light_gray_carpet"
-  },
-  "result": "minecraft:light_gray_carpet",
-  "count": 1
-}

@@ -1,8 +1,0 @@
-{
-  "type": "chipped:botanist_workbench",
-  "ingredient": {
-    "tag": "chipped:carved_pumpkin"
-  },
-  "result": "chipped:carved_pumpkin_4",
-  "count": 1
-}

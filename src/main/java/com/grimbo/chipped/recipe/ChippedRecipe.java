@@ -4,6 +4,7 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonSyntaxException;
 import com.mojang.realmsclient.util.JsonUtils;
+import net.minecraft.core.NonNullList;
 import net.minecraft.core.Registry;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
@@ -13,6 +14,7 @@ import net.minecraft.util.GsonHelper;
 import net.minecraft.world.Container;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.Recipe;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.item.crafting.RecipeType;
@@ -46,11 +48,12 @@ public record ChippedRecipe(
     public Stream<ItemStack> getResults(Container container) {
         ItemStack current = container.getItem(0);
         if (!current.isEmpty()) {
-            for (Tag<Item> tag : tags) {
-                if (current.is(tag)) {
-                    return tag.getValues().stream().filter(item -> item != current.getItem()).map(ItemStack::new);
-                }
-            }
+            Item item = current.getItem();
+            return tags.stream()
+                    .filter(current::is)
+                    .flatMap(tag -> tag.getValues().stream())
+                    .filter(value -> value != item)
+                    .map(ItemStack::new);
         }
         return Stream.empty();
     }
@@ -100,7 +103,7 @@ public record ChippedRecipe(
 
     public record Serializer(RecipeType<?> type, Block icon) implements RecipeSerializer<ChippedRecipe> {
         public ChippedRecipe fromJson(ResourceLocation recipeId, JsonObject json) {
-            String s = JsonUtils.getStringOr("group", json, "");
+            String s = GsonHelper.getAsString(json, "group", "");
             List<Tag<Item>> tags = new ArrayList<>();
             JsonArray tagArray = GsonHelper.getAsJsonArray(json, "tags");
             for (int i = 0; i < tagArray.size(); ++i) {

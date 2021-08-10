@@ -1,8 +1,0 @@
-{
-  "type": "chipped:carpenters_table",
-  "ingredient": {
-    "tag": "chipped:warped_planks"
-  },
-  "result": "chipped:warped_planks_13",
-  "count": 1
-}

@@ -1,8 +1,0 @@
-{
-  "type": "chipped:carpenters_table",
-  "ingredient": {
-    "tag": "chipped:dark_oak_planks"
-  },
-  "result": "chipped:dark_oak_planks_1",
-  "count": 1
-}
