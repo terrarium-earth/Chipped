@@ -155,7 +155,7 @@ public class ChippedMenu extends AbstractContainerMenu {
 	private void setupResultSlot() {
 		if (recipe != null && results != null && !this.results.get().isEmpty() && this.isValidRecipeIndex(this.selectedRecipeIndex.get())) {
 			this.resultContainer.setRecipeUsed(recipe);
-			this.resultSlot.set(results.get().get(selectedRecipeIndex.get()));
+			this.resultSlot.set(results.get().get(selectedRecipeIndex.get()).copy());
 		} else {
 			this.resultSlot.set(ItemStack.EMPTY);
 		}
