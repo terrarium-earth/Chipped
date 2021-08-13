@@ -3,12 +3,10 @@ package com.grimbo.chipped.recipe;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonSyntaxException;
-import com.mojang.realmsclient.util.JsonUtils;
 import net.minecraft.block.Block;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.item.crafting.IRecipeSerializer;
 import net.minecraft.item.crafting.IRecipeType;
@@ -125,7 +123,7 @@ public class ChippedRecipe implements IRecipe<IInventory> {
 
 		@Override
 		public @NotNull ChippedRecipe fromJson(@NotNull ResourceLocation recipeId, @NotNull JsonObject json) {
-			String s = JsonUtils.getStringOr("group", json, "");
+			String s = JSONUtils.getAsString(json,"group", "");
 			List<ITag<Item>> tags = new ArrayList<>();
 			JsonArray tagArray = JSONUtils.getAsJsonArray(json, "tags");
 			for (int i = 0; i < tagArray.size(); ++i) {
