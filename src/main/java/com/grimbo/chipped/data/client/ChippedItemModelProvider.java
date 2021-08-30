@@ -68,6 +68,21 @@ public class ChippedItemModelProvider extends ItemModelProvider {
 		for (int i = 1; i <= 15; i++) {
 			withExistingParent("red_mushroom_" + i, mcLoc("generated")).texture("layer0", modLoc("item/red_mushroom_" + i));
 		}
+		for (int i = 1; i <= 14; i++) {
+			withExistingParent("warped_fungus_" + i, mcLoc("generated")).texture("layer0", modLoc("item/warped_fungus_" + i));
+		}
+		for (int i = 1; i <= 15; i++) {
+			withExistingParent("crimson_fungus_" + i, mcLoc("generated")).texture("layer0", modLoc("item/crimson_fungus_" + i));
+		}
+		for (int i = 1; i <= 9; i++) {
+			withExistingParent("warped_roots_" + i, mcLoc("generated")).texture("layer0", modLoc("item/warped_roots_" + i));
+		}
+		for (int i = 1; i <= 14; i++) {
+			withExistingParent("crimson_roots_" + i, mcLoc("generated")).texture("layer0", modLoc("item/crimson_roots_" + i));
+		}
+		for (int i = 1; i <= 20; i++) {
+			withExistingParent("nether_sprouts_" + i, mcLoc("generated")).texture("layer0", modLoc("item/nether_sprouts_" + i));
+		}
 
 		applyDefault(
 				GLASSES, BASALTS, STONE, COBBLESTONE, OBSIDIAN, CRYING_OBSIDIAN, HAY_BLOCKS,

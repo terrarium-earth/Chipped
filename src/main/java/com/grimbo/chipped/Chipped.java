@@ -86,7 +86,21 @@ public class Chipped {
 		for (RegistryObject<MushroomBlock> red_mushroom : ChippedBlockTypes.RED_MUSHROOMS) {
 			RenderTypeLookup.setRenderLayer(red_mushroom.get(), RenderType.translucent());
 		}
-
+		for (RegistryObject<MushroomBlock> warped_fungus : ChippedBlockTypes.WARPED_FUNGUS) {
+			RenderTypeLookup.setRenderLayer(warped_fungus.get(), RenderType.translucent());
+		}
+		for (RegistryObject<MushroomBlock> crimson_fungus : ChippedBlockTypes.CRIMSON_FUNGUS) {
+			RenderTypeLookup.setRenderLayer(crimson_fungus.get(), RenderType.translucent());
+		}
+		for (RegistryObject<NetherRootsBlock> warped_roots : ChippedBlockTypes.WARPED_ROOTS) {
+			RenderTypeLookup.setRenderLayer(warped_roots.get(), RenderType.translucent());
+		}
+		for (RegistryObject<NetherRootsBlock> crimson_roots : ChippedBlockTypes.CRIMSON_ROOTS) {
+			RenderTypeLookup.setRenderLayer(crimson_roots.get(), RenderType.translucent());
+		}
+		for (RegistryObject<NetherSproutsBlock> nether_sprouts : ChippedBlockTypes.NETHER_SPROUTS) {
+			RenderTypeLookup.setRenderLayer(nether_sprouts.get(), RenderType.translucent());
+		}
 
 		for (RegistryObject<RedstoneTorchBlock> redstoneTorch : ChippedBlockTypes.REDSTONE_TORCHES) {
 			RenderTypeLookup.setRenderLayer(redstoneTorch.get(), RenderType.cutout());

@@ -185,6 +185,11 @@ public class ChippedBlocks {
         registerBlocks(BenchType.BOTANIST, VINES, () -> new VineBlock(VINE_PROPERTIES), 8);
         registerBlocks(BenchType.BOTANIST, BROWN_MUSHROOMS, () -> new MushroomBlock(AbstractBlock.Properties.of(Material.PLANT, MaterialColor.COLOR_BROWN).noCollission().randomTicks().instabreak().sound(SoundType.GRASS)), 15);
         registerBlocks(BenchType.BOTANIST, RED_MUSHROOMS, () -> new MushroomBlock(AbstractBlock.Properties.of(Material.PLANT, MaterialColor.COLOR_RED).noCollission().randomTicks().instabreak().sound(SoundType.GRASS)), 15);
+        registerBlocks(BenchType.BOTANIST, WARPED_FUNGUS, () -> new MushroomBlock(AbstractBlock.Properties.of(Material.REPLACEABLE_FIREPROOF_PLANT, MaterialColor.COLOR_CYAN).noCollission().randomTicks().instabreak().sound(SoundType.FUNGUS)), 14);
+        registerBlocks(BenchType.BOTANIST, CRIMSON_FUNGUS, () -> new MushroomBlock(AbstractBlock.Properties.of(Material.REPLACEABLE_FIREPROOF_PLANT, MaterialColor.COLOR_RED).noCollission().randomTicks().instabreak().sound(SoundType.FUNGUS)), 15);
+        registerBlocks(BenchType.BOTANIST, WARPED_ROOTS, () -> new NetherRootsBlock(AbstractBlock.Properties.of(Material.REPLACEABLE_FIREPROOF_PLANT, MaterialColor.NETHER).noCollission().instabreak().sound(SoundType.ROOTS)), 9);
+        registerBlocks(BenchType.BOTANIST, CRIMSON_ROOTS, () -> new NetherRootsBlock(AbstractBlock.Properties.of(Material.REPLACEABLE_FIREPROOF_PLANT, MaterialColor.NETHER).noCollission().instabreak().sound(SoundType.ROOTS)), 14);
+        registerBlocks(BenchType.BOTANIST, NETHER_SPROUTS, () -> new NetherSproutsBlock(AbstractBlock.Properties.of(Material.REPLACEABLE_FIREPROOF_PLANT, MaterialColor.NETHER).noCollission().instabreak().sound(SoundType.NETHER_SPROUTS)), 20);
 
         //Regular Lanterns
         for (int i : new int[]{1, 3, 4}) {

@@ -103,7 +103,26 @@ public class ChippedBlockStateProvider extends BlockStateProvider {
             String name = block.getId().getPath();
             simpleBlock(block.get(), models().cross(name, modLoc("block/" + name)));
         }
-
+        for (RegistryObject<MushroomBlock> block : ChippedBlockTypes.WARPED_FUNGUS.getBlocks()) {
+            String name = block.getId().getPath();
+            simpleBlock(block.get(), models().cross(name, modLoc("block/" + name)));
+        }
+        for (RegistryObject<MushroomBlock> block : ChippedBlockTypes.CRIMSON_FUNGUS.getBlocks()) {
+            String name = block.getId().getPath();
+            simpleBlock(block.get(), models().cross(name, modLoc("block/" + name)));
+        }
+        for (RegistryObject<NetherRootsBlock> block : ChippedBlockTypes.WARPED_ROOTS.getBlocks()) {
+            String name = block.getId().getPath();
+            simpleBlock(block.get(), models().cross(name, modLoc("block/" + name)));
+        }
+        for (RegistryObject<NetherRootsBlock> block : ChippedBlockTypes.CRIMSON_ROOTS.getBlocks()) {
+            String name = block.getId().getPath();
+            simpleBlock(block.get(), models().cross(name, modLoc("block/" + name)));
+        }
+        for (RegistryObject<NetherSproutsBlock> block : ChippedBlockTypes.NETHER_SPROUTS.getBlocks()) {
+            String name = block.getId().getPath();
+            simpleBlock(block.get(), models().cross(name, modLoc("block/" + name)));
+        }
 
         for (RegistryObject<Block> block : ChippedBlockTypes.LANTERNS) {
             if (block.get() instanceof LanternBlock) {

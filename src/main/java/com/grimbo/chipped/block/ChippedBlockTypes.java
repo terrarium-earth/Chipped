@@ -37,6 +37,11 @@ public class ChippedBlockTypes {
     public static final ChippedBlockType<PumpkinBlock> PUMPKINS = new ChippedBlockType<>("pumpkin");
     public static final ChippedBlockType<MushroomBlock> BROWN_MUSHROOMS = new ChippedBlockType<>("brown_mushroom");
     public static final ChippedBlockType<MushroomBlock> RED_MUSHROOMS = new ChippedBlockType<>("red_mushroom");
+    public static final ChippedBlockType<MushroomBlock> WARPED_FUNGUS = new ChippedBlockType<>("warped_fungus");
+    public static final ChippedBlockType<MushroomBlock> CRIMSON_FUNGUS = new ChippedBlockType<>("crimson_fungus");
+    public static final ChippedBlockType<NetherRootsBlock> WARPED_ROOTS = new ChippedBlockType<>("warped_roots");
+    public static final ChippedBlockType<NetherRootsBlock> CRIMSON_ROOTS = new ChippedBlockType<>("crimson_roots");
+    public static final ChippedBlockType<NetherSproutsBlock> NETHER_SPROUTS = new ChippedBlockType<>("nether_sprouts");
 
     public static final ChippedBlockType<Block> OBSIDIAN = new ChippedBlockType<>("obsidian");
     public static final ChippedBlockType<Block> CRYING_OBSIDIAN = new ChippedBlockType<>("crying_obsidian");
