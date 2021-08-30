@@ -36,6 +36,7 @@ public class ChippedBlockTypes {
     //public static final ChippedBlockType<CarvedPumpkinBlock> VANILLA_CARVED_PUMPKINS = new ChippedBlockType<>("carved_pumpkin_vanilla");
     public static final ChippedBlockType<PumpkinBlock> PUMPKINS = new ChippedBlockType<>("pumpkin");
     public static final ChippedBlockType<MushroomBlock> BROWN_MUSHROOMS = new ChippedBlockType<>("brown_mushroom");
+    public static final ChippedBlockType<MushroomBlock> RED_MUSHROOMS = new ChippedBlockType<>("red_mushroom");
 
     public static final ChippedBlockType<Block> OBSIDIAN = new ChippedBlockType<>("obsidian");
     public static final ChippedBlockType<Block> CRYING_OBSIDIAN = new ChippedBlockType<>("crying_obsidian");

@@ -80,6 +80,13 @@ public class Chipped {
 		for (RegistryObject<VineBlock> vine : ChippedBlockTypes.VINES) {
 			RenderTypeLookup.setRenderLayer(vine.get(), RenderType.translucent());
 		}
+		for (RegistryObject<MushroomBlock> brown_mushroom : ChippedBlockTypes.BROWN_MUSHROOMS) {
+			RenderTypeLookup.setRenderLayer(brown_mushroom.get(), RenderType.translucent());
+		}
+		for (RegistryObject<MushroomBlock> red_mushroom : ChippedBlockTypes.RED_MUSHROOMS) {
+			RenderTypeLookup.setRenderLayer(red_mushroom.get(), RenderType.translucent());
+		}
+
 
 		for (RegistryObject<RedstoneTorchBlock> redstoneTorch : ChippedBlockTypes.REDSTONE_TORCHES) {
 			RenderTypeLookup.setRenderLayer(redstoneTorch.get(), RenderType.cutout());

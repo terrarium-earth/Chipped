@@ -184,7 +184,7 @@ public class ChippedBlocks {
         registerBlocks(BenchType.BOTANIST, MELONS, () -> new MelonBlock(MELON_PROPERTIES), 10);
         registerBlocks(BenchType.BOTANIST, VINES, () -> new VineBlock(VINE_PROPERTIES), 8);
         registerBlocks(BenchType.BOTANIST, BROWN_MUSHROOMS, () -> new MushroomBlock(AbstractBlock.Properties.of(Material.PLANT, MaterialColor.COLOR_BROWN).noCollission().randomTicks().instabreak().sound(SoundType.GRASS)), 15);
-
+        registerBlocks(BenchType.BOTANIST, RED_MUSHROOMS, () -> new MushroomBlock(AbstractBlock.Properties.of(Material.PLANT, MaterialColor.COLOR_RED).noCollission().randomTicks().instabreak().sound(SoundType.GRASS)), 15);
 
         //Regular Lanterns
         for (int i : new int[]{1, 3, 4}) {

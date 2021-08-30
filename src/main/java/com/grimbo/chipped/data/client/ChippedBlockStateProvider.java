@@ -7,15 +7,19 @@ import com.grimbo.chipped.block.ChippedBlockTypes;
 import com.grimbo.chipped.block.ChippedBlocks;
 import net.minecraft.block.*;
 import net.minecraft.data.DataGenerator;
+import net.minecraft.data.StockModelShapes;
 import net.minecraft.item.DyeColor;
 import net.minecraft.util.Direction;
 import net.minecraft.util.ResourceLocation;
+import net.minecraftforge.client.model.generators.BlockModelBuilder;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.fml.RegistryObject;
 
 import java.util.List;
 import java.util.stream.Collectors;
+
+import static net.minecraft.data.StockModelShapes.CROSS;
 
 public class ChippedBlockStateProvider extends BlockStateProvider {
     public ChippedBlockStateProvider(DataGenerator gen, ExistingFileHelper exFileHelper) {
@@ -43,10 +47,12 @@ public class ChippedBlockStateProvider extends BlockStateProvider {
         createCubeFromList(ChippedBlockTypes.GLOWSTONES.getBlocks());
         createCubeFromList(ChippedBlockTypes.SEA_LANTERNS.getBlocks());
         createCubeFromList(ChippedBlockTypes.SHROOMLIGHTS.getBlocks());
-        createCubeFromList(ChippedBlockTypes.BROWN_MUSHROOMS.getBlocks());
+
 
         registerGlassPanes(ChippedBlockTypes.GLASS_PANES, "glass", "glass_pane_1_top", 1, 6);
         registerGlassPanes(ChippedBlockTypes.GLASS_PANES, "glass", "glass_pane_2_top", 7, 14);
+
+
 
         for (int id = 0; id < 16; id++) {
             DyeColor color = DyeColor.byId(id);
@@ -89,6 +95,15 @@ public class ChippedBlockStateProvider extends BlockStateProvider {
             String name = block.getId().getPath();
             simpleBlock(block.get(), models().cubeColumn(name, modLoc("block/" + name + "_side"), modLoc("block/" + name + "_top")));
         }
+        for (RegistryObject<MushroomBlock> block : ChippedBlockTypes.BROWN_MUSHROOMS.getBlocks()) {
+            String name = block.getId().getPath();
+            simpleBlock(block.get(), models().cross(name, modLoc("block/" + name)));
+        }
+        for (RegistryObject<MushroomBlock> block : ChippedBlockTypes.RED_MUSHROOMS.getBlocks()) {
+            String name = block.getId().getPath();
+            simpleBlock(block.get(), models().cross(name, modLoc("block/" + name)));
+        }
+
 
         for (RegistryObject<Block> block : ChippedBlockTypes.LANTERNS) {
             if (block.get() instanceof LanternBlock) {
