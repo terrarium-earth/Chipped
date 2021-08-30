@@ -43,6 +43,12 @@ public class ChippedBlockTypes {
     public static final ChippedBlockType<NetherRootsBlock> CRIMSON_ROOTS = new ChippedBlockType<>("crimson_roots");
     public static final ChippedBlockType<NetherSproutsBlock> NETHER_SPROUTS = new ChippedBlockType<>("nether_sprouts");
 
+    public static final ChippedBlockType<HugeMushroomBlock> BROWN_MUSHROOM_BLOCK = new ChippedBlockType<>("brown_mushroom_block");
+    public static final ChippedBlockType<HugeMushroomBlock> RED_MUSHROOM_BLOCK = new ChippedBlockType<>("red_mushroom_block");
+
+    public static final ChippedBlockType<Block> WARPED_WART_BLOCK = new ChippedBlockType<>("warped_wart_block");
+    public static final ChippedBlockType<Block> NETHER_WART_BLOCK = new ChippedBlockType<>("nether_wart_block");
+
     public static final ChippedBlockType<Block> OBSIDIAN = new ChippedBlockType<>("obsidian");
     public static final ChippedBlockType<Block> CRYING_OBSIDIAN = new ChippedBlockType<>("crying_obsidian");
 

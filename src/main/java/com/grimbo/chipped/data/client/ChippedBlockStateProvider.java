@@ -47,6 +47,10 @@ public class ChippedBlockStateProvider extends BlockStateProvider {
         createCubeFromList(ChippedBlockTypes.GLOWSTONES.getBlocks());
         createCubeFromList(ChippedBlockTypes.SEA_LANTERNS.getBlocks());
         createCubeFromList(ChippedBlockTypes.SHROOMLIGHTS.getBlocks());
+        createCubeFromList(ChippedBlockTypes.BROWN_MUSHROOM_BLOCK.getBlocks());
+        createCubeFromList(ChippedBlockTypes.RED_MUSHROOM_BLOCK.getBlocks());
+        createCubeFromList(ChippedBlockTypes.WARPED_WART_BLOCK.getBlocks());
+        createCubeFromList(ChippedBlockTypes.NETHER_WART_BLOCK.getBlocks());
 
 
         registerGlassPanes(ChippedBlockTypes.GLASS_PANES, "glass", "glass_pane_1_top", 1, 6);
