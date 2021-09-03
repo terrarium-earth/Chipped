@@ -6,6 +6,7 @@ import com.grimbo.chipped.block.ChippedWoodType;
 import com.grimbo.chipped.block.ChippedWorkbench;
 import com.grimbo.chipped.menus.ChippedMenu;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.fabricmc.fabric.api.tool.attribute.v1.FabricToolTags;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Registry;
 import net.minecraft.core.particles.ParticleTypes;
@@ -35,22 +36,22 @@ import static com.grimbo.chipped.registry.ChippedBlockTypes.*;
 
 public class ChippedBlocks {
 
-    private static final Properties CRYING_OBSIDIAN_PROPERTIES = FabricBlockSettings.copy(Blocks.CRYING_OBSIDIAN);
-    private static final Properties HAY_BLOCK_PROPERTIES = FabricBlockSettings.copy(Blocks.HAY_BLOCK);
-    private static final Properties MELON_PROPERTIES = FabricBlockSettings.copy(Blocks.MELON);
-    private static final Properties VINE_PROPERTIES = FabricBlockSettings.copy(Blocks.VINE);
-    private static final Properties REDSTONE_TORCH_PROPERTIES = FabricBlockSettings.copy(Blocks.REDSTONE_TORCH);
-    private static final Properties REDSTONE_WALL_TORCH_PROPERTIES = FabricBlockSettings.copy(Blocks.REDSTONE_WALL_TORCH);
-    private static final Properties REDSTONE_LAMP_PROPERTIES = FabricBlockSettings.copy(Blocks.REDSTONE_LAMP);
-    private static final Properties TORCH_PROPERTIES = FabricBlockSettings.copy(Blocks.TORCH);
-    private static final Properties WALL_TORCH_PROPERTIES = FabricBlockSettings.copy(Blocks.WALL_TORCH);
-    private static final Properties PUMPKIN_PROPERTIES = FabricBlockSettings.copy(Blocks.PUMPKIN);
-    private static final Properties JACK_O_LANTERN_PROPERTIES = FabricBlockSettings.copy(Blocks.JACK_O_LANTERN);
+    private static final Properties CRYING_OBSIDIAN_PROPERTIES = FabricBlockSettings.copyOf(Blocks.CRYING_OBSIDIAN);
+    private static final Properties HAY_BLOCK_PROPERTIES = FabricBlockSettings.copyOf(Blocks.HAY_BLOCK);
+    private static final Properties MELON_PROPERTIES = FabricBlockSettings.copyOf(Blocks.MELON);
+    private static final Properties VINE_PROPERTIES = FabricBlockSettings.copyOf(Blocks.VINE);
+    private static final Properties REDSTONE_TORCH_PROPERTIES = FabricBlockSettings.copyOf(Blocks.REDSTONE_TORCH);
+    private static final Properties REDSTONE_WALL_TORCH_PROPERTIES = FabricBlockSettings.copyOf(Blocks.REDSTONE_WALL_TORCH);
+    private static final Properties REDSTONE_LAMP_PROPERTIES = FabricBlockSettings.copyOf(Blocks.REDSTONE_LAMP);
+    private static final Properties TORCH_PROPERTIES = FabricBlockSettings.copyOf(Blocks.TORCH);
+    private static final Properties WALL_TORCH_PROPERTIES = FabricBlockSettings.copyOf(Blocks.WALL_TORCH);
+    private static final Properties PUMPKIN_PROPERTIES = FabricBlockSettings.copyOf(Blocks.PUMPKIN);
+    private static final Properties JACK_O_LANTERN_PROPERTIES = FabricBlockSettings.copyOf(Blocks.JACK_O_LANTERN);
     private static final Properties WOOD_PROPERTIES = FabricBlockSettings.of(Material.WOOD).strength(2.0F, 3.0F).sound(SoundType.WOOD);
-    private static final Properties GLASS_PANE_PROPERTIES = FabricBlockSettings.copy(Blocks.GLASS_PANE);
-    private static final Properties GLASS_PROPERTIES = FabricBlockSettings.copy(Blocks.GLASS);
+    private static final Properties GLASS_PANE_PROPERTIES = FabricBlockSettings.copyOf(Blocks.GLASS_PANE);
+    private static final Properties GLASS_PROPERTIES = FabricBlockSettings.copyOf(Blocks.GLASS);
     private static final Properties WOOL_PROPERTIES = FabricBlockSettings.of(Material.WOOL).strength(0.1F).sound(SoundType.WOOL);
-    private static final Properties LANTERN_PROPERTIES = FabricBlockSettings.copy(Blocks.LANTERN);
+    private static final Properties LANTERN_PROPERTIES = FabricBlockSettings.copyOf(Blocks.LANTERN).requiresTool().breakByTool(FabricToolTags.PICKAXES,1);
     private static final StatePredicate ALWAYS_FALSE_POSITION = (state, world, position) -> false;
     private static final StateArgumentPredicate<EntityType<?>> VALID_SPAWN = (state, world, position, type) -> false;
     protected static final VoxelShape CHONK_LANTERN_SHAPE = Shapes.or(Block.box(2.0D, 0.0D, 2.0D, 14.0D, 1.0D, 14.0D), Block.box(1, 1, 1, 15, 15, 15));
@@ -117,7 +118,7 @@ public class ChippedBlocks {
             (windowId, inventory, access) -> new ChippedMenu(windowId, inventory, ChippedMenuType.masonTable, ChippedSerializer.MASON_TABLE_TYPE, access, ChippedBlocks.MASON_TABLE),
             FabricBlockSettings.of(Material.METAL).strength(5F, 6F).sound(SoundType.METAL).noOcclusion()
                     .isValidSpawn(VALID_SPAWN).isRedstoneConductor(ALWAYS_FALSE_POSITION)
-                    .isSuffocating(ALWAYS_FALSE_POSITION).isViewBlocking(ALWAYS_FALSE_POSITION).requiresCorrectToolForDrops()));
+                    .isSuffocating(ALWAYS_FALSE_POSITION).isViewBlocking(ALWAYS_FALSE_POSITION)));
 
     public static final Block ALCHEMY_BENCH = register("alchemy_bench", new ChippedWorkbench(
             (windowId, inventory, access) -> new ChippedMenu(windowId, inventory, ChippedMenuType.alchemyBench, ChippedSerializer.ALCHEMY_BENCH_TYPE, access, ChippedBlocks.ALCHEMY_BENCH),
@@ -141,7 +142,7 @@ public class ChippedBlocks {
     public static void register() {
         // Register Stones
         for (String type : stones18) {
-            registerVanillaBlocks(type, 18);
+            registerVanillaBlocksWithMLevel(type, 18, 1);
         }
 
         registerVanillaBlocks(Blocks.GILDED_BLACKSTONE, "gilded_blackstone", 26);
@@ -296,9 +297,15 @@ public class ChippedBlocks {
      * @param count How many of the block should be registered, the index is used as the suffix.
      */
     private static void registerVanillaBlocks(String name, int count) {
-        registerVanillaBlocks(Registry.BLOCK.get(new ResourceLocation("minecraft", name)), name, count);
+        registerVanillaBlocks(Registry.BLOCK.get(new ResourceLocation("minecraft", name)), name, count,0);
     }
-
+	private static void registerVanillaBlocksWithMLevel(String name, int count, int miningLevel) {
+        registerVanillaBlocks(Registry.BLOCK.get(new ResourceLocation("minecraft", name)), name, count,miningLevel);
+    }
+	
+	private static void registerVanillaBlocks(Block vanillaBlock, String name, int count) {
+		registerVanillaBlocks(vanillaBlock,name,count,0);
+	}
     /**
      * Only use if a vanilla block counterpart exists and the same properties should be used.
      *
@@ -306,9 +313,15 @@ public class ChippedBlocks {
      * @param name         The registry name to be used.
      * @param count        How many of the block should be registered, the index is used as the suffix.
      */
-    private static void registerVanillaBlocks(Block vanillaBlock, String name, int count) {
-        registerBlocks(name, () -> new Block(FabricBlockSettings.copy(vanillaBlock)), count);
+    private static void registerVanillaBlocks(Block vanillaBlock, String name, int count, int miningLevel) {
+		if(miningLevel!=0){
+        registerBlocks(name, () -> new Block(FabricBlockSettings.copyOf(vanillaBlock).requiresTool().breakByTool(FabricToolTags.PICKAXES,miningLevel)), count);
+		}
+		else {
+        registerBlocks(name, () -> new Block(FabricBlockSettings.copyOf(vanillaBlock)), count);
+		}
     }
+
 
     private static <T extends Block> void registerBlocks(String name, Supplier<T> block, int count) {
         registerBlocks(name, block, count, null);
