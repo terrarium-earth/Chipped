@@ -51,7 +51,7 @@ public class ChippedBlocks {
     private static final Properties GLASS_PANE_PROPERTIES = FabricBlockSettings.copyOf(Blocks.GLASS_PANE);
     private static final Properties GLASS_PROPERTIES = FabricBlockSettings.copyOf(Blocks.GLASS);
     private static final Properties WOOL_PROPERTIES = FabricBlockSettings.of(Material.WOOL).strength(0.1F).sound(SoundType.WOOL);
-    private static final Properties LANTERN_PROPERTIES = FabricBlockSettings.copyOf(Blocks.LANTERN).requiresTool().breakByTool(FabricToolTags.PICKAXES,1);
+    private static final Properties LANTERN_PROPERTIES = FabricBlockSettings.copyOf(Blocks.LANTERN).requiresTool().breakByTool(FabricToolTags.PICKAXES, 1);
     private static final StatePredicate ALWAYS_FALSE_POSITION = (state, world, position) -> false;
     private static final StateArgumentPredicate<EntityType<?>> VALID_SPAWN = (state, world, position, type) -> false;
     protected static final VoxelShape CHONK_LANTERN_SHAPE = Shapes.or(Block.box(2.0D, 0.0D, 2.0D, 14.0D, 1.0D, 14.0D), Block.box(1, 1, 1, 15, 15, 15));
@@ -297,15 +297,19 @@ public class ChippedBlocks {
      * @param count How many of the block should be registered, the index is used as the suffix.
      */
     private static void registerVanillaBlocks(String name, int count) {
-        registerVanillaBlocks(Registry.BLOCK.get(new ResourceLocation("minecraft", name)), name, count,0);
+        registerVanillaBlocks(Registry.BLOCK.get(new ResourceLocation("minecraft", name)), name, count, 0);
     }
-	private static void registerVanillaBlocksWithMLevel(String name, int count, int miningLevel) {
-        registerVanillaBlocks(Registry.BLOCK.get(new ResourceLocation("minecraft", name)), name, count,miningLevel);
+    /**
+     * Only use if a vanilla block counterpart exists, the same properties should be used and there are problems when mining it.
+     *
+     * @param name  	   The registry name to be used, and to infer which vanilla block should be used.
+     * @param count 	   How many of the block should be registered, the index is used as the suffix.
+     * @param miningLevel  The mining Level, to force the ability to be mined with the corresponding pickaxe type.
+     */
+    private static void registerVanillaBlocksWithMLevel(String name, int count, int miningLevel) {
+        registerVanillaBlocks(Registry.BLOCK.get(new ResourceLocation("minecraft", name)), name, count, miningLevel);
     }
 	
-	private static void registerVanillaBlocks(Block vanillaBlock, String name, int count) {
-		registerVanillaBlocks(vanillaBlock,name,count,0);
-	}
     /**
      * Only use if a vanilla block counterpart exists and the same properties should be used.
      *
@@ -313,16 +317,28 @@ public class ChippedBlocks {
      * @param name         The registry name to be used.
      * @param count        How many of the block should be registered, the index is used as the suffix.
      */
+    private static void registerVanillaBlocks(Block vanillaBlock, String name, int count) {
+	registerVanillaBlocks(vanillaBlock, name, count, 0);
+    }
+	
+    /**
+     * Only use if a vanilla block counterpart exists and the same properties should be used.
+     *
+     * @param vanillaBlock The vanilla equivalent, passed explicitly 'cause explicit > implicit.
+     * @param name         The registry name to be used.
+     * @param count        How many of the block should be registered, the index is used as the suffix.
+     * @param miningLevel  The mining Level, to force the ability to be mined with the corresponding pickaxe type. Only set higher than 0 if testing reveals it to be non minable
+     */
     private static void registerVanillaBlocks(Block vanillaBlock, String name, int count, int miningLevel) {
-		if(miningLevel!=0){
-        registerBlocks(name, () -> new Block(FabricBlockSettings.copyOf(vanillaBlock).requiresTool().breakByTool(FabricToolTags.PICKAXES,miningLevel)), count);
-		}
-		else {
-        registerBlocks(name, () -> new Block(FabricBlockSettings.copyOf(vanillaBlock)), count);
-		}
+	if(miningLevel!=0){
+        	registerBlocks(name, () -> new Block(FabricBlockSettings.copyOf(vanillaBlock).requiresTool().breakByTool(FabricToolTags.PICKAXES, miningLevel)), count);
+	}
+	else {
+        	registerBlocks(name, () -> new Block(FabricBlockSettings.copyOf(vanillaBlock)), count);
+	}
     }
 
-
+	
     private static <T extends Block> void registerBlocks(String name, Supplier<T> block, int count) {
         registerBlocks(name, block, count, null);
     }
