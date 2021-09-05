@@ -299,6 +299,7 @@ public class ChippedBlocks {
     private static void registerVanillaBlocks(String name, int count) {
         registerVanillaBlocks(Registry.BLOCK.get(new ResourceLocation("minecraft", name)), name, count, 0);
     }
+	
     /**
      * Only use if a vanilla block counterpart exists, the same properties should be used and there are problems when mining it.
      *
