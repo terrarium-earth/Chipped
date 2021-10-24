@@ -5,8 +5,10 @@ import net.minecraft.block.BlockState;
 import net.minecraft.block.HorizontalBlock;
 import net.minecraft.block.IWaterLoggable;
 import net.minecraft.item.BlockItemUseContext;
+import net.minecraft.state.BooleanProperty;
 import net.minecraft.state.DirectionProperty;
 import net.minecraft.state.StateContainer;
+import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.shapes.ISelectionContext;
@@ -19,6 +21,8 @@ import javax.annotation.Nullable;
 
 public class ChippedLantern extends Block implements IWaterLoggable {
     public static final DirectionProperty FACING = HorizontalBlock.FACING;
+    public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
+
     private final VoxelShape toEast;
     private final VoxelShape toNorth;
 
@@ -68,5 +72,6 @@ public class ChippedLantern extends Block implements IWaterLoggable {
 
     protected void createBlockStateDefinition(StateContainer.Builder<Block, BlockState> state) {
         state.add(FACING);
+        state.add(WATERLOGGED);
     }
 }
