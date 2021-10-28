@@ -34,6 +34,8 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.registries.ForgeRegistries;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.Locale;
+
 public class ChippedWorkbench extends Block {
     public static final DirectionProperty FACING = HorizontalBlock.FACING;
 
@@ -170,7 +172,7 @@ public class ChippedWorkbench extends Block {
 
         @Override
         public String getSerializedName() {
-            return name().toLowerCase();
+            return name().toLowerCase(Locale.ROOT);
         }
 
         @Override
