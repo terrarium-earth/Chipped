@@ -1,5 +1,7 @@
 package com.grimbo.chipped.api;
 
+import java.util.Locale;
+
 public enum ChippedWoodType {
     OAK, BIRCH, SPRUCE, JUNGLE, ACACIA, DARK_OAK, WARPED, CRIMSON;
 
@@ -7,6 +9,6 @@ public enum ChippedWoodType {
 
     @Override
     public String toString() {
-        return name().toLowerCase();
+        return name().toLowerCase(Locale.ROOT);
     }
 }
