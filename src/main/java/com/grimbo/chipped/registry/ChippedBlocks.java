@@ -1,5 +1,6 @@
 package com.grimbo.chipped.registry;
 
+
 import com.grimbo.chipped.Chipped;
 import com.grimbo.chipped.block.ChippedUniqueLantern;
 import com.grimbo.chipped.block.ChippedWoodType;
