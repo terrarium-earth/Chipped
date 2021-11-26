@@ -127,6 +127,11 @@ public class ChippedBlockStateProvider extends BlockStateProvider {
             String name = block.getId().getPath();
             simpleBlock(block.get(), models().cross(name, modLoc("block/" + name)));
         }
+        for (RegistryObject<LilyPadBlock> block : ChippedBlockTypes.LILY_PAD.getBlocks()) {
+           String name = block.getId().getPath();
+            simpleBlock(block.get(), models().carpet(name, modLoc("block/" + name)));
+        }
+
 
         for (RegistryObject<Block> block : ChippedBlockTypes.LANTERNS) {
             if (block.get() instanceof LanternBlock) {

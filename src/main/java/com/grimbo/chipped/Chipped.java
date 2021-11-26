@@ -101,6 +101,9 @@ public class Chipped {
 		for (RegistryObject<NetherSproutsBlock> nether_sprouts : ChippedBlockTypes.NETHER_SPROUTS) {
 			RenderTypeLookup.setRenderLayer(nether_sprouts.get(), RenderType.translucent());
 		}
+		for (RegistryObject<LilyPadBlock> lily_pad : ChippedBlockTypes.LILY_PAD) {
+			RenderTypeLookup.setRenderLayer(lily_pad.get(), RenderType.translucent());
+		}
 
 		for (RegistryObject<RedstoneTorchBlock> redstoneTorch : ChippedBlockTypes.REDSTONE_TORCHES) {
 			RenderTypeLookup.setRenderLayer(redstoneTorch.get(), RenderType.cutout());

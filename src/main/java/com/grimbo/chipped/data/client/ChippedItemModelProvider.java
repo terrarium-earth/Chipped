@@ -83,6 +83,9 @@ public class ChippedItemModelProvider extends ItemModelProvider {
 		for (int i = 1; i <= 20; i++) {
 			withExistingParent("nether_sprouts_" + i, mcLoc("generated")).texture("layer0", modLoc("item/nether_sprouts_" + i));
 		}
+		for (int i = 1; i <= 6; i++) {
+			withExistingParent("lily_pad_" + i, mcLoc("generated")).texture("layer0", modLoc("item/lily_pad_" + i));
+		}
 
 		applyDefault(
 				GLASSES, BASALTS, STONE, COBBLESTONE, OBSIDIAN, CRYING_OBSIDIAN, HAY_BLOCKS,

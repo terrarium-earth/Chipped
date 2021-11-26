@@ -200,6 +200,9 @@ public class ChippedBlocks {
         registerBlocks(BenchType.BOTANIST, WARPED_WART_BLOCK, () -> new Block(AbstractBlock.Properties.of(Material.GRASS, MaterialColor.WARPED_WART_BLOCK).strength(1.0F).sound(SoundType.WART_BLOCK)), 14);
         registerBlocks(BenchType.BOTANIST, NETHER_WART_BLOCK, () -> new Block(AbstractBlock.Properties.of(Material.GRASS, MaterialColor.COLOR_RED).strength(1.0F).sound(SoundType.WART_BLOCK)), 13);
 
+        registerBlocks(BenchType.BOTANIST, LILY_PAD, () -> new LilyPadBlock(AbstractBlock.Properties.of(Material.PLANT).instabreak().sound(SoundType.LILY_PAD).noOcclusion()), 6);
+
+
         //Regular Lanterns
         for (int i : new int[]{1, 3, 4}) {
             RegistryObject<LanternBlock> lantern = register("lantern_" + i, () -> new LanternBlock(LANTERN_PROPERTIES));
