@@ -1,0 +1,15 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:warped_roots",
+    "chipped:warped_roots_1",
+    "chipped:warped_roots_2",
+    "chipped:warped_roots_3",
+    "chipped:warped_roots_4",
+    "chipped:warped_roots_5",
+    "chipped:warped_roots_6",
+    "chipped:warped_roots_7",
+    "chipped:warped_roots_8",
+    "chipped:warped_roots_9"
+  ]
+}

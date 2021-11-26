@@ -1,0 +1,12 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:lily_pad",
+    "chipped:lily_pad_1",
+    "chipped:lily_pad_2",
+    "chipped:lily_pad_3",
+    "chipped:lily_pad_4",
+    "chipped:lily_pad_5",
+    "chipped:lily_pad_6"
+  ]
+}
