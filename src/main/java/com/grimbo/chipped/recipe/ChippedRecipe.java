@@ -19,10 +19,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.registries.ForgeRegistryEntry;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 import java.util.stream.Stream;
 
 public class ChippedRecipe implements IRecipe<IInventory> {
@@ -145,7 +142,7 @@ public class ChippedRecipe implements IRecipe<IInventory> {
 			List<ITag<Item>> tags = new ArrayList<>(tagCount);
 			for (int i = 0; i < tagCount; i++) {
 				int itemCount = buffer.readVarInt();
-				Set<Item> items = new HashSet<>(itemCount);
+				Set<Item> items = new LinkedHashSet<>(itemCount);
 				for (int j = 0; j < itemCount; j++) {
 					items.add(Item.byId(buffer.readVarInt()));
 				}
