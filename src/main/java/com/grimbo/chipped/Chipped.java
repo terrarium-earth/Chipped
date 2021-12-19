@@ -1,9 +1,8 @@
 package com.grimbo.chipped;
 
-import com.grimbo.chipped.api.BlockRegistry;
-import com.grimbo.chipped.api.ChippedBlockType;
 import com.grimbo.chipped.block.ChippedBlockTypes;
 import com.grimbo.chipped.block.ChippedBlocks;
+import com.grimbo.chipped.block.ChippedLilyPadBlock;
 import com.grimbo.chipped.container.ChippedContainer;
 import com.grimbo.chipped.container.ChippedContainerType;
 import com.grimbo.chipped.container.ChippedScreen;
@@ -101,30 +100,24 @@ public class Chipped {
 		for (RegistryObject<NetherSproutsBlock> nether_sprouts : ChippedBlockTypes.NETHER_SPROUTS) {
 			RenderTypeLookup.setRenderLayer(nether_sprouts.get(), RenderType.translucent());
 		}
-		for (RegistryObject<LilyPadBlock> lily_pad : ChippedBlockTypes.LILY_PAD) {
+		for (RegistryObject<ChippedLilyPadBlock> lily_pad : ChippedBlockTypes.LILY_PAD) {
 			RenderTypeLookup.setRenderLayer(lily_pad.get(), RenderType.translucent());
 		}
-
 		for (RegistryObject<RedstoneTorchBlock> redstoneTorch : ChippedBlockTypes.REDSTONE_TORCHES) {
 			RenderTypeLookup.setRenderLayer(redstoneTorch.get(), RenderType.cutout());
 		}
-
 		for (RegistryObject<RedstoneWallTorchBlock> redstoneWallTorch : ChippedBlocks.REDSTONE_WALL_TORCHES) {
 			RenderTypeLookup.setRenderLayer(redstoneWallTorch.get(), RenderType.cutout());
 		}
-
 		for (RegistryObject<TorchBlock> torch : ChippedBlockTypes.TORCHES) {
 			RenderTypeLookup.setRenderLayer(torch.get(), RenderType.cutout());
 		}
-
 		for (RegistryObject<WallTorchBlock> wallTorch : ChippedBlocks.WALL_TORCHES) {
 			RenderTypeLookup.setRenderLayer(wallTorch.get(), RenderType.cutout());
 		}
-
 		for (RegistryObject<Block> lantern : ChippedBlockTypes.LANTERNS) {
 			RenderTypeLookup.setRenderLayer(lantern.get(), RenderType.cutout());
 		}
-
 		for (RegistryObject<Block> lantern : ChippedBlockTypes.SOUL_LANTERNS) {
 			RenderTypeLookup.setRenderLayer(lantern.get(), RenderType.cutout());
 		}

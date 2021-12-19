@@ -15,13 +15,12 @@ public class ChippedDataGenerator {
 	/*
 	 * To make generated data for generic blocks:
 	 * 1. Generate each block in data.client.ChippedBlockStateProvider::register
-	 * 2. Register the tags based off of a list or manually in ChippedTags
-	 * 4. Generate each recipe in ChippedRecipeProvider::registerRecipes
+	 * 2. Generate each item in data.client.ChippedItemModelProvider::register
+	 * 3. Check for vanilla/forge tags in ChippedBlockTagsProvider and ChippedItemTagsProvider
 	 * 
 	 * Any abnormal blocks should additionally look into:
 	 * 1. ChippedTags
 	 * 2. ChippedBlockLootTables
-	 * 3. ChippedItemModelProvider
 	 */
 	@SubscribeEvent
 	public static void gatherData(final GatherDataEvent event) {

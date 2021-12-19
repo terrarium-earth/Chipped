@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "chipped:item/special_lantern_3"
+    "layer0": "chipped:item/special_lantern/special_lantern_3"
   }
 }

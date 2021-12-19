@@ -1,8 +1,8 @@
 {
 	"credit": "Made with Blockbench",
 	"textures": {
-		"2": "chipped:block/tall_soul_lantern",
-		"particle": "chipped:block/tall_soul_lantern"
+		"2": "chipped:block/lanterns/tall_soul_lantern",
+		"particle": "chipped:block/lanterns/tall_soul_lantern"
 	},
 	"elements": [
 		{

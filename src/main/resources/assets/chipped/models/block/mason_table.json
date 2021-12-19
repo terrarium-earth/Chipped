@@ -3,8 +3,8 @@
 	"ambientocclusion": false,
 	"texture_size": [128, 128],
 	"textures": {
-		"2": "chipped:block/mason_table",
-		"particle": "chipped:block/mason_table"
+		"2": "chipped:block/workbenches/mason_table",
+		"particle": "chipped:block/workbenches/mason_table"
 	},
 	"elements": [
 		{

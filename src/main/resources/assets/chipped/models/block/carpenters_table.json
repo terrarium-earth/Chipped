@@ -4,8 +4,8 @@
   "texture_size": [128, 128],
   "textures": {
 
-    "2": "chipped:block/carpenters_table",
-    "particle": "chipped:block/carpenters_table"
+    "2": "chipped:block/workbenches/carpenters_table",
+    "particle": "chipped:block/workbenches/carpenters_table"
   },
   "elements": [
     {

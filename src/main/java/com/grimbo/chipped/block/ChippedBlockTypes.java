@@ -48,8 +48,9 @@ public class ChippedBlockTypes {
 
     public static final ChippedBlockType<Block> WARPED_WART_BLOCK = new ChippedBlockType<>("warped_wart_block");
     public static final ChippedBlockType<Block> NETHER_WART_BLOCK = new ChippedBlockType<>("nether_wart_block");
+    public static final ChippedBlockType<SoulSandBlock> SOUL_SANDS = new ChippedBlockType<>("soul_sand");
 
-    public static final ChippedBlockType<LilyPadBlock> LILY_PAD = new ChippedBlockType<>("lily_pad");
+    public static final ChippedBlockType<ChippedLilyPadBlock> LILY_PAD = new ChippedBlockType<>("lily_pad");
 
     public static final ChippedBlockType<Block> OBSIDIAN = new ChippedBlockType<>("obsidian");
     public static final ChippedBlockType<Block> CRYING_OBSIDIAN = new ChippedBlockType<>("crying_obsidian");
@@ -63,6 +64,7 @@ public class ChippedBlockTypes {
     public static final ChippedBlockType<Block> BLACKSTONES = new ChippedBlockType<>("blackstone");
     public static final ChippedBlockType<Block> BASALTS = new ChippedBlockType<>("basalt");
     public static final ChippedBlockType<Block> CLAYS = new ChippedBlockType<>("clay");
+    public static final ChippedBlockType<Block> DRIED_KELP_BLOCKS = new ChippedBlockType<>("dried_kelp_block");
     public static final ChippedBlockType<Block> GLOWSTONES = new ChippedBlockType<>("glowstone");
     public static final ChippedBlockType<Block> SEA_LANTERNS = new ChippedBlockType<>("sea_lantern");
     public static final ChippedBlockType<Block> SHROOMLIGHTS = new ChippedBlockType<>("shroomlight");

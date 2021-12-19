@@ -44,6 +44,9 @@ public class ChippedBlockTagsProvider extends BlockTagsProvider {
 			tag(BlockTags.PLANKS).addTag(ChippedBlockTypes.PLANKS.get(wood).getBlockTag());
 		}
 
+		tag(BlockTags.NON_FLAMMABLE_WOOD).addTag(ChippedBlockTypes.PLANKS.get(ChippedWoodType.WARPED).getBlockTag());
+		tag(BlockTags.NON_FLAMMABLE_WOOD).addTag(ChippedBlockTypes.PLANKS.get(ChippedWoodType.CRIMSON).getBlockTag());
+
 		for (int i = 0; i < 16; i++) {
 			DyeColor color = DyeColor.byId(i);
 			tag(BlockTags.WOOL).addTag(ChippedBlockTypes.WOOL.get(color).getBlockTag());
@@ -57,7 +60,14 @@ public class ChippedBlockTagsProvider extends BlockTagsProvider {
 		
 		tag(BlockTags.WALL_POST_OVERRIDE).addTag(ChippedBlockTypes.TORCHES.getBlockTag());
 		tag(BlockTags.WALL_POST_OVERRIDE).addTag(ChippedBlockTypes.REDSTONE_TORCHES.getBlockTag());
-		
+
+		tag(BlockTags.WITHER_SUMMON_BASE_BLOCKS).addTag(ChippedBlockTypes.SOUL_SANDS.getBlockTag());
+		tag(BlockTags.SOUL_FIRE_BASE_BLOCKS).addTag(ChippedBlockTypes.SOUL_SANDS.getBlockTag());
+		tag(BlockTags.SOUL_SPEED_BLOCKS).addTag(ChippedBlockTypes.SOUL_SANDS.getBlockTag());
+
+		tag(BlockTags.PIGLIN_REPELLENTS).addTag(ChippedBlockTypes.SOUL_LANTERNS.getBlockTag());
+		tag(BlockTags.HOGLIN_REPELLENTS).addTag(ChippedBlockTypes.WARPED_FUNGUS.getBlockTag());
+
 		//Default Forge tags
 		tag(Tags.Blocks.STONE).addTag(ChippedBlockTypes.STONE.getBlockTag());
 		tag(Tags.Blocks.COBBLESTONE).addTag(ChippedBlockTypes.COBBLESTONE.getBlockTag());

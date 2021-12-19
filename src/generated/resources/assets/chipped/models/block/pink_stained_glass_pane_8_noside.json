@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/template_glass_pane_noside",
   "textures": {
-    "pane": "chipped:block/pink_stained_glass_8"
+    "pane": "chipped:block/pink_stained_glass/pink_stained_glass_8"
   }
 }

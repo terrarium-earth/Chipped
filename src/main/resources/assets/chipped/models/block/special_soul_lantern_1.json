@@ -1,8 +1,8 @@
 {
 	"credit": "Made with Blockbench",
 	"textures": {
-		"1": "chipped:block/chonk_soul_lantern",
-		"particle": "chipped:block/chonk_soul_lantern"
+		"1": "chipped:block/lanterns/chonk_soul_lantern",
+		"particle": "chipped:block/lanterns/chonk_soul_lantern"
 	},
 	"elements": [
 		{

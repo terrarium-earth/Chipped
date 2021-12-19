@@ -7,19 +7,19 @@ import com.grimbo.chipped.block.ChippedBlockTypes;
 import com.grimbo.chipped.block.ChippedBlocks;
 import net.minecraft.block.*;
 import net.minecraft.data.DataGenerator;
-import net.minecraft.data.StockModelShapes;
 import net.minecraft.item.DyeColor;
 import net.minecraft.util.Direction;
 import net.minecraft.util.ResourceLocation;
-import net.minecraftforge.client.model.generators.BlockModelBuilder;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
+import net.minecraftforge.client.model.generators.ConfiguredModel;
+import net.minecraftforge.client.model.generators.ModelProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.fml.RegistryObject;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
-import static net.minecraft.data.StockModelShapes.CROSS;
+import static com.grimbo.chipped.block.ChippedBlockTypes.*;
 
 public class ChippedBlockStateProvider extends BlockStateProvider {
     public ChippedBlockStateProvider(DataGenerator gen, ExistingFileHelper exFileHelper) {
@@ -28,50 +28,34 @@ public class ChippedBlockStateProvider extends BlockStateProvider {
 
     @Override
     protected void registerStatesAndModels() {
+
         for (ChippedBlockType<Block> type : ChippedBlocks.stones18) {
-            createCubeFromList(type.getBlocks());
+            createCubeFromList(type);
         }
 
-        createCubeFromList(ChippedBlockTypes.STONE.getBlocks());
-        createCubeFromList(ChippedBlockTypes.COBBLESTONE.getBlocks());
-        createCubeFromList(ChippedBlockTypes.END_STONE.getBlocks());
-        createCubeFromList(ChippedBlockTypes.NETHERRACK.getBlocks());
+        createCubeFromList(
+                STONE, COBBLESTONE, END_STONE, NETHERRACK, GILDED_BLACKSTONES, BLACKSTONES, BASALTS,
+                OBSIDIAN, CRYING_OBSIDIAN, CLAYS, GLASSES, GLOWSTONES, SEA_LANTERNS, SHROOMLIGHTS,
+                BROWN_MUSHROOM_BLOCK, RED_MUSHROOM_BLOCK, WARPED_WART_BLOCK, NETHER_WART_BLOCK, SOUL_SANDS
+        );
 
-        createCubeFromList(ChippedBlockTypes.GILDED_BLACKSTONES.getBlocks());
-        createCubeFromList(ChippedBlockTypes.BLACKSTONES.getBlocks());
-        createCubeFromList(ChippedBlockTypes.BASALTS.getBlocks());
-        createCubeFromList(ChippedBlockTypes.OBSIDIAN.getBlocks());
-        createCubeFromList(ChippedBlockTypes.CRYING_OBSIDIAN.getBlocks());
-        createCubeFromList(ChippedBlockTypes.CLAYS.getBlocks());
-        createCubeFromList(ChippedBlockTypes.GLASSES.getBlocks());
-        createCubeFromList(ChippedBlockTypes.GLOWSTONES.getBlocks());
-        createCubeFromList(ChippedBlockTypes.SEA_LANTERNS.getBlocks());
-        createCubeFromList(ChippedBlockTypes.SHROOMLIGHTS.getBlocks());
-        createCubeFromList(ChippedBlockTypes.BROWN_MUSHROOM_BLOCK.getBlocks());
-        createCubeFromList(ChippedBlockTypes.RED_MUSHROOM_BLOCK.getBlocks());
-        createCubeFromList(ChippedBlockTypes.WARPED_WART_BLOCK.getBlocks());
-        createCubeFromList(ChippedBlockTypes.NETHER_WART_BLOCK.getBlocks());
-
-
-        registerGlassPanes(ChippedBlockTypes.GLASS_PANES, "glass", "glass_pane_1_top", 1, 6);
-        registerGlassPanes(ChippedBlockTypes.GLASS_PANES, "glass", "glass_pane_2_top", 7, 14);
-
-
+        registerGlassPanes(GLASS_PANES, "glass", "glass_pane_1_top", 1, 6);
+        registerGlassPanes(GLASS_PANES, "glass", "glass_pane_2_top", 7, 14);
 
         for (int id = 0; id < 16; id++) {
             DyeColor color = DyeColor.byId(id);
-            createCubeFromList(ChippedBlockTypes.TERRACOTTAS.get(color).getBlocks());
-            createCubeFromList(ChippedBlockTypes.CONCRETES.get(color).getBlocks());
-            createCubeFromList(ChippedBlockTypes.WOOL.get(color).getBlocks());
-            createCubeFromList(ChippedBlockTypes.STAINED_GLASSES.get(color).getBlocks());
+            createCubeFromList(TERRACOTTAS.get(color));
+            createCubeFromList(CONCRETES.get(color));
+            createCubeFromList(WOOL.get(color));
+            createCubeFromList(STAINED_GLASSES.get(color));
 
-            List<RegistryObject<CarpetBlock>> blocks = ChippedBlockTypes.CARPETS.get(color).getBlocks();
+            List<RegistryObject<CarpetBlock>> blocks = CARPETS.get(color).getBlocks();
             for (int i = 0; i < blocks.size(); ++i) {
                 int n = i + 1;
-                simpleBlock(blocks.get(i).get(), models().carpet(color + "_carpet_" + n, modLoc("block/" + color + "_wool_" + n)));
+                simpleBlock(blocks.get(i).get(), models().carpet(color + "_carpet_" + n, modLoc("block/" + color + "_wool/" + color + "_wool_" + n)));
             }
 
-            ChippedBlockType<StainedGlassPaneBlock> stainedGlassPanes = ChippedBlockTypes.STAINED_GLASS_PANES.get(color);
+            ChippedBlockType<StainedGlassPaneBlock> stainedGlassPanes = STAINED_GLASS_PANES.get(color);
             registerGlassPanes(
                     stainedGlassPanes,
                     color + "_stained_glass",
@@ -82,58 +66,78 @@ public class ChippedBlockStateProvider extends BlockStateProvider {
         }
 
         for (ChippedWoodType wood : ChippedWoodType.VALUES) {
-            createCubeFromList(ChippedBlockTypes.PLANKS.get(wood).getBlocks());
+            createCubeFromList(PLANKS.get(wood));
 
-            registerGlassPanes(ChippedBlockTypes.GLASS_PANES, wood + "_wood_glass_pane", wood + "_wood_glass", wood + "_wood_glass_pane_top", 1, 6);
-        }
-
-        for (RegistryObject<HayBlock> block : ChippedBlockTypes.HAY_BLOCKS.getBlocks()) {
-            axisBlock(block.get());
+            registerGlassPanes(GLASS_PANES, wood + "_wood_glass_pane", wood + "_wood_glass", "glass", wood + "_wood_glass_pane_top", 1, 6);
         }
 
-        for (RegistryObject<MelonBlock> block : ChippedBlockTypes.MELONS.getBlocks()) {
+        for (RegistryObject<HayBlock> block : HAY_BLOCKS.getBlocks()) {
             String name = block.getId().getPath();
-            simpleBlock(block.get(), models().cubeColumn(name, modLoc("block/" + name + "_side"), modLoc("block/" + name + "_top")));
-        }
-        for (RegistryObject<PumpkinBlock> block : ChippedBlockTypes.PUMPKINS.getBlocks()) {
-            String name = block.getId().getPath();
-            simpleBlock(block.get(), models().cubeColumn(name, modLoc("block/" + name + "_side"), modLoc("block/" + name + "_top")));
-        }
-        for (RegistryObject<MushroomBlock> block : ChippedBlockTypes.BROWN_MUSHROOMS.getBlocks()) {
-            String name = block.getId().getPath();
-            simpleBlock(block.get(), models().cross(name, modLoc("block/" + name)));
-        }
-        for (RegistryObject<MushroomBlock> block : ChippedBlockTypes.RED_MUSHROOMS.getBlocks()) {
-            String name = block.getId().getPath();
-            simpleBlock(block.get(), models().cross(name, modLoc("block/" + name)));
-        }
-        for (RegistryObject<MushroomBlock> block : ChippedBlockTypes.WARPED_FUNGUS.getBlocks()) {
-            String name = block.getId().getPath();
-            simpleBlock(block.get(), models().cross(name, modLoc("block/" + name)));
-        }
-        for (RegistryObject<MushroomBlock> block : ChippedBlockTypes.CRIMSON_FUNGUS.getBlocks()) {
-            String name = block.getId().getPath();
-            simpleBlock(block.get(), models().cross(name, modLoc("block/" + name)));
-        }
-        for (RegistryObject<NetherRootsBlock> block : ChippedBlockTypes.WARPED_ROOTS.getBlocks()) {
-            String name = block.getId().getPath();
-            simpleBlock(block.get(), models().cross(name, modLoc("block/" + name)));
-        }
-        for (RegistryObject<NetherRootsBlock> block : ChippedBlockTypes.CRIMSON_ROOTS.getBlocks()) {
-            String name = block.getId().getPath();
-            simpleBlock(block.get(), models().cross(name, modLoc("block/" + name)));
-        }
-        for (RegistryObject<NetherSproutsBlock> block : ChippedBlockTypes.NETHER_SPROUTS.getBlocks()) {
-            String name = block.getId().getPath();
-            simpleBlock(block.get(), models().cross(name, modLoc("block/" + name)));
-        }
-        for (RegistryObject<LilyPadBlock> block : ChippedBlockTypes.LILY_PAD.getBlocks()) {
-           String name = block.getId().getPath();
-            simpleBlock(block.get(), models().carpet(name, modLoc("block/" + name)));
+            axisBlock(block.get(), modLoc("block/" + HAY_BLOCKS + "/" + name));
         }
 
+        //Dried Kelp Block
+        List<RegistryObject<Block>> dried_kelp_blocks = DRIED_KELP_BLOCKS.getBlocks();
+        for (int i : new int[]{1,2,3,4,6,7,8,9,10,11}) {
+            RegistryObject<Block> block = dried_kelp_blocks.get(i - 1);
+            String name = block.getId().getPath();
+            simpleBlock(block.get(), models().cubeBottomTop(name, modLoc("block/" + DRIED_KELP_BLOCKS + "/" + name + "_side"), modLoc("block/" + DRIED_KELP_BLOCKS + "/" + name + "_top"), modLoc("block/" + DRIED_KELP_BLOCKS + "/" + name + "_top")));
+        }
+        {
+            //Dried Kelp Block 12
+            RegistryObject<Block> block = dried_kelp_blocks.get(12 - 1);
+            simpleBlock(block.get(), models().cubeAll(block.getId().getPath(), modLoc("block/" + DRIED_KELP_BLOCKS + "/" + block.getId().getPath())));
+        }
 
-        for (RegistryObject<Block> block : ChippedBlockTypes.LANTERNS) {
+        for (RegistryObject<MelonBlock> block : MELONS.getBlocks()) {
+            String name = block.getId().getPath();
+            simpleBlock(block.get(), models().cubeColumn(name, modLoc("block/" + MELONS + "/" + name + "_side"), modLoc("block/" + MELONS + "/" + name + "_top")));
+        }
+
+        //Pumpkins
+        List<RegistryObject<PumpkinBlock>> pumpkin_blocks = PUMPKINS.getBlocks();
+        for (int i = 1; i <= ChippedBlocks.specialPumpkinList.length; i++) {
+            RegistryObject<PumpkinBlock> block = pumpkin_blocks.get(i - 1);
+            String name = block.getId().getPath();
+            simpleBlock(block.get(), models().cubeColumn(name, modLoc("block/" + PUMPKINS + "/" + name + "_side"), modLoc("block/" + PUMPKINS + "/" + name + "_top")));
+        }
+        //Rest are done manually
+        for (int i = ChippedBlocks.specialPumpkinList.length + 1; i <= ChippedBlocks.specialPumpkinList.length + 3; i++){
+            RegistryObject<PumpkinBlock> block = pumpkin_blocks.get(i - 1);
+            String name = block.getId().getPath();
+            simpleBlock(block.get(), models().cubeBottomTop(name, modLoc("block/" + PUMPKINS + "/" + name + "_side"), modLoc("block/" + PUMPKINS + "/" + name + "_bottom"), modLoc("block/" + PUMPKINS + "/" + name + "_top")));
+        }
+
+        for (RegistryObject<MushroomBlock> block : BROWN_MUSHROOMS.getBlocks()) {
+            String name = block.getId().getPath();
+            simpleBlock(block.get(), models().cross(name, modLoc("block/" + BROWN_MUSHROOMS + "/" + name)));
+        }
+        for (RegistryObject<MushroomBlock> block : RED_MUSHROOMS.getBlocks()) {
+            String name = block.getId().getPath();
+            simpleBlock(block.get(), models().cross(name, modLoc("block/" + RED_MUSHROOMS + "/" + name)));
+        }
+        for (RegistryObject<MushroomBlock> block : WARPED_FUNGUS.getBlocks()) {
+            String name = block.getId().getPath();
+            simpleBlock(block.get(), models().cross(name, modLoc("block/" + WARPED_FUNGUS + "/" + name)));
+        }
+        for (RegistryObject<MushroomBlock> block : CRIMSON_FUNGUS.getBlocks()) {
+            String name = block.getId().getPath();
+            simpleBlock(block.get(), models().cross(name, modLoc("block/" + CRIMSON_FUNGUS + "/" + name)));
+        }
+        for (RegistryObject<NetherRootsBlock> block : WARPED_ROOTS.getBlocks()) {
+            String name = block.getId().getPath();
+            simpleBlock(block.get(), models().cross(name, modLoc("block/" + WARPED_ROOTS + "/" + name)));
+        }
+        for (RegistryObject<NetherRootsBlock> block : CRIMSON_ROOTS.getBlocks()) {
+            String name = block.getId().getPath();
+            simpleBlock(block.get(), models().cross(name, modLoc("block/" + CRIMSON_ROOTS + "/" + name)));
+        }
+        for (RegistryObject<NetherSproutsBlock> block : NETHER_SPROUTS.getBlocks()) {
+            String name = block.getId().getPath();
+            simpleBlock(block.get(), models().cross(name, modLoc("block/" + NETHER_SPROUTS + "/" + name)));
+        }
+
+        for (RegistryObject<Block> block : LANTERNS) {
             if (block.get() instanceof LanternBlock) {
                 getVariantBuilder(block.get())
                         .partialState()
@@ -150,7 +154,7 @@ public class ChippedBlockStateProvider extends BlockStateProvider {
             }
         }
 
-        for (RegistryObject<Block> block : ChippedBlockTypes.SOUL_LANTERNS) {
+        for (RegistryObject<Block> block : SOUL_LANTERNS) {
             if (block.get() instanceof LanternBlock) {
                 String name = block.getId().getPath();
                 getVariantBuilder(block.get())
@@ -167,29 +171,29 @@ public class ChippedBlockStateProvider extends BlockStateProvider {
                         .addModel();
             }
         }
-        List<RegistryObject<RedstoneLampBlock>> redstoneLampBlocks = ChippedBlockTypes.REDSTONE_LAMPS.getBlocks();
+        List<RegistryObject<RedstoneLampBlock>> redstoneLampBlocks = REDSTONE_LAMPS.getBlocks();
         for (int i = 1; i <= 18; i++) {
             Block lamp = redstoneLampBlocks.get(i - 1).get();
             getVariantBuilder(lamp)
                     .partialState()
                     .with(RedstoneLampBlock.LIT, false)
                     .modelForState()
-                    .modelFile(models().cubeAll("redstone_lamp_" + i, modLoc("block/redstone_lamp_off_" + i)))
+                    .modelFile(models().cubeAll("redstone_lamp_" + i, modLoc("block/redstone_lamp/redstone_lamp_off_" + i)))
                     .addModel();
             getVariantBuilder(lamp)
                     .partialState()
                     .with(RedstoneLampBlock.LIT, true)
                     .modelForState()
-                    .modelFile(models().cubeAll("redstone_lamp_on_" + i, modLoc("block/redstone_lamp_on_" + i)))
+                    .modelFile(models().cubeAll("redstone_lamp_on_" + i, modLoc("block/redstone_lamp/redstone_lamp_on_" + i)))
                     .addModel();
         }
 
-        List<RegistryObject<TorchBlock>> torches = ChippedBlockTypes.TORCHES.getBlocks();
+        List<RegistryObject<TorchBlock>> torches = TORCHES.getBlocks();
         List<RegistryObject<WallTorchBlock>> wallTorches = ChippedBlocks.WALL_TORCHES;
 
         for (int i = 1; i <= 9; i++) {
             RegistryObject<TorchBlock> torchBlock = torches.get(i - 1);
-            simpleBlock(torchBlock.get(), models().torch(torchBlock.getId().getPath(), modLoc("block/torch_" + i)));
+            simpleBlock(torchBlock.get(), models().torch(torchBlock.getId().getPath(), modLoc("block/torch/torch_" + i)));
             Block wallTorchBlock = wallTorches.get(i - 1).get();
             for (Direction dir : RedstoneWallTorchBlock.FACING.getPossibleValues()) {
                 int angle = Chipped.getTorchAngleFromDir(dir);
@@ -197,7 +201,7 @@ public class ChippedBlockStateProvider extends BlockStateProvider {
                         .partialState()
                         .with(RedstoneWallTorchBlock.FACING, dir)
                         .modelForState()
-                        .modelFile(models().torchWall("wall_torch_" + i, modLoc("block/torch_" + i)))
+                        .modelFile(models().torchWall("wall_torch_" + i, modLoc("block/torch/torch_" + i)))
                         .rotationY(angle)
                         .addModel();
             }
@@ -208,7 +212,7 @@ public class ChippedBlockStateProvider extends BlockStateProvider {
             for (Direction direction : Direction.Plane.HORIZONTAL) {
                 String carvedBlockName = vanillaCarved.get(i).getId().getPath();
                 String carvedSubstring = carvedBlockName.substring(0, carvedBlockName.length() - (1 + (i / 2) >= 10 ? 2 : 1));
-                String blockPath = "block/" + carvedSubstring + ChippedBlocks.carvedPumpkinList[(i / 2) % ChippedBlocks.carvedPumpkinList.length];
+                String blockPath = "block/pumpkin/" + carvedSubstring + ChippedBlocks.carvedPumpkinList[(i / 2) % ChippedBlocks.carvedPumpkinList.length];
                 getVariantBuilder(vanillaCarved.get(i).get())
                         .partialState()
                         .with(CarvedPumpkinBlock.FACING, direction)
@@ -220,7 +224,7 @@ public class ChippedBlockStateProvider extends BlockStateProvider {
         }
 
         List<RegistryObject<CarvedPumpkinBlock>> specialCarved = ChippedBlocks.SPECIAL_CARVED_PUMPKINS;
-        List<RegistryObject<PumpkinBlock>> specialPumpkins = ChippedBlockTypes.PUMPKINS.getBlocks();
+        List<RegistryObject<PumpkinBlock>> specialPumpkins = PUMPKINS.getBlocks();
 
         for (int i = 0; i < ChippedBlocks.specialPumpkinList.length * 2; i += 2) {
             registerSpecialPumpkins(specialCarved, specialPumpkins, i);
@@ -230,70 +234,87 @@ public class ChippedBlockStateProvider extends BlockStateProvider {
             registerSpecialPumpkins(specialCarved, specialPumpkins, i);
         }
 
+        for (int i = 1; i <= 3; i++) {
+
+        }
+
         registerRedstoneTorches();
         registerRedstoneTorchWall();
     }
 
-    private <T extends Block> void createCubeFromList(List<RegistryObject<T>> list) {
-        for (RegistryObject<T> block : list) {
-            simpleBlock(block.get());
+    private <T extends Block> void createCubeFromList(ChippedBlockType<?>... blockLists) {
+        for (ChippedBlockType<?> blockList : blockLists) {
+            createCubeFromList(blockList);
         }
     }
 
-    private <T extends Block> void registerGlassPanes(ChippedBlockType<T> type, String originalType, String topName, int start, int end) {
-        registerGlassPanes(type, type.getId(), originalType, topName, start, end);
+    private <T extends Block> void createCubeFromList(ChippedBlockType<?> blockList) {
+        for (RegistryObject<? extends Block> block : blockList) {
+            simpleBlock(block.get(), models().cubeAll(block.getId().getPath(), modLoc("block/" + blockList + "/" + block.getId().getPath())));
+        }
     }
 
-    private <T extends Block> void registerGlassPanes(ChippedBlockType<T> type, String glassPaneName, String originalType, String topName, int start, int end) {
+    //We honestly can use varargs instead of start & end, though up to whether we actually will add more complex glass panes in the future
+    private <T extends Block> void registerGlassPanes(ChippedBlockType<T> type, String originalType, String topName, int start, int end) {
+        registerGlassPanes(type, type.getId(), originalType, null, topName, start, end);
+    }
+
+    private <T extends Block> void registerGlassPanes(ChippedBlockType<T> type, String originalType, String originalPath, String topName, int start, int end) {
+        registerGlassPanes(type, type.getId(), originalType, originalPath, topName, start, end);
+    }
+
+    //Very janky, will try to attempt to pull from glass_pane/glass_pane_top for stained_glass_pane because of how the textures were designed, might need to rework depending on future textures
+    private <T extends Block> void registerGlassPanes(ChippedBlockType<T> type, String glassPaneName, String originalType, String originalPath, String topName, int start, int end) {
         List<RegistryObject<T>> blocks = type.getBlocks().stream().filter(t -> t.getId().getPath().startsWith(glassPaneName)).collect(Collectors.toList());
         for (int i = start; i <= end; i++) {
             String block = glassPaneName + "_" + i;
             String originalBlock = originalType + "_" + i;
+            if (originalPath == null) originalPath = originalType;
             getMultipartBuilder(blocks.get(i - 1).get())
                     .part()
-                    .modelFile(models().panePost(block + "_post", modLoc("block/" + originalBlock), modLoc("block/" + topName)))
+                    .modelFile(models().panePost(block + "_post", modLoc("block/" + originalPath + "/" + originalBlock), modLoc("block/glass_pane" + "/" + topName)))
                     .addModel();
             getMultipartBuilder(blocks.get(i - 1).get())
                     .part()
-                    .modelFile(models().paneSide(block + "_side", modLoc("block/" + originalBlock), modLoc("block/" + topName)))
+                    .modelFile(models().paneSide(block + "_side", modLoc("block/" + originalPath + "/" + originalBlock), modLoc("block/glass_pane" + "/" + topName)))
                     .addModel()
                     .condition(FourWayBlock.NORTH, true);
             getMultipartBuilder(blocks.get(i - 1).get())
                     .part()
-                    .modelFile(models().paneSide(block + "_side", modLoc("block/" + originalBlock), modLoc("block/" + topName)))
+                    .modelFile(models().paneSide(block + "_side", modLoc("block/" + originalPath + "/" + originalBlock), modLoc("block/glass_pane" + "/" + topName)))
                     .rotationY(90)
                     .addModel()
                     .condition(FourWayBlock.EAST, true);
             getMultipartBuilder(blocks.get(i - 1).get())
                     .part()
-                    .modelFile(models().paneSideAlt(block + "_side_alt", modLoc("block/" + originalBlock), modLoc("block/" + topName)))
+                    .modelFile(models().paneSideAlt(block + "_side_alt", modLoc("block/" + originalPath + "/" + originalBlock), modLoc("block/glass_pane" + "/" + topName)))
                     .addModel()
                     .condition(FourWayBlock.SOUTH, true);
             getMultipartBuilder(blocks.get(i - 1).get())
                     .part()
-                    .modelFile(models().paneSideAlt(block + "_side_alt", modLoc("block/" + originalBlock), modLoc("block/" + originalBlock)))
+                    .modelFile(models().paneSideAlt(block + "_side_alt", modLoc("block/" + originalPath + "/" + originalBlock), modLoc("block/"  + originalPath + "/" + originalBlock)))
                     .rotationY(90)
                     .addModel()
                     .condition(FourWayBlock.WEST, true);
             getMultipartBuilder(blocks.get(i - 1).get())
                     .part()
-                    .modelFile(models().paneNoSide(block + "_noside", modLoc("block/" + originalBlock)))
+                    .modelFile(models().paneNoSide(block + "_noside", modLoc("block/" + originalPath + "/" + originalBlock)))
                     .addModel()
                     .condition(FourWayBlock.NORTH, false);
             getMultipartBuilder(blocks.get(i - 1).get())
                     .part()
-                    .modelFile(models().paneNoSideAlt(block + "_noside_alt", modLoc("block/" + originalBlock)))
+                    .modelFile(models().paneNoSideAlt(block + "_noside_alt", modLoc("block/" + originalPath + "/" + originalBlock)))
                     .addModel()
                     .condition(FourWayBlock.EAST, false);
             getMultipartBuilder(blocks.get(i - 1).get())
                     .part()
-                    .modelFile(models().paneNoSideAlt(block + "_noside_alt", modLoc("block/" + originalBlock)))
+                    .modelFile(models().paneNoSideAlt(block + "_noside_alt", modLoc("block/" + originalPath + "/" + originalBlock)))
                     .rotationY(90)
                     .addModel()
                     .condition(FourWayBlock.SOUTH, false);
             getMultipartBuilder(blocks.get(i - 1).get())
                     .part()
-                    .modelFile(models().paneNoSide(block + "_noside", modLoc("block/" + originalBlock)))
+                    .modelFile(models().paneNoSide(block + "_noside", modLoc("block/" + originalPath + "/" + originalBlock)))
                     .rotationY(270)
                     .addModel()
                     .condition(FourWayBlock.WEST, false);
@@ -301,18 +322,18 @@ public class ChippedBlockStateProvider extends BlockStateProvider {
     }
 
     private void registerRedstoneTorches() {
-        List<RegistryObject<RedstoneTorchBlock>> torches = ChippedBlockTypes.REDSTONE_TORCHES.getBlocks();
+        List<RegistryObject<RedstoneTorchBlock>> torches = REDSTONE_TORCHES.getBlocks();
         for (int i = 2; i <= torches.size() + 1; i++) {
             getVariantBuilder(torches.get(i - 2).get())
                     .partialState()
                     .with(RedstoneTorchBlock.LIT, false)
                     .modelForState()
-                    .modelFile(models().torch("redstone_torch_" + i + "_off", modLoc("block/redstone_torch_" + i + "_off")))
+                    .modelFile(models().torch("redstone_torch_" + i + "_off", modLoc("block/redstone_torch/redstone_torch_" + i + "_off")))
                     .addModel()
                     .partialState()
                     .with(RedstoneTorchBlock.LIT, true)
                     .modelForState()
-                    .modelFile(models().torch("redstone_torch_" + i, modLoc("block/redstone_torch_" + i)))
+                    .modelFile(models().torch("redstone_torch_" + i, modLoc("block/redstone_torch/redstone_torch_" + i)))
                     .addModel();
         }
     }
@@ -327,14 +348,14 @@ public class ChippedBlockStateProvider extends BlockStateProvider {
                         .with(RedstoneWallTorchBlock.FACING, dir)
                         .with(RedstoneTorchBlock.LIT, true)
                         .modelForState()
-                        .modelFile(models().torchWall("redstone_wall_torch_" + i, modLoc("block/redstone_torch_" + i)))
+                        .modelFile(models().torchWall("redstone_wall_torch_" + i, modLoc("block/redstone_torch/redstone_torch_" + i)))
                         .rotationY(angle)
                         .addModel()
                         .partialState()
                         .with(RedstoneWallTorchBlock.FACING, dir)
                         .with(RedstoneWallTorchBlock.LIT, false)
                         .modelForState()
-                        .modelFile(models().torchWall("redstone_wall_torch_" + i + "_off", modLoc("block/redstone_torch_" + i + "_off")))
+                        .modelFile(models().torchWall("redstone_wall_torch_" + i + "_off", modLoc("block/redstone_torch/redstone_torch_" + i + "_off")))
                         .rotationY(angle)
                         .addModel();
             }
@@ -350,7 +371,7 @@ public class ChippedBlockStateProvider extends BlockStateProvider {
                     .partialState()
                     .with(CarvedPumpkinBlock.FACING, direction)
                     .modelForState()
-                    .modelFile(models().orientable(carvedBlockName, modLoc("block/" + pumpkinName + "_side"), modLoc("block/" + carvedBlockName), modLoc("block/" + pumpkinName + "_top")))
+                    .modelFile(models().orientable(carvedBlockName, modLoc("block/pumpkin/" + pumpkinName + "_side"), modLoc("block/pumpkin/" + carvedBlockName), modLoc("block/pumpkin/" + pumpkinName + "_top")))
                     .rotationY(Chipped.getAngleFromDir(direction))
                     .addModel();
         }

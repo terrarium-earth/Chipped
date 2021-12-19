@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/carpet",
   "textures": {
-    "wool": "chipped:block/pink_wool_15"
+    "wool": "chipped:block/pink_wool/pink_wool_15"
   }
 }

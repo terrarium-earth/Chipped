@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/cube_all",
   "textures": {
-    "all": "chipped:block/jungle_planks_5"
+    "all": "chipped:block/jungle_planks/jungle_planks_5"
   }
 }
