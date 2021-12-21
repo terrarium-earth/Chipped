@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "chipped:block/jungle_wood_glass_6"
+    "layer0": "chipped:block/glass/jungle_wood_glass_6"
   }
 }

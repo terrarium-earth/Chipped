@@ -42,6 +42,9 @@ public class ChippedItemTagsProvider extends ItemTagsProvider {
 		tag(ItemTags.STONE_CRAFTING_MATERIALS).addTag(ChippedBlockTypes.COBBLESTONE.getItemTag());
 		tag(ItemTags.STONE_CRAFTING_MATERIALS).addTag(ChippedBlockTypes.BLACKSTONES.getItemTag());
 
+		tag(ItemTags.SOUL_FIRE_BASE_BLOCKS).addTag(ChippedBlockTypes.SOUL_SANDS.getItemTag());
+		tag(ItemTags.PIGLIN_REPELLENTS).addTag(ChippedBlockTypes.SOUL_LANTERNS.getItemTag());
+
 		//Default Forge tags
 		tag(Tags.Items.STONE).addTag(ChippedBlockTypes.STONE.getItemTag());
 		tag(Tags.Items.COBBLESTONE).addTag(ChippedBlockTypes.COBBLESTONE.getItemTag());

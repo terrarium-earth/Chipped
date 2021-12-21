@@ -2,7 +2,7 @@
   "parent": "minecraft:block/orientable",
   "textures": {
     "side": "minecraft:block/pumpkin_side",
-    "front": "chipped:block/carved_pumpkin_boo",
+    "front": "chipped:block/pumpkin/carved_pumpkin_boo",
     "top": "minecraft:block/pumpkin_top"
   }
 }

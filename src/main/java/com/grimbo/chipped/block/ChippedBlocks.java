@@ -11,10 +11,7 @@ import net.minecraft.block.*;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.material.MaterialColor;
 import net.minecraft.entity.EntityType;
-import net.minecraft.item.BlockItem;
-import net.minecraft.item.DyeColor;
-import net.minecraft.item.Item;
-import net.minecraft.item.WallOrFloorItem;
+import net.minecraft.item.*;
 import net.minecraft.particles.ParticleTypes;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
@@ -22,7 +19,6 @@ import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.util.math.shapes.VoxelShapes;
 import net.minecraft.world.IBlockReader;
-import net.minecraftforge.common.PlantType;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -37,39 +33,12 @@ import java.util.stream.Stream;
 import static com.grimbo.chipped.block.ChippedBlockTypes.*;
 
 public class ChippedBlocks {
-    private static final AbstractBlock.Properties CRYING_OBSIDIAN_PROPERTIES = AbstractBlock.Properties.copy(Blocks.CRYING_OBSIDIAN);
-    private static final AbstractBlock.Properties HAY_BLOCK_PROPERTIES = AbstractBlock.Properties.copy(Blocks.HAY_BLOCK);
-    private static final AbstractBlock.Properties MELON_PROPERTIES = AbstractBlock.Properties.copy(Blocks.MELON);
-    private static final AbstractBlock.Properties VINE_PROPERTIES = AbstractBlock.Properties.copy(Blocks.VINE);
-    private static final AbstractBlock.Properties REDSTONE_TORCH_PROPERTIES = AbstractBlock.Properties.copy(Blocks.REDSTONE_TORCH);
-    private static final AbstractBlock.Properties REDSTONE_WALL_TORCH_PROPERTIES = AbstractBlock.Properties.copy(Blocks.REDSTONE_WALL_TORCH);
-    private static final AbstractBlock.Properties REDSTONE_LAMP_PROPERTIES = AbstractBlock.Properties.copy(Blocks.REDSTONE_LAMP);
-    private static final AbstractBlock.Properties TORCH_PROPERTIES = AbstractBlock.Properties.copy(Blocks.TORCH);
-    private static final AbstractBlock.Properties WALL_TORCH_PROPERTIES = AbstractBlock.Properties.copy(Blocks.WALL_TORCH);
-    private static final AbstractBlock.Properties PUMPKIN_PROPERTIES = AbstractBlock.Properties.copy(Blocks.PUMPKIN);
-    private static final AbstractBlock.Properties JACK_O_LANTERN_PROPERTIES = AbstractBlock.Properties.copy(Blocks.JACK_O_LANTERN);
-    private static final AbstractBlock.Properties WOOD_PROPERTIES = AbstractBlock.Properties.of(Material.WOOD).strength(2.0F, 3.0F).sound(SoundType.WOOD);
-    private static final AbstractBlock.Properties GLASS_PANE_PROPERTIES = AbstractBlock.Properties.copy(Blocks.GLASS_PANE);
-    private static final AbstractBlock.Properties GLASS_PROPERTIES = AbstractBlock.Properties.copy(Blocks.GLASS);
-    private static final AbstractBlock.Properties WOOL_PROPERTIES = AbstractBlock.Properties.of(Material.WOOL).strength(0.1F).sound(SoundType.WOOL);
+    public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, Chipped.MOD_ID);
+
     private static final AbstractBlock.Properties LANTERN_PROPERTIES = AbstractBlock.Properties.copy(Blocks.LANTERN);
+
     private static final AbstractBlock.IPositionPredicate ALWAYS_FALSE_POSITION = (state, world, position) -> false;
     private static final AbstractBlock.IExtendedPositionPredicate<EntityType<?>> VALID_SPAWN = (state, world, position, type) -> false;
-    protected static final VoxelShape CHONK_LANTERN_SHAPE = VoxelShapes.or(Block.box(2.0D, 0.0D, 2.0D, 14.0D, 1.0D, 14.0D), Block.box(1, 1, 1, 15, 15, 15));
-    protected static final VoxelShape THICC_LANTERN_SHAPE = VoxelShapes.or(Block.box(2.0D, 0.0D, 2.0D, 14.0D, 1.0D, 14.0D), Block.box(1, 1, 1, 15, 15, 15));
-    protected static final VoxelShape DONUT_LANTERN_SHAPE_EAST = Block.box(5.0D, 0.0D, 1.0D, 11.0D, 15.0D, 15.0D);
-    protected static final VoxelShape DONUT_LANTERN_SHAPE_NORTH = Block.box(1.0D, 0.0D, 5.0D, 15.0D, 15.0D, 11.0D);
-    protected static final VoxelShape TALL_LANTERN_SHAPE = Block.box(5, 0, 5, 11, 15, 11);
-    protected static final VoxelShape HANGING_WOOD_LANTERN = VoxelShapes.or(Block.box(5.0D, 2.0D, 5.0D, 11.0D, 12.0D, 11.0D), Block.box(4, 12, 4, 12, 13, 12), Block.box(4, 1, 4, 12, 2, 12),  Block.box(5, 13, 5, 11, 14, 11));
-    protected static final VoxelShape WOOD_LANTERN = VoxelShapes.or(Block.box(5.0D, 1D, 5.0D, 11.0D, 11.0D, 11.0D), Block.box(4, 11, 4, 12, 12, 12), Block.box(4, 0, 4, 12, 1, 12), Block.box(5, 12, 5, 11, 13, 11));
-    protected static final VoxelShape HANGING_JAR_LANTERN = VoxelShapes.or(Block.box(7.0D, 11D, 7.0D, 9.0D, 12.0D, 9.0D), Block.box(6, 5, 6, 10, 11, 10));
-    protected static final VoxelShape JAR_LANTERN  = VoxelShapes.or(Block.box(7.0D, 6D, 7.0D, 9.0D, 7.0D, 9.0D), Block.box(6, 0, 6, 10, 6, 10));
-    protected static final VoxelShape HANGING_PAPER_LANTERN = VoxelShapes.or(Block.box(4, 5, 4, 12, 14, 12), Block.box(5, 3, 5, 11, 5, 11), Block.box(5, 14, 5, 11, 16, 11));
-    protected static final VoxelShape PAPER_LANTERN = VoxelShapes.or(Block.box(4, 3, 4, 12, 12, 12), Block.box(5, 1, 5, 11, 3, 11),Block.box(5, 12, 5, 11, 14, 11), Block.box(4, 0, 4, 12, 2, 12));
-    protected static final VoxelShape HANGING_PAPER_LANTERN_2 = VoxelShapes.or(Block.box(4, 9, 4, 12, 15, 12), Block.box(5, 1 ,5, 11, 5, 11), Block.box(6, 0, 6, 10, 1, 10), Block.box(6, 5, 6, 10, 6, 10), Block.box(5, 15, 5, 11, 16, 11), Block.box(5, 8, 5, 11, 9 ,11));
-    protected static final VoxelShape PAPER_LANTERN_2 = VoxelShapes.or(Block.box(4, 3, 4, 12, 9, 12), Block.box(5, 9, 5, 11, 10, 11), Block.box(5, 2, 5, 11, 3, 11), Block.box(4, 0, 4, 12, 2, 12));
-
-    public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, Chipped.MOD_ID);
 
     public static final List<RegistryObject<WallTorchBlock>> WALL_TORCHES = new ArrayList<>();
     public static final List<RegistryObject<RedstoneWallTorchBlock>> REDSTONE_WALL_TORCHES = new ArrayList<>();
@@ -144,14 +113,17 @@ public class ChippedBlocks {
         }
 
         registerVanillaBlocks(BenchType.ALCHEMY, Blocks.OBSIDIAN, OBSIDIAN, 20);
+        final AbstractBlock.Properties CRYING_OBSIDIAN_PROPERTIES = AbstractBlock.Properties.copy(Blocks.CRYING_OBSIDIAN);
         registerBlocks(BenchType.ALCHEMY, CRYING_OBSIDIAN, () -> new CryingObsidianBlock(CRYING_OBSIDIAN_PROPERTIES), 20);
         registerVanillaBlocks(BenchType.ALCHEMY, Blocks.GLOWSTONE, GLOWSTONES, 20);
         registerVanillaBlocks(BenchType.ALCHEMY, Blocks.SEA_LANTERN, SEA_LANTERNS, 16);
         registerVanillaBlocks(BenchType.BOTANIST, Blocks.SHROOMLIGHT, SHROOMLIGHTS, 16);
 
+        final AbstractBlock.Properties REDSTONE_LAMP_PROPERTIES = AbstractBlock.Properties.copy(Blocks.REDSTONE_LAMP);
         registerBlocks(BenchType.MECHANIST, REDSTONE_LAMPS, () -> new RedstoneLampBlock(REDSTONE_LAMP_PROPERTIES), 18);
 
         //Register Wools and Carpets
+        final AbstractBlock.Properties WOOL_PROPERTIES = AbstractBlock.Properties.of(Material.WOOL).strength(0.1F).sound(SoundType.WOOL);
         for (int id = 0; id < 16; ++id) {
             DyeColor color = DyeColor.byId(id);
             registerVanillaBlocks(BenchType.LOOM, WOOL.computeIfAbsent(color, k -> new ChippedBlockType<>(k + "_wool")), 18);
@@ -159,6 +131,8 @@ public class ChippedBlocks {
         }
 
         //Register Glasses and Stained Glasses
+        final AbstractBlock.Properties GLASS_PROPERTIES = AbstractBlock.Properties.copy(Blocks.GLASS);
+        final AbstractBlock.Properties GLASS_PANE_PROPERTIES = AbstractBlock.Properties.copy(Blocks.GLASS_PANE);
         registerBlocks(BenchType.GLASSBLOWER, GLASSES, () -> new GlassBlock(GLASS_PROPERTIES), 14);
         registerBlocks(BenchType.GLASSBLOWER, GLASS_PANES, () -> new PaneBlock(GLASS_PANE_PROPERTIES), 14);
 
@@ -175,35 +149,72 @@ public class ChippedBlocks {
 
         //Register Misc
         registerVanillaBlocks(BenchType.MASON, Blocks.CLAY, CLAYS, 19);
+        registerVanillaBlocks(BenchType.BOTANIST, Blocks.DRIED_KELP_BLOCK, DRIED_KELP_BLOCKS, 12);
 
+        final AbstractBlock.Properties WOOD_PROPERTIES = AbstractBlock.Properties.of(Material.WOOD).strength(2.0F, 3.0F).sound(SoundType.WOOD);
         for (ChippedWoodType type : ChippedWoodType.VALUES) {
             registerBlocks(BenchType.CARPENTERS, PLANKS.computeIfAbsent(type, k -> new ChippedBlockType<>(k + "_planks")), () -> new Block(WOOD_PROPERTIES), 18);
         }
 
+        final AbstractBlock.Properties HAY_BLOCK_PROPERTIES = AbstractBlock.Properties.copy(Blocks.HAY_BLOCK);
         registerBlocks(BenchType.BOTANIST, HAY_BLOCKS, () -> new HayBlock(HAY_BLOCK_PROPERTIES), 8);
+        final AbstractBlock.Properties MELON_PROPERTIES = AbstractBlock.Properties.copy(Blocks.MELON);
         registerBlocks(BenchType.BOTANIST, MELONS, () -> new MelonBlock(MELON_PROPERTIES), 10);
+        final AbstractBlock.Properties VINE_PROPERTIES = AbstractBlock.Properties.copy(Blocks.VINE);
         registerBlocks(BenchType.BOTANIST, VINES, () -> new VineBlock(VINE_PROPERTIES), 8);
 
+        final AbstractBlock.Properties BROWN_MUSHROOM_PROPERTIES = AbstractBlock.Properties.copy(Blocks.BROWN_MUSHROOM);
         registerBlocks(BenchType.BOTANIST, BROWN_MUSHROOMS, () -> new MushroomBlock(AbstractBlock.Properties.of(Material.PLANT, MaterialColor.COLOR_BROWN).noCollission().randomTicks().instabreak().sound(SoundType.GRASS)), 15);
+        final AbstractBlock.Properties RED_MUSHROOM_PROPERTIES = AbstractBlock.Properties.copy(Blocks.RED_MUSHROOM);
         registerBlocks(BenchType.BOTANIST, RED_MUSHROOMS, () -> new MushroomBlock(AbstractBlock.Properties.of(Material.PLANT, MaterialColor.COLOR_RED).noCollission().randomTicks().instabreak().sound(SoundType.GRASS)), 15);
 
+        final AbstractBlock.Properties WARPED_FUNGUS_PROPERTIES = AbstractBlock.Properties.copy(Blocks.WARPED_FUNGUS);
         registerBlocks(BenchType.BOTANIST, WARPED_FUNGUS, () -> new MushroomBlock(AbstractBlock.Properties.of(Material.REPLACEABLE_FIREPROOF_PLANT, MaterialColor.COLOR_CYAN).noCollission().randomTicks().instabreak().sound(SoundType.FUNGUS)), 14);
+        final AbstractBlock.Properties CRIMSON_FUNGUS_PROPERTIES = AbstractBlock.Properties.copy(Blocks.CRIMSON_FUNGUS);
         registerBlocks(BenchType.BOTANIST, CRIMSON_FUNGUS, () -> new MushroomBlock(AbstractBlock.Properties.of(Material.REPLACEABLE_FIREPROOF_PLANT, MaterialColor.COLOR_RED).noCollission().randomTicks().instabreak().sound(SoundType.FUNGUS)), 15);
 
-        registerBlocks(BenchType.BOTANIST, WARPED_ROOTS, () -> new NetherRootsBlock(AbstractBlock.Properties.of(Material.REPLACEABLE_FIREPROOF_PLANT, MaterialColor.NETHER).noCollission().instabreak().sound(SoundType.ROOTS)), 9);
-        registerBlocks(BenchType.BOTANIST, CRIMSON_ROOTS, () -> new NetherRootsBlock(AbstractBlock.Properties.of(Material.REPLACEABLE_FIREPROOF_PLANT, MaterialColor.NETHER).noCollission().instabreak().sound(SoundType.ROOTS)), 14);
-        registerBlocks(BenchType.BOTANIST, NETHER_SPROUTS, () -> new NetherSproutsBlock(AbstractBlock.Properties.of(Material.REPLACEABLE_FIREPROOF_PLANT, MaterialColor.NETHER).noCollission().instabreak().sound(SoundType.NETHER_SPROUTS)), 20);
+        final AbstractBlock.Properties WARPED_ROOTS_PROPERTIES = AbstractBlock.Properties.copy(Blocks.WARPED_ROOTS);
+        registerBlocks(BenchType.BOTANIST, WARPED_ROOTS, () -> new NetherRootsBlock(WARPED_ROOTS_PROPERTIES), 9);
+        final AbstractBlock.Properties CRIMSON_ROOTS_PROPERTIES = AbstractBlock.Properties.copy(Blocks.CRIMSON_ROOTS);
+        registerBlocks(BenchType.BOTANIST, CRIMSON_ROOTS, () -> new NetherRootsBlock(CRIMSON_ROOTS_PROPERTIES), 14);
+        final AbstractBlock.Properties NETHER_SPROUTS_PROPERTIES = AbstractBlock.Properties.copy(Blocks.NETHER_SPROUTS);
+        registerBlocks(BenchType.BOTANIST, NETHER_SPROUTS, () -> new NetherSproutsBlock(NETHER_SPROUTS_PROPERTIES), 20);
 
-        registerBlocks(BenchType.BOTANIST, BROWN_MUSHROOM_BLOCK, () -> new HugeMushroomBlock(AbstractBlock.Properties.of(Material.WOOD, MaterialColor.DIRT).strength(0.2F).sound(SoundType.WOOD)), 24);
-        registerBlocks(BenchType.BOTANIST, RED_MUSHROOM_BLOCK, () -> new HugeMushroomBlock(AbstractBlock.Properties.of(Material.WOOD, MaterialColor.DIRT).strength(0.2F).sound(SoundType.WOOD)), 15);
+        final AbstractBlock.Properties BROWN_MUSHROOM_BLOCK_PROPERTIES = AbstractBlock.Properties.copy(Blocks.BROWN_MUSHROOM_BLOCK);
+        registerBlocks(BenchType.BOTANIST, BROWN_MUSHROOM_BLOCK, () -> new HugeMushroomBlock(BROWN_MUSHROOM_BLOCK_PROPERTIES), 24);
+        final AbstractBlock.Properties RED_MUSHROOM_BLOCK_PROPERTIES = AbstractBlock.Properties.copy(Blocks.RED_MUSHROOM_BLOCK);
+        registerBlocks(BenchType.BOTANIST, RED_MUSHROOM_BLOCK, () -> new HugeMushroomBlock(RED_MUSHROOM_BLOCK_PROPERTIES), 15);
 
-        registerBlocks(BenchType.BOTANIST, WARPED_WART_BLOCK, () -> new Block(AbstractBlock.Properties.of(Material.GRASS, MaterialColor.WARPED_WART_BLOCK).strength(1.0F).sound(SoundType.WART_BLOCK)), 14);
-        registerBlocks(BenchType.BOTANIST, NETHER_WART_BLOCK, () -> new Block(AbstractBlock.Properties.of(Material.GRASS, MaterialColor.COLOR_RED).strength(1.0F).sound(SoundType.WART_BLOCK)), 13);
+        registerVanillaBlocks(BenchType.BOTANIST, WARPED_WART_BLOCK, 14);
+        registerVanillaBlocks(BenchType.BOTANIST, NETHER_WART_BLOCK, 13);
 
-        registerBlocks(BenchType.BOTANIST, LILY_PAD, () -> new LilyPadBlock(AbstractBlock.Properties.of(Material.PLANT).instabreak().sound(SoundType.LILY_PAD).noOcclusion()), 6);
+        final AbstractBlock.Properties SOUL_SAND_PROPERTIES = AbstractBlock.Properties.copy(Blocks.SOUL_SAND);
+        registerBlocks(BenchType.ALCHEMY, SOUL_SANDS, () -> new SoulSandBlock(SOUL_SAND_PROPERTIES), 11);
 
+        //Lilypads require a custom item
+        final AbstractBlock.Properties LILY_PAD_PROPERTIES = AbstractBlock.Properties.copy(Blocks.LILY_PAD);
+        for (int i = 1; i <= 6; i++) {
+            String name = LILY_PAD.getId() + "_" + i;
+            RegistryObject<ChippedLilyPadBlock> lilyPad = BLOCKS.register(name, () -> new ChippedLilyPadBlock(LILY_PAD_PROPERTIES));
+            BlockRegistry.addBlock(BenchType.BOTANIST, LILY_PAD, lilyPad);
+            ChippedItems.ITEMS.register(name, () -> new LilyPadItem(lilyPad.get(), new Item.Properties().tab(Chipped.CHIPPED)));
+        }
 
         //Regular Lanterns
+        final VoxelShape CHONK_LANTERN_SHAPE = VoxelShapes.or(Block.box(2.0D, 0.0D, 2.0D, 14.0D, 1.0D, 14.0D), Block.box(1, 1, 1, 15, 15, 15));
+        final VoxelShape THICC_LANTERN_SHAPE = VoxelShapes.or(Block.box(2.0D, 0.0D, 2.0D, 14.0D, 1.0D, 14.0D), Block.box(1, 1, 1, 15, 15, 15));
+        final VoxelShape DONUT_LANTERN_SHAPE_EAST = Block.box(5.0D, 0.0D, 1.0D, 11.0D, 15.0D, 15.0D);
+        final VoxelShape DONUT_LANTERN_SHAPE_NORTH = Block.box(1.0D, 0.0D, 5.0D, 15.0D, 15.0D, 11.0D);
+        final VoxelShape TALL_LANTERN_SHAPE = Block.box(5, 0, 5, 11, 15, 11);
+        final VoxelShape HANGING_WOOD_LANTERN = VoxelShapes.or(Block.box(5.0D, 2.0D, 5.0D, 11.0D, 12.0D, 11.0D), Block.box(4, 12, 4, 12, 13, 12), Block.box(4, 1, 4, 12, 2, 12),  Block.box(5, 13, 5, 11, 14, 11));
+        final VoxelShape WOOD_LANTERN = VoxelShapes.or(Block.box(5.0D, 1D, 5.0D, 11.0D, 11.0D, 11.0D), Block.box(4, 11, 4, 12, 12, 12), Block.box(4, 0, 4, 12, 1, 12), Block.box(5, 12, 5, 11, 13, 11));
+        final VoxelShape HANGING_JAR_LANTERN = VoxelShapes.or(Block.box(7.0D, 11D, 7.0D, 9.0D, 12.0D, 9.0D), Block.box(6, 5, 6, 10, 11, 10));
+        final VoxelShape JAR_LANTERN  = VoxelShapes.or(Block.box(7.0D, 6D, 7.0D, 9.0D, 7.0D, 9.0D), Block.box(6, 0, 6, 10, 6, 10));
+        final VoxelShape HANGING_PAPER_LANTERN = VoxelShapes.or(Block.box(4, 5, 4, 12, 14, 12), Block.box(5, 3, 5, 11, 5, 11), Block.box(5, 14, 5, 11, 16, 11));
+        final VoxelShape PAPER_LANTERN = VoxelShapes.or(Block.box(4, 3, 4, 12, 12, 12), Block.box(5, 1, 5, 11, 3, 11),Block.box(5, 12, 5, 11, 14, 11), Block.box(4, 0, 4, 12, 2, 12));
+        final VoxelShape HANGING_PAPER_LANTERN_2 = VoxelShapes.or(Block.box(4, 9, 4, 12, 15, 12), Block.box(5, 1 ,5, 11, 5, 11), Block.box(6, 0, 6, 10, 1, 10), Block.box(6, 5, 6, 10, 6, 10), Block.box(5, 15, 5, 11, 16, 11), Block.box(5, 8, 5, 11, 9 ,11));
+        final VoxelShape PAPER_LANTERN_2 = VoxelShapes.or(Block.box(4, 3, 4, 12, 9, 12), Block.box(5, 9, 5, 11, 10, 11), Block.box(5, 2, 5, 11, 3, 11), Block.box(4, 0, 4, 12, 2, 12));
+
         for (int i : new int[]{1, 3, 4}) {
             RegistryObject<LanternBlock> lantern = register("lantern_" + i, () -> new LanternBlock(LANTERN_PROPERTIES));
             BlockRegistry.addGenericBlock(BenchType.MECHANIST, LANTERNS, lantern);
@@ -247,6 +258,8 @@ public class ChippedBlocks {
 
 
         //Redstone Torches
+        final AbstractBlock.Properties REDSTONE_TORCH_PROPERTIES = AbstractBlock.Properties.copy(Blocks.REDSTONE_TORCH);
+        final AbstractBlock.Properties REDSTONE_WALL_TORCH_PROPERTIES = AbstractBlock.Properties.copy(Blocks.REDSTONE_WALL_TORCH);
         for (int i = 2; i <= 6; i++) {
             RegistryObject<RedstoneWallTorchBlock> redstoneWallTorch = BLOCKS.register("redstone_wall_torch_" + i, () -> new RedstoneWallTorchBlock(REDSTONE_WALL_TORCH_PROPERTIES));
             RegistryObject<RedstoneTorchBlock> redstoneTorch = BLOCKS.register("redstone_torch_" + i, () -> new RedstoneTorchBlock(REDSTONE_TORCH_PROPERTIES));
@@ -256,6 +269,8 @@ public class ChippedBlocks {
         }
 
         //Regular Torches
+        final AbstractBlock.Properties TORCH_PROPERTIES = AbstractBlock.Properties.copy(Blocks.TORCH);
+        final AbstractBlock.Properties WALL_TORCH_PROPERTIES = AbstractBlock.Properties.copy(Blocks.WALL_TORCH);
         for (int i = 1; i <= 9; i++) {
             RegistryObject<WallTorchBlock> wallTorch = BLOCKS.register("wall_torch_" + i, () -> new WallTorchBlock(TORCH_PROPERTIES, ParticleTypes.FLAME));
             RegistryObject<TorchBlock> torch = BLOCKS.register("torch_" + i, () -> new TorchBlock(WALL_TORCH_PROPERTIES, ParticleTypes.FLAME));
@@ -265,6 +280,8 @@ public class ChippedBlocks {
         }
 
         //Pumpkins
+        final AbstractBlock.Properties PUMPKIN_PROPERTIES = AbstractBlock.Properties.copy(Blocks.CARVED_PUMPKIN);
+        final AbstractBlock.Properties JACK_O_LANTERN_PROPERTIES = AbstractBlock.Properties.copy(Blocks.JACK_O_LANTERN);
         for (String pumpkin : specialPumpkinList) {
             RegistryObject<PumpkinBlock> pumpkinBlock = register("pumpkin_" + pumpkin, () -> new PumpkinBlock(PUMPKIN_PROPERTIES));
             RegistryObject<CarvedPumpkinBlock> jackOLanternBlock = register("jack_o_lantern_" + pumpkin, () -> new CarvedPumpkinBlock(JACK_O_LANTERN_PROPERTIES));
@@ -276,6 +293,11 @@ public class ChippedBlocks {
 
             SPECIAL_CARVED_PUMPKINS.add(jackOLanternBlock);
             SPECIAL_CARVED_PUMPKINS.add(carvedPumpkinBlock);
+        }
+        //Regular Pumpkins register AFTER Special Pumpkins
+        for (int i = 1; i<= 13; i++) {
+            RegistryObject<PumpkinBlock> pumpkinBlock = register("pumpkin_" + i, () -> new PumpkinBlock(PUMPKIN_PROPERTIES));
+            BlockRegistry.addBlock(BenchType.BOTANIST, PUMPKINS, pumpkinBlock);
         }
 
         //Jack'o'Lantern & Carved Pumpkins

@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/cube_all",
   "textures": {
-    "all": "chipped:block/warped_wood_glass_6"
+    "all": "chipped:block/glass/warped_wood_glass_6"
   }
 }

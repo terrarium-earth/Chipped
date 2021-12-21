@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/cube_all",
   "textures": {
-    "all": "chipped:block/redstone_lamp_on_1"
+    "all": "chipped:block/redstone_lamp/redstone_lamp_on_1"
   }
 }

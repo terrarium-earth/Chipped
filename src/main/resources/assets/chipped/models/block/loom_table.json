@@ -3,8 +3,8 @@
   "ambientocclusion": false,
   "texture_size": [128, 128],
   "textures": {
-    "2": "chipped:block/loom_table",
-    "particle": "chipped:block/loom_table"
+    "2": "chipped:block/workbenches/loom_table",
+    "particle": "chipped:block/workbenches/loom_table"
   },
   "elements": [
     {

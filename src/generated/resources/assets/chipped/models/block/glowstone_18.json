@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/cube_all",
   "textures": {
-    "all": "chipped:block/glowstone_18"
+    "all": "chipped:block/glowstone/glowstone_18"
   }
 }

@@ -1,8 +1,8 @@
 {
 	"credit": "Made with Blockbench",
 	"textures": {
-		"2": "chipped:block/donut_lantern",
-		"particle": "chipped:block/donut_lantern"
+		"2": "chipped:block/lanterns/donut_lantern",
+		"particle": "chipped:block/lanterns/donut_lantern"
 	},
 	"elements": [
 		{

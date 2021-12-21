@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/cube_all",
   "textures": {
-    "all": "chipped:block/green_concrete_8"
+    "all": "chipped:block/green_concrete/green_concrete_8"
   }
 }

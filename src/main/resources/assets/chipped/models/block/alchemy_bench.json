@@ -1,8 +1,8 @@
 {
 	"credit": "Made with Blockbench",
 	"textures": {
-		"11": "chipped:block/alchemy_table_texture",
-		"particle": "chipped:block/alchemy_table_texture"
+		"11": "chipped:block/workbenches/alchemy_table_texture",
+		"particle": "chipped:block/workbenches/alchemy_table_texture"
 	},
 	"elements": [
 		{

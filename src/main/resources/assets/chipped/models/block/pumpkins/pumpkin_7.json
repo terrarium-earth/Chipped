@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "chipped:block/pumpkin/pumpkin_6_7_top",
+    "side": "chipped:block/pumpkin/pumpkin_7_side"
+  }
+}

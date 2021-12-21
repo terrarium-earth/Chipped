@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:block/template_glass_pane_side",
   "textures": {
-    "pane": "chipped:block/oak_wood_glass_6",
-    "edge": "chipped:block/oak_wood_glass_pane_top"
+    "pane": "chipped:block/glass/oak_wood_glass_6",
+    "edge": "chipped:block/glass_pane/oak_wood_glass_pane_top"
   }
 }

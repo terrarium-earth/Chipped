@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "chipped:item/warped_fungus_6"
+    "layer0": "chipped:item/warped_fungus/warped_fungus_6"
   }
 }

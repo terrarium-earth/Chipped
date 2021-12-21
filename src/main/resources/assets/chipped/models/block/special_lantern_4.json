@@ -1,8 +1,8 @@
 {
 	"credit": "Made with Blockbench",
 	"textures": {
-		"0": "chipped:block/thicc_lantern",
-		"particle": "chipped:block/thicc_lantern"
+		"0": "chipped:block/lanterns/thicc_lantern",
+		"particle": "chipped:block/lanterns/thicc_lantern"
 	},
 	"elements": [
 		{

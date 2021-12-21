@@ -3,8 +3,8 @@
   "ambientocclusion": false,
   "texture_size": [128, 128],
   "textures": {
-    "2": "chipped:block/glassblower",
-    "particle": "chipped:block/glassblower"
+    "2": "chipped:block/workbenches/glassblower",
+    "particle": "chipped:block/workbenches/glassblower"
   },
   "elements": [
     {

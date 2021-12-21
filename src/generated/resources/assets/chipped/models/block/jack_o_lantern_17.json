@@ -2,7 +2,7 @@
   "parent": "minecraft:block/orientable",
   "textures": {
     "side": "minecraft:block/pumpkin_side",
-    "front": "chipped:block/jack_o_lantern_squashy",
+    "front": "chipped:block/pumpkin/jack_o_lantern_squashy",
     "top": "minecraft:block/pumpkin_top"
   }
 }

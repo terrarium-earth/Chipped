@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "chipped:item/nether_sprouts_5"
+    "layer0": "chipped:item/nether_sprouts/nether_sprouts_5"
   }
 }

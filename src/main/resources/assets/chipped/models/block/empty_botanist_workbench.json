@@ -2,6 +2,6 @@
 	"credit": "Made with Blockbench",
 	"texture_size": [128, 128],
 	"textures": {
-		"particle": "chipped:block/botanist_workbench"
+		"particle": "chipped:block/workbenches/botanist_workbench"
 	}
 }

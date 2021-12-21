@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/template_glass_pane_noside_alt",
   "textures": {
-    "pane": "chipped:block/birch_wood_glass_3"
+    "pane": "chipped:block/glass/birch_wood_glass_3"
   }
 }

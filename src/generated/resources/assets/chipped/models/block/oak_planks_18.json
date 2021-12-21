@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/cube_all",
   "textures": {
-    "all": "chipped:block/oak_planks_18"
+    "all": "chipped:block/oak_planks/oak_planks_18"
   }
 }

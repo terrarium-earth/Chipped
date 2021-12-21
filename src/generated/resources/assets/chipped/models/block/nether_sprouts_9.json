@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/cross",
   "textures": {
-    "cross": "chipped:block/nether_sprouts_9"
+    "cross": "chipped:block/nether_sprouts/nether_sprouts_9"
   }
 }
