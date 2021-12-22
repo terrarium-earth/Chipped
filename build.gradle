@@ -93,10 +93,9 @@ jar {
             "Specification-Title": "chipped",
             "Specification-Vendor": "chippedsareus",
             "Specification-Version": "1", // We are version 1 of ourselves
-            "Implementation-Title": project.name,
+            "Implementation-Title": "Chipped Mod-Forge",
             "Implementation-Version": "${archiveVersion.get()}",
-            "Implementation-Vendor" :"chippedsareus",
-            "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ")
+            "Implementation-Vendor" :"chippedsareus"
         ])
     }
 }
