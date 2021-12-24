@@ -48,6 +48,7 @@ public class ChippedBlocks {
     public static final List<RegistryObject<CarvedPumpkinBlock>> VANILLA_CARVED_PUMPKINS = new ArrayList<>();
 
     //Simple Blocks which have 18 of its own variant
+    //Check ChippedBlocks/ItemTagsProvider before editing!
     public static final List<ChippedBlockType<Block>> stones18 = Stream.of(
             "granite", "diorite", "andesite", "prismarine", "dark_prismarine", "purpur_block", "quartz_block",
             "sandstone", "red_sandstone", "nether_bricks", "red_nether_bricks"
@@ -169,17 +170,17 @@ public class ChippedBlocks {
         final AbstractBlock.Properties MELON_PROPERTIES = AbstractBlock.Properties.copy(Blocks.MELON);
         registerBlocks(BenchType.BOTANIST, MELONS, () -> new MelonBlock(MELON_PROPERTIES), 10);
         final AbstractBlock.Properties VINE_PROPERTIES = AbstractBlock.Properties.copy(Blocks.VINE);
-        registerBlocks(BenchType.BOTANIST, VINES, () -> new VineBlock(VINE_PROPERTIES), 8);
+        registerBlocks(BenchType.BOTANIST, VINES, () -> new VineBlock(VINE_PROPERTIES), 17);
 
         final AbstractBlock.Properties BROWN_MUSHROOM_PROPERTIES = AbstractBlock.Properties.copy(Blocks.BROWN_MUSHROOM);
-        registerBlocks(BenchType.BOTANIST, BROWN_MUSHROOMS, () -> new MushroomBlock(AbstractBlock.Properties.of(Material.PLANT, MaterialColor.COLOR_BROWN).noCollission().randomTicks().instabreak().sound(SoundType.GRASS)), 15);
+        registerBlocks(BenchType.BOTANIST, BROWN_MUSHROOMS, () -> new MushroomBlock(BROWN_MUSHROOM_PROPERTIES), 15);
         final AbstractBlock.Properties RED_MUSHROOM_PROPERTIES = AbstractBlock.Properties.copy(Blocks.RED_MUSHROOM);
-        registerBlocks(BenchType.BOTANIST, RED_MUSHROOMS, () -> new MushroomBlock(AbstractBlock.Properties.of(Material.PLANT, MaterialColor.COLOR_RED).noCollission().randomTicks().instabreak().sound(SoundType.GRASS)), 15);
+        registerBlocks(BenchType.BOTANIST, RED_MUSHROOMS, () -> new MushroomBlock(RED_MUSHROOM_PROPERTIES), 15);
 
         final AbstractBlock.Properties WARPED_FUNGUS_PROPERTIES = AbstractBlock.Properties.copy(Blocks.WARPED_FUNGUS);
-        registerBlocks(BenchType.BOTANIST, WARPED_FUNGUS, () -> new MushroomBlock(AbstractBlock.Properties.of(Material.REPLACEABLE_FIREPROOF_PLANT, MaterialColor.COLOR_CYAN).noCollission().randomTicks().instabreak().sound(SoundType.FUNGUS)), 14);
+        registerBlocks(BenchType.BOTANIST, WARPED_FUNGUS, () -> new MushroomBlock(WARPED_FUNGUS_PROPERTIES), 14);
         final AbstractBlock.Properties CRIMSON_FUNGUS_PROPERTIES = AbstractBlock.Properties.copy(Blocks.CRIMSON_FUNGUS);
-        registerBlocks(BenchType.BOTANIST, CRIMSON_FUNGUS, () -> new MushroomBlock(AbstractBlock.Properties.of(Material.REPLACEABLE_FIREPROOF_PLANT, MaterialColor.COLOR_RED).noCollission().randomTicks().instabreak().sound(SoundType.FUNGUS)), 15);
+        registerBlocks(BenchType.BOTANIST, CRIMSON_FUNGUS, () -> new MushroomBlock(CRIMSON_FUNGUS_PROPERTIES), 15);
 
         final AbstractBlock.Properties WARPED_ROOTS_PROPERTIES = AbstractBlock.Properties.copy(Blocks.WARPED_ROOTS);
         registerBlocks(BenchType.BOTANIST, WARPED_ROOTS, () -> new NetherRootsBlock(WARPED_ROOTS_PROPERTIES), 9);

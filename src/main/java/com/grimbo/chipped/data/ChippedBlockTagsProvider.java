@@ -4,8 +4,8 @@ import com.grimbo.chipped.Chipped;
 import com.grimbo.chipped.api.BlockRegistry;
 import com.grimbo.chipped.api.ChippedBlockType;
 import com.grimbo.chipped.api.ChippedWoodType;
-import com.grimbo.chipped.block.ChippedBlockTypes;
 
+import com.grimbo.chipped.block.ChippedBlocks;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.data.BlockTagsProvider;
@@ -17,6 +17,8 @@ import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.ForgeRegistries;
+
+import static com.grimbo.chipped.block.ChippedBlockTypes.*;
 
 public class ChippedBlockTagsProvider extends BlockTagsProvider {
 
@@ -41,39 +43,63 @@ public class ChippedBlockTagsProvider extends BlockTagsProvider {
 
 		//Default Vanilla tags
 		for (ChippedWoodType wood : ChippedWoodType.VALUES) {
-			tag(BlockTags.PLANKS).addTag(ChippedBlockTypes.PLANKS.get(wood).getBlockTag());
+			tag(BlockTags.PLANKS).addTag(PLANKS.get(wood).getBlockTag());
 		}
 
-		tag(BlockTags.NON_FLAMMABLE_WOOD).addTag(ChippedBlockTypes.PLANKS.get(ChippedWoodType.WARPED).getBlockTag());
-		tag(BlockTags.NON_FLAMMABLE_WOOD).addTag(ChippedBlockTypes.PLANKS.get(ChippedWoodType.CRIMSON).getBlockTag());
+		tag(BlockTags.NON_FLAMMABLE_WOOD).addTag(PLANKS.get(ChippedWoodType.WARPED).getBlockTag());
+		tag(BlockTags.NON_FLAMMABLE_WOOD).addTag(PLANKS.get(ChippedWoodType.CRIMSON).getBlockTag());
 
 		for (int i = 0; i < 16; i++) {
 			DyeColor color = DyeColor.byId(i);
-			tag(BlockTags.WOOL).addTag(ChippedBlockTypes.WOOL.get(color).getBlockTag());
-			tag(BlockTags.CARPETS).addTag(ChippedBlockTypes.CARPETS.get(color).getBlockTag());
+			tag(BlockTags.WOOL).addTag(WOOL.get(color).getBlockTag());
+			tag(BlockTags.CARPETS).addTag(CARPETS.get(color).getBlockTag());
 		}
 
-		tag(BlockTags.DRAGON_IMMUNE).addTag(ChippedBlockTypes.OBSIDIAN.getBlockTag());
-		tag(BlockTags.DRAGON_IMMUNE).addTag(ChippedBlockTypes.CRYING_OBSIDIAN.getBlockTag());
+		tag(BlockTags.DRAGON_IMMUNE).addTag(OBSIDIAN.getBlockTag());
+		tag(BlockTags.DRAGON_IMMUNE).addTag(CRYING_OBSIDIAN.getBlockTag());
 
-		tag(BlockTags.CLIMBABLE).addTag(ChippedBlockTypes.VINES.getBlockTag());
+		tag(BlockTags.CLIMBABLE).addTag(VINES.getBlockTag());
 		
-		tag(BlockTags.WALL_POST_OVERRIDE).addTag(ChippedBlockTypes.TORCHES.getBlockTag());
-		tag(BlockTags.WALL_POST_OVERRIDE).addTag(ChippedBlockTypes.REDSTONE_TORCHES.getBlockTag());
+		tag(BlockTags.WALL_POST_OVERRIDE).addTag(TORCHES.getBlockTag());
+		tag(BlockTags.WALL_POST_OVERRIDE).addTag(REDSTONE_TORCHES.getBlockTag());
 
-		tag(BlockTags.WITHER_SUMMON_BASE_BLOCKS).addTag(ChippedBlockTypes.SOUL_SANDS.getBlockTag());
-		tag(BlockTags.SOUL_FIRE_BASE_BLOCKS).addTag(ChippedBlockTypes.SOUL_SANDS.getBlockTag());
-		tag(BlockTags.SOUL_SPEED_BLOCKS).addTag(ChippedBlockTypes.SOUL_SANDS.getBlockTag());
+		tag(BlockTags.WITHER_SUMMON_BASE_BLOCKS).addTag(SOUL_SANDS.getBlockTag());
+		tag(BlockTags.SOUL_FIRE_BASE_BLOCKS).addTag(SOUL_SANDS.getBlockTag());
+		tag(BlockTags.SOUL_SPEED_BLOCKS).addTag(SOUL_SANDS.getBlockTag());
 
-		tag(BlockTags.PIGLIN_REPELLENTS).addTag(ChippedBlockTypes.SOUL_LANTERNS.getBlockTag());
-		tag(BlockTags.HOGLIN_REPELLENTS).addTag(ChippedBlockTypes.WARPED_FUNGUS.getBlockTag());
+		tag(BlockTags.PIGLIN_REPELLENTS).addTag(SOUL_LANTERNS.getBlockTag());
+		tag(BlockTags.HOGLIN_REPELLENTS).addTag(WARPED_FUNGUS.getBlockTag());
 
 		//Default Forge tags
-		tag(Tags.Blocks.STONE).addTag(ChippedBlockTypes.STONE.getBlockTag());
-		tag(Tags.Blocks.COBBLESTONE).addTag(ChippedBlockTypes.COBBLESTONE.getBlockTag());
-		tag(Tags.Blocks.END_STONES).addTag(ChippedBlockTypes.END_STONE.getBlockTag());
-		tag(Tags.Blocks.GLASS).addTag(ChippedBlockTypes.GLASSES.getBlockTag());
-		tag(Tags.Blocks.NETHERRACK).addTag(ChippedBlockTypes.NETHERRACK.getBlockTag());
-		tag(Tags.Blocks.OBSIDIAN).addTag(ChippedBlockTypes.OBSIDIAN.getBlockTag());
+		tag(Tags.Blocks.STONE).addTag(STONE.getBlockTag()).addTag(ChippedBlocks.stones18.get(0).getBlockTag()).addTag(ChippedBlocks.stones18.get(1).getBlockTag()).addTag(ChippedBlocks.stones18.get(2).getBlockTag());
+
+		tag(Tags.Blocks.COBBLESTONE).addTag(COBBLESTONE.getBlockTag());
+
+		tag(Tags.Blocks.END_STONES).addTag(END_STONE.getBlockTag());
+		
+		tag(Tags.Blocks.SANDSTONE).addTag(ChippedBlocks.stones18.get(7).getBlockTag()).addTag(ChippedBlocks.stones18.get(8).getBlockTag());
+		tag(BlockTags.bind("forge:sandstone/colorless")).addTag(ChippedBlocks.stones18.get(7).getBlockTag());
+		tag(BlockTags.bind("forge:sandstone/red")).addTag(ChippedBlocks.stones18.get(8).getBlockTag());
+
+		tag(Tags.Blocks.GLASS).addTag(GLASSES.getBlockTag());
+		tag(Tags.Blocks.GLASS_COLORLESS).addTag(GLASSES.getBlockTag());
+		tag(Tags.Blocks.GLASS_PANES).addTag(GLASS_PANES.getBlockTag());
+		tag(Tags.Blocks.GLASS_PANES_COLORLESS).addTag(GLASS_PANES.getBlockTag());
+		for (int id = 0; id < 16; ++id) {
+			DyeColor color = DyeColor.byId(id);
+
+			tag(Tags.Blocks.GLASS).addTag(STAINED_GLASSES.get(color).getBlockTag());
+			tag(BlockTags.bind("forge:glass/" + color)).addTag(STAINED_GLASSES.get(color).getBlockTag());
+
+			tag(Tags.Blocks.GLASS).addTag(STAINED_GLASS_PANES.get(color).getBlockTag());
+			tag(BlockTags.bind("forge:glass_panes/" + color)).addTag(STAINED_GLASS_PANES.get(color).getBlockTag());
+
+			tag(BlockTags.bind("forge:terracotta")).addTag(TERRACOTTAS.get(color).getBlockTag());
+			tag(BlockTags.bind("forge:terracotta/" + color)).addTag(TERRACOTTAS.get(color).getBlockTag());
+		}
+
+		tag(Tags.Blocks.NETHERRACK).addTag(NETHERRACK.getBlockTag());
+
+		tag(Tags.Blocks.OBSIDIAN).addTag(OBSIDIAN.getBlockTag());
 	}
 }
