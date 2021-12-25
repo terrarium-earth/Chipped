@@ -7,6 +7,7 @@ import com.grimbo.chipped.api.ChippedBlockType;
 import com.grimbo.chipped.api.ChippedWoodType;
 import com.grimbo.chipped.container.*;
 import com.grimbo.chipped.item.ChippedItems;
+import com.grimbo.chipped.recipe.ChippedSerializer;
 import net.minecraft.block.*;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.material.MaterialColor;
@@ -47,6 +48,7 @@ public class ChippedBlocks {
     public static final List<RegistryObject<CarvedPumpkinBlock>> VANILLA_CARVED_PUMPKINS = new ArrayList<>();
 
     //Simple Blocks which have 18 of its own variant
+    //Check ChippedBlocks/ItemTagsProvider before editing!
     public static final List<ChippedBlockType<Block>> stones18 = Stream.of(
             "granite", "diorite", "andesite", "prismarine", "dark_prismarine", "purpur_block", "quartz_block",
             "sandstone", "red_sandstone", "nether_bricks", "red_nether_bricks"
@@ -56,37 +58,44 @@ public class ChippedBlocks {
     public static final String[] carvedPumpkinList = {"happy", "angry", "bigeyes", "bighappy", "boo", "bruh", "classic", "enthusiastic",
             "grinning", "kawaii", "mourn", "owo", "plotting", "sans", "scared", "smallhappy", "squashy", "stretchy", "upsidedown"};
 
-    public static final RegistryObject<Block> BOTANIST_WORKBENCH = register("botanist_workbench", () -> new ChippedWorkbench(BotanistWorkbenchContainer::new,
+    public static final RegistryObject<Block> BOTANIST_WORKBENCH = register("botanist_workbench",
+            () -> new ChippedWorkbench((id, inv, pos) -> new ChippedContainer(id, inv, pos, ChippedContainerType.BOTANIST_WORKBENCH.get(), ChippedSerializer.BOTANIST_WORKBENCH_TYPE, ChippedBlocks.BOTANIST_WORKBENCH.get()),
             AbstractBlock.Properties.of(Material.WOOD).strength(1F, 2F).sound(SoundType.WOOD).noOcclusion()
                     .isValidSpawn(VALID_SPAWN).isRedstoneConductor(ALWAYS_FALSE_POSITION)
                     .isSuffocating(ALWAYS_FALSE_POSITION).isViewBlocking(ALWAYS_FALSE_POSITION)));
 
-    public static final RegistryObject<Block> GLASSBLOWER = register("glassblower", () -> new ChippedWorkbench(GlassblowerContainer::new,
+    public static final RegistryObject<Block> GLASSBLOWER = register("glassblower",
+            () -> new ChippedWorkbench((id, inv, pos) -> new ChippedContainer(id, inv, pos, ChippedContainerType.GLASSBLOWER.get(), ChippedSerializer.GLASSBLOWER_TYPE, ChippedBlocks.GLASSBLOWER.get()),
             AbstractBlock.Properties.of(Material.WOOD).strength(1F, 2F).sound(SoundType.WOOD).noOcclusion()
                     .isValidSpawn(VALID_SPAWN).isRedstoneConductor(ALWAYS_FALSE_POSITION)
                     .isSuffocating(ALWAYS_FALSE_POSITION).isViewBlocking(ALWAYS_FALSE_POSITION)));
 
-    public static final RegistryObject<Block> CARPENTERS_TABLE = register("carpenters_table", () -> new ChippedWorkbench(CarpentersTableContainer::new,
+    public static final RegistryObject<Block> CARPENTERS_TABLE = register("carpenters_table",
+            () -> new ChippedWorkbench((id, inv, pos) -> new ChippedContainer(id, inv, pos, ChippedContainerType.CARPENTERS_TABLE.get(), ChippedSerializer.CARPENTERS_TABLE_TYPE, ChippedBlocks.CARPENTERS_TABLE.get()),
             AbstractBlock.Properties.of(Material.WOOD).strength(1F, 2F).sound(SoundType.WOOD).noOcclusion()
                     .isValidSpawn(VALID_SPAWN).isRedstoneConductor(ALWAYS_FALSE_POSITION)
                     .isSuffocating(ALWAYS_FALSE_POSITION).isViewBlocking(ALWAYS_FALSE_POSITION)));
 
-    public static final RegistryObject<Block> LOOM_TABLE = register("loom_table", () -> new ChippedWorkbench(LoomTableContainer::new,
+    public static final RegistryObject<Block> LOOM_TABLE = register("loom_table",
+            () -> new ChippedWorkbench((id, inv, pos) -> new ChippedContainer(id, inv, pos, ChippedContainerType.LOOM_TABLE.get(), ChippedSerializer.LOOM_TABLE_TYPE, ChippedBlocks.LOOM_TABLE.get()),
             AbstractBlock.Properties.of(Material.WOOD).strength(1F, 2F).sound(SoundType.WOOD).noOcclusion()
                     .isValidSpawn(VALID_SPAWN).isRedstoneConductor(ALWAYS_FALSE_POSITION)
                     .isSuffocating(ALWAYS_FALSE_POSITION).isViewBlocking(ALWAYS_FALSE_POSITION)));
 
-    public static final RegistryObject<Block> MASON_TABLE = register("mason_table", () -> new ChippedWorkbench(MasonTableContainer::new,
+    public static final RegistryObject<Block> MASON_TABLE = register("mason_table",
+            () -> new ChippedWorkbench((id, inv, pos) -> new ChippedContainer(id, inv, pos, ChippedContainerType.MASON_TABLE.get(), ChippedSerializer.MASON_TABLE_TYPE, ChippedBlocks.MASON_TABLE.get()),
             AbstractBlock.Properties.of(Material.METAL).strength(5F, 6F).sound(SoundType.METAL).noOcclusion()
                     .isValidSpawn(VALID_SPAWN).isRedstoneConductor(ALWAYS_FALSE_POSITION)
                     .isSuffocating(ALWAYS_FALSE_POSITION).isViewBlocking(ALWAYS_FALSE_POSITION).requiresCorrectToolForDrops()));
 
-    public static final RegistryObject<Block> ALCHEMY_BENCH = register("alchemy_bench", () -> new ChippedWorkbench(AlchemyBenchContainer::new,
+    public static final RegistryObject<Block> ALCHEMY_BENCH = register("alchemy_bench",
+            () -> new ChippedWorkbench((id, inv, pos) -> new ChippedContainer(id, inv, pos, ChippedContainerType.ALCHEMY_BENCH.get(), ChippedSerializer.ALCHEMY_BENCH_TYPE, ChippedBlocks.ALCHEMY_BENCH.get()),
             AbstractBlock.Properties.of(Material.WOOD).strength(1F, 2F).sound(SoundType.WOOD).noOcclusion()
                     .isValidSpawn(VALID_SPAWN).isRedstoneConductor(ALWAYS_FALSE_POSITION)
                     .isSuffocating(ALWAYS_FALSE_POSITION).isViewBlocking(ALWAYS_FALSE_POSITION)));
 
-    public static final RegistryObject<Block> MECHANIST_WORKBENCH = register("mechanist_workbench", () -> new ChippedWorkbench(MechanistWorkbenchContainer::new,
+    public static final RegistryObject<Block> MECHANIST_WORKBENCH = register("mechanist_workbench",
+            () -> new ChippedWorkbench((id, inv, pos) -> new ChippedContainer(id, inv, pos, ChippedContainerType.MECHANIST_WORKBENCH.get(), ChippedSerializer.MECHANIST_WORKBENCH_TYPE, ChippedBlocks.MECHANIST_WORKBENCH.get()),
             AbstractBlock.Properties.of(Material.WOOD).strength(1F, 2F).sound(SoundType.WOOD).noOcclusion()
                     .isValidSpawn(VALID_SPAWN).isRedstoneConductor(ALWAYS_FALSE_POSITION)
                     .isSuffocating(ALWAYS_FALSE_POSITION).isViewBlocking(ALWAYS_FALSE_POSITION)));
@@ -161,17 +170,17 @@ public class ChippedBlocks {
         final AbstractBlock.Properties MELON_PROPERTIES = AbstractBlock.Properties.copy(Blocks.MELON);
         registerBlocks(BenchType.BOTANIST, MELONS, () -> new MelonBlock(MELON_PROPERTIES), 10);
         final AbstractBlock.Properties VINE_PROPERTIES = AbstractBlock.Properties.copy(Blocks.VINE);
-        registerBlocks(BenchType.BOTANIST, VINES, () -> new VineBlock(VINE_PROPERTIES), 8);
+        registerBlocks(BenchType.BOTANIST, VINES, () -> new VineBlock(VINE_PROPERTIES), 17);
 
         final AbstractBlock.Properties BROWN_MUSHROOM_PROPERTIES = AbstractBlock.Properties.copy(Blocks.BROWN_MUSHROOM);
-        registerBlocks(BenchType.BOTANIST, BROWN_MUSHROOMS, () -> new MushroomBlock(AbstractBlock.Properties.of(Material.PLANT, MaterialColor.COLOR_BROWN).noCollission().randomTicks().instabreak().sound(SoundType.GRASS)), 15);
+        registerBlocks(BenchType.BOTANIST, BROWN_MUSHROOMS, () -> new MushroomBlock(BROWN_MUSHROOM_PROPERTIES), 15);
         final AbstractBlock.Properties RED_MUSHROOM_PROPERTIES = AbstractBlock.Properties.copy(Blocks.RED_MUSHROOM);
-        registerBlocks(BenchType.BOTANIST, RED_MUSHROOMS, () -> new MushroomBlock(AbstractBlock.Properties.of(Material.PLANT, MaterialColor.COLOR_RED).noCollission().randomTicks().instabreak().sound(SoundType.GRASS)), 15);
+        registerBlocks(BenchType.BOTANIST, RED_MUSHROOMS, () -> new MushroomBlock(RED_MUSHROOM_PROPERTIES), 15);
 
         final AbstractBlock.Properties WARPED_FUNGUS_PROPERTIES = AbstractBlock.Properties.copy(Blocks.WARPED_FUNGUS);
-        registerBlocks(BenchType.BOTANIST, WARPED_FUNGUS, () -> new MushroomBlock(AbstractBlock.Properties.of(Material.REPLACEABLE_FIREPROOF_PLANT, MaterialColor.COLOR_CYAN).noCollission().randomTicks().instabreak().sound(SoundType.FUNGUS)), 14);
+        registerBlocks(BenchType.BOTANIST, WARPED_FUNGUS, () -> new MushroomBlock(WARPED_FUNGUS_PROPERTIES), 14);
         final AbstractBlock.Properties CRIMSON_FUNGUS_PROPERTIES = AbstractBlock.Properties.copy(Blocks.CRIMSON_FUNGUS);
-        registerBlocks(BenchType.BOTANIST, CRIMSON_FUNGUS, () -> new MushroomBlock(AbstractBlock.Properties.of(Material.REPLACEABLE_FIREPROOF_PLANT, MaterialColor.COLOR_RED).noCollission().randomTicks().instabreak().sound(SoundType.FUNGUS)), 15);
+        registerBlocks(BenchType.BOTANIST, CRIMSON_FUNGUS, () -> new MushroomBlock(CRIMSON_FUNGUS_PROPERTIES), 15);
 
         final AbstractBlock.Properties WARPED_ROOTS_PROPERTIES = AbstractBlock.Properties.copy(Blocks.WARPED_ROOTS);
         registerBlocks(BenchType.BOTANIST, WARPED_ROOTS, () -> new NetherRootsBlock(WARPED_ROOTS_PROPERTIES), 9);

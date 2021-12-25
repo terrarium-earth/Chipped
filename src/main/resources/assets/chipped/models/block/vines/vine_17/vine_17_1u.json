@@ -1,0 +1,7 @@
+{
+    "parent": "chipped:block/vines/vine_9/vine_9_1u",
+    "textures": {
+        "particle": "chipped:block/vine/vine_17",
+        "vine": "chipped:block/vine/vine_17"
+    }
+}

@@ -3,19 +3,26 @@ package com.grimbo.chipped.block;
 import javax.annotation.Nullable;
 
 
+import com.grimbo.chipped.container.ChippedContainer;
+import com.grimbo.chipped.container.ChippedContainerType;
+import com.grimbo.chipped.recipe.ChippedRecipe;
+import com.grimbo.chipped.recipe.ChippedSerializer;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockRenderType;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.HorizontalBlock;
+import net.minecraft.block.material.PushReaction;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.container.Container;
+import net.minecraft.inventory.container.ContainerType;
 import net.minecraft.inventory.container.INamedContainerProvider;
 import net.minecraft.inventory.container.SimpleNamedContainerProvider;
 import net.minecraft.item.BlockItemUseContext;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.crafting.IRecipeType;
 import net.minecraft.state.DirectionProperty;
 import net.minecraft.state.EnumProperty;
 import net.minecraft.state.StateContainer;
@@ -24,6 +31,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.shapes.VoxelShape;
+import net.minecraft.util.math.shapes.VoxelShapes;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.IBlockReader;
@@ -126,6 +134,17 @@ public class ChippedWorkbench extends Block {
 		default:
 			return WORKBENCH_EAST_SHAPE;
 		}
+	}
+
+	@Deprecated
+	@Override
+	public PushReaction getPistonPushReaction(BlockState p_149656_1_) {
+		return PushReaction.BLOCK;
+	}
+
+	@Override
+	public VoxelShape getBlockSupportShape(BlockState p_230335_1_, IBlockReader p_230335_2_, BlockPos p_230335_3_) {
+		return VoxelShapes.empty();
 	}
 
 	@Override

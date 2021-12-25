@@ -64,12 +64,6 @@ public class ChippedContainer extends Container {
 		blockWorkbench = block;
 	}
 
-	public ChippedContainer(int id, PlayerInventory inventory, PacketBuffer extraData, ContainerType<ChippedContainer> container, IRecipeType<ChippedRecipe> recipe, Block block) {
-		this(container, id, inventory, IWorldPosCallable.NULL);
-		recipeType = recipe;
-		blockWorkbench = block;
-	}
-
 	public ChippedContainer(ContainerType<ChippedContainer> container, int id, PlayerInventory inventory, final IWorldPosCallable posCallable) {
 		super(container, id);
 		containerType = container;

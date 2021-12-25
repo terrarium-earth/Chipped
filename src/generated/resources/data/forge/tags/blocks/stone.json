@@ -1,6 +1,9 @@
 {
   "replace": false,
   "values": [
-    "#chipped:stone"
+    "#chipped:stone",
+    "#chipped:granite",
+    "#chipped:diorite",
+    "#chipped:andesite"
   ]
 }

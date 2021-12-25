@@ -1,0 +1,21 @@
+{
+  "replace": false,
+  "values": [
+    "#chipped:white_terracotta",
+    "#chipped:orange_terracotta",
+    "#chipped:magenta_terracotta",
+    "#chipped:light_blue_terracotta",
+    "#chipped:yellow_terracotta",
+    "#chipped:lime_terracotta",
+    "#chipped:pink_terracotta",
+    "#chipped:gray_terracotta",
+    "#chipped:light_gray_terracotta",
+    "#chipped:cyan_terracotta",
+    "#chipped:purple_terracotta",
+    "#chipped:blue_terracotta",
+    "#chipped:brown_terracotta",
+    "#chipped:green_terracotta",
+    "#chipped:red_terracotta",
+    "#chipped:black_terracotta"
+  ]
+}

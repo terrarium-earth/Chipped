@@ -3,7 +3,6 @@ package com.grimbo.chipped.data.client;
 import com.grimbo.chipped.Chipped;
 import com.grimbo.chipped.api.ChippedBlockType;
 import com.grimbo.chipped.api.ChippedWoodType;
-import com.grimbo.chipped.block.ChippedBlockTypes;
 import com.grimbo.chipped.block.ChippedBlocks;
 import net.minecraft.block.*;
 import net.minecraft.data.DataGenerator;
@@ -11,8 +10,6 @@ import net.minecraft.item.DyeColor;
 import net.minecraft.util.Direction;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
-import net.minecraftforge.client.model.generators.ConfiguredModel;
-import net.minecraftforge.client.model.generators.ModelProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.fml.RegistryObject;
 
@@ -22,6 +19,7 @@ import java.util.stream.Collectors;
 import static com.grimbo.chipped.block.ChippedBlockTypes.*;
 
 public class ChippedBlockStateProvider extends BlockStateProvider {
+
     public ChippedBlockStateProvider(DataGenerator gen, ExistingFileHelper exFileHelper) {
         super(gen, Chipped.MOD_ID, exFileHelper);
     }
