@@ -4,7 +4,7 @@
         "type": "CTM",
         "layer": "CUTOUT",
         "textures": [
-            "chipped:block/crimson_planks_4_ctm"
+            "chipped:block/crimson_planks/crimson_planks_4_ctm"
         ]
     }
 }

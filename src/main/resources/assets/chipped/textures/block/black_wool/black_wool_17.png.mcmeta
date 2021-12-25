@@ -4,7 +4,7 @@
         "type": "CTM",
         "layer": "CUTOUT",
         "textures": [
-            "chipped:block/black_wool_17_ctm"
+            "chipped:block/black_wool/black_wool_17_ctm"
         ]
     }
 }

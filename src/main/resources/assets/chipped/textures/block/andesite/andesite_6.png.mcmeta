@@ -4,7 +4,7 @@
         "type": "CTM",
         "layer": "CUTOUT",
         "textures": [
-            "chipped:block/andesite_3_ctm"
+            "chipped:block/andesite/andesite_6_ctm"
         ]
     }
 }

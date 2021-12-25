@@ -4,7 +4,7 @@
         "type": "CTM",
         "layer": "CUTOUT",
         "textures": [
-            "chipped:block/spruce_planks_4_ctm"
+            "chipped:block/spruce_planks/spruce_planks_4_ctm"
         ]
     }
 }

@@ -4,7 +4,7 @@
         "type": "CTM",
         "layer": "CUTOUT",
         "textures": [
-            "chipped:block/acacia_wood_glass_2_ctm"
+            "chipped:block/glass/acacia_wood_glass_2_ctm"
         ]
     }
 }

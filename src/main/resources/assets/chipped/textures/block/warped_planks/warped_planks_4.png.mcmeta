@@ -4,7 +4,7 @@
         "type": "CTM",
         "layer": "CUTOUT",
         "textures": [
-            "chipped:block/warped_planks_3_ctm"
+            "chipped:block/warped_planks/warped_planks_4_ctm"
         ]
     }
 }

@@ -4,7 +4,7 @@
         "type": "CTM",
         "layer": "CUTOUT",
         "textures": [
-            "chipped:block/birch_wood_glass_2_ctm"
+            "chipped:block/glass/birch_wood_glass_2_ctm"
         ]
     }
 }

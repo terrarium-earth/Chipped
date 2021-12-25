@@ -4,7 +4,7 @@
         "type": "CTM",
         "layer": "CUTOUT",
         "textures": [
-            "chipped:block/dark_oak_planks_4_ctm"
+            "chipped:block/glass/dark_oak_planks_4_ctm"
         ]
     }
 }

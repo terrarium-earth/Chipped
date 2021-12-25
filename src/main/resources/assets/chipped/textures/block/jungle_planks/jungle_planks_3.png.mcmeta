@@ -4,7 +4,7 @@
         "type": "CTM",
         "layer": "CUTOUT",
         "textures": [
-            "chipped:block/jungle_planks_4_ctm"
+            "chipped:block/jungle_planks/jungle_planks_4_ctm"
         ]
     }
 }
