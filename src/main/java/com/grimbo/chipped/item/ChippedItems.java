@@ -1,7 +1,7 @@
 package com.grimbo.chipped.item;
 
 import com.grimbo.chipped.Chipped;
-import net.minecraft.item.Item;
+import net.minecraft.world.item.Item;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 

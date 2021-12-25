@@ -6,14 +6,12 @@ import com.grimbo.chipped.api.BlockRegistry;
 import com.grimbo.chipped.api.ChippedBlockType;
 import com.grimbo.chipped.block.ChippedBlocks;
 
-import net.minecraft.block.Block;
-import net.minecraft.block.RedstoneWallTorchBlock;
-import net.minecraft.block.WallTorchBlock;
-import net.minecraft.data.loot.BlockLootTables;
-import net.minecraftforge.fml.RegistryObject;
+import net.minecraft.world.level.block.*;
+import net.minecraft.data.loot.BlockLoot;
+import net.minecraftforge.registries.RegistryObject;
 import org.jetbrains.annotations.NotNull;
 
-public class ChippedBlockLootTables extends BlockLootTables {
+public class ChippedBlockLootTables extends BlockLoot {
 
 	@Override
 	protected void addTables() {

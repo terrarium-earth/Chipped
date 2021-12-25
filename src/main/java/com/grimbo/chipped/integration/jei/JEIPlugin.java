@@ -12,11 +12,11 @@ import mezz.jei.api.registration.IRecipeCatalystRegistration;
 import mezz.jei.api.registration.IRecipeCategoryRegistration;
 import mezz.jei.api.registration.IRecipeRegistration;
 import net.minecraft.client.Minecraft;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.crafting.RecipeManager;
-import net.minecraft.tags.ITag;
-import net.minecraft.util.ResourceLocation;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.crafting.RecipeManager;
+import net.minecraft.tags.Tag;
+import net.minecraft.resources.ResourceLocation;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
@@ -79,7 +79,7 @@ public class JEIPlugin implements IModPlugin {
 	private static List<ChippedRecipeCategory.FlattenedRecipe> flatten(Collection<ChippedRecipe> recipes) {
 		List<ChippedRecipeCategory.FlattenedRecipe> flattenedRecipes = new ArrayList<>();
 		for (ChippedRecipe recipe : recipes) {
-			for (ITag<Item> tag : recipe.getTags()) {
+			for (Tag<Item> tag : recipe.getTags()) {
 				for (Item item : tag.getValues()) {
 					flattenedRecipes.add(new ChippedRecipeCategory.FlattenedRecipe(tag, new ItemStack(item)));
 				}

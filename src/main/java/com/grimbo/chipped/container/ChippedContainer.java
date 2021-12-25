@@ -8,34 +8,33 @@ import java.util.stream.Collectors;
 import com.google.common.base.Suppliers;
 import com.grimbo.chipped.recipe.ChippedRecipe;
 
-import net.minecraft.block.Block;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.entity.player.PlayerInventory;
-import net.minecraft.inventory.CraftResultInventory;
-import net.minecraft.inventory.IInventory;
-import net.minecraft.inventory.Inventory;
-import net.minecraft.inventory.container.Container;
-import net.minecraft.inventory.container.ContainerType;
-import net.minecraft.inventory.container.Slot;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.crafting.IRecipeType;
-import net.minecraft.network.PacketBuffer;
-import net.minecraft.util.IWorldPosCallable;
-import net.minecraft.util.IntReferenceHolder;
-import net.minecraft.util.SoundCategory;
-import net.minecraft.util.SoundEvents;
-import net.minecraft.world.World;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.player.Inventory;
+import net.minecraft.world.inventory.ResultContainer;
+import net.minecraft.world.Container;
+import net.minecraft.world.SimpleContainer;
+import net.minecraft.world.inventory.AbstractContainerMenu;
+import net.minecraft.world.inventory.MenuType;
+import net.minecraft.world.inventory.Slot;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.crafting.RecipeType;
+import net.minecraft.world.inventory.ContainerLevelAccess;
+import net.minecraft.world.inventory.DataSlot;
+import net.minecraft.sounds.SoundSource;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.world.level.Level;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import org.jetbrains.annotations.NotNull;
 
 //Pulled from net.minecraft.inventory.container.ChippedContainer
-public class ChippedContainer extends Container {
+public class ChippedContainer extends AbstractContainerMenu {
 
-	private final IWorldPosCallable access;
-	private final IntReferenceHolder selectedRecipeIndex = IntReferenceHolder.standalone();
-	private final World level;
+	private final ContainerLevelAccess access;
+	private final DataSlot selectedRecipeIndex = DataSlot.standalone();
+	private final Level level;
 	private ChippedRecipe recipe;
 	private Supplier<List<ItemStack>> results;
 	private ItemStack input = ItemStack.EMPTY;
@@ -43,7 +42,7 @@ public class ChippedContainer extends Container {
 	final Slot inputSlot;
 	final Slot resultSlot;
 	private Runnable slotUpdateListener = () -> {};
-	public final IInventory container = new Inventory(1) {
+	public final Container container = new SimpleContainer(1) {
 		public void setChanged() {
 			super.setChanged();
 			ChippedContainer.this.slotsChanged(this);
@@ -51,20 +50,20 @@ public class ChippedContainer extends Container {
 		}
 	};
 
-	private final CraftResultInventory resultContainer = new CraftResultInventory();
+	private final ResultContainer resultContainer = new ResultContainer();
 
 	//Stores dynamic container data
-	private final ContainerType<ChippedContainer> containerType;
-	private IRecipeType<ChippedRecipe> recipeType;
+	private final MenuType<ChippedContainer> containerType;
+	private RecipeType<ChippedRecipe> recipeType;
 	private Block blockWorkbench;
 
-	public ChippedContainer(int id, PlayerInventory inventory, final IWorldPosCallable posCallable, ContainerType<ChippedContainer> container, IRecipeType<ChippedRecipe> recipe, Block block) {
+	public ChippedContainer(int id, Inventory inventory, final ContainerLevelAccess posCallable, MenuType<ChippedContainer> container, RecipeType<ChippedRecipe> recipe, Block block) {
 		this(container, id, inventory, posCallable);
 		recipeType = recipe;
 		blockWorkbench = block;
 	}
 
-	public ChippedContainer(ContainerType<ChippedContainer> container, int id, PlayerInventory inventory, final IWorldPosCallable posCallable) {
+	public ChippedContainer(MenuType<ChippedContainer> container, int id, Inventory inventory, final ContainerLevelAccess posCallable) {
 		super(container, id);
 		containerType = container;
 		this.access = posCallable;
@@ -75,7 +74,7 @@ public class ChippedContainer extends Container {
 				return false;
 			}
 
-			public @NotNull ItemStack onTake(@NotNull PlayerEntity player, @NotNull ItemStack stack) {
+			public @NotNull void onTake(@NotNull Player player, @NotNull ItemStack stack) {
 				stack.onCraftedBy(player.level, player, stack.getCount());
 				ChippedContainer.this.resultContainer.awardUsedRecipes(player);
 				ItemStack itemstack = ChippedContainer.this.inputSlot.remove(1);
@@ -87,12 +86,12 @@ public class ChippedContainer extends Container {
 					long l = p_216954_1_.getGameTime();
 					if (ChippedContainer.this.lastSoundTime != l) {
 						p_216954_1_.playSound(null, p_216954_2_, SoundEvents.UI_STONECUTTER_TAKE_RESULT,
-								SoundCategory.BLOCKS, 1.0F, 1.0F);
+								SoundSource.BLOCKS, 1.0F, 1.0F);
 						ChippedContainer.this.lastSoundTime = l;
 					}
 
 				});
-				return super.onTake(player, stack);
+				super.onTake(player, stack);
 			}
 		});
 
@@ -122,9 +121,9 @@ public class ChippedContainer extends Container {
 	}
 
 	@Override
-	public boolean stillValid(@NotNull PlayerEntity player) { return stillValid(this.access, player, blockWorkbench); }
+	public boolean stillValid(@NotNull Player player) { return stillValid(this.access, player, blockWorkbench); }
 
-	public boolean clickMenuButton(@NotNull PlayerEntity player, int index) {
+	public boolean clickMenuButton(@NotNull Player player, int index) {
 		if (this.isValidRecipeIndex(index)) {
 			this.selectedRecipeIndex.set(index);
 			this.setupResultSlot();
@@ -138,7 +137,7 @@ public class ChippedContainer extends Container {
 	}
 
 	@Override
-	public void slotsChanged(@NotNull IInventory inventory) {
+	public void slotsChanged(@NotNull Container inventory) {
 		ItemStack itemstack = this.inputSlot.getItem();
 		if (itemstack.getItem() != this.input.getItem()) {
 			this.input = itemstack.copy();
@@ -147,7 +146,7 @@ public class ChippedContainer extends Container {
 
 	}
 
-	private void setupRecipeList(IInventory inventory, ItemStack stack) {
+	private void setupRecipeList(Container inventory, ItemStack stack) {
 		results = null;
 		this.selectedRecipeIndex.set(-1);
 		this.resultSlot.set(ItemStack.EMPTY);
@@ -171,7 +170,7 @@ public class ChippedContainer extends Container {
 	}
 
 	@Override
-	public @NotNull ContainerType<?> getType() {
+	public @NotNull MenuType<?> getType() {
 		return containerType;
 	}
 
@@ -186,7 +185,7 @@ public class ChippedContainer extends Container {
 	}
 
 	@Override
-	public @NotNull ItemStack quickMoveStack(@NotNull PlayerEntity player, int p_82846_2_) {
+	public @NotNull ItemStack quickMoveStack(@NotNull Player player, int p_82846_2_) {
 		ItemStack itemstack = ItemStack.EMPTY;
 		Slot slot = this.slots.get(p_82846_2_);
 		if (slot != null && slot.hasItem()) {
@@ -204,7 +203,7 @@ public class ChippedContainer extends Container {
 				if (!this.moveItemStackTo(itemstack1, 2, 38, false)) {
 					return ItemStack.EMPTY;
 				}
-			} else if (this.level.getRecipeManager().getRecipeFor(recipeType, new Inventory(itemstack1), this.level)
+			} else if (this.level.getRecipeManager().getRecipeFor(recipeType, new SimpleContainer(itemstack1), this.level)
 					.isPresent()) {
 				if (!this.moveItemStackTo(itemstack1, 0, 1, false)) {
 					return ItemStack.EMPTY;
@@ -234,9 +233,9 @@ public class ChippedContainer extends Container {
 	}
 
 	@Override
-	public void removed(@NotNull PlayerEntity player) {
+	public void removed(@NotNull Player player) {
 		super.removed(player);
 		this.resultContainer.removeItemNoUpdate(1);
-		this.access.execute((p_217079_2_, p_217079_3_) -> this.clearContainer(player, player.level, this.container));
+		this.access.execute((p_217079_2_, p_217079_3_) -> this.clearContainer(player, this.container));
 	}
 }

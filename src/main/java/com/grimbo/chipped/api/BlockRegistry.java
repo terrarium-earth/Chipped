@@ -2,13 +2,10 @@ package com.grimbo.chipped.api;
 
 import com.google.common.collect.*;
 import com.grimbo.chipped.Chipped;
-import net.minecraft.block.Block;
-import net.minecraftforge.fml.RegistryObject;
+import net.minecraft.world.level.block.Block;
+import net.minecraftforge.registries.RegistryObject;
 
-import java.util.Collection;
-import java.util.HashSet;
-import java.util.Set;
-import java.util.stream.Stream;
+import java.util.*;
 
 public class BlockRegistry {
     private static final Set<ChippedBlockType<Block>> BLOCKS = new HashSet<>();

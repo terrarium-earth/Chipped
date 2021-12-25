@@ -2,59 +2,61 @@ package com.grimbo.chipped.container;
 
 import java.util.List;
 
-import com.mojang.blaze3d.matrix.MatrixStack;
+import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.systems.RenderSystem;
 
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.audio.SimpleSound;
-import net.minecraft.client.gui.screen.inventory.ContainerScreen;
-import net.minecraft.entity.player.PlayerInventory;
-import net.minecraft.item.ItemStack;
-import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.SoundEvents;
-import net.minecraft.util.math.MathHelper;
-import net.minecraft.util.text.ITextComponent;
+import net.minecraft.client.renderer.GameRenderer;
+import net.minecraft.client.resources.sounds.SimpleSoundInstance;
+import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
+import net.minecraft.world.entity.player.Inventory;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.util.Mth;
+import net.minecraft.network.chat.Component;
 import org.jetbrains.annotations.NotNull;
 
 //Pulled from net.minecraft.client.gui.screen.inventory.StonecutterScreen
-public class ChippedScreen extends ContainerScreen<ChippedContainer> {
+public class ChippedScreen extends AbstractContainerScreen<ChippedContainer> {
 	private static final ResourceLocation BG_LOCATION = new ResourceLocation("textures/gui/container/stonecutter.png");
 	private float scrollOffs;
 	private boolean scrolling;
 	private int startIndex;
 	private boolean displayRecipes;
 
-	public ChippedScreen(ChippedContainer container, PlayerInventory inventory, ITextComponent title) {
+	public ChippedScreen(ChippedContainer container, Inventory inventory, Component title) {
 		super(container, inventory, title);
 		container.registerUpdateListener(this::containerChanged);
 		--this.titleLabelY;
 	}
 
 	@Override
-	public void render(@NotNull MatrixStack matrix, int mouseX, int mouseY, float partialTicks) {
+	public void render(@NotNull PoseStack matrix, int mouseX, int mouseY, float partialTicks) {
 		super.render(matrix, mouseX, mouseY, partialTicks);
 		this.renderTooltip(matrix, mouseX, mouseY);
 	}
 
 	@Override
-	protected void renderBg(@NotNull MatrixStack matrix, float partialTicks, int mouseX, int mouseY) {
-		this.renderBackground(matrix);
-		RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
-		this.minecraft.getTextureManager().bind(BG_LOCATION);
+	protected void renderBg(PoseStack p_99328_, float p_99329_, int p_99330_, int p_99331_) {
+		this.renderBackground(p_99328_);
+		RenderSystem.setShader(GameRenderer::getPositionTexShader);
+		RenderSystem.setShaderColor(1.0F, 1.0F, 1.0F, 1.0F);
+		RenderSystem.setShaderTexture(0, BG_LOCATION);
 		int i = this.leftPos;
 		int j = this.topPos;
-		this.blit(matrix, i, j, 0, 0, this.imageWidth, this.imageHeight);
-		int k = (int) (41.0F * this.scrollOffs);
-		this.blit(matrix, i + 119, j + 15 + k, 176 + (this.isScrollBarActive() ? 0 : 12), 0, 12, 15);
+		this.blit(p_99328_, i, j, 0, 0, this.imageWidth, this.imageHeight);
+		int k = (int)(41.0F * this.scrollOffs);
+		this.blit(p_99328_, i + 119, j + 15 + k, 176 + (this.isScrollBarActive() ? 0 : 12), 0, 12, 15);
 		int l = this.leftPos + 52;
 		int i1 = this.topPos + 14;
 		int j1 = this.startIndex + 12;
-		this.renderButtons(matrix, mouseX, mouseY, l, i1, j1);
+		this.renderButtons(p_99328_, p_99330_, p_99331_, l, i1, j1);
 		this.renderRecipes(l, i1, j1);
 	}
 
 	@Override
-	protected void renderTooltip(@NotNull MatrixStack matrix, int mouseX, int mouseY) {
+	protected void renderTooltip(@NotNull PoseStack matrix, int mouseX, int mouseY) {
 		super.renderTooltip(matrix, mouseX, mouseY);
 		if (this.displayRecipes) {
 			int i = this.leftPos + 52;
@@ -74,7 +76,7 @@ public class ChippedScreen extends ContainerScreen<ChippedContainer> {
 
 	}
 
-	private void renderButtons(MatrixStack matrix, int mouseX, int mouseY, int p_238853_4_, int p_238853_5_, int p_238853_6_) {
+	private void renderButtons(PoseStack matrix, int mouseX, int mouseY, int p_238853_4_, int p_238853_5_, int p_238853_6_) {
 		for (int i = this.startIndex; i < p_238853_6_ && i < this.menu.getResults().size(); ++i) {
 			int j = i - this.startIndex;
 			int k = p_238853_4_ + j % 4 * 16;
@@ -120,7 +122,7 @@ public class ChippedScreen extends ContainerScreen<ChippedContainer> {
 				if (d0 >= 0.0D && d1 >= 0.0D && d0 < 16.0D && d1 < 18.0D
 						&& this.menu.clickMenuButton(this.minecraft.player, l)) {
 					Minecraft.getInstance().getSoundManager()
-							.play(SimpleSound.forUI(SoundEvents.UI_STONECUTTER_SELECT_RECIPE, 1.0F));
+							.play(SimpleSoundInstance.forUI(SoundEvents.UI_STONECUTTER_SELECT_RECIPE, 1.0F));
 					this.minecraft.gameMode.handleInventoryButtonClick((this.menu).containerId, l);
 					return true;
 				}
@@ -143,7 +145,7 @@ public class ChippedScreen extends ContainerScreen<ChippedContainer> {
 			int i = this.topPos + 14;
 			int j = i + 54;
 			this.scrollOffs = ((float) p_231045_3_ - (float) i - 7.5F) / ((float) (j - i) - 15.0F);
-			this.scrollOffs = MathHelper.clamp(this.scrollOffs, 0.0F, 1.0F);
+			this.scrollOffs = Mth.clamp(this.scrollOffs, 0.0F, 1.0F);
 			this.startIndex = (int) ((double) (this.scrollOffs * (float) this.getOffscreenRows()) + 0.5D) * 4;
 			return true;
 		} else {
@@ -156,7 +158,7 @@ public class ChippedScreen extends ContainerScreen<ChippedContainer> {
 		if (this.isScrollBarActive()) {
 			int i = this.getOffscreenRows();
 			this.scrollOffs = (float) ((double) this.scrollOffs - scrollAmount / (double) i);
-			this.scrollOffs = MathHelper.clamp(this.scrollOffs, 0.0F, 1.0F);
+			this.scrollOffs = Mth.clamp(this.scrollOffs, 0.0F, 1.0F);
 			this.startIndex = (int) ((double) (this.scrollOffs * (float) i) + 0.5D) * 4;
 		}
 

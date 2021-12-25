@@ -3,17 +3,18 @@ package com.grimbo.chipped.data.client;
 import com.grimbo.chipped.Chipped;
 import com.grimbo.chipped.api.ChippedBlockType;
 import com.grimbo.chipped.block.ChippedBlocks;
-import net.minecraft.block.*;
 import net.minecraft.data.DataGenerator;
-import net.minecraft.item.DyeColor;
+import net.minecraft.world.item.DyeColor;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
-import net.minecraftforge.fml.RegistryObject;
 
 import java.util.Collection;
 import java.util.List;
 
 import static com.grimbo.chipped.block.ChippedBlockTypes.*;
+
+import net.minecraft.world.level.block.*;
+import net.minecraftforge.registries.RegistryObject;
 
 public class ChippedItemModelProvider extends ItemModelProvider {
 
@@ -23,9 +24,9 @@ public class ChippedItemModelProvider extends ItemModelProvider {
 
 	@Override
 	protected void registerModels() {
-		List<RegistryObject<PaneBlock>> blocks = GLASS_PANES.getBlocks();
+		List<RegistryObject<IronBarsBlock>> blocks = GLASS_PANES.getBlocks();
 		for (int i = 0; i < blocks.size(); ++i) {
-			RegistryObject<PaneBlock> glassPane = blocks.get(i);
+			RegistryObject<IronBarsBlock> glassPane = blocks.get(i);
 			String block = glassPane.getId().getPath();
 			withExistingParent(block, mcLoc("generated")).texture("layer0", modLoc("block/" + GLASSES + "/" + GLASSES.getBlocks().get(i).getId().getPath()));
 		}

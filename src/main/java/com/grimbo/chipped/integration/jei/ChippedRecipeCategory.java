@@ -7,12 +7,14 @@ import mezz.jei.api.gui.ingredient.IGuiItemStackGroup;
 import mezz.jei.api.helpers.IGuiHelper;
 import mezz.jei.api.ingredients.IIngredients;
 import mezz.jei.api.recipe.category.IRecipeCategory;
-import net.minecraft.client.resources.I18n;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.crafting.Ingredient;
-import net.minecraft.tags.ITag;
-import net.minecraft.util.ResourceLocation;
+import net.minecraft.client.resources.language.I18n;
+import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.TextComponent;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.tags.Tag;
+import net.minecraft.resources.ResourceLocation;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Collections;
@@ -45,8 +47,8 @@ public class ChippedRecipeCategory implements IRecipeCategory<ChippedRecipeCateg
 	}
 
 	@Override
-	public @NotNull String getTitle() {
-		return localizedName;
+	public Component getTitle() {
+		return new TextComponent(localizedName);
 	}
 
 	@Override
@@ -74,10 +76,10 @@ public class ChippedRecipeCategory implements IRecipeCategory<ChippedRecipeCateg
 	}
 
 	public static class FlattenedRecipe {
-		private final ITag<Item> tag;
+		private final Tag<Item> tag;
 		private final ItemStack result;
 
-		public FlattenedRecipe(ITag<Item> tag, ItemStack result) {
+		public FlattenedRecipe(Tag<Item> tag, ItemStack result) {
 			this.tag = tag;
 			this.result = result;
 		}

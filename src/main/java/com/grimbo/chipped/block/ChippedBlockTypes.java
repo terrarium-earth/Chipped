@@ -2,20 +2,21 @@ package com.grimbo.chipped.block;
 
 import com.grimbo.chipped.api.ChippedBlockType;
 import com.grimbo.chipped.api.ChippedWoodType;
-import net.minecraft.block.*;
-import net.minecraft.item.DyeColor;
+import net.minecraft.world.item.DyeColor;
 
 import java.util.EnumMap;
 
+import net.minecraft.world.level.block.*;
+
 public class ChippedBlockTypes {
     public static final ChippedBlockType<GlassBlock> GLASSES = new ChippedBlockType<>("glass");
-    public static final ChippedBlockType<PaneBlock> GLASS_PANES = new ChippedBlockType<>("glass_pane");
+    public static final ChippedBlockType<IronBarsBlock> GLASS_PANES = new ChippedBlockType<>("glass_pane");
     public static final EnumMap<DyeColor, ChippedBlockType<StainedGlassBlock>> STAINED_GLASSES = new EnumMap<>(DyeColor.class);
     public static final EnumMap<DyeColor, ChippedBlockType<StainedGlassPaneBlock>> STAINED_GLASS_PANES = new EnumMap<>(DyeColor.class);
 
     public static final EnumMap<ChippedWoodType, ChippedBlockType<Block>> PLANKS = new EnumMap<>(ChippedWoodType.class);
     public static final EnumMap<DyeColor, ChippedBlockType<Block>> WOOL = new EnumMap<>(DyeColor.class);
-    public static final EnumMap<DyeColor, ChippedBlockType<CarpetBlock>> CARPETS = new EnumMap<>(DyeColor.class);
+    public static final EnumMap<DyeColor, ChippedBlockType<WoolCarpetBlock>> CARPETS = new EnumMap<>(DyeColor.class);
 
     public static final EnumMap<DyeColor, ChippedBlockType<Block>> TERRACOTTAS = new EnumMap<>(DyeColor.class);
     public static final EnumMap<DyeColor, ChippedBlockType<Block>> CONCRETES = new EnumMap<>(DyeColor.class);
@@ -39,8 +40,8 @@ public class ChippedBlockTypes {
     public static final ChippedBlockType<MushroomBlock> RED_MUSHROOMS = new ChippedBlockType<>("red_mushroom");
     public static final ChippedBlockType<MushroomBlock> WARPED_FUNGUS = new ChippedBlockType<>("warped_fungus");
     public static final ChippedBlockType<MushroomBlock> CRIMSON_FUNGUS = new ChippedBlockType<>("crimson_fungus");
-    public static final ChippedBlockType<NetherRootsBlock> WARPED_ROOTS = new ChippedBlockType<>("warped_roots");
-    public static final ChippedBlockType<NetherRootsBlock> CRIMSON_ROOTS = new ChippedBlockType<>("crimson_roots");
+    public static final ChippedBlockType<RootsBlock> WARPED_ROOTS = new ChippedBlockType<>("warped_roots");
+    public static final ChippedBlockType<RootsBlock> CRIMSON_ROOTS = new ChippedBlockType<>("crimson_roots");
     public static final ChippedBlockType<NetherSproutsBlock> NETHER_SPROUTS = new ChippedBlockType<>("nether_sprouts");
 
     public static final ChippedBlockType<HugeMushroomBlock> BROWN_MUSHROOM_BLOCK = new ChippedBlockType<>("brown_mushroom_block");

@@ -6,19 +6,20 @@ import com.grimbo.chipped.api.ChippedBlockType;
 import com.grimbo.chipped.api.ChippedWoodType;
 
 import com.grimbo.chipped.block.ChippedBlocks;
-import net.minecraft.block.Block;
-import net.minecraft.block.Blocks;
-import net.minecraft.data.BlockTagsProvider;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.data.tags.BlockTagsProvider;
 import net.minecraft.data.DataGenerator;
-import net.minecraft.item.DyeColor;
+import net.minecraft.world.item.DyeColor;
 import net.minecraft.tags.BlockTags;
-import net.minecraft.util.ResourceLocation;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.data.ExistingFileHelper;
-import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.ForgeRegistries;
 
 import static com.grimbo.chipped.block.ChippedBlockTypes.*;
+
+import net.minecraftforge.registries.RegistryObject;
 
 public class ChippedBlockTagsProvider extends BlockTagsProvider {
 
@@ -33,7 +34,7 @@ public class ChippedBlockTagsProvider extends BlockTagsProvider {
 		for (ChippedBlockType<Block> type : BlockRegistry.getBlockTypes()) {
 			Block vanillaBlock = ForgeRegistries.BLOCKS.getValue(new ResourceLocation(type.getId()));
 			if (vanillaBlock != null && vanillaBlock != Blocks.AIR) {
-				Builder<Block> tag = tag(type.getBlockTag());
+				TagAppender<Block> tag = tag(type.getBlockTag());
 				tag.add(vanillaBlock);
 				for (RegistryObject<Block> block : type.getBlocks()) {
 					tag.add(block.get());

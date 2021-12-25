@@ -12,15 +12,15 @@ apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'eclipse'
 apply plugin: 'maven-publish'
 
-version = '1.16.5-1.2-forge'
+version = '1.18.1-1.2.0.1-forge'
 group = 'com.grimbo.chipped'
 archivesBaseName = 'chipped'
 
-java.toolchain.languageVersion = JavaLanguageVersion.of(8)
+java.toolchain.languageVersion = JavaLanguageVersion.of(17)
 
 println('Java: ' + System.getProperty('java.version') + ' JVM: ' + System.getProperty('java.vm.version') + '(' + System.getProperty('java.vendor') + ') Arch: ' + System.getProperty('os.arch'))
 minecraft {
-    mappings channel: 'official', version: '1.16.5'
+    mappings channel: 'official', version: '1.18.1'
     runs {
         client {
             workingDirectory project.file('run')
@@ -77,10 +77,10 @@ repositories {
 }
 
 dependencies {
-    minecraft 'net.minecraftforge:forge:1.16.5-36.2.22'
+    minecraft 'net.minecraftforge:forge:1.18.1-39.0.8'
 
-    compileOnly fg.deobf("mezz.jei:jei-1.16.5:7.7.1.138:api")
-    runtimeOnly fg.deobf("mezz.jei:jei-1.16.5:7.7.1.138")
+    compileOnly fg.deobf("mezz.jei:jei-1.18.1:9.1.1.48:api")
+    runtimeOnly fg.deobf("mezz.jei:jei-1.18.1:9.1.1.48")
 
     compileOnly(group: "org.jetbrains", name: "annotations", version: "20.1.0")
 }

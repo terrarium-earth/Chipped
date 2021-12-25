@@ -6,11 +6,11 @@ import com.grimbo.chipped.api.BenchType;
 import com.grimbo.chipped.api.BlockRegistry;
 import com.grimbo.chipped.recipe.ChippedSerializer;
 import net.minecraft.data.DataGenerator;
-import net.minecraft.data.IFinishedRecipe;
-import net.minecraft.data.RecipeProvider;
-import net.minecraft.item.crafting.IRecipeSerializer;
-import net.minecraft.util.ResourceLocation;
-import net.minecraftforge.fml.RegistryObject;
+import net.minecraft.data.recipes.FinishedRecipe;
+import net.minecraft.data.recipes.RecipeProvider;
+import net.minecraft.world.item.crafting.RecipeSerializer;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraftforge.registries.RegistryObject;
 import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.Nullable;
@@ -24,7 +24,7 @@ public class ChippedRecipeProvider extends RecipeProvider {
 	}
 
 	@Override
-	protected void buildShapelessRecipes(@NotNull Consumer<IFinishedRecipe> consumer) {
+	protected void buildCraftingRecipes(@NotNull Consumer<FinishedRecipe> consumer) {
 		createRecipeFromTypes(ChippedSerializer.MASON_TABLE, consumer, BlockRegistry.getTags(BenchType.MASON));
 		createRecipeFromTypes(ChippedSerializer.ALCHEMY_BENCH, consumer, BlockRegistry.getTags(BenchType.ALCHEMY));
 		createRecipeFromTypes(ChippedSerializer.BOTANIST_WORKBENCH, consumer, BlockRegistry.getTags(BenchType.BOTANIST));
@@ -34,18 +34,11 @@ public class ChippedRecipeProvider extends RecipeProvider {
 		createRecipeFromTypes(ChippedSerializer.LOOM_TABLE, consumer, BlockRegistry.getTags(BenchType.LOOM));
 	}
 
-	private static void createRecipeFromTypes(RegistryObject<IRecipeSerializer<?>> serializer, Consumer<IFinishedRecipe> consumer, Collection<String> types) {
+	private static void createRecipeFromTypes(RegistryObject<RecipeSerializer<?>> serializer, Consumer<FinishedRecipe> consumer, Collection<String> types) {
 		consumer.accept(new Result(types, serializer));
 	}
 
-	private static class Result implements IFinishedRecipe {
-		private final Collection<String> tags;
-		private final RegistryObject<IRecipeSerializer<?>> serializer;
-
-		public Result(Collection<String> tags, RegistryObject<IRecipeSerializer<?>> serializer) {
-			this.tags = tags;
-			this.serializer = serializer;
-		}
+	private record Result(Collection<String> tags, RegistryObject<RecipeSerializer<?>> serializer) implements FinishedRecipe {
 
 		@Override
 		public void serializeRecipeData(JsonObject json) {
@@ -55,12 +48,14 @@ public class ChippedRecipeProvider extends RecipeProvider {
 		}
 
 		@Override
-		public @NotNull ResourceLocation getId() {
+		public @NotNull
+		ResourceLocation getId() {
 			return serializer.getId();
 		}
 
 		@Override
-		public @NotNull IRecipeSerializer<?> getType() {
+		public @NotNull
+		RecipeSerializer<?> getType() {
 			return serializer.get();
 		}
 

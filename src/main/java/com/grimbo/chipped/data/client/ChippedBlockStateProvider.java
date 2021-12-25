@@ -4,19 +4,19 @@ import com.grimbo.chipped.Chipped;
 import com.grimbo.chipped.api.ChippedBlockType;
 import com.grimbo.chipped.api.ChippedWoodType;
 import com.grimbo.chipped.block.ChippedBlocks;
-import net.minecraft.block.*;
 import net.minecraft.data.DataGenerator;
-import net.minecraft.item.DyeColor;
-import net.minecraft.util.Direction;
-import net.minecraft.util.ResourceLocation;
+import net.minecraft.world.item.DyeColor;
+import net.minecraft.core.Direction;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.level.block.*;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
-import net.minecraftforge.fml.RegistryObject;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 import static com.grimbo.chipped.block.ChippedBlockTypes.*;
+
+import net.minecraftforge.registries.RegistryObject;
 
 public class ChippedBlockStateProvider extends BlockStateProvider {
 
@@ -47,7 +47,7 @@ public class ChippedBlockStateProvider extends BlockStateProvider {
             createCubeFromList(WOOL.get(color));
             createCubeFromList(STAINED_GLASSES.get(color));
 
-            List<RegistryObject<CarpetBlock>> blocks = CARPETS.get(color).getBlocks();
+            List<RegistryObject<WoolCarpetBlock>> blocks = CARPETS.get(color).getBlocks();
             for (int i = 0; i < blocks.size(); ++i) {
                 int n = i + 1;
                 simpleBlock(blocks.get(i).get(), models().carpet(color + "_carpet_" + n, modLoc("block/" + color + "_wool/" + color + "_wool_" + n)));
@@ -127,12 +127,12 @@ public class ChippedBlockStateProvider extends BlockStateProvider {
             simpleBlock(block.get(), models().cross(name, modLoc("block/" + CRIMSON_FUNGUS + "/" + name)));
         }
 
-        for (RegistryObject<NetherRootsBlock> block : WARPED_ROOTS.getBlocks()) {
+        for (RegistryObject<RootsBlock> block : WARPED_ROOTS.getBlocks()) {
             String name = block.getId().getPath();
             simpleBlock(block.get(), models().cross(name, modLoc("block/" + WARPED_ROOTS + "/" + name)));
         }
 
-        for (RegistryObject<NetherRootsBlock> block : CRIMSON_ROOTS.getBlocks()) {
+        for (RegistryObject<RootsBlock> block : CRIMSON_ROOTS.getBlocks()) {
             String name = block.getId().getPath();
             simpleBlock(block.get(), models().cross(name, modLoc("block/" + CRIMSON_ROOTS + "/" + name)));
         }
@@ -265,13 +265,14 @@ public class ChippedBlockStateProvider extends BlockStateProvider {
         registerGlassPanes(type, type.getId(), originalType, null, topName, start, end);
     }
 
+    // Unused
     private <T extends Block> void registerGlassPanes(ChippedBlockType<T> type, String originalType, String originalPath, String topName, int start, int end) {
         registerGlassPanes(type, type.getId(), originalType, originalPath, topName, start, end);
     }
 
     // Very janky, will try to attempt to pull from glass_pane/glass_pane_top for stained_glass_pane because of how the textures were designed, might need to rework depending on future textures
     private <T extends Block> void registerGlassPanes(ChippedBlockType<T> type, String glassPaneName, String originalType, String originalPath, String topName, int start, int end) {
-        List<RegistryObject<T>> blocks = type.getBlocks().stream().filter(t -> t.getId().getPath().startsWith(glassPaneName)).collect(Collectors.toList());
+        List<RegistryObject<T>> blocks = type.getBlocks().stream().filter(t -> t.getId().getPath().startsWith(glassPaneName)).toList();
         for (int i = start; i <= end; i++) {
             String block = glassPaneName + "_" + i;
             String originalBlock = originalType + "_" + i;
@@ -284,46 +285,46 @@ public class ChippedBlockStateProvider extends BlockStateProvider {
                     .part()
                     .modelFile(models().paneSide(block + "_side", modLoc("block/" + originalPath + "/" + originalBlock), modLoc("block/glass_pane" + "/" + topName)))
                     .addModel()
-                    .condition(FourWayBlock.NORTH, true);
+                    .condition(CrossCollisionBlock.NORTH, true);
             getMultipartBuilder(blocks.get(i - 1).get())
                     .part()
                     .modelFile(models().paneSide(block + "_side", modLoc("block/" + originalPath + "/" + originalBlock), modLoc("block/glass_pane" + "/" + topName)))
                     .rotationY(90)
                     .addModel()
-                    .condition(FourWayBlock.EAST, true);
+                    .condition(CrossCollisionBlock.EAST, true);
             getMultipartBuilder(blocks.get(i - 1).get())
                     .part()
                     .modelFile(models().paneSideAlt(block + "_side_alt", modLoc("block/" + originalPath + "/" + originalBlock), modLoc("block/glass_pane" + "/" + topName)))
                     .addModel()
-                    .condition(FourWayBlock.SOUTH, true);
+                    .condition(CrossCollisionBlock.SOUTH, true);
             getMultipartBuilder(blocks.get(i - 1).get())
                     .part()
                     .modelFile(models().paneSideAlt(block + "_side_alt", modLoc("block/" + originalPath + "/" + originalBlock), modLoc("block/" + originalPath + "/" + originalBlock)))
                     .rotationY(90)
                     .addModel()
-                    .condition(FourWayBlock.WEST, true);
+                    .condition(CrossCollisionBlock.WEST, true);
             getMultipartBuilder(blocks.get(i - 1).get())
                     .part()
                     .modelFile(models().paneNoSide(block + "_noside", modLoc("block/" + originalPath + "/" + originalBlock)))
                     .addModel()
-                    .condition(FourWayBlock.NORTH, false);
+                    .condition(CrossCollisionBlock.NORTH, false);
             getMultipartBuilder(blocks.get(i - 1).get())
                     .part()
                     .modelFile(models().paneNoSideAlt(block + "_noside_alt", modLoc("block/" + originalPath + "/" + originalBlock)))
                     .addModel()
-                    .condition(FourWayBlock.EAST, false);
+                    .condition(CrossCollisionBlock.EAST, false);
             getMultipartBuilder(blocks.get(i - 1).get())
                     .part()
                     .modelFile(models().paneNoSideAlt(block + "_noside_alt", modLoc("block/" + originalPath + "/" + originalBlock)))
                     .rotationY(90)
                     .addModel()
-                    .condition(FourWayBlock.SOUTH, false);
+                    .condition(CrossCollisionBlock.SOUTH, false);
             getMultipartBuilder(blocks.get(i - 1).get())
                     .part()
                     .modelFile(models().paneNoSide(block + "_noside", modLoc("block/" + originalPath + "/" + originalBlock)))
                     .rotationY(270)
                     .addModel()
-                    .condition(FourWayBlock.WEST, false);
+                    .condition(CrossCollisionBlock.WEST, false);
         }
     }
 
