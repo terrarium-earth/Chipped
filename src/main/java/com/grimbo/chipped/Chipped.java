@@ -103,21 +103,31 @@ public class Chipped {
 		for (RegistryObject<ChippedLilyPadBlock> lily_pad : ChippedBlockTypes.LILY_PAD) {
 			RenderTypeLookup.setRenderLayer(lily_pad.get(), RenderType.translucent());
 		}
+
 		for (RegistryObject<RedstoneTorchBlock> redstoneTorch : ChippedBlockTypes.REDSTONE_TORCHES) {
 			RenderTypeLookup.setRenderLayer(redstoneTorch.get(), RenderType.cutout());
 		}
+
 		for (RegistryObject<RedstoneWallTorchBlock> redstoneWallTorch : ChippedBlocks.REDSTONE_WALL_TORCHES) {
 			RenderTypeLookup.setRenderLayer(redstoneWallTorch.get(), RenderType.cutout());
 		}
+
+		for (RegistryObject<WebBlock> cobweb : ChippedBlockTypes.COBWEBS) {
+			RenderTypeLookup.setRenderLayer(cobweb.get(), RenderType.cutout());
+		}
+
 		for (RegistryObject<TorchBlock> torch : ChippedBlockTypes.TORCHES) {
 			RenderTypeLookup.setRenderLayer(torch.get(), RenderType.cutout());
 		}
+
 		for (RegistryObject<WallTorchBlock> wallTorch : ChippedBlocks.WALL_TORCHES) {
 			RenderTypeLookup.setRenderLayer(wallTorch.get(), RenderType.cutout());
 		}
+
 		for (RegistryObject<Block> lantern : ChippedBlockTypes.LANTERNS) {
 			RenderTypeLookup.setRenderLayer(lantern.get(), RenderType.cutout());
 		}
+
 		for (RegistryObject<Block> lantern : ChippedBlockTypes.SOUL_LANTERNS) {
 			RenderTypeLookup.setRenderLayer(lantern.get(), RenderType.cutout());
 		}

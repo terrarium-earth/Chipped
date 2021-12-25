@@ -43,47 +43,65 @@ public class ChippedItemModelProvider extends ItemModelProvider {
 		for (int i = 2; i <= 6; i++) {
 			withExistingParent("redstone_torch_" + i, mcLoc("generated")).texture("layer0", modLoc("block/redstone_torch/redstone_torch_" + i));
 		}
+
 		for (int i = 1; i <= 9; i++) {
 			withExistingParent("torch_" + i, mcLoc("generated")).texture("layer0", modLoc("block/torch/torch_" + i));
 		}
+
 		for (int i = 1; i <= 11; i++) {
 			withExistingParent("soul_lantern_" + i, mcLoc("generated")).texture("layer0", modLoc("item/soul_lantern/soul_lantern_" + i));
 		}
+
 		for (int i = 1; i <= 14; i++) {
 			withExistingParent("lantern_" + i, mcLoc("generated")).texture("layer0", modLoc("item/lantern/lantern_" + i));
 		}
+
 		for (int i = 1; i <= 4; i++) {
 			withExistingParent("special_lantern_" + i, mcLoc("generated")).texture("layer0", modLoc("item/special_lantern/special_lantern_" + i));
 		}
+
 		for (int i = 1; i <= 4; i++) {
 			withExistingParent("special_soul_lantern_" + i, mcLoc("generated")).texture("layer0", modLoc("item/special_soul_lantern/special_soul_lantern_" + i));
 		}
+
 		for (int i = 1; i <= 15; i++) {
 			withExistingParent("brown_mushroom_" + i, mcLoc("generated")).texture("layer0", modLoc("item/brown_mushroom/brown_mushroom_" + i));
 		}
+
 		for (int i = 1; i <= 15; i++) {
 			withExistingParent("red_mushroom_" + i, mcLoc("generated")).texture("layer0", modLoc("item/red_mushroom/red_mushroom_" + i));
 		}
+
 		for (int i = 1; i <= 14; i++) {
 			withExistingParent("warped_fungus_" + i, mcLoc("generated")).texture("layer0", modLoc("item/warped_fungus/warped_fungus_" + i));
 		}
+
 		for (int i = 1; i <= 15; i++) {
 			withExistingParent("crimson_fungus_" + i, mcLoc("generated")).texture("layer0", modLoc("item/crimson_fungus/crimson_fungus_" + i));
 		}
+
 		for (int i = 1; i <= 9; i++) {
 			withExistingParent("warped_roots_" + i, mcLoc("generated")).texture("layer0", modLoc("item/warped_roots/warped_roots_" + i));
 		}
+
 		for (int i = 1; i <= 14; i++) {
 			withExistingParent("crimson_roots_" + i, mcLoc("generated")).texture("layer0", modLoc("item/crimson_roots/crimson_roots_" + i));
 		}
+
 		for (int i = 1; i <= 20; i++) {
 			withExistingParent("nether_sprouts_" + i, mcLoc("generated")).texture("layer0", modLoc("item/nether_sprouts/nether_sprouts_" + i));
 		}
+
 		for (int i = 1; i <= 6; i++) {
 			withExistingParent("lily_pad_" + i, mcLoc("generated")).texture("layer0", modLoc("item/lily_pad/lily_pad_" + i));
 		}
+
 		for (int i = 9; i <= 17; i++) {
 			withExistingParent("vine_" + i, mcLoc("generated")).texture("layer0", modLoc("block/vine/vine_" + i));
+		}
+
+		for (RegistryObject<WebBlock> block : COBWEBS.getBlocks()) {
+			withExistingParent(block.getId().getPath(), mcLoc("generated")).texture("layer0", modLoc("block/" + COBWEBS + "/" + block.getId().getPath()));
 		}
 
 		applyDefault(
@@ -92,7 +110,7 @@ public class ChippedItemModelProvider extends ItemModelProvider {
 				GLOWSTONES, SEA_LANTERNS, SHROOMLIGHTS, CARVED_PUMPKINS, REDSTONE_LAMPS, JACK_O_LANTERNS, BROWN_MUSHROOM_BLOCK, RED_MUSHROOM_BLOCK,
 				WARPED_WART_BLOCK, NETHER_WART_BLOCK, SOUL_SANDS, DRIED_KELP_BLOCKS
 		);
-		
+
 		applyDefault(PLANKS.values());
 		applyDefault(TERRACOTTAS.values());
 		applyDefault(CONCRETES.values());

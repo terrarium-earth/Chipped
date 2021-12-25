@@ -24,8 +24,7 @@ minecraft {
     runs {
         client {
             workingDirectory project.file('run')
-            property 'forge.logging.markers', 'SCAN,REGISTRIES,REGISTRYDUMP'
-            property 'forge.logging.console.level', 'debug'
+            property 'forge.logging.console.level', 'info'
 
             mods {
                 chipped {
@@ -36,7 +35,7 @@ minecraft {
 
         server {
             workingDirectory project.file('run')
-            property 'forge.logging.console.level', 'debug'
+            property 'forge.logging.console.level', 'info'
 
             mods {
                 chipped {
@@ -47,7 +46,7 @@ minecraft {
 
         data {
             workingDirectory project.file('run')
-            property 'forge.logging.console.level', 'debug'
+            property 'forge.logging.console.level', 'info'
 
             args '--mod', 'chipped', '--all',
                     '--existing', file('src/main/resources/'),

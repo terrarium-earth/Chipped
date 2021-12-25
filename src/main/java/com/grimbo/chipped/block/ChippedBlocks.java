@@ -24,6 +24,7 @@ import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import org.jetbrains.annotations.NotNull;
+import org.lwjgl.glfw.GLFW;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -47,8 +48,8 @@ public class ChippedBlocks {
     public static final List<RegistryObject<CarvedPumpkinBlock>> SPECIAL_CARVED_PUMPKINS = new ArrayList<>();
     public static final List<RegistryObject<CarvedPumpkinBlock>> VANILLA_CARVED_PUMPKINS = new ArrayList<>();
 
-    //Simple Blocks which have 18 of its own variant
-    //Check ChippedBlocks/ItemTagsProvider before editing!
+    // Simple Blocks which have 18 of its own variant
+    // Check ChippedBlocks/ItemTagsProvider before editing!
     public static final List<ChippedBlockType<Block>> stones18 = Stream.of(
             "granite", "diorite", "andesite", "prismarine", "dark_prismarine", "purpur_block", "quartz_block",
             "sandstone", "red_sandstone", "nether_bricks", "red_nether_bricks"
@@ -131,7 +132,7 @@ public class ChippedBlocks {
         final AbstractBlock.Properties REDSTONE_LAMP_PROPERTIES = AbstractBlock.Properties.copy(Blocks.REDSTONE_LAMP);
         registerBlocks(BenchType.MECHANIST, REDSTONE_LAMPS, () -> new RedstoneLampBlock(REDSTONE_LAMP_PROPERTIES), 18);
 
-        //Register Wools and Carpets
+        // Register Wools and Carpets
         final AbstractBlock.Properties WOOL_PROPERTIES = AbstractBlock.Properties.of(Material.WOOL).strength(0.1F).sound(SoundType.WOOL);
         for (int id = 0; id < 16; ++id) {
             DyeColor color = DyeColor.byId(id);
@@ -139,7 +140,7 @@ public class ChippedBlocks {
             registerBlocks(BenchType.LOOM, CARPETS.computeIfAbsent(color, k -> new ChippedBlockType<>(k + "_carpet")), () -> new CarpetBlock(color, WOOL_PROPERTIES), 18);
         }
 
-        //Register Glasses and Stained Glasses
+        // Register Glasses and Stained Glasses
         final AbstractBlock.Properties GLASS_PROPERTIES = AbstractBlock.Properties.copy(Blocks.GLASS);
         final AbstractBlock.Properties GLASS_PANE_PROPERTIES = AbstractBlock.Properties.copy(Blocks.GLASS_PANE);
         registerBlocks(BenchType.GLASSBLOWER, GLASSES, () -> new GlassBlock(GLASS_PROPERTIES), 14);
@@ -156,60 +157,64 @@ public class ChippedBlocks {
             registerBlocks(BenchType.GLASSBLOWER, STAINED_GLASS_PANES.computeIfAbsent(color, k -> new ChippedBlockType<>(k + "_stained_glass_pane")), () -> new StainedGlassPaneBlock(color, GLASS_PANE_PROPERTIES), 8);
         }
 
-        //Register Misc
+        // Register Misc
         registerVanillaBlocks(BenchType.MASON, Blocks.CLAY, CLAYS, 19);
         registerVanillaBlocks(BenchType.BOTANIST, Blocks.DRIED_KELP_BLOCK, DRIED_KELP_BLOCKS, 12);
 
-        final AbstractBlock.Properties WOOD_PROPERTIES = AbstractBlock.Properties.of(Material.WOOD).strength(2.0F, 3.0F).sound(SoundType.WOOD);
+        final AbstractBlock.Properties woodProperties = AbstractBlock.Properties.of(Material.WOOD).strength(2.0F, 3.0F).sound(SoundType.WOOD);
         for (ChippedWoodType type : ChippedWoodType.VALUES) {
-            registerBlocks(BenchType.CARPENTERS, PLANKS.computeIfAbsent(type, k -> new ChippedBlockType<>(k + "_planks")), () -> new Block(WOOD_PROPERTIES), 18);
+            registerBlocks(BenchType.CARPENTERS, PLANKS.computeIfAbsent(type, k -> new ChippedBlockType<>(k + "_planks")), () -> new Block(woodProperties), 18);
         }
 
-        final AbstractBlock.Properties HAY_BLOCK_PROPERTIES = AbstractBlock.Properties.copy(Blocks.HAY_BLOCK);
-        registerBlocks(BenchType.BOTANIST, HAY_BLOCKS, () -> new HayBlock(HAY_BLOCK_PROPERTIES), 8);
-        final AbstractBlock.Properties MELON_PROPERTIES = AbstractBlock.Properties.copy(Blocks.MELON);
-        registerBlocks(BenchType.BOTANIST, MELONS, () -> new MelonBlock(MELON_PROPERTIES), 10);
-        final AbstractBlock.Properties VINE_PROPERTIES = AbstractBlock.Properties.copy(Blocks.VINE);
-        registerBlocks(BenchType.BOTANIST, VINES, () -> new VineBlock(VINE_PROPERTIES), 17);
+        final AbstractBlock.Properties hayProperties = AbstractBlock.Properties.copy(Blocks.HAY_BLOCK);
+        registerBlocks(BenchType.BOTANIST, HAY_BLOCKS, () -> new HayBlock(hayProperties), 8);
+        final AbstractBlock.Properties melonProperties = AbstractBlock.Properties.copy(Blocks.MELON);
+        registerBlocks(BenchType.BOTANIST, MELONS, () -> new MelonBlock(melonProperties), 10);
+        final AbstractBlock.Properties vineProperties = AbstractBlock.Properties.copy(Blocks.VINE);
+        registerBlocks(BenchType.BOTANIST, VINES, () -> new VineBlock(vineProperties), 17);
 
-        final AbstractBlock.Properties BROWN_MUSHROOM_PROPERTIES = AbstractBlock.Properties.copy(Blocks.BROWN_MUSHROOM);
-        registerBlocks(BenchType.BOTANIST, BROWN_MUSHROOMS, () -> new MushroomBlock(BROWN_MUSHROOM_PROPERTIES), 15);
-        final AbstractBlock.Properties RED_MUSHROOM_PROPERTIES = AbstractBlock.Properties.copy(Blocks.RED_MUSHROOM);
-        registerBlocks(BenchType.BOTANIST, RED_MUSHROOMS, () -> new MushroomBlock(RED_MUSHROOM_PROPERTIES), 15);
+        final AbstractBlock.Properties brownMushroomProperties = AbstractBlock.Properties.copy(Blocks.BROWN_MUSHROOM);
+        registerBlocks(BenchType.BOTANIST, BROWN_MUSHROOMS, () -> new MushroomBlock(brownMushroomProperties), 15);
+        final AbstractBlock.Properties redMushroomProperties = AbstractBlock.Properties.copy(Blocks.RED_MUSHROOM);
+        registerBlocks(BenchType.BOTANIST, RED_MUSHROOMS, () -> new MushroomBlock(redMushroomProperties), 15);
 
-        final AbstractBlock.Properties WARPED_FUNGUS_PROPERTIES = AbstractBlock.Properties.copy(Blocks.WARPED_FUNGUS);
-        registerBlocks(BenchType.BOTANIST, WARPED_FUNGUS, () -> new MushroomBlock(WARPED_FUNGUS_PROPERTIES), 14);
-        final AbstractBlock.Properties CRIMSON_FUNGUS_PROPERTIES = AbstractBlock.Properties.copy(Blocks.CRIMSON_FUNGUS);
-        registerBlocks(BenchType.BOTANIST, CRIMSON_FUNGUS, () -> new MushroomBlock(CRIMSON_FUNGUS_PROPERTIES), 15);
+        final AbstractBlock.Properties warpedFungusProperties = AbstractBlock.Properties.copy(Blocks.WARPED_FUNGUS);
+        registerBlocks(BenchType.BOTANIST, WARPED_FUNGUS, () -> new MushroomBlock(warpedFungusProperties), 14);
+        final AbstractBlock.Properties crimsonFungusProperties = AbstractBlock.Properties.copy(Blocks.CRIMSON_FUNGUS);
+        registerBlocks(BenchType.BOTANIST, CRIMSON_FUNGUS, () -> new MushroomBlock(crimsonFungusProperties), 15);
 
-        final AbstractBlock.Properties WARPED_ROOTS_PROPERTIES = AbstractBlock.Properties.copy(Blocks.WARPED_ROOTS);
-        registerBlocks(BenchType.BOTANIST, WARPED_ROOTS, () -> new NetherRootsBlock(WARPED_ROOTS_PROPERTIES), 9);
-        final AbstractBlock.Properties CRIMSON_ROOTS_PROPERTIES = AbstractBlock.Properties.copy(Blocks.CRIMSON_ROOTS);
-        registerBlocks(BenchType.BOTANIST, CRIMSON_ROOTS, () -> new NetherRootsBlock(CRIMSON_ROOTS_PROPERTIES), 14);
-        final AbstractBlock.Properties NETHER_SPROUTS_PROPERTIES = AbstractBlock.Properties.copy(Blocks.NETHER_SPROUTS);
-        registerBlocks(BenchType.BOTANIST, NETHER_SPROUTS, () -> new NetherSproutsBlock(NETHER_SPROUTS_PROPERTIES), 20);
+        final AbstractBlock.Properties warpedRootsProperties = AbstractBlock.Properties.copy(Blocks.WARPED_ROOTS);
+        registerBlocks(BenchType.BOTANIST, WARPED_ROOTS, () -> new NetherRootsBlock(warpedRootsProperties), 9);
+        final AbstractBlock.Properties crimsonRootsProperties = AbstractBlock.Properties.copy(Blocks.CRIMSON_ROOTS);
+        registerBlocks(BenchType.BOTANIST, CRIMSON_ROOTS, () -> new NetherRootsBlock(crimsonRootsProperties), 14);
+        final AbstractBlock.Properties netherSproutsProperties = AbstractBlock.Properties.copy(Blocks.NETHER_SPROUTS);
+        registerBlocks(BenchType.BOTANIST, NETHER_SPROUTS, () -> new NetherSproutsBlock(netherSproutsProperties), 20);
 
-        final AbstractBlock.Properties BROWN_MUSHROOM_BLOCK_PROPERTIES = AbstractBlock.Properties.copy(Blocks.BROWN_MUSHROOM_BLOCK);
-        registerBlocks(BenchType.BOTANIST, BROWN_MUSHROOM_BLOCK, () -> new HugeMushroomBlock(BROWN_MUSHROOM_BLOCK_PROPERTIES), 24);
-        final AbstractBlock.Properties RED_MUSHROOM_BLOCK_PROPERTIES = AbstractBlock.Properties.copy(Blocks.RED_MUSHROOM_BLOCK);
-        registerBlocks(BenchType.BOTANIST, RED_MUSHROOM_BLOCK, () -> new HugeMushroomBlock(RED_MUSHROOM_BLOCK_PROPERTIES), 15);
+        final AbstractBlock.Properties brownMushroomBlockProperties = AbstractBlock.Properties.copy(Blocks.BROWN_MUSHROOM_BLOCK);
+        registerBlocks(BenchType.BOTANIST, BROWN_MUSHROOM_BLOCK, () -> new HugeMushroomBlock(brownMushroomBlockProperties), 24);
+        final AbstractBlock.Properties redMushroomBlockProperties = AbstractBlock.Properties.copy(Blocks.RED_MUSHROOM_BLOCK);
+        registerBlocks(BenchType.BOTANIST, RED_MUSHROOM_BLOCK, () -> new HugeMushroomBlock(redMushroomBlockProperties), 15);
 
         registerVanillaBlocks(BenchType.BOTANIST, WARPED_WART_BLOCK, 14);
         registerVanillaBlocks(BenchType.BOTANIST, NETHER_WART_BLOCK, 13);
 
-        final AbstractBlock.Properties SOUL_SAND_PROPERTIES = AbstractBlock.Properties.copy(Blocks.SOUL_SAND);
-        registerBlocks(BenchType.ALCHEMY, SOUL_SANDS, () -> new SoulSandBlock(SOUL_SAND_PROPERTIES), 11);
+        final AbstractBlock.Properties cobwebProperties = AbstractBlock.Properties.copy(Blocks.COBWEB);
+        registerBlocks(BenchType.BOTANIST, COBWEBS, () -> new WebBlock(cobwebProperties), 10);
 
-        //Lilypads require a custom item
-        final AbstractBlock.Properties LILY_PAD_PROPERTIES = AbstractBlock.Properties.copy(Blocks.LILY_PAD);
+        final AbstractBlock.Properties soulSandProperties = AbstractBlock.Properties.copy(Blocks.SOUL_SAND);
+        registerBlocks(BenchType.ALCHEMY, SOUL_SANDS, () -> new SoulSandBlock(soulSandProperties), 11);
+
+        // Lilypads require a custom item
+        final AbstractBlock.Properties lilyPadProperties = AbstractBlock.Properties.copy(Blocks.LILY_PAD);
         for (int i = 1; i <= 6; i++) {
             String name = LILY_PAD.getId() + "_" + i;
-            RegistryObject<ChippedLilyPadBlock> lilyPad = BLOCKS.register(name, () -> new ChippedLilyPadBlock(LILY_PAD_PROPERTIES));
+            RegistryObject<ChippedLilyPadBlock> lilyPad = BLOCKS.register(name, () -> new ChippedLilyPadBlock(lilyPadProperties));
             BlockRegistry.addBlock(BenchType.BOTANIST, LILY_PAD, lilyPad);
             ChippedItems.ITEMS.register(name, () -> new LilyPadItem(lilyPad.get(), new Item.Properties().tab(Chipped.CHIPPED)));
         }
 
-        //Regular Lanterns
+        // TODO please, whoever put these here, rename them - Ashley
+        // Regular Lanterns
         final VoxelShape CHONK_LANTERN_SHAPE = VoxelShapes.or(Block.box(2.0D, 0.0D, 2.0D, 14.0D, 1.0D, 14.0D), Block.box(1, 1, 1, 15, 15, 15));
         final VoxelShape THICC_LANTERN_SHAPE = VoxelShapes.or(Block.box(2.0D, 0.0D, 2.0D, 14.0D, 1.0D, 14.0D), Block.box(1, 1, 1, 15, 15, 15));
         final VoxelShape DONUT_LANTERN_SHAPE_EAST = Block.box(5.0D, 0.0D, 1.0D, 11.0D, 15.0D, 15.0D);
@@ -230,11 +235,11 @@ public class ChippedBlocks {
         }
 
         registerSpecialLantern(LANTERNS, HANGING_WOOD_LANTERN, WOOD_LANTERN, 2);
-        //registerSpecialLantern(LANTERNS, HANGING_CLEAR_LANTERN, CLEAR_LANTERN, 5, 7, 8);
+        // registerSpecialLantern(LANTERNS, HANGING_CLEAR_LANTERN, CLEAR_LANTERN, 5, 7, 8);
         registerSpecialLantern(LANTERNS, HANGING_JAR_LANTERN, JAR_LANTERN, 6);
         registerSpecialLantern(LANTERNS, HANGING_PAPER_LANTERN, PAPER_LANTERN, 9, 10, 11, 12, 13, 14);
 
-        //Regular Soul Lanterns
+        // Regular Soul Lanterns
         for (int i : new int[]{1, 3}) {
             RegistryObject<LanternBlock> lantern = register("soul_lantern_" + i, () -> new LanternBlock(LANTERN_PROPERTIES));
             BlockRegistry.addGenericBlock(BenchType.MECHANIST, SOUL_LANTERNS, lantern);
@@ -242,7 +247,7 @@ public class ChippedBlocks {
 
         registerSpecialLantern(SOUL_LANTERNS, HANGING_WOOD_LANTERN, WOOD_LANTERN, 2);
         registerSpecialLantern(SOUL_LANTERNS, HANGING_JAR_LANTERN, JAR_LANTERN, 5);
-        //registerSpecialLantern(SOUL_LANTERNS, HANGING_CLEAR_LANTERN, CLEAR_LANTERN, 4);
+        // registerSpecialLantern(SOUL_LANTERNS, HANGING_CLEAR_LANTERN, CLEAR_LANTERN, 4);
         registerSpecialLantern(SOUL_LANTERNS, HANGING_PAPER_LANTERN_2, PAPER_LANTERN_2, 6, 7, 8, 9, 10, 11);
 
         RegistryObject<ChippedLantern> lantern1 = register("special_lantern_1", () -> new ChippedLantern(LANTERN_PROPERTIES, CHONK_LANTERN_SHAPE));
@@ -266,7 +271,7 @@ public class ChippedBlocks {
         BlockRegistry.addGenericBlock(BenchType.MECHANIST, SOUL_LANTERNS, soulLantern4);
 
 
-        //Redstone Torches
+        // Redstone Torches
         final AbstractBlock.Properties REDSTONE_TORCH_PROPERTIES = AbstractBlock.Properties.copy(Blocks.REDSTONE_TORCH);
         final AbstractBlock.Properties REDSTONE_WALL_TORCH_PROPERTIES = AbstractBlock.Properties.copy(Blocks.REDSTONE_WALL_TORCH);
         for (int i = 2; i <= 6; i++) {
@@ -277,7 +282,7 @@ public class ChippedBlocks {
             REDSTONE_WALL_TORCHES.add(redstoneWallTorch);
         }
 
-        //Regular Torches
+        // Regular Torches
         final AbstractBlock.Properties TORCH_PROPERTIES = AbstractBlock.Properties.copy(Blocks.TORCH);
         final AbstractBlock.Properties WALL_TORCH_PROPERTIES = AbstractBlock.Properties.copy(Blocks.WALL_TORCH);
         for (int i = 1; i <= 9; i++) {
@@ -288,7 +293,7 @@ public class ChippedBlocks {
             WALL_TORCHES.add(wallTorch);
         }
 
-        //Pumpkins
+        // Pumpkins
         final AbstractBlock.Properties PUMPKIN_PROPERTIES = AbstractBlock.Properties.copy(Blocks.CARVED_PUMPKIN);
         final AbstractBlock.Properties JACK_O_LANTERN_PROPERTIES = AbstractBlock.Properties.copy(Blocks.JACK_O_LANTERN);
         for (String pumpkin : specialPumpkinList) {
@@ -303,13 +308,13 @@ public class ChippedBlocks {
             SPECIAL_CARVED_PUMPKINS.add(jackOLanternBlock);
             SPECIAL_CARVED_PUMPKINS.add(carvedPumpkinBlock);
         }
-        //Regular Pumpkins register AFTER Special Pumpkins
+        // Regular Pumpkins register AFTER Special Pumpkins
         for (int i = 1; i<= 13; i++) {
             RegistryObject<PumpkinBlock> pumpkinBlock = register("pumpkin_" + i, () -> new PumpkinBlock(PUMPKIN_PROPERTIES));
             BlockRegistry.addBlock(BenchType.BOTANIST, PUMPKINS, pumpkinBlock);
         }
 
-        //Jack'o'Lantern & Carved Pumpkins
+        // Jack'o'Lantern & Carved Pumpkins
         for (int i = 1; i <= carvedPumpkinList.length; i++) {
             RegistryObject<CarvedPumpkinBlock> jackOLanternBlock = register("jack_o_lantern_" + i, () -> new CarvedPumpkinBlock(JACK_O_LANTERN_PROPERTIES));
             RegistryObject<CarvedPumpkinBlock> carvedPumpkinBlock = register("carved_pumpkin_" + i, () -> new CarvedPumpkinBlock(PUMPKIN_PROPERTIES));
@@ -322,7 +327,7 @@ public class ChippedBlocks {
         }
     }
 
-    //Registries
+    // Registries
     private static void registerSpecialLantern(ChippedBlockType<Block> list, VoxelShape hangingShape, VoxelShape normalShape, int... indices) {
         for (int i : indices) {
             RegistryObject<LanternBlock> lantern = register(list.getId() + "_" + i, () -> new LanternBlock(LANTERN_PROPERTIES) {

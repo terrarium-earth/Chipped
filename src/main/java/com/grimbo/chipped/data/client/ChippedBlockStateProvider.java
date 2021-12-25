@@ -65,7 +65,6 @@ public class ChippedBlockStateProvider extends BlockStateProvider {
 
         for (ChippedWoodType wood : ChippedWoodType.VALUES) {
             createCubeFromList(PLANKS.get(wood));
-
             registerGlassPanes(GLASS_PANES, wood + "_wood_glass_pane", wood + "_wood_glass", "glass", wood + "_wood_glass_pane_top", 1, 6);
         }
 
@@ -74,17 +73,18 @@ public class ChippedBlockStateProvider extends BlockStateProvider {
             axisBlock(block.get(), modLoc("block/" + HAY_BLOCKS + "/" + name));
         }
 
-        //Dried Kelp Block
+        // Dried Kelp Block
         List<RegistryObject<Block>> dried_kelp_blocks = DRIED_KELP_BLOCKS.getBlocks();
-        for (int i : new int[]{1,2,3,4,6,7,8,9,10,11}) {
-            RegistryObject<Block> block = dried_kelp_blocks.get(i - 1);
-            String name = block.getId().getPath();
-            simpleBlock(block.get(), models().cubeBottomTop(name, modLoc("block/" + DRIED_KELP_BLOCKS + "/" + name + "_side"), modLoc("block/" + DRIED_KELP_BLOCKS + "/" + name + "_top"), modLoc("block/" + DRIED_KELP_BLOCKS + "/" + name + "_top")));
-        }
-        {
-            //Dried Kelp Block 12
-            RegistryObject<Block> block = dried_kelp_blocks.get(12 - 1);
-            simpleBlock(block.get(), models().cubeAll(block.getId().getPath(), modLoc("block/" + DRIED_KELP_BLOCKS + "/" + block.getId().getPath())));
+        for (int i = 1; i <= 12; ++i) {
+            if (i != 5) {
+                RegistryObject<Block> block = dried_kelp_blocks.get(i - 1);
+                String name = block.getId().getPath();
+                if (i == 12) {
+                    simpleBlock(block.get(), models().cubeAll(name, modLoc("block/" + DRIED_KELP_BLOCKS + "/" + name)));
+                } else {
+                    simpleBlock(block.get(), models().cubeBottomTop(name, modLoc("block/" + DRIED_KELP_BLOCKS + "/" + name + "_side"), modLoc("block/" + DRIED_KELP_BLOCKS + "/" + name + "_top"), modLoc("block/" + DRIED_KELP_BLOCKS + "/" + name + "_top")));
+                }
+            }
         }
 
         for (RegistryObject<MelonBlock> block : MELONS.getBlocks()) {
@@ -92,15 +92,16 @@ public class ChippedBlockStateProvider extends BlockStateProvider {
             simpleBlock(block.get(), models().cubeColumn(name, modLoc("block/" + MELONS + "/" + name + "_side"), modLoc("block/" + MELONS + "/" + name + "_top")));
         }
 
-        //Pumpkins
+        // Pumpkins
         List<RegistryObject<PumpkinBlock>> pumpkin_blocks = PUMPKINS.getBlocks();
         for (int i = 1; i <= ChippedBlocks.specialPumpkinList.length; i++) {
             RegistryObject<PumpkinBlock> block = pumpkin_blocks.get(i - 1);
             String name = block.getId().getPath();
             simpleBlock(block.get(), models().cubeColumn(name, modLoc("block/" + PUMPKINS + "/" + name + "_side"), modLoc("block/" + PUMPKINS + "/" + name + "_top")));
         }
-        //Rest are done manually
-        for (int i = ChippedBlocks.specialPumpkinList.length + 1; i <= ChippedBlocks.specialPumpkinList.length + 3; i++){
+
+        // Rest are done manually
+        for (int i = ChippedBlocks.specialPumpkinList.length + 1; i <= ChippedBlocks.specialPumpkinList.length + 3; i++) {
             RegistryObject<PumpkinBlock> block = pumpkin_blocks.get(i - 1);
             String name = block.getId().getPath();
             simpleBlock(block.get(), models().cubeBottomTop(name, modLoc("block/" + PUMPKINS + "/" + name + "_side"), modLoc("block/" + PUMPKINS + "/" + name + "_bottom"), modLoc("block/" + PUMPKINS + "/" + name + "_top")));
@@ -110,29 +111,40 @@ public class ChippedBlockStateProvider extends BlockStateProvider {
             String name = block.getId().getPath();
             simpleBlock(block.get(), models().cross(name, modLoc("block/" + BROWN_MUSHROOMS + "/" + name)));
         }
+
         for (RegistryObject<MushroomBlock> block : RED_MUSHROOMS.getBlocks()) {
             String name = block.getId().getPath();
             simpleBlock(block.get(), models().cross(name, modLoc("block/" + RED_MUSHROOMS + "/" + name)));
         }
+
         for (RegistryObject<MushroomBlock> block : WARPED_FUNGUS.getBlocks()) {
             String name = block.getId().getPath();
             simpleBlock(block.get(), models().cross(name, modLoc("block/" + WARPED_FUNGUS + "/" + name)));
         }
+
         for (RegistryObject<MushroomBlock> block : CRIMSON_FUNGUS.getBlocks()) {
             String name = block.getId().getPath();
             simpleBlock(block.get(), models().cross(name, modLoc("block/" + CRIMSON_FUNGUS + "/" + name)));
         }
+
         for (RegistryObject<NetherRootsBlock> block : WARPED_ROOTS.getBlocks()) {
             String name = block.getId().getPath();
             simpleBlock(block.get(), models().cross(name, modLoc("block/" + WARPED_ROOTS + "/" + name)));
         }
+
         for (RegistryObject<NetherRootsBlock> block : CRIMSON_ROOTS.getBlocks()) {
             String name = block.getId().getPath();
             simpleBlock(block.get(), models().cross(name, modLoc("block/" + CRIMSON_ROOTS + "/" + name)));
         }
+
         for (RegistryObject<NetherSproutsBlock> block : NETHER_SPROUTS.getBlocks()) {
             String name = block.getId().getPath();
             simpleBlock(block.get(), models().cross(name, modLoc("block/" + NETHER_SPROUTS + "/" + name)));
+        }
+
+        for (RegistryObject<WebBlock> block : COBWEBS.getBlocks()) {
+            String name = block.getId().getPath();
+            simpleBlock(block.get(), models().cross(name, modLoc("block/" + COBWEBS + "/" + name)));
         }
 
         for (RegistryObject<Block> block : LANTERNS) {
@@ -232,10 +244,6 @@ public class ChippedBlockStateProvider extends BlockStateProvider {
             registerSpecialPumpkins(specialCarved, specialPumpkins, i);
         }
 
-        for (int i = 1; i <= 3; i++) {
-
-        }
-
         registerRedstoneTorches();
         registerRedstoneTorchWall();
     }
@@ -252,7 +260,7 @@ public class ChippedBlockStateProvider extends BlockStateProvider {
         }
     }
 
-    //We honestly can use varargs instead of start & end, though up to whether we actually will add more complex glass panes in the future
+    // We honestly can use varargs instead of start & end, though up to whether we actually will add more complex glass panes in the future
     private <T extends Block> void registerGlassPanes(ChippedBlockType<T> type, String originalType, String topName, int start, int end) {
         registerGlassPanes(type, type.getId(), originalType, null, topName, start, end);
     }
@@ -261,7 +269,7 @@ public class ChippedBlockStateProvider extends BlockStateProvider {
         registerGlassPanes(type, type.getId(), originalType, originalPath, topName, start, end);
     }
 
-    //Very janky, will try to attempt to pull from glass_pane/glass_pane_top for stained_glass_pane because of how the textures were designed, might need to rework depending on future textures
+    // Very janky, will try to attempt to pull from glass_pane/glass_pane_top for stained_glass_pane because of how the textures were designed, might need to rework depending on future textures
     private <T extends Block> void registerGlassPanes(ChippedBlockType<T> type, String glassPaneName, String originalType, String originalPath, String topName, int start, int end) {
         List<RegistryObject<T>> blocks = type.getBlocks().stream().filter(t -> t.getId().getPath().startsWith(glassPaneName)).collect(Collectors.toList());
         for (int i = start; i <= end; i++) {
@@ -290,7 +298,7 @@ public class ChippedBlockStateProvider extends BlockStateProvider {
                     .condition(FourWayBlock.SOUTH, true);
             getMultipartBuilder(blocks.get(i - 1).get())
                     .part()
-                    .modelFile(models().paneSideAlt(block + "_side_alt", modLoc("block/" + originalPath + "/" + originalBlock), modLoc("block/"  + originalPath + "/" + originalBlock)))
+                    .modelFile(models().paneSideAlt(block + "_side_alt", modLoc("block/" + originalPath + "/" + originalBlock), modLoc("block/" + originalPath + "/" + originalBlock)))
                     .rotationY(90)
                     .addModel()
                     .condition(FourWayBlock.WEST, true);
@@ -364,7 +372,7 @@ public class ChippedBlockStateProvider extends BlockStateProvider {
         String carvedBlockName = specialCarved.get(index).getId().getPath();
         String pumpkinName = specialPumpkins.get(index / 2).getId().getPath();
         for (Direction direction : Direction.Plane.HORIZONTAL) {
-            //Carved Pumpkin
+            // Carved Pumpkin
             getVariantBuilder(specialCarved.get(index).get())
                     .partialState()
                     .with(CarvedPumpkinBlock.FACING, direction)
