@@ -7,10 +7,10 @@
   ],
   "key": {
     "x": {
-      "item": "minecraft:crafting_table"
+      "tag": "forge:workbench"
     },
     "y": {
-      "item": "minecraft:iron_ingot"
+      "tag": "forge:ingots/iron"
     },
     "a": {
       "tag": "minecraft:logs"
