@@ -1,13 +1,13 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    "#  ",
-    "yxy",
+    "#zy",
+    "axa",
     "aca"
   ],
   "key": {
     "x": {
-      "item": "minecraft:crafting_table"
+      "tag": "forge:workbench"
     },
     "y": {
       "tag": "forge:ingots/iron"
@@ -15,15 +15,18 @@
     "a": {
       "tag": "minecraft:logs"
     },
+    "z": {
+      "item": "minecraft:blast_furnace"
+    },
     "c": {
-      "item": "minecraft:clay_ball"
+      "item": "minecraft:bricks"
     },
     "#": {
-      "item": "minecraft:brick"
+      "tag": "forge:glass"
     }
   },
   "result": {
-    "item": "chipped:mason_table",
+    "item": "chipped:glassblower",
     "count": 1
   }
 }

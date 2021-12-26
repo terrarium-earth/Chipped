@@ -1,29 +1,26 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    "#  ",
-    "yxy",
+    "yyy",
+    "axa",
     "aca"
   ],
   "key": {
     "x": {
-      "item": "minecraft:crafting_table"
+      "tag": "forge:workbench"
     },
     "y": {
-      "tag": "forge:ingots/iron"
+      "tag": "forge:rods/wooden"
     },
     "a": {
       "tag": "minecraft:logs"
     },
     "c": {
-      "item": "minecraft:clay_ball"
-    },
-    "#": {
-      "item": "minecraft:brick"
+      "tag": "minecraft:wool"
     }
   },
   "result": {
-    "item": "chipped:mason_table",
+    "item": "chipped:loom_table",
     "count": 1
   }
 }

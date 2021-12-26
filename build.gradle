@@ -12,7 +12,7 @@ apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'eclipse'
 apply plugin: 'maven-publish'
 
-version = '1.18.1-1.2.0.1-forge'
+version = '1.18.1-1.2.0.2-forge'
 group = 'com.grimbo.chipped'
 archivesBaseName = 'chipped'
 
