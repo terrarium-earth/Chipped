@@ -1,13 +1,13 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    "#  ",
-    "yxy",
-    "aca"
+    "  y",
+    "axa",
+    "bca"
   ],
   "key": {
     "x": {
-      "item": "minecraft:crafting_table"
+      "tag": "forge:workbench"
     },
     "y": {
       "tag": "forge:ingots/iron"
@@ -15,15 +15,15 @@
     "a": {
       "tag": "minecraft:logs"
     },
-    "c": {
-      "item": "minecraft:clay_ball"
+    "b": {
+      "item": "minecraft:wooden_axe"
     },
-    "#": {
-      "item": "minecraft:brick"
+    "c": {
+      "tag": "minecraft:planks"
     }
   },
   "result": {
-    "item": "chipped:mason_table",
+    "item": "chipped:carpenters_table",
     "count": 1
   }
 }

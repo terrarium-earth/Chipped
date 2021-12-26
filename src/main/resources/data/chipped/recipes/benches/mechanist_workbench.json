@@ -13,10 +13,10 @@
       "item": "minecraft:piston"
     },
     "_": {
-      "item": "minecraft:oak_slab"
+      "tag": "minecraft:wooden_slabs"
     },
     "S": {
-      "item": "minecraft:stripped_spruce_log"
+      "tag": "minecraft:logs"
     },
     "T": {
       "item": "minecraft:tnt"
