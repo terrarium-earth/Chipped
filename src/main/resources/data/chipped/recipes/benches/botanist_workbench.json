@@ -7,7 +7,7 @@
   ],
   "key": {
     "x": {
-      "item": "minecraft:crafting_table"
+      "tag": "forge:workbench"
     },
     "y": {
       "item": "minecraft:flower_pot"
@@ -16,7 +16,7 @@
       "tag": "minecraft:wooden_slabs"
     },
     "b": {
-      "item": "minecraft:stick"
+      "tag": "forge:rods/wooden"
 
 
       }
