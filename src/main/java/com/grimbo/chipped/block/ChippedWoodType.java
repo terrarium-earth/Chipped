@@ -1,12 +1,12 @@
 package com.grimbo.chipped.block;
 
 public enum ChippedWoodType {
-        OAK, BIRCH, SPRUCE, JUNGLE, ACACIA, DARK_OAK, WARPED, CRIMSON;
+    OAK, BIRCH, SPRUCE, JUNGLE, ACACIA, DARK_OAK, WARPED, CRIMSON;
 
-        public static final ChippedWoodType[] VALUES = values();
+    public static final ChippedWoodType[] VALUES = values();
 
-        @Override
-        public String toString() {
+    @Override
+    public String toString() {
             return name().toLowerCase();
         }
-    }
+}

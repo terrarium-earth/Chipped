@@ -7,7 +7,7 @@ import com.grimbo.chipped.block.ChippedWoodType;
 import com.grimbo.chipped.block.ChippedWorkbench;
 import com.grimbo.chipped.menus.ChippedMenu;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
-import net.fabricmc.fabric.api.tool.attribute.v1.FabricToolTags;
+import net.fabricmc.fabric.api.registry.FlammableBlockRegistry;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Registry;
 import net.minecraft.core.particles.ParticleTypes;
@@ -36,7 +36,6 @@ import java.util.function.Supplier;
 import static com.grimbo.chipped.registry.ChippedBlockTypes.*;
 
 public class ChippedBlocks {
-
     private static final Properties CRYING_OBSIDIAN_PROPERTIES = FabricBlockSettings.copyOf(Blocks.CRYING_OBSIDIAN);
     private static final Properties HAY_BLOCK_PROPERTIES = FabricBlockSettings.copyOf(Blocks.HAY_BLOCK);
     private static final Properties MELON_PROPERTIES = FabricBlockSettings.copyOf(Blocks.MELON);
@@ -52,7 +51,7 @@ public class ChippedBlocks {
     private static final Properties GLASS_PANE_PROPERTIES = FabricBlockSettings.copyOf(Blocks.GLASS_PANE);
     private static final Properties GLASS_PROPERTIES = FabricBlockSettings.copyOf(Blocks.GLASS);
     private static final Properties WOOL_PROPERTIES = FabricBlockSettings.of(Material.WOOL).strength(0.1F).sound(SoundType.WOOL);
-    private static final Properties LANTERN_PROPERTIES = FabricBlockSettings.copyOf(Blocks.LANTERN).requiresTool().breakByTool(FabricToolTags.PICKAXES, 1);
+    private static final Properties LANTERN_PROPERTIES = FabricBlockSettings.copyOf(Blocks.LANTERN).requiresTool();
     private static final StatePredicate ALWAYS_FALSE_POSITION = (state, world, position) -> false;
     private static final StateArgumentPredicate<EntityType<?>> VALID_SPAWN = (state, world, position, type) -> false;
     protected static final VoxelShape CHONK_LANTERN_SHAPE = Shapes.or(Block.box(2.0D, 0.0D, 2.0D, 14.0D, 1.0D, 14.0D), Block.box(1, 1, 1, 15, 15, 15));
@@ -137,13 +136,12 @@ public class ChippedBlocks {
      * To add blocks:
      * 1. Register the RegistryObject in ChippedBlocks::register with properties (ChippedBlocks::registerBlocks is for any basic blocks that extends Block)
      * 2. Give it a client render if needed in Chipped::clientRender
-     * 3. Add it to the data generators in ChippedDataGenerator
-     * 4. Give it a block name in en_us.json
+     * 3. Give it a block name in en_us.json
      */
     public static void register() {
         // Register Stones
         for (String type : stones18) {
-            registerVanillaBlocksWithMLevel(type, 18, 1);
+            registerVanillaBlocks(type, 18);
         }
 
         registerVanillaBlocks(Blocks.GILDED_BLACKSTONE, "gilded_blackstone", 26);
@@ -166,8 +164,8 @@ public class ChippedBlocks {
         //Register Wools and Carpets
         for (int id = 0; id < 16; ++id) {
             DyeColor color = DyeColor.byId(id);
-            registerVanillaBlocks(color + "_wool", 18);
-            registerBlocks(color + "_carpet", () -> new WoolCarpetBlock(color, WOOL_PROPERTIES) {
+            registerVanillaBlocksFlammable(color + "_wool", 18);
+            registerBlocksFlammable(color + "_carpet", () -> new WoolCarpetBlock(color, WOOL_PROPERTIES) {
             }, 18);
         }
 
@@ -192,13 +190,13 @@ public class ChippedBlocks {
         registerVanillaBlocks(Blocks.CLAY, "clay", 19);
 
         for (ChippedWoodType type : ChippedWoodType.VALUES) {
-            registerBlocks(type + "_planks", () -> new Block(WOOD_PROPERTIES), 18);
+            registerBlocksFlammable(type + "_planks", () -> new Block(WOOD_PROPERTIES), 18);
         }
 
-        registerBlocks("hay_block", () -> new HayBlock(HAY_BLOCK_PROPERTIES), 8);
+        registerBlocksFlammable("hay_block", () -> new HayBlock(HAY_BLOCK_PROPERTIES), 8);
         registerBlocks("melon", () -> new MelonBlock(MELON_PROPERTIES) {
         }, 10);
-        registerBlocks("vine", () -> new VineBlock(VINE_PROPERTIES), 8, VINES);
+        registerBlocksFlammable("vine", () -> new VineBlock(VINE_PROPERTIES), 8, VINES);
 
         Collections.addAll(LANTERNS,
                 register("special_lantern_1", new ChippedUniqueLantern(LANTERN_PROPERTIES, CHONK_LANTERN_SHAPE)),
@@ -250,7 +248,7 @@ public class ChippedBlocks {
 
         //Regular Torches
         for (int i = 1; i <= 9; i++) {
-            WallTorchBlock wallTorch = Registry.register(Registry.BLOCK, new ResourceLocation(Chipped.MOD_ID, "wall_torch_" + i), new WallTorchBlock(TORCH_PROPERTIES, ParticleTypes.FLAME) {
+            WallTorchBlock wallTorch = Registry.register(Registry.BLOCK, new ResourceLocation(Chipped.MOD_ID, "wall_torch_" + i), new WallTorchBlock(TORCH_PROPERTIES, ParticleTypes.FLAME) { //shouldn't this be WALL_TORCH_PROPERTIES? ¯\_(ຈ︿ຈ)_/¯
             });
             TorchBlock torch = Registry.register(Registry.BLOCK, new ResourceLocation(Chipped.MOD_ID, "torch_" + i), new TorchBlock(TORCH_PROPERTIES, ParticleTypes.FLAME) {
             });
@@ -298,18 +296,10 @@ public class ChippedBlocks {
      * @param count How many of the block should be registered, the index is used as the suffix.
      */
     private static void registerVanillaBlocks(String name, int count) {
-        registerVanillaBlocks(Registry.BLOCK.get(new ResourceLocation("minecraft", name)), name, count, 0);
+        registerVanillaBlocks(Registry.BLOCK.get(new ResourceLocation("minecraft", name)), name, count);
     }
-	
-    /**
-     * Only use if a vanilla block counterpart exists, the same properties should be used and there are problems when mining it.
-     *
-     * @param name  	   The registry name to be used, and to infer which vanilla block should be used.
-     * @param count 	   How many of the block should be registered, the index is used as the suffix.
-     * @param miningLevel  The mining Level, to force the ability to be mined with the corresponding pickaxe type.
-     */
-    private static void registerVanillaBlocksWithMLevel(String name, int count, int miningLevel) {
-        registerVanillaBlocks(Registry.BLOCK.get(new ResourceLocation("minecraft", name)), name, count, miningLevel);
+    private static void registerVanillaBlocksFlammable(String name, int count) {
+        registerVanillaBlocksFlammable(Registry.BLOCK.get(new ResourceLocation("minecraft", name)), name, count);
     }
 	
     /**
@@ -320,29 +310,17 @@ public class ChippedBlocks {
      * @param count        How many of the block should be registered, the index is used as the suffix.
      */
     private static void registerVanillaBlocks(Block vanillaBlock, String name, int count) {
-	registerVanillaBlocks(vanillaBlock, name, count, 0);
+        registerBlocks(name, () -> new Block(FabricBlockSettings.copyOf(vanillaBlock)), count);
     }
-	
-    /**
-     * Only use if a vanilla block counterpart exists and the same properties should be used.
-     *
-     * @param vanillaBlock The vanilla equivalent, passed explicitly 'cause explicit > implicit.
-     * @param name         The registry name to be used.
-     * @param count        How many of the block should be registered, the index is used as the suffix.
-     * @param miningLevel  The mining Level, to force the ability to be mined with the corresponding pickaxe type. Only set higher than 0 if testing reveals it to be non minable
-     */
-    private static void registerVanillaBlocks(Block vanillaBlock, String name, int count, int miningLevel) {
-	if(miningLevel!=0){
-        	registerBlocks(name, () -> new Block(FabricBlockSettings.copyOf(vanillaBlock).requiresTool().breakByTool(FabricToolTags.PICKAXES, miningLevel)), count);
-	}
-	else {
-        	registerBlocks(name, () -> new Block(FabricBlockSettings.copyOf(vanillaBlock)), count);
-	}
+    private static void registerVanillaBlocksFlammable(Block vanillaBlock, String name, int count) {
+        registerBlocksFlammable(name, () -> new Block(FabricBlockSettings.copyOf(vanillaBlock)), count);
     }
-
 	
     private static <T extends Block> void registerBlocks(String name, Supplier<T> block, int count) {
         registerBlocks(name, block, count, null);
+    }
+    private static <T extends Block> void registerBlocksFlammable(String name, Supplier<T> block, int count) {
+        registerBlocksFlammable(name, block, count, null);
     }
 
     /**
@@ -358,12 +336,23 @@ public class ChippedBlocks {
             if (list != null) list.add(registered);
         }
     }
+    private static <T extends Block> void registerBlocksFlammable(String name, Supplier<T> block, int count, List<T> list) {
+        for (int i = 1; i <= count; i++) {
+            String newName = name + "_" + i;
+            final T registered = register(newName, block.get());
+            FlammableBlockRegistry.getDefaultInstance().add(registered, 5, 20);
+            if (list != null) list.add(registered);
+        }
+    }
 
-//    private static Block register(String name, Supplier<Block> block) {
-//        Block toReturn = Registry.register(Registry.BLOCK, new ResourceLocation(Chipped.MOD_ID, name), block.get());
-//        Registry.register(Registry.ITEM, new ResourceLocation(Chipped.MOD_ID, name), new BlockItem(block, new Item.Properties().tab(Chipped.CHIPPED)));
-//        return toReturn;
-//    }
+
+/*
+    private static Block register(String name, Supplier<Block> block) {
+        Block toReturn = Registry.register(Registry.BLOCK, new ResourceLocation(Chipped.MOD_ID, name), block.get());
+        Registry.register(Registry.ITEM, new ResourceLocation(Chipped.MOD_ID, name), new BlockItem(block, new Item.Properties().tab(Chipped.CHIPPED)));
+        return toReturn;
+    }
+*/
 
     private static <T extends Block> T register(String name, T block) {
         T toReturn = Registry.register(Registry.BLOCK, new ResourceLocation(Chipped.MOD_ID, name), block);
