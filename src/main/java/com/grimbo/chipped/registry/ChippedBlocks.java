@@ -6,17 +6,16 @@ import com.grimbo.chipped.block.ChippedUniqueLantern;
 import com.grimbo.chipped.block.ChippedWoodType;
 import com.grimbo.chipped.block.ChippedWorkbench;
 import com.grimbo.chipped.menus.ChippedMenu;
+import com.mojang.datafixers.kinds.IdF;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.fabricmc.fabric.api.registry.FlammableBlockRegistry;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Registry;
 import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.data.worldgen.features.TreeFeatures;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.item.BlockItem;
-import net.minecraft.world.item.DyeColor;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.StandingAndWallBlockItem;
+import net.minecraft.world.item.*;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour.Properties;
@@ -40,6 +39,18 @@ public class ChippedBlocks {
     private static final Properties HAY_BLOCK_PROPERTIES = FabricBlockSettings.copyOf(Blocks.HAY_BLOCK);
     private static final Properties MELON_PROPERTIES = FabricBlockSettings.copyOf(Blocks.MELON);
     private static final Properties VINE_PROPERTIES = FabricBlockSettings.copyOf(Blocks.VINE);
+    private static final Properties BROWN_MUSHROOM_PROPERTIES = FabricBlockSettings.copyOf(Blocks.BROWN_MUSHROOM);
+    private static final Properties RED_MUSHROOM_PROPERTIES = FabricBlockSettings.copyOf(Blocks.RED_MUSHROOM);
+    private static final Properties WARPED_FUNGUS_PROPERTIES = FabricBlockSettings.copyOf(Blocks.WARPED_FUNGUS);
+    private static final Properties CRIMSON_FUNGUS_PROPERTIES = FabricBlockSettings.copyOf(Blocks.CRIMSON_FUNGUS);
+    private static final Properties WARPED_ROOTS_PROPERTIES = FabricBlockSettings.copyOf(Blocks.WARPED_ROOTS);
+    private static final Properties CRIMSON_ROOTS_PROPERTIES = FabricBlockSettings.copyOf(Blocks.CRIMSON_ROOTS);
+    private static final Properties NETHER_SPROUTS_PROPERTIES = FabricBlockSettings.copyOf(Blocks.NETHER_SPROUTS);
+    private static final Properties BROWN_MUSHROOM_BLOCK_PROPERTIES = FabricBlockSettings.copyOf(Blocks.BROWN_MUSHROOM_BLOCK);
+    private static final Properties RED_MUSHROOM_BLOCK_PROPERTIES = FabricBlockSettings.copyOf(Blocks.RED_MUSHROOM_BLOCK);
+    private static final Properties COBWEB_PROPERTIES = FabricBlockSettings.copyOf(Blocks.COBWEB);
+    private static final Properties SOUL_SAND_PROPERTIES = FabricBlockSettings.copyOf(Blocks.SOUL_SAND);
+    private static final Properties LILY_PAD_PROPERTIES = FabricBlockSettings.copyOf(Blocks.LILY_PAD);
     private static final Properties REDSTONE_TORCH_PROPERTIES = FabricBlockSettings.copyOf(Blocks.REDSTONE_TORCH);
     private static final Properties REDSTONE_WALL_TORCH_PROPERTIES = FabricBlockSettings.copyOf(Blocks.REDSTONE_WALL_TORCH);
     private static final Properties REDSTONE_LAMP_PROPERTIES = FabricBlockSettings.copyOf(Blocks.REDSTONE_LAMP);
@@ -196,7 +207,35 @@ public class ChippedBlocks {
         registerBlocksFlammable("hay_block", () -> new HayBlock(HAY_BLOCK_PROPERTIES), 8);
         registerBlocks("melon", () -> new MelonBlock(MELON_PROPERTIES) {
         }, 10);
-        registerBlocksFlammable("vine", () -> new VineBlock(VINE_PROPERTIES), 8, VINES);
+        registerBlocksFlammable("vine", () -> new VineBlock(VINE_PROPERTIES), 17, VINES);
+
+        registerBlocks("brown_mushroom", () -> new MushroomBlock(BROWN_MUSHROOM_PROPERTIES, () -> TreeFeatures.HUGE_BROWN_MUSHROOM), 15);
+        registerBlocks("red_mushroom", () -> new MushroomBlock(RED_MUSHROOM_PROPERTIES, () -> TreeFeatures.HUGE_RED_MUSHROOM), 15);
+
+        registerBlocks("warped_fungus", () -> new MushroomBlock(WARPED_FUNGUS_PROPERTIES, () -> TreeFeatures.WARPED_FUNGUS_PLANTED), 14);
+        registerBlocks("crimson_fungus", () -> new MushroomBlock(CRIMSON_FUNGUS_PROPERTIES, () -> TreeFeatures.CRIMSON_FUNGUS_PLANTED), 15);
+
+        registerBlocks("warped_roots", () -> new RootsBlock(WARPED_ROOTS_PROPERTIES) {}, 9);
+        registerBlocks("crimson_roots", () -> new RootsBlock(CRIMSON_ROOTS_PROPERTIES) {}, 14);
+        registerBlocks("nether_sprouts", () -> new NetherSproutsBlock(NETHER_SPROUTS_PROPERTIES), 20);
+
+        registerBlocks("brown_mushroom_block", () -> new HugeMushroomBlock(BROWN_MUSHROOM_BLOCK_PROPERTIES), 24);
+        registerBlocks("red_mushroom_block", () -> new HugeMushroomBlock(RED_MUSHROOM_BLOCK_PROPERTIES), 15);
+
+        registerVanillaBlocks("warped_wart_block", 14);
+        registerVanillaBlocks("nether_wart_block", 13);
+
+        registerBlocks("cobweb", () -> new WebBlock(COBWEB_PROPERTIES), 10);
+
+        registerBlocks("soul_sand", () -> new SoulSandBlock(SOUL_SAND_PROPERTIES), 11);
+
+        //Lilypads require a custom item
+        for (int i = 1; i <= 6; i++) {
+            String name = "lily_pad_" + i;
+            Block block = new WaterlilyBlock(LILY_PAD_PROPERTIES) {};
+            Registry.register(Registry.BLOCK, new ResourceLocation(Chipped.MOD_ID, name), block);
+            Registry.register(Registry.ITEM, new ResourceLocation(Chipped.MOD_ID, name), new WaterLilyBlockItem(block, new Item.Properties().tab(Chipped.CHIPPED)));
+        }
 
         Collections.addAll(LANTERNS,
                 register("special_lantern_1", new ChippedUniqueLantern(LANTERN_PROPERTIES, CHONK_LANTERN_SHAPE)),
@@ -265,6 +304,10 @@ public class ChippedBlocks {
             });
             register("carved_pumpkin_" + pumpkin, new CarvedPumpkinBlock(PUMPKIN_PROPERTIES) {
             });
+        }
+        //Regular Pumpkins register AFTER Special Pumpkins
+        for (int i = 1; i <= 13; i++) {
+            register("pumpkin_" + i, new PumpkinBlock(PUMPKIN_PROPERTIES) {});
         }
 
         //Jack'o'Lantern & Carved Pumpkins
