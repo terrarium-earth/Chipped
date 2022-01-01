@@ -2,7 +2,6 @@ package com.grimbo.chipped;
 
 import com.grimbo.chipped.block.ChippedBlockTypes;
 import com.grimbo.chipped.block.ChippedBlocks;
-import com.grimbo.chipped.block.ChippedLilyPadBlock;
 import com.grimbo.chipped.container.ChippedContainer;
 import com.grimbo.chipped.container.ChippedContainerType;
 import com.grimbo.chipped.container.ChippedScreen;
@@ -13,10 +12,7 @@ import net.minecraft.client.gui.ScreenManager;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.RenderTypeLookup;
 import net.minecraft.inventory.container.ContainerType;
-import net.minecraft.item.DyeColor;
-import net.minecraft.item.ItemGroup;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.SwordItem;
+import net.minecraft.item.*;
 import net.minecraft.util.Direction;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.player.PlayerEvent;
@@ -54,7 +50,8 @@ public class Chipped {
 
 	@SubscribeEvent
 	public void checkHarvest(PlayerEvent.HarvestCheck event) {
-		if (event.getPlayer().getMainHandItem().getItem() instanceof SwordItem && event.getTargetBlock().getBlock() instanceof WebBlock) {
+		Item held = event.getPlayer().getMainHandItem().getItem();
+		if ((held instanceof SwordItem || held instanceof ShearsItem) && event.getTargetBlock().getBlock() instanceof WebBlock) {
 			event.setCanHarvest(true);
 		}
 	}
@@ -86,39 +83,39 @@ public class Chipped {
 		}
 
 		for (RegistryObject<VineBlock> vine : ChippedBlockTypes.VINES) {
-			RenderTypeLookup.setRenderLayer(vine.get(), RenderType.translucent());
+			RenderTypeLookup.setRenderLayer(vine.get(), RenderType.cutout());
 		}
 
 		for (RegistryObject<MushroomBlock> brown_mushroom : ChippedBlockTypes.BROWN_MUSHROOMS) {
-			RenderTypeLookup.setRenderLayer(brown_mushroom.get(), RenderType.translucent());
+			RenderTypeLookup.setRenderLayer(brown_mushroom.get(), RenderType.cutout());
 		}
 
 		for (RegistryObject<MushroomBlock> red_mushroom : ChippedBlockTypes.RED_MUSHROOMS) {
-			RenderTypeLookup.setRenderLayer(red_mushroom.get(), RenderType.translucent());
+			RenderTypeLookup.setRenderLayer(red_mushroom.get(), RenderType.cutout());
 		}
 
 		for (RegistryObject<MushroomBlock> warped_fungus : ChippedBlockTypes.WARPED_FUNGUS) {
-			RenderTypeLookup.setRenderLayer(warped_fungus.get(), RenderType.translucent());
+			RenderTypeLookup.setRenderLayer(warped_fungus.get(), RenderType.cutout());
 		}
 
 		for (RegistryObject<MushroomBlock> crimson_fungus : ChippedBlockTypes.CRIMSON_FUNGUS) {
-			RenderTypeLookup.setRenderLayer(crimson_fungus.get(), RenderType.translucent());
+			RenderTypeLookup.setRenderLayer(crimson_fungus.get(), RenderType.cutout());
 		}
 
 		for (RegistryObject<NetherRootsBlock> warped_roots : ChippedBlockTypes.WARPED_ROOTS) {
-			RenderTypeLookup.setRenderLayer(warped_roots.get(), RenderType.translucent());
+			RenderTypeLookup.setRenderLayer(warped_roots.get(), RenderType.cutout());
 		}
 
 		for (RegistryObject<NetherRootsBlock> crimson_roots : ChippedBlockTypes.CRIMSON_ROOTS) {
-			RenderTypeLookup.setRenderLayer(crimson_roots.get(), RenderType.translucent());
+			RenderTypeLookup.setRenderLayer(crimson_roots.get(), RenderType.cutout());
 		}
 
 		for (RegistryObject<NetherSproutsBlock> nether_sprouts : ChippedBlockTypes.NETHER_SPROUTS) {
-			RenderTypeLookup.setRenderLayer(nether_sprouts.get(), RenderType.translucent());
+			RenderTypeLookup.setRenderLayer(nether_sprouts.get(), RenderType.cutout());
 		}
 
-		for (RegistryObject<ChippedLilyPadBlock> lily_pad : ChippedBlockTypes.LILY_PAD) {
-			RenderTypeLookup.setRenderLayer(lily_pad.get(), RenderType.translucent());
+		for (RegistryObject<LilyPadBlock> lily_pad : ChippedBlockTypes.LILY_PAD) {
+			RenderTypeLookup.setRenderLayer(lily_pad.get(), RenderType.cutout());
 		}
 
 		for (RegistryObject<RedstoneTorchBlock> redstoneTorch : ChippedBlockTypes.REDSTONE_TORCHES) {
