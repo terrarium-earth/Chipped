@@ -18,6 +18,7 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.level.BlockGetter;
+import net.minecraftforge.common.PlantType;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -61,25 +62,25 @@ public class ChippedBlocks {
 
     public static final RegistryObject<Block> BOTANIST_WORKBENCH = register("botanist_workbench",
             () -> new ChippedWorkbench((id, inv, pos) -> new ChippedContainer(id, inv, pos, ChippedContainerType.BOTANIST_WORKBENCH.get(), ChippedSerializer.BOTANIST_WORKBENCH_TYPE, ChippedBlocks.BOTANIST_WORKBENCH.get()),
-            BlockBehaviour.Properties.of(Material.WOOD).strength(1F, 2F).sound(SoundType.WOOD).noOcclusion()
+            BlockBehaviour.Properties.of(Material.WOOD).strength(2.5F).sound(SoundType.WOOD).noOcclusion()
                     .isValidSpawn(VALID_SPAWN).isRedstoneConductor(ALWAYS_FALSE_POSITION)
                     .isSuffocating(ALWAYS_FALSE_POSITION).isViewBlocking(ALWAYS_FALSE_POSITION)));
 
     public static final RegistryObject<Block> GLASSBLOWER = register("glassblower",
             () -> new ChippedWorkbench((id, inv, pos) -> new ChippedContainer(id, inv, pos, ChippedContainerType.GLASSBLOWER.get(), ChippedSerializer.GLASSBLOWER_TYPE, ChippedBlocks.GLASSBLOWER.get()),
-            BlockBehaviour.Properties.of(Material.WOOD).strength(1F, 2F).sound(SoundType.WOOD).noOcclusion()
+            BlockBehaviour.Properties.of(Material.WOOD).strength(2.5F).sound(SoundType.WOOD).noOcclusion()
                     .isValidSpawn(VALID_SPAWN).isRedstoneConductor(ALWAYS_FALSE_POSITION)
                     .isSuffocating(ALWAYS_FALSE_POSITION).isViewBlocking(ALWAYS_FALSE_POSITION)));
 
     public static final RegistryObject<Block> CARPENTERS_TABLE = register("carpenters_table",
             () -> new ChippedWorkbench((id, inv, pos) -> new ChippedContainer(id, inv, pos, ChippedContainerType.CARPENTERS_TABLE.get(), ChippedSerializer.CARPENTERS_TABLE_TYPE, ChippedBlocks.CARPENTERS_TABLE.get()),
-            BlockBehaviour.Properties.of(Material.WOOD).strength(1F, 2F).sound(SoundType.WOOD).noOcclusion()
+            BlockBehaviour.Properties.of(Material.WOOD).strength(2.5F).sound(SoundType.WOOD).noOcclusion()
                     .isValidSpawn(VALID_SPAWN).isRedstoneConductor(ALWAYS_FALSE_POSITION)
                     .isSuffocating(ALWAYS_FALSE_POSITION).isViewBlocking(ALWAYS_FALSE_POSITION)));
 
     public static final RegistryObject<Block> LOOM_TABLE = register("loom_table",
             () -> new ChippedWorkbench((id, inv, pos) -> new ChippedContainer(id, inv, pos, ChippedContainerType.LOOM_TABLE.get(), ChippedSerializer.LOOM_TABLE_TYPE, ChippedBlocks.LOOM_TABLE.get()),
-            BlockBehaviour.Properties.of(Material.WOOD).strength(1F, 2F).sound(SoundType.WOOD).noOcclusion()
+            BlockBehaviour.Properties.of(Material.WOOD).strength(2.5F).sound(SoundType.WOOD).noOcclusion()
                     .isValidSpawn(VALID_SPAWN).isRedstoneConductor(ALWAYS_FALSE_POSITION)
                     .isSuffocating(ALWAYS_FALSE_POSITION).isViewBlocking(ALWAYS_FALSE_POSITION)));
 
@@ -91,7 +92,7 @@ public class ChippedBlocks {
 
     public static final RegistryObject<Block> ALCHEMY_BENCH = register("alchemy_bench",
             () -> new ChippedWorkbench((id, inv, pos) -> new ChippedContainer(id, inv, pos, ChippedContainerType.ALCHEMY_BENCH.get(), ChippedSerializer.ALCHEMY_BENCH_TYPE, ChippedBlocks.ALCHEMY_BENCH.get()),
-            BlockBehaviour.Properties.of(Material.WOOD).strength(1F, 2F).sound(SoundType.WOOD).noOcclusion()
+            BlockBehaviour.Properties.of(Material.WOOD).strength(2.5F).sound(SoundType.WOOD).noOcclusion()
                     .isValidSpawn(VALID_SPAWN).isRedstoneConductor(ALWAYS_FALSE_POSITION)
                     .isSuffocating(ALWAYS_FALSE_POSITION).isViewBlocking(ALWAYS_FALSE_POSITION)));
 
@@ -198,17 +199,21 @@ public class ChippedBlocks {
         registerVanillaBlocks(BenchType.BOTANIST, WARPED_WART_BLOCK, 14);
         registerVanillaBlocks(BenchType.BOTANIST, NETHER_WART_BLOCK, 13);
 
-        final BlockBehaviour.Properties cobwebProperties = BlockBehaviour.Properties.copy(Blocks.COBWEB);
+        final BlockBehaviour.Properties cobwebProperties = BlockBehaviour.Properties.copy(Blocks.COBWEB).strength(4.0F/15F, 4.0F);
         registerBlocks(BenchType.BOTANIST, COBWEBS, () -> new WebBlock(cobwebProperties), 10);
 
         final BlockBehaviour.Properties soulSandProperties = BlockBehaviour.Properties.copy(Blocks.SOUL_SAND);
         registerBlocks(BenchType.ALCHEMY, SOUL_SANDS, () -> new SoulSandBlock(soulSandProperties), 11);
 
-        // Lilypads require a custom item
         final BlockBehaviour.Properties lilyPadProperties = BlockBehaviour.Properties.copy(Blocks.LILY_PAD);
         for (int i = 1; i <= 6; i++) {
             String name = LILY_PAD.getId() + "_" + i;
-            RegistryObject<ChippedLilyPadBlock> lilyPad = BLOCKS.register(name, () -> new ChippedLilyPadBlock(lilyPadProperties));
+            RegistryObject<WaterlilyBlock> lilyPad = BLOCKS.register(name, () -> new WaterlilyBlock(lilyPadProperties) {
+                @Override
+                public PlantType getPlantType(BlockGetter world, BlockPos pos) {
+                    return net.minecraftforge.common.PlantType.WATER;
+                }
+            });
             BlockRegistry.addBlock(BenchType.BOTANIST, LILY_PAD, lilyPad);
             ChippedItems.ITEMS.register(name, () -> new WaterLilyBlockItem(lilyPad.get(), new Item.Properties().tab(Chipped.CHIPPED)));
         }

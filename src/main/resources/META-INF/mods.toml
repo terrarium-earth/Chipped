@@ -12,9 +12,3 @@ credits="Code: Grim, Inforno, CodexAdrian, ThatGravyBoat, MsRandom (Ashh). Textu
 authors="grimbo"
 description='''
 '''
-
-[[dependencies.chipped]]
-modId="ctm"
-mandatory=false
-ordering="NONE"
-side="CLIENT"

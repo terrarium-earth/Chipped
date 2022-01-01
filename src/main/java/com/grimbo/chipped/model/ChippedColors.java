@@ -18,7 +18,7 @@ import java.util.function.Supplier;
 @Mod.EventBusSubscriber(modid = Chipped.MOD_ID, value = Dist.CLIENT, bus = Bus.MOD)
 public class ChippedColors {
 
-	private static final Supplier<Block[]> vines = Suppliers.memoize(() -> ChippedBlockTypes.VINES.getBlocks().subList(0,7).stream().map(RegistryObject::get).toArray(Block[]::new));
+	private static final Supplier<Block[]> vines = Suppliers.memoize(() -> ChippedBlockTypes.VINES.getBlocks().subList(0,8).stream().map(RegistryObject::get).toArray(Block[]::new));
 
 	@SubscribeEvent
 	public static void registerBlockColourHandlers(ColorHandlerEvent.Block event) {

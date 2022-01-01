@@ -17,10 +17,10 @@
     },
     "b": {
       "tag": "forge:rods/wooden"
-      }
-    },
-    "result": {
-      "item": "chipped:botanist_workbench",
-      "count": 1
     }
+  },
+  "result": {
+    "item": "chipped:botanist_workbench",
+    "count": 1
   }
+}

@@ -4,6 +4,7 @@ import java.util.stream.Collectors;
 
 import com.grimbo.chipped.api.BlockRegistry;
 import com.grimbo.chipped.api.ChippedBlockType;
+import com.grimbo.chipped.block.ChippedBlockTypes;
 import com.grimbo.chipped.block.ChippedBlocks;
 
 import net.minecraft.world.level.block.*;

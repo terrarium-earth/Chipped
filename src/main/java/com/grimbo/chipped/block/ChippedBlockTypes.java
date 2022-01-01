@@ -51,7 +51,7 @@ public class ChippedBlockTypes {
     public static final ChippedBlockType<Block> NETHER_WART_BLOCK = new ChippedBlockType<>("nether_wart_block");
     public static final ChippedBlockType<SoulSandBlock> SOUL_SANDS = new ChippedBlockType<>("soul_sand");
 
-    public static final ChippedBlockType<ChippedLilyPadBlock> LILY_PAD = new ChippedBlockType<>("lily_pad");
+    public static final ChippedBlockType<WaterlilyBlock> LILY_PAD = new ChippedBlockType<>("lily_pad");
 
     public static final ChippedBlockType<Block> OBSIDIAN = new ChippedBlockType<>("obsidian");
     public static final ChippedBlockType<Block> CRYING_OBSIDIAN = new ChippedBlockType<>("crying_obsidian");
@@ -74,4 +74,3 @@ public class ChippedBlockTypes {
 
     public static final ChippedBlockType<WebBlock> COBWEBS = new ChippedBlockType<>("cobweb");
 }
-

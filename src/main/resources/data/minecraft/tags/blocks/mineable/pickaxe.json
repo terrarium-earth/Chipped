@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
+    "chipped:mason_table",
     "#chipped:stone",
     "#chipped:granite",
     "#chipped:diorite",
