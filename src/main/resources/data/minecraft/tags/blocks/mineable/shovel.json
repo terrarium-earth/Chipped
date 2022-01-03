@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "#chipped:clay"
+    "#chipped:clay",
+    "#chipped:soul_sand"
   ]
 }

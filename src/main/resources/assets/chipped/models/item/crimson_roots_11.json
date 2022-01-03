@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "chipped:item/crimson_roots/crimson_roots_11"
+  }
+}

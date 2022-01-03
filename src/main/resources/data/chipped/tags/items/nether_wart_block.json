@@ -1,0 +1,19 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:nether_wart_block",
+    "chipped:nether_wart_block_1",
+    "chipped:nether_wart_block_2",
+    "chipped:nether_wart_block_3",
+    "chipped:nether_wart_block_4",
+    "chipped:nether_wart_block_5",
+    "chipped:nether_wart_block_6",
+    "chipped:nether_wart_block_7",
+    "chipped:nether_wart_block_8",
+    "chipped:nether_wart_block_9",
+    "chipped:nether_wart_block_10",
+    "chipped:nether_wart_block_11",
+    "chipped:nether_wart_block_12",
+    "chipped:nether_wart_block_13"
+  ]
+}

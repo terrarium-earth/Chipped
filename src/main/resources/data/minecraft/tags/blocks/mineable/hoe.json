@@ -2,6 +2,8 @@
   "replace": false,
   "values": [
     "#chipped:shroomlight",
-    "#chipped:hay_block"
+    "#chipped:hay_block",
+    "#chipped:warped_wart_block",
+    "#chipped:nether_wart_block"
   ]
 }
