@@ -209,15 +209,15 @@ public class ChippedBlocks {
         }, 10);
         registerBlocksFlammable("vine", () -> new VineBlock(VINE_PROPERTIES), 17, VINES);
 
-        registerBlocks("brown_mushroom", () -> new MushroomBlock(BROWN_MUSHROOM_PROPERTIES, () -> TreeFeatures.HUGE_BROWN_MUSHROOM), 15);
-        registerBlocks("red_mushroom", () -> new MushroomBlock(RED_MUSHROOM_PROPERTIES, () -> TreeFeatures.HUGE_RED_MUSHROOM), 15);
+        registerBlocks("brown_mushroom", () -> new MushroomBlock(BROWN_MUSHROOM_PROPERTIES, () -> TreeFeatures.HUGE_BROWN_MUSHROOM), 15, BROWN_MUSHROOMS);
+        registerBlocks("red_mushroom", () -> new MushroomBlock(RED_MUSHROOM_PROPERTIES, () -> TreeFeatures.HUGE_RED_MUSHROOM), 15, RED_MUSHROOMS);
 
-        registerBlocks("warped_fungus", () -> new MushroomBlock(WARPED_FUNGUS_PROPERTIES, () -> TreeFeatures.WARPED_FUNGUS_PLANTED), 14);
-        registerBlocks("crimson_fungus", () -> new MushroomBlock(CRIMSON_FUNGUS_PROPERTIES, () -> TreeFeatures.CRIMSON_FUNGUS_PLANTED), 15);
+        registerBlocks("warped_fungus", () -> new MushroomBlock(WARPED_FUNGUS_PROPERTIES, () -> TreeFeatures.WARPED_FUNGUS_PLANTED), 14, WARPED_FUNGI);
+        registerBlocks("crimson_fungus", () -> new MushroomBlock(CRIMSON_FUNGUS_PROPERTIES, () -> TreeFeatures.CRIMSON_FUNGUS_PLANTED), 15, CRIMSON_FUNGI);
 
-        registerBlocks("warped_roots", () -> new RootsBlock(WARPED_ROOTS_PROPERTIES) {}, 9);
-        registerBlocks("crimson_roots", () -> new RootsBlock(CRIMSON_ROOTS_PROPERTIES) {}, 14);
-        registerBlocks("nether_sprouts", () -> new NetherSproutsBlock(NETHER_SPROUTS_PROPERTIES), 20);
+        registerBlocks("warped_roots", () -> new RootsBlock(WARPED_ROOTS_PROPERTIES) {}, 9, WARPED_ROOTS);
+        registerBlocks("crimson_roots", () -> new RootsBlock(CRIMSON_ROOTS_PROPERTIES) {}, 14, CRIMSON_ROOTS);
+        registerBlocks("nether_sprouts", () -> new NetherSproutsBlock(NETHER_SPROUTS_PROPERTIES), 20, NETHER_SPROUTS);
 
         registerBlocks("brown_mushroom_block", () -> new HugeMushroomBlock(BROWN_MUSHROOM_BLOCK_PROPERTIES), 24);
         registerBlocks("red_mushroom_block", () -> new HugeMushroomBlock(RED_MUSHROOM_BLOCK_PROPERTIES), 15);
@@ -225,16 +225,17 @@ public class ChippedBlocks {
         registerVanillaBlocks("warped_wart_block", 14);
         registerVanillaBlocks("nether_wart_block", 13);
 
-        registerBlocks("cobweb", () -> new WebBlock(COBWEB_PROPERTIES), 10);
+        registerBlocks("cobweb", () -> new WebBlock(COBWEB_PROPERTIES), 10, COBWEBS);
 
         registerBlocks("soul_sand", () -> new SoulSandBlock(SOUL_SAND_PROPERTIES), 11);
 
         //Lilypads require a custom item
         for (int i = 1; i <= 6; i++) {
             String name = "lily_pad_" + i;
-            Block block = new WaterlilyBlock(LILY_PAD_PROPERTIES) {};
+            WaterlilyBlock block = new WaterlilyBlock(LILY_PAD_PROPERTIES) {};
             Registry.register(Registry.BLOCK, new ResourceLocation(Chipped.MOD_ID, name), block);
             Registry.register(Registry.ITEM, new ResourceLocation(Chipped.MOD_ID, name), new WaterLilyBlockItem(block, new Item.Properties().tab(Chipped.CHIPPED)));
+            LILY_PADS.add(block);
         }
 
         Collections.addAll(LANTERNS,
