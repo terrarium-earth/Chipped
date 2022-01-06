@@ -1,0 +1,15 @@
+{
+  "replace": false,
+  "values": [
+    "#chipped:clay",
+    "#chipped:melon",
+    "#chipped:pumpkin",
+    "#chipped:carved_pumpkin",
+    "#chipped:brown_mushroom",
+    "#chipped:red_mushroom",
+    "#chipped:warped_fungus",
+    "#chipped:crimson_fungus",
+    "#chipped:warped_roots",
+    "#chipped:crimson_roots"
+  ]
+}

@@ -23,4 +23,14 @@ public class ChippedBlockTypes {
 
     public static final List<RedstoneTorchBlock> REDSTONE_TORCHES = new ArrayList<>();
     public static final List<TorchBlock> TORCHES = new ArrayList<>();
+
+    public static final List<MushroomBlock> BROWN_MUSHROOMS = new ArrayList<>();
+    public static final List<MushroomBlock> RED_MUSHROOMS = new ArrayList<>();
+    public static final List<MushroomBlock> WARPED_FUNGI = new ArrayList<>();
+    public static final List<MushroomBlock> CRIMSON_FUNGI = new ArrayList<>();
+    public static final List<RootsBlock> WARPED_ROOTS = new ArrayList<>();
+    public static final List<RootsBlock> CRIMSON_ROOTS = new ArrayList<>();
+    public static final List<NetherSproutsBlock> NETHER_SPROUTS = new ArrayList<>();
+    public static final List<WebBlock> COBWEBS = new ArrayList<>();
+    public static final List<WaterlilyBlock> LILY_PADS = new ArrayList<>();
 }

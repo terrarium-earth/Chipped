@@ -18,7 +18,8 @@
     "Math",
     "SunsetSoup",
     "Valila", 
-    "ArtistMonster"
+    "ArtistMonster",
+    "Crosby"
   ],
   "contact": {
     "homepage": "",
@@ -43,6 +44,6 @@
   "depends": {
     "fabricloader": ">=0.7.4",
     "fabric": "*",
-    "minecraft": "1.17.x"
+    "minecraft": "1.18.x"
   }
 }

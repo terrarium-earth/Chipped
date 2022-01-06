@@ -18,6 +18,8 @@ import net.minecraft.world.level.GrassColor;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockState;
 
+import java.util.List;
+
 public class ChippedClient implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
@@ -26,62 +28,36 @@ public class ChippedClient implements ClientModInitializer {
         BlockRenderLayerMap.INSTANCE.putBlock(ChippedBlocks.ALCHEMY_BENCH, RenderType.cutout());
         BlockRenderLayerMap.INSTANCE.putBlock(ChippedBlocks.MECHANIST_WORKBENCH, RenderType.cutout());
 
-        for (GlassBlock glass : ChippedBlockTypes.GLASSES) {
-            BlockRenderLayerMap.INSTANCE.putBlock(glass, RenderType.cutout());
-        }
+        renderType(ChippedBlockTypes.GLASSES, RenderType.cutout());
+        renderType(ChippedBlockTypes.GLASS_PANES, RenderType.cutout());
 
-        for (IronBarsBlock glass : ChippedBlockTypes.GLASS_PANES) {
-            BlockRenderLayerMap.INSTANCE.putBlock(glass, RenderType.cutout());
-        }
-
-        for (ChippedWoodType wood : ChippedWoodType.VALUES) {
-            for (GlassBlock glass : ChippedBlockTypes.WOOD_GLASSES.get(wood)) {
-                BlockRenderLayerMap.INSTANCE.putBlock(glass, RenderType.cutout());
-            }
-
-            for (IronBarsBlock glass : ChippedBlockTypes.WOOD_GLASS_PANES.get(wood)) {
-                BlockRenderLayerMap.INSTANCE.putBlock(glass, RenderType.cutout());
-            }
+        for (var wood : ChippedWoodType.VALUES) {
+            renderType(ChippedBlockTypes.WOOD_GLASSES.get(wood), RenderType.cutout());
+            renderType(ChippedBlockTypes.WOOD_GLASS_PANES.get(wood), RenderType.cutout());
         }
 
         for (int i = 0; i < 16; i++) {
             DyeColor color = DyeColor.byId(i);
-            for (StainedGlassBlock stainedGlass : ChippedBlockTypes.STAINED_GLASSES.get(color)) {
-                BlockRenderLayerMap.INSTANCE.putBlock(stainedGlass, RenderType.translucent());
-            }
-
-            for (StainedGlassPaneBlock stainedGlassPane : ChippedBlockTypes.STAINED_GLASS_PANES.get(color)) {
-                BlockRenderLayerMap.INSTANCE.putBlock(stainedGlassPane, RenderType.translucent());
-            }
+            renderType(ChippedBlockTypes.STAINED_GLASSES.get(color), RenderType.translucent());
+            renderType(ChippedBlockTypes.STAINED_GLASS_PANES.get(color), RenderType.translucent());
         }
 
-        for (VineBlock vine : ChippedBlockTypes.VINES) {
-            BlockRenderLayerMap.INSTANCE.putBlock(vine, RenderType.translucent());
-        }
-
-        for (RedstoneTorchBlock redstoneTorch : ChippedBlockTypes.REDSTONE_TORCHES) {
-            BlockRenderLayerMap.INSTANCE.putBlock(redstoneTorch, RenderType.cutout());
-        }
-
-        for (RedstoneWallTorchBlock redstoneWallTorch : ChippedBlocks.REDSTONE_WALL_TORCHES) {
-            BlockRenderLayerMap.INSTANCE.putBlock(redstoneWallTorch, RenderType.cutout());
-        }
-
-        for (TorchBlock torch : ChippedBlockTypes.TORCHES) {
-            BlockRenderLayerMap.INSTANCE.putBlock(torch, RenderType.cutout());
-        }
-
-        for (WallTorchBlock wallTorch : ChippedBlocks.WALL_TORCHES) {
-            BlockRenderLayerMap.INSTANCE.putBlock(wallTorch, RenderType.cutout());
-        }
-
-        for (Block lantern : ChippedBlockTypes.LANTERNS) {
-            BlockRenderLayerMap.INSTANCE.putBlock(lantern, RenderType.cutout());
-        }
-
-        for (Block lantern : ChippedBlockTypes.SOUL_LANTERNS) {
-            BlockRenderLayerMap.INSTANCE.putBlock(lantern, RenderType.cutout());
-        }
+        renderType(ChippedBlockTypes.VINES, RenderType.translucent());
+        renderType(ChippedBlockTypes.REDSTONE_TORCHES, RenderType.cutout());
+        renderType(ChippedBlocks.REDSTONE_WALL_TORCHES, RenderType.cutout());
+        renderType(ChippedBlockTypes.TORCHES, RenderType.cutout());
+        renderType(ChippedBlocks.WALL_TORCHES, RenderType.cutout());
+        renderType(ChippedBlockTypes.LANTERNS, RenderType.cutout());
+        renderType(ChippedBlockTypes.SOUL_LANTERNS, RenderType.cutout());
+        renderType(ChippedBlockTypes.BROWN_MUSHROOMS, RenderType.cutout());
+        renderType(ChippedBlockTypes.RED_MUSHROOMS, RenderType.cutout());
+        renderType(ChippedBlockTypes.WARPED_FUNGI, RenderType.cutout());
+        renderType(ChippedBlockTypes.CRIMSON_FUNGI, RenderType.cutout());
+        renderType(ChippedBlockTypes.WARPED_ROOTS, RenderType.cutout());
+        renderType(ChippedBlockTypes.CRIMSON_ROOTS, RenderType.cutout());
+        renderType(ChippedBlockTypes.NETHER_SPROUTS, RenderType.cutout());
+        renderType(ChippedBlockTypes.COBWEBS, RenderType.cutout());
+        renderType(ChippedBlockTypes.LILY_PADS, RenderType.cutout());
 
         final BlockColor grassColourHandler = (state, blockAccess, pos, tintIndex) -> {
             if (blockAccess != null && pos != null) {
@@ -108,5 +84,11 @@ public class ChippedClient implements ClientModInitializer {
         ScreenRegistry.register(ChippedMenuType.masonTable, ChippedScreen::new);
         ScreenRegistry.register(ChippedMenuType.alchemyBench, ChippedScreen::new);
         ScreenRegistry.register(ChippedMenuType.mechanistWorkbench, ChippedScreen::new);
+    }
+
+    private static <T extends Block> void renderType(List<T> blockArrayList, RenderType renderType) {
+        for (var block : blockArrayList) {
+            BlockRenderLayerMap.INSTANCE.putBlock(block, renderType);
+        }
     }
 }

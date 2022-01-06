@@ -1,0 +1,31 @@
+{
+  "replace": false,
+  "values": [
+    "chipped:botanist_workbench",
+    "chipped:glassblower",
+    "chipped:carpenters_table",
+    "chipped:loom_table",
+    "chipped:alchemy_bench",
+    "chipped:mechanist_workbench",
+    "#chipped:oak_planks",
+    "#chipped:birch_planks",
+    "#chipped:spruce_planks",
+    "#chipped:jungle_planks",
+    "#chipped:acacia_planks",
+    "#chipped:dark_oak_planks",
+    "#chipped:warped_planks",
+    "#chipped:crimson_planks",
+    "#chipped:melon",
+    "#chipped:pumpkin",
+    "#chipped:carved_pumpkin",
+    "#chipped:jack_o_lantern",
+    "#chipped:brown_mushroom_block",
+    "#chipped:red_mushroom_block",
+    "#chipped:vine",
+    "#chipped:brown_mushroom",
+    "#chipped:red_mushroom",
+    "#chipped:warped_fungus",
+    "#chipped:crimson_fungus",
+    "#chipped:lily_pad"
+  ]
+}
