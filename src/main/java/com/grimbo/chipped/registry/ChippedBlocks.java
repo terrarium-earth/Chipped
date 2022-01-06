@@ -345,7 +345,7 @@ public class ChippedBlocks {
     private static void registerVanillaBlocksFlammable(String name, int count) {
         registerVanillaBlocksFlammable(Registry.BLOCK.get(new ResourceLocation("minecraft", name)), name, count);
     }
-	
+
     /**
      * Only use if a vanilla block counterpart exists and the same properties should be used.
      *
@@ -359,7 +359,7 @@ public class ChippedBlocks {
     private static void registerVanillaBlocksFlammable(Block vanillaBlock, String name, int count) {
         registerBlocksFlammable(name, () -> new Block(FabricBlockSettings.copyOf(vanillaBlock)), count);
     }
-	
+
     private static <T extends Block> void registerBlocks(String name, Supplier<T> block, int count) {
         registerBlocks(name, block, count, null);
     }
