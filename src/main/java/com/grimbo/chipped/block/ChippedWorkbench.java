@@ -50,7 +50,7 @@ public class ChippedWorkbench extends Block {
 	public ChippedWorkbench(ContainerFactory factory, Properties properties) {
 		super(properties);
 		this.factory = factory;
-		containerName = Suppliers.memoize(() -> new TranslatableComponent("container.chipped." + Registry.BLOCK.getKey(ChippedWorkbench.this).getPath()));
+		this.containerName = Suppliers.memoize(() -> new TranslatableComponent("container.chipped." + Registry.BLOCK.getKey(ChippedWorkbench.this).getPath()));
 		this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH).setValue(MODEL_TYPE, WorkbenchModelType.MAIN));
 	}
 
@@ -72,8 +72,8 @@ public class ChippedWorkbench extends Block {
 	@Override
 	public MenuProvider getMenuProvider(BlockState state, Level worldIn, BlockPos pos) {
 		return new SimpleMenuProvider(
-				(id, inventory, player) -> factory.create(id, inventory, ContainerLevelAccess.create(worldIn, pos)),
-				containerName.get()
+				(id, inventory, player) -> this.factory.create(id, inventory, ContainerLevelAccess.create(worldIn, pos)),
+				this.containerName.get()
 		);
 	}
 

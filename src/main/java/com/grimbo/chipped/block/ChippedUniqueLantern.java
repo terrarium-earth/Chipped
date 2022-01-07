@@ -41,9 +41,9 @@ public class ChippedUniqueLantern extends Block implements SimpleWaterloggedBloc
     public VoxelShape getShape(BlockState state) {
         Direction direction = state.getValue(FACING);
         if (direction == Direction.EAST || direction == Direction.WEST) {
-            return toEast;
+            return this.toEast;
         } else {
-            return toNorth;
+            return this.toNorth;
         }
     }
     @Nullable

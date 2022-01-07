@@ -34,7 +34,7 @@ public record ChippedRecipe(
     @Override
     public boolean matches(Container container, Level level) {
         ItemStack stack = container.getItem(0);
-        for (Tag<Item> tag : tags) {
+        for (Tag<Item> tag : this.tags) {
             if (stack.is(tag)) {
                 return true;
             }
@@ -46,7 +46,7 @@ public record ChippedRecipe(
         ItemStack current = container.getItem(0);
         if (!current.isEmpty()) {
             Item item = current.getItem();
-            return tags.stream()
+            return this.tags.stream()
                     .filter(current::is)
                     .flatMap(tag -> tag.getValues().stream())
                     .filter(value -> value != item)
@@ -112,7 +112,7 @@ public record ChippedRecipe(
                 );
                 tags.add(tag);
             }
-            return new ChippedRecipe(this, recipeId, s, tags, icon);
+            return new ChippedRecipe(this, recipeId, s, tags, this.icon);
         }
 
         public ChippedRecipe fromNetwork(ResourceLocation recipeId, FriendlyByteBuf buffer) {
@@ -127,7 +127,7 @@ public record ChippedRecipe(
                 }
                 tags.add(Tag.fromSet(items));
             }
-            return new ChippedRecipe(this, recipeId, s, tags, icon);
+            return new ChippedRecipe(this, recipeId, s, tags, this.icon);
         }
 
         public void toNetwork(FriendlyByteBuf buffer, ChippedRecipe recipe) {

@@ -72,7 +72,7 @@ public class ChippedScreen extends AbstractContainerScreen<ChippedMenu> {
 	}
 
 	private void renderButtons(PoseStack poseStack, int i, int j, int k, int l, int m) {
-		for(int n = this.startIndex; n < m && n < menu.getResults().size(); ++n) {
+		for(int n = this.startIndex; n < m && n < this.menu.getResults().size(); ++n) {
 			int o = n - this.startIndex;
 			int p = k + o % 4 * 16;
 			int q = o / 4;
@@ -155,11 +155,11 @@ public class ChippedScreen extends AbstractContainerScreen<ChippedMenu> {
 	}
 
 	private boolean isScrollBarActive() {
-		return this.displayRecipes && menu.getResults().size() > 12;
+		return this.displayRecipes && this.menu.getResults().size() > 12;
 	}
 
 	protected int getOffscreenRows() {
-		return (menu.getResults().size() + 4 - 1) / 4 - 3;
+		return (this.menu.getResults().size() + 4 - 1) / 4 - 3;
 	}
 
 	private void containerChanged() {
