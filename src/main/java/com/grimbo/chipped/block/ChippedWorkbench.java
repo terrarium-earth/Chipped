@@ -30,6 +30,7 @@ import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.function.Supplier;
@@ -54,12 +55,12 @@ public class ChippedWorkbench extends Block {
 		this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH).setValue(MODEL_TYPE, WorkbenchModelType.MAIN));
 	}
 
-	public BlockState getStateForPlacement(BlockPlaceContext context) {
+	public BlockState getStateForPlacement(@NotNull BlockPlaceContext context) {
 		return this.defaultBlockState().setValue(FACING, context.getHorizontalDirection().getOpposite());
 	}
 
 	@Override
-	public InteractionResult use(BlockState state, Level worldIn, BlockPos pos, Player player, InteractionHand handIn, BlockHitResult hit) {
+	public InteractionResult use(BlockState state, @NotNull Level worldIn, BlockPos pos, Player player, InteractionHand handIn, BlockHitResult hit) {
 		if (worldIn.isClientSide) {
 			return InteractionResult.SUCCESS;
 		} else {
@@ -78,7 +79,7 @@ public class ChippedWorkbench extends Block {
 	}
 
 	@Override
-	public void playerWillDestroy(Level worldIn, BlockPos pos, BlockState state, Player player) {
+	public void playerWillDestroy(@NotNull Level worldIn, BlockPos pos, BlockState state, Player player) {
 		if (!worldIn.isClientSide) {
 			WorkbenchModelType workbenchModel = state.getValue(MODEL_TYPE);
 			if (workbenchModel == WorkbenchModelType.MAIN) {
@@ -113,7 +114,7 @@ public class ChippedWorkbench extends Block {
 	}
 
 	@Override
-	public VoxelShape getShape(BlockState blockState, BlockGetter blockGetter, BlockPos blockPos, CollisionContext collisionContext) {
+	public VoxelShape getShape(@NotNull BlockState blockState, BlockGetter blockGetter, BlockPos blockPos, CollisionContext collisionContext) {
 		switch (blockState.getValue(FACING)) {
 			case NORTH:
 				return WORKBENCH_NORTH_SHAPE;
@@ -137,17 +138,17 @@ public class ChippedWorkbench extends Block {
 	}
 
 	@Override
-	public BlockState rotate(BlockState state, Rotation rot) {
+	public BlockState rotate(@NotNull BlockState state, @NotNull Rotation rot) {
 		return state.setValue(FACING, rot.rotate(state.getValue(FACING)));
 	}
 
 	@Override
-	protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
+	protected void createBlockStateDefinition(StateDefinition.@NotNull Builder<Block, BlockState> builder) {
 		builder.add(FACING, MODEL_TYPE);
 	}
 
 	@Deprecated
-	public boolean canSurvive(BlockState state, Level worldIn, BlockPos pos) {
+	public boolean canSurvive(@NotNull BlockState state, @NotNull Level worldIn, @NotNull BlockPos pos) {
 		BlockPos otherpos = pos.relative(state.getValue(FACING).getClockWise());
 		return worldIn.getBlockState(otherpos).getMaterial().isReplaceable();
 	}
@@ -167,12 +168,12 @@ public class ChippedWorkbench extends Block {
 		MAIN, SIDE;
 
 		@Override
-		public String getSerializedName() {
+		public @NotNull String getSerializedName() {
 			return name().toLowerCase();
 		}
 
 		@Override
-		public String toString() {
+		public @NotNull String toString() {
 			return getSerializedName();
 		}
 	}

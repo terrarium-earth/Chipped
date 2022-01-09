@@ -10,7 +10,8 @@
     "Inforno",
     "CodexAdrian",
     "Ashley",
-    "ThatGravyBoat"
+    "ThatGravyBoat",
+    "Crosby"
   ],
   "contributors": [
     "Kekie6",
@@ -18,8 +19,7 @@
     "Math",
     "SunsetSoup",
     "Valila", 
-    "ArtistMonster",
-    "Crosby"
+    "ArtistMonster"
   ],
   "contact": {
     "homepage": "",
@@ -39,8 +39,6 @@
     ],
     "rei_plugins": [
       "com.grimbo.chipped.compat.REIChippedPlugin"
-    ],
-    "rrp:pregen": [
     ]
   },
   "depends": {

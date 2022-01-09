@@ -6,7 +6,6 @@ import com.grimbo.chipped.block.ChippedUniqueLantern;
 import com.grimbo.chipped.block.ChippedWoodType;
 import com.grimbo.chipped.block.ChippedWorkbench;
 import com.grimbo.chipped.menus.ChippedMenu;
-import com.mojang.datafixers.kinds.IdF;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.fabricmc.fabric.api.registry.FlammableBlockRegistry;
 import net.minecraft.core.BlockPos;
@@ -26,6 +25,7 @@ import net.minecraft.world.level.material.Material;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -321,7 +321,7 @@ public class ChippedBlocks {
     }
 
     //Registries
-    private static void registerSpecialLantern(List<Block> list, String name, VoxelShape hangingShape, VoxelShape normalShape, int... indices) {
+    private static void registerSpecialLantern(List<Block> list, String name, VoxelShape hangingShape, VoxelShape normalShape, int @NotNull ... indices) {
         for (int i : indices) {
             LanternBlock lantern = register(name + "_" + i, new LanternBlock(LANTERN_PROPERTIES) {
                 @Override

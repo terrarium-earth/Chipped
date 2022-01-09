@@ -15,8 +15,9 @@ import net.minecraft.client.renderer.BiomeColors;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.level.GrassColor;
-import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 
@@ -86,7 +87,7 @@ public class ChippedClient implements ClientModInitializer {
         ScreenRegistry.register(ChippedMenuType.mechanistWorkbench, ChippedScreen::new);
     }
 
-    private static <T extends Block> void renderType(List<T> blockArrayList, RenderType renderType) {
+    private static <T extends Block> void renderType(@NotNull List<T> blockArrayList, RenderType renderType) {
         for (var block : blockArrayList) {
             BlockRenderLayerMap.INSTANCE.putBlock(block, renderType);
         }

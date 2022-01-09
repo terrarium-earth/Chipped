@@ -19,6 +19,7 @@ import net.minecraft.tags.Tag;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.Block;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.Collections;
 import java.util.List;
@@ -71,12 +72,12 @@ public class ChippedRecipeCategory implements DisplayCategory<ChippedRecipeCateg
             CategoryIdentifier<FlattenedRecipe> category
     ) implements Display {
         @Override
-        public List<EntryIngredient> getInputEntries() {
+        public @NotNull List<EntryIngredient> getInputEntries() {
             return Collections.singletonList(EntryIngredient.of(this.tag.getValues().stream().map(item -> EntryStack.of(VanillaEntryTypes.ITEM, new ItemStack(item))).collect(Collectors.toList())));
         }
 
         @Override
-        public List<EntryIngredient> getOutputEntries() {
+        public @NotNull List<EntryIngredient> getOutputEntries() {
             return Collections.singletonList(EntryIngredient.of(EntryStack.of(VanillaEntryTypes.ITEM, this.result)));
         }
 
