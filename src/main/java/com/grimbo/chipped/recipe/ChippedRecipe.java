@@ -76,10 +76,12 @@ public record ChippedRecipe(
         return true;
     }
 
+    @Override
     public String getGroup() {
         return group;
     }
 
+    @Override
     public @NotNull ItemStack getToastSymbol() {
         return new ItemStack(icon);
     }
@@ -100,6 +102,7 @@ public record ChippedRecipe(
     }
 
     public record Serializer(RecipeType<?> type, Block icon) implements RecipeSerializer<ChippedRecipe> {
+        @Override
         public @NotNull ChippedRecipe fromJson(ResourceLocation recipeId, JsonObject json) {
             String s = GsonHelper.getAsString(json, "group", "");
             List<Tag<Item>> tags = new ArrayList<>();
@@ -116,6 +119,7 @@ public record ChippedRecipe(
             return new ChippedRecipe(this, recipeId, s, tags, this.icon);
         }
 
+        @Override
         public @NotNull ChippedRecipe fromNetwork(ResourceLocation recipeId, @NotNull FriendlyByteBuf buffer) {
             String s = buffer.readUtf(32767);
             int tagCount = buffer.readVarInt();
@@ -131,6 +135,7 @@ public record ChippedRecipe(
             return new ChippedRecipe(this, recipeId, s, tags, this.icon);
         }
 
+        @Override
         public void toNetwork(@NotNull FriendlyByteBuf buffer, @NotNull ChippedRecipe recipe) {
             buffer.writeUtf(recipe.group);
             buffer.writeVarInt(recipe.tags.size());

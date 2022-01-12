@@ -47,14 +47,16 @@ public class ChippedUniqueLantern extends Block implements SimpleWaterloggedBloc
             return this.toNorth;
         }
     }
+
     @Nullable
-    public BlockState getStateForPlacement (@NotNull BlockPlaceContext context) {
+    @Override
+    public BlockState getStateForPlacement(@NotNull BlockPlaceContext context) {
         BlockState blockstate = this.defaultBlockState();
         Level level = context.getLevel();
         BlockPos blockpos = context.getClickedPos();
-        Direction[] adirection = context.getNearestLookingDirections();
+        Direction[] directions = context.getNearestLookingDirections();
 
-        for(Direction direction : adirection) {
+        for (var direction : directions) {
             if (direction.getAxis().isHorizontal()) {
                 Direction direction1 = direction.getOpposite();
                 blockstate = blockstate.setValue(FACING, direction1);
@@ -66,6 +68,7 @@ public class ChippedUniqueLantern extends Block implements SimpleWaterloggedBloc
         return null;
     }
 
+    @Override
     protected void createBlockStateDefinition(StateDefinition.@NotNull Builder<Block, BlockState> builder) {
         builder.add(FACING, BlockStateProperties.WATERLOGGED);
     }

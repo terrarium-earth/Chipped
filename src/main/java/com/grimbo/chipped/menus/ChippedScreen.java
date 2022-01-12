@@ -29,11 +29,13 @@ public class ChippedScreen extends AbstractContainerScreen<ChippedMenu> {
 		--this.titleLabelY;
 	}
 
+	@Override
 	public void render(PoseStack poseStack, int i, int j, float f) {
 		super.render(poseStack, i, j, f);
 		this.renderTooltip(poseStack, i, j);
 	}
 
+	@Override
 	protected void renderBg(PoseStack poseStack, float f, int i, int j) {
 		this.renderBackground(poseStack);
 		RenderSystem.setShader(GameRenderer::getPositionTexShader);
@@ -51,6 +53,7 @@ public class ChippedScreen extends AbstractContainerScreen<ChippedMenu> {
 		this.renderRecipes(n, o, p);
 	}
 
+	@Override
 	protected void renderTooltip(PoseStack poseStack, int i, int j) {
 		super.renderTooltip(poseStack, i, j);
 		if (this.displayRecipes) {
@@ -102,6 +105,7 @@ public class ChippedScreen extends AbstractContainerScreen<ChippedMenu> {
 
 	}
 
+	@Override
 	public boolean mouseClicked(double d, double e, int i) {
 		this.scrolling = false;
 		if (this.displayRecipes) {
@@ -130,6 +134,7 @@ public class ChippedScreen extends AbstractContainerScreen<ChippedMenu> {
 		return super.mouseClicked(d, e, i);
 	}
 
+	@Override
 	public boolean mouseDragged(double d, double e, int i, double f, double g) {
 		if (this.scrolling && this.isScrollBarActive()) {
 			int j = this.topPos + 14;
@@ -143,6 +148,7 @@ public class ChippedScreen extends AbstractContainerScreen<ChippedMenu> {
 		}
 	}
 
+	@Override
 	public boolean mouseScrolled(double d, double e, double f) {
 		if (this.isScrollBarActive()) {
 			int i = this.getOffscreenRows();

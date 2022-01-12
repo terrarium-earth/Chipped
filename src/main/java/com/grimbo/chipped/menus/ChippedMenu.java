@@ -121,6 +121,7 @@ public class ChippedMenu extends AbstractContainerMenu {
 	@Override
 	public boolean stillValid(Player player) { return stillValid(this.access, player, this.blockWorkbench); }
 
+	@Override
 	public boolean clickMenuButton(Player player, int index) {
 		if (this.isValidRecipeIndex(index)) {
 			this.selectedRecipeIndex.set(index);
@@ -181,6 +182,7 @@ public class ChippedMenu extends AbstractContainerMenu {
 		return slot.container != this.resultContainer && super.canTakeItemForPickAll(stack, slot);
 	}
 
+	@Override
 	public ItemStack quickMoveStack(Player player, int i) {
 		ItemStack itemStack = ItemStack.EMPTY;
 		Slot slot = (Slot)this.slots.get(i);
