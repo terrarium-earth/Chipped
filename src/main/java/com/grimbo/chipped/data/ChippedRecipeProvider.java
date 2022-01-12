@@ -39,7 +39,6 @@ public class ChippedRecipeProvider extends RecipeProvider {
 	}
 
 	private record Result(Collection<String> tags, RegistryObject<RecipeSerializer<?>> serializer) implements FinishedRecipe {
-
 		@Override
 		public void serializeRecipeData(JsonObject json) {
 			JsonArray array = new JsonArray();

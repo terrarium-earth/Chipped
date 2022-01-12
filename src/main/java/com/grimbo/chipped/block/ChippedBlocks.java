@@ -346,7 +346,7 @@ public class ChippedBlocks {
     }
 
     private static void registerVanillaBlocks(BenchType bench, ChippedBlockType<Block> type, int count) {
-        registerVanillaBlocks(bench, ForgeRegistries.BLOCKS.getValue(new ResourceLocation("minecraft", type.getId())), type, count);
+        registerVanillaBlocks(bench, ForgeRegistries.BLOCKS.getValue(new ResourceLocation("minecraft", type.getId().getPath())), type, count);
     }
 
     private static void registerVanillaBlocks(BenchType bench, Block vanillaBlock, ChippedBlockType<Block> type, int count) {
@@ -354,7 +354,7 @@ public class ChippedBlocks {
     }
 
     private static <T extends Block> void registerBlocks(BenchType bench, ChippedBlockType<T> type, Supplier<T> block, int count) {
-        registerBlocks(bench, type, type.getId(), block, count);
+        registerBlocks(bench, type, type.getId().getPath(), block, count);
     }
 
     private static <T extends Block> void registerBlocks(BenchType bench, ChippedBlockType<T> type, String name, Supplier<T> block, int count) {

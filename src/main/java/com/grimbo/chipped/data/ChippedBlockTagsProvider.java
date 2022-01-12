@@ -32,7 +32,8 @@ public class ChippedBlockTagsProvider extends BlockTagsProvider {
 	protected void addTags() {
 		//All blocks with a vanilla variant
 		for (ChippedBlockType<Block> type : BlockRegistry.getBlockTypes()) {
-			Block vanillaBlock = ForgeRegistries.BLOCKS.getValue(new ResourceLocation(type.getId()));
+			// FIXME this should not just use minecraft:$path to get the vanilla block.
+			Block vanillaBlock = ForgeRegistries.BLOCKS.getValue(new ResourceLocation(type.getId().getPath()));
 			if (vanillaBlock != null && vanillaBlock != Blocks.AIR) {
 				TagAppender<Block> tag = tag(type.getBlockTag());
 				tag.add(vanillaBlock);
