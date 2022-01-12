@@ -87,7 +87,7 @@ public class ChippedClient implements ClientModInitializer {
         ScreenRegistry.register(ChippedMenuType.mechanistWorkbench, ChippedScreen::new);
     }
 
-    private static <T extends Block> void renderType(@NotNull List<T> blockArrayList, RenderType renderType) {
+    private static <T extends Block> void renderType(List<T> blockArrayList, RenderType renderType) {
         for (var block : blockArrayList) {
             BlockRenderLayerMap.INSTANCE.putBlock(block, renderType);
         }

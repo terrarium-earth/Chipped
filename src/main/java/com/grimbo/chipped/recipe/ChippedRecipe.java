@@ -33,7 +33,7 @@ public record ChippedRecipe(
         Block icon
 ) implements Recipe<Container> {
     @Override
-    public boolean matches(@NotNull Container container, Level level) {
+    public boolean matches(Container container, Level level) {
         ItemStack stack = container.getItem(0);
         for (Tag<Item> tag : this.tags) {
             if (stack.is(tag)) {
@@ -43,7 +43,7 @@ public record ChippedRecipe(
         return false;
     }
 
-    public Stream<ItemStack> getResults(@NotNull Container container) {
+    public Stream<ItemStack> getResults(Container container) {
         ItemStack current = container.getItem(0);
         if (!current.isEmpty()) {
             Item item = current.getItem();
@@ -82,7 +82,7 @@ public record ChippedRecipe(
     }
 
     @Override
-    public @NotNull ItemStack getToastSymbol() {
+    public ItemStack getToastSymbol() {
         return new ItemStack(icon);
     }
 
@@ -103,7 +103,7 @@ public record ChippedRecipe(
 
     public record Serializer(RecipeType<?> type, Block icon) implements RecipeSerializer<ChippedRecipe> {
         @Override
-        public @NotNull ChippedRecipe fromJson(ResourceLocation recipeId, JsonObject json) {
+        public ChippedRecipe fromJson(ResourceLocation recipeId, JsonObject json) {
             String s = GsonHelper.getAsString(json, "group", "");
             List<Tag<Item>> tags = new ArrayList<>();
             JsonArray tagArray = GsonHelper.getAsJsonArray(json, "tags");
@@ -120,7 +120,7 @@ public record ChippedRecipe(
         }
 
         @Override
-        public @NotNull ChippedRecipe fromNetwork(ResourceLocation recipeId, @NotNull FriendlyByteBuf buffer) {
+        public ChippedRecipe fromNetwork(ResourceLocation recipeId, FriendlyByteBuf buffer) {
             String s = buffer.readUtf(32767);
             int tagCount = buffer.readVarInt();
             List<Tag<Item>> tags = new ArrayList<>(tagCount);
@@ -136,7 +136,7 @@ public record ChippedRecipe(
         }
 
         @Override
-        public void toNetwork(@NotNull FriendlyByteBuf buffer, @NotNull ChippedRecipe recipe) {
+        public void toNetwork(FriendlyByteBuf buffer, ChippedRecipe recipe) {
             buffer.writeUtf(recipe.group);
             buffer.writeVarInt(recipe.tags.size());
             for (Tag<Item> tag : recipe.tags) {

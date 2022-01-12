@@ -72,12 +72,12 @@ public class ChippedRecipeCategory implements DisplayCategory<ChippedRecipeCateg
             CategoryIdentifier<FlattenedRecipe> category
     ) implements Display {
         @Override
-        public @NotNull List<EntryIngredient> getInputEntries() {
+        public List<EntryIngredient> getInputEntries() {
             return Collections.singletonList(EntryIngredient.of(this.tag.getValues().stream().map(item -> EntryStack.of(VanillaEntryTypes.ITEM, new ItemStack(item))).collect(Collectors.toList())));
         }
 
         @Override
-        public @NotNull List<EntryIngredient> getOutputEntries() {
+        public List<EntryIngredient> getOutputEntries() {
             return Collections.singletonList(EntryIngredient.of(EntryStack.of(VanillaEntryTypes.ITEM, this.result)));
         }
 

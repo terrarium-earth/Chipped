@@ -47,14 +47,14 @@ public class REIChippedPlugin implements REIClientPlugin {
         registerRecipes(recipeManager, registry, ChippedSerializer.MECHANIST_WORKBENCH_TYPE, ChippedBlocks.MECHANIST_WORKBENCH);
     }
 
-    private void registerRecipes(@NotNull RecipeManager recipeManager, DisplayRegistry registry, RecipeType<ChippedRecipe> type, Block block) {
+    private void registerRecipes(RecipeManager recipeManager, DisplayRegistry registry, RecipeType<ChippedRecipe> type, Block block) {
         final ResourceLocation category = Registry.BLOCK.getKey(block);
         for (ChippedRecipeCategory.FlattenedRecipe recipe : flatten(recipeManager.getAllRecipesFor(type), CategoryIdentifier.of(category))) {
             registry.add(recipe);
         }
     }
 
-    private static @NotNull List<ChippedRecipeCategory.FlattenedRecipe> flatten(@NotNull Collection<ChippedRecipe> recipes, CategoryIdentifier<ChippedRecipeCategory.FlattenedRecipe> category) {
+    private static List<ChippedRecipeCategory.FlattenedRecipe> flatten(Collection<ChippedRecipe> recipes, CategoryIdentifier<ChippedRecipeCategory.FlattenedRecipe> category) {
         List<ChippedRecipeCategory.FlattenedRecipe> flattenedRecipes = new ArrayList<>();
         for (ChippedRecipe recipe : recipes) {
             for (Tag<Item> tag : recipe.tags()) {

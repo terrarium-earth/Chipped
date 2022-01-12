@@ -321,7 +321,7 @@ public class ChippedBlocks {
     }
 
     //Registries
-    private static void registerSpecialLantern(List<Block> list, String name, VoxelShape hangingShape, VoxelShape normalShape, int @NotNull ... indices) {
+    private static void registerSpecialLantern(List<Block> list, String name, VoxelShape hangingShape, VoxelShape normalShape, int... indices) {
         for (int i : indices) {
             LanternBlock lantern = register(name + "_" + i, new LanternBlock(LANTERN_PROPERTIES) {
                 @Override

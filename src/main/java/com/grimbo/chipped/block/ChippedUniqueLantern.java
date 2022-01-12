@@ -39,7 +39,7 @@ public class ChippedUniqueLantern extends Block implements SimpleWaterloggedBloc
         return getShape(blockState);
     }
 
-    public VoxelShape getShape(@NotNull BlockState state) {
+    public VoxelShape getShape(BlockState state) {
         Direction direction = state.getValue(FACING);
         if (direction == Direction.EAST || direction == Direction.WEST) {
             return this.toEast;
@@ -50,7 +50,7 @@ public class ChippedUniqueLantern extends Block implements SimpleWaterloggedBloc
 
     @Nullable
     @Override
-    public BlockState getStateForPlacement(@NotNull BlockPlaceContext context) {
+    public BlockState getStateForPlacement(BlockPlaceContext context) {
         BlockState blockstate = this.defaultBlockState();
         Level level = context.getLevel();
         BlockPos blockpos = context.getClickedPos();
@@ -69,7 +69,7 @@ public class ChippedUniqueLantern extends Block implements SimpleWaterloggedBloc
     }
 
     @Override
-    protected void createBlockStateDefinition(StateDefinition.@NotNull Builder<Block, BlockState> builder) {
+    protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
         builder.add(FACING, BlockStateProperties.WATERLOGGED);
     }
 }

@@ -49,7 +49,7 @@ public class ChippedMenu extends AbstractContainerMenu {
 		this(id, inventory, menuType, recipeType, ContainerLevelAccess.NULL, block);
 	}
 
-	public ChippedMenu(int id, @NotNull Inventory inventory, MenuType<ChippedMenu> menuType, RecipeType<ChippedRecipe> recipeType, ContainerLevelAccess access, Block block) {
+	public ChippedMenu(int id, Inventory inventory, MenuType<ChippedMenu> menuType, RecipeType<ChippedRecipe> recipeType, ContainerLevelAccess access, Block block) {
 		super(menuType, id);
 		this.selectedRecipeIndex = DataSlot.standalone();
 		this.slotUpdateListener = () -> {
@@ -144,7 +144,7 @@ public class ChippedMenu extends AbstractContainerMenu {
 		}
 	}
 
-	private void setupRecipeList(Container container, @NotNull ItemStack stack) {
+	private void setupRecipeList(Container container, ItemStack stack) {
 		this.results = null;
 		this.selectedRecipeIndex.set(-1);
 		this.resultSlot.set(ItemStack.EMPTY);

@@ -8,7 +8,7 @@ public enum ChippedWoodType {
     public static final ChippedWoodType[] VALUES = values();
 
     @Override
-    public @NotNull String toString() {
+    public String toString() {
             return name().toLowerCase();
         }
 }
