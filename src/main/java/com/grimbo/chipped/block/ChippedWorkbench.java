@@ -22,6 +22,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
@@ -30,6 +31,7 @@ import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.function.Supplier;
@@ -50,10 +52,11 @@ public class ChippedWorkbench extends Block {
 	public ChippedWorkbench(ContainerFactory factory, Properties properties) {
 		super(properties);
 		this.factory = factory;
-		containerName = Suppliers.memoize(() -> new TranslatableComponent("container.chipped." + Registry.BLOCK.getKey(ChippedWorkbench.this).getPath()));
+		this.containerName = Suppliers.memoize(() -> new TranslatableComponent("container.chipped." + Registry.BLOCK.getKey(ChippedWorkbench.this).getPath()));
 		this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH).setValue(MODEL_TYPE, WorkbenchModelType.MAIN));
 	}
 
+	@Override
 	public BlockState getStateForPlacement(BlockPlaceContext context) {
 		return this.defaultBlockState().setValue(FACING, context.getHorizontalDirection().getOpposite());
 	}
@@ -72,8 +75,8 @@ public class ChippedWorkbench extends Block {
 	@Override
 	public MenuProvider getMenuProvider(BlockState state, Level worldIn, BlockPos pos) {
 		return new SimpleMenuProvider(
-				(id, inventory, player) -> factory.create(id, inventory, ContainerLevelAccess.create(worldIn, pos)),
-				containerName.get()
+				(id, inventory, player) -> this.factory.create(id, inventory, ContainerLevelAccess.create(worldIn, pos)),
+				this.containerName.get()
 		);
 	}
 
@@ -114,16 +117,12 @@ public class ChippedWorkbench extends Block {
 
 	@Override
 	public VoxelShape getShape(BlockState blockState, BlockGetter blockGetter, BlockPos blockPos, CollisionContext collisionContext) {
-		switch (blockState.getValue(FACING)) {
-			case NORTH:
-				return WORKBENCH_NORTH_SHAPE;
-			case SOUTH:
-				return WORKBENCH_SOUTH_SHAPE;
-			case WEST:
-				return WORKBENCH_WEST_SHAPE;
-			default:
-				return WORKBENCH_EAST_SHAPE;
-		}
+		return switch (blockState.getValue(FACING)) {
+			case NORTH -> WORKBENCH_NORTH_SHAPE;
+			case SOUTH -> WORKBENCH_SOUTH_SHAPE;
+			case WEST -> WORKBENCH_WEST_SHAPE;
+			default -> WORKBENCH_EAST_SHAPE;
+		};
 	}
 
 	@Override
@@ -146,15 +145,15 @@ public class ChippedWorkbench extends Block {
 		builder.add(FACING, MODEL_TYPE);
 	}
 
-	@Deprecated
-	public boolean canSurvive(BlockState state, Level worldIn, BlockPos pos) {
+	@Override
+	public boolean canSurvive(BlockState state, LevelReader levelReader, BlockPos pos) {
 		BlockPos otherpos = pos.relative(state.getValue(FACING).getClockWise());
-		return worldIn.getBlockState(otherpos).getMaterial().isReplaceable();
+		return levelReader.getBlockState(otherpos).getMaterial().isReplaceable();
 	}
 
-	@Deprecated
+	@Override
 	@Environment(EnvType.CLIENT)
-	public float getShadeBrightness(BlockState state, Level worldIn, BlockPos pos) {
+	public float getShadeBrightness(BlockState state, BlockGetter blockGetter, BlockPos pos) {
 		return 1;
 	}
 

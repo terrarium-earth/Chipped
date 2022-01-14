@@ -19,6 +19,7 @@ import net.minecraft.tags.Tag;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.Block;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.Collections;
 import java.util.List;
@@ -29,13 +30,13 @@ public class ChippedRecipeCategory implements DisplayCategory<ChippedRecipeCateg
     private final ItemStack icon;
 
 	public ChippedRecipeCategory(Block block) {
-		id = CategoryIdentifier.of(Registry.BLOCK.getKey(block));
-        icon = new ItemStack(block);
+        this.id = CategoryIdentifier.of(Registry.BLOCK.getKey(block));
+        this.icon = new ItemStack(block);
 	}
 
     @Override
     public Renderer getIcon() {
-        return EntryStack.of(VanillaEntryTypes.ITEM, icon);
+        return EntryStack.of(VanillaEntryTypes.ITEM, this.icon);
     }
 
     @Override
@@ -72,17 +73,17 @@ public class ChippedRecipeCategory implements DisplayCategory<ChippedRecipeCateg
     ) implements Display {
         @Override
         public List<EntryIngredient> getInputEntries() {
-            return Collections.singletonList(EntryIngredient.of(tag.getValues().stream().map(item -> EntryStack.of(VanillaEntryTypes.ITEM, new ItemStack(item))).collect(Collectors.toList())));
+            return Collections.singletonList(EntryIngredient.of(this.tag.getValues().stream().map(item -> EntryStack.of(VanillaEntryTypes.ITEM, new ItemStack(item))).collect(Collectors.toList())));
         }
 
         @Override
         public List<EntryIngredient> getOutputEntries() {
-            return Collections.singletonList(EntryIngredient.of(EntryStack.of(VanillaEntryTypes.ITEM, result)));
+            return Collections.singletonList(EntryIngredient.of(EntryStack.of(VanillaEntryTypes.ITEM, this.result)));
         }
 
         @Override
         public CategoryIdentifier<?> getCategoryIdentifier() {
-            return category;
+            return this.category;
         }
     }
 }

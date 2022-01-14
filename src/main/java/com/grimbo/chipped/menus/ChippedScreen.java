@@ -29,11 +29,13 @@ public class ChippedScreen extends AbstractContainerScreen<ChippedMenu> {
 		--this.titleLabelY;
 	}
 
+	@Override
 	public void render(PoseStack poseStack, int i, int j, float f) {
 		super.render(poseStack, i, j, f);
 		this.renderTooltip(poseStack, i, j);
 	}
 
+	@Override
 	protected void renderBg(PoseStack poseStack, float f, int i, int j) {
 		this.renderBackground(poseStack);
 		RenderSystem.setShader(GameRenderer::getPositionTexShader);
@@ -51,6 +53,7 @@ public class ChippedScreen extends AbstractContainerScreen<ChippedMenu> {
 		this.renderRecipes(n, o, p);
 	}
 
+	@Override
 	protected void renderTooltip(PoseStack poseStack, int i, int j) {
 		super.renderTooltip(poseStack, i, j);
 		if (this.displayRecipes) {
@@ -72,7 +75,7 @@ public class ChippedScreen extends AbstractContainerScreen<ChippedMenu> {
 	}
 
 	private void renderButtons(PoseStack poseStack, int i, int j, int k, int l, int m) {
-		for(int n = this.startIndex; n < m && n < menu.getResults().size(); ++n) {
+		for(int n = this.startIndex; n < m && n < this.menu.getResults().size(); ++n) {
 			int o = n - this.startIndex;
 			int p = k + o % 4 * 16;
 			int q = o / 4;
@@ -102,6 +105,7 @@ public class ChippedScreen extends AbstractContainerScreen<ChippedMenu> {
 
 	}
 
+	@Override
 	public boolean mouseClicked(double d, double e, int i) {
 		this.scrolling = false;
 		if (this.displayRecipes) {
@@ -130,6 +134,7 @@ public class ChippedScreen extends AbstractContainerScreen<ChippedMenu> {
 		return super.mouseClicked(d, e, i);
 	}
 
+	@Override
 	public boolean mouseDragged(double d, double e, int i, double f, double g) {
 		if (this.scrolling && this.isScrollBarActive()) {
 			int j = this.topPos + 14;
@@ -143,6 +148,7 @@ public class ChippedScreen extends AbstractContainerScreen<ChippedMenu> {
 		}
 	}
 
+	@Override
 	public boolean mouseScrolled(double d, double e, double f) {
 		if (this.isScrollBarActive()) {
 			int i = this.getOffscreenRows();
@@ -155,11 +161,11 @@ public class ChippedScreen extends AbstractContainerScreen<ChippedMenu> {
 	}
 
 	private boolean isScrollBarActive() {
-		return this.displayRecipes && menu.getResults().size() > 12;
+		return this.displayRecipes && this.menu.getResults().size() > 12;
 	}
 
 	protected int getOffscreenRows() {
-		return (menu.getResults().size() + 4 - 1) / 4 - 3;
+		return (this.menu.getResults().size() + 4 - 1) / 4 - 3;
 	}
 
 	private void containerChanged() {

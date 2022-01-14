@@ -6,7 +6,6 @@ import com.grimbo.chipped.block.ChippedUniqueLantern;
 import com.grimbo.chipped.block.ChippedWoodType;
 import com.grimbo.chipped.block.ChippedWorkbench;
 import com.grimbo.chipped.menus.ChippedMenu;
-import com.mojang.datafixers.kinds.IdF;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.fabricmc.fabric.api.registry.FlammableBlockRegistry;
 import net.minecraft.core.BlockPos;
@@ -26,6 +25,7 @@ import net.minecraft.world.level.material.Material;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -345,7 +345,7 @@ public class ChippedBlocks {
     private static void registerVanillaBlocksFlammable(String name, int count) {
         registerVanillaBlocksFlammable(Registry.BLOCK.get(new ResourceLocation("minecraft", name)), name, count);
     }
-	
+
     /**
      * Only use if a vanilla block counterpart exists and the same properties should be used.
      *
@@ -359,7 +359,7 @@ public class ChippedBlocks {
     private static void registerVanillaBlocksFlammable(Block vanillaBlock, String name, int count) {
         registerBlocksFlammable(name, () -> new Block(FabricBlockSettings.copyOf(vanillaBlock)), count);
     }
-	
+
     private static <T extends Block> void registerBlocks(String name, Supplier<T> block, int count) {
         registerBlocks(name, block, count, null);
     }

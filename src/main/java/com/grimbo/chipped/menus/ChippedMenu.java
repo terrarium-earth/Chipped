@@ -16,6 +16,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.Collections;
 import java.util.List;
@@ -60,16 +61,18 @@ public class ChippedMenu extends AbstractContainerMenu {
 				ChippedMenu.this.slotUpdateListener.run();
 			}
 		};
-		containerType = menuType;
+		this.containerType = menuType;
 		this.access = access;
 		this.level = inventory.player.level;
 		this.recipeType = recipeType;
 		this.blockWorkbench = block;
 		this.inputSlot = this.addSlot(new Slot(this.container, 0, 20, 33));
 		this.resultSlot = this.addSlot(new Slot(this.resultContainer, 1, 143, 33) {
+			@Override
 			public boolean mayPlace(ItemStack itemStack) {
 				return false;
 			}
+			@Override
 			public void onTake(Player player, ItemStack itemStack) {
 				itemStack.onCraftedBy(player.level, player, itemStack.getCount());
 				ChippedMenu.this.resultContainer.awardUsedRecipes(player);
@@ -108,16 +111,17 @@ public class ChippedMenu extends AbstractContainerMenu {
 	}
 
 	public List<ItemStack> getResults() {
-		return results == null ? Collections.emptyList() : results.get();
+		return this.results == null ? Collections.emptyList() : this.results.get();
 	}
 
 	public boolean hasInputItem() {
-		return this.inputSlot.hasItem() && results != null;
+		return this.inputSlot.hasItem() && this.results != null;
 	}
 
 	@Override
-	public boolean stillValid(Player player) { return stillValid(this.access, player, blockWorkbench); }
+	public boolean stillValid(Player player) { return stillValid(this.access, player, this.blockWorkbench); }
 
+	@Override
 	public boolean clickMenuButton(Player player, int index) {
 		if (this.isValidRecipeIndex(index)) {
 			this.selectedRecipeIndex.set(index);
@@ -141,20 +145,20 @@ public class ChippedMenu extends AbstractContainerMenu {
 	}
 
 	private void setupRecipeList(Container container, ItemStack stack) {
-		results = null;
+		this.results = null;
 		this.selectedRecipeIndex.set(-1);
 		this.resultSlot.set(ItemStack.EMPTY);
 		if (!stack.isEmpty()) {
-			this.recipe = this.level.getRecipeManager().getRecipeFor(recipeType, container, this.level).orElse(null);
-			if (recipe != null) {
-				results = Suppliers.memoize(() -> recipe.getResults(container).collect(Collectors.toList()));
+			this.recipe = this.level.getRecipeManager().getRecipeFor(this.recipeType, container, this.level).orElse(null);
+			if (this.recipe != null) {
+				this.results = Suppliers.memoize(() -> this.recipe.getResults(container).collect(Collectors.toList()));
 			}
 		}
 	}
 
 	private void setupResultSlot() {
-		if (recipe != null && results != null && !this.results.get().isEmpty() && this.isValidRecipeIndex(this.selectedRecipeIndex.get())) {
-			this.resultContainer.setRecipeUsed(recipe);
+		if (this.recipe != null && this.results != null && !this.results.get().isEmpty() && this.isValidRecipeIndex(this.selectedRecipeIndex.get())) {
+			this.resultContainer.setRecipeUsed(this.recipe);
 			this.resultSlot.set(results.get().get(selectedRecipeIndex.get()).copy());
 		} else {
 			this.resultSlot.set(ItemStack.EMPTY);
@@ -165,7 +169,7 @@ public class ChippedMenu extends AbstractContainerMenu {
 
 	@Override
 	public MenuType<?> getType() {
-		return containerType;
+		return this.containerType;
 	}
 
 	@Environment(EnvType.CLIENT)
@@ -178,6 +182,7 @@ public class ChippedMenu extends AbstractContainerMenu {
 		return slot.container != this.resultContainer && super.canTakeItemForPickAll(stack, slot);
 	}
 
+	@Override
 	public ItemStack quickMoveStack(Player player, int i) {
 		ItemStack itemStack = ItemStack.EMPTY;
 		Slot slot = (Slot)this.slots.get(i);
@@ -196,7 +201,7 @@ public class ChippedMenu extends AbstractContainerMenu {
 				if (!this.moveItemStackTo(itemStack2, 2, 38, false)) {
 					return ItemStack.EMPTY;
 				}
-			} else if (this.level.getRecipeManager().getRecipeFor(recipeType, new SimpleContainer(new ItemStack[]{itemStack2}), this.level).isPresent()) {
+			} else if (this.level.getRecipeManager().getRecipeFor(this.recipeType, new SimpleContainer(itemStack2), this.level).isPresent()) {
 				if (!this.moveItemStackTo(itemStack2, 0, 1, false)) {
 					return ItemStack.EMPTY;
 				}

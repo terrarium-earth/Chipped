@@ -14,6 +14,7 @@ import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 public class ChippedUniqueLantern extends Block implements SimpleWaterloggedBlock {
@@ -41,19 +42,21 @@ public class ChippedUniqueLantern extends Block implements SimpleWaterloggedBloc
     public VoxelShape getShape(BlockState state) {
         Direction direction = state.getValue(FACING);
         if (direction == Direction.EAST || direction == Direction.WEST) {
-            return toEast;
+            return this.toEast;
         } else {
-            return toNorth;
+            return this.toNorth;
         }
     }
+
     @Nullable
-    public BlockState getStateForPlacement (BlockPlaceContext context) {
+    @Override
+    public BlockState getStateForPlacement(BlockPlaceContext context) {
         BlockState blockstate = this.defaultBlockState();
         Level level = context.getLevel();
         BlockPos blockpos = context.getClickedPos();
-        Direction[] adirection = context.getNearestLookingDirections();
+        Direction[] directions = context.getNearestLookingDirections();
 
-        for(Direction direction : adirection) {
+        for (var direction : directions) {
             if (direction.getAxis().isHorizontal()) {
                 Direction direction1 = direction.getOpposite();
                 blockstate = blockstate.setValue(FACING, direction1);
@@ -65,6 +68,7 @@ public class ChippedUniqueLantern extends Block implements SimpleWaterloggedBloc
         return null;
     }
 
+    @Override
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
         builder.add(FACING, BlockStateProperties.WATERLOGGED);
     }

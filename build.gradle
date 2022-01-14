@@ -11,9 +11,8 @@ version = project.mod_version
 group = project.maven_group
 
 repositories {
-	repositories {
-		maven { url "https://maven.shedaniel.me/" }
-	}
+	maven { url "https://maven.shedaniel.me/" }
+	maven { url "https://storage.googleapis.com/devan-maven/" }
 }
 
 dependencies {

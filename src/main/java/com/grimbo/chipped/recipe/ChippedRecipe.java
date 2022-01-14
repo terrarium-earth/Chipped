@@ -17,9 +17,10 @@ import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
-import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Stream;
@@ -34,7 +35,7 @@ public record ChippedRecipe(
     @Override
     public boolean matches(Container container, Level level) {
         ItemStack stack = container.getItem(0);
-        for (Tag<Item> tag : tags) {
+        for (Tag<Item> tag : this.tags) {
             if (stack.is(tag)) {
                 return true;
             }
@@ -46,7 +47,7 @@ public record ChippedRecipe(
         ItemStack current = container.getItem(0);
         if (!current.isEmpty()) {
             Item item = current.getItem();
-            return tags.stream()
+            return this.tags.stream()
                     .filter(current::is)
                     .flatMap(tag -> tag.getValues().stream())
                     .filter(value -> value != item)
@@ -75,10 +76,12 @@ public record ChippedRecipe(
         return true;
     }
 
+    @Override
     public String getGroup() {
         return group;
     }
 
+    @Override
     public ItemStack getToastSymbol() {
         return new ItemStack(icon);
     }
@@ -99,6 +102,7 @@ public record ChippedRecipe(
     }
 
     public record Serializer(RecipeType<?> type, Block icon) implements RecipeSerializer<ChippedRecipe> {
+        @Override
         public ChippedRecipe fromJson(ResourceLocation recipeId, JsonObject json) {
             String s = GsonHelper.getAsString(json, "group", "");
             List<Tag<Item>> tags = new ArrayList<>();
@@ -112,24 +116,26 @@ public record ChippedRecipe(
                 );
                 tags.add(tag);
             }
-            return new ChippedRecipe(this, recipeId, s, tags, icon);
+            return new ChippedRecipe(this, recipeId, s, tags, this.icon);
         }
 
+        @Override
         public ChippedRecipe fromNetwork(ResourceLocation recipeId, FriendlyByteBuf buffer) {
             String s = buffer.readUtf(32767);
             int tagCount = buffer.readVarInt();
             List<Tag<Item>> tags = new ArrayList<>(tagCount);
             for (int i = 0; i < tagCount; i++) {
                 int itemCount = buffer.readVarInt();
-                Set<Item> items = new HashSet<>(itemCount);
+                Set<Item> items = new LinkedHashSet<>(itemCount);
                 for (int j = 0; j < itemCount; j++) {
                     items.add(Item.byId(buffer.readVarInt()));
                 }
                 tags.add(Tag.fromSet(items));
             }
-            return new ChippedRecipe(this, recipeId, s, tags, icon);
+            return new ChippedRecipe(this, recipeId, s, tags, this.icon);
         }
 
+        @Override
         public void toNetwork(FriendlyByteBuf buffer, ChippedRecipe recipe) {
             buffer.writeUtf(recipe.group);
             buffer.writeVarInt(recipe.tags.size());
