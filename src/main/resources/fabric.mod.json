@@ -39,6 +39,9 @@
     ],
     "rei_plugins": [
       "com.grimbo.chipped.compat.REIChippedPlugin"
+    ],
+    "rrp:pregen": [
+      "com.grimbo.chipped.datagen.ChippedDataGen"
     ]
   },
   "depends": {

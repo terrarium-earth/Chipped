@@ -1,5 +1,6 @@
 package com.grimbo.chipped;
 
+import com.grimbo.chipped.datagen.ChippedDataGen;
 import com.grimbo.chipped.registry.ChippedBlocks;
 import com.grimbo.chipped.registry.ChippedMenuType;
 import com.grimbo.chipped.registry.ChippedSerializer;
@@ -21,5 +22,6 @@ public class Chipped implements ModInitializer {
         ChippedMenuType.register();
         ChippedBlocks.register();
         ChippedSerializer.register();
+        ChippedDataGen.register();
     }
 }

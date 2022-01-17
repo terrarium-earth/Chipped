@@ -12,7 +12,7 @@ group = project.maven_group
 
 repositories {
 	maven { url "https://maven.shedaniel.me/" }
-	maven { url "https://storage.googleapis.com/devan-maven/" }
+	maven { url = uri("https://storage.googleapis.com/devan-maven/") }
 }
 
 dependencies {
@@ -25,6 +25,9 @@ dependencies {
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 	modCompileOnly "me.shedaniel:RoughlyEnoughItems-api-fabric:${project.rei_api_version}"
 	modRuntimeOnly "me.shedaniel:RoughlyEnoughItems-fabric:${project.rei_version}"
+
+	modImplementation "net.devtech:arrp:0.+"
+	include "net.devtech:arrp:0.+"
 }
 
 processResources {

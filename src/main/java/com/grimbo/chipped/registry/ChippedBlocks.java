@@ -185,7 +185,7 @@ public class ChippedBlocks {
         registerBlocks("glass_pane", () -> new IronBarsBlock(GLASS_PANE_PROPERTIES) {
         }, 14, GLASS_PANES);
 
-        for (ChippedWoodType type : ChippedWoodType.VALUES) {
+        for (var type : ChippedWoodType.VALUES) {
             registerBlocks(type + "_wood_glass", () -> new GlassBlock(GLASS_PROPERTIES), 6, WOOD_GLASSES.computeIfAbsent(type, k -> new ArrayList<>()));
             registerBlocks(type + "_wood_glass_pane", () -> new IronBarsBlock(GLASS_PANE_PROPERTIES) {
             }, 6, WOOD_GLASS_PANES.computeIfAbsent(type, k -> new ArrayList<>()));
