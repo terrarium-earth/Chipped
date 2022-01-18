@@ -298,7 +298,7 @@ public class ChippedBlocks {
         }
 
         //Pumpkins
-        for (String pumpkin : specialPumpkinList) {
+        for (var pumpkin : specialPumpkinList) {
             register("pumpkin_" + pumpkin, new PumpkinBlock(PUMPKIN_PROPERTIES) {
             });
             register("jack_o_lantern_" + pumpkin, new CarvedPumpkinBlock(JACK_O_LANTERN_PROPERTIES) {
