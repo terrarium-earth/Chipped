@@ -33,7 +33,7 @@ public class ChippedRecipeCategory implements IRecipeCategory<ChippedRecipeCateg
 		UID = item.getRegistryName();
 		localizedName = I18n.get("container.chipped." + UID.getPath());
 		background = guiHelper.createDrawable(TEXTURE, 0, 220, 82, 34);
-		icon = guiHelper.createDrawableIngredient(item.getDefaultInstance());
+		icon = guiHelper.createDrawableIngredient(VanillaTypes.ITEM, item.getDefaultInstance());
 	}
 
 	@Override
@@ -63,7 +63,7 @@ public class ChippedRecipeCategory implements IRecipeCategory<ChippedRecipeCateg
 
 	@Override
 	public void setIngredients(FlattenedRecipe recipe, IIngredients ingredients) {
-		ingredients.setInputIngredients(Collections.singletonList(Ingredient.of(recipe.tag)));
+		ingredients.setInputIngredients(Collections.singletonList(recipe.tag));
 		ingredients.setOutput(VanillaTypes.ITEM, recipe.result);
 	}
 
@@ -75,13 +75,5 @@ public class ChippedRecipeCategory implements IRecipeCategory<ChippedRecipeCateg
 		guiItemStacks.set(ingredients);
 	}
 
-	public static class FlattenedRecipe {
-		private final Tag<Item> tag;
-		private final ItemStack result;
-
-		public FlattenedRecipe(Tag<Item> tag, ItemStack result) {
-			this.tag = tag;
-			this.result = result;
-		}
-	}
+	public record FlattenedRecipe(Ingredient tag, ItemStack result) {}
 }

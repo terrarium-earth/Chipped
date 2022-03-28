@@ -33,7 +33,7 @@ public class ChippedBlockTagsProvider extends BlockTagsProvider {
 		//All blocks with a vanilla variant
 		for (ChippedBlockType<Block> type : BlockRegistry.getBlockTypes()) {
 			// FIXME this should not just use minecraft:$path to get the vanilla block.
-			Block vanillaBlock = ForgeRegistries.BLOCKS.getValue(new ResourceLocation(type.getId().getPath()));
+			Block vanillaBlock = ForgeRegistries.BLOCKS.getValue(new ResourceLocation(type.getId()));
 			if (vanillaBlock != null && vanillaBlock != Blocks.AIR) {
 				TagAppender<Block> tag = tag(type.getBlockTag());
 				tag.add(vanillaBlock);
@@ -80,8 +80,8 @@ public class ChippedBlockTagsProvider extends BlockTagsProvider {
 		tag(Tags.Blocks.END_STONES).addTag(END_STONE.getBlockTag());
 		
 		tag(Tags.Blocks.SANDSTONE).addTag(ChippedBlocks.stones18.get(7).getBlockTag()).addTag(ChippedBlocks.stones18.get(8).getBlockTag());
-		tag(BlockTags.bind("forge:sandstone/colorless")).addTag(ChippedBlocks.stones18.get(7).getBlockTag());
-		tag(BlockTags.bind("forge:sandstone/red")).addTag(ChippedBlocks.stones18.get(8).getBlockTag());
+		tag(BlockTags.create(new ResourceLocation("forge", "sandstone/colorless"))).addTag(ChippedBlocks.stones18.get(7).getBlockTag());
+		tag(BlockTags.create(new ResourceLocation("forge", "sandstone/red"))).addTag(ChippedBlocks.stones18.get(8).getBlockTag());
 
 		tag(Tags.Blocks.GLASS).addTag(GLASSES.getBlockTag());
 		tag(Tags.Blocks.GLASS_COLORLESS).addTag(GLASSES.getBlockTag());
@@ -91,13 +91,13 @@ public class ChippedBlockTagsProvider extends BlockTagsProvider {
 			DyeColor color = DyeColor.byId(id);
 
 			tag(Tags.Blocks.GLASS).addTag(STAINED_GLASSES.get(color).getBlockTag());
-			tag(BlockTags.bind("forge:glass/" + color)).addTag(STAINED_GLASSES.get(color).getBlockTag());
+			tag(BlockTags.create(new ResourceLocation("forge", "glass/"+color))).addTag(STAINED_GLASSES.get(color).getBlockTag());
 
 			tag(Tags.Blocks.GLASS).addTag(STAINED_GLASS_PANES.get(color).getBlockTag());
-			tag(BlockTags.bind("forge:glass_panes/" + color)).addTag(STAINED_GLASS_PANES.get(color).getBlockTag());
+			tag(BlockTags.create(new ResourceLocation("forge", "glass_panes/"+color))).addTag(STAINED_GLASS_PANES.get(color).getBlockTag());
 
-			tag(BlockTags.bind("forge:terracotta")).addTag(TERRACOTTAS.get(color).getBlockTag());
-			tag(BlockTags.bind("forge:terracotta/" + color)).addTag(TERRACOTTAS.get(color).getBlockTag());
+			tag(BlockTags.create(new ResourceLocation("forge", "terracotta"))).addTag(TERRACOTTAS.get(color).getBlockTag());
+			tag(BlockTags.create(new ResourceLocation("forge", "terracotta/"+color))).addTag(TERRACOTTAS.get(color).getBlockTag());
 		}
 
 		tag(Tags.Blocks.NETHERRACK).addTag(NETHERRACK.getBlockTag());

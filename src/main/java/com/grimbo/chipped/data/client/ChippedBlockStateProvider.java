@@ -262,12 +262,12 @@ public class ChippedBlockStateProvider extends BlockStateProvider {
 
     // We honestly can use varargs instead of start & end, though up to whether we actually will add more complex glass panes in the future
     private <T extends Block> void registerGlassPanes(ChippedBlockType<T> type, String originalType, String topName, int start, int end) {
-        registerGlassPanes(type, type.getId().getPath(), originalType, null, topName, start, end);
+        registerGlassPanes(type, type.getId(), originalType, null, topName, start, end);
     }
 
     // Unused
     private <T extends Block> void registerGlassPanes(ChippedBlockType<T> type, String originalType, String originalPath, String topName, int start, int end) {
-        registerGlassPanes(type, type.getId().getPath(), originalType, originalPath, topName, start, end);
+        registerGlassPanes(type, type.getId(), originalType, originalPath, topName, start, end);
     }
 
     // Very janky, will try to attempt to pull from glass_pane/glass_pane_top for stained_glass_pane because of how the textures were designed, might need to rework depending on future textures

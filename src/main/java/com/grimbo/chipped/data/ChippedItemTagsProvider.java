@@ -7,6 +7,7 @@ import com.grimbo.chipped.api.ChippedWoodType;
 import com.grimbo.chipped.block.ChippedBlockTypes;
 
 import com.grimbo.chipped.block.ChippedBlocks;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.data.tags.BlockTagsProvider;
 import net.minecraft.data.DataGenerator;
@@ -57,8 +58,8 @@ public class ChippedItemTagsProvider extends ItemTagsProvider {
 		tag(Tags.Items.END_STONES).addTag(END_STONE.getItemTag());
 
 		tag(Tags.Items.SANDSTONE).addTag(ChippedBlocks.stones18.get(7).getItemTag()).addTag(ChippedBlocks.stones18.get(8).getItemTag());
-		tag(ItemTags.bind("forge:sandstone/colorless")).addTag(ChippedBlocks.stones18.get(7).getItemTag());
-		tag(ItemTags.bind("forge:sandstone/red")).addTag(ChippedBlocks.stones18.get(8).getItemTag());
+		tag(ItemTags.create(new ResourceLocation("forge", "sandstone/colorless"))).addTag(ChippedBlocks.stones18.get(7).getItemTag());
+		tag(ItemTags.create(new ResourceLocation("forge", "sandstone/red"))).addTag(ChippedBlocks.stones18.get(8).getItemTag());
 
 		tag(Tags.Items.GLASS).addTag(GLASSES.getItemTag());
 		tag(Tags.Items.GLASS_COLORLESS).addTag(GLASSES.getItemTag());
@@ -68,13 +69,13 @@ public class ChippedItemTagsProvider extends ItemTagsProvider {
 			DyeColor color = DyeColor.byId(id);
 
 			tag(Tags.Items.GLASS).addTag(STAINED_GLASSES.get(color).getItemTag());
-			tag(ItemTags.bind("forge:glass/" + color)).addTag(STAINED_GLASSES.get(color).getItemTag());
+			tag(ItemTags.create(new ResourceLocation("forge", "glass/"+color))).addTag(STAINED_GLASSES.get(color).getItemTag());
 
 			tag(Tags.Items.GLASS).addTag(STAINED_GLASS_PANES.get(color).getItemTag());
-			tag(ItemTags.bind("forge:glass_panes/" + color)).addTag(STAINED_GLASS_PANES.get(color).getItemTag());
+			tag(ItemTags.create(new ResourceLocation("forge", "glass_panes/"+color))).addTag(STAINED_GLASS_PANES.get(color).getItemTag());
 
-			tag(ItemTags.bind("forge:terracotta")).addTag(TERRACOTTAS.get(color).getItemTag());
-			tag(ItemTags.bind("forge:terracotta/" + color)).addTag(TERRACOTTAS.get(color).getItemTag());
+			tag(ItemTags.create(new ResourceLocation("forge", "terracotta"))).addTag(TERRACOTTAS.get(color).getItemTag());
+			tag(ItemTags.create(new ResourceLocation("forge", "terracotta/"+color))).addTag(TERRACOTTAS.get(color).getItemTag());
 		}
 
 		tag(Tags.Items.NETHERRACK).addTag(NETHERRACK.getItemTag());

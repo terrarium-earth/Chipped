@@ -2,35 +2,46 @@ package com.grimbo.chipped.recipe;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
-import com.google.gson.JsonSyntaxException;
+import com.grimbo.chipped.Chipped;
+import net.minecraft.core.Holder;
+import net.minecraft.core.HolderSet;
 import net.minecraft.core.Registry;
-import net.minecraft.world.level.block.Block;
+import net.minecraft.network.FriendlyByteBuf;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.TagKey;
+import net.minecraft.util.GsonHelper;
 import net.minecraft.world.Container;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Recipe;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.item.crafting.RecipeType;
-import net.minecraft.network.FriendlyByteBuf;
-import net.minecraft.tags.Tag;
-import net.minecraft.tags.SerializationTags;
-import net.minecraft.util.GsonHelper;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Block;
 import net.minecraftforge.registries.ForgeRegistryEntry;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.stream.Stream;
 
 public class ChippedRecipe implements Recipe<Container> {
+
+	public static final RecipeType<ChippedRecipe> BOTANIST_WORKBENCH_TYPE = RecipeType.register(Chipped.MOD_ID +":botanist_workbench");
+	public static final RecipeType<ChippedRecipe> GLASSBLOWER_TYPE = RecipeType.register(Chipped.MOD_ID +":glassblower");
+	public static final RecipeType<ChippedRecipe> CARPENTERS_TABLE_TYPE = RecipeType.register(Chipped.MOD_ID +":carpenters_table");
+	public static final RecipeType<ChippedRecipe> LOOM_TABLE_TYPE = RecipeType.register(Chipped.MOD_ID +":loom_table");
+	public static final RecipeType<ChippedRecipe> MASON_TABLE_TYPE = RecipeType.register(Chipped.MOD_ID +":mason_table");
+	public static final RecipeType<ChippedRecipe> ALCHEMY_BENCH_TYPE = RecipeType.register(Chipped.MOD_ID +":alchemy_bench");
+	public static final RecipeType<ChippedRecipe> MECHANIST_WORKBENCH_TYPE = RecipeType.register(Chipped.MOD_ID +":mechanist_workbench");
+
 	private final Serializer serializer;
 	private final ResourceLocation id;
 	private final String group;
-	private final List<Tag<Item>> tags;
+	private final List<HolderSet<Item>> tags;
 	private final Block icon;
 
-	public ChippedRecipe(Serializer serializer, ResourceLocation id, String group, List<Tag<Item>> tags, Block block) {
+	public ChippedRecipe(Serializer serializer, ResourceLocation id, String group, List<HolderSet<Item>> tags, Block block) {
 		this.serializer = serializer;
 		this.id = id;
 		this.group = group;
@@ -41,17 +52,14 @@ public class ChippedRecipe implements Recipe<Container> {
 	@Override
 	public boolean matches(Container inventory, @NotNull Level world) {
 		ItemStack item = inventory.getItem(0);
-		if (!item.isEmpty()) {
-			for (Tag<Item> tag : tags) {
-				if (tag.contains(item.getItem())) {
-					return true;
-				}
-			}
-		}
-		return false;
+		return !item.isEmpty() && tags.stream().anyMatch(tag -> tagIs(item, tag));
 	}
 
-	public List<Tag<Item>> getTags() {
+	private static boolean tagIs(ItemStack stack, HolderSet<Item> tag) {
+		return tag.contains(stack.getItem().builtInRegistryHolder());
+	}
+
+	public List<HolderSet<Item>> getTags() {
 		return tags;
 	}
 
@@ -61,8 +69,8 @@ public class ChippedRecipe implements Recipe<Container> {
 		if (!current.isEmpty()) {
 			Item item = current.getItem();
 			return tags.stream()
-					.filter(tag -> tag.contains(item))
-					.flatMap(tag -> tag.getValues().stream())
+					.filter(tag -> tagIs(current, tag))
+					.flatMap(tag -> tag.stream().filter(Holder::isBound).map(Holder::value))
 					.filter(value -> value != item)
 					.map(ItemStack::new);
 		}
@@ -124,16 +132,12 @@ public class ChippedRecipe implements Recipe<Container> {
 		@Override
 		public @NotNull ChippedRecipe fromJson(@NotNull ResourceLocation recipeId, @NotNull JsonObject json) {
 			String s = GsonHelper.getAsString(json,"group", "");
-			List<Tag<Item>> tags = new ArrayList<>();
+			List<HolderSet<Item>> tags = new ArrayList<>();
 			JsonArray tagArray = GsonHelper.getAsJsonArray(json, "tags");
 			for (int i = 0; i < tagArray.size(); ++i) {
 				String tagName = GsonHelper.convertToString(tagArray.get(i), "tags[" + i + "]");
-				Tag<Item> tag = SerializationTags.getInstance().getTagOrThrow(
-						Registry.ITEM_REGISTRY,
-						new ResourceLocation(tagName),
-						id -> new JsonSyntaxException("Unknown item tag '" + id + "'")
-				);
-				tags.add(tag);
+				var tag = TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation(tagName));
+				tags.add(Registry.ITEM.getOrCreateTag(tag));
 			}
 			return new ChippedRecipe(this, recipeId, s, tags, icon);
 		}
@@ -142,14 +146,9 @@ public class ChippedRecipe implements Recipe<Container> {
 		public ChippedRecipe fromNetwork(@NotNull ResourceLocation recipeId, FriendlyByteBuf buffer) {
 			String s = buffer.readUtf(32767);
 			int tagCount = buffer.readVarInt();
-			List<Tag<Item>> tags = new ArrayList<>(tagCount);
+			List<HolderSet<Item>> tags = new ArrayList<>(tagCount);
 			for (int i = 0; i < tagCount; i++) {
-				int itemCount = buffer.readVarInt();
-				Set<Item> items = new LinkedHashSet<>(itemCount);
-				for (int j = 0; j < itemCount; j++) {
-					items.add(Item.byId(buffer.readVarInt()));
-				}
-				tags.add(Tag.fromSet(items));
+				tags.add(HolderSet.direct(buffer.readList(buf -> Holder.direct(Item.byId(buf.readVarInt())))));
 			}
 			return new ChippedRecipe(this, recipeId, s, tags, icon);
 		}
@@ -158,12 +157,9 @@ public class ChippedRecipe implements Recipe<Container> {
 		public void toNetwork(FriendlyByteBuf buffer, @NotNull ChippedRecipe recipe) {
 			buffer.writeUtf(recipe.group);
 			buffer.writeVarInt(recipe.tags.size());
-			for (Tag<Item> tag : recipe.tags) {
-				List<Item> values = tag.getValues();
-				buffer.writeVarInt(values.size());
-				for (Item item : values) {
-					buffer.writeVarInt(Item.getId(item));
-				}
+			for (HolderSet<Item> tag : recipe.tags) {
+				List<Item> items = tag.stream().filter(Holder::isBound).map(Holder::value).toList();
+				buffer.writeCollection(items, (buf, item) -> buf.writeVarInt(Item.getId(item)));
 			}
 		}
 
