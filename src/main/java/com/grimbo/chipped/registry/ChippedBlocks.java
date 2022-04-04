@@ -199,6 +199,7 @@ public class ChippedBlocks {
 
         //Register Misc
         registerVanillaBlocks(Blocks.CLAY, "clay", 19);
+        registerVanillaBlocks(Blocks.DRIED_KELP_BLOCK, "dried_kelp_block", 12);
 
         for (ChippedWoodType type : ChippedWoodType.VALUES) {
             registerBlocksFlammable(type + "_planks", () -> new Block(WOOD_PROPERTIES), 18);

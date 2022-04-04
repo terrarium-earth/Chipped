@@ -8,15 +8,16 @@ import me.shedaniel.rei.api.client.registry.category.CategoryRegistry;
 import me.shedaniel.rei.api.client.registry.display.DisplayRegistry;
 import me.shedaniel.rei.api.common.category.CategoryIdentifier;
 import net.minecraft.client.Minecraft;
+import net.minecraft.core.Holder;
+import net.minecraft.core.HolderSet;
 import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.tags.Tag;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.RecipeManager;
 import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.level.block.Block;
-import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -57,9 +58,11 @@ public class REIChippedPlugin implements REIClientPlugin {
     private static List<ChippedRecipeCategory.FlattenedRecipe> flatten(Collection<ChippedRecipe> recipes, CategoryIdentifier<ChippedRecipeCategory.FlattenedRecipe> category) {
         List<ChippedRecipeCategory.FlattenedRecipe> flattenedRecipes = new ArrayList<>();
         for (ChippedRecipe recipe : recipes) {
-            for (Tag<Item> tag : recipe.tags()) {
-                for (Item item : tag.getValues()) {
-                    flattenedRecipes.add(new ChippedRecipeCategory.FlattenedRecipe(tag, new ItemStack(item), category));
+            for (HolderSet<Item> tag : recipe.tags()) {
+                var items = tag.stream().filter(Holder::isBound).map(Holder::value).toList();
+                Ingredient ingredient = Ingredient.of(items.stream().map(ItemStack::new));
+                for (Item item : items) {
+                    flattenedRecipes.add(new ChippedRecipeCategory.FlattenedRecipe(ingredient, new ItemStack(item), category));
                 }
             }
         }

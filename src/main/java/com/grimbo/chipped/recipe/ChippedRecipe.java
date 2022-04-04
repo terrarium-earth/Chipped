@@ -2,12 +2,12 @@ package com.grimbo.chipped.recipe;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
-import com.google.gson.JsonSyntaxException;
+import net.minecraft.core.Holder;
+import net.minecraft.core.HolderSet;
 import net.minecraft.core.Registry;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.tags.SerializationTags;
-import net.minecraft.tags.Tag;
+import net.minecraft.tags.TagKey;
 import net.minecraft.util.GsonHelper;
 import net.minecraft.world.Container;
 import net.minecraft.world.item.Item;
@@ -17,30 +17,26 @@ import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
-import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
-import java.util.LinkedHashSet;
 import java.util.List;
-import java.util.Set;
 import java.util.stream.Stream;
 
 public record ChippedRecipe(
         Serializer serializer,
         ResourceLocation id,
         String group,
-        List<Tag<Item>> tags,
+        List<HolderSet<Item>> tags,
         Block icon
 ) implements Recipe<Container> {
     @Override
     public boolean matches(Container container, Level level) {
         ItemStack stack = container.getItem(0);
-        for (Tag<Item> tag : this.tags) {
-            if (stack.is(tag)) {
-                return true;
-            }
-        }
-        return false;
+        return !stack.isEmpty() && this.tags.stream().anyMatch(tag -> tagIs(stack, tag));
+    }
+
+    private static boolean tagIs(ItemStack stack, HolderSet<Item> tag) {
+        return tag.contains(stack.getItem().builtInRegistryHolder());
     }
 
     public Stream<ItemStack> getResults(Container container) {
@@ -48,8 +44,8 @@ public record ChippedRecipe(
         if (!current.isEmpty()) {
             Item item = current.getItem();
             return this.tags.stream()
-                    .filter(current::is)
-                    .flatMap(tag -> tag.getValues().stream())
+                    .filter(tag -> tagIs(current, tag))
+                    .flatMap(tag -> tag.stream().filter(Holder::isBound).map(Holder::value))
                     .filter(value -> value != item)
                     .map(ItemStack::new);
         }
@@ -105,16 +101,12 @@ public record ChippedRecipe(
         @Override
         public ChippedRecipe fromJson(ResourceLocation recipeId, JsonObject json) {
             String s = GsonHelper.getAsString(json, "group", "");
-            List<Tag<Item>> tags = new ArrayList<>();
+            List<HolderSet<Item>> tags = new ArrayList<>();
             JsonArray tagArray = GsonHelper.getAsJsonArray(json, "tags");
             for (int i = 0; i < tagArray.size(); ++i) {
                 String tagName = GsonHelper.convertToString(tagArray.get(i), "tags[" + i + "]");
-                Tag<Item> tag = SerializationTags.getInstance().getTagOrThrow(
-                        Registry.ITEM_REGISTRY,
-                        new ResourceLocation(tagName),
-                        id -> new JsonSyntaxException("Unknown item tag '" + id + "'")
-                );
-                tags.add(tag);
+                var tag = TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation(tagName));
+                tags.add(Registry.ITEM.getOrCreateTag(tag));
             }
             return new ChippedRecipe(this, recipeId, s, tags, this.icon);
         }
@@ -123,14 +115,9 @@ public record ChippedRecipe(
         public ChippedRecipe fromNetwork(ResourceLocation recipeId, FriendlyByteBuf buffer) {
             String s = buffer.readUtf(32767);
             int tagCount = buffer.readVarInt();
-            List<Tag<Item>> tags = new ArrayList<>(tagCount);
+            List<HolderSet<Item>> tags = new ArrayList<>(tagCount);
             for (int i = 0; i < tagCount; i++) {
-                int itemCount = buffer.readVarInt();
-                Set<Item> items = new LinkedHashSet<>(itemCount);
-                for (int j = 0; j < itemCount; j++) {
-                    items.add(Item.byId(buffer.readVarInt()));
-                }
-                tags.add(Tag.fromSet(items));
+                tags.add(HolderSet.direct(buffer.readList(buf -> Holder.direct(Item.byId(buf.readVarInt())))));
             }
             return new ChippedRecipe(this, recipeId, s, tags, this.icon);
         }
@@ -139,12 +126,9 @@ public record ChippedRecipe(
         public void toNetwork(FriendlyByteBuf buffer, ChippedRecipe recipe) {
             buffer.writeUtf(recipe.group);
             buffer.writeVarInt(recipe.tags.size());
-            for (Tag<Item> tag : recipe.tags) {
-                List<Item> values = tag.getValues();
-                buffer.writeVarInt(values.size());
-                for (Item item : values) {
-                    buffer.writeVarInt(Item.getId(item));
-                }
+            for (HolderSet<Item> tag : recipe.tags) {
+                List<Item> items = tag.stream().filter(Holder::isBound).map(Holder::value).toList();
+                buffer.writeCollection(items, (buf, item) -> buf.writeVarInt(Item.getId(item)));
             }
         }
     }

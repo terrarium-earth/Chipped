@@ -15,12 +15,11 @@ import me.shedaniel.rei.api.common.entry.type.VanillaEntryTypes;
 import net.minecraft.core.Registry;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TranslatableComponent;
-import net.minecraft.tags.Tag;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.block.Block;
-import org.jetbrains.annotations.NotNull;
 
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -67,13 +66,13 @@ public class ChippedRecipeCategory implements DisplayCategory<ChippedRecipeCateg
     }
 
     public record FlattenedRecipe(
-            Tag<Item> tag,
+            Ingredient tag,
             ItemStack result,
             CategoryIdentifier<FlattenedRecipe> category
     ) implements Display {
         @Override
         public List<EntryIngredient> getInputEntries() {
-            return Collections.singletonList(EntryIngredient.of(this.tag.getValues().stream().map(item -> EntryStack.of(VanillaEntryTypes.ITEM, new ItemStack(item))).collect(Collectors.toList())));
+            return Collections.singletonList(EntryIngredient.of(Arrays.stream(this.tag.getItems()).map(item -> EntryStack.of(VanillaEntryTypes.ITEM, item)).collect(Collectors.toList())));
         }
 
         @Override
