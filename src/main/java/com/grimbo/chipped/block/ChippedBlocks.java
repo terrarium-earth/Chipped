@@ -98,17 +98,20 @@ public class ChippedBlocks {
         // Register Mason Bench Blocks
         registerVanillaBlocks(BenchType.MASON, ANDESITE, 61);
         registerVanillaBlocks(BenchType.MASON, DIORITE, 61);
+        registerVanillaBlocks(BenchType.MASON, GRANITE, 61);
         registerVanillaBlocks(BenchType.MASON, BASALT, 61);
         registerVanillaBlocks(BenchType.MASON, MOSSY_COBBLESTONE, 61);
         registerVanillaBlocks(BenchType.MASON, BRICKS, 61);
-        registerVanillaBlocks(BenchType.MASON, STONE, 18);
         registerVanillaBlocks(BenchType.MASON, COBBLESTONE, 61);
         registerVanillaBlocks(BenchType.MASON, END_STONE, 63);
-        registerVanillaBlocks(BenchType.MASON, NETHERRACK, 18);
         registerVanillaBlocks(BenchType.MASON, MOSSY_STONE_BRICKS, 61);
         registerVanillaBlocks(BenchType.MASON, DARK_PRISMARINE, 61);
-        registerVanillaBlocks(BenchType.MASON, Blocks.GILDED_BLACKSTONE, GILDED_BLACKSTONES, 26);
+        registerVanillaBlocks(BenchType.MASON, Blocks.GILDED_BLACKSTONE, GILDED_BLACKSTONES, 61);
         registerVanillaBlocks(BenchType.MASON, Blocks.BLACKSTONE, BLACKSTONES, 57);
+        registerVanillaBlocks(BenchType.MASON, LAPIS_BLOCK, 61);
+        // old that need to be revamp
+        registerVanillaBlocks(BenchType.MASON, STONE, 18);
+        registerVanillaBlocks(BenchType.MASON, NETHERRACK, 18);
 
         for (int id = 0; id < 16; ++id) {
             DyeColor color = DyeColor.byId(id);
@@ -117,15 +120,19 @@ public class ChippedBlocks {
         }
         // Register Alchemy Bench Blocks
         registerVanillaBlocks(BenchType.ALCHEMY, ANCIENT_DEBRIS, 61);
-        registerVanillaBlocks(BenchType.ALCHEMY, Blocks.OBSIDIAN, OBSIDIAN, 20);
-        registerVanillaBlocks(BenchType.ALCHEMY, Blocks.GLOWSTONE, GLOWSTONES, 20);
-        registerVanillaBlocks(BenchType.ALCHEMY, Blocks.SEA_LANTERN, SEA_LANTERNS, 16);
         final AbstractBlock.Properties CRYING_OBSIDIAN_PROPERTIES = AbstractBlock.Properties.copy(Blocks.CRYING_OBSIDIAN);
         registerBlocks(BenchType.ALCHEMY, CRYING_OBSIDIAN, () -> new CryingObsidianBlock(CRYING_OBSIDIAN_PROPERTIES), 61);
 
+        // old
+        registerVanillaBlocks(BenchType.ALCHEMY, Blocks.OBSIDIAN, OBSIDIAN, 20);
+        registerVanillaBlocks(BenchType.ALCHEMY, Blocks.GLOWSTONE, GLOWSTONES, 20);
+        registerVanillaBlocks(BenchType.ALCHEMY, Blocks.SEA_LANTERN, SEA_LANTERNS, 16);
+
         // Register Botanist Bench Blocks
+        registerVanillaBlocks(BenchType.BOTANIST, DIRT, 61);
         registerVanillaBlocks(BenchType.BOTANIST, Blocks.SHROOMLIGHT, SHROOMLIGHTS, 16);
         registerVanillaBlocks(BenchType.BOTANIST, BLUE_ICE, 61);
+        registerVanillaBlocks(BenchType.BOTANIST, ICE, 61);
         registerVanillaBlocks(BenchType.BOTANIST, Blocks.CLAY, CLAYS, 61);
         registerVanillaBlocks(BenchType.BOTANIST, Blocks.DRIED_KELP_BLOCK, DRIED_KELP_BLOCKS, 12);
         registerVanillaBlocks(BenchType.BOTANIST, WARPED_WART_BLOCK, 14);

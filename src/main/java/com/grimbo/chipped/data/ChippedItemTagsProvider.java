@@ -54,14 +54,19 @@ public class ChippedItemTagsProvider extends ItemTagsProvider {
 		tag(Tags.Items.STONE)
 				.addTag(ANDESITE.getItemTag())
 				.addTag(DIORITE.getItemTag())
+				.addTag(GRANITE.getItemTag())
 				.addTag(BASALT.getItemTag())
 				.addTag(MOSSY_STONE_BRICKS.getItemTag())
 				.addTag(BRICKS.getItemTag())
 				.addTag(ANCIENT_DEBRIS.getItemTag())
 				.addTag(BLUE_ICE.getItemTag())
+				.addTag(ICE.getItemTag())
 				.addTag(CLAYS.getItemTag())
-				.addTag(DARK_PRISMARINE.getItemTag());
+				.addTag(DARK_PRISMARINE.getItemTag())
+				.addTag(DIRT.getItemTag())
+				.addTag(GILDED_BLACKSTONES.getItemTag());
 
+		tag(Tags.Items.GEMS_LAPIS).addTag(LAPIS_BLOCK.getItemTag());
 
 		tag(Tags.Items.COBBLESTONE)
 				.addTag(MOSSY_COBBLESTONE.getItemTag())

@@ -3,12 +3,15 @@
   "values": [
     "#chipped:andesite",
     "#chipped:diorite",
+    "#chipped:granite",
     "#chipped:basalt",
     "#chipped:mossy_stone_bricks",
     "#chipped:bricks",
     "#chipped:ancient_debris",
     "#chipped:blue_ice",
+    "#chipped:ice",
     "#chipped:clay",
-    "#chipped:dark_prismarine"
+    "#chipped:dark_prismarine",
+    "#chipped:gilded_blackstone"
   ]
 }

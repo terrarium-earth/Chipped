@@ -75,13 +75,20 @@ public class ChippedBlockTagsProvider extends BlockTagsProvider {
 		tag(Tags.Blocks.STONE)
 				.addTag(ANDESITE.getBlockTag())
 				.addTag(DIORITE.getBlockTag())
+				.addTag(GRANITE.getBlockTag())
 				.addTag(BASALT.getBlockTag())
 				.addTag(MOSSY_STONE_BRICKS.getBlockTag())
 				.addTag(BRICKS.getBlockTag())
 				.addTag(ANCIENT_DEBRIS.getBlockTag())
 				.addTag(BLUE_ICE.getBlockTag())
+				.addTag(ICE.getBlockTag())
 				.addTag(CLAYS.getBlockTag())
-				.addTag(DARK_PRISMARINE.getBlockTag());
+				.addTag(DARK_PRISMARINE.getBlockTag())
+				.addTag(GILDED_BLACKSTONES.getBlockTag());
+
+		tag(Tags.Blocks.DIRT).addTag(DIRT.getBlockTag());
+
+		tag(Tags.Blocks.ORES_LAPIS).addTag(LAPIS_BLOCK.getBlockTag());
 
 		tag(Tags.Blocks.COBBLESTONE).addTag(MOSSY_COBBLESTONE.getBlockTag()).addTag(COBBLESTONE.getBlockTag());
 

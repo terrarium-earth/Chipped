@@ -1,8 +1,10 @@
 {
   "type": "chipped:botanist_workbench",
   "tags": [
+    "chipped:dirt",
     "chipped:shroomlight",
     "chipped:blue_ice",
+    "chipped:ice",
     "chipped:clay",
     "chipped:dried_kelp_block",
     "chipped:warped_wart_block",
