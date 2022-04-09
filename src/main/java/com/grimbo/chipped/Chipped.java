@@ -57,6 +57,8 @@ public class Chipped {
 		ItemBlockRenderTypes.setRenderLayer(ChippedBlocks.LOOM_TABLE.get(), RenderType.translucent());
 		ItemBlockRenderTypes.setRenderLayer(ChippedBlocks.ALCHEMY_BENCH.get(), RenderType.translucent());
 		ItemBlockRenderTypes.setRenderLayer(ChippedBlocks.MECHANIST_WORKBENCH.get(), RenderType.translucent());
+		ItemBlockRenderTypes.setRenderLayer(ChippedBlocks.CARPENTERS_TABLE.get(), RenderType.translucent());
+		ItemBlockRenderTypes.setRenderLayer(ChippedBlocks.GLASSBLOWER.get(), RenderType.translucent());
 
 		for (RegistryObject<GlassBlock> glass : ChippedBlockTypes.GLASSES) {
 			ItemBlockRenderTypes.setRenderLayer(glass.get(), RenderType.cutout());
