@@ -24,10 +24,12 @@ import java.util.List;
 public class ChippedClient implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
-        BlockRenderLayerMap.INSTANCE.putBlock(ChippedBlocks.BOTANIST_WORKBENCH, RenderType.cutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(ChippedBlocks.LOOM_TABLE, RenderType.cutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(ChippedBlocks.ALCHEMY_BENCH, RenderType.cutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(ChippedBlocks.MECHANIST_WORKBENCH, RenderType.cutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ChippedBlocks.BOTANIST_WORKBENCH, RenderType.translucent());
+        BlockRenderLayerMap.INSTANCE.putBlock(ChippedBlocks.GLASSBLOWER, RenderType.translucent());
+        BlockRenderLayerMap.INSTANCE.putBlock(ChippedBlocks.LOOM_TABLE, RenderType.translucent());
+        BlockRenderLayerMap.INSTANCE.putBlock(ChippedBlocks.ALCHEMY_BENCH, RenderType.translucent());
+        BlockRenderLayerMap.INSTANCE.putBlock(ChippedBlocks.MECHANIST_WORKBENCH, RenderType.translucent());
+        BlockRenderLayerMap.INSTANCE.putBlock(ChippedBlocks.CARPENTERS_TABLE, RenderType.translucent());
 
         renderType(ChippedBlockTypes.GLASSES, RenderType.cutout());
         renderType(ChippedBlockTypes.GLASS_PANES, RenderType.cutout());
