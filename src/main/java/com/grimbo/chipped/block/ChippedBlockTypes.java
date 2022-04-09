@@ -57,15 +57,23 @@ public class ChippedBlockTypes {
 
     public static final ChippedBlockType<Block> STONE = new ChippedBlockType<>("stone");
     public static final ChippedBlockType<Block> COBBLESTONE = new ChippedBlockType<>("cobblestone");
+    public static final ChippedBlockType<Block> MOSSY_COBBLESTONE = new ChippedBlockType<>("mossy_cobblestone");
     public static final ChippedBlockType<Block> END_STONE = new ChippedBlockType<>("end_stone");
     public static final ChippedBlockType<Block> NETHERRACK = new ChippedBlockType<>("netherrack");
-
+    public static final ChippedBlockType<Block> ANDESITE = new ChippedBlockType<>("andesite");
+    public static final ChippedBlockType<Block> DIORITE = new ChippedBlockType<>("diorite");
+    public static final ChippedBlockType<Block> BASALT = new ChippedBlockType<>("basalt");
+    public static final ChippedBlockType<Block> MOSSY_STONE_BRICKS = new ChippedBlockType<>("mossy_stone_bricks");
+    public static final ChippedBlockType<Block> BRICKS = new ChippedBlockType<>("bricks");
     public static final ChippedBlockType<Block> GILDED_BLACKSTONES = new ChippedBlockType<>("gilded_blackstone");
     public static final ChippedBlockType<Block> BLACKSTONES = new ChippedBlockType<>("blackstone");
-    public static final ChippedBlockType<Block> BASALTS = new ChippedBlockType<>("basalt");
+
+    public static final ChippedBlockType<Block> BLUE_ICE = new ChippedBlockType<>("blue_ice");
     public static final ChippedBlockType<Block> CLAYS = new ChippedBlockType<>("clay");
     public static final ChippedBlockType<Block> DRIED_KELP_BLOCKS = new ChippedBlockType<>("dried_kelp_block");
+
     public static final ChippedBlockType<Block> GLOWSTONES = new ChippedBlockType<>("glowstone");
+    public static final ChippedBlockType<Block> ANCIENT_DEBRIS = new ChippedBlockType<>("ancient_debris");
     public static final ChippedBlockType<Block> SEA_LANTERNS = new ChippedBlockType<>("sea_lantern");
     public static final ChippedBlockType<Block> SHROOMLIGHTS = new ChippedBlockType<>("shroomlight");
 

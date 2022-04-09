@@ -48,13 +48,6 @@ public class ChippedBlocks {
     public static final List<RegistryObject<CarvedPumpkinBlock>> SPECIAL_CARVED_PUMPKINS = new ArrayList<>();
     public static final List<RegistryObject<CarvedPumpkinBlock>> VANILLA_CARVED_PUMPKINS = new ArrayList<>();
 
-    // Simple Blocks which have 18 of its own variant
-    // Check ChippedBlocks/ItemTagsProvider before editing!
-    public static final List<ChippedBlockType<Block>> stones18 = Stream.of(
-            "granite", "diorite", "andesite", "prismarine", "dark_prismarine", "purpur_block", "quartz_block",
-            "sandstone", "red_sandstone", "nether_bricks", "red_nether_bricks"
-    ).map(ChippedBlockType::new).collect(Collectors.toList());
-
     public static final String[] specialPumpkinList = {"end", "end2", "nether"};
     public static final String[] carvedPumpkinList = {"happy", "angry", "bigeyes", "bighappy", "boo", "bruh", "classic", "enthusiastic",
             "grinning", "kawaii", "mourn", "owo", "plotting", "sans", "scared", "smallhappy", "squashy", "stretchy", "upsidedown"};
@@ -102,32 +95,37 @@ public class ChippedBlocks {
                     .isSuffocating(ALWAYS_FALSE_POSITION).isViewBlocking(ALWAYS_FALSE_POSITION)));
 
     public static void register() {
-        // Register Stones
-        for (ChippedBlockType<Block> type : stones18) {
-            registerVanillaBlocks(BenchType.MASON, type, 18);
-        }
-
+        // Register Mason Bench Blocks
+        registerVanillaBlocks(BenchType.MASON, ANDESITE, 61);
+        registerVanillaBlocks(BenchType.MASON, DIORITE, 61);
+        registerVanillaBlocks(BenchType.MASON, BASALT, 61);
+        registerVanillaBlocks(BenchType.MASON, MOSSY_COBBLESTONE, 61);
+        registerVanillaBlocks(BenchType.MASON, BRICKS, 61);
         registerVanillaBlocks(BenchType.MASON, STONE, 18);
-        registerVanillaBlocks(BenchType.MASON, COBBLESTONE, 18);
-        registerVanillaBlocks(BenchType.MASON, END_STONE, 18);
+        registerVanillaBlocks(BenchType.MASON, COBBLESTONE, 61);
+        registerVanillaBlocks(BenchType.MASON, END_STONE, 63);
         registerVanillaBlocks(BenchType.MASON, NETHERRACK, 18);
-
+        registerVanillaBlocks(BenchType.MASON, MOSSY_STONE_BRICKS, 61);
         registerVanillaBlocks(BenchType.MASON, Blocks.GILDED_BLACKSTONE, GILDED_BLACKSTONES, 26);
-        registerVanillaBlocks(BenchType.MASON, Blocks.BLACKSTONE, BLACKSTONES, 21);
-        registerVanillaBlocks(BenchType.MASON, Blocks.BASALT, BASALTS, 20);
+        registerVanillaBlocks(BenchType.MASON, Blocks.BLACKSTONE, BLACKSTONES, 57);
 
         for (int id = 0; id < 16; ++id) {
             DyeColor color = DyeColor.byId(id);
             registerVanillaBlocks(BenchType.MASON, TERRACOTTAS.computeIfAbsent(color, k -> new ChippedBlockType<>(k + "_terracotta")), 18);
             registerVanillaBlocks(BenchType.MASON, CONCRETES.computeIfAbsent(color, k -> new ChippedBlockType<>(k + "_concrete")), 18);
         }
-
+        // Register Alchemy Bench Blocks
+        registerVanillaBlocks(BenchType.ALCHEMY, ANCIENT_DEBRIS, 61);
         registerVanillaBlocks(BenchType.ALCHEMY, Blocks.OBSIDIAN, OBSIDIAN, 20);
-        final AbstractBlock.Properties CRYING_OBSIDIAN_PROPERTIES = AbstractBlock.Properties.copy(Blocks.CRYING_OBSIDIAN);
-        registerBlocks(BenchType.ALCHEMY, CRYING_OBSIDIAN, () -> new CryingObsidianBlock(CRYING_OBSIDIAN_PROPERTIES), 20);
         registerVanillaBlocks(BenchType.ALCHEMY, Blocks.GLOWSTONE, GLOWSTONES, 20);
         registerVanillaBlocks(BenchType.ALCHEMY, Blocks.SEA_LANTERN, SEA_LANTERNS, 16);
+        final AbstractBlock.Properties CRYING_OBSIDIAN_PROPERTIES = AbstractBlock.Properties.copy(Blocks.CRYING_OBSIDIAN);
+        registerBlocks(BenchType.ALCHEMY, CRYING_OBSIDIAN, () -> new CryingObsidianBlock(CRYING_OBSIDIAN_PROPERTIES), 20);
+
+        // Register Botanist Bench Blocks
         registerVanillaBlocks(BenchType.BOTANIST, Blocks.SHROOMLIGHT, SHROOMLIGHTS, 16);
+        registerVanillaBlocks(BenchType.BOTANIST, BLUE_ICE, 61);
+        registerVanillaBlocks(BenchType.BOTANIST, Blocks.CLAY, CLAYS, 61);
 
         final AbstractBlock.Properties REDSTONE_LAMP_PROPERTIES = AbstractBlock.Properties.copy(Blocks.REDSTONE_LAMP);
         registerBlocks(BenchType.MECHANIST, REDSTONE_LAMPS, () -> new RedstoneLampBlock(REDSTONE_LAMP_PROPERTIES), 18);
@@ -153,17 +151,16 @@ public class ChippedBlocks {
 
         for (int id = 0; id < 16; ++id) {
             DyeColor color = DyeColor.byId(id);
-            registerBlocks(BenchType.GLASSBLOWER, STAINED_GLASSES.computeIfAbsent(color, k -> new ChippedBlockType<>(k + "_stained_glass")), () -> new StainedGlassBlock(color, GLASS_PROPERTIES), 8);
-            registerBlocks(BenchType.GLASSBLOWER, STAINED_GLASS_PANES.computeIfAbsent(color, k -> new ChippedBlockType<>(k + "_stained_glass_pane")), () -> new StainedGlassPaneBlock(color, GLASS_PANE_PROPERTIES), 8);
+            registerBlocks(BenchType.GLASSBLOWER, STAINED_GLASSES.computeIfAbsent(color, k -> new ChippedBlockType<>(k + "_stained_glass")), () -> new StainedGlassBlock(color, GLASS_PROPERTIES), 10);
+            registerBlocks(BenchType.GLASSBLOWER, STAINED_GLASS_PANES.computeIfAbsent(color, k -> new ChippedBlockType<>(k + "_stained_glass_pane")), () -> new StainedGlassPaneBlock(color, GLASS_PANE_PROPERTIES), 10);
         }
 
         // Register Misc
-        registerVanillaBlocks(BenchType.MASON, Blocks.CLAY, CLAYS, 19);
         registerVanillaBlocks(BenchType.BOTANIST, Blocks.DRIED_KELP_BLOCK, DRIED_KELP_BLOCKS, 12);
 
         final AbstractBlock.Properties woodProperties = AbstractBlock.Properties.of(Material.WOOD).strength(2.0F, 3.0F).sound(SoundType.WOOD);
         for (ChippedWoodType type : ChippedWoodType.VALUES) {
-            registerBlocks(BenchType.CARPENTERS, PLANKS.computeIfAbsent(type, k -> new ChippedBlockType<>(k + "_planks")), () -> new Block(woodProperties), 18);
+            registerBlocks(BenchType.CARPENTERS, PLANKS.computeIfAbsent(type, k -> new ChippedBlockType<>(k + "_planks")), () -> new Block(woodProperties), 38);
         }
 
         final AbstractBlock.Properties hayProperties = AbstractBlock.Properties.copy(Blocks.HAY_BLOCK);

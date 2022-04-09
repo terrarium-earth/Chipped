@@ -1,24 +1,18 @@
 {
   "type": "chipped:mason_table",
   "tags": [
-    "chipped:granite",
-    "chipped:diorite",
     "chipped:andesite",
-    "chipped:prismarine",
-    "chipped:dark_prismarine",
-    "chipped:purpur_block",
-    "chipped:quartz_block",
-    "chipped:sandstone",
-    "chipped:red_sandstone",
-    "chipped:nether_bricks",
-    "chipped:red_nether_bricks",
+    "chipped:diorite",
+    "chipped:basalt",
+    "chipped:mossy_cobblestone",
+    "chipped:bricks",
     "chipped:stone",
     "chipped:cobblestone",
     "chipped:end_stone",
     "chipped:netherrack",
+    "chipped:mossy_stone_bricks",
     "chipped:gilded_blackstone",
     "chipped:blackstone",
-    "chipped:basalt",
     "chipped:white_terracotta",
     "chipped:white_concrete",
     "chipped:orange_terracotta",
@@ -50,7 +44,6 @@
     "chipped:red_terracotta",
     "chipped:red_concrete",
     "chipped:black_terracotta",
-    "chipped:black_concrete",
-    "chipped:clay"
+    "chipped:black_concrete"
   ]
 }

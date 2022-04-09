@@ -8,11 +8,11 @@ import com.grimbo.chipped.block.ChippedBlockTypes;
 
 import com.grimbo.chipped.block.ChippedBlocks;
 import net.minecraft.block.Block;
+import net.minecraft.block.TallFlowerBlock;
 import net.minecraft.data.BlockTagsProvider;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.ItemTagsProvider;
 import net.minecraft.item.DyeColor;
-import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.data.ExistingFileHelper;
@@ -51,15 +51,23 @@ public class ChippedItemTagsProvider extends ItemTagsProvider {
 		tag(ItemTags.PIGLIN_REPELLENTS).addTag(ChippedBlockTypes.SOUL_LANTERNS.getItemTag());
 
 		//Default Forge tags
-		tag(Tags.Items.STONE).addTag(STONE.getItemTag()).addTag(ChippedBlocks.stones18.get(0).getItemTag()).addTag(ChippedBlocks.stones18.get(1).getItemTag()).addTag(ChippedBlocks.stones18.get(2).getItemTag());
+		tag(Tags.Items.STONE)
+				.addTag(ANDESITE.getItemTag())
+				.addTag(DIORITE.getItemTag())
+				.addTag(BASALT.getItemTag())
+				.addTag(MOSSY_STONE_BRICKS.getItemTag())
+				.addTag(BRICKS.getItemTag())
+				.addTag(ANCIENT_DEBRIS.getItemTag())
+				.addTag(BLUE_ICE.getItemTag())
+				.addTag(CLAYS.getItemTag());
 
-		tag(Tags.Items.COBBLESTONE).addTag(COBBLESTONE.getItemTag());
+
+		tag(Tags.Items.COBBLESTONE)
+				.addTag(MOSSY_COBBLESTONE.getItemTag())
+				.addTag(COBBLESTONE.getItemTag());
+
 
 		tag(Tags.Items.END_STONES).addTag(END_STONE.getItemTag());
-
-		tag(Tags.Items.SANDSTONE).addTag(ChippedBlocks.stones18.get(7).getItemTag()).addTag(ChippedBlocks.stones18.get(8).getItemTag());
-		tag(ItemTags.bind("forge:sandstone/colorless")).addTag(ChippedBlocks.stones18.get(7).getItemTag());
-		tag(ItemTags.bind("forge:sandstone/red")).addTag(ChippedBlocks.stones18.get(8).getItemTag());
 
 		tag(Tags.Items.GLASS).addTag(GLASSES.getItemTag());
 		tag(Tags.Items.GLASS_COLORLESS).addTag(GLASSES.getItemTag());

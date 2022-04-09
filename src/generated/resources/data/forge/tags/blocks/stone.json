@@ -1,9 +1,13 @@
 {
   "replace": false,
   "values": [
-    "#chipped:stone",
-    "#chipped:granite",
+    "#chipped:andesite",
     "#chipped:diorite",
-    "#chipped:andesite"
+    "#chipped:basalt",
+    "#chipped:mossy_stone_bricks",
+    "#chipped:bricks",
+    "#chipped:ancient_debris",
+    "#chipped:blue_ice",
+    "#chipped:clay"
   ]
 }
