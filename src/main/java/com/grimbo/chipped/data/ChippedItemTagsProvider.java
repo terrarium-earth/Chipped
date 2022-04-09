@@ -59,7 +59,8 @@ public class ChippedItemTagsProvider extends ItemTagsProvider {
 				.addTag(BRICKS.getItemTag())
 				.addTag(ANCIENT_DEBRIS.getItemTag())
 				.addTag(BLUE_ICE.getItemTag())
-				.addTag(CLAYS.getItemTag());
+				.addTag(CLAYS.getItemTag())
+				.addTag(DARK_PRISMARINE.getItemTag());
 
 
 		tag(Tags.Items.COBBLESTONE)

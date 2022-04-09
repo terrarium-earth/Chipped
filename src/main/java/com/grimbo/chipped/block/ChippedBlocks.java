@@ -106,6 +106,7 @@ public class ChippedBlocks {
         registerVanillaBlocks(BenchType.MASON, END_STONE, 63);
         registerVanillaBlocks(BenchType.MASON, NETHERRACK, 18);
         registerVanillaBlocks(BenchType.MASON, MOSSY_STONE_BRICKS, 61);
+        registerVanillaBlocks(BenchType.MASON, DARK_PRISMARINE, 61);
         registerVanillaBlocks(BenchType.MASON, Blocks.GILDED_BLACKSTONE, GILDED_BLACKSTONES, 26);
         registerVanillaBlocks(BenchType.MASON, Blocks.BLACKSTONE, BLACKSTONES, 57);
 
@@ -120,13 +121,17 @@ public class ChippedBlocks {
         registerVanillaBlocks(BenchType.ALCHEMY, Blocks.GLOWSTONE, GLOWSTONES, 20);
         registerVanillaBlocks(BenchType.ALCHEMY, Blocks.SEA_LANTERN, SEA_LANTERNS, 16);
         final AbstractBlock.Properties CRYING_OBSIDIAN_PROPERTIES = AbstractBlock.Properties.copy(Blocks.CRYING_OBSIDIAN);
-        registerBlocks(BenchType.ALCHEMY, CRYING_OBSIDIAN, () -> new CryingObsidianBlock(CRYING_OBSIDIAN_PROPERTIES), 20);
+        registerBlocks(BenchType.ALCHEMY, CRYING_OBSIDIAN, () -> new CryingObsidianBlock(CRYING_OBSIDIAN_PROPERTIES), 61);
 
         // Register Botanist Bench Blocks
         registerVanillaBlocks(BenchType.BOTANIST, Blocks.SHROOMLIGHT, SHROOMLIGHTS, 16);
         registerVanillaBlocks(BenchType.BOTANIST, BLUE_ICE, 61);
         registerVanillaBlocks(BenchType.BOTANIST, Blocks.CLAY, CLAYS, 61);
+        registerVanillaBlocks(BenchType.BOTANIST, Blocks.DRIED_KELP_BLOCK, DRIED_KELP_BLOCKS, 12);
+        registerVanillaBlocks(BenchType.BOTANIST, WARPED_WART_BLOCK, 14);
+        registerVanillaBlocks(BenchType.BOTANIST, NETHER_WART_BLOCK, 13);
 
+        // Register Mechanist Bench Blocks
         final AbstractBlock.Properties REDSTONE_LAMP_PROPERTIES = AbstractBlock.Properties.copy(Blocks.REDSTONE_LAMP);
         registerBlocks(BenchType.MECHANIST, REDSTONE_LAMPS, () -> new RedstoneLampBlock(REDSTONE_LAMP_PROPERTIES), 18);
 
@@ -154,9 +159,6 @@ public class ChippedBlocks {
             registerBlocks(BenchType.GLASSBLOWER, STAINED_GLASSES.computeIfAbsent(color, k -> new ChippedBlockType<>(k + "_stained_glass")), () -> new StainedGlassBlock(color, GLASS_PROPERTIES), 10);
             registerBlocks(BenchType.GLASSBLOWER, STAINED_GLASS_PANES.computeIfAbsent(color, k -> new ChippedBlockType<>(k + "_stained_glass_pane")), () -> new StainedGlassPaneBlock(color, GLASS_PANE_PROPERTIES), 10);
         }
-
-        // Register Misc
-        registerVanillaBlocks(BenchType.BOTANIST, Blocks.DRIED_KELP_BLOCK, DRIED_KELP_BLOCKS, 12);
 
         final AbstractBlock.Properties woodProperties = AbstractBlock.Properties.of(Material.WOOD).strength(2.0F, 3.0F).sound(SoundType.WOOD);
         for (ChippedWoodType type : ChippedWoodType.VALUES) {
@@ -191,9 +193,6 @@ public class ChippedBlocks {
         registerBlocks(BenchType.BOTANIST, BROWN_MUSHROOM_BLOCK, () -> new HugeMushroomBlock(brownMushroomBlockProperties), 24);
         final AbstractBlock.Properties redMushroomBlockProperties = AbstractBlock.Properties.copy(Blocks.RED_MUSHROOM_BLOCK);
         registerBlocks(BenchType.BOTANIST, RED_MUSHROOM_BLOCK, () -> new HugeMushroomBlock(redMushroomBlockProperties), 15);
-
-        registerVanillaBlocks(BenchType.BOTANIST, WARPED_WART_BLOCK, 14);
-        registerVanillaBlocks(BenchType.BOTANIST, NETHER_WART_BLOCK, 13);
 
         final AbstractBlock.Properties cobwebProperties = AbstractBlock.Properties.copy(Blocks.COBWEB).strength(4.0F/15F, 4.0F);
         registerBlocks(BenchType.BOTANIST, COBWEBS, () -> new WebBlock(cobwebProperties), 10);

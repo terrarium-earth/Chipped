@@ -80,7 +80,8 @@ public class ChippedBlockTagsProvider extends BlockTagsProvider {
 				.addTag(BRICKS.getBlockTag())
 				.addTag(ANCIENT_DEBRIS.getBlockTag())
 				.addTag(BLUE_ICE.getBlockTag())
-				.addTag(CLAYS.getBlockTag());
+				.addTag(CLAYS.getBlockTag())
+				.addTag(DARK_PRISMARINE.getBlockTag());
 
 		tag(Tags.Blocks.COBBLESTONE).addTag(MOSSY_COBBLESTONE.getBlockTag()).addTag(COBBLESTONE.getBlockTag());
 
