@@ -1,11 +1,12 @@
 {
-  "block.chipped.botanist_workbench": "Botanist's Workbench",
-  "block.chipped.glassblower": "Glass Blower",
+  "block.chipped.botanist_workbench": "Botanist's Table",
+  "block.chipped.glassblower": "Glassblower's Table",
   "block.chipped.carpenters_table": "Carpenter's Table",
-  "block.chipped.loom_table": "Loom",
-  "block.chipped.alchemy_bench": "Alchemy Bench",
-  "block.chipped.mechanist_workbench": "Mechanist's Workbench",
+  "block.chipped.loom_table": "Shepherd's Table",
+  "block.chipped.alchemy_bench": "Scholar's Table",
+  "block.chipped.mechanist_workbench": "Tinkerer's Table",
   "block.chipped.mason_table": "Mason's Table",
+
   "block.chipped.black_wool_1": "Black Wool",
   "block.chipped.black_wool_2": "Black Wool",
   "block.chipped.black_wool_3": "Black Wool",
@@ -24,6 +25,7 @@
   "block.chipped.black_wool_16": "Black Wool",
   "block.chipped.black_wool_17": "Black Wool",
   "block.chipped.black_wool_18": "Black Wool",
+
   "block.chipped.blue_wool_1": "Blue Wool",
   "block.chipped.blue_wool_2": "Blue Wool",
   "block.chipped.blue_wool_3": "Blue Wool",
@@ -42,6 +44,7 @@
   "block.chipped.blue_wool_16": "Blue Wool",
   "block.chipped.blue_wool_17": "Blue Wool",
   "block.chipped.blue_wool_18": "Blue Wool",
+
   "block.chipped.brown_wool_1": "Brown Wool",
   "block.chipped.brown_wool_2": "Brown Wool",
   "block.chipped.brown_wool_3": "Brown Wool",
@@ -60,6 +63,7 @@
   "block.chipped.brown_wool_16": "Brown Wool",
   "block.chipped.brown_wool_17": "Brown Wool",
   "block.chipped.brown_wool_18": "Brown Wool",
+
   "block.chipped.cyan_wool_1": "Cyan Wool",
   "block.chipped.cyan_wool_2": "Cyan Wool",
   "block.chipped.cyan_wool_3": "Cyan Wool",
@@ -78,6 +82,7 @@
   "block.chipped.cyan_wool_16": "Cyan Wool",
   "block.chipped.cyan_wool_17": "Cyan Wool",
   "block.chipped.cyan_wool_18": "Cyan Wool",
+
   "block.chipped.purple_wool_1": "Purple Wool",
   "block.chipped.purple_wool_2": "Purple Wool",
   "block.chipped.purple_wool_3": "Purple Wool",
@@ -96,6 +101,7 @@
   "block.chipped.purple_wool_16": "Purple Wool",
   "block.chipped.purple_wool_17": "Purple Wool",
   "block.chipped.purple_wool_18": "Purple Wool",
+
   "block.chipped.hay_block_1": "Hay Bale",
   "block.chipped.hay_block_2": "Hay Bale",
   "block.chipped.hay_block_3": "Hay Bale",
@@ -104,6 +110,7 @@
   "block.chipped.hay_block_6": "Hay Bale",
   "block.chipped.hay_block_7": "Hay Bale",
   "block.chipped.hay_block_8": "Hay Bale",
+
   "block.chipped.gray_wool_1": "Gray Wool",
   "block.chipped.gray_wool_2": "Gray Wool",
   "block.chipped.gray_wool_3": "Gray Wool",
@@ -113,6 +120,7 @@
   "block.chipped.gray_wool_7": "Gray Wool",
   "block.chipped.gray_wool_8": "Gray Wool",
   "block.chipped.gray_wool_9": "Gray Wool",
+
   "block.chipped.gray_wool_10": "Gray Wool",
   "block.chipped.gray_wool_11": "Gray Wool",
   "block.chipped.gray_wool_12": "Gray Wool",
@@ -140,6 +148,7 @@
   "block.chipped.green_wool_16": "Green Wool",
   "block.chipped.green_wool_17": "Green Wool",
   "block.chipped.green_wool_18": "Green Wool",
+
   "block.chipped.yellow_wool_1": "Yellow Wool",
   "block.chipped.yellow_wool_2": "Yellow Wool",
   "block.chipped.yellow_wool_3": "Yellow Wool",
@@ -158,6 +167,7 @@
   "block.chipped.yellow_wool_16": "Yellow Wool",
   "block.chipped.yellow_wool_17": "Yellow Wool",
   "block.chipped.yellow_wool_18": "Yellow Wool",
+
   "block.chipped.light_blue_wool_1": "Light Blue Wool",
   "block.chipped.light_blue_wool_2": "Light Blue Wool",
   "block.chipped.light_blue_wool_3": "Light Blue Wool",
@@ -176,6 +186,7 @@
   "block.chipped.light_blue_wool_16": "Light Blue Wool",
   "block.chipped.light_blue_wool_17": "Light Blue Wool",
   "block.chipped.light_blue_wool_18": "Light Blue Wool",
+
   "block.chipped.light_gray_wool_1": "Light Gray Wool",
   "block.chipped.light_gray_wool_2": "Light Gray Wool",
   "block.chipped.light_gray_wool_3": "Light Gray Wool",
@@ -194,6 +205,7 @@
   "block.chipped.light_gray_wool_16": "Light Gray Wool",
   "block.chipped.light_gray_wool_17": "Light Gray Wool",
   "block.chipped.light_gray_wool_18": "Light Gray Wool",
+
   "block.chipped.lime_wool_1": "Lime Wool",
   "block.chipped.lime_wool_2": "Lime Wool",
   "block.chipped.lime_wool_3": "Lime Wool",
@@ -212,6 +224,7 @@
   "block.chipped.lime_wool_16": "Lime Wool",
   "block.chipped.lime_wool_17": "Lime Wool",
   "block.chipped.lime_wool_18": "Lime Wool",
+
   "block.chipped.magenta_wool_1": "Magenta Wool",
   "block.chipped.magenta_wool_2": "Magenta Wool",
   "block.chipped.magenta_wool_3": "Magenta Wool",
@@ -230,6 +243,7 @@
   "block.chipped.magenta_wool_16": "Magenta Wool",
   "block.chipped.magenta_wool_17": "Magenta Wool",
   "block.chipped.magenta_wool_18": "Magenta Wool",
+
   "block.chipped.orange_wool_1": "Orange Wool",
   "block.chipped.orange_wool_2": "Orange Wool",
   "block.chipped.orange_wool_3": "Orange Wool",
@@ -248,6 +262,7 @@
   "block.chipped.orange_wool_16": "Orange Wool",
   "block.chipped.orange_wool_17": "Orange Wool",
   "block.chipped.orange_wool_18": "Orange Wool",
+
   "block.chipped.pink_wool_1": "Pink Wool",
   "block.chipped.pink_wool_2": "Pink Wool",
   "block.chipped.pink_wool_3": "Pink Wool",
@@ -266,6 +281,7 @@
   "block.chipped.pink_wool_16": "Pink Wool",
   "block.chipped.pink_wool_17": "Pink Wool",
   "block.chipped.pink_wool_18": "Pink Wool",
+
   "block.chipped.red_wool_1": "Red Wool",
   "block.chipped.red_wool_2": "Red Wool",
   "block.chipped.red_wool_3": "Red Wool",
@@ -284,6 +300,7 @@
   "block.chipped.red_wool_16": "Red Wool",
   "block.chipped.red_wool_17": "Red Wool",
   "block.chipped.red_wool_18": "Red Wool",
+
   "block.chipped.white_wool_1": "White Wool",
   "block.chipped.white_wool_2": "White Wool",
   "block.chipped.white_wool_3": "White Wool",
@@ -302,6 +319,7 @@
   "block.chipped.white_wool_16": "White Wool",
   "block.chipped.white_wool_17": "White Wool",
   "block.chipped.white_wool_18": "White Wool",
+
   "block.chipped.glass_1": "Glass",
   "block.chipped.glass_2": "Glass",
   "block.chipped.glass_3": "Glass",
@@ -364,6 +382,7 @@
   "block.chipped.acacia_wood_glass_4": "Glass",
   "block.chipped.acacia_wood_glass_5": "Glass",
   "block.chipped.acacia_wood_glass_6": "Glass",
+
   "block.chipped.black_carpet_1": "Black Carpet",
   "block.chipped.black_carpet_2": "Black Carpet",
   "block.chipped.black_carpet_3": "Black Carpet",
@@ -382,6 +401,7 @@
   "block.chipped.black_carpet_16": "Black Carpet",
   "block.chipped.black_carpet_17": "Black Carpet",
   "block.chipped.black_carpet_18": "Black Carpet",
+
   "block.chipped.blue_carpet_1": "Blue Carpet",
   "block.chipped.blue_carpet_2": "Blue Carpet",
   "block.chipped.blue_carpet_3": "Blue Carpet",
@@ -400,6 +420,7 @@
   "block.chipped.blue_carpet_16": "Blue Carpet",
   "block.chipped.blue_carpet_17": "Blue Carpet",
   "block.chipped.blue_carpet_18": "Blue Carpet",
+
   "block.chipped.brown_carpet_1": "Brown Carpet",
   "block.chipped.brown_carpet_2": "Brown Carpet",
   "block.chipped.brown_carpet_3": "Brown Carpet",
@@ -418,6 +439,7 @@
   "block.chipped.brown_carpet_16": "Brown Carpet",
   "block.chipped.brown_carpet_17": "Brown Carpet",
   "block.chipped.brown_carpet_18": "Brown Carpet",
+
   "block.chipped.cyan_carpet_1": "Cyan Carpet",
   "block.chipped.cyan_carpet_2": "Cyan Carpet",
   "block.chipped.cyan_carpet_3": "Cyan Carpet",
@@ -436,6 +458,7 @@
   "block.chipped.cyan_carpet_16": "Cyan Carpet",
   "block.chipped.cyan_carpet_17": "Cyan Carpet",
   "block.chipped.cyan_carpet_18": "Cyan Carpet",
+
   "block.chipped.purple_carpet_1": "Purple Carpet",
   "block.chipped.purple_carpet_2": "Purple Carpet",
   "block.chipped.purple_carpet_3": "Purple Carpet",
@@ -454,6 +477,7 @@
   "block.chipped.purple_carpet_16": "Purple Carpet",
   "block.chipped.purple_carpet_17": "Purple Carpet",
   "block.chipped.purple_carpet_18": "Purple Carpet",
+
   "block.chipped.gray_carpet_1": "Gray Carpet",
   "block.chipped.gray_carpet_2": "Gray Carpet",
   "block.chipped.gray_carpet_3": "Gray Carpet",
@@ -472,6 +496,7 @@
   "block.chipped.gray_carpet_16": "Gray Carpet",
   "block.chipped.gray_carpet_17": "Gray Carpet",
   "block.chipped.gray_carpet_18": "Gray Carpet",
+
   "block.chipped.green_carpet_1": "Green Carpet",
   "block.chipped.green_carpet_2": "Green Carpet",
   "block.chipped.green_carpet_3": "Green Carpet",
@@ -490,6 +515,7 @@
   "block.chipped.green_carpet_16": "Green Carpet",
   "block.chipped.green_carpet_17": "Green Carpet",
   "block.chipped.green_carpet_18": "Green Carpet",
+
   "block.chipped.yellow_carpet_1": "Yellow Carpet",
   "block.chipped.yellow_carpet_2": "Yellow Carpet",
   "block.chipped.yellow_carpet_3": "Yellow Carpet",
@@ -508,6 +534,7 @@
   "block.chipped.yellow_carpet_16": "Yellow Carpet",
   "block.chipped.yellow_carpet_17": "Yellow Carpet",
   "block.chipped.yellow_carpet_18": "Yellow Carpet",
+
   "block.chipped.light_blue_carpet_1": "Light Blue Carpet",
   "block.chipped.light_blue_carpet_2": "Light Blue Carpet",
   "block.chipped.light_blue_carpet_3": "Light Blue Carpet",
@@ -544,6 +571,7 @@
   "block.chipped.light_gray_carpet_16": "Light Gray Carpet",
   "block.chipped.light_gray_carpet_17": "Light Gray Carpet",
   "block.chipped.light_gray_carpet_18": "Light Gray Carpet",
+
   "block.chipped.lime_carpet_1": "Lime Carpet",
   "block.chipped.lime_carpet_2": "Lime Carpet",
   "block.chipped.lime_carpet_3": "Lime Carpet",
@@ -562,6 +590,7 @@
   "block.chipped.lime_carpet_16": "Lime Carpet",
   "block.chipped.lime_carpet_17": "Lime Carpet",
   "block.chipped.lime_carpet_18": "Lime Carpet",
+
   "block.chipped.magenta_carpet_1": "Magenta Carpet",
   "block.chipped.magenta_carpet_2": "Magenta Carpet",
   "block.chipped.magenta_carpet_3": "Magenta Carpet",
@@ -580,6 +609,7 @@
   "block.chipped.magenta_carpet_16": "Magenta Carpet",
   "block.chipped.magenta_carpet_17": "Magenta Carpet",
   "block.chipped.magenta_carpet_18": "Magenta Carpet",
+
   "block.chipped.orange_carpet_1": "Orange Carpet",
   "block.chipped.orange_carpet_2": "Orange Carpet",
   "block.chipped.orange_carpet_3": "Orange Carpet",
@@ -598,6 +628,7 @@
   "block.chipped.orange_carpet_16": "Orange Carpet",
   "block.chipped.orange_carpet_17": "Orange Carpet",
   "block.chipped.orange_carpet_18": "Orange Carpet",
+
   "block.chipped.pink_carpet_1": "Pink Carpet",
   "block.chipped.pink_carpet_2": "Pink Carpet",
   "block.chipped.pink_carpet_3": "Pink Carpet",
@@ -616,6 +647,7 @@
   "block.chipped.pink_carpet_16": "Pink Carpet",
   "block.chipped.pink_carpet_17": "Pink Carpet",
   "block.chipped.pink_carpet_18": "Pink Carpet",
+
   "block.chipped.red_carpet_1": "Red Carpet",
   "block.chipped.red_carpet_2": "Red Carpet",
   "block.chipped.red_carpet_3": "Red Carpet",
@@ -634,6 +666,7 @@
   "block.chipped.red_carpet_16": "Red Carpet",
   "block.chipped.red_carpet_17": "Red Carpet",
   "block.chipped.red_carpet_18": "Red Carpet",
+
   "block.chipped.white_carpet_1": "White Carpet",
   "block.chipped.white_carpet_2": "White Carpet",
   "block.chipped.white_carpet_3": "White Carpet",
@@ -652,6 +685,7 @@
   "block.chipped.white_carpet_16": "White Carpet",
   "block.chipped.white_carpet_17": "White Carpet",
   "block.chipped.white_carpet_18": "White Carpet",
+
   "block.chipped.black_stained_glass_1": "Black Stained Glass",
   "block.chipped.black_stained_glass_2": "Black Stained Glass",
   "block.chipped.black_stained_glass_3": "Black Stained Glass",
@@ -660,6 +694,7 @@
   "block.chipped.black_stained_glass_6": "Black Stained Glass",
   "block.chipped.black_stained_glass_7": "Black Stained Glass",
   "block.chipped.black_stained_glass_8": "Black Stained Glass",
+
   "block.chipped.blue_stained_glass_1": "Blue Stained Glass",
   "block.chipped.blue_stained_glass_2": "Blue Stained Glass",
   "block.chipped.blue_stained_glass_3": "Blue Stained Glass",
@@ -668,6 +703,7 @@
   "block.chipped.blue_stained_glass_6": "Blue Stained Glass",
   "block.chipped.blue_stained_glass_7": "Blue Stained Glass",
   "block.chipped.blue_stained_glass_8": "Blue Stained Glass",
+
   "block.chipped.brown_stained_glass_1": "Brown Stained Glass",
   "block.chipped.brown_stained_glass_2": "Brown Stained Glass",
   "block.chipped.brown_stained_glass_3": "Brown Stained Glass",
@@ -676,6 +712,7 @@
   "block.chipped.brown_stained_glass_6": "Brown Stained Glass",
   "block.chipped.brown_stained_glass_7": "Brown Stained Glass",
   "block.chipped.brown_stained_glass_8": "Brown Stained Glass",
+
   "block.chipped.cyan_stained_glass_1": "Cyan Stained Glass",
   "block.chipped.cyan_stained_glass_2": "Cyan Stained Glass",
   "block.chipped.cyan_stained_glass_3": "Cyan Stained Glass",
@@ -684,6 +721,7 @@
   "block.chipped.cyan_stained_glass_6": "Cyan Stained Glass",
   "block.chipped.cyan_stained_glass_7": "Cyan Stained Glass",
   "block.chipped.cyan_stained_glass_8": "Cyan Stained Glass",
+
   "block.chipped.purple_stained_glass_1": "Purple Stained Glass",
   "block.chipped.purple_stained_glass_2": "Purple Stained Glass",
   "block.chipped.purple_stained_glass_3": "Purple Stained Glass",
@@ -692,6 +730,7 @@
   "block.chipped.purple_stained_glass_6": "Purple Stained Glass",
   "block.chipped.purple_stained_glass_7": "Purple Stained Glass",
   "block.chipped.purple_stained_glass_8": "Purple Stained Glass",
+
   "block.chipped.gray_stained_glass_1": "Gray Stained Glass",
   "block.chipped.gray_stained_glass_2": "Gray Stained Glass",
   "block.chipped.gray_stained_glass_3": "Gray Stained Glass",
@@ -700,6 +739,7 @@
   "block.chipped.gray_stained_glass_6": "Gray Stained Glass",
   "block.chipped.gray_stained_glass_7": "Gray Stained Glass",
   "block.chipped.gray_stained_glass_8": "Gray Stained Glass",
+
   "block.chipped.green_stained_glass_1": "Green Stained Glass",
   "block.chipped.green_stained_glass_2": "Green Stained Glass",
   "block.chipped.green_stained_glass_3": "Green Stained Glass",
@@ -708,6 +748,7 @@
   "block.chipped.green_stained_glass_6": "Green Stained Glass",
   "block.chipped.green_stained_glass_7": "Green Stained Glass",
   "block.chipped.green_stained_glass_8": "Green Stained Glass",
+
   "block.chipped.yellow_stained_glass_1": "Yellow Stained Glass",
   "block.chipped.yellow_stained_glass_2": "Yellow Stained Glass",
   "block.chipped.yellow_stained_glass_3": "Yellow Stained Glass",
@@ -716,6 +757,7 @@
   "block.chipped.yellow_stained_glass_6": "Yellow Stained Glass",
   "block.chipped.yellow_stained_glass_7": "Yellow Stained Glass",
   "block.chipped.yellow_stained_glass_8": "Yellow Stained Glass",
+
   "block.chipped.light_blue_stained_glass_1": "Light Blue Stained Glass",
   "block.chipped.light_blue_stained_glass_2": "Light Blue Stained Glass",
   "block.chipped.light_blue_stained_glass_3": "Light Blue Stained Glass",
@@ -732,6 +774,7 @@
   "block.chipped.light_gray_stained_glass_6": "Light Gray Stained Glass",
   "block.chipped.light_gray_stained_glass_7": "Light Gray Stained Glass",
   "block.chipped.light_gray_stained_glass_8": "Light Gray Stained Glass",
+
   "block.chipped.lime_stained_glass_1": "Lime Stained Glass",
   "block.chipped.lime_stained_glass_2": "Lime Stained Glass",
   "block.chipped.lime_stained_glass_3": "Lime Stained Glass",
@@ -740,6 +783,7 @@
   "block.chipped.lime_stained_glass_6": "Lime Stained Glass",
   "block.chipped.lime_stained_glass_7": "Lime Stained Glass",
   "block.chipped.lime_stained_glass_8": "Lime Stained Glass",
+
   "block.chipped.magenta_stained_glass_1": "Magenta Stained Glass",
   "block.chipped.magenta_stained_glass_2": "Magenta Stained Glass",
   "block.chipped.magenta_stained_glass_3": "Magenta Stained Glass",
@@ -748,6 +792,7 @@
   "block.chipped.magenta_stained_glass_6": "Magenta Stained Glass",
   "block.chipped.magenta_stained_glass_7": "Magenta Stained Glass",
   "block.chipped.magenta_stained_glass_8": "Magenta Stained Glass",
+
   "block.chipped.orange_stained_glass_1": "Orange Stained Glass",
   "block.chipped.orange_stained_glass_2": "Orange Stained Glass",
   "block.chipped.orange_stained_glass_3": "Orange Stained Glass",
@@ -756,6 +801,7 @@
   "block.chipped.orange_stained_glass_6": "Orange Stained Glass",
   "block.chipped.orange_stained_glass_7": "Orange Stained Glass",
   "block.chipped.orange_stained_glass_8": "Orange Stained Glass",
+
   "block.chipped.pink_stained_glass_1": "Pink Stained Glass",
   "block.chipped.pink_stained_glass_2": "Pink Stained Glass",
   "block.chipped.pink_stained_glass_3": "Pink Stained Glass",
@@ -764,6 +810,7 @@
   "block.chipped.pink_stained_glass_6": "Pink Stained Glass",
   "block.chipped.pink_stained_glass_7": "Pink Stained Glass",
   "block.chipped.pink_stained_glass_8": "Pink Stained Glass",
+
   "block.chipped.red_stained_glass_1": "Red Stained Glass",
   "block.chipped.red_stained_glass_2": "Red Stained Glass",
   "block.chipped.red_stained_glass_3": "Red Stained Glass",
@@ -772,6 +819,7 @@
   "block.chipped.red_stained_glass_6": "Red Stained Glass",
   "block.chipped.red_stained_glass_7": "Red Stained Glass",
   "block.chipped.red_stained_glass_8": "Red Stained Glass",
+
   "block.chipped.white_stained_glass_1": "White Stained Glass",
   "block.chipped.white_stained_glass_2": "White Stained Glass",
   "block.chipped.white_stained_glass_3": "White Stained Glass",
@@ -780,24 +828,69 @@
   "block.chipped.white_stained_glass_6": "White Stained Glass",
   "block.chipped.white_stained_glass_7": "White Stained Glass",
   "block.chipped.white_stained_glass_8": "White Stained Glass",
-  "block.chipped.andesite_1": "Andesite",
-  "block.chipped.andesite_2": "Andesite",
-  "block.chipped.andesite_3": "Andesite",
+
+  "block.chipped.andesite_1": "Polished Andesite",
+  "block.chipped.andesite_2": "Tiny Brick Bordered Andesite",
+  "block.chipped.andesite_3": "Engraved Andesite",
   "block.chipped.andesite_4": "Andesite",
-  "block.chipped.andesite_5": "Andesite",
-  "block.chipped.andesite_6": "Andesite",
-  "block.chipped.andesite_7": "Andesite",
-  "block.chipped.andesite_8": "Andesite",
-  "block.chipped.andesite_9": "Andesite",
-  "block.chipped.andesite_10": "Andesite",
-  "block.chipped.andesite_11": "Andesite",
-  "block.chipped.andesite_12": "Andesite",
-  "block.chipped.andesite_13": "Andesite",
-  "block.chipped.andesite_14": "Andesite",
-  "block.chipped.andesite_15": "Andesite",
-  "block.chipped.andesite_16": "Andesite",
-  "block.chipped.andesite_17": "Andesite",
-  "block.chipped.andesite_18": "Andesite",
+  "block.chipped.andesite_5": "Unamused Andesite Carving",
+  "block.chipped.andesite_6": "Inlaid Andesite",
+  "block.chipped.andesite_7": "Rough Andesite",
+  "block.chipped.andesite_8": "Laid Andesite Bricks",
+  "block.chipped.andesite_9": "Pillar Andesite Bricks",
+  "block.chipped.andesite_10": "Tiny Layered Andesite Bricks",
+  "block.chipped.andesite_11": "Spider Andesite Carving",
+  "block.chipped.andesite_12": "Duh Andesite Carving",
+  "block.chipped.andesite_13": "Brick Bordered Andesite",
+  "block.chipped.andesite_14": "Offset Andesite Bricks",
+  "block.chipped.andesite_15": "Andesite Bricks",
+  "block.chipped.andesite_16": "Andesite Mini Tiles",
+  "block.chipped.andesite_17": "Sad Andesite Carving",
+  "block.chipped.andesite_18": "Crying Andesite Carving",
+  "block.chipped.andesite_19": "Cut Blank Andesite",
+  "block.chipped.andesite_20": "Cut Glad Andesite",
+  "block.chipped.andesite_21": "Cobbled Andesite",
+  "block.chipped.andesite_22": "Edged Andesite Bricks",
+  "block.chipped.andesite_23": "Creeper Andesite Carving",
+  "block.chipped.andesite_24": "Eroded Andesite",
+  "block.chipped.andesite_25": "Etched Andesite Bricks",
+  "block.chipped.andesite_26": "Flat Andesite Tiles",
+  "block.chipped.andesite_27": "Thick Inlaid Andesite",
+  "block.chipped.andesite_28": "Inscribed Andesite",
+  "block.chipped.andesite_29": "Bordered Andesite",
+  "block.chipped.andesite_30": "Loded Andesite",
+  "block.chipped.andesite_31": "Cracked Disordered Andesite Bricks",
+  "block.chipped.andesite_32": "Overlapping Andesite Tiles",
+  "block.chipped.andesite_33": "Cracked Andesite Bricks",
+  "block.chipped.andesite_34": "Cracked Flat Andesite Tiles",
+  "block.chipped.andesite_35": "Prismal Andesite",
+  "block.chipped.andesite_36": "Blank Andesite Carving",
+  "block.chipped.andesite_37": "Rounded Andesite Bricks",
+  "block.chipped.andesite_38": "Runic Andesite Carving",
+  "block.chipped.andesite_39": "Cut Andesite Column",
+  "block.chipped.andesite_40": "Sanded Andesite",
+  "block.chipped.andesite_41": "Small Andesite Bricks",
+  "block.chipped.andesite_42": "Smooth Andesite Column",
+  "block.chipped.andesite_43": "Smooth Inlaid Andesite",
+  "block.chipped.andesite_44": "Smooth Ringed Andesite",
+  "block.chipped.andesite_45": "Smooth Double Inlaid Andesite",
+  "block.chipped.andesite_46": "Checkered Andesite Tiles",
+  "block.chipped.andesite_47": "Spiraled Andesite",
+  "block.chipped.andesite_48": "Stacked Andesite Bricks",
+  "block.chipped.andesite_49": "Angry Andesite Carving",
+  "block.chipped.andesite_50": "Tiled Andesite",
+  "block.chipped.andesite_51": "Tiled Andesite Column",
+  "block.chipped.andesite_52": "Tiled Bordered Andesite",
+  "block.chipped.andesite_53": "Tiny Andesite Bricks",
+  "block.chipped.andesite_54": "Carved Andesite",
+  "block.chipped.andesite_55": "Tiny Layered Andesite Slabs",
+  "block.chipped.andesite_56": "Andesite Pillar",
+  "block.chipped.andesite_57": "Trodden Andesite",
+  "block.chipped.andesite_58": "Andesite Scales",
+  "block.chipped.andesite_59": "Vertical Cut Andesite",
+  "block.chipped.andesite_60": "Vertical Disordered Andesite Bricks",
+  "block.chipped.andesite_61": "Weathered Andesite",
+
   "block.chipped.clay_1": "Clay",
   "block.chipped.clay_2": "Clay",
   "block.chipped.clay_3": "Clay",
@@ -817,6 +910,49 @@
   "block.chipped.clay_17": "Clay",
   "block.chipped.clay_18": "Clay",
   "block.chipped.clay_19": "Clay",
+  "block.chipped.clay_20": "Clay",
+  "block.chipped.clay_21": "Clay",
+  "block.chipped.clay_22": "Clay",
+  "block.chipped.clay_23": "Clay",
+  "block.chipped.clay_24": "Clay",
+  "block.chipped.clay_25": "Clay",
+  "block.chipped.clay_26": "Clay",
+  "block.chipped.clay_27": "Clay",
+  "block.chipped.clay_28": "Clay",
+  "block.chipped.clay_29": "Clay",
+  "block.chipped.clay_30": "Clay",
+  "block.chipped.clay_31": "Clay",
+  "block.chipped.clay_32": "Clay",
+  "block.chipped.clay_33": "Clay",
+  "block.chipped.clay_34": "Clay",
+  "block.chipped.clay_35": "Clay",
+  "block.chipped.clay_36": "Clay",
+  "block.chipped.clay_37": "Clay",
+  "block.chipped.clay_38": "Clay",
+  "block.chipped.clay_39": "Clay",
+  "block.chipped.clay_40": "Clay",
+  "block.chipped.clay_41": "Clay",
+  "block.chipped.clay_42": "Clay",
+  "block.chipped.clay_43": "Clay",
+  "block.chipped.clay_44": "Clay",
+  "block.chipped.clay_45": "Clay",
+  "block.chipped.clay_46": "Clay",
+  "block.chipped.clay_47": "Clay",
+  "block.chipped.clay_48": "Clay",
+  "block.chipped.clay_49": "Clay",
+  "block.chipped.clay_50": "Clay",
+  "block.chipped.clay_51": "Clay",
+  "block.chipped.clay_52": "Clay",
+  "block.chipped.clay_53": "Clay",
+  "block.chipped.clay_54": "Clay",
+  "block.chipped.clay_55": "Clay",
+  "block.chipped.clay_56": "Clay",
+  "block.chipped.clay_57": "Clay",
+  "block.chipped.clay_58": "Clay",
+  "block.chipped.clay_59": "Clay",
+  "block.chipped.clay_60": "Clay",
+  "block.chipped.clay_61": "Clay",
+
   "block.chipped.dark_prismarine_1": "Dark Prismarine",
   "block.chipped.dark_prismarine_2": "Dark Prismarine",
   "block.chipped.dark_prismarine_3": "Dark Prismarine",
@@ -835,6 +971,50 @@
   "block.chipped.dark_prismarine_16": "Dark Prismarine",
   "block.chipped.dark_prismarine_17": "Dark Prismarine",
   "block.chipped.dark_prismarine_18": "Dark Prismarine",
+  "block.chipped.dark_prismarine_19": "Dark Prismarine",
+  "block.chipped.dark_prismarine_20": "Dark Prismarine",
+  "block.chipped.dark_prismarine_21": "Dark Prismarine",
+  "block.chipped.dark_prismarine_22": "Dark Prismarine",
+  "block.chipped.dark_prismarine_23": "Dark Prismarine",
+  "block.chipped.dark_prismarine_24": "Dark Prismarine",
+  "block.chipped.dark_prismarine_25": "Dark Prismarine",
+  "block.chipped.dark_prismarine_26": "Dark Prismarine",
+  "block.chipped.dark_prismarine_27": "Dark Prismarine",
+  "block.chipped.dark_prismarine_28": "Dark Prismarine",
+  "block.chipped.dark_prismarine_29": "Dark Prismarine",
+  "block.chipped.dark_prismarine_30": "Dark Prismarine",
+  "block.chipped.dark_prismarine_31": "Dark Prismarine",
+  "block.chipped.dark_prismarine_32": "Dark Prismarine",
+  "block.chipped.dark_prismarine_33": "Dark Prismarine",
+  "block.chipped.dark_prismarine_34": "Dark Prismarine",
+  "block.chipped.dark_prismarine_35": "Dark Prismarine",
+  "block.chipped.dark_prismarine_36": "Dark Prismarine",
+  "block.chipped.dark_prismarine_37": "Dark Prismarine",
+  "block.chipped.dark_prismarine_38": "Dark Prismarine",
+  "block.chipped.dark_prismarine_39": "Dark Prismarine",
+  "block.chipped.dark_prismarine_40": "Dark Prismarine",
+  "block.chipped.dark_prismarine_41": "Dark Prismarine",
+  "block.chipped.dark_prismarine_42": "Dark Prismarine",
+  "block.chipped.dark_prismarine_43": "Dark Prismarine",
+  "block.chipped.dark_prismarine_44": "Dark Prismarine",
+  "block.chipped.dark_prismarine_45": "Dark Prismarine",
+  "block.chipped.dark_prismarine_46": "Dark Prismarine",
+  "block.chipped.dark_prismarine_47": "Dark Prismarine",
+  "block.chipped.dark_prismarine_48": "Dark Prismarine",
+  "block.chipped.dark_prismarine_49": "Dark Prismarine",
+  "block.chipped.dark_prismarine_50": "Dark Prismarine",
+  "block.chipped.dark_prismarine_51": "Dark Prismarine",
+  "block.chipped.dark_prismarine_52": "Dark Prismarine",
+  "block.chipped.dark_prismarine_53": "Dark Prismarine",
+  "block.chipped.dark_prismarine_54": "Dark Prismarine",
+  "block.chipped.dark_prismarine_55": "Dark Prismarine",
+  "block.chipped.dark_prismarine_56": "Dark Prismarine",
+  "block.chipped.dark_prismarine_57": "Dark Prismarine",
+  "block.chipped.dark_prismarine_58": "Dark Prismarine",
+  "block.chipped.dark_prismarine_59": "Dark Prismarine",
+  "block.chipped.dark_prismarine_60": "Dark Prismarine",
+  "block.chipped.dark_prismarine_61": "Dark Prismarine",
+
   "block.chipped.prismarine_1": "Prismarine",
   "block.chipped.prismarine_2": "Prismarine",
   "block.chipped.prismarine_3": "Prismarine",
@@ -853,6 +1033,7 @@
   "block.chipped.prismarine_16": "Prismarine",
   "block.chipped.prismarine_17": "Prismarine",
   "block.chipped.prismarine_18": "Prismarine",
+
   "block.chipped.red_nether_bricks_1": "Red Nether Bricks",
   "block.chipped.red_nether_bricks_2": "Red Nether Bricks",
   "block.chipped.red_nether_bricks_3": "Red Nether Bricks",
@@ -871,6 +1052,7 @@
   "block.chipped.red_nether_bricks_16": "Red Nether Bricks",
   "block.chipped.red_nether_bricks_17": "Red Nether Bricks",
   "block.chipped.red_nether_bricks_18": "Red Nether Bricks",
+
   "block.chipped.sandstone_1": "Sandstone",
   "block.chipped.sandstone_2": "Sandstone",
   "block.chipped.sandstone_3": "Sandstone",
@@ -889,6 +1071,7 @@
   "block.chipped.sandstone_16": "Sandstone",
   "block.chipped.sandstone_17": "Sandstone",
   "block.chipped.sandstone_18": "Sandstone",
+
   "block.chipped.red_sandstone_1": "Red Sandstone",
   "block.chipped.red_sandstone_2": "Red Sandstone",
   "block.chipped.red_sandstone_3": "Red Sandstone",
@@ -907,6 +1090,7 @@
   "block.chipped.red_sandstone_16": "Red Sandstone",
   "block.chipped.red_sandstone_17": "Red Sandstone",
   "block.chipped.red_sandstone_18": "Red Sandstone",
+
   "block.chipped.nether_bricks_1": "Nether Bricks",
   "block.chipped.nether_bricks_2": "Nether Bricks",
   "block.chipped.nether_bricks_3": "Nether Bricks",
@@ -925,6 +1109,7 @@
   "block.chipped.nether_bricks_16": "Nether Bricks",
   "block.chipped.nether_bricks_17": "Nether Bricks",
   "block.chipped.nether_bricks_18": "Nether Bricks",
+
   "block.chipped.purpur_block_1": "Purpur Block",
   "block.chipped.purpur_block_2": "Purpur Block",
   "block.chipped.purpur_block_3": "Purpur Block",
@@ -943,6 +1128,7 @@
   "block.chipped.purpur_block_16": "Purpur Block",
   "block.chipped.purpur_block_17": "Purpur Block",
   "block.chipped.purpur_block_18": "Purpur Block",
+
   "block.chipped.quartz_block_1": "Block of Quartz",
   "block.chipped.quartz_block_2": "Block of Quartz",
   "block.chipped.quartz_block_3": "Block of Quartz",
@@ -961,6 +1147,7 @@
   "block.chipped.quartz_block_16": "Block of Quartz",
   "block.chipped.quartz_block_17": "Block of Quartz",
   "block.chipped.quartz_block_18": "Block of Quartz",
+
   "block.chipped.cobblestone_1": "Cobblestone",
   "block.chipped.cobblestone_2": "Cobblestone",
   "block.chipped.cobblestone_3": "Cobblestone",
@@ -979,6 +1166,7 @@
   "block.chipped.cobblestone_16": "Cobblestone",
   "block.chipped.cobblestone_17": "Cobblestone",
   "block.chipped.cobblestone_18": "Cobblestone",
+
   "block.chipped.diorite_1": "Diorite",
   "block.chipped.diorite_2": "Diorite",
   "block.chipped.diorite_3": "Diorite",
@@ -997,6 +1185,7 @@
   "block.chipped.diorite_16": "Diorite",
   "block.chipped.diorite_17": "Diorite",
   "block.chipped.diorite_18": "Diorite",
+
   "block.chipped.end_stone_1": "End Stone",
   "block.chipped.end_stone_2": "End Stone",
   "block.chipped.end_stone_3": "End Stone",
@@ -1015,6 +1204,7 @@
   "block.chipped.end_stone_16": "End Stone",
   "block.chipped.end_stone_17": "End Stone",
   "block.chipped.end_stone_18": "End Stone",
+
   "block.chipped.granite_1": "Granite",
   "block.chipped.granite_2": "Granite",
   "block.chipped.granite_3": "Granite",
@@ -1033,6 +1223,7 @@
   "block.chipped.granite_16": "Granite",
   "block.chipped.granite_17": "Granite",
   "block.chipped.granite_18": "Granite",
+
   "block.chipped.stone_1": "Stone",
   "block.chipped.stone_2": "Stone",
   "block.chipped.stone_3": "Stone",
@@ -1051,11 +1242,13 @@
   "block.chipped.stone_16": "Stone",
   "block.chipped.stone_17": "Stone",
   "block.chipped.stone_18": "Stone",
+
   "block.chipped.gilded_blackstone_1": "Gilded Blackstone",
   "block.chipped.gilded_blackstone_2": "Gilded Blackstone",
   "block.chipped.gilded_blackstone_3": "Gilded Blackstone",
   "block.chipped.gilded_blackstone_4": "Gilded Blackstone",
   "block.chipped.gilded_blackstone_5": "Gilded Blackstone",
+
   "block.chipped.vine_1": "Vines",
   "block.chipped.vine_2": "Vines",
   "block.chipped.vine_3": "Vines",
@@ -1073,6 +1266,7 @@
   "block.chipped.vine_15": "Vines",
   "block.chipped.vine_16": "Vines",
   "block.chipped.vine_17": "Vines",
+
   "block.chipped.white_terracotta_1": "White Terracotta",
   "block.chipped.white_terracotta_2": "White Terracotta",
   "block.chipped.white_terracotta_3": "White Terracotta",
@@ -1091,6 +1285,7 @@
   "block.chipped.white_terracotta_16": "White Terracotta",
   "block.chipped.white_terracotta_17": "White Terracotta",
   "block.chipped.white_terracotta_18": "White Terracotta",
+
   "block.chipped.orange_terracotta_1": "Orange Terracotta",
   "block.chipped.orange_terracotta_2": "Orange Terracotta",
   "block.chipped.orange_terracotta_3": "Orange Terracotta",
@@ -1109,6 +1304,7 @@
   "block.chipped.orange_terracotta_16": "Orange Terracotta",
   "block.chipped.orange_terracotta_17": "Orange Terracotta",
   "block.chipped.orange_terracotta_18": "Orange Terracotta",
+
   "block.chipped.magenta_terracotta_1": "Magenta Terracotta",
   "block.chipped.magenta_terracotta_2": "Magenta Terracotta",
   "block.chipped.magenta_terracotta_3": "Magenta Terracotta",
@@ -1127,6 +1323,7 @@
   "block.chipped.magenta_terracotta_16": "Magenta Terracotta",
   "block.chipped.magenta_terracotta_17": "Magenta Terracotta",
   "block.chipped.magenta_terracotta_18": "Magenta Terracotta",
+
   "block.chipped.light_blue_terracotta_1": "Light Blue Terracotta",
   "block.chipped.light_blue_terracotta_2": "Light Blue Terracotta",
   "block.chipped.light_blue_terracotta_3": "Light Blue Terracotta",
@@ -1145,6 +1342,7 @@
   "block.chipped.light_blue_terracotta_16": "Light Blue Terracotta",
   "block.chipped.light_blue_terracotta_17": "Light Blue Terracotta",
   "block.chipped.light_blue_terracotta_18": "Light Blue Terracotta",
+
   "block.chipped.yellow_terracotta_1": "Yellow Terracotta",
   "block.chipped.yellow_terracotta_2": "Yellow Terracotta",
   "block.chipped.yellow_terracotta_3": "Yellow Terracotta",
@@ -1163,6 +1361,7 @@
   "block.chipped.yellow_terracotta_16": "Yellow Terracotta",
   "block.chipped.yellow_terracotta_17": "Yellow Terracotta",
   "block.chipped.yellow_terracotta_18": "Yellow Terracotta",
+
   "block.chipped.lime_terracotta_1": "Lime Terracotta",
   "block.chipped.lime_terracotta_2": "Lime Terracotta",
   "block.chipped.lime_terracotta_3": "Lime Terracotta",
@@ -1181,6 +1380,7 @@
   "block.chipped.lime_terracotta_16": "Lime Terracotta",
   "block.chipped.lime_terracotta_17": "Lime Terracotta",
   "block.chipped.lime_terracotta_18": "Lime Terracotta",
+
   "block.chipped.pink_terracotta_1": "Pink Terracotta",
   "block.chipped.pink_terracotta_2": "Pink Terracotta",
   "block.chipped.pink_terracotta_3": "Pink Terracotta",
@@ -1199,6 +1399,7 @@
   "block.chipped.pink_terracotta_16": "Pink Terracotta",
   "block.chipped.pink_terracotta_17": "Pink Terracotta",
   "block.chipped.pink_terracotta_18": "Pink Terracotta",
+
   "block.chipped.gray_terracotta_1": "Gray Terracotta",
   "block.chipped.gray_terracotta_2": "Gray Terracotta",
   "block.chipped.gray_terracotta_3": "Gray Terracotta",
@@ -1217,6 +1418,7 @@
   "block.chipped.gray_terracotta_16": "Gray Terracotta",
   "block.chipped.gray_terracotta_17": "Gray Terracotta",
   "block.chipped.gray_terracotta_18": "Gray Terracotta",
+
   "block.chipped.light_gray_terracotta_1": "Light Gray Terracotta",
   "block.chipped.light_gray_terracotta_2": "Light Gray Terracotta",
   "block.chipped.light_gray_terracotta_3": "Light Gray Terracotta",
@@ -1235,6 +1437,7 @@
   "block.chipped.light_gray_terracotta_16": "Light Gray Terracotta",
   "block.chipped.light_gray_terracotta_17": "Light Gray Terracotta",
   "block.chipped.light_gray_terracotta_18": "Light Gray Terracotta",
+
   "block.chipped.cyan_terracotta_1": "Cyan Terracotta",
   "block.chipped.cyan_terracotta_2": "Cyan Terracotta",
   "block.chipped.cyan_terracotta_3": "Cyan Terracotta",
@@ -1253,6 +1456,7 @@
   "block.chipped.cyan_terracotta_16": "Cyan Terracotta",
   "block.chipped.cyan_terracotta_17": "Cyan Terracotta",
   "block.chipped.cyan_terracotta_18": "Cyan Terracotta",
+
   "block.chipped.purple_terracotta_1": "Purple Terracotta",
   "block.chipped.purple_terracotta_2": "Purple Terracotta",
   "block.chipped.purple_terracotta_3": "Purple Terracotta",
@@ -1271,6 +1475,7 @@
   "block.chipped.purple_terracotta_16": "Purple Terracotta",
   "block.chipped.purple_terracotta_17": "Purple Terracotta",
   "block.chipped.purple_terracotta_18": "Purple Terracotta",
+
   "block.chipped.blue_terracotta_1": "Blue Terracotta",
   "block.chipped.blue_terracotta_2": "Blue Terracotta",
   "block.chipped.blue_terracotta_3": "Blue Terracotta",
@@ -1289,6 +1494,7 @@
   "block.chipped.blue_terracotta_16": "Blue Terracotta",
   "block.chipped.blue_terracotta_17": "Blue Terracotta",
   "block.chipped.blue_terracotta_18": "Blue Terracotta",
+
   "block.chipped.brown_terracotta_1": "Brown Terracotta",
   "block.chipped.brown_terracotta_2": "Brown Terracotta",
   "block.chipped.brown_terracotta_3": "Brown Terracotta",
@@ -1307,6 +1513,7 @@
   "block.chipped.brown_terracotta_16": "Brown Terracotta",
   "block.chipped.brown_terracotta_17": "Brown Terracotta",
   "block.chipped.brown_terracotta_18": "Brown Terracotta",
+
   "block.chipped.green_terracotta_1": "Green Terracotta",
   "block.chipped.green_terracotta_2": "Green Terracotta",
   "block.chipped.green_terracotta_3": "Green Terracotta",
@@ -1325,6 +1532,7 @@
   "block.chipped.green_terracotta_16": "Green Terracotta",
   "block.chipped.green_terracotta_17": "Green Terracotta",
   "block.chipped.green_terracotta_18": "Green Terracotta",
+
   "block.chipped.red_terracotta_1": "Red Terracotta",
   "block.chipped.red_terracotta_2": "Red Terracotta",
   "block.chipped.red_terracotta_3": "Red Terracotta",
@@ -1343,6 +1551,7 @@
   "block.chipped.red_terracotta_16": "Red Terracotta",
   "block.chipped.red_terracotta_17": "Red Terracotta",
   "block.chipped.red_terracotta_18": "Red Terracotta",
+
   "block.chipped.black_terracotta_1": "Black Terracotta",
   "block.chipped.black_terracotta_2": "Black Terracotta",
   "block.chipped.black_terracotta_3": "Black Terracotta",
@@ -1361,6 +1570,7 @@
   "block.chipped.black_terracotta_16": "Black Terracotta",
   "block.chipped.black_terracotta_17": "Black Terracotta",
   "block.chipped.black_terracotta_18": "Black Terracotta",
+
   "block.chipped.black_concrete_1": "Black Concrete",
   "block.chipped.black_concrete_2": "Black Concrete",
   "block.chipped.black_concrete_3": "Black Concrete",
@@ -1379,6 +1589,7 @@
   "block.chipped.black_concrete_16": "Black Concrete",
   "block.chipped.black_concrete_17": "Black Concrete",
   "block.chipped.black_concrete_18": "Black Concrete",
+
   "block.chipped.white_concrete_1": "White Concrete",
   "block.chipped.white_concrete_2": "White Concrete",
   "block.chipped.white_concrete_3": "White Concrete",
@@ -1397,6 +1608,7 @@
   "block.chipped.white_concrete_16": "White Concrete",
   "block.chipped.white_concrete_17": "White Concrete",
   "block.chipped.white_concrete_18": "White Concrete",
+
   "block.chipped.orange_concrete_1": "Orange Concrete",
   "block.chipped.orange_concrete_2": "Orange Concrete",
   "block.chipped.orange_concrete_3": "Orange Concrete",
@@ -1415,6 +1627,7 @@
   "block.chipped.orange_concrete_16": "Orange Concrete",
   "block.chipped.orange_concrete_17": "Orange Concrete",
   "block.chipped.orange_concrete_18": "Orange Concrete",
+
   "block.chipped.magenta_concrete_1": "Magenta Concrete",
   "block.chipped.magenta_concrete_2": "Magenta Concrete",
   "block.chipped.magenta_concrete_3": "Magenta Concrete",
@@ -1433,6 +1646,7 @@
   "block.chipped.magenta_concrete_16": "Magenta Concrete",
   "block.chipped.magenta_concrete_17": "Magenta Concrete",
   "block.chipped.magenta_concrete_18": "Magenta Concrete",
+
   "block.chipped.light_blue_concrete_1": "Light Blue Concrete",
   "block.chipped.light_blue_concrete_2": "Light Blue Concrete",
   "block.chipped.light_blue_concrete_3": "Light Blue Concrete",
@@ -1451,6 +1665,7 @@
   "block.chipped.light_blue_concrete_16": "Light Blue Concrete",
   "block.chipped.light_blue_concrete_17": "Light Blue Concrete",
   "block.chipped.light_blue_concrete_18": "Light Blue Concrete",
+
   "block.chipped.yellow_concrete_1": "Yellow Concrete",
   "block.chipped.yellow_concrete_2": "Yellow Concrete",
   "block.chipped.yellow_concrete_3": "Yellow Concrete",
@@ -1469,6 +1684,7 @@
   "block.chipped.yellow_concrete_16": "Yellow Concrete",
   "block.chipped.yellow_concrete_17": "Yellow Concrete",
   "block.chipped.yellow_concrete_18": "Yellow Concrete",
+
   "block.chipped.lime_concrete_1": "Lime Concrete",
   "block.chipped.lime_concrete_2": "Lime Concrete",
   "block.chipped.lime_concrete_3": "Lime Concrete",
@@ -1487,6 +1703,7 @@
   "block.chipped.lime_concrete_16": "Lime Concrete",
   "block.chipped.lime_concrete_17": "Lime Concrete",
   "block.chipped.lime_concrete_18": "Lime Concrete",
+
   "block.chipped.pink_concrete_1": "Pink Concrete",
   "block.chipped.pink_concrete_2": "Pink Concrete",
   "block.chipped.pink_concrete_3": "Pink Concrete",
@@ -1505,6 +1722,7 @@
   "block.chipped.pink_concrete_16": "Pink Concrete",
   "block.chipped.pink_concrete_17": "Pink Concrete",
   "block.chipped.pink_concrete_18": "Pink Concrete",
+
   "block.chipped.gray_concrete_1": "Gray Concrete",
   "block.chipped.gray_concrete_2": "Gray Concrete",
   "block.chipped.gray_concrete_3": "Gray Concrete",
@@ -1523,6 +1741,7 @@
   "block.chipped.gray_concrete_16": "Gray Concrete",
   "block.chipped.gray_concrete_17": "Gray Concrete",
   "block.chipped.gray_concrete_18": "Gray Concrete",
+
   "block.chipped.light_gray_concrete_1": "Light Gray Concrete",
   "block.chipped.light_gray_concrete_2": "Light Gray Concrete",
   "block.chipped.light_gray_concrete_3": "Light Gray Concrete",
@@ -1541,6 +1760,7 @@
   "block.chipped.light_gray_concrete_16": "Light Gray Concrete",
   "block.chipped.light_gray_concrete_17": "Light Gray Concrete",
   "block.chipped.light_gray_concrete_18": "Light Gray Concrete",
+
   "block.chipped.cyan_concrete_1": "Cyan Concrete",
   "block.chipped.cyan_concrete_2": "Cyan Concrete",
   "block.chipped.cyan_concrete_3": "Cyan Concrete",
@@ -1559,6 +1779,7 @@
   "block.chipped.cyan_concrete_16": "Cyan Concrete",
   "block.chipped.cyan_concrete_17": "Cyan Concrete",
   "block.chipped.cyan_concrete_18": "Cyan Concrete",
+
   "block.chipped.purple_concrete_1": "Purple Concrete",
   "block.chipped.purple_concrete_2": "Purple Concrete",
   "block.chipped.purple_concrete_3": "Purple Concrete",
@@ -1577,6 +1798,7 @@
   "block.chipped.purple_concrete_16": "Purple Concrete",
   "block.chipped.purple_concrete_17": "Purple Concrete",
   "block.chipped.purple_concrete_18": "Purple Concrete",
+
   "block.chipped.blue_concrete_1": "Blue Concrete",
   "block.chipped.blue_concrete_2": "Blue Concrete",
   "block.chipped.blue_concrete_3": "Blue Concrete",
@@ -1595,6 +1817,7 @@
   "block.chipped.blue_concrete_16": "Blue Concrete",
   "block.chipped.blue_concrete_17": "Blue Concrete",
   "block.chipped.blue_concrete_18": "Blue Concrete",
+
   "block.chipped.brown_concrete_1": "Brown Concrete",
   "block.chipped.brown_concrete_2": "Brown Concrete",
   "block.chipped.brown_concrete_3": "Brown Concrete",
@@ -1613,6 +1836,7 @@
   "block.chipped.brown_concrete_16": "Brown Concrete",
   "block.chipped.brown_concrete_17": "Brown Concrete",
   "block.chipped.brown_concrete_18": "Brown Concrete",
+
   "block.chipped.green_concrete_1": "Green Concrete",
   "block.chipped.green_concrete_2": "Green Concrete",
   "block.chipped.green_concrete_3": "Green Concrete",
@@ -1631,6 +1855,7 @@
   "block.chipped.green_concrete_16": "Green Concrete",
   "block.chipped.green_concrete_17": "Green Concrete",
   "block.chipped.green_concrete_18": "Green Concrete",
+
   "block.chipped.red_concrete_1": "Red Concrete",
   "block.chipped.red_concrete_2": "Red Concrete",
   "block.chipped.red_concrete_3": "Red Concrete",
@@ -1649,6 +1874,7 @@
   "block.chipped.red_concrete_16": "Red Concrete",
   "block.chipped.red_concrete_17": "Red Concrete",
   "block.chipped.red_concrete_18": "Red Concrete",
+
   "block.chipped.netherrack_1": "Netherrack",
   "block.chipped.netherrack_2": "Netherrack",
   "block.chipped.netherrack_3": "Netherrack",
@@ -1667,6 +1893,7 @@
   "block.chipped.netherrack_16": "Netherrack",
   "block.chipped.netherrack_17": "Netherrack",
   "block.chipped.netherrack_18": "Netherrack",
+
   "block.chipped.oak_planks_1": "Oak Planks",
   "block.chipped.oak_planks_2": "Oak Planks",
   "block.chipped.oak_planks_3": "Oak Planks",
@@ -1685,6 +1912,7 @@
   "block.chipped.oak_planks_16": "Oak Planks",
   "block.chipped.oak_planks_17": "Oak Planks",
   "block.chipped.oak_planks_18": "Oak Planks",
+
   "block.chipped.spruce_planks_1": "Spruce Planks",
   "block.chipped.spruce_planks_2": "Spruce Planks",
   "block.chipped.spruce_planks_3": "Spruce Planks",
@@ -1703,6 +1931,7 @@
   "block.chipped.spruce_planks_16": "Spruce Planks",
   "block.chipped.spruce_planks_17": "Spruce Planks",
   "block.chipped.spruce_planks_18": "Spruce Planks",
+
   "block.chipped.birch_planks_1": "Birch Planks",
   "block.chipped.birch_planks_2": "Birch Planks",
   "block.chipped.birch_planks_3": "Birch Planks",
@@ -1721,6 +1950,7 @@
   "block.chipped.birch_planks_16": "Birch Planks",
   "block.chipped.birch_planks_17": "Birch Planks",
   "block.chipped.birch_planks_18": "Birch Planks",
+
   "block.chipped.acacia_planks_1": "Acacia Planks",
   "block.chipped.acacia_planks_2": "Acacia Planks",
   "block.chipped.acacia_planks_3": "Acacia Planks",
@@ -1739,6 +1969,7 @@
   "block.chipped.acacia_planks_16": "Acacia Planks",
   "block.chipped.acacia_planks_17": "Acacia Planks",
   "block.chipped.acacia_planks_18": "Acacia Planks",
+
   "block.chipped.dark_oak_planks_1": "Dark Oak Planks",
   "block.chipped.dark_oak_planks_2": "Dark Oak Planks",
   "block.chipped.dark_oak_planks_3": "Dark Oak Planks",
@@ -1757,6 +1988,7 @@
   "block.chipped.dark_oak_planks_16": "Dark Oak Planks",
   "block.chipped.dark_oak_planks_17": "Dark Oak Planks",
   "block.chipped.dark_oak_planks_18": "Dark Oak Planks",
+
   "block.chipped.warped_planks_1": "Warped Planks",
   "block.chipped.warped_planks_2": "Warped Planks",
   "block.chipped.warped_planks_3": "Warped Planks",
@@ -1775,6 +2007,7 @@
   "block.chipped.warped_planks_16": "Warped Planks",
   "block.chipped.warped_planks_17": "Warped Planks",
   "block.chipped.warped_planks_18": "Warped Planks",
+
   "block.chipped.crimson_planks_1": "Crimson Planks",
   "block.chipped.crimson_planks_2": "Crimson Planks",
   "block.chipped.crimson_planks_3": "Crimson Planks",
@@ -1793,6 +2026,7 @@
   "block.chipped.crimson_planks_16": "Crimson Planks",
   "block.chipped.crimson_planks_17": "Crimson Planks",
   "block.chipped.crimson_planks_18": "Crimson Planks",
+
   "block.chipped.jungle_planks_1": "Jungle Planks",
   "block.chipped.jungle_planks_2": "Jungle Planks",
   "block.chipped.jungle_planks_3": "Jungle Planks",
@@ -1811,6 +2045,7 @@
   "block.chipped.jungle_planks_16": "Jungle Planks",
   "block.chipped.jungle_planks_17": "Jungle Planks",
   "block.chipped.jungle_planks_18": "Jungle Planks",
+
   "block.chipped.blackstone_1": "Blackstone",
   "block.chipped.blackstone_2": "Blackstone",
   "block.chipped.blackstone_3": "Blackstone",
@@ -1832,6 +2067,7 @@
   "block.chipped.blackstone_19": "Blackstone",
   "block.chipped.blackstone_20": "Blackstone",
   "block.chipped.blackstone_21": "Blackstone",
+
   "block.chipped.gilded_blackstone_6": "Gilded Blackstone",
   "block.chipped.gilded_blackstone_7": "Gilded Blackstone",
   "block.chipped.gilded_blackstone_8": "Gilded Blackstone",
@@ -1853,6 +2089,7 @@
   "block.chipped.gilded_blackstone_24": "Gilded Blackstone",
   "block.chipped.gilded_blackstone_25": "Gilded Blackstone",
   "block.chipped.gilded_blackstone_26": "Gilded Blackstone",
+
   "block.chipped.crying_obsidian_1": "Crying Obsidian",
   "block.chipped.crying_obsidian_2": "Crying Obsidian",
   "block.chipped.crying_obsidian_3": "Crying Obsidian",
@@ -1873,6 +2110,7 @@
   "block.chipped.crying_obsidian_18": "Crying Obsidian",
   "block.chipped.crying_obsidian_19": "Crying Obsidian",
   "block.chipped.crying_obsidian_20": "Crying Obsidian",
+
   "block.chipped.obsidian_1": "Obsidian",
   "block.chipped.obsidian_2": "Obsidian",
   "block.chipped.obsidian_3": "Obsidian",
@@ -1893,6 +2131,7 @@
   "block.chipped.obsidian_18": "Obsidian",
   "block.chipped.obsidian_19": "Obsidian",
   "block.chipped.obsidian_20": "Obsidian",
+
   "block.chipped.basalt_1": "Basalt",
   "block.chipped.basalt_2": "Basalt",
   "block.chipped.basalt_3": "Basalt",
@@ -1913,6 +2152,7 @@
   "block.chipped.basalt_18": "Basalt",
   "block.chipped.basalt_19": "Basalt",
   "block.chipped.basalt_20": "Basalt",
+
   "block.chipped.melon_1": "Melon",
   "block.chipped.melon_2": "Melon",
   "block.chipped.melon_3": "Melon",
@@ -1923,6 +2163,7 @@
   "block.chipped.melon_8": "Melon",
   "block.chipped.melon_9": "Melon",
   "block.chipped.melon_10": "Melon",
+
   "block.chipped.white_stained_glass_pane_1": "White Stained Glass Pane",
   "block.chipped.white_stained_glass_pane_2": "White Stained Glass Pane",
   "block.chipped.white_stained_glass_pane_3": "White Stained Glass Pane",
@@ -1931,6 +2172,7 @@
   "block.chipped.white_stained_glass_pane_6": "White Stained Glass Pane",
   "block.chipped.white_stained_glass_pane_7": "White Stained Glass Pane",
   "block.chipped.white_stained_glass_pane_8": "White Stained Glass Pane",
+
   "block.chipped.orange_stained_glass_pane_1": "Orange Stained Glass Pane",
   "block.chipped.orange_stained_glass_pane_2": "Orange Stained Glass Pane",
   "block.chipped.orange_stained_glass_pane_3": "Orange Stained Glass Pane",
@@ -1939,6 +2181,7 @@
   "block.chipped.orange_stained_glass_pane_6": "Orange Stained Glass Pane",
   "block.chipped.orange_stained_glass_pane_7": "Orange Stained Glass Pane",
   "block.chipped.orange_stained_glass_pane_8": "Orange Stained Glass Pane",
+
   "block.chipped.magenta_stained_glass_pane_1": "Magenta Stained Glass Pane",
   "block.chipped.magenta_stained_glass_pane_2": "Magenta Stained Glass Pane",
   "block.chipped.magenta_stained_glass_pane_3": "Magenta Stained Glass Pane",
@@ -1947,6 +2190,7 @@
   "block.chipped.magenta_stained_glass_pane_6": "Magenta Stained Glass Pane",
   "block.chipped.magenta_stained_glass_pane_7": "Magenta Stained Glass Pane",
   "block.chipped.magenta_stained_glass_pane_8": "Magenta Stained Glass Pane",
+
   "block.chipped.light_blue_stained_glass_pane_1": "Light Blue Stained Glass Pane",
   "block.chipped.light_blue_stained_glass_pane_2": "Light Blue Stained Glass Pane",
   "block.chipped.light_blue_stained_glass_pane_3": "Light Blue Stained Glass Pane",
@@ -1955,6 +2199,7 @@
   "block.chipped.light_blue_stained_glass_pane_6": "Light Blue Stained Glass Pane",
   "block.chipped.light_blue_stained_glass_pane_7": "Light Blue Stained Glass Pane",
   "block.chipped.light_blue_stained_glass_pane_8": "Light Blue Stained Glass Pane",
+
   "block.chipped.yellow_stained_glass_pane_1": "Yellow Stained Glass Pane",
   "block.chipped.yellow_stained_glass_pane_2": "Yellow Stained Glass Pane",
   "block.chipped.yellow_stained_glass_pane_3": "Yellow Stained Glass Pane",
@@ -1963,6 +2208,7 @@
   "block.chipped.yellow_stained_glass_pane_6": "Yellow Stained Glass Pane",
   "block.chipped.yellow_stained_glass_pane_7": "Yellow Stained Glass Pane",
   "block.chipped.yellow_stained_glass_pane_8": "Yellow Stained Glass Pane",
+
   "block.chipped.lime_stained_glass_pane_1": "Lime Stained Glass Pane",
   "block.chipped.lime_stained_glass_pane_2": "Lime Stained Glass Pane",
   "block.chipped.lime_stained_glass_pane_3": "Lime Stained Glass Pane",
@@ -1971,6 +2217,7 @@
   "block.chipped.lime_stained_glass_pane_6": "Lime Stained Glass Pane",
   "block.chipped.lime_stained_glass_pane_7": "Lime Stained Glass Pane",
   "block.chipped.lime_stained_glass_pane_8": "Lime Stained Glass Pane",
+
   "block.chipped.pink_stained_glass_pane_1": "Pink Stained Glass Pane",
   "block.chipped.pink_stained_glass_pane_2": "Pink Stained Glass Pane",
   "block.chipped.pink_stained_glass_pane_3": "Pink Stained Glass Pane",
@@ -1979,6 +2226,7 @@
   "block.chipped.pink_stained_glass_pane_6": "Pink Stained Glass Pane",
   "block.chipped.pink_stained_glass_pane_7": "Pink Stained Glass Pane",
   "block.chipped.pink_stained_glass_pane_8": "Pink Stained Glass Pane",
+
   "block.chipped.gray_stained_glass_pane_1": "Gray Stained Glass Pane",
   "block.chipped.gray_stained_glass_pane_2": "Gray Stained Glass Pane",
   "block.chipped.gray_stained_glass_pane_3": "Gray Stained Glass Pane",
@@ -1987,6 +2235,7 @@
   "block.chipped.gray_stained_glass_pane_6": "Gray Stained Glass Pane",
   "block.chipped.gray_stained_glass_pane_7": "Gray Stained Glass Pane",
   "block.chipped.gray_stained_glass_pane_8": "Gray Stained Glass Pane",
+
   "block.chipped.light_gray_stained_glass_pane_1": "Light Gray Stained Glass Pane",
   "block.chipped.light_gray_stained_glass_pane_2": "Light Gray Stained Glass Pane",
   "block.chipped.light_gray_stained_glass_pane_3": "Light Gray Stained Glass Pane",
@@ -1995,6 +2244,7 @@
   "block.chipped.light_gray_stained_glass_pane_6": "Light Gray Stained Glass Pane",
   "block.chipped.light_gray_stained_glass_pane_7": "Light Gray Stained Glass Pane",
   "block.chipped.light_gray_stained_glass_pane_8": "Light Gray Stained Glass Pane",
+
   "block.chipped.cyan_stained_glass_pane_1": "Cyan Stained Glass Pane",
   "block.chipped.cyan_stained_glass_pane_2": "Cyan Stained Glass Pane",
   "block.chipped.cyan_stained_glass_pane_3": "Cyan Stained Glass Pane",
@@ -2003,6 +2253,7 @@
   "block.chipped.cyan_stained_glass_pane_6": "Cyan Stained Glass Pane",
   "block.chipped.cyan_stained_glass_pane_7": "Cyan Stained Glass Pane",
   "block.chipped.cyan_stained_glass_pane_8": "Cyan Stained Glass Pane",
+
   "block.chipped.brown_stained_glass_pane_1": "Brown Stained Glass Pane",
   "block.chipped.brown_stained_glass_pane_2": "Brown Stained Glass Pane",
   "block.chipped.brown_stained_glass_pane_3": "Brown Stained Glass Pane",
@@ -2019,6 +2270,7 @@
   "block.chipped.green_stained_glass_pane_6": "Green Stained Glass Pane",
   "block.chipped.green_stained_glass_pane_7": "Green Stained Glass Pane",
   "block.chipped.green_stained_glass_pane_8": "Green Stained Glass Pane",
+
   "block.chipped.red_stained_glass_pane_1": "Red Stained Glass Pane",
   "block.chipped.red_stained_glass_pane_2": "Red Stained Glass Pane",
   "block.chipped.red_stained_glass_pane_3": "Red Stained Glass Pane",
@@ -2027,6 +2279,7 @@
   "block.chipped.red_stained_glass_pane_6": "Red Stained Glass Pane",
   "block.chipped.red_stained_glass_pane_7": "Red Stained Glass Pane",
   "block.chipped.red_stained_glass_pane_8": "Red Stained Glass Pane",
+
   "block.chipped.black_stained_glass_pane_1": "Black Stained Glass Pane",
   "block.chipped.black_stained_glass_pane_2": "Black Stained Glass Pane",
   "block.chipped.black_stained_glass_pane_3": "Black Stained Glass Pane",
@@ -2035,6 +2288,7 @@
   "block.chipped.black_stained_glass_pane_6": "Black Stained Glass Pane",
   "block.chipped.black_stained_glass_pane_7": "Black Stained Glass Pane",
   "block.chipped.black_stained_glass_pane_8": "Black Stained Glass Pane",
+
   "block.chipped.blue_stained_glass_pane_1": "Blue Stained Glass Pane",
   "block.chipped.blue_stained_glass_pane_2": "Blue Stained Glass Pane",
   "block.chipped.blue_stained_glass_pane_3": "Blue Stained Glass Pane",
@@ -2043,6 +2297,7 @@
   "block.chipped.blue_stained_glass_pane_6": "Blue Stained Glass Pane",
   "block.chipped.blue_stained_glass_pane_7": "Blue Stained Glass Pane",
   "block.chipped.blue_stained_glass_pane_8": "Blue Stained Glass Pane",
+
   "block.chipped.purple_stained_glass_pane_1": "Purple Stained Glass Pane",
   "block.chipped.purple_stained_glass_pane_2": "Purple Stained Glass Pane",
   "block.chipped.purple_stained_glass_pane_3": "Purple Stained Glass Pane",
@@ -2051,6 +2306,7 @@
   "block.chipped.purple_stained_glass_pane_6": "Purple Stained Glass Pane",
   "block.chipped.purple_stained_glass_pane_7": "Purple Stained Glass Pane",
   "block.chipped.purple_stained_glass_pane_8": "Purple Stained Glass Pane",
+
   "block.chipped.glass_pane_1": "Glass Pane",
   "block.chipped.glass_pane_2": "Glass Pane",
   "block.chipped.glass_pane_3": "Glass Pane",
@@ -2113,6 +2369,7 @@
   "block.chipped.acacia_wood_glass_pane_4": "Glass Pane",
   "block.chipped.acacia_wood_glass_pane_5": "Glass Pane",
   "block.chipped.acacia_wood_glass_pane_6": "Glass Pane",
+
   "block.chipped.glowstone_1": "Glowstone",
   "block.chipped.glowstone_2": "Glowstone",
   "block.chipped.glowstone_3": "Glowstone",
@@ -2133,6 +2390,7 @@
   "block.chipped.glowstone_18": "Glowstone",
   "block.chipped.glowstone_19": "Glowstone",
   "block.chipped.glowstone_20": "Glowstone",
+
   "block.chipped.sea_lantern_1": "Sea Lantern",
   "block.chipped.sea_lantern_2": "Sea Lantern",
   "block.chipped.sea_lantern_3": "Sea Lantern",
@@ -2149,6 +2407,7 @@
   "block.chipped.sea_lantern_14": "Sea Lantern",
   "block.chipped.sea_lantern_15": "Sea Lantern",
   "block.chipped.sea_lantern_16": "Sea Lantern",
+
   "block.chipped.shroomlight_1": "Shroomlight",
   "block.chipped.shroomlight_2": "Shroomlight",
   "block.chipped.shroomlight_3": "Shroomlight",
@@ -2165,6 +2424,7 @@
   "block.chipped.shroomlight_14": "Shroomlight",
   "block.chipped.shroomlight_15": "Shroomlight",
   "block.chipped.shroomlight_16": "Shroomlight",
+
   "block.chipped.jack_o_lantern_1": "Jack O' Lantern",
   "block.chipped.jack_o_lantern_2": "Jack O' Lantern",
   "block.chipped.jack_o_lantern_3": "Jack O' Lantern",
@@ -2184,6 +2444,7 @@
   "block.chipped.jack_o_lantern_17": "Jack O' Lantern",
   "block.chipped.jack_o_lantern_18": "Jack O' Lantern",
   "block.chipped.jack_o_lantern_19": "Jack O' Lantern",
+
   "block.chipped.carved_pumpkin_1": "Carved Pumpkin",
   "block.chipped.carved_pumpkin_2": "Carved Pumpkin",
   "block.chipped.carved_pumpkin_3": "Carved Pumpkin",
@@ -2203,6 +2464,7 @@
   "block.chipped.carved_pumpkin_17": "Carved Pumpkin",
   "block.chipped.carved_pumpkin_18": "Carved Pumpkin",
   "block.chipped.carved_pumpkin_19": "Carved Pumpkin",
+
   "block.chipped.redstone_lamp_1": "Redstone Lamp",
   "block.chipped.redstone_lamp_2": "Redstone Lamp",
   "block.chipped.redstone_lamp_3": "Redstone Lamp",
@@ -2221,6 +2483,7 @@
   "block.chipped.redstone_lamp_16": "Redstone Lamp",
   "block.chipped.redstone_lamp_17": "Redstone Lamp",
   "block.chipped.redstone_lamp_18": "Redstone Lamp",
+
   "block.chipped.redstone_torch_1": "Redstone Torch",
   "block.chipped.redstone_torch_2": "Redstone Torch",
   "block.chipped.redstone_torch_3": "Redstone Torch",
@@ -2231,6 +2494,7 @@
   "block.chipped.redstone_torch_8": "Redstone Torch",
   "block.chipped.redstone_torch_9": "Redstone Torch",
   "block.chipped.redstone_torch_10": "Redstone Torch",
+
   "block.chipped.torch_1": "Torch",
   "block.chipped.torch_2": "Torch",
   "block.chipped.torch_3": "Torch",
@@ -2241,6 +2505,7 @@
   "block.chipped.torch_8": "Torch",
   "block.chipped.torch_9": "Torch",
   "block.chipped.torch_10": "Torch",
+
   "block.chipped.pumpkin_end": "Pumpkin",
   "block.chipped.jack_o_lantern_end": "Jack O' Lantern",
   "block.chipped.carved_pumpkin_end": "Carved Pumpkin",
@@ -2250,6 +2515,7 @@
   "block.chipped.pumpkin_nether": "Pumpkin",
   "block.chipped.jack_o_lantern_nether": "Jack O' Lantern",
   "block.chipped.carved_pumpkin_nether": "Carved Pumpkin",
+
   "block.chipped.soul_lantern_1": "Soul Lantern",
   "block.chipped.soul_lantern_2": "Soul Lantern",
   "block.chipped.soul_lantern_3": "Soul Lantern",
@@ -2260,6 +2526,7 @@
   "block.chipped.soul_lantern_9": "Soul Lantern",
   "block.chipped.soul_lantern_10": "Soul Lantern",
   "block.chipped.soul_lantern_11": "Soul Lantern",
+
   "block.chipped.lantern_1": "Lantern",
   "block.chipped.lantern_2": "Lantern",
   "block.chipped.lantern_3": "Lantern",
@@ -2271,14 +2538,17 @@
   "block.chipped.lantern_12": "Lantern",
   "block.chipped.lantern_13": "Lantern",
   "block.chipped.lantern_14": "Lantern",
+
   "block.chipped.special_soul_lantern_1": "Soul Lantern",
   "block.chipped.special_soul_lantern_2": "Soul Lantern",
   "block.chipped.special_soul_lantern_3": "Soul Lantern",
   "block.chipped.special_soul_lantern_4": "Soul Lantern",
+
   "block.chipped.special_lantern_1": "Lantern",
   "block.chipped.special_lantern_2": "Lantern",
   "block.chipped.special_lantern_3": "Lantern",
   "block.chipped.special_lantern_4": "Lantern",
+
   "block.chipped.brown_mushroom_1": "Brown Mushroom",
   "block.chipped.brown_mushroom_2": "Brown Mushroom",
   "block.chipped.brown_mushroom_3": "Brown Mushroom",
@@ -2294,6 +2564,7 @@
   "block.chipped.brown_mushroom_13": "Brown Mushroom",
   "block.chipped.brown_mushroom_14": "Brown Mushroom",
   "block.chipped.brown_mushroom_15": "Brown Mushroom",
+
   "block.chipped.red_mushroom_1": "Red Mushroom",
   "block.chipped.red_mushroom_2": "Red Mushroom",
   "block.chipped.red_mushroom_3": "Red Mushroom",
@@ -2309,6 +2580,7 @@
   "block.chipped.red_mushroom_13": "Red Mushroom",
   "block.chipped.red_mushroom_14": "Red Mushroom",
   "block.chipped.red_mushroom_15": "Red Mushroom",
+
   "block.chipped.warped_fungus_1": "Warped Fungus",
   "block.chipped.warped_fungus_2": "Warped Fungus",
   "block.chipped.warped_fungus_3": "Warped Fungus",
@@ -2323,6 +2595,7 @@
   "block.chipped.warped_fungus_12": "Warped Fungus",
   "block.chipped.warped_fungus_13": "Warped Fungus",
   "block.chipped.warped_fungus_14": "Warped Fungus",
+
   "block.chipped.crimson_fungus_1": "Crimson Fungus",
   "block.chipped.crimson_fungus_2": "Crimson Fungus",
   "block.chipped.crimson_fungus_3": "Crimson Fungus",
@@ -2338,6 +2611,7 @@
   "block.chipped.crimson_fungus_13": "Crimson Fungus",
   "block.chipped.crimson_fungus_14": "Crimson Fungus",
   "block.chipped.crimson_fungus_15": "Crimson Fungus",
+
   "block.chipped.warped_roots_1": "Warped Roots",
   "block.chipped.warped_roots_2": "Warped Roots",
   "block.chipped.warped_roots_3": "Warped Roots",
@@ -2347,6 +2621,7 @@
   "block.chipped.warped_roots_7": "Warped Roots",
   "block.chipped.warped_roots_8": "Warped Roots",
   "block.chipped.warped_roots_9": "Warped Roots",
+
   "block.chipped.crimson_roots_1": "Crimson Roots",
   "block.chipped.crimson_roots_2": "Crimson Roots",
   "block.chipped.crimson_roots_3": "Crimson Roots",
@@ -2361,6 +2636,7 @@
   "block.chipped.crimson_roots_12": "Crimson Roots",
   "block.chipped.crimson_roots_13": "Crimson Roots",
   "block.chipped.crimson_roots_14": "Crimson Roots",
+
   "block.chipped.nether_sprouts_1": "Nether Sprouts",
   "block.chipped.nether_sprouts_2": "Nether Sprouts",
   "block.chipped.nether_sprouts_3": "Nether Sprouts",
@@ -2381,6 +2657,7 @@
   "block.chipped.nether_sprouts_18": "Nether Sprouts",
   "block.chipped.nether_sprouts_19": "Nether Sprouts",
   "block.chipped.nether_sprouts_20": "Nether Sprouts",
+
   "block.chipped.brown_mushroom_block_1": "Brown Mushroom Block",
   "block.chipped.brown_mushroom_block_2": "Brown Mushroom Block",
   "block.chipped.brown_mushroom_block_3": "Brown Mushroom Block",
@@ -2405,6 +2682,7 @@
   "block.chipped.brown_mushroom_block_22": "Brown Mushroom Block",
   "block.chipped.brown_mushroom_block_23": "Brown Mushroom Block",
   "block.chipped.brown_mushroom_block_24": "Brown Mushroom Block",
+
   "block.chipped.red_mushroom_block_1": "Red Mushroom Block",
   "block.chipped.red_mushroom_block_2": "Red Mushroom Block",
   "block.chipped.red_mushroom_block_3": "Red Mushroom Block",
@@ -2420,6 +2698,7 @@
   "block.chipped.red_mushroom_block_13": "Red Mushroom Block",
   "block.chipped.red_mushroom_block_14": "Red Mushroom Block",
   "block.chipped.red_mushroom_block_15": "Red Mushroom Block",
+
   "block.chipped.warped_wart_block_1": "Warped Wart Block",
   "block.chipped.warped_wart_block_2": "Warped Wart Block",
   "block.chipped.warped_wart_block_3": "Warped Wart Block",
@@ -2434,6 +2713,7 @@
   "block.chipped.warped_wart_block_12": "Warped Wart Block",
   "block.chipped.warped_wart_block_13": "Warped Wart Block",
   "block.chipped.warped_wart_block_14": "Warped Wart Block",
+
   "block.chipped.nether_wart_block_1": "Nether Wart Block",
   "block.chipped.nether_wart_block_2": "Nether Wart Block",
   "block.chipped.nether_wart_block_3": "Nether Wart Block",
@@ -2447,12 +2727,14 @@
   "block.chipped.nether_wart_block_11": "Nether Wart Block",
   "block.chipped.nether_wart_block_12": "Nether Wart Block",
   "block.chipped.nether_wart_block_13": "Nether Wart Block",
+
   "block.chipped.lily_pad_1": "Lily Pad",
   "block.chipped.lily_pad_2": "Lily Pad",
   "block.chipped.lily_pad_3": "Lily Pad",
   "block.chipped.lily_pad_4": "Lily Pad",
   "block.chipped.lily_pad_5": "Lily Pad",
   "block.chipped.lily_pad_6": "Lily Pad",
+
   "block.chipped.soul_sand_1": "Soul Sand",
   "block.chipped.soul_sand_2": "Soul Sand",
   "block.chipped.soul_sand_3": "Soul Sand",
@@ -2464,6 +2746,7 @@
   "block.chipped.soul_sand_9": "Soul Sand",
   "block.chipped.soul_sand_10": "Soul Sand",
   "block.chipped.soul_sand_11": "Soul Sand",
+
   "block.chipped.dried_kelp_block_1": "Dried Kelp Block",
   "block.chipped.dried_kelp_block_2": "Dried Kelp Block",
   "block.chipped.dried_kelp_block_3": "Dried Kelp Block",
@@ -2476,6 +2759,7 @@
   "block.chipped.dried_kelp_block_10": "Dried Kelp Block",
   "block.chipped.dried_kelp_block_11": "Dried Kelp Block",
   "block.chipped.dried_kelp_block_12": "Dried Kelp Block",
+
   "block.chipped.pumpkin_1": "Pumpkin",
   "block.chipped.pumpkin_2": "Pumpkin",
   "block.chipped.pumpkin_3": "Pumpkin",
@@ -2501,12 +2785,12 @@
   "block.chipped.cobweb_9": "Cobweb",
   "block.chipped.cobweb_10": "Cobweb",
 
-  "container.chipped.botanist_workbench": "Botanist's Workbench",
-  "container.chipped.glassblower": "Glass Blower",
+  "container.chipped.botanist_workbench": "Botanist's Table",
+  "container.chipped.glassblower": "Glassblower's Table",
   "container.chipped.carpenters_table": "Carpenter's Table",
-  "container.chipped.loom_table": "Loom",
+  "container.chipped.loom_table": "Shepherd's Table",
   "container.chipped.mason_table": "Mason's Table",
-  "container.chipped.alchemy_bench": "Alchemy Bench",
-  "container.chipped.mechanist_workbench": "Mechanist's Workbench",
+  "container.chipped.alchemy_bench": "Scholar's Table",
+  "container.chipped.mechanist_workbench": "Tinkerer's Table",
   "itemGroup.chippedTab": "Chipped"
 }

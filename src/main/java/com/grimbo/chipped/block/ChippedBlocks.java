@@ -108,7 +108,6 @@ public class ChippedBlocks {
         registerVanillaBlocks(BenchType.MASON, DARK_PRISMARINE, 61);
         registerVanillaBlocks(BenchType.MASON, Blocks.GILDED_BLACKSTONE, GILDED_BLACKSTONES, 61);
         registerVanillaBlocks(BenchType.MASON, Blocks.BLACKSTONE, BLACKSTONES, 57);
-        registerVanillaBlocks(BenchType.MASON, LAPIS_BLOCK, 61);
         // old that need to be revamp
         registerVanillaBlocks(BenchType.MASON, STONE, 18);
         registerVanillaBlocks(BenchType.MASON, NETHERRACK, 18);
@@ -120,8 +119,10 @@ public class ChippedBlocks {
         }
         // Register Alchemy Bench Blocks
         registerVanillaBlocks(BenchType.ALCHEMY, ANCIENT_DEBRIS, 61);
+        registerVanillaBlocks(BenchType.ALCHEMY, LAPIS_BLOCK, 61);
         final AbstractBlock.Properties CRYING_OBSIDIAN_PROPERTIES = AbstractBlock.Properties.copy(Blocks.CRYING_OBSIDIAN);
         registerBlocks(BenchType.ALCHEMY, CRYING_OBSIDIAN, () -> new CryingObsidianBlock(CRYING_OBSIDIAN_PROPERTIES), 61);
+
 
         // old
         registerVanillaBlocks(BenchType.ALCHEMY, Blocks.OBSIDIAN, OBSIDIAN, 20);

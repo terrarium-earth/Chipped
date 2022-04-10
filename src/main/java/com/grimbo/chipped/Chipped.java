@@ -58,10 +58,14 @@ public class Chipped {
 
 	@SubscribeEvent
 	public void clientRender(final FMLClientSetupEvent event) {
-		RenderTypeLookup.setRenderLayer(ChippedBlocks.BOTANIST_WORKBENCH.get(), RenderType.cutout());
-		RenderTypeLookup.setRenderLayer(ChippedBlocks.LOOM_TABLE.get(), RenderType.cutout());
-		RenderTypeLookup.setRenderLayer(ChippedBlocks.ALCHEMY_BENCH.get(), RenderType.cutout());
-		RenderTypeLookup.setRenderLayer(ChippedBlocks.MECHANIST_WORKBENCH.get(), RenderType.cutout());
+		RenderTypeLookup.setRenderLayer(ChippedBlocks.CARPENTERS_TABLE.get(), RenderType.translucent());
+		RenderTypeLookup.setRenderLayer(ChippedBlocks.BOTANIST_WORKBENCH.get(), RenderType.translucent());
+		RenderTypeLookup.setRenderLayer(ChippedBlocks.LOOM_TABLE.get(), RenderType.translucent());
+		RenderTypeLookup.setRenderLayer(ChippedBlocks.ALCHEMY_BENCH.get(), RenderType.translucent());
+		RenderTypeLookup.setRenderLayer(ChippedBlocks.MECHANIST_WORKBENCH.get(), RenderType.translucent());
+		RenderTypeLookup.setRenderLayer(ChippedBlocks.MASON_TABLE.get(), RenderType.translucent());
+		RenderTypeLookup.setRenderLayer(ChippedBlocks.GLASSBLOWER.get(), RenderType.translucent());
+
 
 		for (RegistryObject<GlassBlock> glass : ChippedBlockTypes.GLASSES) {
 			RenderTypeLookup.setRenderLayer(glass.get(), RenderType.cutout());
