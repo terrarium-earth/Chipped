@@ -117,7 +117,7 @@ public record ChippedRecipe(
             int tagCount = buffer.readVarInt();
             List<HolderSet<Item>> tags = new ArrayList<>(tagCount);
             for (int i = 0; i < tagCount; i++) {
-                tags.add(HolderSet.direct(buffer.readList(buf -> Holder.direct(Item.byId(buf.readVarInt())))));
+                tags.add(HolderSet.direct(Item::builtInRegistryHolder, buffer.readList(buf -> Item.byId(buf.readVarInt()))));
             }
             return new ChippedRecipe(this, recipeId, s, tags, this.icon);
         }
