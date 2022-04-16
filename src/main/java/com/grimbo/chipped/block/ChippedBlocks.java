@@ -118,7 +118,7 @@ public class ChippedBlocks {
             registerVanillaBlocks(BenchType.MASON, CONCRETES.computeIfAbsent(color, k -> new ChippedBlockType<>(k + "_concrete")), 18);
         }
         // Register Alchemy Bench Blocks
-        registerVanillaBlocks(BenchType.ALCHEMY, ANCIENT_DEBRIS, 61);
+        registerVanillaBlocks(BenchType.ALCHEMY, ANCIENT_DEBRIS, 65);
         registerVanillaBlocks(BenchType.ALCHEMY, LAPIS_BLOCK, 61);
         final AbstractBlock.Properties CRYING_OBSIDIAN_PROPERTIES = AbstractBlock.Properties.copy(Blocks.CRYING_OBSIDIAN);
         registerBlocks(BenchType.ALCHEMY, CRYING_OBSIDIAN, () -> new CryingObsidianBlock(CRYING_OBSIDIAN_PROPERTIES), 61);

@@ -1,10 +1,9 @@
 {
     "ctm": {
         "ctm_version": 1,
-        "type": "CTM",
-        "layer": "CUTOUT",
+        "type": "PILLAR",
         "textures": [
-            "chipped:block/ancient_debris/ancient_debris_56_ctm"
-        ]
+        "chipped:block/ancient_debris/ancient_debris_56_ctm"
+       ]
     }
 }

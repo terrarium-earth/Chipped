@@ -74,6 +74,9 @@ repositories {
         name = "ModMaven"
         url = "https://modmaven.k-4u.nl"
     }
+    maven { // CTM
+        url = "https://maven.tterrag.com/"
+    }
 }
 
 dependencies {
@@ -81,6 +84,7 @@ dependencies {
 
     compileOnly fg.deobf("mezz.jei:jei-1.16.5:7.7.1.138:api")
     runtimeOnly fg.deobf("mezz.jei:jei-1.16.5:7.7.1.138")
+    runtimeOnly fg.deobf("team.chisel.ctm:CTM:MC1.16.1-1.1.2.6")
 
     compileOnly(group: "org.jetbrains", name: "annotations", version: "20.1.0")
 }
