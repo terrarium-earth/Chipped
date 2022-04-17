@@ -96,10 +96,10 @@ public class ChippedBlocks {
 
     public static void register() {
         // Register Mason Bench Blocks
-        registerVanillaBlocks(BenchType.MASON, ANDESITE, 61);
+        registerVanillaBlocks(BenchType.MASON, ANDESITE, 65);
         registerVanillaBlocks(BenchType.MASON, DIORITE, 61);
         registerVanillaBlocks(BenchType.MASON, GRANITE, 61);
-        registerVanillaBlocks(BenchType.MASON, BASALT, 61);
+        registerVanillaBlocks(BenchType.MASON, BASALT, 66);
         registerVanillaBlocks(BenchType.MASON, MOSSY_COBBLESTONE, 61);
         registerVanillaBlocks(BenchType.MASON, BRICKS, 61);
         registerVanillaBlocks(BenchType.MASON, COBBLESTONE, 61);
