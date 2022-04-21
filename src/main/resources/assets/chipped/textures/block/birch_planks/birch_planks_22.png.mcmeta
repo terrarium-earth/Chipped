@@ -4,7 +4,7 @@
         "type": "CTM",
         "layer": "CUTOUT",
         "textures": [
-            "chipped:block/birch_planks/birch_planks_25_ctm"
+            "chipped:block/birch_planks/birch_planks_22_ctm"
         ]
     }
 }
