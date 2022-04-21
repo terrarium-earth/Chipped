@@ -97,17 +97,17 @@ public class ChippedBlocks {
     public static void register() {
         // Register Mason Bench Blocks
         registerVanillaBlocks(BenchType.MASON, ANDESITE, 65);
-        registerVanillaBlocks(BenchType.MASON, DIORITE, 61);
-        registerVanillaBlocks(BenchType.MASON, GRANITE, 61);
-        registerVanillaBlocks(BenchType.MASON, BASALT, 66);
-        registerVanillaBlocks(BenchType.MASON, MOSSY_COBBLESTONE, 61);
-        registerVanillaBlocks(BenchType.MASON, BRICKS, 61);
-        registerVanillaBlocks(BenchType.MASON, COBBLESTONE, 61);
-        registerVanillaBlocks(BenchType.MASON, END_STONE, 63);
-        registerVanillaBlocks(BenchType.MASON, MOSSY_STONE_BRICKS, 61);
-        registerVanillaBlocks(BenchType.MASON, DARK_PRISMARINE, 61);
-        registerVanillaBlocks(BenchType.MASON, Blocks.GILDED_BLACKSTONE, GILDED_BLACKSTONES, 61);
-        registerVanillaBlocks(BenchType.MASON, Blocks.BLACKSTONE, BLACKSTONES, 57);
+        registerVanillaBlocks(BenchType.MASON, DIORITE, 65);
+        registerVanillaBlocks(BenchType.MASON, GRANITE, 65);
+        registerVanillaBlocks(BenchType.MASON, BASALT, 65);
+        registerVanillaBlocks(BenchType.MASON, MOSSY_COBBLESTONE, 65);
+        registerVanillaBlocks(BenchType.MASON, BRICKS, 65);
+        registerVanillaBlocks(BenchType.MASON, COBBLESTONE, 65);
+        registerVanillaBlocks(BenchType.MASON, END_STONE, 65);
+        registerVanillaBlocks(BenchType.MASON, MOSSY_STONE_BRICKS, 65);
+        registerVanillaBlocks(BenchType.MASON, DARK_PRISMARINE, 65);
+        registerVanillaBlocks(BenchType.MASON, Blocks.GILDED_BLACKSTONE, GILDED_BLACKSTONES, 65);
+        registerVanillaBlocks(BenchType.MASON, Blocks.BLACKSTONE, BLACKSTONES, 65);
         // old that need to be revamp
         registerVanillaBlocks(BenchType.MASON, STONE, 18);
         registerVanillaBlocks(BenchType.MASON, NETHERRACK, 18);
