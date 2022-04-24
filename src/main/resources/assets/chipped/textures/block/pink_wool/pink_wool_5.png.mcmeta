@@ -1,0 +1,13 @@
+{
+  "ctm": {
+    "ctm_version": 1,
+    "type": "ctm",
+    "layer": "CUTOUT",
+    "textures": [
+      "chipped:block/pink_wool/pink_wool_5_ctm"
+    ],
+    "extra": {
+      "light": 0
+    }
+  }
+}

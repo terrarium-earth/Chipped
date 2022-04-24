@@ -74,6 +74,7 @@ public class ChippedBlockTagsProvider extends BlockTagsProvider {
 
 		tag(Tags.Blocks.STONE)
 				.addTag(ANDESITE.getBlockTag())
+				.addTag(STONE.getBlockTag())
 				.addTag(DIORITE.getBlockTag())
 				.addTag(GRANITE.getBlockTag())
 				.addTag(BASALT.getBlockTag())
@@ -82,9 +83,23 @@ public class ChippedBlockTagsProvider extends BlockTagsProvider {
 				.addTag(ANCIENT_DEBRIS.getBlockTag())
 				.addTag(BLUE_ICE.getBlockTag())
 				.addTag(ICE.getBlockTag())
+				.addTag(PACKED_ICE.getBlockTag())
 				.addTag(CLAYS.getBlockTag())
 				.addTag(DARK_PRISMARINE.getBlockTag())
-				.addTag(GILDED_BLACKSTONES.getBlockTag());
+				.addTag(PRISMARINE.getBlockTag())
+				.addTag(GILDED_BLACKSTONES.getBlockTag())
+				.addTag(COAL_BLOCK.getBlockTag())
+				.addTag(REDSTONE_BLOCK.getBlockTag())
+				.addTag(LODESTONE.getBlockTag())
+				.addTag(MAGMA_BLOCK.getBlockTag())
+				.addTag(PURPUR_BLOCK.getBlockTag())
+				.addTag(QUARTZ_BLOCK.getBlockTag())
+				.addTag(RED_NETHER_BRICKS.getBlockTag())
+				.addTag(RED_SANDSTONE.getBlockTag())
+				.addTag(SANDSTONE.getBlockTag())
+				.addTag(SMOOTH_STONE.getBlockTag())
+				.addTag(SNOW_BLOCK.getBlockTag())
+				.addTag(NETHER_BRICKS.getBlockTag());
 
 		tag(Tags.Blocks.DIRT).addTag(DIRT.getBlockTag());
 

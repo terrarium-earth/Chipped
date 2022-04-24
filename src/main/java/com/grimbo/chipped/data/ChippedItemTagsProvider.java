@@ -52,6 +52,7 @@ public class ChippedItemTagsProvider extends ItemTagsProvider {
 
 		//Default Forge tags
 		tag(Tags.Items.STONE)
+				.addTag(STONE.getItemTag())
 				.addTag(ANDESITE.getItemTag())
 				.addTag(DIORITE.getItemTag())
 				.addTag(GRANITE.getItemTag())
@@ -61,10 +62,24 @@ public class ChippedItemTagsProvider extends ItemTagsProvider {
 				.addTag(ANCIENT_DEBRIS.getItemTag())
 				.addTag(BLUE_ICE.getItemTag())
 				.addTag(ICE.getItemTag())
+				.addTag(PACKED_ICE.getItemTag())
 				.addTag(CLAYS.getItemTag())
 				.addTag(DARK_PRISMARINE.getItemTag())
+				.addTag(PRISMARINE.getItemTag())
 				.addTag(DIRT.getItemTag())
-				.addTag(GILDED_BLACKSTONES.getItemTag());
+				.addTag(GILDED_BLACKSTONES.getItemTag())
+				.addTag(COAL_BLOCK.getItemTag())
+				.addTag(REDSTONE_BLOCK.getItemTag())
+				.addTag(LODESTONE.getItemTag())
+				.addTag(MAGMA_BLOCK.getItemTag())
+				.addTag(PURPUR_BLOCK.getItemTag())
+				.addTag(QUARTZ_BLOCK.getItemTag())
+				.addTag(RED_NETHER_BRICKS.getItemTag())
+				.addTag(RED_SANDSTONE.getItemTag())
+				.addTag(SANDSTONE.getItemTag())
+				.addTag(SMOOTH_STONE.getItemTag())
+				.addTag(SNOW_BLOCK.getItemTag())
+				.addTag(NETHER_BRICKS.getItemTag());
 
 		tag(Tags.Items.GEMS_LAPIS).addTag(LAPIS_BLOCK.getItemTag());
 

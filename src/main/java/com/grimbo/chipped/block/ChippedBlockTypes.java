@@ -1,5 +1,6 @@
 package com.grimbo.chipped.block;
 
+import com.grimbo.chipped.Chipped;
 import com.grimbo.chipped.api.ChippedBlockType;
 import com.grimbo.chipped.api.ChippedWoodType;
 import net.minecraft.block.*;
@@ -70,12 +71,26 @@ public class ChippedBlockTypes {
     public static final ChippedBlockType<Block> DARK_PRISMARINE = new ChippedBlockType<>("dark_prismarine");
     public static final ChippedBlockType<Block> GRANITE = new ChippedBlockType<>("granite");
     public static final ChippedBlockType<Block> LAPIS_BLOCK = new ChippedBlockType<>("lapis_block");
+    public static final ChippedBlockType<Block> COAL_BLOCK = new ChippedBlockType<>("coal_block");
+    public static final ChippedBlockType<Block> LODESTONE = new ChippedBlockType<>("lodestone");
+    public static final ChippedBlockType<Block> MAGMA_BLOCK = new ChippedBlockType<>("magma_block");
+    public static final ChippedBlockType<Block> NETHER_BRICKS = new ChippedBlockType<>("nether_bricks");
+    public static final ChippedBlockType<Block> PRISMARINE = new ChippedBlockType<>("prismarine");
+    public static final ChippedBlockType<Block> PURPUR_BLOCK = new ChippedBlockType<>("purpur_block");
+    public static final ChippedBlockType<Block> QUARTZ_BLOCK = new ChippedBlockType<>("quartz_block");
+    public static final ChippedBlockType<Block> RED_SANDSTONE = new ChippedBlockType<>("red_sandstone");
+    public static final ChippedBlockType<Block> RED_NETHER_BRICKS = new ChippedBlockType<>("red_nether_bricks");
+    public static final ChippedBlockType<Block> REDSTONE_BLOCK = new ChippedBlockType<>("redstone_block");
+    public static final ChippedBlockType<Block> SANDSTONE = new ChippedBlockType<>("sandstone");
+    public static final ChippedBlockType<Block> SMOOTH_STONE = new ChippedBlockType<>("smooth_stone");
 
     public static final ChippedBlockType<Block> BLUE_ICE = new ChippedBlockType<>("blue_ice");
     public static final ChippedBlockType<Block> ICE = new ChippedBlockType<>("ice");
+    public static final ChippedBlockType<Block> PACKED_ICE = new ChippedBlockType<>("packed_ice");
     public static final ChippedBlockType<Block> CLAYS = new ChippedBlockType<>("clay");
     public static final ChippedBlockType<Block> DRIED_KELP_BLOCKS = new ChippedBlockType<>("dried_kelp_block");
     public static final ChippedBlockType<Block> DIRT = new ChippedBlockType<>("dirt");
+    public static final ChippedBlockType<Block> SNOW_BLOCK = new ChippedBlockType<>("snow_block");
 
     public static final ChippedBlockType<Block> GLOWSTONES = new ChippedBlockType<>("glowstone");
     public static final ChippedBlockType<Block> ANCIENT_DEBRIS = new ChippedBlockType<>("ancient_debris");
