@@ -79,9 +79,17 @@ public class ChippedItemTagsProvider extends ItemTagsProvider {
 				.addTag(SANDSTONE.getItemTag())
 				.addTag(SMOOTH_STONE.getItemTag())
 				.addTag(SNOW_BLOCK.getItemTag())
+				.addTag(NETHERITE_BLOCK.getItemTag())
 				.addTag(NETHER_BRICKS.getItemTag());
 
 		tag(Tags.Items.GEMS_LAPIS).addTag(LAPIS_BLOCK.getItemTag());
+		tag(Tags.Items.GEMS_DIAMOND).addTag(DIAMOND_BLOCK.getItemTag());
+		tag(Tags.Items.GEMS_EMERALD).addTag(EMERALD_BLOCK.getItemTag());
+		tag(Tags.Items.ORES_GOLD).addTag(GOLD_BLOCK.getItemTag());
+		tag(Tags.Items.ORES_IRON).addTag(IRON_BLOCK.getItemTag());
+		tag(Tags.Items.BOOKSHELVES).addTag(BOOKSHELF.getItemTag());
+		tag(Tags.Items.GRAVEL).addTag(GRAVEL.getItemTag());
+		tag(Tags.Items.SAND).addTag(SAND.getItemTag());
 
 		tag(Tags.Items.COBBLESTONE)
 				.addTag(MOSSY_COBBLESTONE.getItemTag())

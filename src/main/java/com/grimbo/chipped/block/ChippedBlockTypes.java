@@ -24,6 +24,10 @@ public class ChippedBlockTypes {
     public static final ChippedBlockType<VineBlock> VINES = new ChippedBlockType<>("vine");
     public static final ChippedBlockType<HayBlock> HAY_BLOCKS = new ChippedBlockType<>("hay_block");
     public static final ChippedBlockType<MelonBlock> MELONS = new ChippedBlockType<>("melon");
+    public static final ChippedBlockType<GravelBlock> GRAVEL = new ChippedBlockType<>("gravel");
+    public static final ChippedBlockType<SandBlock> SAND = new ChippedBlockType<>("sand");
+
+    public static final ChippedBlockType<Block> BOOKSHELF = new ChippedBlockType<>("bookshelf");
 
     public static final ChippedBlockType<Block> LANTERNS = new ChippedBlockType<>("lantern");
     public static final ChippedBlockType<Block> SOUL_LANTERNS = new ChippedBlockType<>("soul_lantern");
@@ -53,7 +57,7 @@ public class ChippedBlockTypes {
 
     public static final ChippedBlockType<LilyPadBlock> LILY_PAD = new ChippedBlockType<>("lily_pad");
 
-    public static final ChippedBlockType<Block> OBSIDIAN = new ChippedBlockType<>("obsidian");
+    public static final ChippedBlockType<NetherPortalBlock> OBSIDIAN = new ChippedBlockType<>("obsidian");
     public static final ChippedBlockType<Block> CRYING_OBSIDIAN = new ChippedBlockType<>("crying_obsidian");
 
     public static final ChippedBlockType<Block> STONE = new ChippedBlockType<>("stone");
@@ -83,6 +87,13 @@ public class ChippedBlockTypes {
     public static final ChippedBlockType<Block> REDSTONE_BLOCK = new ChippedBlockType<>("redstone_block");
     public static final ChippedBlockType<Block> SANDSTONE = new ChippedBlockType<>("sandstone");
     public static final ChippedBlockType<Block> SMOOTH_STONE = new ChippedBlockType<>("smooth_stone");
+
+    public static final ChippedBlockType<Block> DIAMOND_BLOCK = new ChippedBlockType<>("diamond_block");
+    public static final ChippedBlockType<Block> EMERALD_BLOCK = new ChippedBlockType<>("emerald_block");
+    public static final ChippedBlockType<Block> GOLD_BLOCK = new ChippedBlockType<>("gold_block");
+    public static final ChippedBlockType<Block> IRON_BLOCK = new ChippedBlockType<>("iron_block");
+    public static final ChippedBlockType<Block> NETHERITE_BLOCK = new ChippedBlockType<>("netherite_block");
+
 
     public static final ChippedBlockType<Block> BLUE_ICE = new ChippedBlockType<>("blue_ice");
     public static final ChippedBlockType<Block> ICE = new ChippedBlockType<>("ice");

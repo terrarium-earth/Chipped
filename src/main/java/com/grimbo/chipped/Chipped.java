@@ -149,6 +149,9 @@ public class Chipped {
 		for (RegistryObject<Block> lantern : ChippedBlockTypes.SOUL_LANTERNS) {
 			RenderTypeLookup.setRenderLayer(lantern.get(), RenderType.cutout());
 		}
+		for (RegistryObject<Block> ice : ChippedBlockTypes.ICE) {
+			RenderTypeLookup.setRenderLayer(ice.get(), RenderType.translucent());
+		}
 	}
 
 	@SuppressWarnings("unchecked")

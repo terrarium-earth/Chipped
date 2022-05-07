@@ -131,9 +131,15 @@ public class ChippedBlocks {
         registerVanillaBlocks(BenchType.ALCHEMY, REDSTONE_BLOCK, 61);
         registerVanillaBlocks(BenchType.ALCHEMY, LODESTONE, 61);
         registerVanillaBlocks(BenchType.ALCHEMY, MAGMA_BLOCK, 61);
+        registerVanillaBlocks(BenchType.ALCHEMY, DIAMOND_BLOCK, 12);
+        registerVanillaBlocks(BenchType.ALCHEMY, EMERALD_BLOCK, 12);
+        registerVanillaBlocks(BenchType.ALCHEMY, GOLD_BLOCK, 12);
+        registerVanillaBlocks(BenchType.ALCHEMY, IRON_BLOCK, 12);
+        registerVanillaBlocks(BenchType.ALCHEMY, NETHERITE_BLOCK, 12);
         final AbstractBlock.Properties CRYING_OBSIDIAN_PROPERTIES = AbstractBlock.Properties.copy(Blocks.CRYING_OBSIDIAN);
         registerBlocks(BenchType.ALCHEMY, CRYING_OBSIDIAN, () -> new CryingObsidianBlock(CRYING_OBSIDIAN_PROPERTIES), 61);
-        registerVanillaBlocks(BenchType.ALCHEMY, Blocks.OBSIDIAN, OBSIDIAN, 61);
+        final AbstractBlock.Properties OBSIDIAN_PROPERTIES = AbstractBlock.Properties.copy(Blocks.OBSIDIAN);
+        registerBlocks(BenchType.ALCHEMY, OBSIDIAN, () -> new NetherPortalBlock(OBSIDIAN_PROPERTIES), 61);
 
         //
         registerVanillaBlocks(BenchType.ALCHEMY, Blocks.GLOWSTONE, GLOWSTONES, 20);
@@ -151,6 +157,9 @@ public class ChippedBlocks {
         registerVanillaBlocks(BenchType.BOTANIST, WARPED_WART_BLOCK, 14);
         registerVanillaBlocks(BenchType.BOTANIST, NETHER_WART_BLOCK, 13);
 
+        registerVanillaBlocks(BenchType.CARPENTERS, BOOKSHELF, 57);
+
+
         // Register Mechanist Bench Blocks
         final AbstractBlock.Properties REDSTONE_LAMP_PROPERTIES = AbstractBlock.Properties.copy(Blocks.REDSTONE_LAMP);
         registerBlocks(BenchType.MECHANIST, REDSTONE_LAMPS, () -> new RedstoneLampBlock(REDSTONE_LAMP_PROPERTIES), 18);
@@ -166,12 +175,12 @@ public class ChippedBlocks {
         // Register Glasses and Stained Glasses
         final AbstractBlock.Properties GLASS_PROPERTIES = AbstractBlock.Properties.copy(Blocks.GLASS);
         final AbstractBlock.Properties GLASS_PANE_PROPERTIES = AbstractBlock.Properties.copy(Blocks.GLASS_PANE);
-        registerBlocks(BenchType.GLASSBLOWER, GLASSES, () -> new GlassBlock(GLASS_PROPERTIES), 14);
-        registerBlocks(BenchType.GLASSBLOWER, GLASS_PANES, () -> new PaneBlock(GLASS_PANE_PROPERTIES), 14);
+        registerBlocks(BenchType.GLASSBLOWER, GLASSES, () -> new GlassBlock(GLASS_PROPERTIES), 9);
+        registerBlocks(BenchType.GLASSBLOWER, GLASS_PANES, () -> new PaneBlock(GLASS_PANE_PROPERTIES), 9);
 
         for (ChippedWoodType type : ChippedWoodType.VALUES) {
-            registerBlocks(BenchType.GLASSBLOWER, GLASSES, type + "_wood_glass", () -> new GlassBlock(GLASS_PROPERTIES), 6);
-            registerBlocks(BenchType.GLASSBLOWER, GLASS_PANES, type + "_wood_glass_pane", () -> new PaneBlock(GLASS_PANE_PROPERTIES), 6);
+            registerBlocks(BenchType.GLASSBLOWER, GLASSES, type + "_wood_glass", () -> new GlassBlock(GLASS_PROPERTIES), 11);
+            registerBlocks(BenchType.GLASSBLOWER, GLASS_PANES, type + "_wood_glass_pane", () -> new PaneBlock(GLASS_PANE_PROPERTIES), 11);
         }
 
         for (int id = 0; id < 16; ++id) {
@@ -191,6 +200,10 @@ public class ChippedBlocks {
         registerBlocks(BenchType.BOTANIST, MELONS, () -> new MelonBlock(melonProperties), 10);
         final AbstractBlock.Properties vineProperties = AbstractBlock.Properties.copy(Blocks.VINE);
         registerBlocks(BenchType.BOTANIST, VINES, () -> new VineBlock(vineProperties), 17);
+        final AbstractBlock.Properties gravelProperties = AbstractBlock.Properties.copy(Blocks.GRAVEL);
+        registerBlocks(BenchType.BOTANIST, GRAVEL, () -> new GravelBlock(gravelProperties), 7);
+        final AbstractBlock.Properties sandProperties = AbstractBlock.Properties.copy(Blocks.SAND);
+        registerBlocks(BenchType.BOTANIST, SAND, () -> new SandBlock(1, sandProperties), 12);
 
         final AbstractBlock.Properties brownMushroomProperties = AbstractBlock.Properties.copy(Blocks.BROWN_MUSHROOM);
         registerBlocks(BenchType.BOTANIST, BROWN_MUSHROOMS, () -> new MushroomBlock(brownMushroomProperties), 15);

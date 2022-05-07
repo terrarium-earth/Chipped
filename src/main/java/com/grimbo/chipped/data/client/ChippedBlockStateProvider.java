@@ -33,11 +33,11 @@ public class ChippedBlockStateProvider extends BlockStateProvider {
                 BROWN_MUSHROOM_BLOCK, RED_MUSHROOM_BLOCK, WARPED_WART_BLOCK, NETHER_WART_BLOCK, SOUL_SANDS, MOSSY_COBBLESTONE, ANDESITE,
                 DIORITE, BASALT, MOSSY_STONE_BRICKS, BRICKS, ANCIENT_DEBRIS, BLUE_ICE, DARK_PRISMARINE, DIRT, GRANITE, ICE, LAPIS_BLOCK,
                 COAL_BLOCK, LODESTONE, MAGMA_BLOCK, NETHER_BRICKS, PACKED_ICE, PRISMARINE, PURPUR_BLOCK, QUARTZ_BLOCK, RED_NETHER_BRICKS,
-                RED_SANDSTONE, REDSTONE_BLOCK, SANDSTONE, SMOOTH_STONE, SNOW_BLOCK
+                RED_SANDSTONE, REDSTONE_BLOCK, SANDSTONE, SMOOTH_STONE, SNOW_BLOCK, DIAMOND_BLOCK, EMERALD_BLOCK, GOLD_BLOCK, IRON_BLOCK, NETHERITE_BLOCK, GRAVEL,
+                SAND
         );
 
-        registerGlassPanes(GLASS_PANES, "glass", "glass_pane_1_top", 1, 6);
-        registerGlassPanes(GLASS_PANES, "glass", "glass_pane_2_top", 7, 14);
+        registerGlassPanes(GLASS_PANES, "glass", "glass_pane_2_top", 1, 9);
 
         for (int id = 0; id < 16; id++) {
             DyeColor color = DyeColor.byId(id);
@@ -89,6 +89,11 @@ public class ChippedBlockStateProvider extends BlockStateProvider {
         for (RegistryObject<MelonBlock> block : MELONS.getBlocks()) {
             String name = block.getId().getPath();
             simpleBlock(block.get(), models().cubeColumn(name, modLoc("block/" + MELONS + "/" + name + "_side"), modLoc("block/" + MELONS + "/" + name + "_top")));
+        }
+
+        for (RegistryObject<Block> block : BOOKSHELF.getBlocks()) {
+            String name = block.getId().getPath();
+            simpleBlock(block.get(), models().cubeColumn(name, modLoc("block/" + BOOKSHELF + "/" + name + "_side"), modLoc("block/bookshelf/bookshelf_top")));
         }
 
         // Pumpkins
