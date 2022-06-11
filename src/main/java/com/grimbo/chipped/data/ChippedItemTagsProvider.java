@@ -90,6 +90,7 @@ public class ChippedItemTagsProvider extends ItemTagsProvider {
 		tag(Tags.Items.BOOKSHELVES).addTag(BOOKSHELF.getItemTag());
 		tag(Tags.Items.GRAVEL).addTag(GRAVEL.getItemTag());
 		tag(Tags.Items.SAND).addTag(SAND.getItemTag());
+		tag(Tags.Items.BARRELS_WOODEN).addTag(BARRELS.getItemTag());
 
 		tag(Tags.Items.COBBLESTONE)
 				.addTag(MOSSY_COBBLESTONE.getItemTag())

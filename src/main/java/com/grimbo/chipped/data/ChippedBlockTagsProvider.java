@@ -107,6 +107,7 @@ public class ChippedBlockTagsProvider extends BlockTagsProvider {
 				.addTag(NETHER_BRICKS.getBlockTag());
 
 
+		tag(Tags.Blocks.BARRELS_WOODEN).addTag(BARRELS.getBlockTag());
 		tag(Tags.Blocks.DIRT).addTag(DIRT.getBlockTag());
 		tag(Tags.Blocks.ORES_LAPIS).addTag(LAPIS_BLOCK.getBlockTag());
 

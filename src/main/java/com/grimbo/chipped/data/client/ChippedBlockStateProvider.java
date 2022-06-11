@@ -3,6 +3,7 @@ package com.grimbo.chipped.data.client;
 import com.grimbo.chipped.Chipped;
 import com.grimbo.chipped.api.ChippedBlockType;
 import com.grimbo.chipped.api.ChippedWoodType;
+import com.grimbo.chipped.block.ChippedBlockTypes;
 import com.grimbo.chipped.block.ChippedBlocks;
 import net.minecraft.block.*;
 import net.minecraft.data.DataGenerator;
@@ -250,6 +251,7 @@ public class ChippedBlockStateProvider extends BlockStateProvider {
 
         registerRedstoneTorches();
         registerRedstoneTorchWall();
+        registerBarrels(BARRELS.getBlocks());
     }
 
     private <T extends Block> void createCubeFromList(ChippedBlockType<?>... blockLists) {

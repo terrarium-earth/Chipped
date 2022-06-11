@@ -157,6 +157,8 @@ public class ChippedBlocks {
         registerVanillaBlocks(BenchType.BOTANIST, NETHER_WART_BLOCK, 13);
 
         registerVanillaBlocks(BenchType.CARPENTERS, BOOKSHELF, 57);
+        final AbstractBlock.Properties BARREL_PROPERTIES = AbstractBlock.Properties.copy(Blocks.BARREL);
+        registerBlocks(BenchType.CARPENTERS, BARRELS, () -> new BarrelBlock(BARREL_PROPERTIES), 33);
 
 
 
@@ -375,6 +377,7 @@ public class ChippedBlocks {
             BlockRegistry.addGenericBlock(BenchType.MECHANIST, list, lantern);
         }
     }
+
 
     private static void registerVanillaBlocks(BenchType bench, ChippedBlockType<Block> type, int count) {
         registerVanillaBlocks(bench, ForgeRegistries.BLOCKS.getValue(new ResourceLocation("minecraft", type.getId())), type, count);

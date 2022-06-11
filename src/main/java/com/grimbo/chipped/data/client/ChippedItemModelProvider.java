@@ -103,6 +103,9 @@ public class ChippedItemModelProvider extends ItemModelProvider {
 		for (RegistryObject<WebBlock> block : COBWEBS.getBlocks()) {
 			withExistingParent(block.getId().getPath(), mcLoc("generated")).texture("layer0", modLoc("block/" + COBWEBS + "/" + block.getId().getPath()));
 		}
+		for (RegistryObject<BarrelBlock> block : BARRELS.getBlocks()) {
+			withExistingParent(block.getId().getPath(), mcLoc("generated")).texture("layer0", modLoc("block/" + BARRELS + "/" + block.getId().getPath() + "_side"));
+		}
 
 		applyDefault(
 				GLASSES, STONE, COBBLESTONE, OBSIDIAN, CRYING_OBSIDIAN, HAY_BLOCKS,
@@ -120,6 +123,7 @@ public class ChippedItemModelProvider extends ItemModelProvider {
 		applyDefault(STAINED_GLASSES.values());
 		applyDefault(WOOL.values());
 		applyDefault(CARPETS.values());
+
 
 
 		//Special Pumpkins + First 3
