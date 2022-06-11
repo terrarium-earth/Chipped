@@ -64,7 +64,7 @@ public class ChippedBlockStateProvider extends BlockStateProvider {
 
         for (ChippedWoodType wood : ChippedWoodType.VALUES) {
             createCubeFromList(PLANKS.get(wood));
-            registerGlassPanes(GLASS_PANES, wood + "_wood_glass_pane", wood + "_wood_glass", "glass", wood + "_wood_glass_pane_top", 1, 6);
+            registerGlassPanes(GLASS_PANES, wood + "_wood_glass_pane", wood + "_wood_glass", "glass", wood + "_wood_glass_pane_top", 1, 11);
         }
 
         for (RegistryObject<HayBlock> block : HAY_BLOCKS.getBlocks()) {
