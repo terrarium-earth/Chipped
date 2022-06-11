@@ -1,0 +1,13 @@
+{
+  "ctm": {
+    "ctm_version": 1,
+    "type": "ctm",
+    "layer": "CUTOUT",
+    "textures": [
+      "chipped:block/lapis_block/lapis_block_2_ctm"
+    ],
+    "extra": {
+      "light": 0
+    }
+  }
+}
