@@ -232,7 +232,7 @@ public class ChippedBlockStateProvider extends BlockStateProvider {
                         .with(CarvedPumpkinBlock.FACING, direction)
                         .modelForState()
                         .modelFile(models().orientable(carvedBlockName, mcLoc("block/pumpkin_side"), modLoc(blockPath), mcLoc("block/pumpkin_top")))
-                        .rotationY(Chipped.getAngleFromDir(direction))
+                        .rotationY(Chipped.getYAngleFromDir(direction))
                         .addModel();
             }
         }
@@ -382,8 +382,35 @@ public class ChippedBlockStateProvider extends BlockStateProvider {
                     .with(CarvedPumpkinBlock.FACING, direction)
                     .modelForState()
                     .modelFile(models().orientable(carvedBlockName, modLoc("block/pumpkin/" + pumpkinName + "_side"), modLoc("block/pumpkin/" + carvedBlockName), modLoc("block/pumpkin/" + pumpkinName + "_top")))
-                    .rotationY(Chipped.getAngleFromDir(direction))
+                    .rotationY(Chipped.getYAngleFromDir(direction))
                     .addModel();
+        }
+    }
+
+    private void registerBarrels(List<RegistryObject<BarrelBlock>> barrels) {
+        for(RegistryObject<BarrelBlock> barrel : barrels) {
+            for(Direction direction : Direction.values()) {
+                String name = barrel.getId().getPath();
+                getVariantBuilder(barrel.get())
+                        .partialState()
+                        .partialState()
+                        .with(BarrelBlock.FACING, direction)
+                        .with(BarrelBlock.OPEN, false)
+                        .modelForState()
+                        .modelFile(models().cubeBottomTop(name, modLoc("block/barrel/" + name + "_side"), modLoc("block/barrel/" + name + "_bottom"), modLoc("block/barrel/" + name + "_top_closed")))
+                        .rotationY(Chipped.getYAngleFromDir(direction))
+                        .rotationX(Chipped.getXAngleFromDir(direction))
+                        .addModel()
+                        .partialState()
+                        .partialState()
+                        .with(BarrelBlock.FACING, direction)
+                        .with(BarrelBlock.OPEN, true)
+                        .modelForState()
+                        .modelFile(models().cubeBottomTop(name, modLoc("block/barrel/" + name + "_side"), modLoc("block/barrel/" + name + "_bottom"), modLoc("block/barrel/" + name + "_top_open")))
+                        .rotationY(Chipped.getYAngleFromDir(direction))
+                        .rotationX(Chipped.getXAngleFromDir(direction))
+                        .addModel();
+            }
         }
     }
 }

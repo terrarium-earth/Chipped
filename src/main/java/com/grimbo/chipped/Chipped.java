@@ -176,7 +176,7 @@ public class Chipped {
 		}
 	}
 
-	public static int getAngleFromDir(Direction direction) {
+	public static int getYAngleFromDir(Direction direction) {
 		switch (direction) {
 			case WEST:
 				return 270;
@@ -186,6 +186,17 @@ public class Chipped {
 				return 90;
 			default:
 				return 0;
+		}
+	}
+
+	public static int getXAngleFromDir(Direction direction) {
+		switch (direction) {
+			case UP:
+				return 0;
+			case DOWN:
+				return 180;
+			default:
+				return 90;
 		}
 	}
 }

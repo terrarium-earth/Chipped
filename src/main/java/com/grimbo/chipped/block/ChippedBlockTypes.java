@@ -111,5 +111,7 @@ public class ChippedBlockTypes {
     public static final ChippedBlockType<RedstoneLampBlock> REDSTONE_LAMPS = new ChippedBlockType<>("redstone_lamp");
 
     public static final ChippedBlockType<WebBlock> COBWEBS = new ChippedBlockType<>("cobweb");
+
+    public static final ChippedBlockType<BarrelBlock> BARRELS = new ChippedBlockType<>("barrel");
 }
 
