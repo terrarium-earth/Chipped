@@ -389,8 +389,10 @@ public class ChippedBlockStateProvider extends BlockStateProvider {
 
     private void registerBarrels(List<RegistryObject<BarrelBlock>> barrels) {
         for(RegistryObject<BarrelBlock> barrel : barrels) {
+            String name = barrel.getId().getPath();
+            simpleBlock(barrel.get(), models().cubeBottomTop(name + "_closed", modLoc("block/barrel/" + name + "_side"), modLoc("block/barrel/" + name + "_bottom"), modLoc("block/barrel/" + name + "_top_closed")));
+            simpleBlock(barrel.get(), models().cubeBottomTop(name + "_open", modLoc("block/barrel/" + name + "_side"), modLoc("block/barrel/" + name + "_bottom"), modLoc("block/barrel/" + name + "_top_open")));
             for(Direction direction : Direction.values()) {
-                String name = barrel.getId().getPath();
                 getVariantBuilder(barrel.get())
                         .partialState()
                         .partialState()
