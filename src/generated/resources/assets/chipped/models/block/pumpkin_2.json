@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/cube_bottom_top",
-  "textures": {
-    "side": "chipped:block/pumpkin/pumpkin_2_side",
-    "bottom": "chipped:block/pumpkin/pumpkin_2_bottom",
-    "top": "chipped:block/pumpkin/pumpkin_2_top"
-  }
-}

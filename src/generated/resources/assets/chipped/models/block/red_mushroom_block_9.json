@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "chipped:block/red_mushroom_block/red_mushroom_block_9"
-  }
-}

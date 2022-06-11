@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/orientable",
-  "textures": {
-    "side": "minecraft:block/pumpkin_side",
-    "front": "chipped:block/pumpkin/carved_pumpkin_bighappy",
-    "top": "minecraft:block/pumpkin_top"
-  }
-}
