@@ -67,6 +67,7 @@ public class Chipped {
 		RenderTypeLookup.setRenderLayer(ChippedBlocks.GLASSBLOWER.get(), RenderType.translucent());
 
 
+
 		for (RegistryObject<GlassBlock> glass : ChippedBlockTypes.GLASSES) {
 			RenderTypeLookup.setRenderLayer(glass.get(), RenderType.cutout());
 		}

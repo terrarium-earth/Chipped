@@ -57,7 +57,7 @@ public class ChippedBlockTypes {
 
     public static final ChippedBlockType<LilyPadBlock> LILY_PAD = new ChippedBlockType<>("lily_pad");
 
-    public static final ChippedBlockType<NetherPortalBlock> OBSIDIAN = new ChippedBlockType<>("obsidian");
+    public static final ChippedBlockType<Block> OBSIDIAN = new ChippedBlockType<>("obsidian");
     public static final ChippedBlockType<Block> CRYING_OBSIDIAN = new ChippedBlockType<>("crying_obsidian");
 
     public static final ChippedBlockType<Block> STONE = new ChippedBlockType<>("stone");

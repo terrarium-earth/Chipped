@@ -1,0 +1,13 @@
+{
+  "ctm": {
+    "ctm_version": 1,
+    "type": "ctm",
+    "layer": "CUTOUT",
+    "textures": [
+      "chipped:block/blue_ice/blue_ice_42_ctm"
+    ],
+    "extra": {
+      "light": 0
+    }
+  }
+}

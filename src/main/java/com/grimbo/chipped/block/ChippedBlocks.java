@@ -136,10 +136,9 @@ public class ChippedBlocks {
         registerVanillaBlocks(BenchType.ALCHEMY, GOLD_BLOCK, 12);
         registerVanillaBlocks(BenchType.ALCHEMY, IRON_BLOCK, 12);
         registerVanillaBlocks(BenchType.ALCHEMY, NETHERITE_BLOCK, 12);
+        registerVanillaBlocks(BenchType.ALCHEMY, OBSIDIAN, 61);
         final AbstractBlock.Properties CRYING_OBSIDIAN_PROPERTIES = AbstractBlock.Properties.copy(Blocks.CRYING_OBSIDIAN);
         registerBlocks(BenchType.ALCHEMY, CRYING_OBSIDIAN, () -> new CryingObsidianBlock(CRYING_OBSIDIAN_PROPERTIES), 61);
-        final AbstractBlock.Properties OBSIDIAN_PROPERTIES = AbstractBlock.Properties.copy(Blocks.OBSIDIAN);
-        registerBlocks(BenchType.ALCHEMY, OBSIDIAN, () -> new NetherPortalBlock(OBSIDIAN_PROPERTIES), 61);
 
         //
         registerVanillaBlocks(BenchType.ALCHEMY, Blocks.GLOWSTONE, GLOWSTONES, 20);
@@ -158,6 +157,8 @@ public class ChippedBlocks {
         registerVanillaBlocks(BenchType.BOTANIST, NETHER_WART_BLOCK, 13);
 
         registerVanillaBlocks(BenchType.CARPENTERS, BOOKSHELF, 57);
+
+
 
 
         // Register Mechanist Bench Blocks
@@ -234,6 +235,7 @@ public class ChippedBlocks {
         registerBlocks(BenchType.ALCHEMY, SOUL_SANDS, () -> new SoulSandBlock(soulSandProperties), 11);
 
         // Lilypads require a custom item
+        // TODO remove lilypads
         final AbstractBlock.Properties lilyPadProperties = AbstractBlock.Properties.copy(Blocks.LILY_PAD);
         for (int i = 1; i <= 6; i++) {
             String name = LILY_PAD.getId() + "_" + i;

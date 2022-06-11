@@ -108,7 +108,6 @@ public class ChippedBlockTagsProvider extends BlockTagsProvider {
 
 
 		tag(Tags.Blocks.DIRT).addTag(DIRT.getBlockTag());
-
 		tag(Tags.Blocks.ORES_LAPIS).addTag(LAPIS_BLOCK.getBlockTag());
 
 		tag(Tags.Blocks.COBBLESTONE).addTag(MOSSY_COBBLESTONE.getBlockTag()).addTag(COBBLESTONE.getBlockTag());
