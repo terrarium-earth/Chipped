@@ -1,0 +1,7 @@
+{
+  "replace": false,
+  "values": [
+    "#chipped:torch",
+    "#chipped:redstone_torch"
+  ]
+}

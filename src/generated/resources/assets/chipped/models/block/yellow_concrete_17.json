@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "chipped:block/yellow_concrete/yellow_concrete_17"
+  }
+}

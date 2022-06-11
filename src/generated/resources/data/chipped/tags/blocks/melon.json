@@ -1,0 +1,16 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:melon",
+    "chipped:melon_1",
+    "chipped:melon_2",
+    "chipped:melon_3",
+    "chipped:melon_4",
+    "chipped:melon_5",
+    "chipped:melon_6",
+    "chipped:melon_7",
+    "chipped:melon_8",
+    "chipped:melon_9",
+    "chipped:melon_10"
+  ]
+}

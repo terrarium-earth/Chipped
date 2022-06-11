@@ -1,0 +1,28 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:jack_o_lantern",
+    "chipped:jack_o_lantern_end",
+    "chipped:jack_o_lantern_end2",
+    "chipped:jack_o_lantern_nether",
+    "chipped:jack_o_lantern_1",
+    "chipped:jack_o_lantern_2",
+    "chipped:jack_o_lantern_3",
+    "chipped:jack_o_lantern_4",
+    "chipped:jack_o_lantern_5",
+    "chipped:jack_o_lantern_6",
+    "chipped:jack_o_lantern_7",
+    "chipped:jack_o_lantern_8",
+    "chipped:jack_o_lantern_9",
+    "chipped:jack_o_lantern_10",
+    "chipped:jack_o_lantern_11",
+    "chipped:jack_o_lantern_12",
+    "chipped:jack_o_lantern_13",
+    "chipped:jack_o_lantern_14",
+    "chipped:jack_o_lantern_15",
+    "chipped:jack_o_lantern_16",
+    "chipped:jack_o_lantern_17",
+    "chipped:jack_o_lantern_18",
+    "chipped:jack_o_lantern_19"
+  ]
+}

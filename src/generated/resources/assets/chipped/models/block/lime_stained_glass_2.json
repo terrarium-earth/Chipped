@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "chipped:block/lime_stained_glass/lime_stained_glass_2"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:redstone_lamp",
+    "chipped:redstone_lamp_1",
+    "chipped:redstone_lamp_2",
+    "chipped:redstone_lamp_3",
+    "chipped:redstone_lamp_4",
+    "chipped:redstone_lamp_5",
+    "chipped:redstone_lamp_6",
+    "chipped:redstone_lamp_7",
+    "chipped:redstone_lamp_8",
+    "chipped:redstone_lamp_9",
+    "chipped:redstone_lamp_10",
+    "chipped:redstone_lamp_11",
+    "chipped:redstone_lamp_12",
+    "chipped:redstone_lamp_13",
+    "chipped:redstone_lamp_14",
+    "chipped:redstone_lamp_15",
+    "chipped:redstone_lamp_16",
+    "chipped:redstone_lamp_17",
+    "chipped:redstone_lamp_18"
+  ]
+}

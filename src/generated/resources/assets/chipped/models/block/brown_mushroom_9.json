@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "chipped:block/brown_mushroom/brown_mushroom_9"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "chipped:block/glass/dark_oak_wood_glass_3"
+  }
+}

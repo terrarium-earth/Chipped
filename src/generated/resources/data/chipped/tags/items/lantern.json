@@ -1,0 +1,21 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:lantern",
+    "chipped:lantern_1",
+    "chipped:lantern_3",
+    "chipped:lantern_4",
+    "chipped:lantern_2",
+    "chipped:lantern_6",
+    "chipped:lantern_9",
+    "chipped:lantern_10",
+    "chipped:lantern_11",
+    "chipped:lantern_12",
+    "chipped:lantern_13",
+    "chipped:lantern_14",
+    "chipped:special_lantern_1",
+    "chipped:special_lantern_2",
+    "chipped:special_lantern_3",
+    "chipped:special_lantern_4"
+  ]
+}

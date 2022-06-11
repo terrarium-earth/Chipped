@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "chipped:block/brown_stained_glass/brown_stained_glass_3"
+  }
+}

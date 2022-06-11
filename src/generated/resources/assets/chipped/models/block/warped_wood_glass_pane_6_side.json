@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/template_glass_pane_side",
+  "textures": {
+    "pane": "chipped:block/glass/warped_wood_glass_6",
+    "edge": "chipped:block/glass_pane/warped_wood_glass_pane_top"
+  }
+}

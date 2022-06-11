@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/template_glass_pane_noside",
+  "textures": {
+    "pane": "chipped:block/yellow_stained_glass/yellow_stained_glass_2"
+  }
+}

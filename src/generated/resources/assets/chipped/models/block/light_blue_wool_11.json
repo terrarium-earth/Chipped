@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "chipped:block/light_blue_wool/light_blue_wool_11"
+  }
+}

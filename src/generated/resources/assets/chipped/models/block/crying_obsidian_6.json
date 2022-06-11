@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "chipped:block/crying_obsidian/crying_obsidian_6"
+  }
+}

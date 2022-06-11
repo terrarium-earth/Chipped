@@ -1,0 +1,21 @@
+{
+  "type": "chipped:alchemy_bench",
+  "tags": [
+    "chipped:ancient_debris",
+    "chipped:lapis_block",
+    "chipped:coal_block",
+    "chipped:redstone_block",
+    "chipped:lodestone",
+    "chipped:magma_block",
+    "chipped:diamond_block",
+    "chipped:emerald_block",
+    "chipped:gold_block",
+    "chipped:iron_block",
+    "chipped:netherite_block",
+    "chipped:obsidian",
+    "chipped:crying_obsidian",
+    "chipped:glowstone",
+    "chipped:sea_lantern",
+    "chipped:soul_sand"
+  ]
+}
