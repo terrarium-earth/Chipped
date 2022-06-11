@@ -1,0 +1,18 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:diamond_block",
+    "chipped:diamond_block_1",
+    "chipped:diamond_block_2",
+    "chipped:diamond_block_3",
+    "chipped:diamond_block_4",
+    "chipped:diamond_block_5",
+    "chipped:diamond_block_6",
+    "chipped:diamond_block_7",
+    "chipped:diamond_block_8",
+    "chipped:diamond_block_9",
+    "chipped:diamond_block_10",
+    "chipped:diamond_block_11",
+    "chipped:diamond_block_12"
+  ]
+}

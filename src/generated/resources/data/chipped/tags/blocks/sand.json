@@ -1,0 +1,18 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:sand",
+    "chipped:sand_1",
+    "chipped:sand_2",
+    "chipped:sand_3",
+    "chipped:sand_4",
+    "chipped:sand_5",
+    "chipped:sand_6",
+    "chipped:sand_7",
+    "chipped:sand_8",
+    "chipped:sand_9",
+    "chipped:sand_10",
+    "chipped:sand_11",
+    "chipped:sand_12"
+  ]
+}

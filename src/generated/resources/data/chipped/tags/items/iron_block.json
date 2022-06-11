@@ -1,0 +1,18 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:iron_block",
+    "chipped:iron_block_1",
+    "chipped:iron_block_2",
+    "chipped:iron_block_3",
+    "chipped:iron_block_4",
+    "chipped:iron_block_5",
+    "chipped:iron_block_6",
+    "chipped:iron_block_7",
+    "chipped:iron_block_8",
+    "chipped:iron_block_9",
+    "chipped:iron_block_10",
+    "chipped:iron_block_11",
+    "chipped:iron_block_12"
+  ]
+}
