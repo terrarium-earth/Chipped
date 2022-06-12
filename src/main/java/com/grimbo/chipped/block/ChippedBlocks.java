@@ -105,27 +105,27 @@ public class ChippedBlocks {
     public static void register() {
         // Register Mason Bench Blocks
         registerVanillaBlocks(BenchType.MASON, ANDESITE, 65);
-        registerVanillaBlocks(BenchType.MASON, DIORITE, 61);
-        registerVanillaBlocks(BenchType.MASON, GRANITE, 61);
+        registerVanillaBlocks(BenchType.MASON, DIORITE, 65);
+        registerVanillaBlocks(BenchType.MASON, GRANITE, 65);
         registerVanillaBlocks(BenchType.MASON, BASALT, 65);
-        registerVanillaBlocks(BenchType.MASON, MOSSY_COBBLESTONE, 61);
-        registerVanillaBlocks(BenchType.MASON, BRICKS, 128);
-        registerVanillaBlocks(BenchType.MASON, COBBLESTONE, 61);
-        registerVanillaBlocks(BenchType.MASON, END_STONE, 61);
-        registerVanillaBlocks(BenchType.MASON, MOSSY_STONE_BRICKS, 61);
-        registerVanillaBlocks(BenchType.MASON, DARK_PRISMARINE, 61);
-        registerVanillaBlocks(BenchType.MASON, NETHER_BRICKS, 61);
-        registerVanillaBlocks(BenchType.MASON, NETHERRACK, 61);
-        registerVanillaBlocks(BenchType.MASON, PRISMARINE, 61);
-        registerVanillaBlocks(BenchType.MASON, PURPUR_BLOCK, 61);
-        registerVanillaBlocks(BenchType.MASON, QUARTZ_BLOCK, 61);
-        registerVanillaBlocks(BenchType.MASON, RED_NETHER_BRICKS, 61);
-        registerVanillaBlocks(BenchType.MASON, RED_SANDSTONE, 61);
-        registerVanillaBlocks(BenchType.MASON, SANDSTONE, 61);
-        registerVanillaBlocks(BenchType.MASON, SMOOTH_STONE, 61);
-        registerVanillaBlocks(BenchType.MASON, Blocks.GILDED_BLACKSTONE, GILDED_BLACKSTONES, 61);
+        registerVanillaBlocks(BenchType.MASON, MOSSY_COBBLESTONE, 65);
+        registerVanillaBlocks(BenchType.MASON, BRICKS, 133);
+        registerVanillaBlocks(BenchType.MASON, COBBLESTONE, 65);
+        registerVanillaBlocks(BenchType.MASON, END_STONE, 65);
+        registerVanillaBlocks(BenchType.MASON, MOSSY_STONE_BRICKS, 65);
+        registerVanillaBlocks(BenchType.MASON, DARK_PRISMARINE, 65);
+        registerVanillaBlocks(BenchType.MASON, NETHER_BRICKS, 65);
+        registerVanillaBlocks(BenchType.MASON, NETHERRACK, 65);
+        registerVanillaBlocks(BenchType.MASON, PRISMARINE, 65);
+        registerVanillaBlocks(BenchType.MASON, PURPUR_BLOCK, 65);
+        registerVanillaBlocks(BenchType.MASON, QUARTZ_BLOCK, 65);
+        registerVanillaBlocks(BenchType.MASON, RED_NETHER_BRICKS, 65);
+        registerVanillaBlocks(BenchType.MASON, RED_SANDSTONE, 65);
+        registerVanillaBlocks(BenchType.MASON, SANDSTONE, 65);
+        registerVanillaBlocks(BenchType.MASON, SMOOTH_STONE, 65);
+        registerVanillaBlocks(BenchType.MASON, Blocks.GILDED_BLACKSTONE, GILDED_BLACKSTONES, 65);
         registerVanillaBlocks(BenchType.MASON, Blocks.BLACKSTONE, BLACKSTONES, 65);
-        registerVanillaBlocks(BenchType.MASON, STONE, 61);
+        registerVanillaBlocks(BenchType.MASON, STONE, 65);
 
         for (int id = 0; id < 16; ++id) {
             DyeColor color = DyeColor.byId(id);
@@ -134,32 +134,33 @@ public class ChippedBlocks {
         }
         // Register Alchemy Bench Blocks
         registerVanillaBlocks(BenchType.ALCHEMY, ANCIENT_DEBRIS, 65);
-        registerVanillaBlocks(BenchType.ALCHEMY, LAPIS_BLOCK, 61);
-        registerVanillaBlocks(BenchType.ALCHEMY, COAL_BLOCK, 61);
-        registerVanillaBlocks(BenchType.ALCHEMY, REDSTONE_BLOCK, 61);
-        registerVanillaBlocks(BenchType.ALCHEMY, LODESTONE, 61);
-        registerVanillaBlocks(BenchType.ALCHEMY, MAGMA_BLOCK, 61);
+        registerVanillaBlocks(BenchType.ALCHEMY, LAPIS_BLOCK, 65);
+        registerVanillaBlocks(BenchType.ALCHEMY, COAL_BLOCK, 65);
+        registerVanillaBlocks(BenchType.ALCHEMY, REDSTONE_BLOCK, 65);
+        registerVanillaBlocks(BenchType.ALCHEMY, LODESTONE, 65);
+        registerVanillaBlocks(BenchType.ALCHEMY, MAGMA_BLOCK, 65);
         registerVanillaBlocks(BenchType.ALCHEMY, DIAMOND_BLOCK, 12);
         registerVanillaBlocks(BenchType.ALCHEMY, EMERALD_BLOCK, 12);
         registerVanillaBlocks(BenchType.ALCHEMY, GOLD_BLOCK, 12);
         registerVanillaBlocks(BenchType.ALCHEMY, IRON_BLOCK, 12);
         registerVanillaBlocks(BenchType.ALCHEMY, NETHERITE_BLOCK, 12);
-        registerVanillaBlocks(BenchType.ALCHEMY, OBSIDIAN, 61);
+        registerVanillaBlocks(BenchType.ALCHEMY, OBSIDIAN, 65);
         final AbstractBlock.Properties CRYING_OBSIDIAN_PROPERTIES = AbstractBlock.Properties.copy(Blocks.CRYING_OBSIDIAN);
-        registerBlocks(BenchType.ALCHEMY, CRYING_OBSIDIAN, () -> new CryingObsidianBlock(CRYING_OBSIDIAN_PROPERTIES), 61);
+        registerBlocks(BenchType.ALCHEMY, CRYING_OBSIDIAN, () -> new CryingObsidianBlock(CRYING_OBSIDIAN_PROPERTIES), 65);
 
         //
         registerVanillaBlocks(BenchType.ALCHEMY, Blocks.GLOWSTONE, GLOWSTONES, 20);
         registerVanillaBlocks(BenchType.ALCHEMY, Blocks.SEA_LANTERN, SEA_LANTERNS, 16);
 
         // Register Botanist Bench Blocks
-        registerVanillaBlocks(BenchType.BOTANIST, DIRT, 61);
-        registerVanillaBlocks(BenchType.BOTANIST, SNOW_BLOCK, 61);
+        registerVanillaBlocks(BenchType.BOTANIST, DIRT, 65);
+        registerVanillaBlocks(BenchType.BOTANIST, SNOW_BLOCK, 65);
         registerVanillaBlocks(BenchType.BOTANIST, Blocks.SHROOMLIGHT, SHROOMLIGHTS, 16);
         registerVanillaBlocks(BenchType.BOTANIST, BLUE_ICE, 65);
-        registerVanillaBlocks(BenchType.BOTANIST, ICE, 61);
-        registerVanillaBlocks(BenchType.BOTANIST, PACKED_ICE, 61);
-        registerVanillaBlocks(BenchType.BOTANIST, Blocks.CLAY, CLAYS, 61);
+        final AbstractBlock.Properties ICE_PROPERTIES = AbstractBlock.Properties.copy(Blocks.ICE);
+        registerBlocks(BenchType.BOTANIST, ICE, () -> new IceBlock(ICE_PROPERTIES), 65);
+        registerVanillaBlocks(BenchType.BOTANIST, PACKED_ICE, 65);
+        registerVanillaBlocks(BenchType.BOTANIST, Blocks.CLAY, CLAYS, 65);
         registerVanillaBlocks(BenchType.BOTANIST, Blocks.DRIED_KELP_BLOCK, DRIED_KELP_BLOCKS, 12);
         registerVanillaBlocks(BenchType.BOTANIST, WARPED_WART_BLOCK, 14);
         registerVanillaBlocks(BenchType.BOTANIST, NETHER_WART_BLOCK, 13);
