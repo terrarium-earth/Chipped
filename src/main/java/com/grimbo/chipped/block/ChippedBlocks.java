@@ -107,7 +107,7 @@ public class ChippedBlocks {
         registerVanillaBlocks(BenchType.MASON, ANDESITE, 65);
         registerVanillaBlocks(BenchType.MASON, DIORITE, 61);
         registerVanillaBlocks(BenchType.MASON, GRANITE, 61);
-        registerVanillaBlocks(BenchType.MASON, BASALT, 61);
+        registerVanillaBlocks(BenchType.MASON, BASALT, 65);
         registerVanillaBlocks(BenchType.MASON, MOSSY_COBBLESTONE, 61);
         registerVanillaBlocks(BenchType.MASON, BRICKS, 128);
         registerVanillaBlocks(BenchType.MASON, COBBLESTONE, 61);
@@ -124,7 +124,7 @@ public class ChippedBlocks {
         registerVanillaBlocks(BenchType.MASON, SANDSTONE, 61);
         registerVanillaBlocks(BenchType.MASON, SMOOTH_STONE, 61);
         registerVanillaBlocks(BenchType.MASON, Blocks.GILDED_BLACKSTONE, GILDED_BLACKSTONES, 61);
-        registerVanillaBlocks(BenchType.MASON, Blocks.BLACKSTONE, BLACKSTONES, 61);
+        registerVanillaBlocks(BenchType.MASON, Blocks.BLACKSTONE, BLACKSTONES, 65);
         registerVanillaBlocks(BenchType.MASON, STONE, 61);
 
         for (int id = 0; id < 16; ++id) {
@@ -156,7 +156,7 @@ public class ChippedBlocks {
         registerVanillaBlocks(BenchType.BOTANIST, DIRT, 61);
         registerVanillaBlocks(BenchType.BOTANIST, SNOW_BLOCK, 61);
         registerVanillaBlocks(BenchType.BOTANIST, Blocks.SHROOMLIGHT, SHROOMLIGHTS, 16);
-        registerVanillaBlocks(BenchType.BOTANIST, BLUE_ICE, 61);
+        registerVanillaBlocks(BenchType.BOTANIST, BLUE_ICE, 65);
         registerVanillaBlocks(BenchType.BOTANIST, ICE, 61);
         registerVanillaBlocks(BenchType.BOTANIST, PACKED_ICE, 61);
         registerVanillaBlocks(BenchType.BOTANIST, Blocks.CLAY, CLAYS, 61);

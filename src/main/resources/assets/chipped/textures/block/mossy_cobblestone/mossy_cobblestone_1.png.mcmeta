@@ -1,0 +1,13 @@
+{
+  "ctm": {
+    "ctm_version": 1,
+    "type": "ctm",
+    "layer": "CUTOUT",
+    "textures": [
+      "chipped:block/mossy_cobblestone/mossy_cobblestone_1_ctm"
+    ],
+    "extra": {
+      "light": 0
+    }
+  }
+}
