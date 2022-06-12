@@ -2,6 +2,7 @@ package com.grimbo.chipped.data.client;
 
 import com.grimbo.chipped.Chipped;
 import com.grimbo.chipped.api.ChippedBlockType;
+import com.grimbo.chipped.block.ChippedBarrel;
 import com.grimbo.chipped.block.ChippedBlocks;
 import net.minecraft.block.*;
 import net.minecraft.data.DataGenerator;
@@ -103,7 +104,7 @@ public class ChippedItemModelProvider extends ItemModelProvider {
 		for (RegistryObject<WebBlock> block : COBWEBS.getBlocks()) {
 			withExistingParent(block.getId().getPath(), mcLoc("generated")).texture("layer0", modLoc("block/" + COBWEBS + "/" + block.getId().getPath()));
 		}
-		for (RegistryObject<BarrelBlock> block : BARRELS.getBlocks()) {
+		for (RegistryObject<ChippedBarrel> block : BARRELS.getBlocks()) {
 			withExistingParent(block.getId().getPath(), mcLoc("generated")).texture("layer0", modLoc("block/" + BARRELS + "/" + block.getId().getPath() + "_side"));
 		}
 

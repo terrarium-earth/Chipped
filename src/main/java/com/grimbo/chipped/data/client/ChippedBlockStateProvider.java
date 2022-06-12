@@ -3,6 +3,8 @@ package com.grimbo.chipped.data.client;
 import com.grimbo.chipped.Chipped;
 import com.grimbo.chipped.api.ChippedBlockType;
 import com.grimbo.chipped.api.ChippedWoodType;
+import com.grimbo.chipped.block.ChippedBarrel;
+import com.grimbo.chipped.block.ChippedBarrelEntity;
 import com.grimbo.chipped.block.ChippedBlockTypes;
 import com.grimbo.chipped.block.ChippedBlocks;
 import net.minecraft.block.*;
@@ -389,8 +391,8 @@ public class ChippedBlockStateProvider extends BlockStateProvider {
         }
     }
 
-    private void registerBarrels(List<RegistryObject<BarrelBlock>> barrels) {
-        for(RegistryObject<BarrelBlock> barrel : barrels) {
+    private void registerBarrels(List<RegistryObject<ChippedBarrel>> barrels) {
+        for(RegistryObject<ChippedBarrel> barrel : barrels) {
             String name = barrel.getId().getPath();
       //      simpleBlock(barrel.get(), models().cubeBottomTop(name + "_closed", modLoc("block/barrel/" + name + "_side"), modLoc("block/barrel/" + name + "_bottom"), modLoc("block/barrel/" + name + "_top_closed")));
          //   simpleBlock(barrel.get(), models().cubeBottomTop(name + "_open", modLoc("block/barrel/" + name + "_side"), modLoc("block/barrel/" + name + "_bottom"), modLoc("block/barrel/" + name + "_top_open")));

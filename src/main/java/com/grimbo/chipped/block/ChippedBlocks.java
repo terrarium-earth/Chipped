@@ -1,5 +1,6 @@
 package com.grimbo.chipped.block;
 
+import com.google.common.collect.ImmutableSet;
 import com.grimbo.chipped.Chipped;
 import com.grimbo.chipped.api.BenchType;
 import com.grimbo.chipped.api.BlockRegistry;
@@ -14,6 +15,7 @@ import net.minecraft.block.material.Material;
 import net.minecraft.entity.EntityType;
 import net.minecraft.item.*;
 import net.minecraft.particles.ParticleTypes;
+import net.minecraft.tileentity.TileEntityType;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.shapes.ISelectionContext;
@@ -27,6 +29,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.function.Supplier;
 import java.util.stream.Collectors;
@@ -36,6 +39,7 @@ import static com.grimbo.chipped.block.ChippedBlockTypes.*;
 
 public class ChippedBlocks {
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, Chipped.MOD_ID);
+    public static final DeferredRegister<TileEntityType<?>> TILE_ENTITIES = DeferredRegister.create(ForgeRegistries.TILE_ENTITIES, Chipped.MOD_ID);
 
     private static final AbstractBlock.Properties LANTERN_PROPERTIES = AbstractBlock.Properties.copy(Blocks.LANTERN);
 
@@ -93,6 +97,10 @@ public class ChippedBlocks {
             AbstractBlock.Properties.of(Material.WOOD).strength(2.5F).sound(SoundType.WOOD).noOcclusion()
                     .isValidSpawn(VALID_SPAWN).isRedstoneConductor(ALWAYS_FALSE_POSITION)
                     .isSuffocating(ALWAYS_FALSE_POSITION).isViewBlocking(ALWAYS_FALSE_POSITION)));
+
+    public static final RegistryObject<TileEntityType<ChippedBarrelEntity>> CHIPPED_BARREL_ENTITY = TILE_ENTITIES.register("barrel",
+            () -> new TileEntityType<>(ChippedBarrelEntity::new, ImmutableSet.copyOf(BARRELS.getBlocks().stream().map(RegistryObject::get).collect(Collectors.toSet())), null));
+
 
     public static void register() {
         // Register Mason Bench Blocks
@@ -158,10 +166,7 @@ public class ChippedBlocks {
 
         registerVanillaBlocks(BenchType.CARPENTERS, BOOKSHELF, 57);
         final AbstractBlock.Properties BARREL_PROPERTIES = AbstractBlock.Properties.copy(Blocks.BARREL);
-        registerBlocks(BenchType.CARPENTERS, BARRELS, () -> new BarrelBlock(BARREL_PROPERTIES), 33);
-
-
-
+        registerBlocks(BenchType.CARPENTERS, BARRELS, () -> new ChippedBarrel(BARREL_PROPERTIES), 33);
 
         // Register Mechanist Bench Blocks
         final AbstractBlock.Properties REDSTONE_LAMP_PROPERTIES = AbstractBlock.Properties.copy(Blocks.REDSTONE_LAMP);

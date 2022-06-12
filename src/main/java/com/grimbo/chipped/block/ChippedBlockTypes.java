@@ -112,6 +112,6 @@ public class ChippedBlockTypes {
 
     public static final ChippedBlockType<WebBlock> COBWEBS = new ChippedBlockType<>("cobweb");
 
-    public static final ChippedBlockType<BarrelBlock> BARRELS = new ChippedBlockType<>("barrel");
+    public static final ChippedBlockType<ChippedBarrel> BARRELS = new ChippedBlockType<>("barrel");
 }
 

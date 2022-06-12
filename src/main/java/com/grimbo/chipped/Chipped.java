@@ -39,6 +39,7 @@ public class Chipped {
 	public Chipped() {
 		IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
 		ChippedBlocks.BLOCKS.register(eventBus);
+		ChippedBlocks.TILE_ENTITIES.register(eventBus);
 		ChippedBlocks.register();
 		ChippedItems.ITEMS.register(eventBus);
 		ChippedSerializer.SERIALIZER.register(eventBus);
