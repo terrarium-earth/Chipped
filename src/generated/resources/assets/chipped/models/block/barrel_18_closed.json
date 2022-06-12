@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "side": "chipped:block/barrel/barrel_18_side",
+    "bottom": "chipped:block/barrel/barrel_18_bottom",
+    "top": "chipped:block/barrel/barrel_18_top_closed"
+  }
+}

@@ -392,8 +392,8 @@ public class ChippedBlockStateProvider extends BlockStateProvider {
     private void registerBarrels(List<RegistryObject<BarrelBlock>> barrels) {
         for(RegistryObject<BarrelBlock> barrel : barrels) {
             String name = barrel.getId().getPath();
-            simpleBlock(barrel.get(), models().cubeBottomTop(name + "_closed", modLoc("block/barrel/" + name + "_side"), modLoc("block/barrel/" + name + "_bottom"), modLoc("block/barrel/" + name + "_top_closed")));
-            simpleBlock(barrel.get(), models().cubeBottomTop(name + "_open", modLoc("block/barrel/" + name + "_side"), modLoc("block/barrel/" + name + "_bottom"), modLoc("block/barrel/" + name + "_top_open")));
+      //      simpleBlock(barrel.get(), models().cubeBottomTop(name + "_closed", modLoc("block/barrel/" + name + "_side"), modLoc("block/barrel/" + name + "_bottom"), modLoc("block/barrel/" + name + "_top_closed")));
+         //   simpleBlock(barrel.get(), models().cubeBottomTop(name + "_open", modLoc("block/barrel/" + name + "_side"), modLoc("block/barrel/" + name + "_bottom"), modLoc("block/barrel/" + name + "_top_open")));
             for(Direction direction : Direction.values()) {
                 getVariantBuilder(barrel.get())
                         .partialState()
@@ -401,7 +401,7 @@ public class ChippedBlockStateProvider extends BlockStateProvider {
                         .with(BarrelBlock.FACING, direction)
                         .with(BarrelBlock.OPEN, false)
                         .modelForState()
-                        .modelFile(models().cubeBottomTop(name, modLoc("block/barrel/" + name + "_side"), modLoc("block/barrel/" + name + "_bottom"), modLoc("block/barrel/" + name + "_top_closed")))
+                        .modelFile(models().cubeBottomTop(name + "_closed", modLoc("block/barrel/" + name + "_side"), modLoc("block/barrel/" + name + "_bottom"), modLoc("block/barrel/" + name + "_top_closed")))
                         .rotationY(Chipped.getYAngleFromDir(direction))
                         .rotationX(Chipped.getXAngleFromDir(direction))
                         .addModel()
@@ -410,7 +410,7 @@ public class ChippedBlockStateProvider extends BlockStateProvider {
                         .with(BarrelBlock.FACING, direction)
                         .with(BarrelBlock.OPEN, true)
                         .modelForState()
-                        .modelFile(models().cubeBottomTop(name, modLoc("block/barrel/" + name + "_side"), modLoc("block/barrel/" + name + "_bottom"), modLoc("block/barrel/" + name + "_top_open")))
+                        .modelFile(models().cubeBottomTop(name + "_open", modLoc("block/barrel/" + name + "_side"), modLoc("block/barrel/" + name + "_bottom"), modLoc("block/barrel/" + name + "_top_open")))
                         .rotationY(Chipped.getYAngleFromDir(direction))
                         .rotationX(Chipped.getXAngleFromDir(direction))
                         .addModel();
