@@ -4,7 +4,7 @@
     "type": "ctm",
     "layer": "CUTOUT",
     "textures": [
-      "chipped:block/yellow_concrete/yellow_concrete_21_ctm"
+      "chipped:block/glass/oak_wood_glass_8_ctm"
     ],
     "extra": {
       "light": 0
