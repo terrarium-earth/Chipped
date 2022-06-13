@@ -93,7 +93,7 @@ public class ChippedItemModelProvider extends ItemModelProvider {
 			withExistingParent("nether_sprouts_" + i, mcLoc("generated")).texture("layer0", modLoc("item/nether_sprouts/nether_sprouts_" + i));
 		}
 
-		for (int i = 1; i <= 6; i++) {
+		for (int i = 1; i <= 22; i++) {
 			withExistingParent("lily_pad_" + i, mcLoc("generated")).texture("layer0", modLoc("item/lily_pad/lily_pad_" + i));
 		}
 

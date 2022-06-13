@@ -136,7 +136,7 @@ public class ChippedBlocks {
         registerVanillaBlocks(BenchType.ALCHEMY, ANCIENT_DEBRIS, 65);
         registerVanillaBlocks(BenchType.ALCHEMY, LAPIS_BLOCK, 65);
         registerVanillaBlocks(BenchType.ALCHEMY, COAL_BLOCK, 65);
-        registerVanillaBlocks(BenchType.ALCHEMY, REDSTONE_BLOCK, 65);
+        registerVanillaBlocks(BenchType.MECHANIST, REDSTONE_BLOCK, 65);
         registerVanillaBlocks(BenchType.ALCHEMY, LODESTONE, 65);
         registerVanillaBlocks(BenchType.ALCHEMY, MAGMA_BLOCK, 65);
         registerVanillaBlocks(BenchType.ALCHEMY, DIAMOND_BLOCK, 12);
@@ -245,7 +245,7 @@ public class ChippedBlocks {
         // Lilypads require a custom item
         // TODO remove lilypads
         final AbstractBlock.Properties lilyPadProperties = AbstractBlock.Properties.copy(Blocks.LILY_PAD);
-        for (int i = 1; i <= 6; i++) {
+        for (int i = 1; i <= 22; i++) {
             String name = LILY_PAD.getId() + "_" + i;
             RegistryObject<LilyPadBlock> lilyPad = BLOCKS.register(name, () -> new LilyPadBlock(lilyPadProperties) {
                 @Override
