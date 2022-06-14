@@ -1,7 +1,7 @@
 {
   "ctm": {
     "ctm_version": 1,
-    "type": "pillar",
+    "type": "ctm",
     "layer": "CUTOUT",
     "textures": [
       "chipped:block/green_wool/green_wool_4_ctm"

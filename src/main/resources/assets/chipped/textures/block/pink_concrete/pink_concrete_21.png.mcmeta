@@ -1,13 +1,9 @@
 {
-  "ctm": {
-    "ctm_version": 1,
-    "type": "pillar",
-    "layer": "CUTOUT",
-    "textures": [
-      "chipped:block/pink_concrete/pink_concrete_21_pillar"
-    ],
-    "extra": {
-      "light": 0
+    "ctm": {
+        "ctm_version": 1,
+        "type": "pattern",
+        "extra": {
+            "size": 2
+        }
     }
-  }
 }
