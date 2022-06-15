@@ -1,0 +1,13 @@
+{
+  "ctm": {
+    "ctm_version": 1,
+    "type": "pillar",
+    "layer": "CUTOUT",
+    "textures": [
+      "chipped:block/oak_planks/oak_planks_34_pillar"
+    ],
+    "extra": {
+      "light": 0
+    }
+  }
+}

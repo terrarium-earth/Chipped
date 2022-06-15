@@ -1,7 +1,7 @@
 {
     "ctm": {
         "ctm_version": 1,
-        "type": "CTM",
+        "type": "pillar",
         "layer": "CUTOUT",
         "textures": [
             "chipped:block/birch_planks/birch_planks_34_ctm"
