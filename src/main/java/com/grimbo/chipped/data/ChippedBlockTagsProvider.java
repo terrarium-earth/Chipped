@@ -137,6 +137,8 @@ public class ChippedBlockTagsProvider extends BlockTagsProvider {
 
 			tag(BlockTags.bind("forge:terracotta")).addTag(TERRACOTTAS.get(color).getBlockTag());
 			tag(BlockTags.bind("forge:terracotta/" + color)).addTag(TERRACOTTAS.get(color).getBlockTag());
+			tag(BlockTags.bind("forge:glazed_terracotta")).addTag(GLAZED_TERRACOTTAS.get(color).getBlockTag());
+			tag(BlockTags.bind("forge:glazed_terracotta/")).addTag(GLAZED_TERRACOTTAS.get(color).getBlockTag());
 		}
 
 		tag(Tags.Blocks.NETHERRACK).addTag(NETHERRACK.getBlockTag());

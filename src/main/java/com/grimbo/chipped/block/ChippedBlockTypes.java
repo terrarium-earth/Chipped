@@ -20,6 +20,7 @@ public class ChippedBlockTypes {
 
     public static final EnumMap<DyeColor, ChippedBlockType<Block>> TERRACOTTAS = new EnumMap<>(DyeColor.class);
     public static final EnumMap<DyeColor, ChippedBlockType<Block>> CONCRETES = new EnumMap<>(DyeColor.class);
+    public static final EnumMap<DyeColor, ChippedBlockType<Block>> GLAZED_TERRACOTTAS = new EnumMap<>(DyeColor.class);
 
     public static final ChippedBlockType<VineBlock> VINES = new ChippedBlockType<>("vine");
     public static final ChippedBlockType<HayBlock> HAY_BLOCKS = new ChippedBlockType<>("hay_block");

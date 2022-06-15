@@ -120,6 +120,7 @@ public class ChippedItemModelProvider extends ItemModelProvider {
 
 		applyDefault(PLANKS.values());
 		applyDefault(TERRACOTTAS.values());
+		applyDefault(GLAZED_TERRACOTTAS.values());
 		applyDefault(CONCRETES.values());
 		applyDefault(STAINED_GLASSES.values());
 		applyDefault(WOOL.values());

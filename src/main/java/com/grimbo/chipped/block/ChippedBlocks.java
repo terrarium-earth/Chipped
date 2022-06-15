@@ -131,7 +131,9 @@ public class ChippedBlocks {
             DyeColor color = DyeColor.byId(id);
             registerVanillaBlocks(BenchType.MASON, TERRACOTTAS.computeIfAbsent(color, k -> new ChippedBlockType<>(k + "_terracotta")), 18);
             registerVanillaBlocks(BenchType.MASON, CONCRETES.computeIfAbsent(color, k -> new ChippedBlockType<>(k + "_concrete")), 21);
+            registerVanillaBlocks(BenchType.MASON, GLAZED_TERRACOTTAS.computeIfAbsent(color, k -> new ChippedBlockType<>(k + "_glazed_terracotta")), 11);
         }
+
         // Register Alchemy Bench Blocks
         registerVanillaBlocks(BenchType.ALCHEMY, ANCIENT_DEBRIS, 65);
         registerVanillaBlocks(BenchType.ALCHEMY, LAPIS_BLOCK, 65);
@@ -184,8 +186,8 @@ public class ChippedBlocks {
         // Register Glasses and Stained Glasses
         final AbstractBlock.Properties GLASS_PROPERTIES = AbstractBlock.Properties.copy(Blocks.GLASS);
         final AbstractBlock.Properties GLASS_PANE_PROPERTIES = AbstractBlock.Properties.copy(Blocks.GLASS_PANE);
-        registerBlocks(BenchType.GLASSBLOWER, GLASSES, () -> new GlassBlock(GLASS_PROPERTIES), 9);
-        registerBlocks(BenchType.GLASSBLOWER, GLASS_PANES, () -> new PaneBlock(GLASS_PANE_PROPERTIES), 9);
+        registerBlocks(BenchType.GLASSBLOWER, GLASSES, () -> new GlassBlock(GLASS_PROPERTIES), 11);
+        registerBlocks(BenchType.GLASSBLOWER, GLASS_PANES, () -> new PaneBlock(GLASS_PANE_PROPERTIES), 11);
 
         for (ChippedWoodType type : ChippedWoodType.VALUES) {
             registerBlocks(BenchType.GLASSBLOWER, GLASSES, type + "_wood_glass", () -> new GlassBlock(GLASS_PROPERTIES), 11);
@@ -243,7 +245,6 @@ public class ChippedBlocks {
         registerBlocks(BenchType.ALCHEMY, SOUL_SANDS, () -> new SoulSandBlock(soulSandProperties), 11);
 
         // Lilypads require a custom item
-        // TODO remove lilypads
         final AbstractBlock.Properties lilyPadProperties = AbstractBlock.Properties.copy(Blocks.LILY_PAD);
         for (int i = 1; i <= 22; i++) {
             String name = LILY_PAD.getId() + "_" + i;

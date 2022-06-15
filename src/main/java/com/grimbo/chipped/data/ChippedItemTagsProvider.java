@@ -114,6 +114,8 @@ public class ChippedItemTagsProvider extends ItemTagsProvider {
 
 			tag(ItemTags.bind("forge:terracotta")).addTag(TERRACOTTAS.get(color).getItemTag());
 			tag(ItemTags.bind("forge:terracotta/" + color)).addTag(TERRACOTTAS.get(color).getItemTag());
+			tag(ItemTags.bind("forge:glazed_terracotta")).addTag(GLAZED_TERRACOTTAS.get(color).getItemTag());
+			tag(ItemTags.bind("forge:glazed_terracotta/" + color)).addTag(GLAZED_TERRACOTTAS.get(color).getItemTag());
 		}
 
 		tag(Tags.Items.NETHERRACK).addTag(NETHERRACK.getItemTag());

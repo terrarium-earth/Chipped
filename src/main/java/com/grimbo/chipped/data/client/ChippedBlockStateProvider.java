@@ -46,6 +46,7 @@ public class ChippedBlockStateProvider extends BlockStateProvider {
             DyeColor color = DyeColor.byId(id);
             createCubeFromList(TERRACOTTAS.get(color));
             createCubeFromList(CONCRETES.get(color));
+            createCubeFromList(GLAZED_TERRACOTTAS.get(color));
             createCubeFromList(WOOL.get(color));
             createCubeFromList(STAINED_GLASSES.get(color));
 
