@@ -1,0 +1,21 @@
+{
+  "replace": false,
+  "values": [
+    "#chipped:white_glazed_terracotta",
+    "#chipped:orange_glazed_terracotta",
+    "#chipped:magenta_glazed_terracotta",
+    "#chipped:light_blue_glazed_terracotta",
+    "#chipped:yellow_glazed_terracotta",
+    "#chipped:lime_glazed_terracotta",
+    "#chipped:pink_glazed_terracotta",
+    "#chipped:gray_glazed_terracotta",
+    "#chipped:light_gray_glazed_terracotta",
+    "#chipped:cyan_glazed_terracotta",
+    "#chipped:purple_glazed_terracotta",
+    "#chipped:blue_glazed_terracotta",
+    "#chipped:brown_glazed_terracotta",
+    "#chipped:green_glazed_terracotta",
+    "#chipped:red_glazed_terracotta",
+    "#chipped:black_glazed_terracotta"
+  ]
+}

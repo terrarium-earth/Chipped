@@ -126,10 +126,11 @@ public class ChippedBlocks {
         registerVanillaBlocks(BenchType.MASON, Blocks.GILDED_BLACKSTONE, GILDED_BLACKSTONES, 65);
         registerVanillaBlocks(BenchType.MASON, Blocks.BLACKSTONE, BLACKSTONES, 65);
         registerVanillaBlocks(BenchType.MASON, STONE, 65);
+        registerVanillaBlocks(BenchType.MASON, TERRACOTTA, 62);
 
         for (int id = 0; id < 16; ++id) {
             DyeColor color = DyeColor.byId(id);
-            registerVanillaBlocks(BenchType.MASON, TERRACOTTAS.computeIfAbsent(color, k -> new ChippedBlockType<>(k + "_terracotta")), 18);
+            registerVanillaBlocks(BenchType.MASON, TERRACOTTAS.computeIfAbsent(color, k -> new ChippedBlockType<>(k + "_terracotta")), 62);
             registerVanillaBlocks(BenchType.MASON, CONCRETES.computeIfAbsent(color, k -> new ChippedBlockType<>(k + "_concrete")), 21);
             registerVanillaBlocks(BenchType.MASON, GLAZED_TERRACOTTAS.computeIfAbsent(color, k -> new ChippedBlockType<>(k + "_glazed_terracotta")), 11);
         }
@@ -162,7 +163,7 @@ public class ChippedBlocks {
         final AbstractBlock.Properties ICE_PROPERTIES = AbstractBlock.Properties.copy(Blocks.ICE);
         registerBlocks(BenchType.BOTANIST, ICE, () -> new IceBlock(ICE_PROPERTIES), 65);
         registerVanillaBlocks(BenchType.BOTANIST, PACKED_ICE, 65);
-        registerVanillaBlocks(BenchType.BOTANIST, Blocks.CLAY, CLAYS, 65);
+        registerVanillaBlocks(BenchType.BOTANIST, Blocks.CLAY, CLAYS, 62);
         registerVanillaBlocks(BenchType.BOTANIST, Blocks.DRIED_KELP_BLOCK, DRIED_KELP_BLOCKS, 12);
         registerVanillaBlocks(BenchType.BOTANIST, WARPED_WART_BLOCK, 14);
         registerVanillaBlocks(BenchType.BOTANIST, NETHER_WART_BLOCK, 13);

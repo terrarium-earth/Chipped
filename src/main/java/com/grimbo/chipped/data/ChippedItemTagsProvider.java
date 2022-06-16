@@ -80,7 +80,8 @@ public class ChippedItemTagsProvider extends ItemTagsProvider {
 				.addTag(SMOOTH_STONE.getItemTag())
 				.addTag(SNOW_BLOCK.getItemTag())
 				.addTag(NETHERITE_BLOCK.getItemTag())
-				.addTag(NETHER_BRICKS.getItemTag());
+				.addTag(NETHER_BRICKS.getItemTag())
+				.addTag(TERRACOTTA.getItemTag());
 
 		tag(Tags.Items.GEMS_LAPIS).addTag(LAPIS_BLOCK.getItemTag());
 		tag(Tags.Items.GEMS_DIAMOND).addTag(DIAMOND_BLOCK.getItemTag());

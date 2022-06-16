@@ -88,6 +88,7 @@ public class ChippedBlockTypes {
     public static final ChippedBlockType<Block> REDSTONE_BLOCK = new ChippedBlockType<>("redstone_block");
     public static final ChippedBlockType<Block> SANDSTONE = new ChippedBlockType<>("sandstone");
     public static final ChippedBlockType<Block> SMOOTH_STONE = new ChippedBlockType<>("smooth_stone");
+    public static final ChippedBlockType<Block> TERRACOTTA = new ChippedBlockType<>("terracotta");
 
     public static final ChippedBlockType<Block> DIAMOND_BLOCK = new ChippedBlockType<>("diamond_block");
     public static final ChippedBlockType<Block> EMERALD_BLOCK = new ChippedBlockType<>("emerald_block");
