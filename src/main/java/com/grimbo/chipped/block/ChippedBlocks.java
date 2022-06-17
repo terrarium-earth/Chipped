@@ -126,11 +126,11 @@ public class ChippedBlocks {
         registerVanillaBlocks(BenchType.MASON, Blocks.GILDED_BLACKSTONE, GILDED_BLACKSTONES, 65);
         registerVanillaBlocks(BenchType.MASON, Blocks.BLACKSTONE, BLACKSTONES, 65);
         registerVanillaBlocks(BenchType.MASON, STONE, 65);
-        registerVanillaBlocks(BenchType.MASON, TERRACOTTA, 62);
+        registerVanillaBlocks(BenchType.MASON, TERRACOTTA, 66);
 
         for (int id = 0; id < 16; ++id) {
             DyeColor color = DyeColor.byId(id);
-            registerVanillaBlocks(BenchType.MASON, TERRACOTTAS.computeIfAbsent(color, k -> new ChippedBlockType<>(k + "_terracotta")), 62);
+            registerVanillaBlocks(BenchType.MASON, TERRACOTTAS.computeIfAbsent(color, k -> new ChippedBlockType<>(k + "_terracotta")), 66);
             registerVanillaBlocks(BenchType.MASON, CONCRETES.computeIfAbsent(color, k -> new ChippedBlockType<>(k + "_concrete")), 21);
             registerVanillaBlocks(BenchType.MASON, GLAZED_TERRACOTTAS.computeIfAbsent(color, k -> new ChippedBlockType<>(k + "_glazed_terracotta")), 11);
         }
@@ -167,6 +167,19 @@ public class ChippedBlocks {
         registerVanillaBlocks(BenchType.BOTANIST, Blocks.DRIED_KELP_BLOCK, DRIED_KELP_BLOCKS, 12);
         registerVanillaBlocks(BenchType.BOTANIST, WARPED_WART_BLOCK, 14);
         registerVanillaBlocks(BenchType.BOTANIST, NETHER_WART_BLOCK, 13);
+
+        final AbstractBlock.Properties ACACIA_LEAVES_PROPERTIES = AbstractBlock.Properties.copy(Blocks.ACACIA_LEAVES);
+        registerBlocks(BenchType.BOTANIST, ACACIA_LEAVES, () -> new LeavesBlock(ACACIA_LEAVES_PROPERTIES), 12);
+        final AbstractBlock.Properties BIRCH_LEAVES_PROPERTIES = AbstractBlock.Properties.copy(Blocks.BIRCH_LEAVES);
+        registerBlocks(BenchType.BOTANIST, BIRCH_LEAVES, () -> new LeavesBlock(BIRCH_LEAVES_PROPERTIES), 12);
+        final AbstractBlock.Properties DARK_OAK_LEAVES_PROPERTIES = AbstractBlock.Properties.copy(Blocks.DARK_OAK_LEAVES);
+        registerBlocks(BenchType.BOTANIST, DARK_OAK_LEAVES, () -> new LeavesBlock(DARK_OAK_LEAVES_PROPERTIES), 12);
+        final AbstractBlock.Properties JUNGLE_LEAVES_PROPERTIES = AbstractBlock.Properties.copy(Blocks.JUNGLE_LEAVES);
+        registerBlocks(BenchType.BOTANIST, JUNGLE_LEAVES, () -> new LeavesBlock(JUNGLE_LEAVES_PROPERTIES), 12);
+        final AbstractBlock.Properties OAK_LEAVES_PROPERTIES = AbstractBlock.Properties.copy(Blocks.OAK_LEAVES);
+        registerBlocks(BenchType.BOTANIST, OAK_LEAVES, () -> new LeavesBlock(OAK_LEAVES_PROPERTIES), 12);
+        final AbstractBlock.Properties SPRUCE_LEAVES_PROPERTIES = AbstractBlock.Properties.copy(Blocks.SPRUCE_LEAVES);
+        registerBlocks(BenchType.BOTANIST, SPRUCE_LEAVES, () -> new LeavesBlock(SPRUCE_LEAVES_PROPERTIES), 12);
 
         registerVanillaBlocks(BenchType.CARPENTERS, BOOKSHELF, 57);
         final AbstractBlock.Properties BARREL_PROPERTIES = AbstractBlock.Properties.copy(Blocks.BARREL);

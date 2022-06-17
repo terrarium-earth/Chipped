@@ -1,0 +1,13 @@
+{
+  "ctm": {
+    "ctm_version": 1,
+    "type": "ctm",
+    "layer": "CUTOUT",
+    "textures": [
+      "chipped:block/green_terracotta/green_terracotta_25_ctm"
+    ],
+    "extra": {
+      "light": 0
+    }
+  }
+}

@@ -111,16 +111,25 @@ public class ChippedBlockTagsProvider extends BlockTagsProvider {
 		tag(Tags.Blocks.BARRELS_WOODEN).addTag(BARRELS.getBlockTag());
 		tag(Tags.Blocks.DIRT).addTag(DIRT.getBlockTag());
 		tag(Tags.Blocks.ORES_LAPIS).addTag(LAPIS_BLOCK.getBlockTag());
-
 		tag(Tags.Blocks.COBBLESTONE).addTag(MOSSY_COBBLESTONE.getBlockTag()).addTag(COBBLESTONE.getBlockTag());
-
 		tag(Tags.Blocks.BARRELS_WOODEN).addTag(BOOKSHELF.getBlockTag());
-
 		tag(Tags.Blocks.GRAVEL).addTag(GRAVEL.getBlockTag());
-
 		tag(Tags.Blocks.SAND).addTag(SAND.getBlockTag());
-
 		tag(Tags.Blocks.END_STONES).addTag(END_STONE.getBlockTag());
+
+		tag(BlockTags.bind("forge:acacia_leaves")).addTag(ACACIA_LEAVES.getBlockTag());
+		tag(BlockTags.bind("forge:acacia_leaves/")).addTag(ACACIA_LEAVES.getBlockTag());
+		tag(BlockTags.bind("forge:birch_leaves")).addTag(BIRCH_LEAVES.getBlockTag());
+		tag(BlockTags.bind("forge:birch_leaves/")).addTag(BIRCH_LEAVES.getBlockTag());
+		tag(BlockTags.bind("forge:dark_oak_leaves")).addTag(DARK_OAK_LEAVES.getBlockTag());
+		tag(BlockTags.bind("forge:dark_oak_leaves/")).addTag(DARK_OAK_LEAVES.getBlockTag());
+		tag(BlockTags.bind("forge:jungle_leaves")).addTag(JUNGLE_LEAVES.getBlockTag());
+		tag(BlockTags.bind("forge:jungle_leaves/")).addTag(JUNGLE_LEAVES.getBlockTag());
+		tag(BlockTags.bind("forge:oak_leaves")).addTag(OAK_LEAVES.getBlockTag());
+		tag(BlockTags.bind("forge:oak_leaves/")).addTag(OAK_LEAVES.getBlockTag());
+		tag(BlockTags.bind("forge:spruce_leaves")).addTag(SPRUCE_LEAVES.getBlockTag());
+		tag(BlockTags.bind("forge:spruce_leaves/")).addTag(SPRUCE_LEAVES.getBlockTag());
+
 
 
 		tag(Tags.Blocks.GLASS).addTag(GLASSES.getBlockTag());

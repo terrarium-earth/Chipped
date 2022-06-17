@@ -13,6 +13,7 @@ import net.minecraft.data.BlockTagsProvider;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.ItemTagsProvider;
 import net.minecraft.item.DyeColor;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.data.ExistingFileHelper;
@@ -96,9 +97,20 @@ public class ChippedItemTagsProvider extends ItemTagsProvider {
 		tag(Tags.Items.COBBLESTONE)
 				.addTag(MOSSY_COBBLESTONE.getItemTag())
 				.addTag(COBBLESTONE.getItemTag());
-
-
 		tag(Tags.Items.END_STONES).addTag(END_STONE.getItemTag());
+
+		tag(ItemTags.bind("forge:acacia_leaves")).addTag(ACACIA_LEAVES.getItemTag());
+		tag(ItemTags.bind("forge:acacia_leaves/")).addTag(ACACIA_LEAVES.getItemTag());
+		tag(ItemTags.bind("forge:birch_leaves")).addTag(BIRCH_LEAVES.getItemTag());
+		tag(ItemTags.bind("forge:birch_leaves/")).addTag(BIRCH_LEAVES.getItemTag());
+		tag(ItemTags.bind("forge:dark_oak_leaves")).addTag(DARK_OAK_LEAVES.getItemTag());
+		tag(ItemTags.bind("forge:dark_oak_leaves/")).addTag(DARK_OAK_LEAVES.getItemTag());
+		tag(ItemTags.bind("forge:jungle_leaves")).addTag(JUNGLE_LEAVES.getItemTag());
+		tag(ItemTags.bind("forge:jungle_leaves/")).addTag(JUNGLE_LEAVES.getItemTag());
+		tag(ItemTags.bind("forge:oak_leaves")).addTag(OAK_LEAVES.getItemTag());
+		tag(ItemTags.bind("forge:oak_leaves/")).addTag(OAK_LEAVES.getItemTag());
+		tag(ItemTags.bind("forge:spruce_leaves")).addTag(SPRUCE_LEAVES.getItemTag());
+		tag(ItemTags.bind("forge:spruce_leaves/")).addTag(SPRUCE_LEAVES.getItemTag());
 
 		tag(Tags.Items.GLASS).addTag(GLASSES.getItemTag());
 		tag(Tags.Items.GLASS_COLORLESS).addTag(GLASSES.getItemTag());

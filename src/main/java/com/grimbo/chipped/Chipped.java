@@ -154,6 +154,24 @@ public class Chipped {
 		for (RegistryObject<Block> ice : ChippedBlockTypes.ICE) {
 			RenderTypeLookup.setRenderLayer(ice.get(), RenderType.translucent());
 		}
+		for (RegistryObject<LeavesBlock> acacia_leaves : ChippedBlockTypes.ACACIA_LEAVES) {
+			RenderTypeLookup.setRenderLayer(acacia_leaves.get(), RenderType.cutout());
+		}
+		for (RegistryObject<LeavesBlock> birch_leaves : ChippedBlockTypes.BIRCH_LEAVES) {
+			RenderTypeLookup.setRenderLayer(birch_leaves.get(), RenderType.cutout());
+		}
+		for (RegistryObject<LeavesBlock> dark_oak_leaves : ChippedBlockTypes.DARK_OAK_LEAVES) {
+			RenderTypeLookup.setRenderLayer(dark_oak_leaves.get(), RenderType.cutout());
+		}
+		for (RegistryObject<LeavesBlock> oak_leaves : ChippedBlockTypes.OAK_LEAVES) {
+			RenderTypeLookup.setRenderLayer(oak_leaves.get(), RenderType.cutout());
+		}
+		for (RegistryObject<LeavesBlock> jungle_leaves : ChippedBlockTypes.JUNGLE_LEAVES) {
+			RenderTypeLookup.setRenderLayer(jungle_leaves.get(), RenderType.cutout());
+		}
+		for (RegistryObject<LeavesBlock> spruce_leaves : ChippedBlockTypes.SPRUCE_LEAVES) {
+			RenderTypeLookup.setRenderLayer(spruce_leaves.get(), RenderType.cutout());
+		}
 	}
 
 	@SuppressWarnings("unchecked")

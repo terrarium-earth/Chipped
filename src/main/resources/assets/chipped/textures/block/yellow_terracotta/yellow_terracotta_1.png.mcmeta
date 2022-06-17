@@ -1,0 +1,13 @@
+{
+  "ctm": {
+    "ctm_version": 1,
+    "type": "pillar",
+    "layer": "CUTOUT",
+    "textures": [
+      "chipped:block/yellow_terracotta/yellow_terracotta_1_pillar"
+    ],
+    "extra": {
+      "light": 0
+    }
+  }
+}

@@ -57,6 +57,12 @@ public class ChippedBlockTypes {
     public static final ChippedBlockType<SoulSandBlock> SOUL_SANDS = new ChippedBlockType<>("soul_sand");
 
     public static final ChippedBlockType<LilyPadBlock> LILY_PAD = new ChippedBlockType<>("lily_pad");
+    public static final ChippedBlockType<LeavesBlock> ACACIA_LEAVES = new ChippedBlockType<>("acacia_leaves");
+    public static final ChippedBlockType<LeavesBlock> BIRCH_LEAVES = new ChippedBlockType<>("birch_leaves");
+    public static final ChippedBlockType<LeavesBlock> DARK_OAK_LEAVES = new ChippedBlockType<>("dark_oak_leaves");
+    public static final ChippedBlockType<LeavesBlock> JUNGLE_LEAVES = new ChippedBlockType<>("jungle_leaves");
+    public static final ChippedBlockType<LeavesBlock> OAK_LEAVES = new ChippedBlockType<>("oak_leaves");
+    public static final ChippedBlockType<LeavesBlock> SPRUCE_LEAVES = new ChippedBlockType<>("spruce_leaves");
 
     public static final ChippedBlockType<Block> OBSIDIAN = new ChippedBlockType<>("obsidian");
     public static final ChippedBlockType<Block> CRYING_OBSIDIAN = new ChippedBlockType<>("crying_obsidian");

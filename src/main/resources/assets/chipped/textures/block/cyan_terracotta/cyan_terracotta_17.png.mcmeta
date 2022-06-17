@@ -1,0 +1,13 @@
+{
+  "ctm": {
+    "ctm_version": 1,
+    "type": "ctm",
+    "layer": "CUTOUT",
+    "textures": [
+      "chipped:block/cyan_terracotta/cyan_terracotta_17_ctm"
+    ],
+    "extra": {
+      "light": 0
+    }
+  }
+}
