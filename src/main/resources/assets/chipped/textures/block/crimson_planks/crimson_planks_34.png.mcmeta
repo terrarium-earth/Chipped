@@ -4,7 +4,7 @@
     "type": "pillar",
     "layer": "CUTOUT",
     "textures": [
-      "chipped:block/crimson_planks/crimson_planks_34_pillar"
+      "chipped:block/crimson_planks/crimson_planks_34_ctm"
     ],
     "extra": {
       "light": 0

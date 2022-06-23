@@ -40,7 +40,7 @@ public class ChippedBlockStateProvider extends BlockStateProvider {
                 SAND, TERRACOTTA, ACACIA_LEAVES, BIRCH_LEAVES, DARK_OAK_LEAVES, JUNGLE_LEAVES, OAK_LEAVES, SPRUCE_LEAVES
         );
 
-        registerGlassPanes(GLASS_PANES, "glass", "glass_pane_2_top", 1, 9);
+        registerGlassPanes(GLASS_PANES, "glass", "glass_pane_2_top", 1, 13);
 
         for (int id = 0; id < 16; id++) {
             DyeColor color = DyeColor.byId(id);

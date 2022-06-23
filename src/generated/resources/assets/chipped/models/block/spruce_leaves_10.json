@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "chipped:block/spruce_leaves/spruce_leaves_10"
+  }
+}

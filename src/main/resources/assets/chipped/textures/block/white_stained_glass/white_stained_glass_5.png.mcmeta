@@ -1,0 +1,13 @@
+{
+  "ctm": {
+    "ctm_version": 1,
+    "type": "ctm",
+    "layer": "TRANSLUCENT",
+    "textures": [
+      "chipped:block/white_stained_glass/white_stained_glass_5_ctm"
+    ],
+    "extra": {
+      "light": 0
+    }
+  }
+}
