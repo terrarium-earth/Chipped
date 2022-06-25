@@ -41,7 +41,7 @@ public class ChippedItemTagsProvider extends ItemTagsProvider {
 		for (int i = 0; i < 16; i++) {
 			DyeColor color = DyeColor.byId(i);
 			tag(ItemTags.WOOL).addTag(ChippedBlockTypes.WOOL.get(color).getItemTag());
-			tag(ItemTags.CARPETS).addTag(ChippedBlockTypes.CARPETS.get(color).getItemTag());
+			tag(ItemTags.WOOL_CARPETS).addTag(ChippedBlockTypes.CARPETS.get(color).getItemTag());
 		}
 
 		tag(ItemTags.STONE_CRAFTING_MATERIALS).addTag(ChippedBlockTypes.COBBLESTONE.getItemTag());

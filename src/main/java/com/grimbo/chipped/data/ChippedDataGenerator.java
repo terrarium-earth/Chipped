@@ -27,15 +27,15 @@ public class ChippedDataGenerator {
 		DataGenerator generate = event.getGenerator();
 		ExistingFileHelper existingFileHelper = event.getExistingFileHelper();
 
-		generate.addProvider(new ChippedBlockStateProvider(generate, existingFileHelper));
-		generate.addProvider(new ChippedItemModelProvider(generate, existingFileHelper));
+		generate.addProvider(event.includeClient(), new ChippedBlockStateProvider(generate, existingFileHelper));
+		generate.addProvider(event.includeClient(), new ChippedItemModelProvider(generate, existingFileHelper));
 
 		ChippedBlockTagsProvider blockTags = new ChippedBlockTagsProvider(generate, existingFileHelper);
-		generate.addProvider(blockTags);
-		generate.addProvider(new ChippedItemTagsProvider(generate, blockTags, existingFileHelper));
+		generate.addProvider(event.includeServer(), blockTags);
+		generate.addProvider(event.includeServer(), new ChippedItemTagsProvider(generate, blockTags, existingFileHelper));
 
-		generate.addProvider(new ChippedLootTableProvider(generate));
-		generate.addProvider(new ChippedRecipeProvider(generate));
+		generate.addProvider(event.includeServer(), new ChippedLootTableProvider(generate));
+		generate.addProvider(event.includeServer(), new ChippedRecipeProvider(generate));
 
 		//generate.addProvider(new ChippedLanguageProvider(generate, "en_us"));
 	}

@@ -3,6 +3,7 @@ package com.grimbo.chipped;
 import com.grimbo.chipped.block.*;
 import com.grimbo.chipped.container.*;
 import com.grimbo.chipped.item.ChippedItems;
+import com.grimbo.chipped.recipe.ChippedRecipeTypes;
 import com.grimbo.chipped.recipe.ChippedSerializer;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.RenderType;
@@ -36,6 +37,7 @@ public class Chipped {
 		ChippedBlocks.BLOCKS.register(eventBus);
 		ChippedBlocks.register();
 		ChippedItems.ITEMS.register(eventBus);
+		ChippedRecipeTypes.RECIPE_TYPES.register(eventBus);
 		ChippedSerializer.SERIALIZER.register(eventBus);
 		ChippedContainerType.CONTAINER.register(eventBus);
 		eventBus.addListener(this::clientRender);

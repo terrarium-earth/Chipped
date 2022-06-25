@@ -54,7 +54,7 @@ public class ChippedBlockTagsProvider extends BlockTagsProvider {
 		for (int i = 0; i < 16; i++) {
 			DyeColor color = DyeColor.byId(i);
 			tag(BlockTags.WOOL).addTag(WOOL.get(color).getBlockTag());
-			tag(BlockTags.CARPETS).addTag(CARPETS.get(color).getBlockTag());
+			tag(BlockTags.WOOL_CARPETS).addTag(CARPETS.get(color).getBlockTag());
 		}
 
 		tag(BlockTags.DRAGON_IMMUNE).addTag(OBSIDIAN.getBlockTag());

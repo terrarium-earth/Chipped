@@ -18,7 +18,10 @@ import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
-import net.minecraftforge.registries.ForgeRegistryEntry;
+//import net.minecraftforge.registries.ForgeRegistryEntry;
+import net.minecraftforge.registries.DeferredRegister;
+import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraftforge.registries.RegistryObject;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
@@ -26,14 +29,6 @@ import java.util.List;
 import java.util.stream.Stream;
 
 public class ChippedRecipe implements Recipe<Container> {
-
-	public static final RecipeType<ChippedRecipe> BOTANIST_WORKBENCH_TYPE = RecipeType.register(Chipped.MOD_ID +":botanist_workbench");
-	public static final RecipeType<ChippedRecipe> GLASSBLOWER_TYPE = RecipeType.register(Chipped.MOD_ID +":glassblower");
-	public static final RecipeType<ChippedRecipe> CARPENTERS_TABLE_TYPE = RecipeType.register(Chipped.MOD_ID +":carpenters_table");
-	public static final RecipeType<ChippedRecipe> LOOM_TABLE_TYPE = RecipeType.register(Chipped.MOD_ID +":loom_table");
-	public static final RecipeType<ChippedRecipe> MASON_TABLE_TYPE = RecipeType.register(Chipped.MOD_ID +":mason_table");
-	public static final RecipeType<ChippedRecipe> ALCHEMY_BENCH_TYPE = RecipeType.register(Chipped.MOD_ID +":alchemy_bench");
-	public static final RecipeType<ChippedRecipe> MECHANIST_WORKBENCH_TYPE = RecipeType.register(Chipped.MOD_ID +":mechanist_workbench");
 
 	private final Serializer serializer;
 	private final ResourceLocation id;
@@ -120,7 +115,7 @@ public class ChippedRecipe implements Recipe<Container> {
 		return serializer.getType();
 	}
 
-	public static class Serializer extends ForgeRegistryEntry<RecipeSerializer<?>> implements RecipeSerializer<ChippedRecipe> {
+	public static class Serializer implements RecipeSerializer<ChippedRecipe> {
 		private final RecipeType<?> type;
 		private final Block icon;
 
