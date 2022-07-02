@@ -216,7 +216,7 @@ public class ChippedBlocks {
 
         final AbstractBlock.Properties woodProperties = AbstractBlock.Properties.of(Material.WOOD).strength(2.0F, 3.0F).sound(SoundType.WOOD);
         for (ChippedWoodType type : ChippedWoodType.VALUES) {
-            registerBlocks(BenchType.CARPENTERS, PLANKS.computeIfAbsent(type, k -> new ChippedBlockType<>(k + "_planks")), () -> new Block(woodProperties), 38);
+            registerBlocks(BenchType.CARPENTERS, PLANKS.computeIfAbsent(type, k -> new ChippedBlockType<>(k + "_planks")), () -> new Block(woodProperties), 41);
         } //178
 
         final AbstractBlock.Properties hayProperties = AbstractBlock.Properties.copy(Blocks.HAY_BLOCK);
