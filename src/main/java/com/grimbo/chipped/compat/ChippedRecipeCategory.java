@@ -14,7 +14,6 @@ import me.shedaniel.rei.api.common.entry.EntryStack;
 import me.shedaniel.rei.api.common.entry.type.VanillaEntryTypes;
 import net.minecraft.core.Registry;
 import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.block.Block;
@@ -40,7 +39,7 @@ public class ChippedRecipeCategory implements DisplayCategory<ChippedRecipeCateg
 
     @Override
     public Component getTitle() {
-        return new TranslatableComponent("container.chipped." + id.getPath());
+        return Component.translatable("container.chipped." + id.getPath());
     }
 
     @Override

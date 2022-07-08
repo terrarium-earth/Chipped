@@ -25,7 +25,6 @@ import net.minecraft.world.level.material.Material;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
-import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -235,7 +234,7 @@ public class ChippedBlocks {
             String name = "lily_pad_" + i;
             WaterlilyBlock block = new WaterlilyBlock(LILY_PAD_PROPERTIES) {};
             Registry.register(Registry.BLOCK, new ResourceLocation(Chipped.MOD_ID, name), block);
-            Registry.register(Registry.ITEM, new ResourceLocation(Chipped.MOD_ID, name), new WaterLilyBlockItem(block, new Item.Properties().tab(Chipped.CHIPPED)));
+            Registry.register(Registry.ITEM, new ResourceLocation(Chipped.MOD_ID, name), new BlockItem(block, new Item.Properties().tab(Chipped.CHIPPED)));
             LILY_PADS.add(block);
         }
 

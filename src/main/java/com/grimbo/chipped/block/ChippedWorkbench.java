@@ -8,7 +8,6 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.Registry;
 import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.util.StringRepresentable;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
@@ -31,7 +30,6 @@ import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
-import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.function.Supplier;
@@ -52,7 +50,7 @@ public class ChippedWorkbench extends Block {
 	public ChippedWorkbench(ContainerFactory factory, Properties properties) {
 		super(properties);
 		this.factory = factory;
-		this.containerName = Suppliers.memoize(() -> new TranslatableComponent("container.chipped." + Registry.BLOCK.getKey(ChippedWorkbench.this).getPath()));
+		this.containerName = Suppliers.memoize(() -> Component.translatable("container.chipped." + Registry.BLOCK.getKey(ChippedWorkbench.this).getPath()));
 		this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH).setValue(MODEL_TYPE, WorkbenchModelType.MAIN));
 	}
 
