@@ -47,7 +47,7 @@ public class Chipped {
 
 	@SubscribeEvent
 	public void checkHarvest(PlayerEvent.HarvestCheck event) {
-		Item held = event.getPlayer().getMainHandItem().getItem();
+		Item held = event.getEntity().getMainHandItem().getItem();
 		if ((held instanceof SwordItem || held instanceof ShearsItem) && event.getTargetBlock().getBlock() instanceof WebBlock) {
 			event.setCanHarvest(true);
 		}

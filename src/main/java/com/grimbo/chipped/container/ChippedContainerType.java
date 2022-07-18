@@ -15,7 +15,7 @@ import net.minecraftforge.registries.RegistryObject;
 public class ChippedContainerType {
 
 	//Add new ContainerTypes here
-	public static final DeferredRegister<MenuType<?>> CONTAINER = DeferredRegister.create(ForgeRegistries.CONTAINERS, Chipped.MOD_ID);
+	public static final DeferredRegister<MenuType<?>> CONTAINER = DeferredRegister.create(ForgeRegistries.MENU_TYPES, Chipped.MOD_ID);
 
 	public static final RegistryObject<MenuType<ChippedContainer>> BOTANIST_WORKBENCH = CONTAINER.register("botanist_workbench",
 			() -> IForgeMenuType.create((id, inv, data) -> new ChippedContainer(id, inv, ContainerLevelAccess.NULL, ChippedContainerType.BOTANIST_WORKBENCH.get(), ChippedRecipeTypes.BOTANIST_WORKBENCH_TYPE.get(), ChippedBlocks.BOTANIST_WORKBENCH.get())));
