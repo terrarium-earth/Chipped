@@ -39,6 +39,9 @@
     ],
     "rei_plugins": [
       "com.grimbo.chipped.compat.REIChippedPlugin"
+    ],
+    "emi": [
+      "com.grimbo.chipped.compat.EMIChippedPlugin"
     ]
   },
   "depends": {
