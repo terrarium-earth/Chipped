@@ -5,42 +5,34 @@ import dev.emi.emi.api.recipe.EmiRecipeCategory;
 import dev.emi.emi.api.stack.EmiIngredient;
 import dev.emi.emi.api.stack.EmiStack;
 import dev.emi.emi.api.widget.WidgetHolder;
-import net.minecraft.core.Holder;
-import net.minecraft.core.HolderSet;
-import net.minecraft.core.NonNullList;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
-import net.minecraft.world.level.block.Blocks;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 import java.util.stream.Collectors;
 
 public class EMIChippedRecipe implements EmiRecipe {
+    private static final int MAX_OUTPUT_WIDTH = 7;
+    private static final int MAX_OUTPUT_HEIGHT = 5;
+    protected static final int MAX_OUTPUTS_PER_PAGE = MAX_OUTPUT_WIDTH * MAX_OUTPUT_HEIGHT - 2;
     final EmiRecipeCategory category;
     final ResourceLocation id;
-    final List<EmiIngredient> input;
+    final List<EmiIngredient> inputs;
     final List<EmiStack> output;
+    final List<EmiIngredient> origin;
+    final boolean isContinuingRecipe;
 
-    public EMIChippedRecipe(final Ingredient inputs, final Item output, final EmiRecipeCategory category, final ResourceLocation id)
+    public EMIChippedRecipe(final Item input, final List<Item> taggedItems, final EmiRecipeCategory category, final ResourceLocation id, final boolean isContinuingRecipe)
     {
         this.category = category;
         this.id = id;
-        this.input = Arrays.stream(inputs.getItems()).map(Ingredient::of).map(EmiIngredient::of).collect(Collectors.toList());
-        this.output = List.of(EmiStack.of(output));
-    }
-
-    public EMIChippedRecipe(final HolderSet<Item> recipeTags, final EmiRecipeCategory category, final ResourceLocation id)
-    {
-        this.category = category;
-        this.id = id;
-        this.input = recipeTags.stream().filter(Holder::isBound).map(Holder::value).map(Ingredient::of).map(EmiIngredient::of).collect(Collectors.toList());
-        this.output = recipeTags.stream().filter(Holder::isBound).map(Holder::value).map(EmiStack::of).collect(Collectors.toList());
+        this.inputs = taggedItems.stream().map(Ingredient::of).map(EmiIngredient::of).collect(Collectors.toList());
+        this.output = taggedItems.stream().map(EmiStack::of).collect(Collectors.toList());
+        this.origin = List.of(EmiIngredient.of(Ingredient.of(input)));
+        this.isContinuingRecipe = isContinuingRecipe;
     }
 
     @Override
@@ -55,7 +47,10 @@ public class EMIChippedRecipe implements EmiRecipe {
 
     @Override
     public List<EmiIngredient> getInputs() {
-        return this.input;
+        // Specifically _not_ the full Inputs, or the Cost Tooltip gets very badly overfilled.
+        // Using an EmiIngredient derived from tags directly would avoid some of this mess,
+        // But require a lot of complex sync testing on servers.
+        return this.origin;
     }
 
     @Override
@@ -70,7 +65,7 @@ public class EMIChippedRecipe implements EmiRecipe {
 
     @Override
     public int getDisplayHeight() {
-        return 45 + ((output.size() / 7) * 16);
+        return 45 + ((output.size() / MAX_OUTPUT_WIDTH) * 16);
     }
 
     @Override
@@ -79,15 +74,19 @@ public class EMIChippedRecipe implements EmiRecipe {
         widgets.addGeneratedSlot(this::getRandomInput, 0, 1, 1);
         for(int i = 0; i < output.size(); i++)
         {
-            widgets.addSlot(output.get(i), ((i % 7) * 17), 21 + (i / 7) * 18).recipeContext(this);
+            widgets.addSlot(output.get(i), ((i % 7) * 17), 19 + (i / MAX_OUTPUT_WIDTH) * 18).recipeContext(this);
+        }
+        if(isContinuingRecipe)
+        {
+            widgets.addFillingArrow(94, 92, 900);
         }
     }
 
     private EmiIngredient getRandomInput(Random r)
     {
-        if(input.size() > 0)
+        if(inputs.size() > 0)
         {
-            return this.input.get(r.nextInt(input.size()));
+            return this.inputs.get(r.nextInt(inputs.size()));
         }
         else return EmiIngredient.of(Ingredient.EMPTY);
     }
