@@ -1,0 +1,21 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "chipped:block/lily_pads/lily_pad_17"
+      },
+      {
+        "model": "chipped:block/lily_pads/lily_pad_17",
+        "y": 90
+      },
+      {
+        "model": "chipped:block/lily_pads/lily_pad_17",
+        "y": 180
+      },
+      {
+        "model": "chipped:block/lily_pads/lily_pad_17",
+        "y": 270
+      }
+    ]
+  }
+}

@@ -82,8 +82,8 @@ public class ChippedBlocks {
     public static final List<RedstoneWallTorchBlock> REDSTONE_WALL_TORCHES = new ArrayList<>();
     public static final List<WallTorchBlock> WALL_TORCHES = new ArrayList<>();
 
-    //Simple Blocks which have 18 of its own variant
-    public static final String[] stones18 = {"stone", "granite", "diorite", "andesite", "prismarine", "dark_prismarine", "purpur_block",
+    //Simple Blocks which have 61 of its own variant
+    public static final String[] stones61 = {"stone", "granite", "diorite", "andesite", "prismarine", "dark_prismarine", "purpur_block",
             "cobblestone", "quartz_block", "sandstone", "red_sandstone", "nether_bricks", "red_nether_bricks", "end_stone", "netherrack"};
 
     public static final String[] specialPumpkinList = {"end", "end2", "nether"};
@@ -151,8 +151,8 @@ public class ChippedBlocks {
      */
     public static void register() {
         // Register Stones
-        for (String type : stones18) {
-            registerVanillaBlocks(type, 18);
+        for (String type : stones61) {
+            registerVanillaBlocks(type, 61);
         }
 
         registerVanillaBlocks(Blocks.GILDED_BLACKSTONE, "gilded_blackstone", 26);
