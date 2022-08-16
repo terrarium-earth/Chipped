@@ -1,0 +1,10 @@
+{
+    "ctm": {
+        "ctm_version": 1,
+        "type": "CTM",
+        "layer": "CUTOUT",
+        "textures": [
+            "chipped:block/acacia_planks/acacia_planks_39_ctm"
+        ]
+    }
+}

@@ -1,0 +1,13 @@
+{
+  "ctm": {
+    "ctm_version": 1,
+    "type": "ctm",
+    "layer": "CUTOUT",
+    "textures": [
+      "chipped:block/netherrack/netherrack_39_ctm"
+    ],
+    "extra": {
+      "light": 0
+    }
+  }
+}
