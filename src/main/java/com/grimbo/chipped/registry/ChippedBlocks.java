@@ -84,7 +84,7 @@ public class ChippedBlocks {
 
     //Simple Blocks which have 61 of its own variant
     public static final String[] stones61 = {"stone", "granite", "diorite", "andesite", "prismarine", "dark_prismarine", "purpur_block",
-            "cobblestone", "quartz_block", "sandstone", "red_sandstone", "nether_bricks", "red_nether_bricks", "end_stone", "netherrack"};
+            "cobblestone", "quartz_block", "sandstone", "red_sandstone", "nether_bricks", "red_nether_bricks", "end_stone", "netherrack", "basalt"};
 
     public static final String[] specialPumpkinList = {"end", "end2", "nether"};
     public static final String[] carvedPumpkinList = {"happy", "angry", "bigeyes", "bighappy", "boo", "bruh", "classic", "enthusiastic",
@@ -157,7 +157,6 @@ public class ChippedBlocks {
 
         registerVanillaBlocks(Blocks.GILDED_BLACKSTONE, "gilded_blackstone", 26);
         registerVanillaBlocks(Blocks.BLACKSTONE, "blackstone", 21);
-        registerVanillaBlocks(Blocks.BASALT, "basalt", 20);
         registerVanillaBlocks(Blocks.OBSIDIAN, "obsidian", 20);
 
         for (int id = 0; id < 16; ++id) {
