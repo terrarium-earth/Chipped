@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "id": "chipped",
+  "version": "${version}",
+  "name": "Chipped",
+  "description": "Every block needs a friend!",
+  "authors": [
+    "Grimbop",
+    "Kekie6",
+    "MsRandom",
+    "ThatGravyBoat",
+    "CodexAdrian",
+    "AlexNijjar"
+  ],
+  "contact": {
+    "homepage": "https://www.curseforge.com/minecraft/mc-mods/chipped",
+    "sources": "https://github.com/terrarium-earth/Chipped",
+    "issues": "https://github.com/terrarium-earth/Chipped/issues"
+  },
+  "license": "All-Rights-Reserved",
+  "icon": "assets/chipped/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.grimbo.chipped.fabric.ChippedFabric"
+    ],
+    "fabric-datagen": [
+      "com.grimbo.chipped.fabric.datagen.ChippedDataGenEntrypoint"
+    ],
+    "rei_client": [
+      "com.grimbo.chipped.compat.rei.REIChippedPlugin"
+    ]
+  },
+  "depends": {
+    "fabric": "*",
+    "minecraft": ">=1.18.2",
+    "architectury": ">=4.9.83"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/template_glass_pane_side_alt",
+  "textures": {
+    "pane": "chipped:block/glass_105",
+    "edge": "chipped:block/glass_pane_105_top"
+  }
+}

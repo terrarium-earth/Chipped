@@ -1,80 +1,48 @@
 plugins {
-	id 'fabric-loom' version '0.10-SNAPSHOT'
-	id 'maven-publish'
+    id "architectury-plugin" version "3.4-SNAPSHOT"
+    id "dev.architectury.loom" version "0.12.0-SNAPSHOT" apply false
 }
 
-sourceCompatibility = JavaVersion.VERSION_17
-targetCompatibility = JavaVersion.VERSION_17
-
-archivesBaseName = project.archives_base_name
-version = project.mod_version
-group = project.maven_group
-
-repositories {
-	maven { url "https://maven.shedaniel.me/" }
-	maven { url "https://storage.googleapis.com/devan-maven/" }
+architectury {
+    minecraft = rootProject.minecraft_version
 }
 
-dependencies {
-	// To change the versions see the gradle.properties file
-	minecraft "com.mojang:minecraft:${project.minecraft_version}"
-	mappings minecraft.officialMojangMappings()
-	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
+subprojects {
+    apply plugin: "dev.architectury.loom"
 
-	// Fabric API. This is technically optional, but you probably want it anyway.
-	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
-	modCompileOnly "me.shedaniel:RoughlyEnoughItems-api-fabric:${project.rei_api_version}"
-	modRuntimeOnly "me.shedaniel:RoughlyEnoughItems-fabric:${project.rei_version}"
+    loom {
+        silentMojangMappingsLicense()
+    }
+
+    dependencies {
+        minecraft "com.mojang:minecraft:${rootProject.minecraft_version}"
+        mappings loom.layered() {
+            officialMojangMappings()
+            parchment("org.parchmentmc.data:parchment-$rootProject.minecraft_version:$rootProject.parchment_version@zip")
+        }
+    }
 }
 
-processResources {
-	inputs.property "version", project.version
+allprojects {
+    apply plugin: "java"
+    apply plugin: "architectury-plugin"
+    apply plugin: "maven-publish"
 
-	filesMatching("fabric.mod.json") {
-		expand "version": project.version
-	}
-}
+    archivesBaseName = rootProject.archives_base_name
+    version = rootProject.mod_version
+    group = rootProject.maven_group
 
-tasks.withType(JavaCompile).configureEach {
-	// If Javadoc is generated, this must be specified in that task too.
-	it.options.encoding = "UTF-8"
+    repositories {
+        maven { url "https://maven.shedaniel.me/" }
+        maven { url = 'https://maven.parchmentmc.org' }
+    }
 
-	// Minecraft 1.17 (21w19a) upwards uses Java 16.
-	it.options.release = 17
-}
+    tasks.withType(JavaCompile) {
+        options.encoding = "UTF-8"
+        options.release = 17
+    }
 
-java {
-	// Loom will automatically attach sourcesJar to a RemapSourcesJar task and to the "build" task
-	// if it is present.
-	// If you remove this line, sources will not be generated.
-	withSourcesJar()
-}
-
-jar {
-	from("LICENSE") {
-		rename { "${it}_${project.archivesBaseName}"}
-	}
-}
-
-// configure the maven publication
-publishing {
-	publications {
-		mavenJava(MavenPublication) {
-			// add all the jars that should be included when publishing to maven
-			artifact(remapJar) {
-				builtBy remapJar
-			}
-			artifact(sourcesJar) {
-				builtBy remapSourcesJar
-			}
-		}
-	}
-
-	// See https://docs.gradle.org/current/userguide/publishing_maven.html for information on how to set up publishing.
-	repositories {
-		// Add repositories to publish to here.
-		// Notice: This block does NOT have the same function as the block in the top level.
-		// The repositories here will be used for publishing your artifact, not for
-		// retrieving dependencies.
-	}
+    java {
+        withSourcesJar()
+    }
 }

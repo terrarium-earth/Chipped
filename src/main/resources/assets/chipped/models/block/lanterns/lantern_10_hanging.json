@@ -1,6 +1,0 @@
-{
-	"parent": "chipped:block/lanterns/paper_lantern_hanging",
-	"textures": {
-		"0": "chipped:block/lanterns/lantern_10"
-	}
-}

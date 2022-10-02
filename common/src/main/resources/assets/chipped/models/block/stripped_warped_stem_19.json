@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "chipped:block/stripped_warped_stem_19_top",
+    "side": "chipped:block/stripped_warped_stem_19_side"
+  }
+}

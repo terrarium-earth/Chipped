@@ -1,7 +1,0 @@
-{
-  "parent": "minecraft:block/template_glass_pane_post",
-  "textures": {
-    "pane": "chipped:block/acacia_wood_glass_3",
-    "edge": "chipped:block/acacia_wood_glass_pane_top"
-  }
-}

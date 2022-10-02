@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/orientable",
-  "textures": {
-    "side": "chipped:block/pumpkin_nether_side",
-    "front": "chipped:block/jack_o_lantern_nether",
-    "top": "chipped:block/pumpkin_nether_top"
-  }
-}

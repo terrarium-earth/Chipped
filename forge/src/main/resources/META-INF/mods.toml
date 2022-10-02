@@ -1,0 +1,35 @@
+modLoader = "javafml"
+loaderVersion = "[40,)"
+#issueTrackerURL = "https://github.com/terrarium-earth/Chipped/issues"
+license = "All Rights Reserved"
+
+[[mods]]
+modId = "chipped"
+version = "${version}"
+displayName = "Chipped"
+authors = "Grimbop, Kekie6, MsRandom1, ThatGravyBoat, CodexAdrian, AlexNijjar"
+description = '''
+Every block needs a friend!
+'''
+#logoFile = "icon.png"
+
+[[dependencies.chipped]]
+modId = "forge"
+mandatory = true
+versionRange = "[40,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.chipped]]
+modId = "minecraft"
+mandatory = true
+versionRange = "[1.18.2,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.chipped]]
+modId = "architectury"
+mandatory = true
+versionRange = "[4.9.83,)"
+ordering = "AFTER"
+side = "BOTH"

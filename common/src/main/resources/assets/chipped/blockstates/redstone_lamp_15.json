@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "lit=false": {
+      "model": "chipped:block/redstone_lamp_15"
+    },
+    "lit=true": {
+      "model": "chipped:block/redstone_lamp_15_on"
+    }
+  }
+}
