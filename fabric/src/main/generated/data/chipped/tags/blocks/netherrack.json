@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
+    "minecraft:netherrack",
     "chipped:netherrack_1",
     "chipped:netherrack_2",
     "chipped:netherrack_3",

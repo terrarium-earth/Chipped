@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
+    "minecraft:smooth_stone",
     "chipped:smooth_stone_1",
     "chipped:smooth_stone_2",
     "chipped:smooth_stone_3",

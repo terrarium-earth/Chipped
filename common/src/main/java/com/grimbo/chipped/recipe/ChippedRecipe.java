@@ -1,12 +1,7 @@
 package com.grimbo.chipped.recipe;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.stream.Stream;
-
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
-
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderSet;
 import net.minecraft.core.Registry;
@@ -20,8 +15,14 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Recipe;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.item.crafting.RecipeType;
+import net.minecraft.world.item.crafting.SimpleRecipeSerializer;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.function.Supplier;
+import java.util.stream.Stream;
 
 public record ChippedRecipe(
         Serializer serializer,
@@ -95,11 +96,21 @@ public record ChippedRecipe(
     }
 
     @Override
-    public RecipeType<?> getType() {
-        return serializer.type();
+    public RecipeType<ChippedRecipe> getType() {
+        return serializer.type.get();
     }
 
-    public record Serializer(RecipeType<?> type, Block icon) implements RecipeSerializer<ChippedRecipe> {
+    public static class Serializer extends SimpleRecipeSerializer<ChippedRecipe> implements RecipeSerializer<ChippedRecipe> {
+
+        public final Supplier<RecipeType<ChippedRecipe>> type;
+        public final Supplier<Block> icon;
+
+        public Serializer(Supplier<RecipeType<ChippedRecipe>> type, Supplier<Block> icon) {
+            super(p -> null);
+            this.type = type;
+            this.icon = icon;
+        }
+
         @Override
         public ChippedRecipe fromJson(ResourceLocation recipeId, JsonObject json) {
             String s = GsonHelper.getAsString(json, "group", "");
@@ -110,7 +121,7 @@ public record ChippedRecipe(
                 var tag = TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation(tagName));
                 tags.add(Registry.ITEM.getOrCreateTag(tag));
             }
-            return new ChippedRecipe(this, recipeId, s, tags, this.icon);
+            return new ChippedRecipe(this, recipeId, s, tags, this.icon.get());
         }
 
         @SuppressWarnings("deprecation")
@@ -122,7 +133,7 @@ public record ChippedRecipe(
             for (int i = 0; i < tagCount; i++) {
                 tags.add(HolderSet.direct(Item::builtInRegistryHolder, buffer.readList(buf -> Item.byId(buf.readVarInt()))));
             }
-            return new ChippedRecipe(this, recipeId, s, tags, this.icon);
+            return new ChippedRecipe(this, recipeId, s, tags, this.icon.get());
         }
 
         @Override

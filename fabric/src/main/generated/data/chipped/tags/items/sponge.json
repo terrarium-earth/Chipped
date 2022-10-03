@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
+    "minecraft:sponge",
     "chipped:sponge_1",
     "chipped:sponge_2",
     "chipped:sponge_3",

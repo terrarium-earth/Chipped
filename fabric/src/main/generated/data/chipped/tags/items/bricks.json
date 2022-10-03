@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
+    "minecraft:bricks",
     "chipped:bricks_1",
     "chipped:bricks_2",
     "chipped:bricks_3",

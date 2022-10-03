@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
+    "minecraft:light_gray_terracotta",
     "chipped:light_gray_terracotta_1",
     "chipped:light_gray_terracotta_2",
     "chipped:light_gray_terracotta_3",

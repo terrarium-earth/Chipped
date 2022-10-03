@@ -6,6 +6,7 @@ import java.util.List;
 
 import com.grimbo.chipped.recipe.ChippedRecipe;
 import com.grimbo.chipped.registry.ChippedBlocks;
+import com.grimbo.chipped.registry.ChippedRecipeTypes;
 import com.grimbo.chipped.registry.ChippedSerializer;
 
 import me.shedaniel.rei.api.client.plugins.REIClientPlugin;
@@ -43,12 +44,12 @@ public class REIChippedPlugin implements REIClientPlugin {
     public void registerDisplays(DisplayRegistry registry) {
         Minecraft client = Minecraft.getInstance();
         RecipeManager recipeManager = client.level.getRecipeManager();
-        registerRecipes(recipeManager, registry, ChippedSerializer.BOTANIST_WORKBENCH_TYPE.get(), ChippedBlocks.BOTANIST_WORKBENCH.get());
-        registerRecipes(recipeManager, registry, ChippedSerializer.CARPENTERS_TABLE_TYPE.get(), ChippedBlocks.CARPENTERS_TABLE.get());
-        registerRecipes(recipeManager, registry, ChippedSerializer.LOOM_TABLE_TYPE.get(), ChippedBlocks.LOOM_TABLE.get());
-        registerRecipes(recipeManager, registry, ChippedSerializer.MASON_TABLE_TYPE.get(), ChippedBlocks.MASON_TABLE.get());
-        registerRecipes(recipeManager, registry, ChippedSerializer.ALCHEMY_BENCH_TYPE.get(), ChippedBlocks.ALCHEMY_BENCH.get());
-        registerRecipes(recipeManager, registry, ChippedSerializer.MECHANIST_WORKBENCH_TYPE.get(), ChippedBlocks.MECHANIST_WORKBENCH.get());
+        registerRecipes(recipeManager, registry, ChippedRecipeTypes.BOTANIST_WORKBENCH_TYPE.get(), ChippedBlocks.BOTANIST_WORKBENCH.get());
+        registerRecipes(recipeManager, registry, ChippedRecipeTypes.CARPENTERS_TABLE_TYPE.get(), ChippedBlocks.CARPENTERS_TABLE.get());
+        registerRecipes(recipeManager, registry, ChippedRecipeTypes.LOOM_TABLE_TYPE.get(), ChippedBlocks.LOOM_TABLE.get());
+        registerRecipes(recipeManager, registry, ChippedRecipeTypes.MASON_TABLE_TYPE.get(), ChippedBlocks.MASON_TABLE.get());
+        registerRecipes(recipeManager, registry, ChippedRecipeTypes.ALCHEMY_BENCH_TYPE.get(), ChippedBlocks.ALCHEMY_BENCH.get());
+        registerRecipes(recipeManager, registry, ChippedRecipeTypes.MECHANIST_WORKBENCH_TYPE.get(), ChippedBlocks.MECHANIST_WORKBENCH.get());
     }
 
     private void registerRecipes(RecipeManager recipeManager, DisplayRegistry registry, RecipeType<ChippedRecipe> type, Block block) {

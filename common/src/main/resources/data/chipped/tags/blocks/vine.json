@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
+    "minecraft:vine",
     "chipped:vine_1",
     "chipped:vine_2",
     "chipped:vine_3",

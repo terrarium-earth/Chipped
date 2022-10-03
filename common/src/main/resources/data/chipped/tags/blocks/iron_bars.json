@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
+    "minecraft:iron_bars",
     "chipped:iron_bars_1",
     "chipped:iron_bars_2",
     "chipped:iron_bars_3",

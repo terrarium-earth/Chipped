@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
+    "minecraft:sea_lantern",
     "chipped:sea_lantern_1",
     "chipped:sea_lantern_2",
     "chipped:sea_lantern_3",

@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
+    "minecraft:quartz_block",
     "chipped:quartz_block_1",
     "chipped:quartz_block_2",
     "chipped:quartz_block_3",

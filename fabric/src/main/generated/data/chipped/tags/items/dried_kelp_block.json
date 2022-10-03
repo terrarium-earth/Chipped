@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
+    "minecraft:dried_kelp_block",
     "chipped:dried_kelp_block_1",
     "chipped:dried_kelp_block_2",
     "chipped:dried_kelp_block_3",

@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
+    "minecraft:carved_pumpkin",
     "chipped:carved_pumpkin_1",
     "chipped:carved_pumpkin_2",
     "chipped:carved_pumpkin_3",

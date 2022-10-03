@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
+    "minecraft:mossy_stone_bricks",
     "chipped:mossy_stone_bricks_1",
     "chipped:mossy_stone_bricks_2",
     "chipped:mossy_stone_bricks_3",

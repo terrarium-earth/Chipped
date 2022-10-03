@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
+    "minecraft:iron_block",
     "chipped:iron_block_1",
     "chipped:iron_block_2",
     "chipped:iron_block_3",

@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
+    "minecraft:dripstone_block",
     "chipped:dripstone_block_1",
     "chipped:dripstone_block_2",
     "chipped:dripstone_block_3",

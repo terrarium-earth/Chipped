@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
+    "minecraft:netherite_block",
     "chipped:netherite_block_1",
     "chipped:netherite_block_2",
     "chipped:netherite_block_3",

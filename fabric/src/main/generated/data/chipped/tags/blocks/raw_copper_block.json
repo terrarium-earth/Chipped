@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
+    "minecraft:raw_copper_block",
     "chipped:raw_copper_block_1",
     "chipped:raw_copper_block_2",
     "chipped:raw_copper_block_3",

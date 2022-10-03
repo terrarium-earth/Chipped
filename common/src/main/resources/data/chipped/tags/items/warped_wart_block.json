@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
+    "minecraft:warped_wart_block",
     "chipped:warped_wart_block_1",
     "chipped:warped_wart_block_2",
     "chipped:warped_wart_block_3",

@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
+    "minecraft:amethyst_block",
     "chipped:amethyst_block_1",
     "chipped:amethyst_block_2",
     "chipped:amethyst_block_3",

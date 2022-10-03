@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
+    "minecraft:prismarine",
     "chipped:prismarine_1",
     "chipped:prismarine_2",
     "chipped:prismarine_3",

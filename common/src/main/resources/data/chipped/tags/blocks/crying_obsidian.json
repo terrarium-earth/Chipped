@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
+    "minecraft:crying_obsidian",
     "chipped:crying_obsidian_1",
     "chipped:crying_obsidian_2",
     "chipped:crying_obsidian_3",

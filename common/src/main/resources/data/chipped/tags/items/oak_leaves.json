@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
+    "minecraft:oak_leaves",
     "chipped:oak_leaves_1",
     "chipped:oak_leaves_2",
     "chipped:oak_leaves_3",

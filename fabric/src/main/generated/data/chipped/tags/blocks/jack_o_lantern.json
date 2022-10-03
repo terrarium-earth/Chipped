@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
+    "minecraft:jack_o_lantern",
     "chipped:jack_o_lantern_1",
     "chipped:jack_o_lantern_2",
     "chipped:jack_o_lantern_3",

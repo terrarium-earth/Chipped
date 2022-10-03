@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
+    "minecraft:redstone_torch",
     "chipped:redstone_torch_1",
     "chipped:redstone_torch_2",
     "chipped:redstone_torch_3",

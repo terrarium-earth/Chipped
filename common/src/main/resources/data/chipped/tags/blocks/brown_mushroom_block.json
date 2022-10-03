@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
+    "minecraft:brown_mushroom_block",
     "chipped:brown_mushroom_block_1",
     "chipped:brown_mushroom_block_2",
     "chipped:brown_mushroom_block_3",

@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
+    "minecraft:light_gray_concrete",
     "chipped:light_gray_concrete_1",
     "chipped:light_gray_concrete_2",
     "chipped:light_gray_concrete_3",

@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
+    "minecraft:diorite",
     "chipped:diorite_1",
     "chipped:diorite_2",
     "chipped:diorite_3",

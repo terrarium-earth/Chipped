@@ -1,25 +1,14 @@
 package com.grimbo.chipped.fabric.datagen;
 
-import java.util.function.Predicate;
-
 import com.grimbo.chipped.registry.ChippedBlocks;
-
-import dev.architectury.registry.registries.RegistrySupplier;
+import com.mojang.datafixers.util.Pair;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
 import net.minecraft.core.Registry;
 import net.minecraft.data.loot.BlockLoot;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.enchantment.Enchantments;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.GlassBlock;
-import net.minecraft.world.level.block.IronBarsBlock;
-import net.minecraft.world.level.block.MelonBlock;
-import net.minecraft.world.level.block.NetherSproutsBlock;
-import net.minecraft.world.level.block.RedstoneWallTorchBlock;
-import net.minecraft.world.level.block.VineBlock;
-import net.minecraft.world.level.block.WallTorchBlock;
-import net.minecraft.world.level.block.WebBlock;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.storage.loot.IntRange;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.functions.ApplyBonusCount;
@@ -27,6 +16,9 @@ import net.minecraft.world.level.storage.loot.functions.LimitCount;
 import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
+
+import java.util.function.Predicate;
+import java.util.function.Supplier;
 
 public class ChippedBlockLootTableProvider extends FabricBlockLootTableProvider {
 
@@ -37,12 +29,10 @@ public class ChippedBlockLootTableProvider extends FabricBlockLootTableProvider 
     @Override
     protected void generateBlockLootTables() {
         // Blocks that always drop themselves
-        ChippedBlocks.REGISTERED_BLOCKS.stream().filter(Predicate.not(ChippedBlocks.SKIPPED_MODELS::contains)).map(RegistrySupplier::get).forEach(block -> {
-            this.dropSelf(block);
-        });
+        ChippedBlocks.REGISTERED_BLOCKS.stream().map(Pair::getFirst).filter(Predicate.not(ChippedBlocks.SKIPPED_MODELS::contains)).map(Supplier::get).forEach(this::dropSelf);
 
         // Blocks with custom dropping behaviour
-        ChippedBlocks.REGISTERED_BLOCKS.stream().filter(ChippedBlocks.SKIPPED_MODELS::contains).map(RegistrySupplier::get).forEach(block -> {
+        ChippedBlocks.REGISTERED_BLOCKS.stream().map(Pair::getFirst).filter(ChippedBlocks.SKIPPED_MODELS::contains).map(Supplier::get).forEach(block -> {
 
             if (Registry.BLOCK.getKey(block).getPath().contains("clay")) {
                 createSingleItemTableWithSilkTouch(block, Items.CLAY_BALL, ConstantValue.exactly(4.0F));
@@ -60,10 +50,10 @@ public class ChippedBlockLootTableProvider extends FabricBlockLootTableProvider 
         });
 
         ChippedBlocks.BLOCK_PAIRS.forEach(pair -> {
-            Block block1 = pair.getLeft().get();
-            Block block2 = pair.getRight().get();
+            Block block1 = pair.getFirst().get();
+            Block block2 = pair.getSecond().get();
 
-            if (ChippedBlocks.SKIPPED_MODELS.contains(pair.getRight())) {
+            if (ChippedBlocks.SKIPPED_MODELS.contains(pair.getSecond())) {
                 if (block2 instanceof WallTorchBlock || block2 instanceof RedstoneWallTorchBlock) {
                     this.dropOther(block2, block1);
                 }

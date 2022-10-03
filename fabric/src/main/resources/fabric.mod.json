@@ -29,11 +29,13 @@
     ],
     "rei_client": [
       "com.grimbo.chipped.compat.rei.REIChippedPlugin"
+    ],
+    "client": [
+      "com.grimbo.chipped.client.ChippedClient::initializeClient"
     ]
   },
   "depends": {
     "fabric": "*",
-    "minecraft": ">=1.18.2",
-    "architectury": ">=4.9.83"
+    "minecraft": ">=1.18.2"
   }
 }

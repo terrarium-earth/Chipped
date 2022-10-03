@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
+    "minecraft:warped_fungus",
     "chipped:warped_fungus_1",
     "chipped:warped_fungus_2",
     "chipped:warped_fungus_3",

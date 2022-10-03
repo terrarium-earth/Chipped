@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
+    "minecraft:warped_planks",
     "chipped:warped_planks_1",
     "chipped:warped_planks_2",
     "chipped:warped_planks_3",

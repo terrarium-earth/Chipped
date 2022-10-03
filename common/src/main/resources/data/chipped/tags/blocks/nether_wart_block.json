@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
+    "minecraft:nether_wart_block",
     "chipped:nether_wart_block_1",
     "chipped:nether_wart_block_2",
     "chipped:nether_wart_block_3",

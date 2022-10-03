@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
+    "minecraft:nether_sprouts",
     "chipped:nether_sprouts_1",
     "chipped:nether_sprouts_2",
     "chipped:nether_sprouts_3",

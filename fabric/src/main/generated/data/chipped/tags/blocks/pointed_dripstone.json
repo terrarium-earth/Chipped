@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
+    "minecraft:pointed_dripstone",
     "chipped:pointed_dripstone_1",
     "chipped:pointed_dripstone_2",
     "chipped:pointed_dripstone_3",

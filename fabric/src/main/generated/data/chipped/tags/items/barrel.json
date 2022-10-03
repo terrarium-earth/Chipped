@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
+    "minecraft:barrel",
     "chipped:barrel_1",
     "chipped:barrel_2",
     "chipped:barrel_3",

@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
+    "minecraft:snow_block",
     "chipped:snow_block_1",
     "chipped:snow_block_2",
     "chipped:snow_block_3",

@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
+    "minecraft:birch_planks",
     "chipped:birch_planks_1",
     "chipped:birch_planks_2",
     "chipped:birch_planks_3",

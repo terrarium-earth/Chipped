@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
+    "minecraft:glass_pane",
     "chipped:glass_pane_1",
     "chipped:glass_pane_2",
     "chipped:glass_pane_3",

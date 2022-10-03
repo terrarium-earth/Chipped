@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
+    "minecraft:mossy_cobblestone",
     "chipped:mossy_cobblestone_1",
     "chipped:mossy_cobblestone_2",
     "chipped:mossy_cobblestone_3",

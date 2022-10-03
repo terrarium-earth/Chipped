@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
+    "minecraft:yellow_terracotta",
     "chipped:yellow_terracotta_1",
     "chipped:yellow_terracotta_2",
     "chipped:yellow_terracotta_3",

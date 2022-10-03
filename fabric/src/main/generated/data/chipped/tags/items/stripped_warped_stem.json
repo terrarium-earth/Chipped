@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
+    "minecraft:stripped_warped_stem",
     "chipped:stripped_warped_stem_1",
     "chipped:stripped_warped_stem_2",
     "chipped:stripped_warped_stem_3",

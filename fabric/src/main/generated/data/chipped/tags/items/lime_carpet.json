@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
+    "minecraft:lime_carpet",
     "chipped:lime_carpet_1",
     "chipped:lime_carpet_2",
     "chipped:lime_carpet_3",

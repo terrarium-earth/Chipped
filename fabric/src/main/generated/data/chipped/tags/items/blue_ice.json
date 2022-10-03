@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
+    "minecraft:blue_ice",
     "chipped:blue_ice_1",
     "chipped:blue_ice_2",
     "chipped:blue_ice_3",

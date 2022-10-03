@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
+    "minecraft:orange_concrete",
     "chipped:orange_concrete_1",
     "chipped:orange_concrete_2",
     "chipped:orange_concrete_3",

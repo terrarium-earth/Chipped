@@ -1,10 +1,11 @@
 package com.grimbo.chipped.fabric.datagen;
 
 import java.util.function.Predicate;
+import java.util.function.Supplier;
 
 import com.grimbo.chipped.registry.ChippedBlocks;
 
-import dev.architectury.registry.registries.RegistrySupplier;
+import com.mojang.datafixers.util.Pair;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
 import net.minecraft.core.Registry;
@@ -28,7 +29,7 @@ public class ChippedModelProvider extends FabricModelProvider {
     @Override
     public void generateBlockStateModels(BlockModelGenerators blockModelGenerator) {
 
-        ChippedBlocks.REGISTERED_BLOCKS.stream().filter(Predicate.not(ChippedBlocks.SKIPPED_MODELS::contains)).map(RegistrySupplier::get).forEach(block -> {
+        ChippedBlocks.REGISTERED_BLOCKS.stream().map(Pair::getFirst).filter(Predicate.not(ChippedBlocks.SKIPPED_MODELS::contains)).map(Supplier::get).forEach(block -> {
 
             if (block instanceof MelonBlock) {
                 blockModelGenerator.createTrivialBlock(block, TexturedModel.COLUMN);
@@ -54,8 +55,8 @@ public class ChippedModelProvider extends FabricModelProvider {
         });
 
         ChippedBlocks.BLOCK_PAIRS.forEach(pair -> {
-            Block block1 = pair.getLeft().get();
-            Block block2 = pair.getRight().get();
+            Block block1 = pair.getFirst().get();
+            Block block2 = pair.getSecond().get();
 
             if (block2 instanceof CarpetBlock) {
                 blockModelGenerator.createFullAndCarpetBlocks(block1, block2);

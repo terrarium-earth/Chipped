@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
+    "minecraft:jungle_planks",
     "chipped:jungle_planks_1",
     "chipped:jungle_planks_2",
     "chipped:jungle_planks_3",

@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
+    "minecraft:waxed_exposed_copper",
     "chipped:waxed_exposed_copper_1",
     "chipped:waxed_exposed_copper_2",
     "chipped:waxed_exposed_copper_3",

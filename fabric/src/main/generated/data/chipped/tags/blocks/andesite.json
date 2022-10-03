@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
+    "minecraft:andesite",
     "chipped:andesite_1",
     "chipped:andesite_2",
     "chipped:andesite_3",

@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
+    "minecraft:ladder",
     "chipped:ladder_1",
     "chipped:ladder_2",
     "chipped:ladder_3",

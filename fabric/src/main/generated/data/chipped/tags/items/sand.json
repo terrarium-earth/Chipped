@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
+    "minecraft:sand",
     "chipped:sand_1",
     "chipped:sand_2",
     "chipped:sand_3",

@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
+    "minecraft:crimson_roots",
     "chipped:crimson_roots_1",
     "chipped:crimson_roots_2",
     "chipped:crimson_roots_3",

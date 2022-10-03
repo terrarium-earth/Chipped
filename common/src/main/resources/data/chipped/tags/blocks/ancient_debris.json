@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
+    "minecraft:ancient_debris",
     "chipped:ancient_debris_1",
     "chipped:ancient_debris_2",
     "chipped:ancient_debris_3",

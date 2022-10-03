@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
+    "minecraft:warped_roots",
     "chipped:warped_roots_1",
     "chipped:warped_roots_2",
     "chipped:warped_roots_3",

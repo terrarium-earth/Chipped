@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
+    "minecraft:gold_block",
     "chipped:gold_block_1",
     "chipped:gold_block_2",
     "chipped:gold_block_3",

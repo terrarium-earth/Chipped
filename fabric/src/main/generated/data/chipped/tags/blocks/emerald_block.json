@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
+    "minecraft:emerald_block",
     "chipped:emerald_block_1",
     "chipped:emerald_block_2",
     "chipped:emerald_block_3",

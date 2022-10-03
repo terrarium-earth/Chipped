@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
+    "minecraft:end_stone",
     "chipped:end_stone_1",
     "chipped:end_stone_2",
     "chipped:end_stone_3",

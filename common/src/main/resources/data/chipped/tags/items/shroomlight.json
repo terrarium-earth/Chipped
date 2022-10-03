@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
+    "minecraft:shroomlight",
     "chipped:shroomlight_1",
     "chipped:shroomlight_2",
     "chipped:shroomlight_3",

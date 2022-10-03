@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
+    "minecraft:coal_block",
     "chipped:coal_block_1",
     "chipped:coal_block_2",
     "chipped:coal_block_3",

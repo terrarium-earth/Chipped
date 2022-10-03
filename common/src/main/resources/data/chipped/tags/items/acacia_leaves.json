@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
+    "minecraft:acacia_leaves",
     "chipped:acacia_leaves_1",
     "chipped:acacia_leaves_2",
     "chipped:acacia_leaves_3",

@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
+    "minecraft:jungle_leaves",
     "chipped:jungle_leaves_1",
     "chipped:jungle_leaves_2",
     "chipped:jungle_leaves_3",

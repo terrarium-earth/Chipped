@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
+    "minecraft:bookshelf",
     "chipped:bookshelf_1",
     "chipped:bookshelf_2",
     "chipped:bookshelf_3",

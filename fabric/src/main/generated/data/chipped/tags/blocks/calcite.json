@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
+    "minecraft:calcite",
     "chipped:calcite_1",
     "chipped:calcite_2",
     "chipped:calcite_3",

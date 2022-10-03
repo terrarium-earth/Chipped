@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
+    "minecraft:purpur_block",
     "chipped:purpur_block_1",
     "chipped:purpur_block_2",
     "chipped:purpur_block_3",

@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
+    "minecraft:deepslate",
     "chipped:deepslate_1",
     "chipped:deepslate_2",
     "chipped:deepslate_3",

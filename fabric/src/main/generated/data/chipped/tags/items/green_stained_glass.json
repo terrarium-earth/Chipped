@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
+    "minecraft:green_stained_glass",
     "chipped:green_stained_glass_1",
     "chipped:green_stained_glass_2",
     "chipped:green_stained_glass_3",

@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
+    "minecraft:lapis_block",
     "chipped:lapis_block_1",
     "chipped:lapis_block_2",
     "chipped:lapis_block_3",

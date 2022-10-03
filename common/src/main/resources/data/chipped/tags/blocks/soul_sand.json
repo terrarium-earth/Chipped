@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
+    "minecraft:soul_sand",
     "chipped:soul_sand_1",
     "chipped:soul_sand_2",
     "chipped:soul_sand_3",

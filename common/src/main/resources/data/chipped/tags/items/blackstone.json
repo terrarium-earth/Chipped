@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
+    "minecraft:blackstone",
     "chipped:blackstone_1",
     "chipped:blackstone_2",
     "chipped:blackstone_3",

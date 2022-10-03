@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
+    "minecraft:brown_wool",
     "chipped:brown_wool_1",
     "chipped:brown_wool_2",
     "chipped:brown_wool_3",

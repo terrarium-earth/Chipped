@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
+    "minecraft:obsidian",
     "chipped:obsidian_1",
     "chipped:obsidian_2",
     "chipped:obsidian_3",

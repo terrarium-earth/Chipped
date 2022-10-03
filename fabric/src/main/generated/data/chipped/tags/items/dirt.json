@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
+    "minecraft:dirt",
     "chipped:dirt_1",
     "chipped:dirt_2",
     "chipped:dirt_3",

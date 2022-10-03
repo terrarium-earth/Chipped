@@ -15,6 +15,5 @@ public class ChippedDataGenEntrypoint implements DataGeneratorEntrypoint {
 		fabricDataGenerator.addProvider(ChippedBlockLootTableProvider::new);
 		fabricDataGenerator.addProvider(ChippedItemTagProvider::new);
 		fabricDataGenerator.addProvider(ChippedBlockTagProvider::new);
-		// fabricDataGenerator.addProvider(ModRecipeProvider::new);
 	}
 }
