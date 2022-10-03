@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/cube_all",
   "textures": {
-    "all": "chipped:block/diorite_65"
+    "all": "chipped:block/diorite/diorite_65"
   }
 }

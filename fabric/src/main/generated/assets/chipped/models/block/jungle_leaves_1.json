@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/cube_all",
   "textures": {
-    "all": "chipped:block/jungle_leaves_1"
+    "all": "chipped:block/jungle_leaves/jungle_leaves_1"
   }
 }

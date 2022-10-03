@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/cube_all",
   "textures": {
-    "all": "chipped:block/dark_prismarine_32"
+    "all": "chipped:block/dark_prismarine/dark_prismarine_32"
   }
 }

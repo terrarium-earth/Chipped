@@ -1,0 +1,13 @@
+{
+  "ctm": {
+    "ctm_version": 1,
+    "type": "pillar",
+    "layer": "CUTOUT",
+    "textures": [
+      "chipped:block/orange_terracotta/orange_terracotta_2_pillar"
+    ],
+    "extra": {
+      "light": 0
+    }
+  }
+}

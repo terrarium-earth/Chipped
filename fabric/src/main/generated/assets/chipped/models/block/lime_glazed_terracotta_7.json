@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/cube_all",
   "textures": {
-    "all": "chipped:block/lime_glazed_terracotta_7"
+    "all": "chipped:block/lime_glazed_terracotta/lime_glazed_terracotta_7"
   }
 }

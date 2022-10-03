@@ -1,0 +1,13 @@
+{
+  "ctm": {
+    "ctm_version": 1,
+    "type": "ctm",
+    "layer": "TRANSLUCENT",
+    "textures": [
+      "chipped:block/amethyst_block/amethyst_block_32_ctm"
+    ],
+    "extra": {
+      "light": 0
+    }
+  }
+}

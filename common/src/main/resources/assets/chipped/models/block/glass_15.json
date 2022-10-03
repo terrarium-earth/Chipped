@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/cube_all",
   "textures": {
-    "all": "chipped:block/glass_15"
+    "all": "chipped:block/glass/glass_15"
   }
 }

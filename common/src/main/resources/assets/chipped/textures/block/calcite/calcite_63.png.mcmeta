@@ -1,0 +1,13 @@
+{
+  "ctm": {
+    "ctm_version": 1,
+    "type": "pillar",
+    "layer": "TRANSLUCENT",
+    "textures": [
+      "chipped:block/calcite/calcite_63_pillar"
+    ],
+    "extra": {
+      "light": 0
+    }
+  }
+}

@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/cube_all",
   "textures": {
-    "all": "chipped:block/ancient_debris_5"
+    "all": "chipped:block/ancient_debris/ancient_debris_5"
   }
 }

@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/cross",
   "textures": {
-    "cross": "chipped:block/cobweb_7"
+    "cross": "chipped:block/cobweb/cobweb_7"
   }
 }

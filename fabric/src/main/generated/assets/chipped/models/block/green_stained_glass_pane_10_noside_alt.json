@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/template_glass_pane_noside_alt",
   "textures": {
-    "pane": "chipped:block/green_stained_glass_10"
+    "pane": "chipped:block/green_stained_glass/green_stained_glass_10"
   }
 }

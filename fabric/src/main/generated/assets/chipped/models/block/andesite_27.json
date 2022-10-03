@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/cube_all",
   "textures": {
-    "all": "chipped:block/andesite_27"
+    "all": "chipped:block/andesite/andesite_27"
   }
 }

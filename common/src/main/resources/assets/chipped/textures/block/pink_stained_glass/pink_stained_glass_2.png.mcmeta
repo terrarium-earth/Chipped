@@ -1,0 +1,13 @@
+{
+  "ctm": {
+    "ctm_version": 1,
+    "type": "ctm",
+    "layer": "TRANSLUCENT",
+    "textures": [
+      "chipped:block/pink_stained_glass/pink_stained_glass_2_ctm"
+    ],
+    "extra": {
+      "light": 0
+    }
+  }
+}

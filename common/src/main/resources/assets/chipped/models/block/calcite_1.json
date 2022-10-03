@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/cube_all",
   "textures": {
-    "all": "chipped:block/calcite_1"
+    "all": "chipped:block/calcite/calcite_1"
   }
 }

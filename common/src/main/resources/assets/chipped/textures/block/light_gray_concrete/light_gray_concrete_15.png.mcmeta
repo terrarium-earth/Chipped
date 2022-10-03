@@ -1,0 +1,13 @@
+{
+  "ctm": {
+    "ctm_version": 1,
+    "type": "ctm",
+    "layer": "CUTOUT",
+    "textures": [
+      "chipped:block/light_gray_concrete/light_gray_concrete_15_ctm"
+    ],
+    "extra": {
+      "light": 0
+    }
+  }
+}

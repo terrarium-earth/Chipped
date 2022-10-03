@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/cube_all",
   "textures": {
-    "all": "chipped:block/coal_block_64"
+    "all": "chipped:block/coal_block/coal_block_64"
   }
 }

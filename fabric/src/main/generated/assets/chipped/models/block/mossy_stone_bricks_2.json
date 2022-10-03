@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/cube_all",
   "textures": {
-    "all": "chipped:block/mossy_stone_bricks_2"
+    "all": "chipped:block/mossy_stone_bricks/mossy_stone_bricks_2"
   }
 }

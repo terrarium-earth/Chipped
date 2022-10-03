@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/cube_all",
   "textures": {
-    "all": "chipped:block/waxed_oxidized_copper_6"
+    "all": "chipped:block/waxed_oxidized_copper/waxed_oxidized_copper_6"
   }
 }

@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/cube_all",
   "textures": {
-    "all": "chipped:block/basalt_19"
+    "all": "chipped:block/basalt/basalt_19"
   }
 }

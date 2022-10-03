@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "chipped:block/red_mushroom_11"
+    "layer0": "chipped:block/red_mushroom/red_mushroom_11"
   }
 }

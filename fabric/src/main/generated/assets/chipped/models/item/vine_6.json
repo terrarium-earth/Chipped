@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "chipped:block/vine_6"
+    "layer0": "chipped:block/vine/vine_6"
   }
 }

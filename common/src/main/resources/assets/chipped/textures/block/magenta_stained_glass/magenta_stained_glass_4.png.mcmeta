@@ -1,0 +1,13 @@
+{
+  "ctm": {
+    "ctm_version": 1,
+    "type": "ctm",
+    "layer": "TRANSLUCENT",
+    "textures": [
+      "chipped:block/magenta_stained_glass/magenta_stained_glass_4_ctm"
+    ],
+    "extra": {
+      "light": 0
+    }
+  }
+}

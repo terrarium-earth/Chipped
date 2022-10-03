@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:block/pointed_dripstone",
-  "textures": {
-    "cross": "chipped:block/dripstone_block_20_up_base"
-  }
-}

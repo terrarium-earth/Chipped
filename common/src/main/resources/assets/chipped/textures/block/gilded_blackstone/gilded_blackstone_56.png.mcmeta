@@ -1,0 +1,13 @@
+{
+  "ctm": {
+    "ctm_version": 1,
+    "type": "pillar",
+    "layer": "CUTOUT",
+    "textures": [
+      "chipped:block/gilded_blackstone/gilded_blackstone_56_pillar"
+    ],
+    "extra": {
+      "light": 0
+    }
+  }
+}

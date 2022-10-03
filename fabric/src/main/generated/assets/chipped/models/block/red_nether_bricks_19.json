@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/cube_all",
   "textures": {
-    "all": "chipped:block/red_nether_bricks_19"
+    "all": "chipped:block/red_nether_bricks/red_nether_bricks_19"
   }
 }

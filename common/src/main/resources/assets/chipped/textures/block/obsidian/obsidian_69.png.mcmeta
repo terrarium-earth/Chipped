@@ -1,0 +1,13 @@
+{
+  "ctm": {
+    "ctm_version": 1,
+    "type": "pillar",
+    "layer": "CUTOUT",
+    "textures": [
+      "chipped:block/obsidian/obsidian_69_pillar"
+    ],
+    "extra": {
+      "light": 0
+    }
+  }
+}

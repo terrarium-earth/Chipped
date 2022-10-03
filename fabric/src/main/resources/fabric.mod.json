@@ -34,6 +34,10 @@
       "com.grimbo.chipped.client.ChippedClient::initializeClient"
     ]
   },
+  "mixins": [
+    "chipped.mixins.json",
+    "chipped-common.mixins.json"
+  ],
   "depends": {
     "fabric": "*",
     "minecraft": ">=1.18.2"

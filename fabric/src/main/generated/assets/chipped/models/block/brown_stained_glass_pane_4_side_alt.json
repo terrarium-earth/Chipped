@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:block/template_glass_pane_side_alt",
   "textures": {
-    "pane": "chipped:block/brown_stained_glass_4",
-    "edge": "chipped:block/brown_stained_glass_pane_4_top"
+    "pane": "chipped:block/brown_stained_glass/brown_stained_glass_4",
+    "edge": "chipped:block/brown_stained_glass_pane/brown_stained_glass_pane_4_top"
   }
 }

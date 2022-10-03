@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "chipped:block/glass_95"
+    "layer0": "chipped:block/glass/glass_95"
   }
 }

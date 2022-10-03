@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:block/template_glass_pane_side",
   "textures": {
-    "pane": "chipped:block/magenta_stained_glass_10",
-    "edge": "chipped:block/magenta_stained_glass_pane_10_top"
+    "pane": "chipped:block/magenta_stained_glass/magenta_stained_glass_10",
+    "edge": "chipped:block/magenta_stained_glass_pane/magenta_stained_glass_pane_10_top"
   }
 }

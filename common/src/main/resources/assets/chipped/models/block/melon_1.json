@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:block/cube_column",
   "textures": {
-    "end": "chipped:block/melon_1_top",
-    "side": "chipped:block/melon_1_side"
+    "end": "chipped:block/melon/melon_1_top",
+    "side": "chipped:block/melon/melon_1_side"
   }
 }

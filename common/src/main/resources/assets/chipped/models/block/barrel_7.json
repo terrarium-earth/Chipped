@@ -1,6 +1,8 @@
 {
-  "parent": "minecraft:block/cube_all",
+  "parent": "minecraft:block/cube_bottom_top",
   "textures": {
-    "all": "chipped:block/barrel_7"
+    "top": "chipped:block/barrel/barrel_7_top",
+    "bottom": "chipped:block/barrel/barrel_7_bottom",
+    "side": "chipped:block/barrel/barrel_7_side"
   }
 }

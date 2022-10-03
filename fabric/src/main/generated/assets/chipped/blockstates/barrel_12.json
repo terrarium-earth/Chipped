@@ -1,7 +1,56 @@
 {
   "variants": {
-    "": {
+    "facing=down,open=false": {
+      "x": 180,
       "model": "chipped:block/barrel_12"
+    },
+    "facing=down,open=true": {
+      "x": 180,
+      "model": "chipped:block/barrel_12_open"
+    },
+    "facing=east,open=false": {
+      "x": 90,
+      "y": 90,
+      "model": "chipped:block/barrel_12"
+    },
+    "facing=east,open=true": {
+      "x": 90,
+      "y": 90,
+      "model": "chipped:block/barrel_12_open"
+    },
+    "facing=north,open=false": {
+      "x": 90,
+      "model": "chipped:block/barrel_12"
+    },
+    "facing=north,open=true": {
+      "x": 90,
+      "model": "chipped:block/barrel_12_open"
+    },
+    "facing=south,open=false": {
+      "x": 90,
+      "y": 180,
+      "model": "chipped:block/barrel_12"
+    },
+    "facing=south,open=true": {
+      "x": 90,
+      "y": 180,
+      "model": "chipped:block/barrel_12_open"
+    },
+    "facing=up,open=false": {
+      "model": "chipped:block/barrel_12"
+    },
+    "facing=up,open=true": {
+      "model": "chipped:block/barrel_12_open"
+    },
+    "facing=west,open=false": {
+      "x": 90,
+      "y": 270,
+      "model": "chipped:block/barrel_12"
+    },
+    "facing=west,open=true": {
+      "x": 90,
+      "y": 270,
+      "model": "chipped:block/barrel_12_open"
     }
   }
 }

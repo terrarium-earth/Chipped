@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/cross",
   "textures": {
-    "cross": "chipped:block/warped_fungus_6"
+    "cross": "chipped:block/warped_fungus/warped_fungus_6"
   }
 }

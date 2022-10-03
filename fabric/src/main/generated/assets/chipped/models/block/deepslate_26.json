@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/cube_all",
   "textures": {
-    "all": "chipped:block/deepslate_26"
+    "all": "chipped:block/deepslate/deepslate_26"
   }
 }

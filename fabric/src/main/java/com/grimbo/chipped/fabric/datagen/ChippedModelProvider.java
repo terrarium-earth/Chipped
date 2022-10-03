@@ -16,10 +16,7 @@ import net.minecraft.data.models.blockstates.MultiVariantGenerator;
 import net.minecraft.data.models.blockstates.PropertyDispatch;
 import net.minecraft.data.models.blockstates.Variant;
 import net.minecraft.data.models.blockstates.VariantProperties;
-import net.minecraft.data.models.model.ModelLocationUtils;
-import net.minecraft.data.models.model.ModelTemplates;
-import net.minecraft.data.models.model.TextureMapping;
-import net.minecraft.data.models.model.TexturedModel;
+import net.minecraft.data.models.model.*;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
@@ -41,6 +38,11 @@ public class ChippedModelProvider extends FabricModelProvider {
             } else if (block instanceof LadderBlock) {
                 blockModelGenerator.createNonTemplateHorizontalBlock(block);
                 blockModelGenerator.createSimpleFlatItemModel(block);
+            } else if (block instanceof BarrelBlock) {
+                ResourceLocation resourceLocation = TextureMapping.getBlockTexture(block, "_top_open");
+                blockModelGenerator.blockStateOutput.accept(MultiVariantGenerator.multiVariant(block).with(blockModelGenerator.createColumnWithFacing()).with(PropertyDispatch.property(BlockStateProperties.OPEN).select(false, Variant.variant().with(VariantProperties.MODEL, TexturedModel.CUBE_TOP_BOTTOM.create(block, blockModelGenerator.modelOutput))).select(true, Variant.variant().with(VariantProperties.MODEL, TexturedModel.CUBE_TOP_BOTTOM.get(block).updateTextures((textureMapping) -> {
+                    textureMapping.put(TextureSlot.TOP, resourceLocation);
+                }).createWithSuffix(block, "_open", blockModelGenerator.modelOutput)))));
             } else if (block instanceof PointedDripstoneBlock) {
                 createPointedDripstone(blockModelGenerator, block);
             } else if (block instanceof RedstoneLampBlock) {
