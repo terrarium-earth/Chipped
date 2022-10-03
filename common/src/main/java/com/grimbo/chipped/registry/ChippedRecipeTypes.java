@@ -21,7 +21,7 @@ public class ChippedRecipeTypes {
     }
 
     private static <T extends Recipe<?>> Supplier<RecipeType<T>> register(String identifier) {
-        return register(identifier, () -> new RecipeType<>() {
+        return register(identifier, () -> new RecipeType<T>() {
             public String toString() {
                 return identifier;
             }

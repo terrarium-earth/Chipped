@@ -1,7 +1,14 @@
 package com.grimbo.chipped.recipe;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.function.Supplier;
+import java.util.stream.Stream;
+
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
+import com.grimbo.chipped.recipe.ChippedRecipe.Serializer;
+
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderSet;
 import net.minecraft.core.Registry;
@@ -18,11 +25,6 @@ import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.item.crafting.SimpleRecipeSerializer;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Supplier;
-import java.util.stream.Stream;
 
 public record ChippedRecipe(
         Serializer serializer,
@@ -100,7 +102,7 @@ public record ChippedRecipe(
         return serializer.type.get();
     }
 
-    public static class Serializer extends SimpleRecipeSerializer<ChippedRecipe> implements RecipeSerializer<ChippedRecipe> {
+    public static class Serializer extends SimpleRecipeSerializer<ChippedRecipe> {
 
         public final Supplier<RecipeType<ChippedRecipe>> type;
         public final Supplier<Block> icon;

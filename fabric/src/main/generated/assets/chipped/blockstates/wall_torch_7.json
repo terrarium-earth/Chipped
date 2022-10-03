@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "chipped:block/wall_torch_7"
+    },
+    "facing=north": {
+      "model": "chipped:block/wall_torch_7",
+      "y": 270
+    },
+    "facing=south": {
+      "model": "chipped:block/wall_torch_7",
+      "y": 90
+    },
+    "facing=west": {
+      "model": "chipped:block/wall_torch_7",
+      "y": 180
+    }
+  }
+}

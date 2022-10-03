@@ -2,6 +2,11 @@
   "replace": false,
   "values": [
     "#chipped:clay",
+    "#chipped:dirt",
+    "#chipped:soul_sand",
+    "#chipped:gravel",
+    "#chipped:sand",
+    "#chipped:snow_block",
     "#chipped:soul_sand"
   ]
 }

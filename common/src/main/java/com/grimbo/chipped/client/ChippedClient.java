@@ -1,13 +1,14 @@
 package com.grimbo.chipped.client;
 
+import java.util.function.Supplier;
+
 import com.grimbo.chipped.menus.ChippedScreen;
 import com.grimbo.chipped.registry.ChippedBlocks;
 import com.grimbo.chipped.registry.ChippedMenuType;
+
 import dev.architectury.injectables.annotations.ExpectPlatform;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.client.gui.screens.inventory.MenuAccess;
 import net.minecraft.client.renderer.RenderType;
@@ -16,8 +17,6 @@ import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.MenuType;
 import net.minecraft.world.level.block.Block;
-
-import java.util.function.Supplier;
 
 @Environment(EnvType.CLIENT)
 public class ChippedClient {

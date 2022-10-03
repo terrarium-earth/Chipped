@@ -7,7 +7,6 @@ import java.util.List;
 import com.grimbo.chipped.recipe.ChippedRecipe;
 import com.grimbo.chipped.registry.ChippedBlocks;
 import com.grimbo.chipped.registry.ChippedRecipeTypes;
-import com.grimbo.chipped.registry.ChippedSerializer;
 
 import me.shedaniel.rei.api.client.plugins.REIClientPlugin;
 import me.shedaniel.rei.api.client.registry.category.CategoryRegistry;

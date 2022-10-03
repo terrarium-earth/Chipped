@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "#chipped:vine"
+    "#chipped:vine",
+    "#chipped:ladder"
   ]
 }

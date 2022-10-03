@@ -1,5 +1,11 @@
 package com.grimbo.chipped.block;
 
+import java.util.Locale;
+
+import javax.annotation.Nullable;
+
+import org.jetbrains.annotations.NotNull;
+
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.core.BlockPos;
@@ -23,7 +29,11 @@ import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelReader;
-import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.HorizontalDirectionalBlock;
+import net.minecraft.world.level.block.RenderShape;
+import net.minecraft.world.level.block.Rotation;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
@@ -33,10 +43,6 @@ import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
-import org.jetbrains.annotations.NotNull;
-
-import javax.annotation.Nullable;
-import java.util.Locale;
 
 public class ChippedWorkbench extends Block {
 	public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
@@ -117,7 +123,7 @@ public class ChippedWorkbench extends Block {
 	}
 
 	@Override
-	public VoxelShape getShape(BlockState state, BlockGetter worldIn, BlockPos pos, CollisionContext context) {
+	public VoxelShape getShape(BlockState state, @NotNull BlockGetter worldIn, @NotNull BlockPos pos, @NotNull CollisionContext context) {
 		switch (state.getValue(FACING)) {
 			case NORTH:
 				return WORKBENCH_NORTH_SHAPE;
@@ -132,12 +138,12 @@ public class ChippedWorkbench extends Block {
 
 	@Deprecated
 	@Override
-	public PushReaction getPistonPushReaction(BlockState p_149656_1_) {
+	public PushReaction getPistonPushReaction(BlockState state) {
 		return PushReaction.BLOCK;
 	}
 
 	@Override
-	public VoxelShape getBlockSupportShape(BlockState p_230335_1_, BlockGetter p_230335_2_, BlockPos p_230335_3_) {
+	public VoxelShape getBlockSupportShape(BlockState state, BlockGetter reader, BlockPos pos) {
 		return Shapes.empty();
 	}
 

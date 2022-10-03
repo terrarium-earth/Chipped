@@ -21,7 +21,10 @@ import net.minecraft.world.level.block.state.BlockBehaviour.StateArgumentPredica
 import net.minecraft.world.level.block.state.BlockBehaviour.StatePredicate;
 import net.minecraft.world.level.material.Material;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 import java.util.function.Function;
 import java.util.function.Supplier;
 
@@ -59,26 +62,7 @@ public class ChippedBlocks {
         registerItem("alchemy_bench", () -> new BlockItem(ALCHEMY_BENCH.get(), new Item.Properties().tab(Chipped.CHIPPED_ITEM_GROUP)));
         registerItem("mechanist_workbench", () -> new BlockItem(MECHANIST_WORKBENCH.get(), new Item.Properties().tab(Chipped.CHIPPED_ITEM_GROUP)));
 
-        // Leaves
-        registerBlockWithPalette(Blocks.ACACIA_LEAVES, 12, new ChippedProperties().blockType(LeavesBlock::new).transparent().excludeLoot());
-        registerBlockWithPalette(Blocks.BIRCH_LEAVES, 12, new ChippedProperties().blockType(LeavesBlock::new).transparent().excludeLoot());
-        registerBlockWithPalette(Blocks.DARK_OAK_LEAVES, 12, new ChippedProperties().blockType(LeavesBlock::new).transparent().excludeLoot());
-        registerBlockWithPalette(Blocks.JUNGLE_LEAVES, 12, new ChippedProperties().blockType(LeavesBlock::new).transparent().excludeLoot());
-        registerBlockWithPalette(Blocks.OAK_LEAVES, 12, new ChippedProperties().blockType(LeavesBlock::new).transparent().excludeLoot());
-        registerBlockWithPalette(Blocks.SPRUCE_LEAVES, 12, new ChippedProperties().blockType(LeavesBlock::new).transparent().excludeLoot());
-
-        // Planks
-        registerBlockWithPalette(Blocks.ACACIA_PLANKS, 41);
-        registerBlockWithPalette(Blocks.BIRCH_PLANKS, 41);
-        registerBlockWithPalette(Blocks.CRIMSON_PLANKS, 41);
-        registerBlockWithPalette(Blocks.DARK_OAK_PLANKS, 41);
-        registerBlockWithPalette(Blocks.JUNGLE_PLANKS, 41);
-        registerBlockWithPalette(Blocks.OAK_PLANKS, 41);
-        registerBlockWithPalette(Blocks.SPRUCE_PLANKS, 41);
-        registerBlockWithPalette(Blocks.WARPED_PLANKS, 41);
-        registerBlockWithPalette(Blocks.STRIPPED_WARPED_STEM, 19, new ChippedProperties().blockType(RotatedPillarBlock::new));
-
-        // Generic
+        // Generic Blocks
         registerBlockWithPalette(Blocks.AMETHYST_BLOCK, 69);
         registerBlockWithPalette(Blocks.ANCIENT_DEBRIS, 69);
         registerBlockWithPalette(Blocks.ANDESITE, 69);
@@ -89,7 +73,6 @@ public class ChippedBlocks {
         registerBlockWithPalette(Blocks.BONE_BLOCK, 11);
         registerBlockWithPalette(Blocks.BOOKSHELF, 57);
         registerBlockWithPalette(Blocks.BRICKS, 133);
-        registerBlockWithPalette(Blocks.BROWN_MUSHROOM, 15, new ChippedProperties().blockType(p -> new MushroomBlock(p, () -> TreeFeatures.HUGE_BROWN_MUSHROOM)).cutout());
         registerBlockWithPalette(Blocks.BROWN_MUSHROOM_BLOCK, 24, new ChippedProperties().blockType(HugeMushroomBlock::new));
         registerBlockWithPalette(Blocks.CALCITE, 69);
         registerBlockWithPalette(Blocks.CARVED_PUMPKIN, 22, new ChippedProperties().blockType(p -> new CarvedPumpkinBlock(p) {
@@ -97,11 +80,6 @@ public class ChippedBlocks {
         registerBlockWithPalette(Blocks.CLAY, 67, new ChippedProperties().excludeLoot());
         registerBlockWithPalette(Blocks.COAL_BLOCK, 67);
         registerBlockWithPalette(Blocks.COBBLESTONE, 69);
-        registerBlockWithPalette(Blocks.COBWEB, 10, new ChippedProperties().blockType(WebBlock::new).cutout().excludeLoot());
-        registerBlockWithPalette(Blocks.CRIMSON_FUNGUS, 15, new ChippedProperties().blockType(p -> new FungusBlock(p, () -> TreeFeatures.CRIMSON_FUNGUS_PLANTED) {
-        }).cutout());
-        registerBlockWithPalette(Blocks.CRIMSON_ROOTS, 14, new ChippedProperties().blockType(p -> new RootsBlock(p) {
-        }).cutout());
         registerBlockWithPalette(Blocks.CRYING_OBSIDIAN, 69, new ChippedProperties().blockType(CryingObsidianBlock::new));
         registerBlockWithPalette(Blocks.DARK_PRISMARINE, 69);
         registerBlockWithPalette(Blocks.DEEPSLATE, 69);
@@ -120,15 +98,13 @@ public class ChippedBlocks {
         registerBlockWithPalette(Blocks.HAY_BLOCK, 8, new ChippedProperties().blockType(HayBlock::new));
         registerBlockWithPalette(Blocks.ICE, 69, new ChippedProperties().blockType(IceBlock::new));
         registerBlockWithPalette(Blocks.IRON_BARS, 21, new ChippedProperties().blockType(p -> new IronBarsBlock(p) {
-        }));
+        }).cutout());
         registerBlockWithPalette(Blocks.IRON_BLOCK, 12);
         registerBlockWithPalette(Blocks.JACK_O_LANTERN, 22, new ChippedProperties().blockType(p -> new CarvedPumpkinBlock(p) {
         }).excludeModel());
         registerBlockWithPalette(Blocks.LADDER, 10, new ChippedProperties().blockType(p -> new LadderBlock(p) {
         }).cutout());
         registerBlockWithPalette(Blocks.LAPIS_BLOCK, 69);
-        registerBlockWithPalette(Blocks.LILY_PAD, 24, new ChippedProperties().blockType(p -> new WaterlilyBlock(p) {
-        }).cutout().itemType(WaterLilyBlockItem::new));
         registerBlockWithPalette(Blocks.LODESTONE, 69);
         registerBlockWithPalette(Blocks.MAGMA_BLOCK, 69); // Don't use magma block type. These should not burn you.
         registerBlockWithPalette(Blocks.MELON, 10, new ChippedProperties().blockType(p -> new MelonBlock(p) {
@@ -138,13 +114,11 @@ public class ChippedBlocks {
         registerBlockWithPalette(Blocks.MOSSY_STONE_BRICKS, 69);
         registerBlockWithPalette(Blocks.MUSHROOM_STEM, 7, new ChippedProperties().blockType(HugeMushroomBlock::new));
         registerBlockWithPalette(Blocks.NETHER_BRICKS, 69);
-        registerBlockWithPalette(Blocks.NETHER_SPROUTS, 20, new ChippedProperties().blockType(NetherSproutsBlock::new).cutout().excludeLoot());
         registerBlockWithPalette(Blocks.NETHER_WART_BLOCK, 14);
         registerBlockWithPalette(Blocks.NETHERITE_BLOCK, 12);
         registerBlockWithPalette(Blocks.NETHERRACK, 69);
         registerBlockWithPalette(Blocks.OBSIDIAN, 69);
         registerBlockWithPalette(Blocks.PACKED_ICE, 69);
-        registerBlockWithPalette(Blocks.POINTED_DRIPSTONE, 13, new ChippedProperties().blockType(PointedDripstoneBlock::new).cutout());
         registerBlockWithPalette(Blocks.PRISMARINE, 69);
         registerBlockWithPalette(Blocks.PUMPKIN, 16, new ChippedProperties().blockType(p -> new PumpkinBlock(p) {
         }).excludeModel());
@@ -153,7 +127,6 @@ public class ChippedBlocks {
         registerBlockWithPalette(Blocks.RAW_COPPER_BLOCK, 61);
         registerBlockWithPalette(Blocks.RAW_GOLD_BLOCK, 61);
         registerBlockWithPalette(Blocks.RAW_IRON_BLOCK, 61);
-        registerBlockWithPalette(Blocks.RED_MUSHROOM, 15, new ChippedProperties().blockType(p -> new MushroomBlock(p, () -> TreeFeatures.HUGE_RED_MUSHROOM)).cutout());
         registerBlockWithPalette(Blocks.RED_MUSHROOM_BLOCK, 15, new ChippedProperties().blockType(HugeMushroomBlock::new));
         registerBlockWithPalette(Blocks.RED_NETHER_BRICKS, 69);
         registerBlockWithPalette(Blocks.RED_SANDSTONE, 69);
@@ -165,23 +138,54 @@ public class ChippedBlocks {
         registerBlockWithPalette(Blocks.SHROOMLIGHT, 16);
         registerBlockWithPalette(Blocks.SMOOTH_STONE, 69);
         registerBlockWithPalette(Blocks.SNOW_BLOCK, 69);
-        registerBlockWithPalette(Blocks.LANTERN, 14, new ChippedProperties().blockType(LanternBlock::new).cutout().excludeModel());
-        registerBlockWithPalette(Blocks.SOUL_LANTERN, 11, new ChippedProperties().blockType(LanternBlock::new).cutout().excludeModel());
         registerBlockWithPalette(Blocks.SOUL_SAND, 11, new ChippedProperties().blockType(SoulSandBlock::new));
         registerBlockWithPalette(Blocks.SPONGE, 7, new ChippedProperties().blockType(p -> new SpongeBlock(p) {
         }));
         registerBlockWithPalette(Blocks.STONE, 69);
         registerBlockWithPalette(Blocks.TUFF, 69);
-        registerBlockWithPalette(Blocks.VINE, 17, new ChippedProperties().blockType(VineBlock::new).cutout().excludeLoot());
-        registerBlockWithPalette(Blocks.WARPED_FUNGUS, 14, new ChippedProperties().blockType(p -> new FungusBlock(p, () -> TreeFeatures.WARPED_FUNGUS_PLANTED) {
-        }).cutout());
-        registerBlockWithPalette(Blocks.WARPED_ROOTS, 9, new ChippedProperties().blockType(p -> new RootsBlock(p) {
-        }).cutout());
         registerBlockWithPalette(Blocks.WARPED_WART_BLOCK, 14, new ChippedProperties().cutout());
         registerBlockWithPalette(Blocks.WAXED_COPPER_BLOCK, 11);
         registerBlockWithPalette(Blocks.WAXED_EXPOSED_COPPER, 11);
         registerBlockWithPalette(Blocks.WAXED_OXIDIZED_COPPER, 11);
         registerBlockWithPalette(Blocks.WAXED_WEATHERED_COPPER, 11);
+
+        // Glass
+        registerGlass(Blocks.GLASS, Blocks.GLASS_PANE, 106);
+        registerGlass(Blocks.WHITE_STAINED_GLASS, Blocks.WHITE_STAINED_GLASS_PANE, 10);
+        registerGlass(Blocks.ORANGE_STAINED_GLASS, Blocks.ORANGE_STAINED_GLASS_PANE, 10);
+        registerGlass(Blocks.MAGENTA_STAINED_GLASS, Blocks.MAGENTA_STAINED_GLASS_PANE, 10);
+        registerGlass(Blocks.LIGHT_BLUE_STAINED_GLASS, Blocks.LIGHT_BLUE_STAINED_GLASS_PANE, 10);
+        registerGlass(Blocks.YELLOW_STAINED_GLASS, Blocks.YELLOW_STAINED_GLASS_PANE, 10);
+        registerGlass(Blocks.LIME_STAINED_GLASS, Blocks.LIME_STAINED_GLASS_PANE, 10);
+        registerGlass(Blocks.PINK_STAINED_GLASS, Blocks.PINK_STAINED_GLASS_PANE, 10);
+        registerGlass(Blocks.GRAY_STAINED_GLASS, Blocks.GRAY_STAINED_GLASS_PANE, 10);
+        registerGlass(Blocks.LIGHT_GRAY_STAINED_GLASS, Blocks.LIGHT_GRAY_STAINED_GLASS_PANE, 10);
+        registerGlass(Blocks.CYAN_STAINED_GLASS, Blocks.CYAN_STAINED_GLASS_PANE, 10);
+        registerGlass(Blocks.PURPLE_STAINED_GLASS, Blocks.PURPLE_STAINED_GLASS_PANE, 10);
+        registerGlass(Blocks.BLUE_STAINED_GLASS, Blocks.BLUE_STAINED_GLASS_PANE, 10);
+        registerGlass(Blocks.BROWN_STAINED_GLASS, Blocks.BROWN_STAINED_GLASS_PANE, 10);
+        registerGlass(Blocks.GREEN_STAINED_GLASS, Blocks.GREEN_STAINED_GLASS_PANE, 10);
+        registerGlass(Blocks.RED_STAINED_GLASS, Blocks.RED_STAINED_GLASS_PANE, 10);
+        registerGlass(Blocks.BLACK_STAINED_GLASS, Blocks.BLACK_STAINED_GLASS_PANE, 10);
+
+        // Planks
+        registerBlockWithPalette(Blocks.ACACIA_PLANKS, 41);
+        registerBlockWithPalette(Blocks.BIRCH_PLANKS, 41);
+        registerBlockWithPalette(Blocks.CRIMSON_PLANKS, 41);
+        registerBlockWithPalette(Blocks.DARK_OAK_PLANKS, 41);
+        registerBlockWithPalette(Blocks.JUNGLE_PLANKS, 41);
+        registerBlockWithPalette(Blocks.OAK_PLANKS, 41);
+        registerBlockWithPalette(Blocks.SPRUCE_PLANKS, 41);
+        registerBlockWithPalette(Blocks.WARPED_PLANKS, 41);
+        registerBlockWithPalette(Blocks.STRIPPED_WARPED_STEM, 19, new ChippedProperties().blockType(RotatedPillarBlock::new));
+
+        // Leaves
+        registerBlockWithPalette(Blocks.ACACIA_LEAVES, 12, new ChippedProperties().blockType(LeavesBlock::new).transparent().excludeLoot());
+        registerBlockWithPalette(Blocks.BIRCH_LEAVES, 12, new ChippedProperties().blockType(LeavesBlock::new).transparent().excludeLoot());
+        registerBlockWithPalette(Blocks.DARK_OAK_LEAVES, 12, new ChippedProperties().blockType(LeavesBlock::new).transparent().excludeLoot());
+        registerBlockWithPalette(Blocks.JUNGLE_LEAVES, 12, new ChippedProperties().blockType(LeavesBlock::new).transparent().excludeLoot());
+        registerBlockWithPalette(Blocks.OAK_LEAVES, 12, new ChippedProperties().blockType(LeavesBlock::new).transparent().excludeLoot());
+        registerBlockWithPalette(Blocks.SPRUCE_LEAVES, 12, new ChippedProperties().blockType(LeavesBlock::new).transparent().excludeLoot());
 
         // Terracotta
         registerBlockWithPalette(Blocks.WHITE_TERRACOTTA, 66);
@@ -237,25 +241,6 @@ public class ChippedBlocks {
         registerBlockWithPalette(Blocks.RED_CONCRETE, 21);
         registerBlockWithPalette(Blocks.YELLOW_CONCRETE, 21);
 
-        // Glass
-        registerGlass(Blocks.GLASS, Blocks.GLASS_PANE, 106);
-        registerGlass(Blocks.WHITE_STAINED_GLASS, Blocks.WHITE_STAINED_GLASS_PANE, 10);
-        registerGlass(Blocks.ORANGE_STAINED_GLASS, Blocks.ORANGE_STAINED_GLASS_PANE, 10);
-        registerGlass(Blocks.MAGENTA_STAINED_GLASS, Blocks.MAGENTA_STAINED_GLASS_PANE, 10);
-        registerGlass(Blocks.LIGHT_BLUE_STAINED_GLASS, Blocks.LIGHT_BLUE_STAINED_GLASS_PANE, 10);
-        registerGlass(Blocks.YELLOW_STAINED_GLASS, Blocks.YELLOW_STAINED_GLASS_PANE, 10);
-        registerGlass(Blocks.LIME_STAINED_GLASS, Blocks.LIME_STAINED_GLASS_PANE, 10);
-        registerGlass(Blocks.PINK_STAINED_GLASS, Blocks.PINK_STAINED_GLASS_PANE, 10);
-        registerGlass(Blocks.GRAY_STAINED_GLASS, Blocks.GRAY_STAINED_GLASS_PANE, 10);
-        registerGlass(Blocks.LIGHT_GRAY_STAINED_GLASS, Blocks.LIGHT_GRAY_STAINED_GLASS_PANE, 10);
-        registerGlass(Blocks.CYAN_STAINED_GLASS, Blocks.CYAN_STAINED_GLASS_PANE, 10);
-        registerGlass(Blocks.PURPLE_STAINED_GLASS, Blocks.PURPLE_STAINED_GLASS_PANE, 10);
-        registerGlass(Blocks.BLUE_STAINED_GLASS, Blocks.BLUE_STAINED_GLASS_PANE, 10);
-        registerGlass(Blocks.BROWN_STAINED_GLASS, Blocks.BROWN_STAINED_GLASS_PANE, 10);
-        registerGlass(Blocks.GREEN_STAINED_GLASS, Blocks.GREEN_STAINED_GLASS_PANE, 10);
-        registerGlass(Blocks.RED_STAINED_GLASS, Blocks.RED_STAINED_GLASS_PANE, 10);
-        registerGlass(Blocks.BLACK_STAINED_GLASS, Blocks.BLACK_STAINED_GLASS_PANE, 10);
-
         // Wools
         registerWool(Blocks.WHITE_WOOL, Blocks.WHITE_CARPET, 20);
         registerWool(Blocks.ORANGE_WOOL, Blocks.ORANGE_CARPET, 20);
@@ -274,6 +259,24 @@ public class ChippedBlocks {
         registerWool(Blocks.RED_WOOL, Blocks.RED_CARPET, 20);
         registerWool(Blocks.BLACK_WOOL, Blocks.BLACK_CARPET, 20);
 
+        // Generic Non-Cubes
+        registerBlockWithPalette(Blocks.BROWN_MUSHROOM, 15, new ChippedProperties().blockType(p -> new MushroomBlock(p, () -> TreeFeatures.HUGE_BROWN_MUSHROOM)).cutout());
+        registerBlockWithPalette(Blocks.COBWEB, 10, new ChippedProperties().blockType(WebBlock::new).cutout().excludeLoot());
+        registerBlockWithPalette(Blocks.CRIMSON_FUNGUS, 15, new ChippedProperties().blockType(p -> new FungusBlock(p, () -> TreeFeatures.CRIMSON_FUNGUS_PLANTED) {
+        }).cutout());
+        registerBlockWithPalette(Blocks.CRIMSON_ROOTS, 14, new ChippedProperties().blockType(p -> new RootsBlock(p) {
+        }).cutout());
+        registerBlockWithPalette(Blocks.POINTED_DRIPSTONE, 13, new ChippedProperties().blockType(PointedDripstoneBlock::new).cutout());
+        registerBlockWithPalette(Blocks.LILY_PAD, 24, new ChippedProperties().blockType(p -> new WaterlilyBlock(p) {
+        }).cutout().itemType(WaterLilyBlockItem::new));
+        registerBlockWithPalette(Blocks.NETHER_SPROUTS, 20, new ChippedProperties().blockType(NetherSproutsBlock::new).cutout().excludeLoot());
+        registerBlockWithPalette(Blocks.RED_MUSHROOM, 15, new ChippedProperties().blockType(p -> new MushroomBlock(p, () -> TreeFeatures.HUGE_RED_MUSHROOM)).cutout());
+        registerBlockWithPalette(Blocks.VINE, 17, new ChippedProperties().blockType(VineBlock::new).cutout().excludeLoot());
+        registerBlockWithPalette(Blocks.WARPED_FUNGUS, 14, new ChippedProperties().blockType(p -> new FungusBlock(p, () -> TreeFeatures.WARPED_FUNGUS_PLANTED) {
+        }).cutout());
+        registerBlockWithPalette(Blocks.WARPED_ROOTS, 9, new ChippedProperties().blockType(p -> new RootsBlock(p) {
+        }).cutout());
+
         // Torches
         registerTorch(Blocks.TORCH, Blocks.WALL_TORCH, 9, p -> new TorchBlock(p, ParticleTypes.FLAME) {
         }, p -> new WallTorchBlock(p, ParticleTypes.FLAME) {
@@ -283,6 +286,9 @@ public class ChippedBlocks {
         });
 
         // Lanterns
+        registerBlockWithPalette(Blocks.LANTERN, 14, new ChippedProperties().blockType(LanternBlock::new).cutout().excludeModel());
+        registerBlockWithPalette(Blocks.SOUL_LANTERN, 11, new ChippedProperties().blockType(LanternBlock::new).cutout().excludeModel());
+
         register("special_lantern_1", Blocks.LANTERN, new ChippedProperties().blockType(p -> new ChippedUniqueLantern(p, ChippedUniqueLantern.CHONK_LANTERN_SHAPE)).cutout().excludeModel());
         register("special_lantern_2", Blocks.LANTERN, new ChippedProperties().blockType(p -> new ChippedUniqueLantern(p, ChippedUniqueLantern.DONUT_LANTERN_SHAPE_EAST, ChippedUniqueLantern.DONUT_LANTERN_SHAPE_NORTH)).cutout().excludeModel());
         register("special_lantern_3", Blocks.LANTERN, new ChippedProperties().blockType(p -> new ChippedUniqueLantern(p, ChippedUniqueLantern.TALL_LANTERN_SHAPE)).cutout().excludeModel());

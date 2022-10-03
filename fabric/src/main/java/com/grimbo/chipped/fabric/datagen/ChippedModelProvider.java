@@ -8,10 +8,14 @@ import com.grimbo.chipped.registry.ChippedBlocks;
 import com.mojang.datafixers.util.Pair;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
+import net.minecraft.core.Direction;
 import net.minecraft.core.Registry;
 import net.minecraft.data.models.BlockModelGenerators;
 import net.minecraft.data.models.ItemModelGenerators;
 import net.minecraft.data.models.blockstates.MultiVariantGenerator;
+import net.minecraft.data.models.blockstates.PropertyDispatch;
+import net.minecraft.data.models.blockstates.Variant;
+import net.minecraft.data.models.blockstates.VariantProperties;
 import net.minecraft.data.models.model.ModelLocationUtils;
 import net.minecraft.data.models.model.ModelTemplates;
 import net.minecraft.data.models.model.TextureMapping;
@@ -19,6 +23,7 @@ import net.minecraft.data.models.model.TexturedModel;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.minecraft.world.level.block.state.properties.DripstoneThickness;
 
 public class ChippedModelProvider extends FabricModelProvider {
 
@@ -33,6 +38,11 @@ public class ChippedModelProvider extends FabricModelProvider {
 
             if (block instanceof MelonBlock) {
                 blockModelGenerator.createTrivialBlock(block, TexturedModel.COLUMN);
+            } else if (block instanceof LadderBlock) {
+                blockModelGenerator.createNonTemplateHorizontalBlock(block);
+                blockModelGenerator.createSimpleFlatItemModel(block);
+            } else if (block instanceof PointedDripstoneBlock) {
+                createPointedDripstone(blockModelGenerator, block);
             } else if (block instanceof RedstoneLampBlock) {
                 ResourceLocation resourceLocation = TexturedModel.CUBE.create(block, blockModelGenerator.modelOutput);
                 ResourceLocation resourceLocation2 = blockModelGenerator.createSuffixedVariant(block, "_on", ModelTemplates.CUBE_ALL, TextureMapping::cube);
@@ -69,6 +79,37 @@ public class ChippedModelProvider extends FabricModelProvider {
                 blockModelGenerator.delegateItemModel(block1, ModelLocationUtils.getModelLocation(block1));
             }
         });
+    }
+
+    private void createPointedDripstone(BlockModelGenerators blockModelGenerator, Block block) {
+        blockModelGenerator.skipAutoItemBlock(block);
+        PropertyDispatch.C2<Direction, DripstoneThickness> c2 = PropertyDispatch.properties(BlockStateProperties.VERTICAL_DIRECTION, BlockStateProperties.DRIPSTONE_THICKNESS);
+        DripstoneThickness[] var2 = DripstoneThickness.values();
+        int var3 = var2.length;
+
+        int var4;
+        DripstoneThickness dripstoneThickness;
+        for(var4 = 0; var4 < var3; ++var4) {
+            dripstoneThickness = var2[var4];
+            c2.select(Direction.UP, dripstoneThickness, createPointedDripstoneVariant(blockModelGenerator, block, Direction.UP, dripstoneThickness));
+        }
+
+        var2 = DripstoneThickness.values();
+        var3 = var2.length;
+
+        for(var4 = 0; var4 < var3; ++var4) {
+            dripstoneThickness = var2[var4];
+            c2.select(Direction.DOWN, dripstoneThickness, createPointedDripstoneVariant(blockModelGenerator, block, Direction.DOWN, dripstoneThickness));
+        }
+
+        blockModelGenerator.blockStateOutput.accept(MultiVariantGenerator.multiVariant(block).with(c2));
+    }
+
+    public final Variant createPointedDripstoneVariant(BlockModelGenerators blockModelGenerator, Block block, Direction direction, DripstoneThickness dripstoneThickness) {
+        String var10000 = direction.getSerializedName();
+        String string = "_" + var10000 + "_" + dripstoneThickness.getSerializedName();
+        TextureMapping textureMapping = TextureMapping.cross(TextureMapping.getBlockTexture(block, string));
+        return Variant.variant().with(VariantProperties.MODEL, ModelTemplates.POINTED_DRIPSTONE.createWithSuffix(block, string, textureMapping, blockModelGenerator.modelOutput));
     }
 
     @Override

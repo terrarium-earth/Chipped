@@ -1,0 +1,120 @@
+{
+  "multipart": [
+    {
+      "when": {
+        "up": "true"
+      },
+      "apply": {
+        "model": "chipped:block/vine_2",
+        "x": 270,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "up": "false",
+        "north": "false",
+        "west": "false",
+        "south": "false",
+        "east": "false"
+      },
+      "apply": {
+        "model": "chipped:block/vine_2",
+        "x": 270,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "north": "true"
+      },
+      "apply": {
+        "model": "chipped:block/vine_2"
+      }
+    },
+    {
+      "when": {
+        "up": "false",
+        "north": "false",
+        "west": "false",
+        "south": "false",
+        "east": "false"
+      },
+      "apply": {
+        "model": "chipped:block/vine_2"
+      }
+    },
+    {
+      "when": {
+        "west": "true"
+      },
+      "apply": {
+        "model": "chipped:block/vine_2",
+        "y": 270,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "up": "false",
+        "north": "false",
+        "west": "false",
+        "south": "false",
+        "east": "false"
+      },
+      "apply": {
+        "model": "chipped:block/vine_2",
+        "y": 270,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "south": "true"
+      },
+      "apply": {
+        "model": "chipped:block/vine_2",
+        "y": 180,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "up": "false",
+        "north": "false",
+        "west": "false",
+        "south": "false",
+        "east": "false"
+      },
+      "apply": {
+        "model": "chipped:block/vine_2",
+        "y": 180,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "east": "true"
+      },
+      "apply": {
+        "model": "chipped:block/vine_2",
+        "y": 90,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "up": "false",
+        "north": "false",
+        "west": "false",
+        "south": "false",
+        "east": "false"
+      },
+      "apply": {
+        "model": "chipped:block/vine_2",
+        "y": 90,
+        "uvlock": true
+      }
+    }
+  ]
+}

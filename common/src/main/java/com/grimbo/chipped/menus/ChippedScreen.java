@@ -37,20 +37,20 @@ public class ChippedScreen extends AbstractContainerScreen<ChippedMenu> {
 	}
 
 	@Override
-	protected void renderBg(PoseStack p_99328_, float p_99329_, int p_99330_, int p_99331_) {
-		this.renderBackground(p_99328_);
+	protected void renderBg(PoseStack poseStack, float mouseX, int mouseY, int partialTick) {
+		this.renderBackground(poseStack);
 		RenderSystem.setShader(GameRenderer::getPositionTexShader);
 		RenderSystem.setShaderColor(1.0F, 1.0F, 1.0F, 1.0F);
 		RenderSystem.setShaderTexture(0, BG_LOCATION);
 		int i = this.leftPos;
 		int j = this.topPos;
-		this.blit(p_99328_, i, j, 0, 0, this.imageWidth, this.imageHeight);
+		this.blit(poseStack, i, j, 0, 0, this.imageWidth, this.imageHeight);
 		int k = (int)(41.0F * this.scrollOffs);
-		this.blit(p_99328_, i + 119, j + 15 + k, 176 + (this.isScrollBarActive() ? 0 : 12), 0, 12, 15);
+		this.blit(poseStack, i + 119, j + 15 + k, 176 + (this.isScrollBarActive() ? 0 : 12), 0, 12, 15);
 		int l = this.leftPos + 52;
 		int i1 = this.topPos + 14;
 		int j1 = this.startIndex + 12;
-		this.renderButtons(p_99328_, p_99330_, p_99331_, l, i1, j1);
+		this.renderButtons(poseStack, mouseY, partialTick, l, i1, j1);
 		this.renderRecipes(l, i1, j1);
 	}
 
@@ -139,16 +139,16 @@ public class ChippedScreen extends AbstractContainerScreen<ChippedMenu> {
 	}
 
 	@Override
-	public boolean mouseDragged(double p_231045_1_, double p_231045_3_, int p_231045_5_, double p_231045_6_, double p_231045_8_) {
+	public boolean mouseDragged(double mouseX, double mouseY, int button, double dragX, double dragY) {
 		if (this.scrolling && this.isScrollBarActive()) {
 			int i = this.topPos + 14;
 			int j = i + 54;
-			this.scrollOffs = ((float) p_231045_3_ - (float) i - 7.5F) / ((float) (j - i) - 15.0F);
+			this.scrollOffs = ((float) mouseY - (float) i - 7.5F) / ((float) (j - i) - 15.0F);
 			this.scrollOffs = Mth.clamp(this.scrollOffs, 0.0F, 1.0F);
 			this.startIndex = (int) ((double) (this.scrollOffs * (float) this.getOffscreenRows()) + 0.5D) * 4;
 			return true;
 		} else {
-			return super.mouseDragged(p_231045_1_, p_231045_3_, p_231045_5_, p_231045_6_, p_231045_8_);
+			return super.mouseDragged(mouseX, mouseY, button, dragX, dragY);
 		}
 	}
 

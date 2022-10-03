@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "chipped:block/hay_block_8_horizontal",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "chipped:block/hay_block_8"
+    },
+    "axis=z": {
+      "model": "chipped:block/hay_block_8_horizontal",
+      "x": 90
+    }
+  }
+}

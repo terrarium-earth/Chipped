@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "chipped:block/stripped_warped_stem_16_horizontal",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "chipped:block/stripped_warped_stem_16"
+    },
+    "axis=z": {
+      "model": "chipped:block/stripped_warped_stem_16_horizontal",
+      "x": 90
+    }
+  }
+}
