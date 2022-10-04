@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "chipped:block/acacia_leaves/acacia_leaves_5"
-  }
-}

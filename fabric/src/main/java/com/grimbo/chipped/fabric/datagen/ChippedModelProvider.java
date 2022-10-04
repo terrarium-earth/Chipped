@@ -30,7 +30,6 @@ public class ChippedModelProvider extends FabricModelProvider {
 
     @Override
     public void generateBlockStateModels(BlockModelGenerators blockModelGenerator) {
-
         ChippedBlocks.REGISTERED_BLOCKS.stream().map(Pair::getFirst).filter(Predicate.not(ChippedBlocks.SKIPPED_MODELS::contains)).map(Supplier::get).forEach(block -> {
 
             if (block instanceof MelonBlock) {
@@ -38,6 +37,18 @@ public class ChippedModelProvider extends FabricModelProvider {
             } else if (block instanceof LadderBlock) {
                 blockModelGenerator.createNonTemplateHorizontalBlock(block);
                 blockModelGenerator.createSimpleFlatItemModel(block);
+            } else if (block instanceof DoorBlock) {
+                blockModelGenerator.createDoor(block);
+            } else if (block instanceof TrapDoorBlock) {
+                blockModelGenerator.createTrapdoor(block);
+            } else if (Registry.BLOCK.getKey(block).getPath().contains("bookshelf")) {
+                TextureMapping textureMapping = TextureMapping.column(TextureMapping.getBlockTexture(block), TextureMapping.getBlockTexture(Blocks.OAK_PLANKS));
+                ResourceLocation resourceLocation = ModelTemplates.CUBE_COLUMN.create(block, textureMapping, blockModelGenerator.modelOutput);
+                blockModelGenerator.blockStateOutput.accept(BlockModelGenerators.createSimpleBlock(block, resourceLocation));
+            } else if (Registry.BLOCK.getKey(block).getPath().contains("dried_kelp_block") || block instanceof PumpkinBlock) {
+                TextureMapping textureMapping = TextureMapping.column(TextureMapping.getBlockTexture(block), TextureMapping.getBlockTexture(block));
+                ResourceLocation resourceLocation = ModelTemplates.CUBE_COLUMN.create(block, textureMapping, blockModelGenerator.modelOutput);
+                blockModelGenerator.blockStateOutput.accept(BlockModelGenerators.createSimpleBlock(block, resourceLocation));
             } else if (block instanceof BarrelBlock) {
                 ResourceLocation resourceLocation = TextureMapping.getBlockTexture(block, "_top_open");
                 blockModelGenerator.blockStateOutput.accept(MultiVariantGenerator.multiVariant(block).with(blockModelGenerator.createColumnWithFacing()).with(PropertyDispatch.property(BlockStateProperties.OPEN).select(false, Variant.variant().with(VariantProperties.MODEL, TexturedModel.CUBE_TOP_BOTTOM.create(block, blockModelGenerator.modelOutput))).select(true, Variant.variant().with(VariantProperties.MODEL, TexturedModel.CUBE_TOP_BOTTOM.get(block).updateTextures((textureMapping) -> {
@@ -58,8 +69,6 @@ public class ChippedModelProvider extends FabricModelProvider {
             } else if (block instanceof WaterlilyBlock) {
                 blockModelGenerator.createSimpleFlatItemModel(block);
                 blockModelGenerator.blockStateOutput.accept(BlockModelGenerators.createRotatedVariant(block, ModelLocationUtils.getModelLocation(block)));
-            } else if (Registry.BLOCK.getKey(block).getPath().contains("dried_kelp_block")) {
-                blockModelGenerator.createNonTemplateModelBlock(block);
             } else {
                 blockModelGenerator.createTrivialCube(block);
                 blockModelGenerator.delegateItemModel(block, ModelLocationUtils.getModelLocation(block));

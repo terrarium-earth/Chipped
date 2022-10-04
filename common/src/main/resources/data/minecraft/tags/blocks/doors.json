@@ -1,0 +1,13 @@
+{
+  "replace": false,
+  "values": [
+    "#chipped:acacia_door",
+    "#chipped:birch_door",
+    "#chipped:dark_oak_door",
+    "#chipped:jungle_door",
+    "#chipped:oak_door",
+    "#chipped:spruce_door",
+    "#chipped:crimson_door",
+    "#chipped:warped_door"
+  ]
+}

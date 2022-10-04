@@ -4,6 +4,8 @@
     "chipped:redstone_lamp",
     "chipped:lantern",
     "chipped:soul_lantern",
-    "chipped:redstone_torch"
+    "chipped:redstone_torch",
+    "chipped:iron_bars",
+    "chipped:redstone_block"
   ]
 }

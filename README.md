@@ -21,19 +21,18 @@ Credits to all the amazing people that helped create this mod!
 Coders:
 
 * Grim
-* Inforno
-* CodexAdrian
-* MsRandom
 * ThatGravyBoat
+* CodexAdrian
 * AlexNijjar
 
 Artists:
 
 * Kekie6
-* BrotherEarth967
 * SunsetSoup
 * Valila
 * ArtistMonster (future contributions)
+* Facu
+* Marc
 
 Would you also like to contribute to our mod? Simply messege us on discord to apply for the CCN Team! ;)
 

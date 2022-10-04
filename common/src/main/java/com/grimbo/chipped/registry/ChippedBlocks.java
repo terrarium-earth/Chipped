@@ -70,8 +70,8 @@ public class ChippedBlocks {
         registerBlockWithPalette(Blocks.BASALT, 69);
         registerBlockWithPalette(Blocks.BLACKSTONE, 69);
         registerBlockWithPalette(Blocks.BLUE_ICE, 69);
-        registerBlockWithPalette(Blocks.BONE_BLOCK, 11);
-        registerBlockWithPalette(Blocks.BOOKSHELF, 57);
+        registerBlockWithPalette(Blocks.BONE_BLOCK, 11, new ChippedProperties().blockType(RotatedPillarBlock::new));
+        registerBlockWithPalette(Blocks.BOOKSHELF, 456);
         registerBlockWithPalette(Blocks.BRICKS, 133);
         registerBlockWithPalette(Blocks.BROWN_MUSHROOM_BLOCK, 24, new ChippedProperties().blockType(HugeMushroomBlock::new));
         registerBlockWithPalette(Blocks.CALCITE, 69);
@@ -258,6 +258,42 @@ public class ChippedBlocks {
         registerWool(Blocks.GREEN_WOOL, Blocks.GREEN_CARPET, 20);
         registerWool(Blocks.RED_WOOL, Blocks.RED_CARPET, 20);
         registerWool(Blocks.BLACK_WOOL, Blocks.BLACK_CARPET, 20);
+
+        // Doors
+        registerBlockWithPalette(Blocks.ACACIA_DOOR, 20, new ChippedProperties().blockType(p -> new DoorBlock(p) {
+        }).cutout().excludeLoot());
+        registerBlockWithPalette(Blocks.DARK_OAK_DOOR, 20, new ChippedProperties().blockType(p -> new DoorBlock(p) {
+        }).cutout().excludeLoot());
+        registerBlockWithPalette(Blocks.BIRCH_DOOR, 20, new ChippedProperties().blockType(p -> new DoorBlock(p) {
+        }).cutout().excludeLoot());
+        registerBlockWithPalette(Blocks.JUNGLE_DOOR, 20, new ChippedProperties().blockType(p -> new DoorBlock(p) {
+        }).cutout().excludeLoot());
+        registerBlockWithPalette(Blocks.OAK_DOOR, 20, new ChippedProperties().blockType(p -> new DoorBlock(p) {
+        }).cutout().excludeLoot());
+        registerBlockWithPalette(Blocks.SPRUCE_DOOR, 20, new ChippedProperties().blockType(p -> new DoorBlock(p) {
+        }).cutout().excludeLoot());
+        registerBlockWithPalette(Blocks.CRIMSON_DOOR, 20, new ChippedProperties().blockType(p -> new DoorBlock(p) {
+        }).cutout().excludeLoot());
+        registerBlockWithPalette(Blocks.WARPED_DOOR, 20, new ChippedProperties().blockType(p -> new DoorBlock(p) {
+        }).cutout().excludeLoot());
+
+        // Trapdoors
+        registerBlockWithPalette(Blocks.ACACIA_TRAPDOOR, 23, new ChippedProperties().blockType(p -> new TrapDoorBlock(p) {
+        }).cutout().excludeLoot());
+        registerBlockWithPalette(Blocks.DARK_OAK_TRAPDOOR, 24, new ChippedProperties().blockType(p -> new TrapDoorBlock(p) {
+        }).cutout().excludeLoot());
+        registerBlockWithPalette(Blocks.BIRCH_TRAPDOOR, 23, new ChippedProperties().blockType(p -> new TrapDoorBlock(p) {
+        }).cutout().excludeLoot());
+        registerBlockWithPalette(Blocks.JUNGLE_TRAPDOOR, 23, new ChippedProperties().blockType(p -> new TrapDoorBlock(p) {
+        }).cutout().excludeLoot());
+        registerBlockWithPalette(Blocks.OAK_TRAPDOOR, 23, new ChippedProperties().blockType(p -> new TrapDoorBlock(p) {
+        }).cutout().excludeLoot());
+        registerBlockWithPalette(Blocks.SPRUCE_TRAPDOOR, 23, new ChippedProperties().blockType(p -> new TrapDoorBlock(p) {
+        }).cutout().excludeLoot());
+        registerBlockWithPalette(Blocks.CRIMSON_TRAPDOOR, 23, new ChippedProperties().blockType(p -> new TrapDoorBlock(p) {
+        }).cutout().excludeLoot());
+        registerBlockWithPalette(Blocks.WARPED_TRAPDOOR, 23, new ChippedProperties().blockType(p -> new TrapDoorBlock(p) {
+        }).cutout().excludeLoot());
 
         // Generic Non-Cubes
         registerBlockWithPalette(Blocks.BROWN_MUSHROOM, 15, new ChippedProperties().blockType(p -> new MushroomBlock(p, () -> TreeFeatures.HUGE_BROWN_MUSHROOM)).cutout());

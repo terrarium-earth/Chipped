@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "chipped:block/torch/torch_1"
+    "layer0": "chipped:block/torch/torch_4"
   }
 }

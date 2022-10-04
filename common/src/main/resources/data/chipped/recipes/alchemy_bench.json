@@ -1,10 +1,20 @@
 {
   "type": "chipped:alchemy_bench",
   "tags": [
-    "chipped:obsidian",
-    "chipped:crying_obsidian",
+    "chipped:diamond_block",
+    "chipped:emerald_block",
     "chipped:glowstone",
-    "chipped:sea_lantern",
-    "chipped:soul_sand"
+    "chipped:gold_block",
+    "chipped:iron_block",
+    "chipped:netherite_block",
+    "chipped:waxed_copper_block",
+    "chipped:waxed_exposed_copper_block",
+    "chipped:waxed_oxidized_copper_block",
+    "chipped:waxed_weathered_copper_block",
+    "chipped:coal_block",
+    "chipped:crying_obsidian",
+    "chipped:gilded_blackstone",
+    "chipped:lapis_block",
+    "chipped:lodestone"
   ]
 }

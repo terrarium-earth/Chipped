@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/template_trapdoor_bottom",
+  "textures": {
+    "texture": "chipped:block/spruce_trapdoor/spruce_trapdoor_21"
+  }
+}

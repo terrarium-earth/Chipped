@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/door_bottom_rh",
+  "textures": {
+    "top": "chipped:block/acacia_door/acacia_door_15_top",
+    "bottom": "chipped:block/acacia_door/acacia_door_15_bottom"
+  }
+}

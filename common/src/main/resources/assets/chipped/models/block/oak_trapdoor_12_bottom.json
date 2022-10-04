@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/template_trapdoor_bottom",
+  "textures": {
+    "texture": "chipped:block/oak_trapdoor/oak_trapdoor_12"
+  }
+}

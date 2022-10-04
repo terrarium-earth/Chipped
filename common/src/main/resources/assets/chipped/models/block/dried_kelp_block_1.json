@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "chipped:block/dried_kelp_block/dried_kelp_block_1",
+    "side": "chipped:block/dried_kelp_block/dried_kelp_block_1"
+  }
+}

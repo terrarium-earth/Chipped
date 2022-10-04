@@ -1,0 +1,26 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:acacia_door",
+    "chipped:acacia_door_1",
+    "chipped:acacia_door_2",
+    "chipped:acacia_door_3",
+    "chipped:acacia_door_4",
+    "chipped:acacia_door_5",
+    "chipped:acacia_door_6",
+    "chipped:acacia_door_7",
+    "chipped:acacia_door_8",
+    "chipped:acacia_door_9",
+    "chipped:acacia_door_10",
+    "chipped:acacia_door_11",
+    "chipped:acacia_door_12",
+    "chipped:acacia_door_13",
+    "chipped:acacia_door_14",
+    "chipped:acacia_door_15",
+    "chipped:acacia_door_16",
+    "chipped:acacia_door_17",
+    "chipped:acacia_door_18",
+    "chipped:acacia_door_19",
+    "chipped:acacia_door_20"
+  ]
+}

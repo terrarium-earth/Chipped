@@ -26,6 +26,22 @@
     "#chipped:mushroom_stem",
     "#chipped:pumpkin",
     "#chipped:red_mushroom_block",
-    "#chipped:stripped_warped_stem"
+    "#chipped:stripped_warped_stem",
+    "#chipped:acacia_trapdoor",
+    "#chipped:birch_trapdoor",
+    "#chipped:dark_oak_trapdoor",
+    "#chipped:jungle_trapdoor",
+    "#chipped:oak_trapdoor",
+    "#chipped:spruce_trapdoor",
+    "#chipped:crimson_trapdoor",
+    "#chipped:warped_trapdoor",
+    "#chipped:acacia_door",
+    "#chipped:birch_door",
+    "#chipped:dark_oak_door",
+    "#chipped:jungle_door",
+    "#chipped:oak_door",
+    "#chipped:spruce_door",
+    "#chipped:crimson_door",
+    "#chipped:warped_door"
   ]
 }

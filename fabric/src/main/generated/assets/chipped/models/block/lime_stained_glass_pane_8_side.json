@@ -1,7 +1,0 @@
-{
-  "parent": "minecraft:block/template_glass_pane_side",
-  "textures": {
-    "pane": "chipped:block/lime_stained_glass/lime_stained_glass_8",
-    "edge": "chipped:block/lime_stained_glass_pane/lime_stained_glass_pane_8_top"
-  }
-}
