@@ -3,6 +3,7 @@ package com.grimbo.chipped.registry;
 import com.grimbo.chipped.Chipped;
 import com.grimbo.chipped.block.ChippedUniqueLantern;
 import com.grimbo.chipped.block.ChippedWorkbench;
+import com.grimbo.chipped.block.CustomPointedDripstoneBlock;
 import com.grimbo.chipped.menus.ChippedMenu;
 import com.mojang.datafixers.util.Pair;
 import net.minecraft.core.Registry;
@@ -10,10 +11,7 @@ import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.data.worldgen.features.TreeFeatures;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.item.BlockItem;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.StandingAndWallBlockItem;
-import net.minecraft.world.item.WaterLilyBlockItem;
+import net.minecraft.world.item.*;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockBehaviour.Properties;
@@ -76,7 +74,7 @@ public class ChippedBlocks {
         registerBlockWithPalette(Blocks.BROWN_MUSHROOM_BLOCK, 24, new ChippedProperties().blockType(HugeMushroomBlock::new));
         registerBlockWithPalette(Blocks.CALCITE, 69);
         registerBlockWithPalette(Blocks.CARVED_PUMPKIN, 22, new ChippedProperties().blockType(p -> new CarvedPumpkinBlock(p) {
-        }).excludeModel());
+        }));
         registerBlockWithPalette(Blocks.CLAY, 67, new ChippedProperties().excludeLoot());
         registerBlockWithPalette(Blocks.COAL_BLOCK, 67);
         registerBlockWithPalette(Blocks.COBBLESTONE, 69);
@@ -86,7 +84,7 @@ public class ChippedBlocks {
         registerBlockWithPalette(Blocks.DIAMOND_BLOCK, 12);
         registerBlockWithPalette(Blocks.DIORITE, 69);
         registerBlockWithPalette(Blocks.DIRT, 69);
-        registerBlockWithPalette(Blocks.DRIED_KELP_BLOCK, 12);
+        registerBlockWithPalette(Blocks.DRIED_KELP_BLOCK, 12, new ChippedProperties().excludeModel());
         registerBlockWithPalette(Blocks.DRIPSTONE_BLOCK, 69);
         registerBlockWithPalette(Blocks.EMERALD_BLOCK, 12);
         registerBlockWithPalette(Blocks.END_STONE, 69);
@@ -101,7 +99,7 @@ public class ChippedBlocks {
         }).cutout());
         registerBlockWithPalette(Blocks.IRON_BLOCK, 12);
         registerBlockWithPalette(Blocks.JACK_O_LANTERN, 22, new ChippedProperties().blockType(p -> new CarvedPumpkinBlock(p) {
-        }).excludeModel());
+        }));
         registerBlockWithPalette(Blocks.LADDER, 10, new ChippedProperties().blockType(p -> new LadderBlock(p) {
         }).cutout());
         registerBlockWithPalette(Blocks.LAPIS_BLOCK, 69);
@@ -121,7 +119,7 @@ public class ChippedBlocks {
         registerBlockWithPalette(Blocks.PACKED_ICE, 69);
         registerBlockWithPalette(Blocks.PRISMARINE, 69);
         registerBlockWithPalette(Blocks.PUMPKIN, 16, new ChippedProperties().blockType(p -> new PumpkinBlock(p) {
-        }).excludeModel());
+        }));
         registerBlockWithPalette(Blocks.PURPUR_BLOCK, 69);
         registerBlockWithPalette(Blocks.QUARTZ_BLOCK, 69);
         registerBlockWithPalette(Blocks.RAW_COPPER_BLOCK, 61);
@@ -177,6 +175,15 @@ public class ChippedBlocks {
         registerBlockWithPalette(Blocks.OAK_PLANKS, 41);
         registerBlockWithPalette(Blocks.SPRUCE_PLANKS, 41);
         registerBlockWithPalette(Blocks.WARPED_PLANKS, 41);
+
+        registerBlockWithPalette(Blocks.ACACIA_LOG, 22, new ChippedProperties().blockType(RotatedPillarBlock::new));
+        registerBlockWithPalette(Blocks.BIRCH_LOG, 22, new ChippedProperties().blockType(RotatedPillarBlock::new));
+        registerBlockWithPalette(Blocks.CRIMSON_STEM, 22, new ChippedProperties().blockType(RotatedPillarBlock::new));
+        registerBlockWithPalette(Blocks.DARK_OAK_LOG, 22, new ChippedProperties().blockType(RotatedPillarBlock::new));
+        registerBlockWithPalette(Blocks.JUNGLE_LOG, 22, new ChippedProperties().blockType(RotatedPillarBlock::new));
+        registerBlockWithPalette(Blocks.OAK_LOG, 22, new ChippedProperties().blockType(RotatedPillarBlock::new));
+        registerBlockWithPalette(Blocks.SPRUCE_LOG, 22, new ChippedProperties().blockType(RotatedPillarBlock::new));
+        registerBlockWithPalette(Blocks.WARPED_STEM, 22, new ChippedProperties().blockType(RotatedPillarBlock::new));
         registerBlockWithPalette(Blocks.STRIPPED_WARPED_STEM, 19, new ChippedProperties().blockType(RotatedPillarBlock::new));
 
         // Leaves
@@ -260,21 +267,21 @@ public class ChippedBlocks {
         registerWool(Blocks.BLACK_WOOL, Blocks.BLACK_CARPET, 20);
 
         // Doors
-        registerBlockWithPalette(Blocks.ACACIA_DOOR, 20, new ChippedProperties().blockType(p -> new DoorBlock(p) {
+        registerBlockWithPalette(Blocks.ACACIA_DOOR, 20, new ChippedProperties().itemType(DoubleHighBlockItem::new).blockType(p -> new DoorBlock(p) {
         }).cutout().excludeLoot());
-        registerBlockWithPalette(Blocks.DARK_OAK_DOOR, 20, new ChippedProperties().blockType(p -> new DoorBlock(p) {
+        registerBlockWithPalette(Blocks.DARK_OAK_DOOR, 20, new ChippedProperties().itemType(DoubleHighBlockItem::new).blockType(p -> new DoorBlock(p) {
         }).cutout().excludeLoot());
-        registerBlockWithPalette(Blocks.BIRCH_DOOR, 20, new ChippedProperties().blockType(p -> new DoorBlock(p) {
+        registerBlockWithPalette(Blocks.BIRCH_DOOR, 20, new ChippedProperties().itemType(DoubleHighBlockItem::new).blockType(p -> new DoorBlock(p) {
         }).cutout().excludeLoot());
-        registerBlockWithPalette(Blocks.JUNGLE_DOOR, 20, new ChippedProperties().blockType(p -> new DoorBlock(p) {
+        registerBlockWithPalette(Blocks.JUNGLE_DOOR, 20, new ChippedProperties().itemType(DoubleHighBlockItem::new).blockType(p -> new DoorBlock(p) {
         }).cutout().excludeLoot());
-        registerBlockWithPalette(Blocks.OAK_DOOR, 20, new ChippedProperties().blockType(p -> new DoorBlock(p) {
+        registerBlockWithPalette(Blocks.OAK_DOOR, 20, new ChippedProperties().itemType(DoubleHighBlockItem::new).blockType(p -> new DoorBlock(p) {
         }).cutout().excludeLoot());
-        registerBlockWithPalette(Blocks.SPRUCE_DOOR, 20, new ChippedProperties().blockType(p -> new DoorBlock(p) {
+        registerBlockWithPalette(Blocks.SPRUCE_DOOR, 20, new ChippedProperties().itemType(DoubleHighBlockItem::new).blockType(p -> new DoorBlock(p) {
         }).cutout().excludeLoot());
-        registerBlockWithPalette(Blocks.CRIMSON_DOOR, 20, new ChippedProperties().blockType(p -> new DoorBlock(p) {
+        registerBlockWithPalette(Blocks.CRIMSON_DOOR, 20, new ChippedProperties().itemType(DoubleHighBlockItem::new).blockType(p -> new DoorBlock(p) {
         }).cutout().excludeLoot());
-        registerBlockWithPalette(Blocks.WARPED_DOOR, 20, new ChippedProperties().blockType(p -> new DoorBlock(p) {
+        registerBlockWithPalette(Blocks.WARPED_DOOR, 20, new ChippedProperties().itemType(DoubleHighBlockItem::new).blockType(p -> new DoorBlock(p) {
         }).cutout().excludeLoot());
 
         // Trapdoors
@@ -302,8 +309,8 @@ public class ChippedBlocks {
         }).cutout());
         registerBlockWithPalette(Blocks.CRIMSON_ROOTS, 14, new ChippedProperties().blockType(p -> new RootsBlock(p) {
         }).cutout());
-        registerBlockWithPalette(Blocks.POINTED_DRIPSTONE, 13, new ChippedProperties().blockType(PointedDripstoneBlock::new).cutout());
-        registerBlockWithPalette(Blocks.LILY_PAD, 24, new ChippedProperties().blockType(p -> new WaterlilyBlock(p) {
+        registerBlockWithPalette(Blocks.POINTED_DRIPSTONE, 13, new ChippedProperties().blockType(CustomPointedDripstoneBlock::new).cutout());
+        registerBlockWithPalette(Blocks.LILY_PAD, 22, new ChippedProperties().blockType(p -> new WaterlilyBlock(p) {
         }).cutout().itemType(WaterLilyBlockItem::new));
         registerBlockWithPalette(Blocks.NETHER_SPROUTS, 20, new ChippedProperties().blockType(NetherSproutsBlock::new).cutout().excludeLoot());
         registerBlockWithPalette(Blocks.RED_MUSHROOM, 15, new ChippedProperties().blockType(p -> new MushroomBlock(p, () -> TreeFeatures.HUGE_RED_MUSHROOM)).cutout());
@@ -317,7 +324,7 @@ public class ChippedBlocks {
         registerTorch(Blocks.TORCH, Blocks.WALL_TORCH, 9, p -> new TorchBlock(p, ParticleTypes.FLAME) {
         }, p -> new WallTorchBlock(p, ParticleTypes.FLAME) {
         });
-        registerTorch(Blocks.REDSTONE_TORCH, Blocks.REDSTONE_WALL_TORCH, 6, p -> new RedstoneTorchBlock(p) {
+        registerTorch(Blocks.REDSTONE_TORCH, Blocks.REDSTONE_WALL_TORCH, 5, p -> new RedstoneTorchBlock(p) {
         }, p -> new RedstoneWallTorchBlock(p) {
         });
 

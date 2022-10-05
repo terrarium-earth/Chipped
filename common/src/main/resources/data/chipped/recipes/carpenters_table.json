@@ -28,6 +28,14 @@
     "chipped:warped_door",
     "chipped:barrel",
     "chipped:ladder",
-    "chipped:bookshelf"
+    "chipped:bookshelf",
+    "chipped:oak_log",
+    "chipped:birch_log",
+    "chipped:spruce_log",
+    "chipped:jungle_log",
+    "chipped:acacia_log",
+    "chipped:dark_oak_log",
+    "chipped:warped_log",
+    "chipped:crimson_log"
   ]
 }

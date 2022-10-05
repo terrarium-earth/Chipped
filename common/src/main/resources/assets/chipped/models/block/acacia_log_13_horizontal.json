@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column_horizontal",
+  "textures": {
+    "end": "chipped:block/acacia_log/acacia_log_13_top",
+    "side": "chipped:block/acacia_log/acacia_log_13_side"
+  }
+}

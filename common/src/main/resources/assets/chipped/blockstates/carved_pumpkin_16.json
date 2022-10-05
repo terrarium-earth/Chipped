@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "chipped:block/carved_pumpkin_16",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "chipped:block/carved_pumpkin_16"
+    },
+    "facing=south": {
+      "model": "chipped:block/carved_pumpkin_16",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "chipped:block/carved_pumpkin_16",
+      "y": 270
+    }
+  }
+}

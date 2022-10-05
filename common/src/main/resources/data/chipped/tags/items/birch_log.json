@@ -1,0 +1,28 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:birch_log",
+    "chipped:birch_log_1",
+    "chipped:birch_log_2",
+    "chipped:birch_log_3",
+    "chipped:birch_log_4",
+    "chipped:birch_log_5",
+    "chipped:birch_log_6",
+    "chipped:birch_log_7",
+    "chipped:birch_log_8",
+    "chipped:birch_log_9",
+    "chipped:birch_log_10",
+    "chipped:birch_log_11",
+    "chipped:birch_log_12",
+    "chipped:birch_log_13",
+    "chipped:birch_log_14",
+    "chipped:birch_log_15",
+    "chipped:birch_log_16",
+    "chipped:birch_log_17",
+    "chipped:birch_log_18",
+    "chipped:birch_log_19",
+    "chipped:birch_log_20",
+    "chipped:birch_log_21",
+    "chipped:birch_log_22"
+  ]
+}

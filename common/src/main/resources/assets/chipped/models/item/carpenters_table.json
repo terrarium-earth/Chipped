@@ -1,0 +1,36 @@
+{
+  "parent": "chipped:block/carpenters_table",
+  "display": {
+	  "thirdperson_righthand": {
+		  "rotation": [84, 101, -17],
+		  "scale": [0.22, 0.22, 0.22]
+	  },
+	  "thirdperson_lefthand": {
+		  "rotation": [84, 101, -17],
+		  "translation": [0, 3, -1.5],
+		  "scale": [0.22, 0.22, 0.22]
+	  },
+	  "firstperson_righthand": {
+		  "rotation": [0, 106, 0],
+		  "translation": [-4, 5, 11],
+		  "scale": [0.25, 0.19, 0.18]
+	  },
+	  "firstperson_lefthand": {
+		  "rotation": [0, 106, 0],
+		  "translation": [-4.75, 4.5, 5],
+		  "scale": [0.25, 0.19, 0.18]
+	  },
+	  "gui": {
+		  "rotation": [13, 130, 0],
+		  "translation": [2.75, -2.5, 0],
+		  "scale": [0.4, 0.4, 0.4]
+	  },
+	  "ground": {
+		  "scale": [0.35, 0.35, 0.35]
+	  },
+	  "fixed": {
+		  "translation": [-1.75, -1, -2],
+		  "scale": [0.35, 0.35, 0.35]
+	  }
+  }
+}

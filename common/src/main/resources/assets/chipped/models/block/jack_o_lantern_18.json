@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "particle": "chipped:block/jack_o_lantern/jack_o_lantern_18",
+    "north": "chipped:block/jack_o_lantern/jack_o_lantern_18",
+    "south": "minecraft:block/pumpkin_side",
+    "east": "minecraft:block/pumpkin_side",
+    "west": "minecraft:block/pumpkin_side",
+    "up": "minecraft:block/pumpkin_top",
+    "down": "minecraft:block/pumpkin_side"
+  }
+}

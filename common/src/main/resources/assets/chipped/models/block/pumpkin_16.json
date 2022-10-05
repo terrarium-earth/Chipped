@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "particle": "chipped:block/pumpkin/pumpkin_16_side",
+    "north": "chipped:block/pumpkin/pumpkin_16_side",
+    "south": "chipped:block/pumpkin/pumpkin_16_side",
+    "east": "chipped:block/pumpkin/pumpkin_16_side",
+    "west": "chipped:block/pumpkin/pumpkin_16_side",
+    "up": "chipped:block/pumpkin/pumpkin_16_top",
+    "down": "chipped:block/pumpkin/pumpkin_16_bottom"
+  }
+}

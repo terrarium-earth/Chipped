@@ -42,6 +42,14 @@
     "#chipped:oak_door",
     "#chipped:spruce_door",
     "#chipped:crimson_door",
-    "#chipped:warped_door"
+    "#chipped:warped_door",
+    "#chipped:oak_log",
+    "#chipped:birch_log",
+    "#chipped:spruce_log",
+    "#chipped:jungle_log",
+    "#chipped:acacia_log",
+    "#chipped:dark_oak_log",
+    "#chipped:warped_log",
+    "#chipped:crimson_log"
   ]
 }

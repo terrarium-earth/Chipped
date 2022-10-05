@@ -1,3 +1,6 @@
 {
-  "parent": "chipped:block/iron_bars_7"
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "chipped:block/iron_bars/iron_bars_7"
+  }
 }
