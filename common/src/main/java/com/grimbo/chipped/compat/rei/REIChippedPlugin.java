@@ -26,7 +26,6 @@ import net.minecraft.world.level.block.Block;
 
 public class REIChippedPlugin implements REIClientPlugin {
     @Override
-    @SuppressWarnings("unchecked")
     public void registerCategories(CategoryRegistry registry) {
         registry.add(
                 new ChippedRecipeCategory(ChippedBlocks.BOTANIST_WORKBENCH.get()),
@@ -38,6 +37,7 @@ public class REIChippedPlugin implements REIClientPlugin {
                 new ChippedRecipeCategory(ChippedBlocks.MECHANIST_WORKBENCH.get())
         );
     }
+
 
     @Override
     public void registerDisplays(DisplayRegistry registry) {

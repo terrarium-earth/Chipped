@@ -1,13 +1,1 @@
-{
-  "ctm": {
-    "ctm_version": 1,
-    "type": "ctm",
-    "layer": "CUTOUT",
-    "textures": [
-      "chipped:block/glass/dark_oak_wood_glass_5_ctm"
-    ],
-    "extra": {
-      "light": 0
-    }
-  }
-}
+{"ctm":{"ctm_version":1,"type":"ctm","layer":"CUTOUT","textures":["chipped:block/glass/glass_53_ctm"],"extra":{"light":0}}}

@@ -41,21 +41,23 @@ public class ChippedModelProvider extends FabricModelProvider {
                 blockModelGenerator.createDoor(block);
             } else if (block instanceof TrapDoorBlock) {
                 blockModelGenerator.createTrapdoor(block);
-            } else if (Registry.BLOCK.getKey(block).getPath().contains("bookshelf")) {
+            } else if (getName(block).contains("bookshelf")) {
                 TextureMapping textureMapping = TextureMapping.column(TextureMapping.getBlockTexture(block), TextureMapping.getBlockTexture(Blocks.OAK_PLANKS));
                 ResourceLocation resourceLocation = ModelTemplates.CUBE_COLUMN.create(block, textureMapping, blockModelGenerator.modelOutput);
                 blockModelGenerator.blockStateOutput.accept(BlockModelGenerators.createSimpleBlock(block, resourceLocation));
             } else if (block instanceof BarrelBlock) {
                 ResourceLocation resourceLocation = TextureMapping.getBlockTexture(block, "_top_open");
                 blockModelGenerator.blockStateOutput.accept(MultiVariantGenerator.multiVariant(block).with(blockModelGenerator.createColumnWithFacing()).with(PropertyDispatch.property(BlockStateProperties.OPEN).select(false, Variant.variant().with(VariantProperties.MODEL, TexturedModel.CUBE_TOP_BOTTOM.create(block, blockModelGenerator.modelOutput))).select(true, Variant.variant().with(VariantProperties.MODEL, TexturedModel.CUBE_TOP_BOTTOM.get(block).updateTextures((textureMapping) -> textureMapping.put(TextureSlot.TOP, resourceLocation)).createWithSuffix(block, "_open", blockModelGenerator.modelOutput)))));
-            } else if (block instanceof PointedDripstoneBlock) {
-                createPointedDripstone(blockModelGenerator, block);
             } else if (block instanceof RedstoneLampBlock) {
                 ResourceLocation resourceLocation = TexturedModel.CUBE.create(block, blockModelGenerator.modelOutput);
                 ResourceLocation resourceLocation2 = blockModelGenerator.createSuffixedVariant(block, "_on", ModelTemplates.CUBE_ALL, TextureMapping::cube);
                 blockModelGenerator.blockStateOutput.accept(MultiVariantGenerator.multiVariant(block).with(BlockModelGenerators.createBooleanModelDispatch(BlockStateProperties.LIT, resourceLocation2, resourceLocation)));
             } else if (block instanceof RotatedPillarBlock) {
-                blockModelGenerator.createRotatedPillarWithHorizontalVariant(block, TexturedModel.COLUMN, TexturedModel.COLUMN_HORIZONTAL);
+                if (getName(block).contains("stripped") && getId(block) != 1) {
+                    blockModelGenerator.createRotatedPillarWithHorizontalVariant(block, STRIPPED_COLUMN, STRIPPED_COLUMN_HORIZONTAL);
+                } else {
+                    blockModelGenerator.createRotatedPillarWithHorizontalVariant(block, TexturedModel.COLUMN, TexturedModel.COLUMN_HORIZONTAL);
+                }
             } else if (block instanceof WebBlock || block instanceof MushroomBlock || block instanceof NetherSproutsBlock || block instanceof RootsBlock || block instanceof FungusBlock) {
                 blockModelGenerator.createCrossBlockWithDefaultItem(block, BlockModelGenerators.TintState.NOT_TINTED);
             } else if (block instanceof VineBlock) {
@@ -65,10 +67,10 @@ public class ChippedModelProvider extends FabricModelProvider {
                 blockModelGenerator.blockStateOutput.accept(BlockModelGenerators.createRotatedVariant(block, ModelLocationUtils.getModelLocation(block)));
             } else if (block instanceof PumpkinBlock) {
                 createPumpkin(blockModelGenerator, block);
-            } else if (block instanceof IronBarsBlock && Registry.BLOCK.getKey(block).getPath().contains("iron_bar")) {
+            } else if (block instanceof IronBarsBlock && getName(block).contains("iron_bar")) {
                 createIronBars(blockModelGenerator, block);
             } else if (block instanceof CarvedPumpkinBlock) {
-                int id = Integer.parseInt(StringUtils.substringAfterLast(Registry.BLOCK.getKey(block).getPath(), "_"));
+                int id = getId(block);
                 if (id == 20) {
                     createCarvedPumpkin(blockModelGenerator, block, Registry.BLOCK.get(new ResourceLocation(Chipped.MOD_ID, "pumpkin_14")));
                 } else if (id == 21) {
@@ -103,6 +105,18 @@ public class ChippedModelProvider extends FabricModelProvider {
         });
     }
 
+    private static String getName(Block block) {
+        return Registry.BLOCK.getKey(block).getPath();
+    }
+
+    private static Block getVanilla(Block block) {
+        return Registry.BLOCK.get(new ResourceLocation(StringUtils.substringBeforeLast(getName(block), "_")));
+    }
+
+    private static int getId(Block block) {
+        return Integer.parseInt(StringUtils.substringAfterLast(getName(block), "_"));
+    }
+
     private void createPumpkin(BlockModelGenerators blockModelGenerator, Block pumpkin) {
         blockModelGenerator.createCraftingTableLike(pumpkin, pumpkin, (block1, block2) -> ChippedModelProvider.pumpkin(block1));
     }
@@ -122,37 +136,6 @@ public class ChippedModelProvider extends FabricModelProvider {
     public final void createCarvedPumpkinLike(BlockModelGenerators blockModelGenerator, Block pumpkinBlock, Block materialBlock, BiFunction<Block, Block, TextureMapping> textureMappingGetter) {
         TextureMapping textureMapping = textureMappingGetter.apply(pumpkinBlock, materialBlock);
         blockModelGenerator.blockStateOutput.accept(BlockModelGenerators.createSimpleBlock(pumpkinBlock, ModelTemplates.CUBE.create(pumpkinBlock, textureMapping, blockModelGenerator.modelOutput)).with(BlockModelGenerators.createHorizontalFacingDispatch()));
-    }
-
-    private void createPointedDripstone(BlockModelGenerators blockModelGenerator, Block block) {
-        blockModelGenerator.skipAutoItemBlock(block);
-        PropertyDispatch.C2<Direction, DripstoneThickness> c2 = PropertyDispatch.properties(BlockStateProperties.VERTICAL_DIRECTION, BlockStateProperties.DRIPSTONE_THICKNESS);
-        DripstoneThickness[] var2 = DripstoneThickness.values();
-        int var3 = var2.length;
-
-        int var4;
-        DripstoneThickness dripstoneThickness;
-        for(var4 = 0; var4 < var3; ++var4) {
-            dripstoneThickness = var2[var4];
-            c2.select(Direction.UP, dripstoneThickness, createPointedDripstoneVariant(blockModelGenerator, block, Direction.UP, dripstoneThickness));
-        }
-
-        var2 = DripstoneThickness.values();
-        var3 = var2.length;
-
-        for(var4 = 0; var4 < var3; ++var4) {
-            dripstoneThickness = var2[var4];
-            c2.select(Direction.DOWN, dripstoneThickness, createPointedDripstoneVariant(blockModelGenerator, block, Direction.DOWN, dripstoneThickness));
-        }
-
-        blockModelGenerator.blockStateOutput.accept(MultiVariantGenerator.multiVariant(block).with(c2));
-    }
-
-    public final Variant createPointedDripstoneVariant(BlockModelGenerators blockModelGenerator, Block block, Direction direction, DripstoneThickness dripstoneThickness) {
-        String name = direction.getSerializedName();
-        String string = "_" + name + "_" + dripstoneThickness.getSerializedName();
-        TextureMapping textureMapping = TextureMapping.cross(TextureMapping.getBlockTexture(block, string));
-        return Variant.variant().with(VariantProperties.MODEL, ModelTemplates.POINTED_DRIPSTONE.createWithSuffix(block, string, textureMapping, blockModelGenerator.modelOutput));
     }
 
     private void createRedstoneTorch(BlockModelGenerators blockModelGenerator, Block block1, Block block2) {
@@ -182,4 +165,11 @@ public class ChippedModelProvider extends FabricModelProvider {
     @Override
     public void generateItemModels(ItemModelGenerators itemModelGenerator) {
     }
+
+    public static TextureMapping logColumn(Block logBlock, Block vanillaTop) {
+        return (new TextureMapping()).put(TextureSlot.SIDE, TextureMapping.getBlockTexture(logBlock)).put(TextureSlot.END, TextureMapping.getBlockTexture(vanillaTop, "_top"));
+    }
+
+    public static final TexturedModel.Provider STRIPPED_COLUMN = TexturedModel.createDefault(block -> logColumn(block, getVanilla(block)), ModelTemplates.CUBE_COLUMN);
+    public static final TexturedModel.Provider STRIPPED_COLUMN_HORIZONTAL = TexturedModel.createDefault(block -> logColumn(block, getVanilla(block)), ModelTemplates.CUBE_COLUMN_HORIZONTAL);
 }

@@ -1,10 +1,10 @@
 {
   "variants": {
     "hanging=false": {
-      "model": "chipped:block/lanterns/lantern_6"
+      "model": "chipped:block/lantern_6"
     },
     "hanging=true": {
-      "model": "chipped:block/lanterns/lantern_6_hanging"
+      "model": "chipped:block/lantern_6_hanging"
     }
   }
 }

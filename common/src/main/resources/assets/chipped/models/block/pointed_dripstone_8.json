@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "chipped:block/pointed_dripstone/pointed_dripstone_8"
+  }
+}

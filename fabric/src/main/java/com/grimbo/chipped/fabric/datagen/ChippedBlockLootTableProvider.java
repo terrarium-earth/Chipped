@@ -43,6 +43,8 @@ public class ChippedBlockLootTableProvider extends FabricBlockLootTableProvider 
                 createSilkTouchOrShearsDispatchTable(block, applyExplosionCondition(block, LootItem.lootTableItem(Items.STRING)));
             } else if (block instanceof GlassBlock || (block instanceof IronBarsBlock && !Registry.BLOCK.getKey(block).getPath().contains("iron_bar"))) {
                 dropWhenSilkTouch(block);
+            } else {
+                dropSelf(block);
             }
         });
 
