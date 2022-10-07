@@ -35,7 +35,6 @@ Artists:
 * MarcIceBlade
 * Facu
 * ZilverLazurus
-* BrotherEarth967
 * Joosh
 * Shrimp
 * SunsetSoup

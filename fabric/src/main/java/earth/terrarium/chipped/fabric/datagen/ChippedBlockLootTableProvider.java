@@ -1,7 +1,6 @@
 package earth.terrarium.chipped.fabric.datagen;
 
 import com.mojang.datafixers.util.Pair;
-import earth.terrarium.chipped.block.ChippedWorkbench;
 import earth.terrarium.chipped.registry.ChippedBlocks;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
