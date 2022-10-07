@@ -6,6 +6,8 @@
     "chipped:soul_lantern",
     "chipped:redstone_torch",
     "chipped:iron_bars",
-    "chipped:redstone_block"
+    "chipped:redstone_block",
+    "chipped:special_lantern",
+    "chipped:special_soul_lantern"
   ]
 }

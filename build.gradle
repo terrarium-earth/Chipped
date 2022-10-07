@@ -34,7 +34,7 @@ allprojects {
 
     repositories {
         maven { url "https://maven.shedaniel.me/" }
-        maven { url = 'https://maven.parchmentmc.org' }
+        maven { url = "https://nexus.resourcefulbees.com/repository/maven-public/"}
     }
 
     tasks.withType(JavaCompile) {

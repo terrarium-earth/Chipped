@@ -26,3 +26,10 @@ mandatory = true
 versionRange = "[1.18.2,)"
 ordering = "NONE"
 side = "BOTH"
+
+[[dependencies.chipped]]
+modId = "ctm"
+mandatory = true
+versionRange = "[0,)"
+ordering = "NONE"
+side = "CLIENT"

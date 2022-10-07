@@ -36,6 +36,14 @@
     "chipped:acacia_log",
     "chipped:dark_oak_log",
     "chipped:warped_stem",
-    "chipped:crimson_stem"
+    "chipped:crimson_stem",
+    "chipped:stripped_oak_log",
+    "chipped:stripped_birch_log",
+    "chipped:stripped_spruce_log",
+    "chipped:stripped_jungle_log",
+    "chipped:stripped_acacia_log",
+    "chipped:stripped_dark_oak_log",
+    "chipped:stripped_warped_stem",
+    "chipped:stripped_crimson_stem"
   ]
 }

@@ -22,16 +22,19 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "com.grimbo.chipped.fabric.ChippedFabric"
+      "earth.terrarium.chipped.fabric.ChippedFabric"
     ],
     "fabric-datagen": [
-      "com.grimbo.chipped.fabric.datagen.ChippedDataGenEntrypoint"
+      "earth.terrarium.chipped.fabric.datagen.ChippedDataGenEntrypoint"
     ],
     "rei_client": [
-      "com.grimbo.chipped.compat.rei.REIChippedPlugin"
+      "earth.terrarium.chipped.compat.rei.REIChippedPlugin"
+    ],
+    "jei_mod_plugin": [
+      "earth.terrarium.chipped.compat.jei.JEIPlugin"
     ],
     "client": [
-      "com.grimbo.chipped.client.ChippedClient::initializeClient"
+      "earth.terrarium.chipped.client.ChippedClient::initializeClient"
     ]
   },
   "mixins": [
@@ -39,6 +42,7 @@
   ],
   "depends": {
     "fabric": "*",
-    "minecraft": ">=1.18.2"
+    "minecraft": ">=1.18.2",
+    "ctm" : "*"
   }
 }

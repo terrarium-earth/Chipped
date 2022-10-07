@@ -2,55 +2,74 @@
 
 ## Description
 
-Have you ever wanted to build an epic sandstone castle? Or maybe a nether fortress made out of pure magma? Perhaps you are just here to build a house out of clay or a totempole with the infamous diorite faces? Either way, we got you covered!
+Have you ever wanted to build an epic sandstone castle? Or maybe a nether fortress made out of pure magma? Perhaps you are just here to build a house out of clay or a totem pole with the infamous diorite faces? Either way, we got you covered!
 
-Chipped is a 1.16+ building mod that expands on the variety of blocks you can use in-game. The mod offers overs 2000+ unique building blocks, from stained glass variations, all the way to concrete, prismarine, and even gilded blackstone! Not only are all the textures hand-painted in the new vanilla style, but they also include some connected textures! Inspired by the popular Chisel mod, Chipped allows builders to have their full range of creativity, because every block deserves a friend!
+Chipped is a 1.16+ building mod that expands on the variety of blocks you can use in-game. The mod offers overs 10,000+ unique building blocks, from stained glass variations, all the way to concrete,  tuff, amethyst, prismarine, and even gilded blackstone! Not only are all the textures hand-painted in the new vanilla style, but they also include a whole lot of connected textures! Inspired by the popular Chisel mod, Chipped allows builders to have their full range of creativity, because every block deserves a friend!
 
-Chipped will aim to support all Minecraft versions 1.16+. We have only recently released, so making variations for all vanilla textures is our current priority. In the future, Chipped is planning to have compatibility with other popular mods.
+Chipped will aim to support all Minecraft versions 1.16+. With this update we succesfully added support for nearly all vanilla blocks. From now on, our main focus will be to provide support to all those other cool mods out there!
 
-You are free to use this mod in your modpacks! Please just provide credit (:
+Do you wish to have your mod(s) supported by chipped? Feel free to send us a messege on discord! :D
+
+You are free to use this mod in your modpacks! Please just provide credit :3
 
 ## Important Notes
 
-With the release of our newest update 1.2.1, the Nature Update has begun! To have connected textures work in-game, please download the mod found on the [Connected Textures Mod Curseforge page](https://www.curseforge.com/minecraft/mc-mods/ctm). We plan to release more cool blocks in future updates so stay tuned!
+With the release of our newest update 2.0.0, the new age of Chipped has begun! To have connected textures work in-game, please download the mod [Connected Textures Mod](https://www.curseforge.com/minecraft/mc-mods/ctm), or for fabric users [Connected Textures Refabricated Mod]. We plan to keep releasing more cool blocks in future updates so stay tuned!!!
+We also want to give a special shoutout to all the people who have been with us for over a year since we started working on chipped. It is so good to see people enjoying the mod we put so much time into!! We love you all <3
 
 ## Credits
 
 Credits to all the amazing people that helped create this mod! 
 
 Coders:
-
 * Grim
+* Alex Nijjar
+* CodexAdrian
+* MsRandom
 * ThatGravyBoat
-* CodexAdria
-* AlexNijjar
+* Crosby
+* Inforno
 
 Artists:
-
 * Kekie6
+* MarcIceBlade
+* Facu
+* ZilverLazurus
+* BrotherEarth967
+* Joosh
+* Shrimp
 * SunsetSoup
 * Valila
 * ArtistMonster
-* Facu
-* Marc
 
-Would you also like to contribute to our mod? Simply messege us on discord to apply for the CCN Team! ;)
+Would you also like to contribute to our mod? Simply messege us on discord to apply for the Terrarium Team! ;)
 
 ## Social Media
-
+[![Discord](https://cdn.discordapp.com/attachments/721407493351407646/841063759078096966/discordlogo.png)](https://discord.gg/terrarium "Discord")
 ![](https://cdn.discordapp.com/attachments/843362690088042506/848395257087262760/blanklogo.png)
-[![Discord](https://cdn.discordapp.com/attachments/721407493351407646/841063759078096966/discordlogo.png)](https://terrarium.earth/discord "Discord")
+[![Twitter](https://cdn.discordapp.com/attachments/721407493351407646/841063761359798302/twitterlogo.png)](https://twitter.com/TerrariumEarth "Twitter")
 ![](https://cdn.discordapp.com/attachments/843362690088042506/848395257087262760/blanklogo.png)
-[![Twitter](https://cdn.discordapp.com/attachments/721407493351407646/841063761359798302/twitterlogo.png)](https://terrarium.earth/twitter "Twitter")
-![](https://cdn.discordapp.com/attachments/843362690088042506/848395257087262760/blanklogo.png)
-[![YouTube](https://cdn.discordapp.com/attachments/721407493351407646/841063763151159297/youtubelogo.png)](https://terrarium.earth/youtube "YouTube")
+[![YouTube](https://cdn.discordapp.com/attachments/721407493351407646/841063763151159297/youtubelogo.png)](https://www.youtube.com/channel/UCSfT3_pCrEzs_HcHr5wINRQ "YouTube")
 ![](https://cdn.discordapp.com/attachments/843362690088042506/848395257087262760/blanklogo.png)
 
 ## Donate
 
 ![](https://cdn.discordapp.com/attachments/843362690088042506/848395257087262760/blanklogo.png)
-[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/E1E3DFK3R)
+[![Patreon](https://cdn.discordapp.com/attachments/721407493351407646/841072839166787584/pintrestlogo.png)](https://www.patreon.com/terrariumearth "Patreon")
 ![](https://cdn.discordapp.com/attachments/843362690088042506/848395257087262760/blanklogo.png)
+[![Paypal](https://cdn.discordapp.com/attachments/721407493351407646/841072837102927883/paypallogo.png)](https://www.paypal.com/paypalme/technomages?locale.x=en_US "Paypal")
 ![](https://cdn.discordapp.com/attachments/843362690088042506/848395257087262760/blanklogo.png)
 
 ## Our Other Projects
+
+* [Tempad](https://www.curseforge.com/minecraft/mc-mods/tempad)
+* [Ad-Astra!](https://www.curseforge.com/minecraft/mc-mods/ad-astra)
+* [Colorful Azaleas](https://www.curseforge.com/minecraft/mc-mods/colorfulazaleas)
+* [Super Ores](https://www.curseforge.com/minecraft/mc-mods/super-ores)
+* [Lil'Wings](https://www.curseforge.com/minecraft/mc-mods/lil-wings)
+* [Vitalize (A submod for Spirit)](https://www.curseforge.com/minecraft/mc-mods/vitalize)
+* [CTM Refrabricated](https://www.curseforge.com/minecraft/mc-mods/ctm-refabricated)
+* [Spirit](https://www.curseforge.com/minecraft/mc-mods/spirit)
+* [Handcrafted](https://www.curseforge.com/minecraft/mc-mods/handcrafted)
+* [Storage Overhaul](https://www.curseforge.com/minecraft/mc-mods/storage-overhaul)
+

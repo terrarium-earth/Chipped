@@ -33,8 +33,14 @@ dependencies {
     common(project(path: ":common", configuration: "namedElements")) { transitive false }
     shadowCommon(project(path: ":common", configuration: "transformProductionForge")) { transitive = false }
 
-    modCompileOnly "me.shedaniel:RoughlyEnoughItems-forge:${project.rei_version}"
-	modRuntimeOnly "me.shedaniel:RoughlyEnoughItems-forge:${project.rei_version}"
+    modRuntimeOnly "mezz.jei:jei-${minecraft_version}-forge:${project.jei_version}"
+    modCompileOnly "mezz.jei:jei-${minecraft_version}-forge-api:${project.jei_version}"
+
+    modImplementation "team.chisel.ctm:CTM:${minecraft_version}-${ctm_version}"
+
+
+//    modCompileOnly "me.shedaniel:RoughlyEnoughItems-forge:${project.rei_version}"
+//	modRuntimeOnly "me.shedaniel:RoughlyEnoughItems-forge:${project.rei_version}"
 }
 
 processResources {
