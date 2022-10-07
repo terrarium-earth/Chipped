@@ -22,9 +22,8 @@ Coders:
 
 * Grim
 * ThatGravyBoat
-* CodexAdrian
+* CodexAdria
 * AlexNijjar
-* 
 
 Artists:
 

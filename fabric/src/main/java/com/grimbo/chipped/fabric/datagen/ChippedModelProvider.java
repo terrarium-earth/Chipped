@@ -1,16 +1,10 @@
 package com.grimbo.chipped.fabric.datagen;
 
-import java.util.function.BiFunction;
-import java.util.function.Predicate;
-import java.util.function.Supplier;
-
 import com.grimbo.chipped.Chipped;
 import com.grimbo.chipped.registry.ChippedBlocks;
-
 import com.mojang.datafixers.util.Pair;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
-import net.minecraft.core.Direction;
 import net.minecraft.core.Registry;
 import net.minecraft.data.models.BlockModelGenerators;
 import net.minecraft.data.models.ItemModelGenerators;
@@ -19,8 +13,11 @@ import net.minecraft.data.models.model.*;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
-import net.minecraft.world.level.block.state.properties.DripstoneThickness;
 import org.apache.commons.lang3.StringUtils;
+
+import java.util.function.BiFunction;
+import java.util.function.Predicate;
+import java.util.function.Supplier;
 
 public class ChippedModelProvider extends FabricModelProvider {
 
@@ -60,8 +57,6 @@ public class ChippedModelProvider extends FabricModelProvider {
                 }
             } else if (block instanceof WebBlock || block instanceof MushroomBlock || block instanceof NetherSproutsBlock || block instanceof RootsBlock || block instanceof FungusBlock) {
                 blockModelGenerator.createCrossBlockWithDefaultItem(block, BlockModelGenerators.TintState.NOT_TINTED);
-            } else if (block instanceof VineBlock) {
-                blockModelGenerator.createMultiface(block);
             } else if (block instanceof WaterlilyBlock) {
                 blockModelGenerator.createSimpleFlatItemModel(block);
                 blockModelGenerator.blockStateOutput.accept(BlockModelGenerators.createRotatedVariant(block, ModelLocationUtils.getModelLocation(block)));

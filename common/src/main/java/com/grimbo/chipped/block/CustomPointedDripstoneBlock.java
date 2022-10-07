@@ -1,6 +1,14 @@
 package com.grimbo.chipped.block;
 
+import java.util.Optional;
+import java.util.Random;
+import java.util.function.BiPredicate;
+import java.util.function.Predicate;
+
+import org.jetbrains.annotations.Nullable;
+
 import com.google.common.annotations.VisibleForTesting;
+
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.particles.ParticleOptions;
@@ -18,11 +26,19 @@ import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.LevelReader;
-import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.CauldronBlock;
+import net.minecraft.world.level.block.Fallable;
+import net.minecraft.world.level.block.SimpleWaterloggedBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
-import net.minecraft.world.level.block.state.properties.*;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.minecraft.world.level.block.state.properties.BooleanProperty;
+import net.minecraft.world.level.block.state.properties.DirectionProperty;
+import net.minecraft.world.level.block.state.properties.DripstoneThickness;
+import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.level.material.Fluid;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
@@ -34,47 +50,22 @@ import net.minecraft.world.phys.shapes.BooleanOp;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
-import org.jetbrains.annotations.Nullable;
-
-import java.util.Optional;
-import java.util.Random;
-import java.util.function.BiPredicate;
-import java.util.function.Predicate;
 
 public class CustomPointedDripstoneBlock extends Block implements Fallable, SimpleWaterloggedBlock {
     public static final DirectionProperty TIP_DIRECTION;
     public static final EnumProperty<DripstoneThickness> THICKNESS;
     public static final BooleanProperty WATERLOGGED;
-    private static final int MAX_SEARCH_LENGTH_WHEN_CHECKING_DRIP_TYPE = 11;
-    private static final int DELAY_BEFORE_FALLING = 2;
-    private static final float DRIP_PROBABILITY_PER_ANIMATE_TICK = 0.02F;
-    private static final float DRIP_PROBABILITY_PER_ANIMATE_TICK_IF_UNDER_LIQUID_SOURCE = 0.12F;
-    private static final int MAX_SEARCH_LENGTH_BETWEEN_STALACTITE_TIP_AND_CAULDRON = 11;
-    private static final float WATER_CAULDRON_FILL_PROBABILITY_PER_RANDOM_TICK = 0.17578125F;
-    private static final float LAVA_CAULDRON_FILL_PROBABILITY_PER_RANDOM_TICK = 0.05859375F;
-    private static final double MIN_TRIDENT_VELOCITY_TO_BREAK_DRIPSTONE = 0.6;
-    private static final float STALACTITE_DAMAGE_PER_FALL_DISTANCE_AND_SIZE = 1.0F;
-    private static final int STALACTITE_MAX_DAMAGE = 40;
-    private static final int MAX_STALACTITE_HEIGHT_FOR_DAMAGE_CALCULATION = 6;
-    private static final float STALAGMITE_FALL_DISTANCE_OFFSET = 2.0F;
-    private static final int STALAGMITE_FALL_DAMAGE_MODIFIER = 2;
-    private static final float AVERAGE_DAYS_PER_GROWTH = 5.0F;
-    private static final float GROWTH_PROBABILITY_PER_RANDOM_TICK = 0.011377778F;
-    private static final int MAX_GROWTH_LENGTH = 7;
-    private static final int MAX_STALAGMITE_SEARCH_RANGE_WHEN_GROWING = 10;
-    private static final float STALACTITE_DRIP_START_PIXEL = 0.6875F;
     private static final VoxelShape TIP_MERGE_SHAPE;
     private static final VoxelShape TIP_SHAPE_UP;
     private static final VoxelShape TIP_SHAPE_DOWN;
     private static final VoxelShape FRUSTUM_SHAPE;
     private static final VoxelShape MIDDLE_SHAPE;
     private static final VoxelShape BASE_SHAPE;
-    private static final float MAX_HORIZONTAL_OFFSET = 0.125F;
     private static final VoxelShape REQUIRED_SPACE_TO_DRIP_THROUGH_NON_SOLID_BLOCK;
 
     public CustomPointedDripstoneBlock(BlockBehaviour.Properties properties) {
         super(properties);
-        this.registerDefaultState((BlockState)((BlockState)((BlockState)((BlockState)this.stateDefinition.any()).setValue(TIP_DIRECTION, Direction.UP)).setValue(THICKNESS, DripstoneThickness.TIP)).setValue(WATERLOGGED, false));
+        this.registerDefaultState((BlockState) ((BlockState) ((BlockState) ((BlockState) this.stateDefinition.any()).setValue(TIP_DIRECTION, Direction.UP)).setValue(THICKNESS, DripstoneThickness.TIP)).setValue(WATERLOGGED, false));
     }
 
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
@@ -82,32 +73,32 @@ public class CustomPointedDripstoneBlock extends Block implements Fallable, Simp
     }
 
     public boolean canSurvive(BlockState state, LevelReader level, BlockPos pos) {
-        return isValidPointedDripstonePlacement(level, pos, (Direction)state.getValue(TIP_DIRECTION));
+        return isValidPointedDripstonePlacement(level, pos, (Direction) state.getValue(TIP_DIRECTION));
     }
 
     public BlockState updateShape(BlockState state, Direction direction, BlockState neighborState, LevelAccessor level, BlockPos currentPos, BlockPos neighborPos) {
-        if ((Boolean)state.getValue(WATERLOGGED)) {
+        if ((Boolean) state.getValue(WATERLOGGED)) {
             level.scheduleTick(currentPos, (Fluid) Fluids.WATER, Fluids.WATER.getTickDelay(level));
         }
 
         if (direction != Direction.UP && direction != Direction.DOWN) {
             return state;
         } else {
-            Direction direction2 = (Direction)state.getValue(TIP_DIRECTION);
+            Direction direction2 = (Direction) state.getValue(TIP_DIRECTION);
             if (direction2 == Direction.DOWN && level.getBlockTicks().hasScheduledTick(currentPos, this)) {
                 return state;
             } else if (direction == direction2.getOpposite() && !this.canSurvive(state, level, currentPos)) {
                 if (direction2 == Direction.DOWN) {
-                    level.scheduleTick(currentPos, (Block)this, 2);
+                    level.scheduleTick(currentPos, (Block) this, 2);
                 } else {
-                    level.scheduleTick(currentPos, (Block)this, 1);
+                    level.scheduleTick(currentPos, (Block) this, 1);
                 }
 
                 return state;
             } else {
                 boolean bl = state.getValue(THICKNESS) == DripstoneThickness.TIP_MERGE;
                 DripstoneThickness dripstoneThickness = calculateDripstoneThickness(level, currentPos, direction2, bl);
-                return (BlockState)state.setValue(THICKNESS, dripstoneThickness);
+                return (BlockState) state.setValue(THICKNESS, dripstoneThickness);
             }
         }
     }
@@ -207,12 +198,13 @@ public class CustomPointedDripstoneBlock extends Block implements Fallable, Simp
         } else {
             boolean bl = !context.isSecondaryUseActive();
             DripstoneThickness dripstoneThickness = calculateDripstoneThickness(levelAccessor, blockPos, direction2, bl);
-            return dripstoneThickness == null ? null : (BlockState)((BlockState)((BlockState)this.defaultBlockState().setValue(TIP_DIRECTION, direction2)).setValue(THICKNESS, dripstoneThickness)).setValue(WATERLOGGED, levelAccessor.getFluidState(blockPos).getType() == Fluids.WATER);
+            return dripstoneThickness == null ? null : (BlockState) ((BlockState) ((BlockState) this.defaultBlockState().setValue(TIP_DIRECTION, direction2)).setValue(THICKNESS, dripstoneThickness)).setValue(WATERLOGGED, levelAccessor.getFluidState(blockPos).getType() == Fluids.WATER);
         }
     }
 
+    @SuppressWarnings("deprecation")
     public FluidState getFluidState(BlockState state) {
-        return (Boolean)state.getValue(WATERLOGGED) ? Fluids.WATER.getSource(false) : super.getFluidState(state);
+        return (Boolean) state.getValue(WATERLOGGED) ? Fluids.WATER.getSource(false) : super.getFluidState(state);
     }
 
     public VoxelShape getOcclusionShape(BlockState state, BlockGetter level, BlockPos pos) {
@@ -220,7 +212,7 @@ public class CustomPointedDripstoneBlock extends Block implements Fallable, Simp
     }
 
     public VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
-        DripstoneThickness dripstoneThickness = (DripstoneThickness)state.getValue(THICKNESS);
+        DripstoneThickness dripstoneThickness = (DripstoneThickness) state.getValue(THICKNESS);
         VoxelShape voxelShape;
         if (dripstoneThickness == DripstoneThickness.TIP_MERGE) {
             voxelShape = TIP_MERGE_SHAPE;
@@ -272,11 +264,11 @@ public class CustomPointedDripstoneBlock extends Block implements Fallable, Simp
     private static void spawnFallingStalactite(BlockState state, ServerLevel level, BlockPos pos) {
         BlockPos.MutableBlockPos mutableBlockPos = pos.mutable();
 
-        for(BlockState blockState = state; isStalactite(blockState); blockState = level.getBlockState(mutableBlockPos)) {
+        for (BlockState blockState = state; isStalactite(blockState); blockState = level.getBlockState(mutableBlockPos)) {
             FallingBlockEntity fallingBlockEntity = FallingBlockEntity.fall(level, mutableBlockPos, blockState);
             if (isTip(blockState, true)) {
                 int i = Math.max(1 + pos.getY() - mutableBlockPos.getY(), 6);
-                float f = 1.0F * (float)i;
+                float f = 1.0F * (float) i;
                 fallingBlockEntity.setHurtsEntities(f, 40);
                 break;
             }
@@ -309,7 +301,7 @@ public class CustomPointedDripstoneBlock extends Block implements Fallable, Simp
     private static void growStalagmiteBelow(ServerLevel level, BlockPos pos) {
         BlockPos.MutableBlockPos mutableBlockPos = pos.mutable();
 
-        for(int i = 0; i < 10; ++i) {
+        for (int i = 0; i < 10; ++i) {
             mutableBlockPos.move(Direction.DOWN);
             BlockState blockState = level.getBlockState(mutableBlockPos);
             if (!blockState.getFluidState().isEmpty()) {
@@ -370,12 +362,12 @@ public class CustomPointedDripstoneBlock extends Block implements Fallable, Simp
         });
     }
 
+    @SuppressWarnings("deprecation")
     private static void spawnDripParticle(Level level, BlockPos pos, BlockState state, Fluid fluid) {
         Vec3 vec3 = state.getOffset(level, pos);
-        double d = 0.0625;
-        double e = (double)pos.getX() + 0.5 + vec3.x;
-        double f = (double)((float)(pos.getY() + 1) - 0.6875F) - 0.0625;
-        double g = (double)pos.getZ() + 0.5 + vec3.z;
+        double e = (double) pos.getX() + 0.5 + vec3.x;
+        double f = (double) ((float) (pos.getY() + 1) - 0.6875F) - 0.0625;
+        double g = (double) pos.getZ() + 0.5 + vec3.z;
         Fluid fluid2 = getDripFluid(level, fluid);
         ParticleOptions particleOptions = fluid2.is(FluidTags.LAVA) ? ParticleTypes.DRIPPING_DRIPSTONE_LAVA : ParticleTypes.DRIPPING_DRIPSTONE_WATER;
         level.addParticle(particleOptions, e, f, g, 0.0, 0.0, 0.0);
@@ -386,11 +378,11 @@ public class CustomPointedDripstoneBlock extends Block implements Fallable, Simp
         if (isTip(state, isTipMerge)) {
             return pos;
         } else {
-            Direction direction = (Direction)state.getValue(TIP_DIRECTION);
+            Direction direction = (Direction) state.getValue(TIP_DIRECTION);
             BiPredicate<BlockPos, BlockState> biPredicate = (blockPos, blockState) -> {
                 return blockState.getBlock() instanceof CustomPointedDripstoneBlock && blockState.getValue(TIP_DIRECTION) == direction;
             };
-            return (BlockPos)findBlockVertical(level, pos, direction.getAxisDirection(), biPredicate, (blockState) -> {
+            return (BlockPos) findBlockVertical(level, pos, direction.getAxisDirection(), biPredicate, (blockState) -> {
                 return isTip(blockState, isTipMerge);
             }, maxIterations).orElse(null);
         }
@@ -420,7 +412,7 @@ public class CustomPointedDripstoneBlock extends Block implements Fallable, Simp
         } else if (!isPointedDripstoneWithDirection(blockState, dir)) {
             return DripstoneThickness.TIP;
         } else {
-            DripstoneThickness dripstoneThickness = (DripstoneThickness)blockState.getValue(THICKNESS);
+            DripstoneThickness dripstoneThickness = (DripstoneThickness) blockState.getValue(THICKNESS);
             if (dripstoneThickness != DripstoneThickness.TIP && dripstoneThickness != DripstoneThickness.TIP_MERGE) {
                 BlockState blockState2 = level.getBlockState(pos.relative(direction));
                 return !isPointedDripstoneWithDirection(blockState2, dir) ? DripstoneThickness.BASE : DripstoneThickness.MIDDLE;
@@ -431,11 +423,11 @@ public class CustomPointedDripstoneBlock extends Block implements Fallable, Simp
     }
 
     public static boolean canDrip(BlockState state) {
-        return isStalactite(state) && state.getValue(THICKNESS) == DripstoneThickness.TIP && !(Boolean)state.getValue(WATERLOGGED);
+        return isStalactite(state) && state.getValue(THICKNESS) == DripstoneThickness.TIP && !(Boolean) state.getValue(WATERLOGGED);
     }
 
     private static boolean canTipGrow(BlockState state, ServerLevel level, BlockPos pos) {
-        Direction direction = (Direction)state.getValue(TIP_DIRECTION);
+        Direction direction = (Direction) state.getValue(TIP_DIRECTION);
         BlockPos blockPos = pos.relative(direction);
         BlockState blockState = level.getBlockState(blockPos);
         if (!blockState.getFluidState().isEmpty()) {
@@ -446,7 +438,7 @@ public class CustomPointedDripstoneBlock extends Block implements Fallable, Simp
     }
 
     private static Optional<BlockPos> findRootBlock(Level level, BlockPos pos, BlockState state, int maxIterations) {
-        Direction direction = (Direction)state.getValue(TIP_DIRECTION);
+        Direction direction = (Direction) state.getValue(TIP_DIRECTION);
         BiPredicate<BlockPos, BlockState> biPredicate = (blockPos, blockState) -> {
             return blockState.getBlock() instanceof CustomPointedDripstoneBlock && blockState.getValue(TIP_DIRECTION) == direction;
         };
@@ -465,7 +457,7 @@ public class CustomPointedDripstoneBlock extends Block implements Fallable, Simp
         if (!(state.getBlock() instanceof CustomPointedDripstoneBlock)) {
             return false;
         } else {
-            DripstoneThickness dripstoneThickness = (DripstoneThickness)state.getValue(THICKNESS);
+            DripstoneThickness dripstoneThickness = (DripstoneThickness) state.getValue(THICKNESS);
             return dripstoneThickness == DripstoneThickness.TIP || isTipMerge && dripstoneThickness == DripstoneThickness.TIP_MERGE;
         }
     }
@@ -502,7 +494,7 @@ public class CustomPointedDripstoneBlock extends Block implements Fallable, Simp
         BiPredicate<BlockPos, BlockState> biPredicate = (blockPos, blockState) -> {
             return canDripThrough(level, blockPos, blockState);
         };
-        return (BlockPos)findBlockVertical(level, pos, Direction.DOWN.getAxisDirection(), biPredicate, predicate, 11).orElse(null);
+        return (BlockPos) findBlockVertical(level, pos, Direction.DOWN.getAxisDirection(), biPredicate, predicate, 11).orElse(null);
     }
 
     @Nullable
@@ -510,11 +502,11 @@ public class CustomPointedDripstoneBlock extends Block implements Fallable, Simp
         BiPredicate<BlockPos, BlockState> biPredicate = (blockPos, blockState) -> {
             return canDripThrough(level, blockPos, blockState);
         };
-        return (BlockPos)findBlockVertical(level, pos, Direction.UP.getAxisDirection(), biPredicate, CustomPointedDripstoneBlock::canDrip, 11).orElse(null);
+        return (BlockPos) findBlockVertical(level, pos, Direction.UP.getAxisDirection(), biPredicate, CustomPointedDripstoneBlock::canDrip, 11).orElse(null);
     }
 
     public static Fluid getCauldronFillFluidType(Level level, BlockPos pos) {
-        return (Fluid)getFluidAboveStalactite(level, pos, level.getBlockState(pos)).filter(CustomPointedDripstoneBlock::canFillCauldron).orElse(Fluids.EMPTY);
+        return (Fluid) getFluidAboveStalactite(level, pos, level.getBlockState(pos)).filter(CustomPointedDripstoneBlock::canFillCauldron).orElse(Fluids.EMPTY);
     }
 
     private static Optional<Fluid> getFluidAboveStalactite(Level level, BlockPos pos, BlockState state) {
@@ -543,7 +535,7 @@ public class CustomPointedDripstoneBlock extends Block implements Fallable, Simp
         Direction direction = Direction.get(axis, Direction.Axis.Y);
         BlockPos.MutableBlockPos mutableBlockPos = pos.mutable();
 
-        for(int i = 1; i < maxIterations; ++i) {
+        for (int i = 1; i < maxIterations; ++i) {
             mutableBlockPos.move(direction);
             BlockState blockState = level.getBlockState(mutableBlockPos);
             if (statePredicate.test(blockState)) {

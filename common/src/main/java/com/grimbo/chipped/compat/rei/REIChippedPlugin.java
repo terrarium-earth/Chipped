@@ -25,6 +25,7 @@ import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.level.block.Block;
 
 public class REIChippedPlugin implements REIClientPlugin {
+    @SuppressWarnings("unchecked")
     @Override
     public void registerCategories(CategoryRegistry registry) {
         registry.add(

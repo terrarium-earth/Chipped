@@ -184,7 +184,7 @@ public class ChippedBlocks {
         registerBlockWithPalette(Blocks.JUNGLE_LOG, 11, new ChippedProperties().blockType(RotatedPillarBlock::new));
         registerBlockWithPalette(Blocks.OAK_LOG, 11, new ChippedProperties().blockType(RotatedPillarBlock::new));
         registerBlockWithPalette(Blocks.SPRUCE_LOG, 11, new ChippedProperties().blockType(RotatedPillarBlock::new));
-        registerBlockWithPalette(Blocks.WARPED_STEM, 11, new ChippedProperties().blockType(RotatedPillarBlock::new));
+        registerBlockWithPalette(Blocks.WARPED_STEM, 10, new ChippedProperties().blockType(RotatedPillarBlock::new));
 
         // Stripped Logs
         registerBlockWithPalette(Blocks.STRIPPED_ACACIA_LOG, 16, new ChippedProperties().blockType(RotatedPillarBlock::new));
@@ -324,7 +324,7 @@ public class ChippedBlocks {
         }).cutout().itemType(WaterLilyBlockItem::new));
         registerBlockWithPalette(Blocks.NETHER_SPROUTS, 20, new ChippedProperties().blockType(NetherSproutsBlock::new).cutout().excludeLoot());
         registerBlockWithPalette(Blocks.RED_MUSHROOM, 15, new ChippedProperties().blockType(p -> new MushroomBlock(p, () -> TreeFeatures.HUGE_RED_MUSHROOM)).cutout());
-        registerBlockWithPalette(Blocks.VINE, 17, new ChippedProperties().blockType(VineBlock::new).cutout().excludeLoot());
+        registerBlockWithPalette(Blocks.VINE, 11, new ChippedProperties().blockType(VineBlock::new).cutout().excludeLoot());
         registerBlockWithPalette(Blocks.WARPED_FUNGUS, 14, new ChippedProperties().blockType(p -> new FungusBlock(p, () -> TreeFeatures.WARPED_FUNGUS_PLANTED) {
         }).cutout());
         registerBlockWithPalette(Blocks.WARPED_ROOTS, 9, new ChippedProperties().blockType(p -> new RootsBlock(p) {

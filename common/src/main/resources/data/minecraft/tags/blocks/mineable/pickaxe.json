@@ -102,6 +102,7 @@
     "#chipped:waxed_copper_block",
     "#chipped:waxed_exposed_copper",
     "#chipped:waxed_oxidized_copper",
-    "#chipped:waxed_weathered_copper"
+    "#chipped:waxed_weathered_copper",
+    "#chipped:andesite"
   ]
 }

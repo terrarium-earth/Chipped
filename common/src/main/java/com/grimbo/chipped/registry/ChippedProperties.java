@@ -47,12 +47,13 @@ public class ChippedProperties {
         return this;
     }
 
-    public ChippedProperties tag() {
+    public ChippedProperties skipItem() {
+        this.skipItem = true;
         return this;
     }
 
-    public ChippedProperties skipItem() {
-        this.skipItem = true;
+    public ChippedProperties coloured() {
+        this.transparent = true;
         return this;
     }
 

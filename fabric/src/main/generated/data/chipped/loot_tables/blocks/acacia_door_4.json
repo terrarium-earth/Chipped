@@ -7,15 +7,6 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "conditions": [
-            {
-              "condition": "minecraft:block_state_property",
-              "block": "chipped:acacia_door_4",
-              "properties": {
-                "half": "lower"
-              }
-            }
-          ],
           "name": "chipped:acacia_door_4"
         }
       ],

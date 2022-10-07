@@ -44,6 +44,7 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
+@SuppressWarnings("deprecation")
 public class ChippedWorkbench extends Block {
 	public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
 

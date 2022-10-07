@@ -2,7 +2,7 @@
 	"credit": "Made with Blockbench",
 	"textures": {
 		"0": "chipped:block/lantern/paper_lantern_bottom",
-		"particle": "0"
+		"particle": "chipped:block/lantern/paper_lantern_bottom"
 	},
 	"elements": [
 		{

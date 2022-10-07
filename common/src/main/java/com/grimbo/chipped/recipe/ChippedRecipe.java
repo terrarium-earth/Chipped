@@ -7,7 +7,6 @@ import java.util.stream.Stream;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
-import com.grimbo.chipped.recipe.ChippedRecipe.Serializer;
 
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderSet;
