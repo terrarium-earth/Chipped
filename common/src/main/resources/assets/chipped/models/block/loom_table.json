@@ -2,7 +2,8 @@
 	"credit": "Made with Blockbench",
 	"texture_size": [128, 128],
 	"textures": {
-		"1": "chipped:block/workbench/table"
+		"1": "chipped:block/workbench/table",
+		"particle": "chipped:block/workbench/table"
 	},
 	"elements": [
 		{

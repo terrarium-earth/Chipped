@@ -37,9 +37,6 @@
       "earth.terrarium.chipped.client.ChippedClient::initializeClient"
     ]
   },
-  "mixins": [
-    "chipped.mixins.json"
-  ],
   "depends": {
     "fabric": "*",
     "minecraft": ">=1.18.2",

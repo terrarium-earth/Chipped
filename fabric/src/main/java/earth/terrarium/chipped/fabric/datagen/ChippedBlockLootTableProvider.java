@@ -4,9 +4,8 @@ import earth.terrarium.chipped.registry.ChippedBlocks;
 import com.mojang.datafixers.util.Pair;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.RedstoneWallTorchBlock;
-import net.minecraft.world.level.block.WallTorchBlock;
+import net.minecraft.data.loot.BlockLoot;
+import net.minecraft.world.level.block.*;
 
 import java.util.function.Supplier;
 
@@ -18,7 +17,13 @@ public class ChippedBlockLootTableProvider extends FabricBlockLootTableProvider 
 
     @Override
     protected void generateBlockLootTables() {
-        ChippedBlocks.REGISTERED_BLOCKS.stream().map(Pair::getFirst).map(Supplier::get).forEach(this::dropSelf);
+        ChippedBlocks.REGISTERED_BLOCKS.stream().map(Pair::getFirst).map(Supplier::get).forEach(block -> {
+            if (block instanceof DoorBlock) {
+                this.add(block, BlockLoot::createDoorTable);
+            } else {
+                this.dropSelf(block);
+            }
+        });
 
         ChippedBlocks.BLOCK_PAIRS.forEach(pair -> {
             Block block1 = pair.getFirst().get();

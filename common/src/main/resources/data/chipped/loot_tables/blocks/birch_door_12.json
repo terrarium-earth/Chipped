@@ -7,6 +7,15 @@
       "entries": [
         {
           "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "minecraft:block_state_property",
+              "block": "chipped:birch_door_12",
+              "properties": {
+                "half": "lower"
+              }
+            }
+          ],
           "name": "chipped:birch_door_12"
         }
       ],

@@ -7,6 +7,15 @@
       "entries": [
         {
           "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "minecraft:block_state_property",
+              "block": "chipped:dark_oak_door_9",
+              "properties": {
+                "half": "lower"
+              }
+            }
+          ],
           "name": "chipped:dark_oak_door_9"
         }
       ],
