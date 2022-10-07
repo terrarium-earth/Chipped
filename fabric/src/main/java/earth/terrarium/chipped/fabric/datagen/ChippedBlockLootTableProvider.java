@@ -1,11 +1,15 @@
 package earth.terrarium.chipped.fabric.datagen;
 
-import earth.terrarium.chipped.registry.ChippedBlocks;
 import com.mojang.datafixers.util.Pair;
+import earth.terrarium.chipped.block.ChippedWorkbench;
+import earth.terrarium.chipped.registry.ChippedBlocks;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
 import net.minecraft.data.loot.BlockLoot;
-import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.DoorBlock;
+import net.minecraft.world.level.block.RedstoneWallTorchBlock;
+import net.minecraft.world.level.block.WallTorchBlock;
 
 import java.util.function.Supplier;
 
@@ -17,6 +21,14 @@ public class ChippedBlockLootTableProvider extends FabricBlockLootTableProvider 
 
     @Override
     protected void generateBlockLootTables() {
+        this.dropSelf(ChippedBlocks.BOTANIST_WORKBENCH.get());
+        this.dropSelf(ChippedBlocks.GLASSBLOWER.get());
+        this.dropSelf(ChippedBlocks.CARPENTERS_TABLE.get());
+        this.dropSelf(ChippedBlocks.LOOM_TABLE.get());
+        this.dropSelf(ChippedBlocks.MASON_TABLE.get());
+        this.dropSelf(ChippedBlocks.ALCHEMY_BENCH.get());
+        this.dropSelf(ChippedBlocks.MECHANIST_WORKBENCH.get());
+
         ChippedBlocks.REGISTERED_BLOCKS.stream().map(Pair::getFirst).map(Supplier::get).forEach(block -> {
             if (block instanceof DoorBlock) {
                 this.add(block, BlockLoot::createDoorTable);
@@ -24,6 +36,7 @@ public class ChippedBlockLootTableProvider extends FabricBlockLootTableProvider 
                 this.dropSelf(block);
             }
         });
+
 
         ChippedBlocks.BLOCK_PAIRS.forEach(pair -> {
             Block block1 = pair.getFirst().get();
