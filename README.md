@@ -30,7 +30,7 @@ Artists:
 * Kekie6
 * SunsetSoup
 * Valila
-* ArtistMonster (future contributions)
+* ArtistMonster
 * Facu
 * Marc
 
