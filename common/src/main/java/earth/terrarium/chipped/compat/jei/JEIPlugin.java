@@ -2,8 +2,8 @@ package earth.terrarium.chipped.compat.jei;
 
 import earth.terrarium.chipped.Chipped;
 import earth.terrarium.chipped.recipe.ChippedRecipe;
-import earth.terrarium.chipped.registry.ChippedBlocks;
-import earth.terrarium.chipped.registry.ChippedRecipeTypes;
+import earth.terrarium.chipped.registry.ModBlocks;
+import earth.terrarium.chipped.registry.ModRecipeTypes;
 import mezz.jei.api.IModPlugin;
 import mezz.jei.api.JeiPlugin;
 import mezz.jei.api.helpers.IGuiHelper;
@@ -44,37 +44,37 @@ public class JEIPlugin implements IModPlugin {
 	public void registerCategories(IRecipeCategoryRegistration registry) {
 		IGuiHelper helper = registry.getJeiHelpers().getGuiHelper();
 		registry.addRecipeCategories(
-				new ChippedRecipeCategory(ChippedBlocks.BOTANIST_WORKBENCH.get().asItem(), helper),
-				new ChippedRecipeCategory(ChippedBlocks.GLASSBLOWER.get().asItem(), helper),
-				new ChippedRecipeCategory(ChippedBlocks.CARPENTERS_TABLE.get().asItem(), helper),
-				new ChippedRecipeCategory(ChippedBlocks.LOOM_TABLE.get().asItem(), helper),
-				new ChippedRecipeCategory(ChippedBlocks.MASON_TABLE.get().asItem(), helper),
-				new ChippedRecipeCategory(ChippedBlocks.ALCHEMY_BENCH.get().asItem(), helper),
-				new ChippedRecipeCategory(ChippedBlocks.MECHANIST_WORKBENCH.get().asItem(), helper)
+				new ChippedRecipeCategory(ModBlocks.BOTANIST_WORKBENCH.get().asItem(), helper),
+				new ChippedRecipeCategory(ModBlocks.GLASSBLOWER.get().asItem(), helper),
+				new ChippedRecipeCategory(ModBlocks.CARPENTERS_TABLE.get().asItem(), helper),
+				new ChippedRecipeCategory(ModBlocks.LOOM_TABLE.get().asItem(), helper),
+				new ChippedRecipeCategory(ModBlocks.MASON_TABLE.get().asItem(), helper),
+				new ChippedRecipeCategory(ModBlocks.ALCHEMY_BENCH.get().asItem(), helper),
+				new ChippedRecipeCategory(ModBlocks.MECHANIST_WORKBENCH.get().asItem(), helper)
 		);
 	}
 
 	@Override
 	public void registerRecipes(IRecipeRegistration registration) {
 		RecipeManager recipeManager = Minecraft.getInstance().level.getRecipeManager();
-		registration.addRecipes(flatten(recipeManager.getAllRecipesFor(ChippedRecipeTypes.BOTANIST_WORKBENCH_TYPE.get())), getUidFromId("botanist_workbench"));
-		registration.addRecipes(flatten(recipeManager.getAllRecipesFor(ChippedRecipeTypes.GLASSBLOWER_TYPE.get())), getUidFromId("glassblower"));
-		registration.addRecipes(flatten(recipeManager.getAllRecipesFor(ChippedRecipeTypes.CARPENTERS_TABLE_TYPE.get())), getUidFromId("carpenters_table"));
-		registration.addRecipes(flatten(recipeManager.getAllRecipesFor(ChippedRecipeTypes.LOOM_TABLE_TYPE.get())), getUidFromId("loom_table"));
-		registration.addRecipes(flatten(recipeManager.getAllRecipesFor(ChippedRecipeTypes.MASON_TABLE_TYPE.get())), getUidFromId("mason_table"));
-		registration.addRecipes(flatten(recipeManager.getAllRecipesFor(ChippedRecipeTypes.ALCHEMY_BENCH_TYPE.get())), getUidFromId("alchemy_bench"));
-		registration.addRecipes(flatten(recipeManager.getAllRecipesFor(ChippedRecipeTypes.MECHANIST_WORKBENCH_TYPE.get())), getUidFromId("mechanist_workbench"));
+		registration.addRecipes(flatten(recipeManager.getAllRecipesFor(ModRecipeTypes.BOTANIST_WORKBENCH_TYPE.get())), getUidFromId("botanist_workbench"));
+		registration.addRecipes(flatten(recipeManager.getAllRecipesFor(ModRecipeTypes.GLASSBLOWER_TYPE.get())), getUidFromId("glassblower"));
+		registration.addRecipes(flatten(recipeManager.getAllRecipesFor(ModRecipeTypes.CARPENTERS_TABLE_TYPE.get())), getUidFromId("carpenters_table"));
+		registration.addRecipes(flatten(recipeManager.getAllRecipesFor(ModRecipeTypes.LOOM_TABLE_TYPE.get())), getUidFromId("loom_table"));
+		registration.addRecipes(flatten(recipeManager.getAllRecipesFor(ModRecipeTypes.MASON_TABLE_TYPE.get())), getUidFromId("mason_table"));
+		registration.addRecipes(flatten(recipeManager.getAllRecipesFor(ModRecipeTypes.ALCHEMY_BENCH_TYPE.get())), getUidFromId("alchemy_bench"));
+		registration.addRecipes(flatten(recipeManager.getAllRecipesFor(ModRecipeTypes.MECHANIST_WORKBENCH_TYPE.get())), getUidFromId("mechanist_workbench"));
 	}
 
 	@Override
 	public void registerRecipeCatalysts(IRecipeCatalystRegistration registration) {
-		registration.addRecipeCatalyst(new ItemStack(ChippedBlocks.BOTANIST_WORKBENCH.get()), getUidFromId("botanist_workbench"));
-		registration.addRecipeCatalyst(new ItemStack(ChippedBlocks.GLASSBLOWER.get()), getUidFromId("glassblower"));
-		registration.addRecipeCatalyst(new ItemStack(ChippedBlocks.CARPENTERS_TABLE.get()), getUidFromId("carpenters_table"));
-		registration.addRecipeCatalyst(new ItemStack(ChippedBlocks.LOOM_TABLE.get()), getUidFromId("loom_table"));
-		registration.addRecipeCatalyst(new ItemStack(ChippedBlocks.MASON_TABLE.get()), getUidFromId("mason_table"));
-		registration.addRecipeCatalyst(new ItemStack(ChippedBlocks.ALCHEMY_BENCH.get()), getUidFromId("alchemy_bench"));
-		registration.addRecipeCatalyst(new ItemStack(ChippedBlocks.MECHANIST_WORKBENCH.get()), getUidFromId("mechanist_workbench"));
+		registration.addRecipeCatalyst(new ItemStack(ModBlocks.BOTANIST_WORKBENCH.get()), getUidFromId("botanist_workbench"));
+		registration.addRecipeCatalyst(new ItemStack(ModBlocks.GLASSBLOWER.get()), getUidFromId("glassblower"));
+		registration.addRecipeCatalyst(new ItemStack(ModBlocks.CARPENTERS_TABLE.get()), getUidFromId("carpenters_table"));
+		registration.addRecipeCatalyst(new ItemStack(ModBlocks.LOOM_TABLE.get()), getUidFromId("loom_table"));
+		registration.addRecipeCatalyst(new ItemStack(ModBlocks.MASON_TABLE.get()), getUidFromId("mason_table"));
+		registration.addRecipeCatalyst(new ItemStack(ModBlocks.ALCHEMY_BENCH.get()), getUidFromId("alchemy_bench"));
+		registration.addRecipeCatalyst(new ItemStack(ModBlocks.MECHANIST_WORKBENCH.get()), getUidFromId("mechanist_workbench"));
 	}
 
 	private static List<ChippedRecipeCategory.FlattenedRecipe> flatten(Collection<ChippedRecipe> recipes) {

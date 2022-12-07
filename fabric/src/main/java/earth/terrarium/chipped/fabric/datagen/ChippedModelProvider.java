@@ -1,7 +1,7 @@
 package earth.terrarium.chipped.fabric.datagen;
 
 import earth.terrarium.chipped.Chipped;
-import earth.terrarium.chipped.registry.ChippedBlocks;
+import earth.terrarium.chipped.registry.ModBlocks;
 import com.mojang.datafixers.util.Pair;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
@@ -27,7 +27,7 @@ public class ChippedModelProvider extends FabricModelProvider {
 
     @Override
     public void generateBlockStateModels(BlockModelGenerators blockModelGenerator) {
-        ChippedBlocks.REGISTERED_BLOCKS.stream().map(Pair::getFirst).filter(Predicate.not(ChippedBlocks.SKIPPED_MODELS::contains)).map(Supplier::get).forEach(block -> {
+        ModBlocks.REGISTERED_BLOCKS.stream().map(Pair::getFirst).filter(Predicate.not(ModBlocks.SKIPPED_MODELS::contains)).map(Supplier::get).forEach(block -> {
 
             if (block instanceof MelonBlock) {
                 blockModelGenerator.createTrivialBlock(block, TexturedModel.COLUMN);
@@ -81,7 +81,7 @@ public class ChippedModelProvider extends FabricModelProvider {
             }
         });
 
-        ChippedBlocks.BLOCK_PAIRS.forEach(pair -> {
+        ModBlocks.BLOCK_PAIRS.forEach(pair -> {
             Block block1 = pair.getFirst().get();
             Block block2 = pair.getSecond().get();
 

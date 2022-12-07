@@ -6,23 +6,27 @@
   "description": "Every block needs a friend!",
   "authors": [
     "Grimbop",
+    "Alex Nijjar",
     "Kekie6",
-    "MsRandom",
+    "Marc-IceBlade",
     "ThatGravyBoat",
     "CodexAdrian",
-    "AlexNijjar"
+    "MsRandom"
   ],
   "contact": {
     "homepage": "https://www.curseforge.com/minecraft/mc-mods/chipped",
     "sources": "https://github.com/terrarium-earth/Chipped",
     "issues": "https://github.com/terrarium-earth/Chipped/issues"
   },
-  "license": "All-Rights-Reserved",
-  "icon": "assets/chipped/icon.png",
+  "license": "Terrarium Licence",
+  "icon": "icon.png",
   "environment": "*",
   "entrypoints": {
     "main": [
       "earth.terrarium.chipped.fabric.ChippedFabric"
+    ],
+    "client": [
+      "earth.terrarium.chipped.client.ChippedClient::initializeClient"
     ],
     "fabric-datagen": [
       "earth.terrarium.chipped.fabric.datagen.ChippedDataGenEntrypoint"
@@ -32,9 +36,6 @@
     ],
     "jei_mod_plugin": [
       "earth.terrarium.chipped.compat.jei.JEIPlugin"
-    ],
-    "client": [
-      "earth.terrarium.chipped.client.ChippedClient::initializeClient"
     ]
   },
   "depends": {

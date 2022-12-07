@@ -3,8 +3,8 @@ package earth.terrarium.chipped.client;
 import java.util.function.Supplier;
 
 import earth.terrarium.chipped.menus.ChippedScreen;
-import earth.terrarium.chipped.registry.ChippedBlocks;
-import earth.terrarium.chipped.registry.ChippedMenuType;
+import earth.terrarium.chipped.registry.ModBlocks;
+import earth.terrarium.chipped.registry.ModMenuTypes;
 
 import dev.architectury.injectables.annotations.ExpectPlatform;
 import net.fabricmc.api.EnvType;
@@ -22,30 +22,30 @@ import net.minecraft.world.level.block.Block;
 public class ChippedClient {
 
     public static void initializeClient() {
-        for (var block : ChippedBlocks.CUTOUT_BLOCKS) {
+        for (var block : ModBlocks.CUTOUT_BLOCKS) {
             registerBlockRenderType(RenderType.cutout(), block);
         }
 
-        for (var block : ChippedBlocks.TRANSPARENT_BLOCKS) {
+        for (var block : ModBlocks.TRANSPARENT_BLOCKS) {
             registerBlockRenderType(RenderType.translucent(), block);
         }
 
         // Workbenches
-        registerBlockRenderType(RenderType.cutout(), ChippedBlocks.BOTANIST_WORKBENCH);
-        registerBlockRenderType(RenderType.cutout(), ChippedBlocks.GLASSBLOWER);
-        registerBlockRenderType(RenderType.cutout(), ChippedBlocks.CARPENTERS_TABLE);
-        registerBlockRenderType(RenderType.cutout(), ChippedBlocks.LOOM_TABLE);
-        registerBlockRenderType(RenderType.cutout(), ChippedBlocks.MASON_TABLE);
-        registerBlockRenderType(RenderType.cutout(), ChippedBlocks.ALCHEMY_BENCH);
-        registerBlockRenderType(RenderType.cutout(), ChippedBlocks.MECHANIST_WORKBENCH);
+        registerBlockRenderType(RenderType.cutout(), ModBlocks.BOTANIST_WORKBENCH);
+        registerBlockRenderType(RenderType.cutout(), ModBlocks.GLASSBLOWER);
+        registerBlockRenderType(RenderType.cutout(), ModBlocks.CARPENTERS_TABLE);
+        registerBlockRenderType(RenderType.cutout(), ModBlocks.LOOM_TABLE);
+        registerBlockRenderType(RenderType.cutout(), ModBlocks.MASON_TABLE);
+        registerBlockRenderType(RenderType.cutout(), ModBlocks.ALCHEMY_BENCH);
+        registerBlockRenderType(RenderType.cutout(), ModBlocks.MECHANIST_WORKBENCH);
 
-        register(ChippedMenuType.ALCHEMY_BENCH.get(), ChippedScreen::new);
-        register(ChippedMenuType.BOTANIST_WORKBENCH.get(), ChippedScreen::new);
-        register(ChippedMenuType.CARPENTERS_TABLE.get(), ChippedScreen::new);
-        register(ChippedMenuType.GLASSBLOWER.get(), ChippedScreen::new);
-        register(ChippedMenuType.LOOM_TABLE.get(), ChippedScreen::new);
-        register(ChippedMenuType.MASON_TABLE.get(), ChippedScreen::new);
-        register(ChippedMenuType.MECHANIST_WORKBENCH.get(), ChippedScreen::new);
+        register(ModMenuTypes.ALCHEMY_BENCH.get(), ChippedScreen::new);
+        register(ModMenuTypes.BOTANIST_WORKBENCH.get(), ChippedScreen::new);
+        register(ModMenuTypes.CARPENTERS_TABLE.get(), ChippedScreen::new);
+        register(ModMenuTypes.GLASSBLOWER.get(), ChippedScreen::new);
+        register(ModMenuTypes.LOOM_TABLE.get(), ChippedScreen::new);
+        register(ModMenuTypes.MASON_TABLE.get(), ChippedScreen::new);
+        register(ModMenuTypes.MECHANIST_WORKBENCH.get(), ChippedScreen::new);
     }
 
     @ExpectPlatform

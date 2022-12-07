@@ -1,7 +1,7 @@
 {
   "replace": false,
   "values": [
-    "minecraft:air",
+    "minecraft:lantern",
     "chipped:special_lantern_1",
     "chipped:special_lantern_2",
     "chipped:special_lantern_3",

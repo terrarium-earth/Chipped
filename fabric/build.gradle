@@ -7,6 +7,14 @@ architectury {
     fabric()
 }
 
+configurations {
+    common
+    shadowCommon // Don't use shadow from the shadow plugin because we don't want IDEA to index this.
+    compileClasspath.extendsFrom common
+    runtimeClasspath.extendsFrom common
+    developmentFabric.extendsFrom common
+}
+
 loom {
     accessWidenerPath = project(":common").loom.accessWidenerPath
     runs {
@@ -32,14 +40,6 @@ sourceSets {
     }
 }
 
-configurations {
-    common
-    shadowCommon // Don't use shadow from the shadow plugin because we don't want IDEA to index this.
-    compileClasspath.extendsFrom common
-    runtimeClasspath.extendsFrom common
-    developmentFabric.extendsFrom common
-}
-
 dependencies {
     modImplementation "net.fabricmc:fabric-loader:${rootProject.fabric_loader_version}"
     modApi "net.fabricmc.fabric-api:fabric-api:${rootProject.fabric_api_version}"
@@ -49,9 +49,9 @@ dependencies {
     common(project(path: ":common", configuration: "namedElements")) { transitive false }
     shadowCommon(project(path: ":common", configuration: "transformProductionFabric")) { transitive false }
 
-//    modImplementation "mezz.jei:jei-${minecraft_version}-fabric:${jei_version}"
-    modCompileOnly "me.shedaniel:RoughlyEnoughItems-fabric:${project.rei_version}"
-    modRuntimeOnly "me.shedaniel:RoughlyEnoughItems-fabric:${project.rei_version}"
+//    modCompileOnly "mezz.jei:jei-$rootProject.minecraft_version-fabric-api:$rootProject.project.jei_version"
+//    modLocalRuntime ("mezz.jei:jei-$rootProject.minecraft_version-fabric:$rootProject.project.jei_version") { transitive = false }
+    modImplementation("me.shedaniel:RoughlyEnoughItems-fabric:$rootProject.rei_version")
 }
 
 processResources {
@@ -63,14 +63,11 @@ processResources {
 }
 
 shadowJar {
-    exclude "architectury.common.json"
-
     configurations = [project.configurations.shadowCommon]
     classifier "dev-shadow"
 }
 
 remapJar {
-    injectAccessWidener = true
     input.set shadowJar.archiveFile
     dependsOn shadowJar
     classifier null
@@ -78,6 +75,7 @@ remapJar {
 
 jar {
     classifier "dev"
+    archivesBaseName = "$mod_id-fabric-$minecraft_version"
 }
 
 sourcesJar {

@@ -5,8 +5,8 @@ import java.util.Collection;
 import java.util.List;
 
 import earth.terrarium.chipped.recipe.ChippedRecipe;
-import earth.terrarium.chipped.registry.ChippedBlocks;
-import earth.terrarium.chipped.registry.ChippedRecipeTypes;
+import earth.terrarium.chipped.registry.ModBlocks;
+import earth.terrarium.chipped.registry.ModRecipeTypes;
 
 import me.shedaniel.rei.api.client.plugins.REIClientPlugin;
 import me.shedaniel.rei.api.client.registry.category.CategoryRegistry;
@@ -29,13 +29,13 @@ public class REIChippedPlugin implements REIClientPlugin {
     @Override
     public void registerCategories(CategoryRegistry registry) {
         registry.add(
-                new ChippedRecipeCategory(ChippedBlocks.BOTANIST_WORKBENCH.get()),
-                new ChippedRecipeCategory(ChippedBlocks.GLASSBLOWER.get()),
-                new ChippedRecipeCategory(ChippedBlocks.CARPENTERS_TABLE.get()),
-                new ChippedRecipeCategory(ChippedBlocks.LOOM_TABLE.get()),
-                new ChippedRecipeCategory(ChippedBlocks.MASON_TABLE.get()),
-                new ChippedRecipeCategory(ChippedBlocks.ALCHEMY_BENCH.get()),
-                new ChippedRecipeCategory(ChippedBlocks.MECHANIST_WORKBENCH.get())
+                new ChippedRecipeCategory(ModBlocks.BOTANIST_WORKBENCH.get()),
+                new ChippedRecipeCategory(ModBlocks.GLASSBLOWER.get()),
+                new ChippedRecipeCategory(ModBlocks.CARPENTERS_TABLE.get()),
+                new ChippedRecipeCategory(ModBlocks.LOOM_TABLE.get()),
+                new ChippedRecipeCategory(ModBlocks.MASON_TABLE.get()),
+                new ChippedRecipeCategory(ModBlocks.ALCHEMY_BENCH.get()),
+                new ChippedRecipeCategory(ModBlocks.MECHANIST_WORKBENCH.get())
         );
     }
 
@@ -44,12 +44,12 @@ public class REIChippedPlugin implements REIClientPlugin {
     public void registerDisplays(DisplayRegistry registry) {
         Minecraft client = Minecraft.getInstance();
         RecipeManager recipeManager = client.level.getRecipeManager();
-        registerRecipes(recipeManager, registry, ChippedRecipeTypes.BOTANIST_WORKBENCH_TYPE.get(), ChippedBlocks.BOTANIST_WORKBENCH.get());
-        registerRecipes(recipeManager, registry, ChippedRecipeTypes.CARPENTERS_TABLE_TYPE.get(), ChippedBlocks.CARPENTERS_TABLE.get());
-        registerRecipes(recipeManager, registry, ChippedRecipeTypes.LOOM_TABLE_TYPE.get(), ChippedBlocks.LOOM_TABLE.get());
-        registerRecipes(recipeManager, registry, ChippedRecipeTypes.MASON_TABLE_TYPE.get(), ChippedBlocks.MASON_TABLE.get());
-        registerRecipes(recipeManager, registry, ChippedRecipeTypes.ALCHEMY_BENCH_TYPE.get(), ChippedBlocks.ALCHEMY_BENCH.get());
-        registerRecipes(recipeManager, registry, ChippedRecipeTypes.MECHANIST_WORKBENCH_TYPE.get(), ChippedBlocks.MECHANIST_WORKBENCH.get());
+        registerRecipes(recipeManager, registry, ModRecipeTypes.BOTANIST_WORKBENCH_TYPE.get(), ModBlocks.BOTANIST_WORKBENCH.get());
+        registerRecipes(recipeManager, registry, ModRecipeTypes.CARPENTERS_TABLE_TYPE.get(), ModBlocks.CARPENTERS_TABLE.get());
+        registerRecipes(recipeManager, registry, ModRecipeTypes.LOOM_TABLE_TYPE.get(), ModBlocks.LOOM_TABLE.get());
+        registerRecipes(recipeManager, registry, ModRecipeTypes.MASON_TABLE_TYPE.get(), ModBlocks.MASON_TABLE.get());
+        registerRecipes(recipeManager, registry, ModRecipeTypes.ALCHEMY_BENCH_TYPE.get(), ModBlocks.ALCHEMY_BENCH.get());
+        registerRecipes(recipeManager, registry, ModRecipeTypes.MECHANIST_WORKBENCH_TYPE.get(), ModBlocks.MECHANIST_WORKBENCH.get());
     }
 
     private void registerRecipes(RecipeManager recipeManager, DisplayRegistry registry, RecipeType<ChippedRecipe> type, Block block) {

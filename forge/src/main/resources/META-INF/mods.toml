@@ -1,17 +1,17 @@
 modLoader = "javafml"
 loaderVersion = "[40,)"
-#issueTrackerURL = "https://github.com/terrarium-earth/Chipped/issues"
-license = "All Rights Reserved"
+issueTrackerURL = "https://github.com/terrarium-earth/Chipped/issues"
+license = "Terrarium Licence"
 
 [[mods]]
 modId = "chipped"
 version = "${version}"
 displayName = "Chipped"
-authors = "Grimbop, Kekie6, MsRandom1, ThatGravyBoat, CodexAdrian, AlexNijjar"
+authors = "Grimbop, Alex Nijjar, Kekie6, Marc-IceBlade, ThatGravyBoat, CodexAdrian, MsRandom1"
 description = '''
 Every block needs a friend!
 '''
-#logoFile = "icon.png"
+logoFile = "icon.png"
 
 [[dependencies.chipped]]
 modId = "forge"

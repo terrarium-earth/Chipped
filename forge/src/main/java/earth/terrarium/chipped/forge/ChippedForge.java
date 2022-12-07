@@ -2,7 +2,7 @@ package earth.terrarium.chipped.forge;
 
 import earth.terrarium.chipped.Chipped;
 import earth.terrarium.chipped.client.ChippedClient;
-import earth.terrarium.chipped.registry.forge.RegistryHelpersImpl;
+import earth.terrarium.chipped.registry.forge.ModRegistryHelpersImpl;
 
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
@@ -15,7 +15,7 @@ public class ChippedForge {
         Chipped.init();
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
         modEventBus.addListener(ChippedForge::onClientSetup);
-        RegistryHelpersImpl.REGISTRIES.values().forEach(deferredRegister -> deferredRegister.register(modEventBus));
+        ModRegistryHelpersImpl.REGISTRIES.values().forEach(deferredRegister -> deferredRegister.register(modEventBus));
     }
 
     public static void onClientSetup(FMLClientSetupEvent event) {

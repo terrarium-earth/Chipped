@@ -1,7 +1,7 @@
 package earth.terrarium.chipped.fabric.datagen;
 
-import earth.terrarium.chipped.registry.ChippedBlocks;
-import earth.terrarium.chipped.registry.ChippedTags;
+import earth.terrarium.chipped.registry.ModBlocks;
+import earth.terrarium.chipped.registry.ModTags;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
 import net.minecraft.core.Registry;
@@ -22,10 +22,10 @@ public class ChippedItemTagProvider extends FabricTagProvider.ItemTagProvider {
     @Override
     protected void generateTags() {
         Set<String> addedBlocks = new HashSet<>();
-        ChippedBlocks.ITEMS.forEach(item -> {
+        ModBlocks.ITEMS.forEach(item -> {
             String name = StringUtils.substringBeforeLast(Registry.ITEM.getKey(item.get()).getPath(), "_");
-            if (ChippedTags.ITEM_TAGS.containsKey(name)) {
-                TagKey<Item> tag = ChippedTags.ITEM_TAGS.get(name);
+            if (ModTags.ITEM_TAGS.containsKey(name)) {
+                TagKey<Item> tag = ModTags.ITEM_TAGS.get(name);
                 if (!addedBlocks.contains(name)) {
                     getOrCreateTagBuilder(tag).add(Registry.ITEM.get(new ResourceLocation(name)));
                     addedBlocks.add(name);

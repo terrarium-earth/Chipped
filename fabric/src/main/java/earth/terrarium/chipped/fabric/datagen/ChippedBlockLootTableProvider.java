@@ -1,7 +1,7 @@
 package earth.terrarium.chipped.fabric.datagen;
 
 import com.mojang.datafixers.util.Pair;
-import earth.terrarium.chipped.registry.ChippedBlocks;
+import earth.terrarium.chipped.registry.ModBlocks;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
 import net.minecraft.data.loot.BlockLoot;
@@ -20,15 +20,15 @@ public class ChippedBlockLootTableProvider extends FabricBlockLootTableProvider 
 
     @Override
     protected void generateBlockLootTables() {
-        this.dropSelf(ChippedBlocks.BOTANIST_WORKBENCH.get());
-        this.dropSelf(ChippedBlocks.GLASSBLOWER.get());
-        this.dropSelf(ChippedBlocks.CARPENTERS_TABLE.get());
-        this.dropSelf(ChippedBlocks.LOOM_TABLE.get());
-        this.dropSelf(ChippedBlocks.MASON_TABLE.get());
-        this.dropSelf(ChippedBlocks.ALCHEMY_BENCH.get());
-        this.dropSelf(ChippedBlocks.MECHANIST_WORKBENCH.get());
+        this.dropSelf(ModBlocks.BOTANIST_WORKBENCH.get());
+        this.dropSelf(ModBlocks.GLASSBLOWER.get());
+        this.dropSelf(ModBlocks.CARPENTERS_TABLE.get());
+        this.dropSelf(ModBlocks.LOOM_TABLE.get());
+        this.dropSelf(ModBlocks.MASON_TABLE.get());
+        this.dropSelf(ModBlocks.ALCHEMY_BENCH.get());
+        this.dropSelf(ModBlocks.MECHANIST_WORKBENCH.get());
 
-        ChippedBlocks.REGISTERED_BLOCKS.stream().map(Pair::getFirst).map(Supplier::get).forEach(block -> {
+        ModBlocks.REGISTERED_BLOCKS.stream().map(Pair::getFirst).map(Supplier::get).forEach(block -> {
             if (block instanceof DoorBlock) {
                 this.add(block, BlockLoot::createDoorTable);
             } else {
@@ -37,11 +37,11 @@ public class ChippedBlockLootTableProvider extends FabricBlockLootTableProvider 
         });
 
 
-        ChippedBlocks.BLOCK_PAIRS.forEach(pair -> {
+        ModBlocks.BLOCK_PAIRS.forEach(pair -> {
             Block block1 = pair.getFirst().get();
             Block block2 = pair.getSecond().get();
 
-            if (ChippedBlocks.SKIPPED_MODELS.contains(pair.getSecond())) {
+            if (ModBlocks.SKIPPED_MODELS.contains(pair.getSecond())) {
                 if (block2 instanceof WallTorchBlock || block2 instanceof RedstoneWallTorchBlock) {
                     this.dropOther(block2, block1);
                 }

@@ -1,7 +1,6 @@
 plugins {
     id "com.github.johnrengelman.shadow" version "7.1.2"
 }
-
 architectury {
     platformSetupLoomIde()
     forge()
@@ -13,9 +12,6 @@ loom {
     forge {
         convertAccessWideners = true
         extraAccessWideners.add loom.accessWidenerPath.get().asFile.name
-
-        mixinConfig "chipped-common.mixins.json"
-        mixinConfig "chipped.mixins.json"
     }
 }
 
@@ -32,15 +28,11 @@ dependencies {
 
     common(project(path: ":common", configuration: "namedElements")) { transitive false }
     shadowCommon(project(path: ":common", configuration: "transformProductionForge")) { transitive = false }
-
-    modRuntimeOnly "mezz.jei:jei-${minecraft_version}-forge:${project.jei_version}"
-    modCompileOnly "mezz.jei:jei-${minecraft_version}-forge-api:${project.jei_version}"
-
     modImplementation "team.chisel.ctm:CTM:${minecraft_version}-${ctm_version}"
 
-
-//    modCompileOnly "me.shedaniel:RoughlyEnoughItems-forge:${project.rei_version}"
-//	modRuntimeOnly "me.shedaniel:RoughlyEnoughItems-forge:${project.rei_version}"
+    modCompileOnly "me.shedaniel:RoughlyEnoughItems-forge:$project.rei_version"
+    modCompileOnly "mezz.jei:jei-$rootProject.minecraft_version-forge-api:$rootProject.jei_version"
+    modLocalRuntime ("mezz.jei:jei-$rootProject.minecraft_version-forge:$rootProject.jei_version") { transitive = false }
 }
 
 processResources {
@@ -67,6 +59,7 @@ remapJar {
 
 jar {
     classifier "dev"
+    archivesBaseName = "$mod_id-forge-$minecraft_version"
 }
 
 sourcesJar {
