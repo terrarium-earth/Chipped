@@ -3,7 +3,6 @@ package earth.terrarium.chipped.forge;
 import earth.terrarium.chipped.Chipped;
 import earth.terrarium.chipped.client.ChippedClient;
 import earth.terrarium.chipped.registry.forge.ModRegistryHelpersImpl;
-
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
@@ -19,6 +18,6 @@ public class ChippedForge {
     }
 
     public static void onClientSetup(FMLClientSetupEvent event) {
-        ChippedClient.initializeClient();
+        ChippedClient.init();
     }
 }

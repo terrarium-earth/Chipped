@@ -17,18 +17,18 @@ public class ModRecipeTypes {
     public static final Supplier<RecipeType<ChippedRecipe>> ALCHEMY_BENCH_TYPE = register("alchemy_bench");
     public static final Supplier<RecipeType<ChippedRecipe>> MECHANIST_WORKBENCH_TYPE = register("mechanist_workbench");
 
-    public static void register() {
-    }
-
-    private static <T extends Recipe<?>> Supplier<RecipeType<T>> register(String identifier) {
-        return register(identifier, () -> new RecipeType<T>() {
+    private static <T extends Recipe<?>> Supplier<RecipeType<T>> register(String id) {
+        return register(id, () -> new RecipeType<>() {
             public String toString() {
-                return identifier;
+                return id;
             }
         });
     }
 
     private static <T extends RecipeType<E>, E extends Recipe<?>> Supplier<T> register(String id, Supplier<T> type) {
         return ModRegistryHelpers.register(Registry.RECIPE_TYPE, id, type);
+    }
+
+    public static void init() {
     }
 }

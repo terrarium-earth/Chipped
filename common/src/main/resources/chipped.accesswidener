@@ -1,6 +1,0 @@
-accessWidener   v2  named
-accessible class net/minecraft/data/models/BlockModelGenerators$TintState
-accessible class net/minecraft/data/models/BlockModelGenerators$BlockEntityModelGenerator
-accessible class net/minecraft/world/inventory/MenuType$MenuSupplier
-accessible method net/minecraft/world/inventory/MenuType <init> (Lnet/minecraft/world/inventory/MenuType$MenuSupplier;)V
-accessible method net/minecraft/data/models/model/TexturedModel createDefault (Ljava/util/function/Function;Lnet/minecraft/data/models/model/ModelTemplate;)Lnet/minecraft/data/models/model/TexturedModel$Provider;

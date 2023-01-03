@@ -17,17 +17,10 @@
     },
     "b": {
       "item": "minecraft:stick"
-
-
-      }
-
-
-
-
-
-    },
-    "result": {
-      "item": "chipped:botanist_workbench",
-      "count": 1
     }
+  },
+  "result": {
+    "item": "chipped:botanist_workbench",
+    "count": 1
   }
+}

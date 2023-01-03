@@ -1,11 +1,11 @@
 package earth.terrarium.chipped.registry;
 
+import com.mojang.datafixers.util.Pair;
 import earth.terrarium.chipped.Chipped;
 import earth.terrarium.chipped.block.ChippedUniqueLantern;
 import earth.terrarium.chipped.block.ChippedWorkbench;
 import earth.terrarium.chipped.block.CustomPointedDripstoneBlock;
 import earth.terrarium.chipped.menus.ChippedMenu;
-import com.mojang.datafixers.util.Pair;
 import net.minecraft.core.Registry;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.data.worldgen.features.TreeFeatures;
@@ -25,38 +25,16 @@ import java.util.function.Function;
 import java.util.function.Supplier;
 
 public class ModBlocks {
-    public static final List<Supplier<Block>> TRANSPARENT_BLOCKS = new ArrayList<>();
-    public static final List<Supplier<Block>> CUTOUT_BLOCKS = new ArrayList<>();
-
-    public static final List<Supplier<? extends Block>> BLOCKS = new ArrayList<>();
-    public static final List<Supplier<? extends Item>> ITEMS = new ArrayList<>();
-
-    public static final List<Pair<Supplier<Block>, ResourceLocation>> REGISTERED_BLOCKS = new ArrayList<>();
-    public static final List<Supplier<? extends Block>> SKIPPED_MODELS = new ArrayList<>();
-    public static final List<Supplier<? extends Block>> EXCLUDED_DROPS = new ArrayList<>();
-    public static final List<Pair<Supplier<? extends Block>, Supplier<? extends Block>>> BLOCK_PAIRS = new ArrayList<>();
-
-    private static final StatePredicate ALWAYS_FALSE_POSITION = (state, world, position) -> false;
-    private static final StateArgumentPredicate<EntityType<?>> VALID_SPAWN = (state, world, position, type) -> false;
-
-    public static final Supplier<Block> BOTANIST_WORKBENCH = register("botanist_workbench", () -> new ChippedWorkbench((id, inventory, access) -> new ChippedMenu(id, inventory, access, ModMenuTypes.BOTANIST_WORKBENCH.get(), ModRecipeTypes.BOTANIST_WORKBENCH_TYPE.get(), ModBlocks.BOTANIST_WORKBENCH.get()), BlockBehaviour.Properties.of(Material.WOOD).strength(1F, 2F).sound(SoundType.WOOD).noOcclusion().isValidSpawn(VALID_SPAWN).isRedstoneConductor(ALWAYS_FALSE_POSITION).isSuffocating(ALWAYS_FALSE_POSITION).isViewBlocking(ALWAYS_FALSE_POSITION)));
-    public static final Supplier<Block> GLASSBLOWER = register("glassblower", () -> new ChippedWorkbench((windowId, inventory, access) -> new ChippedMenu(windowId, inventory, access, ModMenuTypes.GLASSBLOWER.get(), ModRecipeTypes.GLASSBLOWER_TYPE.get(), ModBlocks.GLASSBLOWER.get()), BlockBehaviour.Properties.of(Material.WOOD).strength(1F, 2F).sound(SoundType.WOOD).noOcclusion().isValidSpawn(VALID_SPAWN).isRedstoneConductor(ALWAYS_FALSE_POSITION).isSuffocating(ALWAYS_FALSE_POSITION).isViewBlocking(ALWAYS_FALSE_POSITION)));
-    public static final Supplier<Block> CARPENTERS_TABLE = register("carpenters_table", () -> new ChippedWorkbench((windowId, inventory, access) -> new ChippedMenu(windowId, inventory, access, ModMenuTypes.CARPENTERS_TABLE.get(), ModRecipeTypes.CARPENTERS_TABLE_TYPE.get(), ModBlocks.CARPENTERS_TABLE.get()), BlockBehaviour.Properties.of(Material.WOOD).strength(1F, 2F).sound(SoundType.WOOD).noOcclusion().isValidSpawn(VALID_SPAWN).isRedstoneConductor(ALWAYS_FALSE_POSITION).isSuffocating(ALWAYS_FALSE_POSITION).isViewBlocking(ALWAYS_FALSE_POSITION)));
-    public static final Supplier<Block> LOOM_TABLE = register("loom_table", () -> new ChippedWorkbench((windowId, inventory, access) -> new ChippedMenu(windowId, inventory, access, ModMenuTypes.LOOM_TABLE.get(), ModRecipeTypes.LOOM_TABLE_TYPE.get(), ModBlocks.LOOM_TABLE.get()), BlockBehaviour.Properties.of(Material.WOOD).strength(1F, 2F).sound(SoundType.WOOD).noOcclusion().isValidSpawn(VALID_SPAWN).isRedstoneConductor(ALWAYS_FALSE_POSITION).isSuffocating(ALWAYS_FALSE_POSITION).isViewBlocking(ALWAYS_FALSE_POSITION)));
-    public static final Supplier<Block> MASON_TABLE = register("mason_table", () -> new ChippedWorkbench((windowId, inventory, access) -> new ChippedMenu(windowId, inventory, access, ModMenuTypes.MASON_TABLE.get(), ModRecipeTypes.MASON_TABLE_TYPE.get(), ModBlocks.MASON_TABLE.get()), BlockBehaviour.Properties.of(Material.METAL).strength(5F, 6F).sound(SoundType.METAL).noOcclusion().isValidSpawn(VALID_SPAWN).isRedstoneConductor(ALWAYS_FALSE_POSITION).isSuffocating(ALWAYS_FALSE_POSITION).isViewBlocking(ALWAYS_FALSE_POSITION)));
-    public static final Supplier<Block> ALCHEMY_BENCH = register("alchemy_bench", () -> new ChippedWorkbench((windowId, inventory, access) -> new ChippedMenu(windowId, inventory, access, ModMenuTypes.ALCHEMY_BENCH.get(), ModRecipeTypes.ALCHEMY_BENCH_TYPE.get(), ModBlocks.ALCHEMY_BENCH.get()), BlockBehaviour.Properties.of(Material.WOOD).strength(1F, 2F).sound(SoundType.WOOD).noOcclusion().isValidSpawn(VALID_SPAWN).isRedstoneConductor(ALWAYS_FALSE_POSITION).isSuffocating(ALWAYS_FALSE_POSITION).isViewBlocking(ALWAYS_FALSE_POSITION)));
-    public static final Supplier<Block> MECHANIST_WORKBENCH = register("mechanist_workbench", () -> new ChippedWorkbench((windowId, inventory, access) -> new ChippedMenu(windowId, inventory, access, ModMenuTypes.MECHANIST_WORKBENCH.get(), ModRecipeTypes.MECHANIST_WORKBENCH_TYPE.get(), ModBlocks.MECHANIST_WORKBENCH.get()), BlockBehaviour.Properties.of(Material.WOOD).strength(1F, 2F).sound(SoundType.WOOD).noOcclusion().isValidSpawn(VALID_SPAWN).isRedstoneConductor(ALWAYS_FALSE_POSITION).isSuffocating(ALWAYS_FALSE_POSITION).isViewBlocking(ALWAYS_FALSE_POSITION)));
-
-    public static void register() {
+    public static void init() {
 
         // Workbenches
-        registerItem("botanist_workbench", () -> new BlockItem(BOTANIST_WORKBENCH.get(), new Item.Properties().tab(Chipped.CHIPPED_ITEM_GROUP)));
-        registerItem("glassblower", () -> new BlockItem(GLASSBLOWER.get(), new Item.Properties().tab(Chipped.CHIPPED_ITEM_GROUP)));
-        registerItem("carpenters_table", () -> new BlockItem(CARPENTERS_TABLE.get(), new Item.Properties().tab(Chipped.CHIPPED_ITEM_GROUP)));
-        registerItem("loom_table", () -> new BlockItem(LOOM_TABLE.get(), new Item.Properties().tab(Chipped.CHIPPED_ITEM_GROUP)));
-        registerItem("mason_table", () -> new BlockItem(MASON_TABLE.get(), new Item.Properties().tab(Chipped.CHIPPED_ITEM_GROUP)));
-        registerItem("alchemy_bench", () -> new BlockItem(ALCHEMY_BENCH.get(), new Item.Properties().tab(Chipped.CHIPPED_ITEM_GROUP)));
-        registerItem("mechanist_workbench", () -> new BlockItem(MECHANIST_WORKBENCH.get(), new Item.Properties().tab(Chipped.CHIPPED_ITEM_GROUP)));
+        registerItem("botanist_workbench", () -> new BlockItem(BOTANIST_WORKBENCH.get(), new Item.Properties().tab(ITEM_GROUP)));
+        registerItem("glassblower", () -> new BlockItem(GLASSBLOWER.get(), new Item.Properties().tab(ITEM_GROUP)));
+        registerItem("carpenters_table", () -> new BlockItem(CARPENTERS_TABLE.get(), new Item.Properties().tab(ITEM_GROUP)));
+        registerItem("loom_table", () -> new BlockItem(LOOM_TABLE.get(), new Item.Properties().tab(ITEM_GROUP)));
+        registerItem("mason_table", () -> new BlockItem(MASON_TABLE.get(), new Item.Properties().tab(ITEM_GROUP)));
+        registerItem("alchemy_bench", () -> new BlockItem(ALCHEMY_BENCH.get(), new Item.Properties().tab(ITEM_GROUP)));
+        registerItem("mechanist_workbench", () -> new BlockItem(MECHANIST_WORKBENCH.get(), new Item.Properties().tab(ITEM_GROUP)));
 
         // Generic Blocks
         registerBlockWithPalette(Blocks.AMETHYST_BLOCK, 69);
@@ -341,58 +319,59 @@ public class ModBlocks {
         registerBlockWithPalette(Blocks.LANTERN, 14, new ChippedProperties().blockType(LanternBlock::new).cutout().excludeModel());
         registerBlockWithPalette(Blocks.SOUL_LANTERN, 11, new ChippedProperties().blockType(LanternBlock::new).cutout().excludeModel());
 
-        register("special_lantern_1", Blocks.LANTERN, new ChippedProperties().blockType(p -> new ChippedUniqueLantern(p, ChippedUniqueLantern.CHONK_LANTERN_SHAPE)).cutout().excludeModel());
-        register("special_lantern_2", Blocks.LANTERN, new ChippedProperties().blockType(p -> new ChippedUniqueLantern(p, ChippedUniqueLantern.DONUT_LANTERN_SHAPE_EAST, ChippedUniqueLantern.DONUT_LANTERN_SHAPE_NORTH)).cutout().excludeModel());
-        register("special_lantern_3", Blocks.LANTERN, new ChippedProperties().blockType(p -> new ChippedUniqueLantern(p, ChippedUniqueLantern.TALL_LANTERN_SHAPE)).cutout().excludeModel());
-        register("special_lantern_4", Blocks.LANTERN, new ChippedProperties().blockType(p -> new ChippedUniqueLantern(p, ChippedUniqueLantern.THICC_LANTERN_SHAPE)).cutout().excludeModel());
+        init("special_lantern_1", Blocks.LANTERN, new ChippedProperties().blockType(p -> new ChippedUniqueLantern(p, ChippedUniqueLantern.CHONK_LANTERN_SHAPE)).cutout().excludeModel());
+        init("special_lantern_2", Blocks.LANTERN, new ChippedProperties().blockType(p -> new ChippedUniqueLantern(p, ChippedUniqueLantern.DONUT_LANTERN_SHAPE_EAST, ChippedUniqueLantern.DONUT_LANTERN_SHAPE_NORTH)).cutout().excludeModel());
+        init("special_lantern_3", Blocks.LANTERN, new ChippedProperties().blockType(p -> new ChippedUniqueLantern(p, ChippedUniqueLantern.TALL_LANTERN_SHAPE)).cutout().excludeModel());
+        init("special_lantern_4", Blocks.LANTERN, new ChippedProperties().blockType(p -> new ChippedUniqueLantern(p, ChippedUniqueLantern.THICC_LANTERN_SHAPE)).cutout().excludeModel());
 
         // Soul Lanterns
-        register("special_soul_lantern_1", Blocks.LANTERN, new ChippedProperties().blockType(p -> new ChippedUniqueLantern(p, ChippedUniqueLantern.CHONK_LANTERN_SHAPE)).cutout().excludeModel());
-        register("special_soul_lantern_2", Blocks.LANTERN, new ChippedProperties().blockType(p -> new ChippedUniqueLantern(p, ChippedUniqueLantern.DONUT_LANTERN_SHAPE_EAST, ChippedUniqueLantern.DONUT_LANTERN_SHAPE_NORTH)).cutout().excludeModel());
-        register("special_soul_lantern_3", Blocks.LANTERN, new ChippedProperties().blockType(p -> new ChippedUniqueLantern(p, ChippedUniqueLantern.TALL_LANTERN_SHAPE)).cutout().excludeModel());
-        register("special_soul_lantern_4", Blocks.LANTERN, new ChippedProperties().blockType(p -> new ChippedUniqueLantern(p, ChippedUniqueLantern.THICC_LANTERN_SHAPE)).cutout().excludeModel());
+        init("special_soul_lantern_1", Blocks.LANTERN, new ChippedProperties().blockType(p -> new ChippedUniqueLantern(p, ChippedUniqueLantern.CHONK_LANTERN_SHAPE)).cutout().excludeModel());
+        init("special_soul_lantern_2", Blocks.LANTERN, new ChippedProperties().blockType(p -> new ChippedUniqueLantern(p, ChippedUniqueLantern.DONUT_LANTERN_SHAPE_EAST, ChippedUniqueLantern.DONUT_LANTERN_SHAPE_NORTH)).cutout().excludeModel());
+        init("special_soul_lantern_3", Blocks.LANTERN, new ChippedProperties().blockType(p -> new ChippedUniqueLantern(p, ChippedUniqueLantern.TALL_LANTERN_SHAPE)).cutout().excludeModel());
+        init("special_soul_lantern_4", Blocks.LANTERN, new ChippedProperties().blockType(p -> new ChippedUniqueLantern(p, ChippedUniqueLantern.THICC_LANTERN_SHAPE)).cutout().excludeModel());
 
         REGISTERED_BLOCKS.forEach(block -> ModTags.addOrCreateTag(block.getSecond()));
-    }
+    }    public static final CreativeModeTab ITEM_GROUP = ModRegistryHelpers.createTab(new ResourceLocation(Chipped.MOD_ID, "main"), () -> new ItemStack(ModBlocks.BOTANIST_WORKBENCH.get()));
 
-    private static void registerWool(Block wool, Block carpet, int count) {
-        registerPair(wool, carpet, count, new ChippedProperties(), new ChippedProperties().blockType(CarpetBlock::new));
-    }
+    public static final List<Supplier<Block>> TRANSPARENT_BLOCKS = new ArrayList<>();
+    public static final List<Supplier<Block>> CUTOUT_BLOCKS = new ArrayList<>();
 
-    private static void registerGlass(Block glass, Block pane, int count) {
-        registerPair(glass, pane, count, new ChippedProperties().transparent().excludeLoot().blockType(GlassBlock::new), new ChippedProperties().transparent().excludeLoot().blockType(p -> new IronBarsBlock(p) {
-        }));
-    }
+    public static final List<Supplier<? extends Block>> BLOCKS = new ArrayList<>();
+    public static final List<Supplier<? extends Item>> ITEMS = new ArrayList<>();
+
+    public static final List<Pair<Supplier<Block>, ResourceLocation>> REGISTERED_BLOCKS = new ArrayList<>();
+    public static final List<Supplier<? extends Block>> SKIPPED_MODELS = new ArrayList<>();
+    public static final List<Supplier<? extends Block>> EXCLUDED_DROPS = new ArrayList<>();
+    public static final List<Pair<Supplier<? extends Block>, Supplier<? extends Block>>> BLOCK_PAIRS = new ArrayList<>();
+
+    private static final StatePredicate ALWAYS_FALSE_POSITION = (state, world, position) -> false;
+    private static final StateArgumentPredicate<EntityType<?>> VALID_SPAWN = (state, world, position, type) -> false;
 
     private static void registerTorch(Block torch, Block wallTorch, int count, Function<Properties, Block> type1, Function<Properties, Block> type2) {
         var pairs = registerPair(torch, wallTorch, count, new ChippedProperties().cutout().blockType(type1).skipItem(), new ChippedProperties().cutout().excludeLoot().blockType(type2).skipItem());
         int i = 0;
         for (var pair : pairs) {
             String appended = Registry.BLOCK.getKey(torch).getPath() + "_" + (i + 1);
-            registerItem(appended, () -> new StandingAndWallBlockItem(pair.getFirst().get(), pair.getSecond().get(), new Item.Properties().tab(Chipped.CHIPPED_ITEM_GROUP)));
+            registerItem(appended, () -> new StandingAndWallBlockItem(pair.getFirst().get(), pair.getSecond().get(), new Item.Properties().tab(ITEM_GROUP)));
             i++;
         }
-    }
-
-    private static void registerBlockWithPalette(Block ref, int count) {
-        registerBlockWithPalette(ref, count, new ChippedProperties().blockType(Block::new));
-    }
+    }    public static final Supplier<Block> BOTANIST_WORKBENCH = init("botanist_workbench", () -> new ChippedWorkbench((id, inventory, access) -> new ChippedMenu(id, inventory, access, ModMenuTypes.BOTANIST_WORKBENCH.get(), ModRecipeTypes.BOTANIST_WORKBENCH_TYPE.get(), ModBlocks.BOTANIST_WORKBENCH.get()), BlockBehaviour.Properties.of(Material.WOOD).strength(1F, 2F).sound(SoundType.WOOD).noOcclusion().isValidSpawn(VALID_SPAWN).isRedstoneConductor(ALWAYS_FALSE_POSITION).isSuffocating(ALWAYS_FALSE_POSITION).isViewBlocking(ALWAYS_FALSE_POSITION)));
 
     private static void registerBlockWithPalette(Block ref, int count, ChippedProperties properties) {
         for (int i = 0; i < count; i++) {
             String appended = Registry.BLOCK.getKey(ref).getPath() + "_" + (i + 1);
-            register(appended, ref, properties);
+            init(appended, ref, properties);
         }
-    }
+    }    public static final Supplier<Block> GLASSBLOWER = init("glassblower", () -> new ChippedWorkbench((windowId, inventory, access) -> new ChippedMenu(windowId, inventory, access, ModMenuTypes.GLASSBLOWER.get(), ModRecipeTypes.GLASSBLOWER_TYPE.get(), ModBlocks.GLASSBLOWER.get()), BlockBehaviour.Properties.of(Material.WOOD).strength(1F, 2F).sound(SoundType.WOOD).noOcclusion().isValidSpawn(VALID_SPAWN).isRedstoneConductor(ALWAYS_FALSE_POSITION).isSuffocating(ALWAYS_FALSE_POSITION).isViewBlocking(ALWAYS_FALSE_POSITION)));
 
     private static List<Pair<Supplier<? extends Block>, Supplier<? extends Block>>> registerPair(Block ref, Block ref1, int count, ChippedProperties properties, ChippedProperties properties1) {
         List<Pair<Supplier<? extends Block>, Supplier<? extends Block>>> pairs = new ArrayList<>();
         for (int i = 0; i < count; i++) {
             String appended = Registry.BLOCK.getKey(ref).getPath() + "_" + (i + 1);
-            Supplier<? extends Block> block = register(appended, ref, properties);
+            Supplier<? extends Block> block = init(appended, ref, properties);
 
             String appended1 = Registry.BLOCK.getKey(ref1).getPath() + "_" + (i + 1);
-            Supplier<? extends Block> block1 = register(appended1, ref1, properties1);
+            Supplier<? extends Block> block1 = init(appended1, ref1, properties1);
 
             SKIPPED_MODELS.add(block);
             SKIPPED_MODELS.add(block1);
@@ -400,15 +379,15 @@ public class ModBlocks {
         }
         BLOCK_PAIRS.addAll(pairs);
         return pairs;
-    }
+    }    public static final Supplier<Block> CARPENTERS_TABLE = init("carpenters_table", () -> new ChippedWorkbench((windowId, inventory, access) -> new ChippedMenu(windowId, inventory, access, ModMenuTypes.CARPENTERS_TABLE.get(), ModRecipeTypes.CARPENTERS_TABLE_TYPE.get(), ModBlocks.CARPENTERS_TABLE.get()), BlockBehaviour.Properties.of(Material.WOOD).strength(1F, 2F).sound(SoundType.WOOD).noOcclusion().isValidSpawn(VALID_SPAWN).isRedstoneConductor(ALWAYS_FALSE_POSITION).isSuffocating(ALWAYS_FALSE_POSITION).isViewBlocking(ALWAYS_FALSE_POSITION)));
 
-    private static Supplier<Block> register(String id, Block block, ChippedProperties properties) {
+    private static Supplier<Block> init(String id, Block block, ChippedProperties properties) {
         Pair<Supplier<Block>, ResourceLocation> output = ModRegistryHelpers.registerFull(Registry.BLOCK, id, () -> properties.getBlockType().apply(BlockBehaviour.Properties.copy(block)));
         Supplier<Block> registered = output.getFirst();
         BLOCKS.add(registered);
 
         if (!properties.skippedItem()) {
-            registerItem(id, () -> properties.getItemType().apply(registered.get(), new Item.Properties().tab(Chipped.CHIPPED_ITEM_GROUP)));
+            registerItem(id, () -> properties.getItemType().apply(registered.get(), new Item.Properties().tab(ITEM_GROUP)));
         }
         if (properties.isCutout()) {
             CUTOUT_BLOCKS.add(registered);
@@ -424,13 +403,40 @@ public class ModBlocks {
         }
         REGISTERED_BLOCKS.add(output);
         return registered;
-    }
+    }    public static final Supplier<Block> LOOM_TABLE = init("loom_table", () -> new ChippedWorkbench((windowId, inventory, access) -> new ChippedMenu(windowId, inventory, access, ModMenuTypes.LOOM_TABLE.get(), ModRecipeTypes.LOOM_TABLE_TYPE.get(), ModBlocks.LOOM_TABLE.get()), BlockBehaviour.Properties.of(Material.WOOD).strength(1F, 2F).sound(SoundType.WOOD).noOcclusion().isValidSpawn(VALID_SPAWN).isRedstoneConductor(ALWAYS_FALSE_POSITION).isSuffocating(ALWAYS_FALSE_POSITION).isViewBlocking(ALWAYS_FALSE_POSITION)));
 
-    private static <T extends Block> Supplier<T> register(String id, Supplier<T> block) {
+    private static <T extends Block> Supplier<T> init(String id, Supplier<T> block) {
         Supplier<T> registered = ModRegistryHelpers.register(Registry.BLOCK, id, block);
         BLOCKS.add(registered);
         return registered;
+    }    public static final Supplier<Block> MASON_TABLE = init("mason_table", () -> new ChippedWorkbench((windowId, inventory, access) -> new ChippedMenu(windowId, inventory, access, ModMenuTypes.MASON_TABLE.get(), ModRecipeTypes.MASON_TABLE_TYPE.get(), ModBlocks.MASON_TABLE.get()), BlockBehaviour.Properties.of(Material.METAL).strength(5F, 6F).sound(SoundType.METAL).noOcclusion().isValidSpawn(VALID_SPAWN).isRedstoneConductor(ALWAYS_FALSE_POSITION).isSuffocating(ALWAYS_FALSE_POSITION).isViewBlocking(ALWAYS_FALSE_POSITION)));
+    public static final Supplier<Block> ALCHEMY_BENCH = init("alchemy_bench", () -> new ChippedWorkbench((windowId, inventory, access) -> new ChippedMenu(windowId, inventory, access, ModMenuTypes.ALCHEMY_BENCH.get(), ModRecipeTypes.ALCHEMY_BENCH_TYPE.get(), ModBlocks.ALCHEMY_BENCH.get()), BlockBehaviour.Properties.of(Material.WOOD).strength(1F, 2F).sound(SoundType.WOOD).noOcclusion().isValidSpawn(VALID_SPAWN).isRedstoneConductor(ALWAYS_FALSE_POSITION).isSuffocating(ALWAYS_FALSE_POSITION).isViewBlocking(ALWAYS_FALSE_POSITION)));
+    public static final Supplier<Block> MECHANIST_WORKBENCH = init("mechanist_workbench", () -> new ChippedWorkbench((windowId, inventory, access) -> new ChippedMenu(windowId, inventory, access, ModMenuTypes.MECHANIST_WORKBENCH.get(), ModRecipeTypes.MECHANIST_WORKBENCH_TYPE.get(), ModBlocks.MECHANIST_WORKBENCH.get()), BlockBehaviour.Properties.of(Material.WOOD).strength(1F, 2F).sound(SoundType.WOOD).noOcclusion().isValidSpawn(VALID_SPAWN).isRedstoneConductor(ALWAYS_FALSE_POSITION).isSuffocating(ALWAYS_FALSE_POSITION).isViewBlocking(ALWAYS_FALSE_POSITION)));
+
+
+
+    private static void registerWool(Block wool, Block carpet, int count) {
+        registerPair(wool, carpet, count, new ChippedProperties(), new ChippedProperties().blockType(CarpetBlock::new));
     }
+
+    private static void registerGlass(Block glass, Block pane, int count) {
+        registerPair(glass, pane, count, new ChippedProperties().transparent().excludeLoot().blockType(GlassBlock::new), new ChippedProperties().transparent().excludeLoot().blockType(p -> new IronBarsBlock(p) {
+        }));
+    }
+
+
+
+    private static void registerBlockWithPalette(Block ref, int count) {
+        registerBlockWithPalette(ref, count, new ChippedProperties().blockType(Block::new));
+    }
+
+
+
+
+
+
+
+
 
     private static <T extends Item> Supplier<T> registerItem(String id, Supplier<T> item) {
         Supplier<T> registered = ModRegistryHelpers.register(Registry.ITEM, id, item);

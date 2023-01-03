@@ -33,13 +33,21 @@ allprojects {
     group = rootProject.maven_group
 
     repositories {
-        maven { url "https://maven.shedaniel.me/" }
-        maven { url "https://nexus.resourcefulbees.com/repository/maven-public/" }
+        maven {
+            url "https://cursemaven.com"
+            content {
+                includeGroup "curse.maven"
+            }
+        }
+        maven { url = "https://nexus.resourcefulbees.com/repository/maven-public/" }
+        maven { url "https://maven.terraformersmc.com" }
     }
 
-    tasks.withType(JavaCompile) {
-        options.encoding = "UTF-8"
-        options.release = 17
+    tasks.withType(JavaCompile).tap {
+        configureEach {
+            options.encoding = "UTF-8"
+            options.release = 17
+        }
     }
 
     java {

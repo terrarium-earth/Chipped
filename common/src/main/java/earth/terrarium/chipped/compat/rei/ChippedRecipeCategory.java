@@ -25,13 +25,13 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class ChippedRecipeCategory implements DisplayCategory<ChippedRecipeCategory.FlattenedRecipe> {
-	private final CategoryIdentifier<FlattenedRecipe> id;
+    private final CategoryIdentifier<FlattenedRecipe> id;
     private final ItemStack icon;
 
-	public ChippedRecipeCategory(Block block) {
+    public ChippedRecipeCategory(Block block) {
         this.id = CategoryIdentifier.of(Registry.BLOCK.getKey(block));
         this.icon = new ItemStack(block);
-	}
+    }
 
     @Override
     public Renderer getIcon() {

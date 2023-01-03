@@ -5,13 +5,13 @@
   "name": "Chipped",
   "description": "Every block needs a friend!",
   "authors": [
-    "Grimbop",
     "Alex Nijjar",
+    "CodexAdrian",
+    "Grimbop",
     "Kekie6",
     "Marc-IceBlade",
-    "ThatGravyBoat",
-    "CodexAdrian",
-    "MsRandom"
+    "MsRandom",
+    "ThatGravyBoat"
   ],
   "contact": {
     "homepage": "https://www.curseforge.com/minecraft/mc-mods/chipped",
@@ -23,13 +23,11 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "earth.terrarium.chipped.fabric.ChippedFabric"
+      "earth.terrarium.chipped.fabric.ChippedFabric",
+      "earth.terrarium.chipped.Chipped::postInit"
     ],
     "client": [
-      "earth.terrarium.chipped.client.ChippedClient::initializeClient"
-    ],
-    "fabric-datagen": [
-      "earth.terrarium.chipped.fabric.datagen.ChippedDataGenEntrypoint"
+      "earth.terrarium.chipped.client.fabric.ChippedClientFabric"
     ],
     "rei_client": [
       "earth.terrarium.chipped.compat.rei.REIChippedPlugin"

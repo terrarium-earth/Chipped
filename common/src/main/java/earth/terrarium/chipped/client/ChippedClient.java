@@ -1,12 +1,9 @@
 package earth.terrarium.chipped.client;
 
-import java.util.function.Supplier;
-
+import dev.architectury.injectables.annotations.ExpectPlatform;
 import earth.terrarium.chipped.menus.ChippedScreen;
 import earth.terrarium.chipped.registry.ModBlocks;
 import earth.terrarium.chipped.registry.ModMenuTypes;
-
-import dev.architectury.injectables.annotations.ExpectPlatform;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.client.gui.screens.Screen;
@@ -17,11 +14,14 @@ import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.MenuType;
 import net.minecraft.world.level.block.Block;
+import org.apache.commons.lang3.NotImplementedException;
+
+import java.util.function.Supplier;
 
 @Environment(EnvType.CLIENT)
 public class ChippedClient {
 
-    public static void initializeClient() {
+    public static void init() {
         for (var block : ModBlocks.CUTOUT_BLOCKS) {
             registerBlockRenderType(RenderType.cutout(), block);
         }
@@ -50,12 +50,12 @@ public class ChippedClient {
 
     @ExpectPlatform
     public static void registerBlockRenderType(RenderType type, Supplier<Block> block) {
-        throw new AssertionError();
+        throw new NotImplementedException();
     }
 
     @ExpectPlatform
     public static <M extends AbstractContainerMenu, U extends Screen & MenuAccess<M>> void register(MenuType<? extends M> type, ScreenConstructor<M, U> factory) {
-        throw new AssertionError();
+        throw new NotImplementedException();
     }
 
     @Environment(EnvType.CLIENT)

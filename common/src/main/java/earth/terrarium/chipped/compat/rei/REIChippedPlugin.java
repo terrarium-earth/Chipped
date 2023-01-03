@@ -1,13 +1,8 @@
 package earth.terrarium.chipped.compat.rei;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
-
 import earth.terrarium.chipped.recipe.ChippedRecipe;
 import earth.terrarium.chipped.registry.ModBlocks;
 import earth.terrarium.chipped.registry.ModRecipeTypes;
-
 import me.shedaniel.rei.api.client.plugins.REIClientPlugin;
 import me.shedaniel.rei.api.client.registry.category.CategoryRegistry;
 import me.shedaniel.rei.api.client.registry.display.DisplayRegistry;
@@ -24,8 +19,11 @@ import net.minecraft.world.item.crafting.RecipeManager;
 import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.level.block.Block;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+
 public class REIChippedPlugin implements REIClientPlugin {
-    @SuppressWarnings("unchecked")
     @Override
     public void registerCategories(CategoryRegistry registry) {
         registry.add(
@@ -43,6 +41,7 @@ public class REIChippedPlugin implements REIClientPlugin {
     @Override
     public void registerDisplays(DisplayRegistry registry) {
         Minecraft client = Minecraft.getInstance();
+        assert client.level != null;
         RecipeManager recipeManager = client.level.getRecipeManager();
         registerRecipes(recipeManager, registry, ModRecipeTypes.BOTANIST_WORKBENCH_TYPE.get(), ModBlocks.BOTANIST_WORKBENCH.get());
         registerRecipes(recipeManager, registry, ModRecipeTypes.CARPENTERS_TABLE_TYPE.get(), ModBlocks.CARPENTERS_TABLE.get());

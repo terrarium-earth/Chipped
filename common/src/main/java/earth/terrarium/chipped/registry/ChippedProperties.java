@@ -1,12 +1,12 @@
 package earth.terrarium.chipped.registry;
 
-import java.util.function.BiFunction;
-import java.util.function.Function;
-
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+
+import java.util.function.BiFunction;
+import java.util.function.Function;
 
 public class ChippedProperties {
     private boolean transparent;
@@ -49,11 +49,6 @@ public class ChippedProperties {
 
     public ChippedProperties skipItem() {
         this.skipItem = true;
-        return this;
-    }
-
-    public ChippedProperties coloured() {
-        this.transparent = true;
         return this;
     }
 

@@ -1,51 +1,63 @@
 plugins {
     id "com.github.johnrengelman.shadow" version "7.1.2"
 }
+
 architectury {
     platformSetupLoomIde()
     forge()
 }
 
-loom {
-    accessWidenerPath = project(":common").loom.accessWidenerPath
+sourceSets {
+    main {
+        resources {
+            srcDirs += project(":forge").file("src/generated/resources").absolutePath
+            exclude '.cache'
+        }
+    }
+}
 
+loom {
     forge {
-        convertAccessWideners = true
-        extraAccessWideners.add loom.accessWidenerPath.get().asFile.name
+        dataGen {
+            mod project.mod_id
+        }
+    }
+    runs {
+        data {
+            programArgs "--existing", project(":common").file("src/main/resources").absolutePath
+        }
     }
 }
 
 configurations {
     common
-    shadowCommon // Don't use shadow from the shadow plugin because we don't want IDEA to index this.
+    shadowCommon
     compileClasspath.extendsFrom common
     runtimeClasspath.extendsFrom common
     developmentForge.extendsFrom common
 }
 
 dependencies {
-    forge "net.minecraftforge:forge:${rootProject.forge_version}"
+    forge "net.minecraftforge:forge:$rootProject.minecraft_version-$rootProject.forge_version"
 
     common(project(path: ":common", configuration: "namedElements")) { transitive false }
     shadowCommon(project(path: ":common", configuration: "transformProductionForge")) { transitive = false }
-    modImplementation "team.chisel.ctm:CTM:${minecraft_version}-${ctm_version}"
 
-    modCompileOnly "me.shedaniel:RoughlyEnoughItems-forge:$project.rei_version"
+    modImplementation "team.chisel.ctm:CTM:$minecraft_version-$ctm_version"
+
     modCompileOnly "mezz.jei:jei-$rootProject.minecraft_version-forge-api:$rootProject.jei_version"
-    modLocalRuntime ("mezz.jei:jei-$rootProject.minecraft_version-forge:$rootProject.jei_version") { transitive = false }
+    modLocalRuntime("mezz.jei:jei-$rootProject.minecraft_version-forge:$rootProject.jei_version") { transitive = false }
 }
 
 processResources {
-    inputs.property "version", project.version
-
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
     filesMatching("META-INF/mods.toml") {
-        expand "version": project.version
+        expand "version": rootProject.version
     }
 }
 
 shadowJar {
     exclude "fabric.mod.json"
-    exclude "architectury.common.json"
 
     configurations = [project.configurations.shadowCommon]
     classifier "dev-shadow"
@@ -63,6 +75,7 @@ jar {
 }
 
 sourcesJar {
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
     def commonSources = project(":common").sourcesJar
     dependsOn commonSources
     from commonSources.archiveFile.map { zipTree(it) }
@@ -74,16 +87,13 @@ components.java {
     }
 }
 
+def ENV = System.getenv()
+
 publishing {
     publications {
         mavenForge(MavenPublication) {
             artifactId = rootProject.archives_base_name + "-" + project.name
             from components.java
         }
-    }
-
-    // See https://docs.gradle.org/current/userguide/publishing_maven.html for information on how to set up publishing.
-    repositories {
-        // Add repositories to publish to here.
     }
 }

@@ -1,13 +1,8 @@
 package earth.terrarium.chipped.recipe;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Supplier;
-import java.util.stream.Stream;
-
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
-
+import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderSet;
 import net.minecraft.core.Registry;
@@ -25,6 +20,12 @@ import net.minecraft.world.item.crafting.SimpleRecipeSerializer;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.function.Supplier;
+import java.util.stream.Stream;
+
+@MethodsReturnNonnullByDefault
 public record ChippedRecipe(
         Serializer serializer,
         ResourceLocation id,
