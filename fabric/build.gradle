@@ -24,21 +24,23 @@ configurations {
     developmentFabric.extendsFrom common
 }
 
-
 dependencies {
     modImplementation "net.fabricmc:fabric-loader:$rootProject.fabric_loader_version"
-    modApi "net.fabricmc.fabric-api:fabric-api:$rootProject.fabric_api_version"
+    modApi "net.fabricmc.fabric-api:fabric-api:$rootProject.fabric_api_version+$rootProject.minecraft_version"
 
     common(project(path: ":common", configuration: "namedElements")) { transitive false }
     shadowCommon(project(path: ":common", configuration: "transformProductionFabric")) { transitive false }
 
-    modImplementation "me.codexadrian:ctm-refabricated:1.0.0+1.18"
+    modImplementation "me.codexadrian:ctm-refabricated:1.0.0+1.19"
 
     modApi "com.terraformersmc:modmenu:$rootProject.modmenu_version"
+
+    modApi "com.teamresourceful.resourcefullib:resourcefullib-fabric-$rootProject.minecraft_version:$rootProject.resourcefullib_version"
 
     modRuntimeOnly "me.shedaniel:RoughlyEnoughItems-fabric:$rootProject.rei_version"
     modCompileOnly "me.shedaniel:RoughlyEnoughItems-api-fabric:$rootProject.rei_version"
     modCompileOnly "me.shedaniel:RoughlyEnoughItems-default-plugin-fabric:$rootProject.rei_version"
+    modApi "dev.architectury:architectury-fabric:$rootProject.architectury_version"
 }
 
 processResources {
@@ -46,13 +48,6 @@ processResources {
 
     filesMatching("fabric.mod.json") {
         expand "version": project.version
-    }
-}
-
-processResources {
-    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
-    filesMatching("fabric.mod.json") {
-        expand "version": rootProject.version
     }
 }
 
@@ -93,9 +88,40 @@ def ENV = System.getenv()
 
 publishing {
     publications {
-        mavenFabric(MavenPublication) {
-            artifactId = rootProject.archives_base_name + "-" + project.name
-            from components.java
+        mavenJava(MavenPublication) {
+            artifact remapJar
+            artifact(sourcesJar) {
+                builtBy remapSourcesJar
+            }
+
+            artifactId = "$rootProject.mod_id-fabric-$rootProject.minecraft_version"
+
+            pom {
+                name = 'Ad Astra'
+                description = 'Live long and prosper, Ad Astra!'
+                url = 'https://github.com/terrarium-earth/Ad-Astra'
+
+                scm {
+                    connection = 'git:https://github.com/terrarium-earth/Ad-Astra.git'
+                    developerConnection = 'git:https://github.com/terrarium-earth/Ad-Astra.git'
+                    url = 'https://github.com/terrarium-earth/Ad-Astra'
+                }
+
+                licenses {
+                    license {
+                        name = 'Terrarium Licence'
+                    }
+                }
+            }
+        }
+    }
+    repositories {
+        maven {
+            url = "https://maven.resourcefulbees.com/repository/terrarium/"
+            credentials {
+                username ENV.MAVEN_USER
+                password ENV.MAVEN_PASS
+            }
         }
     }
 }

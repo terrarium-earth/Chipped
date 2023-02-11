@@ -5,10 +5,13 @@ architectury {
 dependencies {
     modImplementation "net.fabricmc:fabric-loader:$rootProject.fabric_loader_version"
 
+    modApi "com.teamresourceful.resourcefullib:resourcefullib-common-$rootProject.minecraft_version:$rootProject.resourcefullib_version"
+
     modCompileOnly "mezz.jei:jei-$rootProject.minecraft_version-common-api:$rootProject.jei_version"
     modRuntimeOnly "mezz.jei:jei-$rootProject.minecraft_version-common:$rootProject.jei_version"
     modCompileOnly "me.shedaniel:RoughlyEnoughItems-api:$rootProject.rei_version"
     modCompileOnly "me.shedaniel:RoughlyEnoughItems-default-plugin:$rootProject.rei_version"
+    modApi "dev.architectury:architectury:$rootProject.architectury_version"
 }
 
 processResources {
@@ -19,9 +22,40 @@ def ENV = System.getenv()
 
 publishing {
     publications {
-        mavenCommon(MavenPublication) {
-            artifactId = rootProject.archives_base_name
-            from components.java
+        mavenJava(MavenPublication) {
+            artifact remapJar
+            artifact(sourcesJar) {
+                builtBy remapSourcesJar
+            }
+
+            artifactId = "$rootProject.mod_id-common-$rootProject.minecraft_version"
+
+            pom {
+                name = 'Ad Astra'
+                description = 'Live long and prosper, Ad Astra!'
+                url = 'https://github.com/terrarium-earth/Ad-Astra'
+
+                scm {
+                    connection = 'git:https://github.com/terrarium-earth/Ad-Astra.git'
+                    developerConnection = 'git:https://github.com/terrarium-earth/Ad-Astra.git'
+                    url = 'https://github.com/terrarium-earth/Ad-Astra'
+                }
+
+                licenses {
+                    license {
+                        name = 'Terrarium Licence'
+                    }
+                }
+            }
+        }
+    }
+    repositories {
+        maven {
+            url = "https://maven.resourcefulbees.com/repository/terrarium/"
+            credentials {
+                username ENV.MAVEN_USER
+                password ENV.MAVEN_PASS
+            }
         }
     }
 }

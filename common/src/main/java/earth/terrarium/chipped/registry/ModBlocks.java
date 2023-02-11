@@ -298,7 +298,7 @@ public class ModBlocks {
         }).cutout());
         registerBlockWithPalette(Blocks.POINTED_DRIPSTONE, 13, new ChippedProperties().blockType(CustomPointedDripstoneBlock::new).cutout().excludeModel());
         registerBlockWithPalette(Blocks.LILY_PAD, 22, new ChippedProperties().blockType(p -> new WaterlilyBlock(p) {
-        }).cutout().itemType(WaterLilyBlockItem::new));
+        }).cutout().itemType(PlaceOnWaterBlockItem::new));
         registerBlockWithPalette(Blocks.NETHER_SPROUTS, 20, new ChippedProperties().blockType(NetherSproutsBlock::new).cutout().excludeLoot());
         registerBlockWithPalette(Blocks.RED_MUSHROOM, 15, new ChippedProperties().blockType(p -> new MushroomBlock(p, () -> TreeFeatures.HUGE_RED_MUSHROOM)).cutout());
         registerBlockWithPalette(Blocks.VINE, 11, new ChippedProperties().blockType(VineBlock::new).cutout().excludeLoot());
