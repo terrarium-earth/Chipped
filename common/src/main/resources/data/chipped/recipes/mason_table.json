@@ -83,6 +83,7 @@
     "chipped:raw_gold_block",
     "chipped:raw_iron_block",
     "chipped:smooth_stone",
-    "chipped:tuff"
+    "chipped:tuff",
+    "chipped:terracotta"
   ]
 }

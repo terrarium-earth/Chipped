@@ -1,0 +1,1 @@
+- fixed terracotta being uncraftable

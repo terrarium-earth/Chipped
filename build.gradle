@@ -1,17 +1,77 @@
+import groovy.json.JsonOutput
+
 plugins {
     id "architectury-plugin" version "3.4-SNAPSHOT"
     id "dev.architectury.loom" version "1.0-SNAPSHOT" apply false
+
+    id "com.modrinth.minotaur" version "2.+"
+    id "com.matthewprenger.cursegradle" version "1.4.0" // literally never gonna update
 }
 
 architectury {
     minecraft = rootProject.minecraft_version
 }
 
+tasks.register("generateDiscordEmbed") {
+    doFirst {
+        var env = System.getenv()
+        var changelogFile = rootProject.file("changelog.txt")
+
+        var fields = []
+
+        if (changelogFile.exists()) {
+            fields.add([
+                    name : "Changelog",
+                    value: changelogFile.text
+            ])
+        }
+
+        fields.addAll([
+                [
+                        name  : "Minecraft Version",
+                        value : minecraft_version,
+                        inline: true
+                ],
+                [
+                        name  : "Mod Version",
+                        value : mod_version,
+                        inline: true
+                ],
+                [
+                        name  : "Download",
+                        value : "<:modrinth:978684543034871878> [Modrinth](" +
+                                env.MODRINTH_PROJECT_URL +
+                                ")\n<:curseforge:978684543026462790> [Curseforge](" +
+                                env.CURSE_PROJECT_URL + ")",
+                        inline: true
+                ]
+        ])
+
+        var json = JsonOutput.toJson([
+                content     : null,
+                embeds      : [[
+                                       title    : archives_base_name,
+                                       color    : Integer.parseInt(env.EMBED_COLOR, 16),
+                                       fields   : fields,
+                                       thumbnail: [url: env.WEBHOOK_THUMBNAIL]
+                               ]],
+                username    : env.WEBHOOK_USERNAME,
+                avatar_url  : env.WEBHOOK_AVATAR,
+                attatchments: []
+        ])
+
+        new File(projectDir, "embed.json").write(json)
+    }
+}
+
 subprojects {
     apply plugin: "dev.architectury.loom"
+    apply plugin: "com.modrinth.minotaur"
+    apply plugin: "com.matthewprenger.cursegradle"
 
     loom {
         silentMojangMappingsLicense()
+        setEnableTransitiveAccessWideners(true)
     }
 
     dependencies {
@@ -19,6 +79,67 @@ subprojects {
         mappings loom.layered() {
             officialMojangMappings()
             parchment("org.parchmentmc.data:parchment-$rootProject.minecraft_version:$rootProject.parchment_version@zip")
+        }
+    }
+
+    var env = System.getenv()
+    var modLoader = name
+
+    var changelogFile = rootProject.file("changelog.txt")
+    var changelogText = changelogFile.exists() ? changelogFile.text : ""
+
+    if (env.MODRINTH_TOKEN) {
+        modrinth {
+            projectId = env.MODRINTH_PROJECT
+            uploadFile = tasks.remapJar
+            gameVersions = [minecraft_version]
+            loaders = [modLoader]
+            changelog = changelogText
+
+            if (modLoader == "fabric") {
+                dependencies {
+                    required.project "fabric-api"
+                    required.project "ctm-refabricated"
+                    optional.project "jei"
+                    optional.project "roughly-enough-items"
+                }
+            } else {
+                dependencies {
+                    required.project "resourceful-lib"
+                    optional.project "jei"
+                    optional.project "roughly-enough-items"
+                }
+            }
+        }
+    }
+
+    if (env.CURSE_TOKEN) {
+        curseforge {
+            apiKey = env.CURSE_TOKEN
+            project {
+                id = env.CURSE_PROJECT
+                changelog = changelogText
+                releaseType = 'release'
+                addGameVersion minecraft_version
+                addGameVersion modLoader.capitalize()
+
+                mainArtifact(tasks.remapJar)
+
+                if (modLoader == "fabric") {
+                    relations {
+                        requiredDependency "fabric-api"
+                        requiredDependency "ctm-refabricated"
+                        optionalDependency "jei"
+                        optionalDependency "roughly-enough-items"
+                    }
+                } else {
+                    relations {
+                        requiredDependency "ctm"
+                        optionalDependency "jei"
+                        optionalDependency "roughly-enough-items"
+                    }
+                }
+            }
         }
     }
 }
@@ -40,7 +161,6 @@ allprojects {
             }
         }
         maven { url = "https://nexus.resourcefulbees.com/repository/maven-public/" }
-        maven { url "https://maven.terraformersmc.com" }
     }
 
     tasks.withType(JavaCompile).tap {

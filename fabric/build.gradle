@@ -85,6 +85,10 @@ components.java {
     }
 }
 
+repositories {
+    maven { url "https://maven.terraformersmc.com" }
+}
+
 def ENV = System.getenv()
 
 publishing {
