@@ -1,9 +1,9 @@
 package earth.terrarium.chipped;
 
-import earth.terrarium.chipped.registry.ModBlocks;
-import earth.terrarium.chipped.registry.ModMenuTypes;
-import earth.terrarium.chipped.registry.ModRecipeSerializers;
-import earth.terrarium.chipped.registry.ModRecipeTypes;
+import earth.terrarium.chipped.common.registry.ModBlocks;
+import earth.terrarium.chipped.common.registry.ModMenuTypes;
+import earth.terrarium.chipped.common.registry.ModRecipeSerializers;
+import earth.terrarium.chipped.common.registry.ModRecipeTypes;
 
 public class Chipped {
     public static final String MOD_ID = "chipped";

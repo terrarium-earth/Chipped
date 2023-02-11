@@ -1,13 +1,12 @@
-package earth.terrarium.chipped.compat.jei;
+package earth.terrarium.chipped.common.compat.jei;
 
 import earth.terrarium.chipped.Chipped;
-import earth.terrarium.chipped.recipe.ChippedRecipe;
-import earth.terrarium.chipped.registry.ModBlocks;
-import earth.terrarium.chipped.registry.ModRecipeTypes;
+import earth.terrarium.chipped.common.recipe.ChippedRecipe;
+import earth.terrarium.chipped.common.registry.ModBlocks;
+import earth.terrarium.chipped.common.registry.ModRecipeTypes;
 import mezz.jei.api.IModPlugin;
 import mezz.jei.api.JeiPlugin;
 import mezz.jei.api.helpers.IGuiHelper;
-import mezz.jei.api.recipe.RecipeType;
 import mezz.jei.api.registration.IRecipeCatalystRegistration;
 import mezz.jei.api.registration.IRecipeCategoryRegistration;
 import mezz.jei.api.registration.IRecipeRegistration;

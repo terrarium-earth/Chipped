@@ -1,4 +1,4 @@
-package earth.terrarium.chipped.compat.rei;
+package earth.terrarium.chipped.common.compat.rei;
 
 import com.google.common.collect.Lists;
 import me.shedaniel.math.Point;

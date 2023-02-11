@@ -1,4 +1,4 @@
-package earth.terrarium.chipped.registry;
+package earth.terrarium.chipped.common.registry;
 
 import com.mojang.datafixers.util.Pair;
 import dev.architectury.injectables.annotations.ExpectPlatform;

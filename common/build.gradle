@@ -11,11 +11,11 @@ dependencies {
     modRuntimeOnly "mezz.jei:jei-$rootProject.minecraft_version-common:$rootProject.jei_version"
     modCompileOnly "me.shedaniel:RoughlyEnoughItems-api:$rootProject.rei_version"
     modCompileOnly "me.shedaniel:RoughlyEnoughItems-default-plugin:$rootProject.rei_version"
-    modApi "dev.architectury:architectury:$rootProject.architectury_version"
 }
 
 processResources {
     inputs.property "version", rootProject.version
+    inputs.property "resourcefullib_version", rootProject.resourcefullib_version
 }
 
 def ENV = System.getenv()
@@ -28,17 +28,17 @@ publishing {
                 builtBy remapSourcesJar
             }
 
-            artifactId = "$rootProject.mod_id-common-$rootProject.minecraft_version"
+            artifactId = "$rootProject.mod_id-forge-$rootProject.minecraft_version"
 
             pom {
-                name = 'Ad Astra'
-                description = 'Live long and prosper, Ad Astra!'
-                url = 'https://github.com/terrarium-earth/Ad-Astra'
+                name = 'Chipped'
+                description = 'Every block needs a friend!'
+                url = 'https://github.com/terrarium-earth/Chipped'
 
                 scm {
-                    connection = 'git:https://github.com/terrarium-earth/Ad-Astra.git'
-                    developerConnection = 'git:https://github.com/terrarium-earth/Ad-Astra.git'
-                    url = 'https://github.com/terrarium-earth/Ad-Astra'
+                    connection = 'git:https://github.com/terrarium-earth/Chipped.git'
+                    developerConnection = 'git:https://github.com/terrarium-earth/Chipped.git'
+                    url = 'https://github.com/terrarium-earth/Chipped'
                 }
 
                 licenses {

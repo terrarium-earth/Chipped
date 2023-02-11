@@ -1,8 +1,8 @@
-package earth.terrarium.chipped.compat.rei;
+package earth.terrarium.chipped.common.compat.rei;
 
-import earth.terrarium.chipped.recipe.ChippedRecipe;
-import earth.terrarium.chipped.registry.ModBlocks;
-import earth.terrarium.chipped.registry.ModRecipeTypes;
+import earth.terrarium.chipped.common.recipe.ChippedRecipe;
+import earth.terrarium.chipped.common.registry.ModBlocks;
+import earth.terrarium.chipped.common.registry.ModRecipeTypes;
 import me.shedaniel.rei.api.client.plugins.REIClientPlugin;
 import me.shedaniel.rei.api.client.registry.category.CategoryRegistry;
 import me.shedaniel.rei.api.client.registry.display.DisplayRegistry;

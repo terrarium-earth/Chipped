@@ -1,4 +1,4 @@
-package earth.terrarium.chipped.registry;
+package earth.terrarium.chipped.common.registry;
 
 import earth.terrarium.chipped.Chipped;
 import net.minecraft.core.Registry;

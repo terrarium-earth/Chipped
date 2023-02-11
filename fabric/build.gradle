@@ -32,10 +32,9 @@ dependencies {
     shadowCommon(project(path: ":common", configuration: "transformProductionFabric")) { transitive false }
 
     modImplementation "me.codexadrian:ctm-refabricated:1.0.0+1.19"
+    modApi "com.teamresourceful.resourcefullib:resourcefullib-fabric-$rootProject.minecraft_version:$rootProject.resourcefullib_version"
 
     modApi "com.terraformersmc:modmenu:$rootProject.modmenu_version"
-
-    modApi "com.teamresourceful.resourcefullib:resourcefullib-fabric-$rootProject.minecraft_version:$rootProject.resourcefullib_version"
 
     modRuntimeOnly "me.shedaniel:RoughlyEnoughItems-fabric:$rootProject.rei_version"
     modCompileOnly "me.shedaniel:RoughlyEnoughItems-api-fabric:$rootProject.rei_version"
@@ -44,10 +43,10 @@ dependencies {
 }
 
 processResources {
-    inputs.property "version", project.version
-
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+    inputs.property "fabric_loader_version", rootProject.fabric_loader_version
     filesMatching("fabric.mod.json") {
-        expand "version": project.version
+        expand "version": rootProject.version, "fabric_loader_version": rootProject.fabric_loader_version, "resourcefullib_version": rootProject.resourcefullib_version
     }
 }
 
@@ -94,17 +93,17 @@ publishing {
                 builtBy remapSourcesJar
             }
 
-            artifactId = "$rootProject.mod_id-fabric-$rootProject.minecraft_version"
+            artifactId = "$rootProject.mod_id-forge-$rootProject.minecraft_version"
 
             pom {
-                name = 'Ad Astra'
-                description = 'Live long and prosper, Ad Astra!'
-                url = 'https://github.com/terrarium-earth/Ad-Astra'
+                name = 'Chipped'
+                description = 'Every block needs a friend!'
+                url = 'https://github.com/terrarium-earth/Chipped'
 
                 scm {
-                    connection = 'git:https://github.com/terrarium-earth/Ad-Astra.git'
-                    developerConnection = 'git:https://github.com/terrarium-earth/Ad-Astra.git'
-                    url = 'https://github.com/terrarium-earth/Ad-Astra'
+                    connection = 'git:https://github.com/terrarium-earth/Chipped.git'
+                    developerConnection = 'git:https://github.com/terrarium-earth/Chipped.git'
+                    url = 'https://github.com/terrarium-earth/Chipped'
                 }
 
                 licenses {

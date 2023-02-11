@@ -30,15 +30,16 @@
       "earth.terrarium.chipped.client.fabric.ChippedClientFabric"
     ],
     "rei_client": [
-      "earth.terrarium.chipped.compat.rei.REIChippedPlugin"
+      "earth.terrarium.chipped.common.compat.rei.REIChippedPlugin"
     ],
     "jei_mod_plugin": [
-      "earth.terrarium.chipped.compat.jei.JEIPlugin"
+      "earth.terrarium.chipped.common.compat.jei.JEIPlugin"
     ]
   },
   "depends": {
     "fabric": "*",
-    "minecraft": ">=1.18.2",
-    "ctm" : "*"
+    "minecraft": ">=1.19",
+    "ctm" : "*",
+    "resourcefullib": ">=${resourcefullib_version}"
   }
 }

@@ -1,6 +1,6 @@
-package earth.terrarium.chipped.registry;
+package earth.terrarium.chipped.common.registry;
 
-import earth.terrarium.chipped.recipe.ChippedRecipe;
+import earth.terrarium.chipped.common.recipe.ChippedRecipe;
 import net.minecraft.core.Registry;
 import net.minecraft.world.item.crafting.Recipe;
 import net.minecraft.world.item.crafting.RecipeSerializer;

@@ -1,4 +1,4 @@
-package earth.terrarium.chipped.compat.jei;
+package earth.terrarium.chipped.common.compat.jei;
 
 import mezz.jei.api.constants.VanillaTypes;
 import mezz.jei.api.gui.builder.IRecipeLayoutBuilder;

@@ -1,4 +1,4 @@
-package earth.terrarium.chipped.registry.fabric;
+package earth.terrarium.chipped.common.registry.fabric;
 
 import com.mojang.datafixers.util.Pair;
 import earth.terrarium.chipped.Chipped;

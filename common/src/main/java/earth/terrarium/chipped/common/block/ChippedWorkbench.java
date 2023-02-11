@@ -1,4 +1,4 @@
-package earth.terrarium.chipped.block;
+package earth.terrarium.chipped.common.block;
 
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;

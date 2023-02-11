@@ -1,6 +1,6 @@
-package earth.terrarium.chipped.registry;
+package earth.terrarium.chipped.common.registry;
 
-import earth.terrarium.chipped.menus.ChippedMenu;
+import earth.terrarium.chipped.common.menus.ChippedMenu;
 import net.minecraft.core.Registry;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.ContainerLevelAccess;

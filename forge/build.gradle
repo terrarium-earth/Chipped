@@ -44,7 +44,6 @@ dependencies {
     shadowCommon(project(path: ":common", configuration: "transformProductionForge")) { transitive = false }
 
     modImplementation "team.chisel.ctm:CTM:$minecraft_version-$ctm_version"
-
     modApi "com.teamresourceful.resourcefullib:resourcefullib-forge-$rootProject.minecraft_version:$rootProject.resourcefullib_version"
 
     modCompileOnly "mezz.jei:jei-$rootProject.minecraft_version-forge-api:$rootProject.jei_version"
@@ -54,7 +53,7 @@ dependencies {
 processResources {
     duplicatesStrategy = DuplicatesStrategy.EXCLUDE
     filesMatching("META-INF/mods.toml") {
-        expand "version": rootProject.version
+        expand "version": rootProject.version, "resourcefullib_version": rootProject.resourcefullib_version
     }
 }
 
@@ -102,14 +101,14 @@ publishing {
             artifactId = "$rootProject.mod_id-forge-$rootProject.minecraft_version"
 
             pom {
-                name = 'Ad Astra'
-                description = 'Live long and prosper, Ad Astra!'
-                url = 'https://github.com/terrarium-earth/Ad-Astra'
+                name = 'Chipped'
+                description = 'Every block needs a friend!'
+                url = 'https://github.com/terrarium-earth/Chipped'
 
                 scm {
-                    connection = 'git:https://github.com/terrarium-earth/Ad-Astra.git'
-                    developerConnection = 'git:https://github.com/terrarium-earth/Ad-Astra.git'
-                    url = 'https://github.com/terrarium-earth/Ad-Astra'
+                    connection = 'git:https://github.com/terrarium-earth/Chipped.git'
+                    developerConnection = 'git:https://github.com/terrarium-earth/Chipped.git'
+                    url = 'https://github.com/terrarium-earth/Chipped'
                 }
 
                 licenses {

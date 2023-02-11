@@ -1,4 +1,4 @@
-package earth.terrarium.chipped.block;
+package earth.terrarium.chipped.common.block;
 
 import com.google.common.annotations.VisibleForTesting;
 import net.minecraft.MethodsReturnNonnullByDefault;

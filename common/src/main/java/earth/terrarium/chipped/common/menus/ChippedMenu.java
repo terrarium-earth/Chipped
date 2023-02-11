@@ -1,7 +1,7 @@
-package earth.terrarium.chipped.menus;
+package earth.terrarium.chipped.common.menus;
 
 import com.google.common.base.Suppliers;
-import earth.terrarium.chipped.recipe.ChippedRecipe;
+import earth.terrarium.chipped.common.recipe.ChippedRecipe;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.sounds.SoundEvents;

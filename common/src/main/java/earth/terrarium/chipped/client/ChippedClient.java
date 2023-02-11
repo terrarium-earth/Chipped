@@ -1,9 +1,9 @@
 package earth.terrarium.chipped.client;
 
 import dev.architectury.injectables.annotations.ExpectPlatform;
-import earth.terrarium.chipped.menus.ChippedScreen;
-import earth.terrarium.chipped.registry.ModBlocks;
-import earth.terrarium.chipped.registry.ModMenuTypes;
+import earth.terrarium.chipped.common.menus.ChippedScreen;
+import earth.terrarium.chipped.common.registry.ModBlocks;
+import earth.terrarium.chipped.common.registry.ModMenuTypes;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.client.gui.screens.Screen;
