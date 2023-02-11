@@ -12,10 +12,10 @@ gilded blackstone! Not only are all the textures hand-painted in the new vanilla
 lot of connected textures! Inspired by the popular Chisel mod, Chipped allows builders to have their full range of
 creativity, because every block deserves a friend!
 
-Chipped will aim to support all Minecraft versions 1.16+. With this update we succesfully added support for nearly all
+Chipped will aim to support all Minecraft versions 1.16+. With this update we successfully added support for nearly all
 vanilla blocks. From now on, our main focus will be to provide support to all those other cool mods out there!
 
-Do you wish to have your mod(s) supported by chipped? Feel free to send us a messege on discord! :D
+Do you wish to have your mod(s) supported by chipped? Feel free to send us a message on discord! :D
 
 You are free to use this mod in your modpacks! Please just provide credit :3
 
@@ -52,7 +52,7 @@ Artists:
 - Valila
 - ArtistMonster
 
-Would you also like to contribute to our mod? Simply messege us on discord to apply for the Terrarium Team! ;)
+Would you also like to contribute to our mod? Simply message us on discord to apply for the Terrarium Team! ;)
 
 ## Social Media
 
@@ -74,7 +74,7 @@ Would you also like to contribute to our mod? Simply messege us on discord to ap
 ## Our Other Projects
 
 - [Ad-Astra!](https://www.curseforge.com/minecraft/mc-mods/ad-astra)
-- [CTM Refrabricated](https://www.curseforge.com/minecraft/mc-mods/ctm-refabricated)
+- [CTM Refabricated](https://www.curseforge.com/minecraft/mc-mods/ctm-refabricated)
 - [Colorful Azaleas](https://www.curseforge.com/minecraft/mc-mods/colorfulazaleas)
 - [Handcrafted](https://www.curseforge.com/minecraft/mc-mods/handcrafted)
 - [Lil'Wings](https://www.curseforge.com/minecraft/mc-mods/lil-wings)
