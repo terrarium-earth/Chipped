@@ -1,4 +1,4 @@
-package earth.terrarium.chipped.common.menus;
+package earth.terrarium.chipped.common.menu;
 
 import com.google.common.base.Suppliers;
 import earth.terrarium.chipped.common.recipe.ChippedRecipe;

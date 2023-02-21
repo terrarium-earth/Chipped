@@ -8,7 +8,7 @@ import earth.terrarium.chipped.Chipped;
 import earth.terrarium.chipped.common.block.SpecialLanternBlock;
 import earth.terrarium.chipped.common.block.SpecialPointedDripstoneBlock;
 import earth.terrarium.chipped.common.block.WorkbenchBlock;
-import earth.terrarium.chipped.common.menus.ChippedMenu;
+import earth.terrarium.chipped.common.menu.ChippedMenu;
 import earth.terrarium.chipped.common.palette.Palette;
 import net.minecraft.core.Registry;
 import net.minecraft.core.particles.ParticleOptions;

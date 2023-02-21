@@ -2,7 +2,7 @@ package earth.terrarium.chipped.client;
 
 import com.teamresourceful.resourcefullib.common.registry.ResourcefulRegistry;
 import dev.architectury.injectables.annotations.ExpectPlatform;
-import earth.terrarium.chipped.common.menus.ChippedScreen;
+import earth.terrarium.chipped.common.menu.ChippedScreen;
 import earth.terrarium.chipped.common.registry.ModBlocks;
 import earth.terrarium.chipped.common.registry.ModMenus;
 import net.fabricmc.api.EnvType;

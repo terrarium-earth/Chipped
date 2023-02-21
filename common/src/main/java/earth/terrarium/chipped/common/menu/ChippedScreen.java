@@ -1,4 +1,4 @@
-package earth.terrarium.chipped.common.menus;
+package earth.terrarium.chipped.common.menu;
 
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.PoseStack;

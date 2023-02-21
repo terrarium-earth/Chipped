@@ -3,7 +3,7 @@ package earth.terrarium.chipped.common.registry;
 import com.teamresourceful.resourcefullib.common.registry.ResourcefulRegistries;
 import com.teamresourceful.resourcefullib.common.registry.ResourcefulRegistry;
 import earth.terrarium.chipped.Chipped;
-import earth.terrarium.chipped.common.menus.ChippedMenu;
+import earth.terrarium.chipped.common.menu.ChippedMenu;
 import net.minecraft.core.Registry;
 import net.minecraft.world.inventory.ContainerLevelAccess;
 import net.minecraft.world.inventory.MenuType;
