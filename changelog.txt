@@ -1,4 +1,4 @@
-Chipped is finally out for 1.19.2 and 1.19.3!
+Chipped is finally out for 1.19.2!
 
 WARNING: updating from the 1.18.2 version will delete all the blocks in your world!
 
