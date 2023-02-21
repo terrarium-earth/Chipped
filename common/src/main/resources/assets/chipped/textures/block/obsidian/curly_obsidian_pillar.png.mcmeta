@@ -1,0 +1,12 @@
+{
+	"ctm": {
+		"ctm_version": 1,
+		"type": "pillar",
+		"textures": [
+			"chipped:block/obsidian/ctm/curly_obsidian_pillar"
+		],
+		"extra": {
+			"light": 0
+		}
+	}
+}

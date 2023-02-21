@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "chipped:block/dark_prismarine/layed_dark_prismarine_bricks"
+  }
+}

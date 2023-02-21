@@ -1,0 +1,12 @@
+{
+	"ctm": {
+		"ctm_version": 1,
+		"type": "ctm",
+		"textures": [
+			"chipped:block/nether_bricks/ctm/bordered_nether_bricks_ctm"
+		],
+		"extra": {
+			"light": 0
+		}
+	}
+}

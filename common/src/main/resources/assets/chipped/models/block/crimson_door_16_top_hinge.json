@@ -1,7 +1,0 @@
-{
-  "parent": "minecraft:block/door_top_rh",
-  "textures": {
-    "top": "chipped:block/crimson_door/crimson_door_16_top",
-    "bottom": "chipped:block/crimson_door/crimson_door_16_bottom"
-  }
-}

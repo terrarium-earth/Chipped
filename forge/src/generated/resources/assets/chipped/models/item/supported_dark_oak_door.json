@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "chipped:item/dark_oak_door/supported_dark_oak_door"
+  }
+}

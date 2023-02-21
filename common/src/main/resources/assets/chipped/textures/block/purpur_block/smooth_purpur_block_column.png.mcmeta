@@ -1,0 +1,12 @@
+{
+	"ctm": {
+		"ctm_version": 1,
+		"type": "ctm",
+		"textures": [
+			"chipped:block/purpur_block/ctm/smooth_purpur_block_column_ctm"
+		],
+		"extra": {
+			"light": 0
+		}
+	}
+}

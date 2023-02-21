@@ -1,0 +1,12 @@
+{
+	"ctm": {
+		"ctm_version": 1,
+		"type": "ctm",
+		"textures": [
+			"chipped:block/stone/ctm/tiny_brick_bordered_stone_ctm"
+		],
+		"extra": {
+			"light": 0
+		}
+	}
+}

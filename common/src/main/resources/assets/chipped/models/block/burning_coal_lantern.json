@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/template_lantern",
+  "textures": {
+    "lantern": "chipped:block/lantern/burning_coal_lantern"
+  }
+}

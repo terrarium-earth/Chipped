@@ -1,0 +1,12 @@
+{
+	"ctm": {
+		"ctm_version": 1,
+		"type": "ctm",
+		"textures": [
+			"chipped:block/stone/ctm/edged_stone_bricks_ctm"
+		],
+		"extra": {
+			"light": 0
+		}
+	}
+}

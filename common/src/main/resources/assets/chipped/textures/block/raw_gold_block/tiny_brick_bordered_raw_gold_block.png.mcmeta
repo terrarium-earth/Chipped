@@ -1,0 +1,12 @@
+{
+	"ctm": {
+		"ctm_version": 1,
+		"type": "ctm",
+		"textures": [
+			"chipped:block/raw_gold_block/ctm/tiny_brick_bordered_raw_gold_block_ctm"
+		],
+		"extra": {
+			"light": 0
+		}
+	}
+}

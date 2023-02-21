@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "chipped:block/purpur_block/cut_blank_purpur_block"
+  }
+}

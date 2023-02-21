@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "chipped:block/nether_sprouts/creeping_nether_sprouts"
+  }
+}

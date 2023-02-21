@@ -1,0 +1,12 @@
+{
+	"ctm": {
+		"ctm_version": 1,
+		"type": "ctm",
+		"textures": [
+			"chipped:block/dripstone_block/ctm/tiled_bordered_dripstone_block_ctm"
+		],
+		"extra": {
+			"light": 0
+		}
+	}
+}

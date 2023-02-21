@@ -1,0 +1,12 @@
+{
+	"ctm": {
+		"ctm_version": 1,
+		"type": "ctm",
+		"textures": [
+			"chipped:block/black_concrete/ctm/wired_black_concrete_ctm"
+		],
+		"extra": {
+			"light": 0
+		}
+	}
+}

@@ -1,0 +1,12 @@
+{
+	"ctm": {
+		"ctm_version": 1,
+		"type": "pillar",
+		"textures": [
+			"chipped:block/stone/ctm/fine_stone_pillar"
+		],
+		"extra": {
+			"light": 0
+		}
+	}
+}

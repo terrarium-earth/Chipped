@@ -14,7 +14,7 @@
     "ThatGravyBoat"
   ],
   "contact": {
-    "homepage": "https://www.curseforge.com/minecraft/mc-mods/chipped",
+    "homepage": "https://modrinth.com/mod/chipped",
     "sources": "https://github.com/terrarium-earth/Chipped",
     "issues": "https://github.com/terrarium-earth/Chipped/issues"
   },
@@ -23,8 +23,7 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "earth.terrarium.chipped.fabric.ChippedFabric",
-      "earth.terrarium.chipped.Chipped::postInit"
+      "earth.terrarium.chipped.fabric.ChippedFabric"
     ],
     "client": [
       "earth.terrarium.chipped.client.fabric.ChippedClientFabric"

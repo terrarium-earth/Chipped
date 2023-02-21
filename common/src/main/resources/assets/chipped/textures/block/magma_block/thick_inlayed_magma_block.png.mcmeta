@@ -1,0 +1,12 @@
+{
+	"ctm": {
+		"ctm_version": 1,
+		"type": "ctm",
+		"textures": [
+			"chipped:block/magma_block/ctm/thick_inlayed_magma_block_ctm"
+		],
+		"extra": {
+			"light": 0
+		}
+	}
+}

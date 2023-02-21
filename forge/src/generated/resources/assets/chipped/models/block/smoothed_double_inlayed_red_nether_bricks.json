@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "chipped:block/red_nether_bricks/smoothed_double_inlayed_red_nether_bricks"
+  }
+}

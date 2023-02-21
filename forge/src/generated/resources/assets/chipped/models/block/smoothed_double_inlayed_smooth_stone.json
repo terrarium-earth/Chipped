@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "chipped:block/smooth_stone/smoothed_double_inlayed_smooth_stone"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/ladder",
+  "textures": {
+    "particle": "chipped:block/ladder/metal_ladder",
+    "texture": "chipped:block/ladder/metal_ladder"
+  }
+}

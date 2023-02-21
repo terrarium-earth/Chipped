@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "chipped:block/pearlescent_froglight/ancient_pearlescent_froglight"
+  }
+}

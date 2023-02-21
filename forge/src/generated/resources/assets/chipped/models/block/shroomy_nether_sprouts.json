@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "chipped:block/nether_sprouts/shroomy_nether_sprouts"
+  }
+}

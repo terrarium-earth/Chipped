@@ -1,0 +1,17 @@
+{
+  "values": [
+    "minecraft:mangrove_trapdoor",
+    "chipped:barred_mangrove_trapdoor",
+    "chipped:classic_mangrove_trapdoor",
+    "chipped:classic_windowed_mangrove_trapdoor",
+    "chipped:distorted_mangrove_trapdoor",
+    "chipped:fancy_mangrove_trapdoor",
+    "chipped:golden_barred_mangrove_trapdoor",
+    "chipped:heavy_mangrove_trapdoor",
+    "chipped:iron_barred_mangrove_trapdoor",
+    "chipped:screened_mangrove_trapdoor",
+    "chipped:solid_mangrove_trapdoor",
+    "chipped:suspicious_mangrove_trapdoor",
+    "chipped:windowed_mangrove_trapdoor"
+  ]
+}

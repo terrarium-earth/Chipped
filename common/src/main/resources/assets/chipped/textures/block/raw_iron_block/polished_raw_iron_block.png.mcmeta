@@ -1,0 +1,12 @@
+{
+	"ctm": {
+		"ctm_version": 1,
+		"type": "ctm",
+		"textures": [
+			"chipped:block/raw_iron_block/ctm/polished_raw_iron_block_ctm"
+		],
+		"extra": {
+			"light": 0
+		}
+	}
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "chipped:block/blue_ice/cut_blank_blue_ice"
+  }
+}

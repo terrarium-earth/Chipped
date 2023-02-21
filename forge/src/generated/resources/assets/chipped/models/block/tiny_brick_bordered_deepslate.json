@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "chipped:block/deepslate/tiny_brick_bordered_deepslate"
+  }
+}

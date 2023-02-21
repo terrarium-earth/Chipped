@@ -1,0 +1,12 @@
+{
+	"ctm": {
+		"ctm_version": 1,
+		"type": "ctm",
+		"textures": [
+			"chipped:block/light_gray_wool/ctm/cornered_light_gray_wool_ctm"
+		],
+		"extra": {
+			"light": 0
+		}
+	}
+}

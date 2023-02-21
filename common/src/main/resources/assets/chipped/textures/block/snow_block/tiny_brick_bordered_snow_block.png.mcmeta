@@ -1,0 +1,12 @@
+{
+	"ctm": {
+		"ctm_version": 1,
+		"type": "ctm",
+		"textures": [
+			"chipped:block/snow_block/ctm/tiny_brick_bordered_snow_block_ctm"
+		],
+		"extra": {
+			"light": 0
+		}
+	}
+}

@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/door_bottom_left",
+  "textures": {
+    "bottom": "chipped:block/warped_door/dual_paneled_warped_door_bottom",
+    "top": "chipped:block/warped_door/dual_paneled_warped_door_top"
+  }
+}

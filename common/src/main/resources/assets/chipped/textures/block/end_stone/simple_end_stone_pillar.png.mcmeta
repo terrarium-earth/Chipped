@@ -1,0 +1,12 @@
+{
+	"ctm": {
+		"ctm_version": 1,
+		"type": "pillar",
+		"textures": [
+			"chipped:block/end_stone/ctm/simple_end_stone_pillar"
+		],
+		"extra": {
+			"light": 0
+		}
+	}
+}

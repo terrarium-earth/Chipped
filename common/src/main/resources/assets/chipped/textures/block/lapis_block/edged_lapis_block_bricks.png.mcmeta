@@ -1,0 +1,12 @@
+{
+	"ctm": {
+		"ctm_version": 1,
+		"type": "ctm",
+		"textures": [
+			"chipped:block/lapis_block/ctm/edged_lapis_block_bricks_ctm"
+		],
+		"extra": {
+			"light": 0
+		}
+	}
+}

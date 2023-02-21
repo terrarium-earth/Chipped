@@ -1,0 +1,12 @@
+{
+	"ctm": {
+		"ctm_version": 1,
+		"type": "ctm",
+		"textures": [
+			"chipped:block/smooth_stone/ctm/tiled_smooth_stone_column_ctm"
+		],
+		"extra": {
+			"light": 0
+		}
+	}
+}

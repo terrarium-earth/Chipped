@@ -1,0 +1,12 @@
+{
+	"ctm": {
+		"ctm_version": 1,
+		"type": "ctm",
+		"textures": [
+			"chipped:block/andesite/ctm/thick_inlayed_andesite_ctm"
+		],
+		"extra": {
+			"light": 0
+		}
+	}
+}

@@ -1,0 +1,12 @@
+{
+	"ctm": {
+		"ctm_version": 1,
+		"type": "pillar",
+		"textures": [
+			"chipped:block/granite/ctm/curly_granite_pillar"
+		],
+		"extra": {
+			"light": 0
+		}
+	}
+}

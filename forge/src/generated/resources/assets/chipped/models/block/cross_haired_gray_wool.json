@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "chipped:block/gray_wool/cross_haired_gray_wool"
+  }
+}

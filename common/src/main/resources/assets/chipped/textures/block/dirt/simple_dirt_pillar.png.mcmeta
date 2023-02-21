@@ -1,0 +1,12 @@
+{
+	"ctm": {
+		"ctm_version": 1,
+		"type": "pillar",
+		"textures": [
+			"chipped:block/dirt/ctm/simple_dirt_pillar"
+		],
+		"extra": {
+			"light": 0
+		}
+	}
+}

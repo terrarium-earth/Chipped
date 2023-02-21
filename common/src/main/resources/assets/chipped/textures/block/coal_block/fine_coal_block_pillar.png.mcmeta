@@ -1,0 +1,12 @@
+{
+	"ctm": {
+		"ctm_version": 1,
+		"type": "pillar",
+		"textures": [
+			"chipped:block/coal_block/ctm/fine_coal_block_pillar"
+		],
+		"extra": {
+			"light": 0
+		}
+	}
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "chipped:block/mud/vertical_disordered_mud_bricks"
+  }
+}

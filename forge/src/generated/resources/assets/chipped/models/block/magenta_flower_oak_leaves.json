@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "chipped:block/oak_leaves/magenta_flower_oak_leaves"
+  }
+}

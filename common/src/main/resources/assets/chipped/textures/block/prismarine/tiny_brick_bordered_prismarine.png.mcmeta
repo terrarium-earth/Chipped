@@ -1,0 +1,12 @@
+{
+	"ctm": {
+		"ctm_version": 1,
+		"type": "ctm",
+		"textures": [
+			"chipped:block/prismarine/ctm/tiny_brick_bordered_prismarine_ctm"
+		],
+		"extra": {
+			"light": 0
+		}
+	}
+}

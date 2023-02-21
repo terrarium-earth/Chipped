@@ -1,0 +1,12 @@
+{
+	"ctm": {
+		"ctm_version": 1,
+		"type": "ctm",
+		"textures": [
+			"chipped:block/diorite/ctm/brick_bordered_diorite_ctm"
+		],
+		"extra": {
+			"light": 0
+		}
+	}
+}

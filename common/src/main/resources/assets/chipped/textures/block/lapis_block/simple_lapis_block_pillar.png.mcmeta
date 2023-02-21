@@ -1,0 +1,12 @@
+{
+	"ctm": {
+		"ctm_version": 1,
+		"type": "pillar",
+		"textures": [
+			"chipped:block/lapis_block/ctm/simple_lapis_block_pillar"
+		],
+		"extra": {
+			"light": 0
+		}
+	}
+}

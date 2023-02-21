@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "chipped:block/jungle_planks/brick_bond_jungle_planks"
+  }
+}

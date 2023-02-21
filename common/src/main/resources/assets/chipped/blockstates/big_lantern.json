@@ -1,0 +1,18 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "chipped:block/special_lantern/big_lantern"
+    },
+    "facing=south": {
+      "model": "chipped:block/special_lantern/big_lantern"
+    },
+    "facing=west": {
+      "model": "chipped:block/special_lantern/big_lantern",
+      "y": 90
+    },
+    "facing=east": {
+      "model": "chipped:block/special_lantern/big_lantern",
+      "y": 90
+    }
+  }
+}

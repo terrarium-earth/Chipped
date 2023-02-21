@@ -1,0 +1,12 @@
+{
+	"ctm": {
+		"ctm_version": 1,
+		"type": "pillar",
+		"textures": [
+			"chipped:block/raw_gold_block/ctm/simple_raw_gold_block_pillar"
+		],
+		"extra": {
+			"light": 0
+		}
+	}
+}

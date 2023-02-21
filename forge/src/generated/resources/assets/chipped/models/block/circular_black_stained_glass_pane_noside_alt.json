@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/template_glass_pane_noside_alt",
+  "textures": {
+    "pane": "chipped:block/black_stained_glass/circular_black_stained_glass"
+  }
+}

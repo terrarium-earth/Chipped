@@ -1,0 +1,12 @@
+{
+	"ctm": {
+		"ctm_version": 1,
+		"type": "ctm",
+		"textures": [
+			"chipped:block/magma_block/ctm/tiled_magma_block_column_ctm"
+		],
+		"extra": {
+			"light": 0
+		}
+	}
+}

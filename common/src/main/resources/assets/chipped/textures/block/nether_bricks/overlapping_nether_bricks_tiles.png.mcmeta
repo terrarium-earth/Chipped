@@ -1,0 +1,12 @@
+{
+	"ctm": {
+		"ctm_version": 1,
+		"type": "ctm",
+		"textures": [
+			"chipped:block/nether_bricks/ctm/overlapping_nether_bricks_tiles_ctm"
+		],
+		"extra": {
+			"light": 0
+		}
+	}
+}

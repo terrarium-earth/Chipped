@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "chipped:block/oak_leaves/frosted_oak_leaves_top",
+    "side": "chipped:block/oak_leaves/frosted_oak_leaves"
+  }
+}

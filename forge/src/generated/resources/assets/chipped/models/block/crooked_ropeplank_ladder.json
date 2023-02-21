@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/ladder",
+  "textures": {
+    "particle": "chipped:block/ladder/crooked_ropeplank_ladder",
+    "texture": "chipped:block/ladder/crooked_ropeplank_ladder"
+  }
+}

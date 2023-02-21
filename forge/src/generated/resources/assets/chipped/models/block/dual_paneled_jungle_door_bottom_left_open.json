@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/door_bottom_left_open",
+  "textures": {
+    "bottom": "chipped:block/jungle_door/dual_paneled_jungle_door_bottom",
+    "top": "chipped:block/jungle_door/dual_paneled_jungle_door_top"
+  }
+}

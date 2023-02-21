@@ -1,0 +1,12 @@
+{
+	"ctm": {
+		"ctm_version": 1,
+		"type": "ctm",
+		"textures": [
+			"chipped:block/oak_planks/ctm/crated_oak_planks_ctm"
+		],
+		"extra": {
+			"light": 0
+		}
+	}
+}

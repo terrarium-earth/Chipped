@@ -1,0 +1,12 @@
+{
+	"ctm": {
+		"ctm_version": 1,
+		"type": "ctm",
+		"textures": [
+			"chipped:block/andesite/ctm/brick_bordered_andesite_ctm"
+		],
+		"extra": {
+			"light": 0
+		}
+	}
+}

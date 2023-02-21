@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "chipped:block/spruce_planks/crossed_spruce_planks"
+  }
+}

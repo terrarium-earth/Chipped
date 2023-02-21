@@ -1,0 +1,6 @@
+{
+	"parent": "chipped:block/wood_lantern",
+	"textures": {
+		"0": "chipped:block/soul_lantern/wooden_cage_soul_lantern"
+	}
+}

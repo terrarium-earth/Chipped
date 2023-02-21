@@ -1,0 +1,12 @@
+{
+	"ctm": {
+		"ctm_version": 1,
+		"type": "pillar",
+		"textures": [
+			"chipped:block/quartz_block/ctm/fine_quartz_block_pillar"
+		],
+		"extra": {
+			"light": 0
+		}
+	}
+}

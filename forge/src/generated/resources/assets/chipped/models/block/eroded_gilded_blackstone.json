@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "chipped:block/gilded_blackstone/eroded_gilded_blackstone"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "chipped:block/magma_block/prismal_magma_block_remnants"
+  }
+}

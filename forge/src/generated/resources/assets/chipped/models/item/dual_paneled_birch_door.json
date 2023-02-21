@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "chipped:item/birch_door/dual_paneled_birch_door"
+  }
+}

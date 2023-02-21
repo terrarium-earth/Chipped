@@ -1,0 +1,12 @@
+{
+	"ctm": {
+		"ctm_version": 1,
+		"type": "pillar",
+		"textures": [
+			"chipped:block/purple_terracotta/ctm/purple_terracotta_pillar"
+		],
+		"extra": {
+			"light": 0
+		}
+	}
+}

@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "chipped:block/flat_redstone_block_tiles"
+    }
+  }
+}

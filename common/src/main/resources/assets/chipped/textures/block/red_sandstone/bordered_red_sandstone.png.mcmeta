@@ -1,0 +1,12 @@
+{
+	"ctm": {
+		"ctm_version": 1,
+		"type": "ctm",
+		"textures": [
+			"chipped:block/red_sandstone/ctm/bordered_red_sandstone_ctm"
+		],
+		"extra": {
+			"light": 0
+		}
+	}
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "chipped:block/mangrove_planks/slanted_mangrove_planks"
+  }
+}

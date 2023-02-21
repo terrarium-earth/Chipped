@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "chipped:block/brown_concrete/reinforced_brown_concrete"
+  }
+}

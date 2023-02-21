@@ -1,0 +1,12 @@
+{
+	"ctm": {
+		"ctm_version": 1,
+		"type": "pillar",
+		"textures": [
+			"chipped:block/smooth_stone/ctm/ornate_smooth_stone_pillar"
+		],
+		"extra": {
+			"light": 0
+		}
+	}
+}

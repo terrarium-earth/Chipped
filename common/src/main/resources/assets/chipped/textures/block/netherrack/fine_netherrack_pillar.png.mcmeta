@@ -1,0 +1,12 @@
+{
+	"ctm": {
+		"ctm_version": 1,
+		"type": "pillar",
+		"textures": [
+			"chipped:block/netherrack/ctm/fine_netherrack_pillar"
+		],
+		"extra": {
+			"light": 0
+		}
+	}
+}

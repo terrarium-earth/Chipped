@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "chipped:block/ancient_debris/thick_inlayed_ancient_debris"
+  }
+}

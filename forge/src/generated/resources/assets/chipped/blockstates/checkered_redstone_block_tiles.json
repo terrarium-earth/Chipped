@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "chipped:block/checkered_redstone_block_tiles"
+    }
+  }
+}

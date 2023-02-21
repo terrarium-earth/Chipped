@@ -1,0 +1,12 @@
+{
+	"ctm": {
+		"ctm_version": 1,
+		"type": "ctm",
+		"textures": [
+			"chipped:block/birch_planks/ctm/birch_planks_panel_ctm"
+		],
+		"extra": {
+			"light": 0
+		}
+	}
+}

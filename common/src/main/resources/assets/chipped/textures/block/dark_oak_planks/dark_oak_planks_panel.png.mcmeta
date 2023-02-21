@@ -1,0 +1,12 @@
+{
+	"ctm": {
+		"ctm_version": 1,
+		"type": "ctm",
+		"textures": [
+			"chipped:block/dark_oak_planks/ctm/dark_oak_planks_panel_ctm"
+		],
+		"extra": {
+			"light": 0
+		}
+	}
+}

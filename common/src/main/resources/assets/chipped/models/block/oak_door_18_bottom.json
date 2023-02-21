@@ -1,7 +1,0 @@
-{
-  "parent": "minecraft:block/door_bottom",
-  "textures": {
-    "top": "chipped:block/oak_door/oak_door_18_top",
-    "bottom": "chipped:block/oak_door/oak_door_18_bottom"
-  }
-}

@@ -68,7 +68,7 @@ public class JEIPlugin implements IModPlugin {
                 new ChippedRecipeCategory(ModBlocks.LOOM_TABLE.get().asItem(), ChippedRecipeCategory.LOOM_TABLE_RECIPE, helper),
                 new ChippedRecipeCategory(ModBlocks.MASON_TABLE.get().asItem(), ChippedRecipeCategory.MASON_TABLE_RECIPE, helper),
                 new ChippedRecipeCategory(ModBlocks.ALCHEMY_BENCH.get().asItem(), ChippedRecipeCategory.ALCHEMY_BENCH_RECIPE, helper),
-                new ChippedRecipeCategory(ModBlocks.MECHANIST_WORKBENCH.get().asItem(), ChippedRecipeCategory.MECHANIST_WORKBENCH_RECIPE, helper)
+                new ChippedRecipeCategory(ModBlocks.TINKERING_TABLE.get().asItem(), ChippedRecipeCategory.TINKERING_TABLE_RECIPE, helper)
 
         );
     }
@@ -82,7 +82,7 @@ public class JEIPlugin implements IModPlugin {
         registration.addRecipes(ChippedRecipeCategory.LOOM_TABLE_RECIPE, flatten(recipeManager.getAllRecipesFor(ModRecipeTypes.LOOM_TABLE_TYPE.get())));
         registration.addRecipes(ChippedRecipeCategory.MASON_TABLE_RECIPE, flatten(recipeManager.getAllRecipesFor(ModRecipeTypes.MASON_TABLE_TYPE.get())));
         registration.addRecipes(ChippedRecipeCategory.ALCHEMY_BENCH_RECIPE, flatten(recipeManager.getAllRecipesFor(ModRecipeTypes.ALCHEMY_BENCH_TYPE.get())));
-        registration.addRecipes(ChippedRecipeCategory.MECHANIST_WORKBENCH_RECIPE, flatten(recipeManager.getAllRecipesFor(ModRecipeTypes.MECHANIST_WORKBENCH_TYPE.get())));
+        registration.addRecipes(ChippedRecipeCategory.TINKERING_TABLE_RECIPE, flatten(recipeManager.getAllRecipesFor(ModRecipeTypes.TINKERING_TABLE_TYPE.get())));
     }
 
     @Override
@@ -93,6 +93,6 @@ public class JEIPlugin implements IModPlugin {
         registration.addRecipeCatalyst(new ItemStack(ModBlocks.LOOM_TABLE.get()), ChippedRecipeCategory.LOOM_TABLE_RECIPE);
         registration.addRecipeCatalyst(new ItemStack(ModBlocks.MASON_TABLE.get()), ChippedRecipeCategory.MASON_TABLE_RECIPE);
         registration.addRecipeCatalyst(new ItemStack(ModBlocks.ALCHEMY_BENCH.get()), ChippedRecipeCategory.ALCHEMY_BENCH_RECIPE);
-        registration.addRecipeCatalyst(new ItemStack(ModBlocks.MECHANIST_WORKBENCH.get()), ChippedRecipeCategory.MECHANIST_WORKBENCH_RECIPE);
+        registration.addRecipeCatalyst(new ItemStack(ModBlocks.TINKERING_TABLE.get()), ChippedRecipeCategory.TINKERING_TABLE_RECIPE);
     }
 }

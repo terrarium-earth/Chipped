@@ -1,0 +1,6 @@
+{
+	"parent": "chipped:block/clear_lantern",
+	"textures": {
+		"0": "chipped:block/soul_lantern/blue_tube_soul_lantern"
+	}
+}

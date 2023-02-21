@@ -1,0 +1,12 @@
+{
+	"ctm": {
+		"ctm_version": 1,
+		"type": "ctm",
+		"textures": [
+			"chipped:block/mossy_stone_bricks/ctm/cut_mossy_stone_bricks_column_ctm"
+		],
+		"extra": {
+			"light": 0
+		}
+	}
+}

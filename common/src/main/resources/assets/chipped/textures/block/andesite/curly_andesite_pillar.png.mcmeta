@@ -1,0 +1,12 @@
+{
+	"ctm": {
+		"ctm_version": 1,
+		"type": "pillar",
+		"textures": [
+			"chipped:block/andesite/ctm/curly_andesite_pillar"
+		],
+		"extra": {
+			"light": 0
+		}
+	}
+}

@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/template_glazed_terracotta",
+  "textures": {
+    "particle": "chipped:block/gray_glazed_terracotta/waved_gray_glazed_terracotta",
+    "pattern": "chipped:block/gray_glazed_terracotta/waved_gray_glazed_terracotta"
+  }
+}

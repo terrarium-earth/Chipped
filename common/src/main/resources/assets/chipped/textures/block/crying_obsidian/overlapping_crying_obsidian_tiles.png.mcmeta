@@ -1,0 +1,12 @@
+{
+	"ctm": {
+		"ctm_version": 1,
+		"type": "ctm",
+		"textures": [
+			"chipped:block/crying_obsidian/ctm/overlapping_crying_obsidian_tiles_ctm"
+		],
+		"extra": {
+			"light": 0
+		}
+	}
+}

@@ -1,0 +1,12 @@
+{
+	"ctm": {
+		"ctm_version": 1,
+		"type": "pillar",
+		"textures": [
+			"chipped:block/mud_bricks/ctm/curly_mud_bricks_pillar"
+		],
+		"extra": {
+			"light": 0
+		}
+	}
+}

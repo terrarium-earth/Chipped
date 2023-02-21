@@ -1,0 +1,12 @@
+{
+	"ctm": {
+		"ctm_version": 1,
+		"type": "ctm",
+		"textures": [
+			"chipped:block/lime_wool/ctm/crafted_lime_wool_ctm"
+		],
+		"extra": {
+			"light": 0
+		}
+	}
+}

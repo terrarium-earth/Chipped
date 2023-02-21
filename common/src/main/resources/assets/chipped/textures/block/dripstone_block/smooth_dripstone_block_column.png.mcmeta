@@ -1,0 +1,12 @@
+{
+	"ctm": {
+		"ctm_version": 1,
+		"type": "ctm",
+		"textures": [
+			"chipped:block/dripstone_block/ctm/smooth_dripstone_block_column_ctm"
+		],
+		"extra": {
+			"light": 0
+		}
+	}
+}

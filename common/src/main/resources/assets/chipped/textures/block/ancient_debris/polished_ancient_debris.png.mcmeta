@@ -1,0 +1,12 @@
+{
+	"ctm": {
+		"ctm_version": 1,
+		"type": "ctm",
+		"textures": [
+			"chipped:block/ancient_debris/ctm/polished_ancient_debris_ctm"
+		],
+		"extra": {
+			"light": 0
+		}
+	}
+}

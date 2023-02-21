@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/door_bottom_right",
+  "textures": {
+    "bottom": "chipped:block/mangrove_door/overgrown_mangrove_door_bottom",
+    "top": "chipped:block/mangrove_door/overgrown_mangrove_door_top"
+  }
+}

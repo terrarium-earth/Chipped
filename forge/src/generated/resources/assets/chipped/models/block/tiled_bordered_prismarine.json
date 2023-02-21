@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "chipped:block/prismarine/tiled_bordered_prismarine"
+  }
+}

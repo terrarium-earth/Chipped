@@ -1,1 +1,13 @@
-- fixed terracotta being uncraftable
+Chipped is finally out for 1.19.2 and 1.19.3!
+
+WARNING: updating from the 1.18.2 version will delete all the blocks in your world!
+
+Chipped now requires ResourcefulLib https://www.curseforge.com/minecraft/mc-mods/resourceful-lib
+
+- Rewrote the entire mod again
+- added mud, mangrove, froglights, and other 1.19 stuff
+- changed the ids of all blocks. instead of "block_#," the id is now the actual name of block. these ids will likely never change between major versions so after this update you can safely build without worrying about id changes
+- all blocks now have names
+- fixed a multitude of naming issues such as mismatched door names
+- fixed many palettes having weird inconsistencies and random missing things
+- fixed a lot of the ctm issues, specifically with glass. ctm is now datagened, so we are no longer manually adding ctm to every block which should make it way less prone to errors

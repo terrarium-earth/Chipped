@@ -1,0 +1,12 @@
+{
+	"ctm": {
+		"ctm_version": 1,
+		"type": "ctm",
+		"textures": [
+			"chipped:block/clay/ctm/overlapping_clay_tiles_ctm"
+		],
+		"extra": {
+			"light": 0
+		}
+	}
+}

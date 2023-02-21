@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column_horizontal",
+  "textures": {
+    "end": "chipped:block/jungle_log/edge_cut_jungle_log_top",
+    "side": "chipped:block/jungle_log/edge_cut_jungle_log"
+  }
+}

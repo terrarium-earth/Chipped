@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "chipped:block/overlapping_dripstone_block_tiles"
+    }
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "chipped:block/bone_block/crunched_bone_block_top",
+    "side": "chipped:block/bone_block/crunched_bone_block"
+  }
+}

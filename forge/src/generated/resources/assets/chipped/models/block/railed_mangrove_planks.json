@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "chipped:block/mangrove_planks/railed_mangrove_planks"
+  }
+}

@@ -1,0 +1,12 @@
+{
+	"ctm": {
+		"ctm_version": 1,
+		"type": "ctm",
+		"textures": [
+			"chipped:block/packed_mud/ctm/brick_bordered_packed_mud_ctm"
+		],
+		"extra": {
+			"light": 0
+		}
+	}
+}

@@ -1,0 +1,12 @@
+{
+	"ctm": {
+		"ctm_version": 1,
+		"type": "ctm",
+		"textures": [
+			"chipped:block/packed_ice/ctm/tiny_brick_bordered_packed_ice_ctm"
+		],
+		"extra": {
+			"light": 0
+		}
+	}
+}

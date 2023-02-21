@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "chipped:block/waxed_copper_block/stacked_waxed_copper_block"
+  }
+}

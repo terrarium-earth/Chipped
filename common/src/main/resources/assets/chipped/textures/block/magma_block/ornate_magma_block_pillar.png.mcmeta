@@ -1,0 +1,12 @@
+{
+	"ctm": {
+		"ctm_version": 1,
+		"type": "pillar",
+		"textures": [
+			"chipped:block/magma_block/ctm/ornate_magma_block_pillar"
+		],
+		"extra": {
+			"light": 0
+		}
+	}
+}

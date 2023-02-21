@@ -1,0 +1,12 @@
+{
+	"ctm": {
+		"ctm_version": 1,
+		"type": "pillar",
+		"textures": [
+			"chipped:block/ancient_debris/ctm/curly_ancient_debris_pillar"
+		],
+		"extra": {
+			"light": 0
+		}
+	}
+}

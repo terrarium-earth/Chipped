@@ -1,7 +1,0 @@
-{
-  "parent": "minecraft:block/cube_column_horizontal",
-  "textures": {
-    "end": "chipped:block/dark_oak_log/dark_oak_log_14_top",
-    "side": "chipped:block/dark_oak_log/dark_oak_log_14_side"
-  }
-}

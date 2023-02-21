@@ -1,0 +1,12 @@
+{
+	"ctm": {
+		"ctm_version": 1,
+		"type": "ctm",
+		"textures": [
+			"chipped:block/blue_ice/ctm/brick_bordered_blue_ice_ctm"
+		],
+		"extra": {
+			"light": 0
+		}
+	}
+}

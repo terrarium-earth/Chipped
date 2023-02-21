@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/cube_bottom_top",
-  "textures": {
-    "side": "chipped:block/dried_kelp_block/dried_kelp_block_3_side",
-    "bottom": "chipped:block/dried_kelp_block/dried_kelp_block_3_top",
-    "top": "chipped:block/dried_kelp_block/dried_kelp_block_3_top"
-  }
-}

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "chipped:item/special_soul_lantern/big_soul_lantern"
+  }
+}

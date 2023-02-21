@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "chipped:block/overlapping_packed_ice_tiles"
+    }
+  }
+}

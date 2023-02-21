@@ -33,7 +33,7 @@ public class REIChippedPlugin implements REIClientPlugin {
                 new ChippedRecipeCategory(ModBlocks.LOOM_TABLE.get()),
                 new ChippedRecipeCategory(ModBlocks.MASON_TABLE.get()),
                 new ChippedRecipeCategory(ModBlocks.ALCHEMY_BENCH.get()),
-                new ChippedRecipeCategory(ModBlocks.MECHANIST_WORKBENCH.get())
+                new ChippedRecipeCategory(ModBlocks.TINKERING_TABLE.get())
         );
     }
 
@@ -48,7 +48,7 @@ public class REIChippedPlugin implements REIClientPlugin {
         registerRecipes(recipeManager, registry, ModRecipeTypes.LOOM_TABLE_TYPE.get(), ModBlocks.LOOM_TABLE.get());
         registerRecipes(recipeManager, registry, ModRecipeTypes.MASON_TABLE_TYPE.get(), ModBlocks.MASON_TABLE.get());
         registerRecipes(recipeManager, registry, ModRecipeTypes.ALCHEMY_BENCH_TYPE.get(), ModBlocks.ALCHEMY_BENCH.get());
-        registerRecipes(recipeManager, registry, ModRecipeTypes.MECHANIST_WORKBENCH_TYPE.get(), ModBlocks.MECHANIST_WORKBENCH.get());
+        registerRecipes(recipeManager, registry, ModRecipeTypes.TINKERING_TABLE_TYPE.get(), ModBlocks.TINKERING_TABLE.get());
     }
 
     private void registerRecipes(RecipeManager recipeManager, DisplayRegistry registry, RecipeType<ChippedRecipe> type, Block block) {

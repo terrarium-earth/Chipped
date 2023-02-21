@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "chipped:block/weathered_dripstone_block"
+    }
+  }
+}

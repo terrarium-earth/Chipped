@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "chipped:block/raw_iron_block/etched_raw_iron_block_bricks"
+  }
+}

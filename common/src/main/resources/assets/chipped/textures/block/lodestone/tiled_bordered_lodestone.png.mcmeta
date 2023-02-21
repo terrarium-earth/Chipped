@@ -1,0 +1,12 @@
+{
+	"ctm": {
+		"ctm_version": 1,
+		"type": "ctm",
+		"textures": [
+			"chipped:block/lodestone/ctm/tiled_bordered_lodestone_ctm"
+		],
+		"extra": {
+			"light": 0
+		}
+	}
+}

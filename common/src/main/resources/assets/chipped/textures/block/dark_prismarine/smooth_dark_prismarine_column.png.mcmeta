@@ -1,0 +1,12 @@
+{
+	"ctm": {
+		"ctm_version": 1,
+		"type": "ctm",
+		"textures": [
+			"chipped:block/dark_prismarine/ctm/smooth_dark_prismarine_column_ctm"
+		],
+		"extra": {
+			"light": 0
+		}
+	}
+}

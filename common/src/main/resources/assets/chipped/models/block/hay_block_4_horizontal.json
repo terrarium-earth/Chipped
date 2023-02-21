@@ -1,7 +1,0 @@
-{
-  "parent": "minecraft:block/cube_column_horizontal",
-  "textures": {
-    "end": "chipped:block/hay_block/hay_block_4_top",
-    "side": "chipped:block/hay_block/hay_block_4_side"
-  }
-}

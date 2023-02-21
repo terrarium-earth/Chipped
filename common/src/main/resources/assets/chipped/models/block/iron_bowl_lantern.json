@@ -1,0 +1,6 @@
+{
+	"parent": "chipped:block/cross_lantern",
+	"textures": {
+		"0": "chipped:block/lantern/iron_bowl_lantern"
+	}
+}

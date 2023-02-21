@@ -1,0 +1,12 @@
+{
+	"ctm": {
+		"ctm_version": 1,
+		"type": "ctm",
+		"textures": [
+			"chipped:block/deepslate/ctm/tiled_bordered_deepslate_ctm"
+		],
+		"extra": {
+			"light": 0
+		}
+	}
+}

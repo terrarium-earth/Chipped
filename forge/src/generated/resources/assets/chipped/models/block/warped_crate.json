@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "chipped:block/barrel/warped_crate_top",
+    "side": "chipped:block/barrel/warped_crate_side",
+    "top": "chipped:block/barrel/warped_crate_top"
+  }
+}

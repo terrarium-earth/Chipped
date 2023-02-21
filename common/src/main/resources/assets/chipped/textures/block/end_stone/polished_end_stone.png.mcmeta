@@ -1,0 +1,12 @@
+{
+	"ctm": {
+		"ctm_version": 1,
+		"type": "ctm",
+		"textures": [
+			"chipped:block/end_stone/ctm/polished_end_stone_ctm"
+		],
+		"extra": {
+			"light": 0
+		}
+	}
+}

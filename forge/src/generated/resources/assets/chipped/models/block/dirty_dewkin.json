@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "chipped:block/pumpkin/dirty_dewkin_bottom",
+    "side": "chipped:block/pumpkin/dirty_dewkin_side",
+    "top": "chipped:block/pumpkin/dirty_dewkin_top"
+  }
+}

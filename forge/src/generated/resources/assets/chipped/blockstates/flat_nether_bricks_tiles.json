@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "chipped:block/flat_nether_bricks_tiles"
+    }
+  }
+}

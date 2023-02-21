@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/template_hanging_lantern",
+  "textures": {
+    "lantern": "chipped:block/soul_lantern/checkered_iron_soul_lantern"
+  }
+}

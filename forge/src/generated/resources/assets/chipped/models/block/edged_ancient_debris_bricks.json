@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "chipped:block/ancient_debris/edged_ancient_debris_bricks"
+  }
+}

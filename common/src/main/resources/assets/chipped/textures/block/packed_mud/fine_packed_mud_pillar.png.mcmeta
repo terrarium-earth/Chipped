@@ -1,0 +1,12 @@
+{
+	"ctm": {
+		"ctm_version": 1,
+		"type": "pillar",
+		"textures": [
+			"chipped:block/packed_mud/ctm/fine_packed_mud_pillar"
+		],
+		"extra": {
+			"light": 0
+		}
+	}
+}

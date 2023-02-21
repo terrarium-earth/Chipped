@@ -1,0 +1,12 @@
+{
+	"ctm": {
+		"ctm_version": 1,
+		"type": "ctm",
+		"textures": [
+			"chipped:block/tuff/ctm/overlapping_tuff_tiles_ctm"
+		],
+		"extra": {
+			"light": 0
+		}
+	}
+}

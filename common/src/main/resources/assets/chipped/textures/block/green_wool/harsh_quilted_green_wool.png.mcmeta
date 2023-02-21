@@ -1,0 +1,12 @@
+{
+	"ctm": {
+		"ctm_version": 1,
+		"type": "ctm",
+		"textures": [
+			"chipped:block/green_wool/ctm/harsh_quilted_green_wool_ctm"
+		],
+		"extra": {
+			"light": 0
+		}
+	}
+}

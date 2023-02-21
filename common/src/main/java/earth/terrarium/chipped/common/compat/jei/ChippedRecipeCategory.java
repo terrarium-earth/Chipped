@@ -25,7 +25,7 @@ public class ChippedRecipeCategory implements IRecipeCategory<ChippedRecipeCateg
     public static final RecipeType<FlattenedRecipe> LOOM_TABLE_RECIPE = new RecipeType<>(new ResourceLocation("loom_table"), FlattenedRecipe.class);
     public static final RecipeType<FlattenedRecipe> MASON_TABLE_RECIPE = new RecipeType<>(new ResourceLocation("mason_table"), FlattenedRecipe.class);
     public static final RecipeType<FlattenedRecipe> ALCHEMY_BENCH_RECIPE = new RecipeType<>(new ResourceLocation("alchemy_bench"), FlattenedRecipe.class);
-    public static final RecipeType<FlattenedRecipe> MECHANIST_WORKBENCH_RECIPE = new RecipeType<>(new ResourceLocation("mechanist_workbench"), FlattenedRecipe.class);
+    public static final RecipeType<FlattenedRecipe> TINKERING_TABLE_RECIPE = new RecipeType<>(new ResourceLocation("tinkering_table"), FlattenedRecipe.class);
 
     private static final ResourceLocation TEXTURE = new ResourceLocation("jei", "textures/gui/gui_vanilla.png");
 

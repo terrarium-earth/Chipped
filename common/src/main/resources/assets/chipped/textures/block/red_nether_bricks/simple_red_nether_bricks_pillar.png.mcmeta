@@ -1,0 +1,12 @@
+{
+	"ctm": {
+		"ctm_version": 1,
+		"type": "pillar",
+		"textures": [
+			"chipped:block/red_nether_bricks/ctm/simple_red_nether_bricks_pillar"
+		],
+		"extra": {
+			"light": 0
+		}
+	}
+}

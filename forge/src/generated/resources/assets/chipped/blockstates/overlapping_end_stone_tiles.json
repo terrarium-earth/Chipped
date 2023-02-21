@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "chipped:block/overlapping_end_stone_tiles"
+    }
+  }
+}

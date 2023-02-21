@@ -1,0 +1,12 @@
+{
+	"ctm": {
+		"ctm_version": 1,
+		"type": "pillar",
+		"textures": [
+			"chipped:block/orange_concrete/ctm/orange_concrete_pillar"
+		],
+		"extra": {
+			"light": 0
+		}
+	}
+}

@@ -1,0 +1,12 @@
+{
+	"ctm": {
+		"ctm_version": 1,
+		"type": "pillar",
+		"textures": [
+			"chipped:block/blue_ice/ctm/simple_blue_ice_pillar"
+		],
+		"extra": {
+			"light": 0
+		}
+	}
+}

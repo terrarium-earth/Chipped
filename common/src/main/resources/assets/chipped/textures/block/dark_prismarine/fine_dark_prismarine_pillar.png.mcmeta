@@ -1,0 +1,12 @@
+{
+	"ctm": {
+		"ctm_version": 1,
+		"type": "pillar",
+		"textures": [
+			"chipped:block/dark_prismarine/ctm/fine_dark_prismarine_pillar"
+		],
+		"extra": {
+			"light": 0
+		}
+	}
+}

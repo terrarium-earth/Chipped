@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "chipped:block/mushroom_stem/smooth_mushroom_stem"
+  }
+}

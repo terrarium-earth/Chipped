@@ -1,0 +1,12 @@
+{
+	"ctm": {
+		"ctm_version": 1,
+		"type": "ctm",
+		"textures": [
+			"chipped:block/orange_concrete/ctm/pegged_orange_concrete_ctm"
+		],
+		"extra": {
+			"light": 0
+		}
+	}
+}
