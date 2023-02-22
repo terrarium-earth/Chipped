@@ -35,6 +35,9 @@
       "earth.terrarium.chipped.common.compat.jei.JEIPlugin"
     ]
   },
+  "mixins": [
+    "chipped.mixins.json"
+  ],
   "depends": {
     "fabric": "*",
     "minecraft": ">=1.19",

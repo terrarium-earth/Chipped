@@ -18,6 +18,7 @@ sourceSets {
 
 loom {
     forge {
+        mixinConfig "${project.mod_id}.mixins.json"
         dataGen {
             mod project.mod_id
         }
