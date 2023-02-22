@@ -221,7 +221,7 @@ public class ModBlocks {
 
     public static final ResourcefulRegistry<Block> ANCIENT_DEBRIS = createRegistry(Blocks.ANCIENT_DEBRIS, Palette.STONE);
     public static final ResourcefulRegistry<Block> ANDESITE = createRegistry(Blocks.ANDESITE, Palette.STONE);
-    public static final ResourcefulRegistry<Block> BASALT = createRegistry(Blocks.BASALT, Palette.STONE);
+    public static final ResourcefulRegistry<Block> BASALT = createRegistry(Blocks.BASALT, Palette.BASALT);
     public static final ResourcefulRegistry<Block> BLACKSTONE = createRegistry(Blocks.BLACKSTONE, Palette.BLACKSTONE);
     public static final ResourcefulRegistry<Block> CALCITE = createRegistry(Blocks.CALCITE, Palette.STONE);
     public static final ResourcefulRegistry<Block> COBBLESTONE = createRegistry(Blocks.COBBLESTONE, Palette.STONE);

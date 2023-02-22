@@ -49,7 +49,8 @@ public enum Palette {
 
     WOOL("barky_%", "blocky_%", "bundled_%", "cornered_%", "crafted_%", "cross_haired_%", "cubed_%", "harsh_quilted_%", "knitted_%", "patched_%", "rectangle_%", "ribbled_%", "scaled_%", "soft_%", "stringed_%", "tiled_%", "tripped_%", "wickered_%", "windmill_%", "woved_%"),
 
-    STONE("%_bricks", "%_mini_tiles", "%_pillar", "%_pillar_top", "%_scales", "angry_%", "blank_%_carving", "bordered_%", "brick_bordered_%", "carved_%", "checkered_%_tiles", "cobbled_%", "cracked_%_bricks", "cracked_disordered_%_bricks", "cracked_flat_%_tiles", "creeper_%_carving", "crying_%", "curly_%_pillar", "cut_%_column", "cut_blank_%", "glad_%", "duh_%", "edged_%_bricks", "engraved_%", "eroded_%", "etched_%_bricks", "fine_%_pillar", "flat_%_tiles", "inlayed_%", "inscribed_%", "layed_%_bricks", "loded_%", "massive_%_bricks", "offset_%_bricks", "ornate_%_pillar", "overlapping_%_tiles", "pillar_%_bricks", "polished_%", "prismal_%_remnants", "rounded_%_bricks", "runic_carved_%", "sad_%", "sanded_%", "simple_%_pillar", "small_%_bricks", "smooth_%_column", "smooth_inlayed_%", "smooth_ringed_%", "smoothed_double_inlayed_%", "spider_%_carving", "spiraled_%", "stacked_%_bricks", "thick_inlayed_%", "tiled_%", "tiled_%_column", "tiled_bordered_%", "tiny_%_bricks", "tiny_brick_bordered_%", "tiny_layered_%_bricks", "tiny_layered_%_slabs", "unamused_%", "vertical_cut_%", "vertical_disordered_%_bricks", "weathered_%"),
+    STONE("%_bricks", "%_mini_tiles", "%_pillar", "%_pillar_top", "%_scales", "angry_%", "blank_%_carving", "bordered_%", "brick_bordered_%", "carved_%", "checkered_%_tiles", "cobbled_%", "cracked_%_bricks", "cracked_disordered_%_bricks", "cracked_flat_%_tiles", "creeper_%_carving", "crying_%", "curly_%_pillar", "cut_%_column", "cut_blank_%", "glad_%", "duh_%", "edged_%_bricks", "engraved_%", "eroded_%", "etched_%_bricks", "fine_%_pillar", "flat_%_tiles", "inlayed_%", "inscribed_%", "layed_%_bricks", "loded_%", "massive_%_bricks", "offset_%_bricks", "ornate_%_pillar", "overlapping_%_tiles", "pillar_%_bricks", "polished_%", "prismal_%_remnants", "rough_%", "rounded_%_bricks", "runic_carved_%", "sad_%", "sanded_%", "simple_%_pillar", "small_%_bricks", "smooth_%_column", "smooth_inlayed_%", "smooth_ringed_%", "smoothed_double_inlayed_%", "spider_%_carving", "spiraled_%", "stacked_%_bricks", "thick_inlayed_%", "tiled_%", "tiled_%_column", "tiled_bordered_%", "tiny_%_bricks", "tiny_brick_bordered_%", "tiny_layered_%_bricks", "tiny_layered_%_slabs", "trodden_%", "unamused_%", "vertical_cut_%", "vertical_disordered_%_bricks", "weathered_%"),
+    BASALT(STONE, List.of("rough_%", "trodden_%")),
     BLACKSTONE(STONE, List.of("%_bricks", "cracked_%_bricks", "rough_%", "weathered_%"), "smooth_%_bricks"),
     DARK_PRISMARINE(STONE, List.of("%_mini_tiles")),
     DEEPSLATE(STONE, List.of("%_bricks", "cobbled_%", "cracked_%_bricks", "cracked_flat_%_tiles", "flat_%_tiles", "layed_%_bricks", "offset_%_bricks")),
@@ -123,6 +124,7 @@ public enum Palette {
         names.addAll(List.of(additionalNames));
         this.names = names.toArray(new String[0]);
     }
+
 
     public String[] getNames() {
         return names;
