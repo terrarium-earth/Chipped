@@ -73,7 +73,7 @@ Would you also like to contribute to our mod? Simply message us on discord to ap
 
 ## Our Other Projects
 
-- [Ad-Astra!](https://www.curseforge.com/minecraft/mc-mods/ad-astra)
+- [Ad-Astra](https://www.curseforge.com/minecraft/mc-mods/ad-astra)
 - [CTM Refabricated](https://www.curseforge.com/minecraft/mc-mods/ctm-refabricated)
 - [Colorful Azaleas](https://www.curseforge.com/minecraft/mc-mods/colorfulazaleas)
 - [Handcrafted](https://www.curseforge.com/minecraft/mc-mods/handcrafted)

@@ -16,42 +16,52 @@ import java.util.function.Consumer;
 public final class ChippedDataFixers {
 
     private static final List<String> FIXER_IDS = List.of(
-        "misc",
-        "amethyst_block",
-        "ancient_debris",
-        "andesite",
-        "blue_ice",
-        "calcite",
-        "coal_block",
-        "cobblestone",
-        "crying_obsidian",
-        "diorite",
-        "dirt",
-        "dripstone_block",
-        "end_stone",
-        "granite",
-        "ice",
-        "lapis_block",
-        "magma_block",
-        "misc",
-        "mossy_cobblestone",
-        "netherrack",
-        "nether_bricks",
-        "obsidian",
-        "packed_ice",
-        "raw_copper_block",
-        "raw_gold_block",
-        "raw_iron_block",
-        "redstone_block",
-        "red_nether_bricks",
-        "red_sandstone",
-        "smooth_stone",
-        "stone",
-        "tuff",
-        "basalt",
-        "snow_block",
-        "dark_prismarine"
-    );
+            "amethyst_block",
+            "ancient_debris",
+            "andesite",
+            "basalt",
+            "blackstone",
+            "blue_ice",
+            "bricks",
+            "calcite",
+            "clay",
+            "coal_block",
+            "cobblestone",
+            "crying_obsidian",
+            "dark_prismarine",
+            "diorite",
+            "dirt",
+            "dripstone_block",
+            "end_stone",
+            "gilded_blackstone",
+            "granite",
+            "ice",
+            "lapis_block",
+            "lodestone",
+            "magma_block",
+            "misc",
+            "mossy_cobblestone",
+            "mossy_stone_bricks",
+            "nether_bricks",
+            "netherrack",
+            "obsidian",
+            "packed_ice",
+            "prismarine",
+            "purpur_block",
+            "quartz_block",
+            "raw_copper_block",
+            "raw_gold_block",
+            "raw_iron_block",
+            "red_nether_bricks",
+            "red_sandstone",
+            "redstone_block",
+            "sandstone",
+            "smooth_stone",
+            "snow_block",
+            "stone",
+            "tuff",
+            "misc"
+            );
 
     public static void addDataFixers(Schema schema, Consumer<DataFix> fixer) {
         for (CsvMapper mapper : loadJarResources("/data/chipped/datafixers", FIXER_IDS)) {
@@ -72,7 +82,7 @@ public final class ChippedDataFixers {
                 if (PlatformUtils.isDevelopmentEnvironment()) {
                     Chipped.LOGGER.info("Loaded data fixer csv: " + resource);
                 }
-            }catch (Exception e) {
+            } catch (Exception e) {
                 Chipped.LOGGER.warn("Failed to load data fixer csv: " + resource + ", skipping... expected things to break.");
                 e.printStackTrace();
             }
