@@ -14,4 +14,9 @@ public class PlatformUtils {
     public static CreativeModeTab createTab(ResourceLocation loc, Supplier<ItemStack> icon) {
         throw new NotImplementedException();
     }
+
+    @ExpectPlatform
+    public static boolean isDevelopmentEnvironment() {
+        throw new NotImplementedException();
+    }
 }
