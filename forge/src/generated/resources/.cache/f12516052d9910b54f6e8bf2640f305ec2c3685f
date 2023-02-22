@@ -1,4 +1,4 @@
-// 1.19.2	2023-02-21T03:46:10.354169	Item Models: chipped
+// 1.19.2	2023-02-22T13:01:13.552287	Item Models: chipped
 378eb71bedde860a8c7ff46ad2ad3ea847a022db assets/chipped/models/item/acacia_torch.json
 22923faa19559d2e18f652ea889327aacbe944f0 assets/chipped/models/item/andesite_pointed_dripstone.json
 f78b593dd38a9225c9ac8567240752e100f5d56a assets/chipped/models/item/arched_black_stained_glass_pane_pillar.json
@@ -285,7 +285,7 @@ dab5aa66de3d826435951e6a46b1de5cde9cfafb assets/chipped/models/item/oak_bordered
 d56660e7ef164d4a928daed16a3798abcfbbb52d assets/chipped/models/item/oak_line_bared_glass_pane.json
 964900bbec92800578071055643a3b5d0d0fee2c assets/chipped/models/item/oak_ornate_bared_glass_pane.json
 54d7bc3e4108693861ba763a7a35dcb7e9c2ec7d assets/chipped/models/item/oak_snowflake_glass_pane.json
-512e46c740424f07e6654a0974e5eeab963a8bf4 assets/chipped/models/item/oak_woven-glass_pane.json
+4c9d8ce9d1519357acc0ebf4924e361a888ffbdd assets/chipped/models/item/oak_woven_glass_pane.json
 8043129819a28cb9d2d84ec07fd91552c7a54772 assets/chipped/models/item/orange_paper_soul_lantern.json
 16891bd630cf5d5f1189705f7c77e358597cd62c assets/chipped/models/item/ornate_black_stained_glass_pane.json
 d1c6d3b980b86800ef3b701aa7bc37daa05d050e assets/chipped/models/item/ornate_blue_stained_glass_pane.json

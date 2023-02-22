@@ -2,6 +2,6 @@
   "parent": "minecraft:block/template_glass_pane_side_alt",
   "textures": {
     "edge": "minecraft:block/glass_pane_top",
-    "pane": "chipped:block/glass/oak_woven-glass"
+    "pane": "chipped:block/glass/oak_woven_glass"
   }
 }

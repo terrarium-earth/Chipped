@@ -1,4 +1,4 @@
-// 1.19.2	2023-02-22T05:06:08.94721	Tags for minecraft:item
+// 1.19.2	2023-02-22T13:01:13.531181	Tags for minecraft:item
 f55698e86bf8eb7dc61471e74f85b1b13446a082 data/chipped/tags/items/acacia_door.json
 ac0fa9b67679bd0084affa25fd559a143f8c6c58 data/chipped/tags/items/acacia_leaves.json
 9e1b1b880d14b737d6a6c079f3813fe35834fff8 data/chipped/tags/items/acacia_log.json
@@ -77,8 +77,8 @@ e724733a81edfa1ec39050d59b5e353547a14026 data/chipped/tags/items/dripstone_block
 6a41cae8a4a6d750600fba99809192df5ea42201 data/chipped/tags/items/emerald_block.json
 fd22ba31c992e0df9d5491793ca43f3d873209d9 data/chipped/tags/items/end_stone.json
 f6157120114f75a0cdf47117865c6402a4598780 data/chipped/tags/items/gilded_blackstone.json
-b06aa9cf987dd2f9c781d718206a2ca35f54e105 data/chipped/tags/items/glass.json
-96ffe2b2437ae057d67b61710183c175951b8be4 data/chipped/tags/items/glass_pane.json
+36832a4c58d9fd9787b12dd3b210d6dd4031336d data/chipped/tags/items/glass.json
+7f2c299c3cc4dedc91d51b4bccd4ac4021976c3c data/chipped/tags/items/glass_pane.json
 07bb5cad9dd46152804676167b7ea4cf4d49881e data/chipped/tags/items/glowstone.json
 92d9e7013c9c5c5bd2381afe05d97b78895fc655 data/chipped/tags/items/gold_block.json
 990eb91dc161416fc61b1b5dac7d777a92db3aec data/chipped/tags/items/granite.json

@@ -22,10 +22,10 @@ public final class CsvMapper implements Function<String, String> {
     private static String[] split(String s, String backup) {
         String[] split = s.split(",");
         if (split.length == 1) {
-            return new String[] {split[0], backup};
+            return new String[]{split[0], backup};
         }
         if (split.length == 2) {
-            return new String[] {split[0], split[1]};
+            return new String[]{split[0], split[1]};
         }
         throw new IllegalArgumentException("Invalid Data Fixer CSV: " + s);
     }

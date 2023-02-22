@@ -1,4 +1,4 @@
-// 1.19.2	2023-02-22T05:06:08.948016	LootTables
+// 1.19.2	2023-02-22T13:01:13.53263	LootTables
 bcbdac1f2c40e81fb22309e22a0695d61165844b data/chipped/loot_tables/blocks/acacia_barrel.json
 b46ad8361272f49283e7ff8b5f00a607dfd879ee data/chipped/loot_tables/blocks/acacia_crate.json
 02522e123c82e0c1a741f1a6fbc52cbcd9968081 data/chipped/loot_tables/blocks/acacia_planks_mosaic.json
@@ -3392,8 +3392,8 @@ bbfbd662f8fc6a6f5089f760d6ac1de5a55d3174 data/chipped/loot_tables/blocks/oak_sno
 5dd3e4e59c439f903944f217165d578df480b9de data/chipped/loot_tables/blocks/oak_spaced_large_bookshelf.json
 f443fc8678dc84b80390f5ca5e80a9f926b2a811 data/chipped/loot_tables/blocks/oak_webbed_bookshelf.json
 0acd37cab7a7dabc3b6ae9250ce3a617493887f5 data/chipped/loot_tables/blocks/oak_webbed_large_bookshelf.json
-f4f9b38d56992b507a4649a8c3f5fc33b07a244e data/chipped/loot_tables/blocks/oak_woven-glass.json
-2adf76942849470e776ae7dcb38a2765f46610f9 data/chipped/loot_tables/blocks/oak_woven-glass_pane.json
+9038b7c87fe812243d9e357903a0a19c6a009270 data/chipped/loot_tables/blocks/oak_woven_glass.json
+e823c5b35e09aa45c147ededa72a2f71b9d99b7a data/chipped/loot_tables/blocks/oak_woven_glass_pane.json
 cb229f249e4e83f651784c20a49111658d849cc1 data/chipped/loot_tables/blocks/obsidian_bricks.json
 50aa814a77fe51e53f5f107dee2487f9563a8970 data/chipped/loot_tables/blocks/obsidian_mini_tiles.json
 ccc2cc9d564febb9f86ed45801911ead3cbd216b data/chipped/loot_tables/blocks/obsidian_pillar.json

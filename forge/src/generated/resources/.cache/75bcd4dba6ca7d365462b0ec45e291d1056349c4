@@ -1,4 +1,4 @@
-// 1.19.2	2023-02-22T05:06:08.969578	Tags for minecraft:block
+// 1.19.2	2023-02-22T13:01:13.615577	Tags for minecraft:block
 f55698e86bf8eb7dc61471e74f85b1b13446a082 data/chipped/tags/blocks/acacia_door.json
 ac0fa9b67679bd0084affa25fd559a143f8c6c58 data/chipped/tags/blocks/acacia_leaves.json
 9e1b1b880d14b737d6a6c079f3813fe35834fff8 data/chipped/tags/blocks/acacia_log.json
@@ -77,8 +77,8 @@ e724733a81edfa1ec39050d59b5e353547a14026 data/chipped/tags/blocks/dripstone_bloc
 6a41cae8a4a6d750600fba99809192df5ea42201 data/chipped/tags/blocks/emerald_block.json
 fd22ba31c992e0df9d5491793ca43f3d873209d9 data/chipped/tags/blocks/end_stone.json
 f6157120114f75a0cdf47117865c6402a4598780 data/chipped/tags/blocks/gilded_blackstone.json
-b06aa9cf987dd2f9c781d718206a2ca35f54e105 data/chipped/tags/blocks/glass.json
-96ffe2b2437ae057d67b61710183c175951b8be4 data/chipped/tags/blocks/glass_pane.json
+36832a4c58d9fd9787b12dd3b210d6dd4031336d data/chipped/tags/blocks/glass.json
+7f2c299c3cc4dedc91d51b4bccd4ac4021976c3c data/chipped/tags/blocks/glass_pane.json
 07bb5cad9dd46152804676167b7ea4cf4d49881e data/chipped/tags/blocks/glowstone.json
 92d9e7013c9c5c5bd2381afe05d97b78895fc655 data/chipped/tags/blocks/gold_block.json
 990eb91dc161416fc61b1b5dac7d777a92db3aec data/chipped/tags/blocks/granite.json
@@ -272,7 +272,7 @@ dbd6d32448b59cac9936ae264535c02d04454393 data/minecraft/tags/blocks/dirt.json
 331560dcb96900547eb1103348f33cdef9f272fc data/minecraft/tags/blocks/enderman_holdable.json
 0bc8adb8c17bd6310343575d8f9b23ce80ba5b28 data/minecraft/tags/blocks/hoglin_repellents.json
 acc6d097ab5de7a4dd30693e428bdf74fdb90c93 data/minecraft/tags/blocks/ice.json
-cb686655e7e82c5dc25ec300693f765030484ffe data/minecraft/tags/blocks/impermeable.json
+a3e742f9336a472d6532b4a11eb6fe05535833b4 data/minecraft/tags/blocks/impermeable.json
 afee73b7478bef3a19ae5b901fe577a00ad36d4c data/minecraft/tags/blocks/infiniburn_overworld.json
 06b34ef33667d9c286720388097ed41a3e3a6d8a data/minecraft/tags/blocks/leaves.json
 343107da3f0cac608196c4004294a065b3719569 data/minecraft/tags/blocks/mineable/axe.json

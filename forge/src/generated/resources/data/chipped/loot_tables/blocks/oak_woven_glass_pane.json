@@ -11,7 +11,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "chipped:oak_woven-glass_pane"
+          "name": "chipped:oak_woven_glass_pane"
         }
       ],
       "rolls": 1.0
