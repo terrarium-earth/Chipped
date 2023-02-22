@@ -1,4 +1,4 @@
-// 1.19.2	2023-02-21T03:46:10.358959	LootTables
+// 1.19.2	2023-02-22T01:56:29.225492	LootTables
 bcbdac1f2c40e81fb22309e22a0695d61165844b data/chipped/loot_tables/blocks/acacia_barrel.json
 b46ad8361272f49283e7ff8b5f00a607dfd879ee data/chipped/loot_tables/blocks/acacia_crate.json
 02522e123c82e0c1a741f1a6fbc52cbcd9968081 data/chipped/loot_tables/blocks/acacia_planks_mosaic.json
@@ -146,6 +146,8 @@ cf03495e8a22d6ddf1569969127dea96b295735f data/chipped/loot_tables/blocks/arrow_m
 b5d271a325cea2f1010abaf9f4ec4a18b71b7478 data/chipped/loot_tables/blocks/arrow_packed_mud.json
 648154e58de8994b3309dbba25f24d364e7e6c40 data/chipped/loot_tables/blocks/ash_sand.json
 f3a4ef28d743e6c5634d710c46de709e96e174f7 data/chipped/loot_tables/blocks/autumnkin.json
+955518c93e78b0c5381f34165584b437c3033c89 data/chipped/loot_tables/blocks/bad_time_carved_pumpkin.json
+bfdf2948baf6b05a411d2c454fc4d5e75de2ade9 data/chipped/loot_tables/blocks/bad_time_jack_o_lantern.json
 2148ed34c4882a7d2b74939da540871f00189ee4 data/chipped/loot_tables/blocks/bamboo_barrel.json
 6a987a30e36b550f134bb766975fab068b5d952c data/chipped/loot_tables/blocks/bamboo_dried_kelp_block.json
 781c262367d8eaf5bc56d931d834169e9920d94b data/chipped/loot_tables/blocks/barbed_iron_bars.json
@@ -4464,8 +4466,6 @@ fcd2e777bbf8dae07b97ea78d99796c0e981f15f data/chipped/loot_tables/blocks/sandsto
 b775f2eb3cc724f0f883325a6625288cbb7006f8 data/chipped/loot_tables/blocks/sandstone_pillar_top.json
 11ac4bc957e80d057bbc96ad7298e17329a4b9b9 data/chipped/loot_tables/blocks/sandstone_scales.json
 cd61e2a79931bdc9749445ddae31af9a90e8a68a data/chipped/loot_tables/blocks/sandy_gravel.json
-2b60f993655350d852e568f105f310addbc298dd data/chipped/loot_tables/blocks/sans_carved_pumpkin.json
-2f900a8524b83fa9d7d7b74c49a2839ebc265510 data/chipped/loot_tables/blocks/sans_jack_o_lantern.json
 d67a4166a26e2a62088b3c88090a8820ce9477b2 data/chipped/loot_tables/blocks/scabbed_nether_wart_block.json
 644c294993d1b0357c890015c5a8875164a4627b data/chipped/loot_tables/blocks/scabbed_warped_wart_block.json
 30aae8f9db9478abc229d301138b29d320fb3683 data/chipped/loot_tables/blocks/scaled_black_carpet.json

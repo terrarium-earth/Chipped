@@ -26,7 +26,7 @@ public enum Palette {
     ROOTS("blue_%", "crimson_%", "flowery_%", "leafy_%", "lush_%", "muddy_%", "thin_%"),
 
     PUMPKIN("autumnkin", "dewkin", "dirty_dewkin", "dirty_goldkin", "dirty_rosekin", "end_%", "end_%_purple", "goldkin", "kabotchkin", "nether_%", "overgrown_%", "overgrown_autumnkin", "overgrown_lumpkin", "overgrown_pimpkin", "pimpkin", "rosekin"),
-    CARVED_PUMPKIN("anguished_%", "boo_%", "creepy_%", "devious_%", "end_%", "end_purple_%", "horrified_%", "kitty_faced_%", "nether_%", "overjoyed_%", "owo_%", "sans_%", "silly_%", "slight_smile_%", "smiling_%", "spooky_%", "squished_cute_%", "suspicious_%", "tiny_smug_%", "traditional_%", "upside_down_%", "wide_eyed_%"),
+    CARVED_PUMPKIN("anguished_%", "bad_time_%", "boo_%", "creepy_%", "devious_%", "end_%", "end_purple_%", "horrified_%", "kitty_faced_%", "nether_%", "overjoyed_%", "owo_%", "silly_%", "slight_smile_%", "smiling_%", "spooky_%", "squished_cute_%", "suspicious_%", "tiny_smug_%", "traditional_%", "upside_down_%", "wide_eyed_%"),
 
     GRAVEL("andesite_%", "dirty_%", "dusty_%", "orange_%", "rought_%", "sandy_%", "sifted_%"),
     SAND("ash_%", "course_%", "desert_%", "kelp_%", "lush_red_%", "overgrown_%", "pearl_%", "soft_%", "tar_%", "wet_%", "wet_red_%", "white_%"),

@@ -1,4 +1,4 @@
-// 1.19.2	2023-02-21T03:46:10.357868	Tags for minecraft:item
+// 1.19.2	2023-02-22T01:56:29.245891	Tags for minecraft:item
 f55698e86bf8eb7dc61471e74f85b1b13446a082 data/chipped/tags/items/acacia_door.json
 ac0fa9b67679bd0084affa25fd559a143f8c6c58 data/chipped/tags/items/acacia_leaves.json
 9e1b1b880d14b737d6a6c079f3813fe35834fff8 data/chipped/tags/items/acacia_log.json
@@ -43,7 +43,7 @@ fcda7dfefb1eb0033bf7b9bd7394a0f65e063bef data/chipped/tags/items/brown_mushroom_
 894d453a19343ea23c4d6ca722c2e436d53e25fe data/chipped/tags/items/brown_terracotta.json
 06475eda846f90aad6fbc7e9ca64a0598a936bc0 data/chipped/tags/items/brown_wool.json
 bff089294478be8e7eaf4f46bba32c7bc4359a59 data/chipped/tags/items/calcite.json
-c341734ea0f687f3aa8b387bf10ddb32a3c5f15b data/chipped/tags/items/carved_pumpkin.json
+eaf59026a69a1432abad6c1ea6c135ea8087f15f data/chipped/tags/items/carved_pumpkin.json
 30bd90106bfbac4299b6a4ecdcf7ace6761feecf data/chipped/tags/items/clay.json
 354b7c1e2fdccf5287ae771f38d3f48792fd4486 data/chipped/tags/items/coal_block.json
 d249269eed3c1d9f9bd74162b56be5feb9639b9d data/chipped/tags/items/cobblestone.json
@@ -101,7 +101,7 @@ fbd8a24e8a5e62a2a6b20ead25d662906c68ca68 data/chipped/tags/items/hay_block.json
 a47d88fbb2aba76057d6624880967705876c9033 data/chipped/tags/items/ice.json
 b365705da0713216c64f3bc36662f13e948d8bdb data/chipped/tags/items/iron_bars.json
 14f136cc63653b7018457310921b62c8d3494eca data/chipped/tags/items/iron_block.json
-b01fb9da1d65463d0a0faae1b07da9ce78b3ff2c data/chipped/tags/items/jack_o_lantern.json
+05b15a571453730e6b181356e07ba17aaf3ec502 data/chipped/tags/items/jack_o_lantern.json
 0b74871a53cf51d0e886d85dc682d3b0f99fe11f data/chipped/tags/items/jungle_door.json
 aaf10c06b98b5820ac673c4ed5ea7a2ac223691a data/chipped/tags/items/jungle_leaves.json
 41f9bb56fb285fe73b66732ea3d78146b8b9762c data/chipped/tags/items/jungle_log.json
