@@ -1,4 +1,4 @@
-// 1.19.2	2023-02-22T13:01:13.615577	Tags for minecraft:block
+// 1.19.2	2023-02-22T22:49:07.036708	Tags for minecraft:block
 f55698e86bf8eb7dc61471e74f85b1b13446a082 data/chipped/tags/blocks/acacia_door.json
 ac0fa9b67679bd0084affa25fd559a143f8c6c58 data/chipped/tags/blocks/acacia_leaves.json
 9e1b1b880d14b737d6a6c079f3813fe35834fff8 data/chipped/tags/blocks/acacia_log.json
@@ -227,6 +227,7 @@ f9f24e058a00fe9ff0ee5b4090b8bbb5e135272c data/chipped/tags/blocks/special_soul_l
 c7d9a3adc5a44454e345c68b2b14adcdaefaa92f data/chipped/tags/blocks/spruce_log.json
 3a42a2adf3a59003a1bace6392d980a0ad538a62 data/chipped/tags/blocks/spruce_planks.json
 ffeb85fa3bd0ead464bbf8a6cbb56835bddfd45c data/chipped/tags/blocks/spruce_trapdoor.json
+e1130b893079273af00766700812f6c474208964 data/chipped/tags/blocks/stone.json
 4625b54e89e92609f56156b1a1aa023aaa6930ad data/chipped/tags/blocks/stripped_acacia_log.json
 e5bc201bf44fe4cf884261c5b6681d493568c009 data/chipped/tags/blocks/stripped_birch_log.json
 06e4ce5d1de70a08d206a5dac99460005effe87a data/chipped/tags/blocks/stripped_crimson_stem.json
@@ -276,7 +277,7 @@ a3e742f9336a472d6532b4a11eb6fe05535833b4 data/minecraft/tags/blocks/impermeable.
 afee73b7478bef3a19ae5b901fe577a00ad36d4c data/minecraft/tags/blocks/infiniburn_overworld.json
 06b34ef33667d9c286720388097ed41a3e3a6d8a data/minecraft/tags/blocks/leaves.json
 343107da3f0cac608196c4004294a065b3719569 data/minecraft/tags/blocks/mineable/axe.json
-e368978f4fd1a72a6351b2de4b74334eb51ecb18 data/minecraft/tags/blocks/mineable/pickaxe.json
+0f4b16d4fd7081870d95fbf7438c0bbfec843161 data/minecraft/tags/blocks/mineable/pickaxe.json
 5a953741481682987471a277b06e794da225fed3 data/minecraft/tags/blocks/mineable/shovel.json
 0ace037da94aba399d41b7d5ba16812aac307cca data/minecraft/tags/blocks/needs_diamond_tool.json
 557bcb10829024a8560e87203127a4b6efd21693 data/minecraft/tags/blocks/non_flammable_wood.json

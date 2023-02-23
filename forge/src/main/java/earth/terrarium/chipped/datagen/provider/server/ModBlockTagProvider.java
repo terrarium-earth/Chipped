@@ -244,6 +244,7 @@ public class ModBlockTagProvider extends TagsProvider<Block> {
         consumer.accept(Blocks.RED_NETHER_BRICKS, ModBlocks.RED_NETHER_BRICKS, "red_nether_bricks", MASON_TABLE_TAG);
         consumer.accept(Blocks.RED_SANDSTONE, ModBlocks.RED_SANDSTONE, "red_sandstone", MASON_TABLE_TAG);
         consumer.accept(Blocks.SANDSTONE, ModBlocks.SANDSTONE, "sandstone", MASON_TABLE_TAG);
+        consumer.accept(Blocks.STONE, ModBlocks.STONE, "stone", MASON_TABLE_TAG);
         consumer.accept(Blocks.SMOOTH_STONE, ModBlocks.SMOOTH_STONE, "smooth_stone", MASON_TABLE_TAG);
         consumer.accept(Blocks.TUFF, ModBlocks.TUFF, "tuff", MASON_TABLE_TAG);
         consumer.accept(Blocks.TERRACOTTA, ModBlocks.TERRACOTTA, "terracotta", MASON_TABLE_TAG);

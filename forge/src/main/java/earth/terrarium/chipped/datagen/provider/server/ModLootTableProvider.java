@@ -85,6 +85,7 @@ public class ModLootTableProvider extends LootTableProvider {
             createSet(ModBlocks.RED_SANDSTONE);
             createSet(ModBlocks.REDSTONE_BLOCK);
             createSet(ModBlocks.SANDSTONE);
+            createSet(ModBlocks.STONE);
             createSet(ModBlocks.SMOOTH_STONE);
             createSet(ModBlocks.SNOW_BLOCK);
             createSet(ModBlocks.TUFF);

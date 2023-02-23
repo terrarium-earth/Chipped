@@ -59,7 +59,7 @@ public class ModBlocks {
     public static final ResourcefulRegistry<Block> DIRT = createRegistry(Blocks.DIRT, Palette.STONE);
     public static final ResourcefulRegistry<Block> ICE = createRegistry(Blocks.ICE, Palette.STONE, IceBlock::new);
     public static final ResourcefulRegistry<Block> PACKED_ICE = createRegistry(Blocks.PACKED_ICE, Palette.STONE);
-    public static final ResourcefulRegistry<Block> SNOW_BLOCK = createRegistry(Blocks.SNOW_BLOCK, Palette.SNOW_BLOCK);
+    public static final ResourcefulRegistry<Block> SNOW_BLOCK = createRegistry(Blocks.SNOW_BLOCK, Palette.STONE);
     public static final ResourcefulRegistry<Block> CLAY = createRegistry(Blocks.CLAY, Palette.CLAY);
     public static final ResourcefulRegistry<Block> MUD = createRegistry(Blocks.MUD, Palette.MUD, MudBlock::new);
     public static final ResourcefulRegistry<Block> PACKED_MUD = createRegistry(Blocks.PACKED_MUD, Palette.MUD);
@@ -247,6 +247,7 @@ public class ModBlocks {
     public static final ResourcefulRegistry<Block> RED_NETHER_BRICKS = createRegistry(Blocks.RED_NETHER_BRICKS, Palette.STONE);
     public static final ResourcefulRegistry<Block> RED_SANDSTONE = createRegistry(Blocks.RED_SANDSTONE, Palette.STONE);
     public static final ResourcefulRegistry<Block> SANDSTONE = createRegistry(Blocks.SANDSTONE, Palette.STONE);
+    public static final ResourcefulRegistry<Block> STONE = createRegistry(Blocks.STONE, Palette.BASE_STONE);
     public static final ResourcefulRegistry<Block> SMOOTH_STONE = createRegistry(Blocks.SMOOTH_STONE, Palette.STONE);
     public static final ResourcefulRegistry<Block> TUFF = createRegistry(Blocks.TUFF, Palette.STONE);
     public static final ResourcefulRegistry<Block> TERRACOTTA = createRegistry(Blocks.TERRACOTTA, Palette.TERRACOTTA);

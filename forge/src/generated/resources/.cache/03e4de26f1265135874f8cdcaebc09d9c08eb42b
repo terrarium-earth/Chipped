@@ -1,4 +1,4 @@
-// 1.19.2	2023-02-22T13:01:13.531181	Tags for minecraft:item
+// 1.19.2	2023-02-22T22:49:07.034679	Tags for minecraft:item
 f55698e86bf8eb7dc61471e74f85b1b13446a082 data/chipped/tags/items/acacia_door.json
 ac0fa9b67679bd0084affa25fd559a143f8c6c58 data/chipped/tags/items/acacia_leaves.json
 9e1b1b880d14b737d6a6c079f3813fe35834fff8 data/chipped/tags/items/acacia_log.json
@@ -227,6 +227,7 @@ f9f24e058a00fe9ff0ee5b4090b8bbb5e135272c data/chipped/tags/items/special_soul_la
 c7d9a3adc5a44454e345c68b2b14adcdaefaa92f data/chipped/tags/items/spruce_log.json
 3a42a2adf3a59003a1bace6392d980a0ad538a62 data/chipped/tags/items/spruce_planks.json
 ffeb85fa3bd0ead464bbf8a6cbb56835bddfd45c data/chipped/tags/items/spruce_trapdoor.json
+e1130b893079273af00766700812f6c474208964 data/chipped/tags/items/stone.json
 4625b54e89e92609f56156b1a1aa023aaa6930ad data/chipped/tags/items/stripped_acacia_log.json
 e5bc201bf44fe4cf884261c5b6681d493568c009 data/chipped/tags/items/stripped_birch_log.json
 06e4ce5d1de70a08d206a5dac99460005effe87a data/chipped/tags/items/stripped_crimson_stem.json

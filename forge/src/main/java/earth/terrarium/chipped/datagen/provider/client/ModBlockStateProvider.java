@@ -66,6 +66,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
         createSet(ModBlocks.RED_SANDSTONE, "red_sandstone");
         createSet(ModBlocks.REDSTONE_BLOCK, "redstone_block");
         createSet(ModBlocks.SANDSTONE, "sandstone");
+        createSet(ModBlocks.STONE, "stone");
         createSet(ModBlocks.SMOOTH_STONE, "smooth_stone");
         createSet(ModBlocks.SNOW_BLOCK, "snow_block");
         createSet(ModBlocks.TUFF, "tuff");
