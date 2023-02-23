@@ -43,10 +43,6 @@ public class JEIPlugin implements IModPlugin {
         return flattenedRecipes;
     }
 
-    private static ResourceLocation getUidFromId(String id) {
-        return new ResourceLocation(Chipped.MOD_ID, id);
-    }
-
     @Override
     public @NotNull ResourceLocation getPluginUid() {
         return UID;

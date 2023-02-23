@@ -1,6 +1,6 @@
 Chipped is finally out for 1.19.2!
 
-WARNING: updating from the 1.18.2 version will likely delete many of the blocks in your world. this is because all the ids were changed. we've created some datafixers (something that changes the ids of the old blocks when you update the world) to remedy this, however these were only made for the most common blocks and may not work completely. Update old worlds at your own risk and start a new 1.19 world for the best experience.
+WARNING: updating from the 1.18.2 version will delete many of the blocks in your world. this is because all the ids were changed. we've created some datafixers (something that changes the ids of the old blocks when you update the world) to remedy this, however these were only made for the most common blocks and may not work completely. Update old worlds at your own risk and start a new 1.19 world for the best experience.
 
 Chipped now requires ResourcefulLib https://www.curseforge.com/minecraft/mc-mods/resourceful-lib
 
