@@ -4,7 +4,7 @@
 		"type": "ctm",
 		"layer": "TRANSLUCENT",
 		"textures": [
-			"chipped:block/glass/ctm/oak_ornate_bared_glass_pane_ctm"
+			"chipped:block/glass/ctm/raster_leaded_glass_ctm"
 		],
 		"extra": {
 			"light": 0
