@@ -106,7 +106,6 @@ subprojects {
                 }
             } else {
                 dependencies {
-                    required.project "ctm"
                     required.project "resourcefullib"
                     optional.project "jei"
                     optional.project "roughly-enough-items"

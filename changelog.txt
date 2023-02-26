@@ -1,13 +1,1 @@
-Chipped is finally out for 1.19.2!
-
-WARNING: updating from the 1.18.2 version will delete many of the blocks in your world. this is because all the ids were changed. we've created some datafixers (something that changes the ids of the old blocks when you update the world) to remedy this, however these were only made for the most common blocks and may not work completely. Update old worlds at your own risk and start a new 1.19 world for the best experience.
-
-Chipped now requires ResourcefulLib https://www.curseforge.com/minecraft/mc-mods/resourceful-lib
-
-- Rewrote the entire mod again
-- added mud, mangrove, froglights, and other 1.19 stuff
-- changed the ids of all blocks. instead of "block_#," the id is now the actual name of block. these ids will likely never change between major versions so after this update you can safely build without worrying about id changes
-- all blocks now have names
-- fixed a multitude of naming issues such as mismatched door names
-- fixed many palettes having weird inconsistencies and random missing things
-- fixed a lot of the ctm issues, specifically with glass. ctm is now datagened, so we are no longer manually adding ctm to every block which should make it way less prone to errors
+fixed Chipped special lanterns being waterlogged by default (#173)
