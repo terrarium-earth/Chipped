@@ -100,13 +100,13 @@ subprojects {
                 dependencies {
                     required.project "fabric-api"
                     required.project "ctm-refabricated"
-                    required.project "resourcefullib"
+                    required.project "resourceful-lib"
                     optional.project "jei"
                     optional.project "roughly-enough-items"
                 }
             } else {
                 dependencies {
-                    required.project "resourcefullib"
+                    required.project "resourceful-lib"
                     optional.project "jei"
                     optional.project "roughly-enough-items"
                 }
@@ -130,14 +130,14 @@ subprojects {
                     relations {
                         requiredDependency "fabric-api"
                         requiredDependency "ctm-refabricated"
-                        requiredDependency "resourcefullib"
+                        requiredDependency "resourceful-lib"
                         optionalDependency "jei"
                         optionalDependency "roughly-enough-items"
                     }
                 } else {
                     relations {
                         requiredDependency "ctm"
-                        requiredDependency "resourcefullib"
+                        requiredDependency "resourceful-lib"
                         optionalDependency "jei"
                         optionalDependency "roughly-enough-items"
                     }
