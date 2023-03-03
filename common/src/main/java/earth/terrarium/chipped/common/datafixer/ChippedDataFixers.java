@@ -99,6 +99,9 @@ public final class ChippedDataFixers {
             );
 
     public static void addDataFixers(Schema schema, Consumer<DataFix> fixer) {
+        if (System.getProperty("chipped.datafixers", "true").equalsIgnoreCase("false")) {
+            return;
+        }
         for (CsvMapper mapper : loadJarResources("/data/chipped/datafixers", FIXER_IDS)) {
             fixer.accept(BlockRenameFix.create(schema, mapper.displayName(), mapper));
         }

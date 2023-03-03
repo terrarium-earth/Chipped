@@ -326,7 +326,7 @@ public class ModBlocks {
         var registry = ResourcefulRegistries.create(BLOCKS);
         for (int i = 0; i < palette.getNames().length; i++) {
             String id = palette.getName(i).replace("%", Registry.BLOCK.getKey(ref).getPath().toLowerCase(Locale.ROOT));
-            registry.register(id, () -> blockType.apply(BlockBehaviour.Properties.copy(ref)));
+            registry.register(id, () -> blockType.apply(createProperties(ref)));
         }
         ModItems.createItemRegistry(registry, itemType);
         return registry;
@@ -339,10 +339,10 @@ public class ModBlocks {
 
         for (int i = 0; i < palette.getNames().length; i++) {
             String id1 = palette.getName(i).replace("%", Registry.BLOCK.getKey(ref1).getPath().toLowerCase(Locale.ROOT));
-            RegistryEntry<Block> torch1 = registry1.register(id1, () -> blockType1.apply(BlockBehaviour.Properties.copy(ref1), ParticleTypes.FLAME));
+            RegistryEntry<Block> torch1 = registry1.register(id1, () -> blockType1.apply(createProperties(ref1), ParticleTypes.FLAME));
 
             String id2 = palette.getName(i).replace("%", Registry.BLOCK.getKey(ref2).getPath().toLowerCase(Locale.ROOT));
-            RegistryEntry<Block> torch2 = registry2.register(id2, () -> blockType2.apply(BlockBehaviour.Properties.copy(ref2), ParticleTypes.FLAME));
+            RegistryEntry<Block> torch2 = registry2.register(id2, () -> blockType2.apply(createProperties(ref2), ParticleTypes.FLAME));
 
             itemRegistry.register(torch1.getId().getPath(), () -> new StandingAndWallBlockItem(torch1.get(), torch2.get(), new Item.Properties().tab(ModItems.ITEM_GROUP)));
         }
@@ -353,11 +353,15 @@ public class ModBlocks {
     public static ResourcefulRegistry<Block> registerSpecialLanterns(String block, Palette palette) {
         var registry = ResourcefulRegistries.create(BLOCKS);
         String[] names = palette.getNames();
-        registry.register(names[0].replace("%", block), () -> new SpecialLanternBlock(BlockBehaviour.Properties.copy(Blocks.LANTERN), SpecialLanternBlock.CHONK_LANTERN_SHAPE));
-        registry.register(names[1].replace("%", block), () -> new SpecialLanternBlock(BlockBehaviour.Properties.copy(Blocks.LANTERN), SpecialLanternBlock.DONUT_LANTERN_SHAPE_EAST, SpecialLanternBlock.DONUT_LANTERN_SHAPE_NORTH));
-        registry.register(names[2].replace("%", block), () -> new SpecialLanternBlock(BlockBehaviour.Properties.copy(Blocks.LANTERN), SpecialLanternBlock.TALL_LANTERN_SHAPE));
-        registry.register(names[3].replace("%", block), () -> new SpecialLanternBlock(BlockBehaviour.Properties.copy(Blocks.LANTERN), SpecialLanternBlock.THICC_LANTERN_SHAPE));
+        registry.register(names[0].replace("%", block), () -> new SpecialLanternBlock(createProperties(Blocks.LANTERN), SpecialLanternBlock.CHONK_LANTERN_SHAPE));
+        registry.register(names[1].replace("%", block), () -> new SpecialLanternBlock(createProperties(Blocks.LANTERN), SpecialLanternBlock.DONUT_LANTERN_SHAPE_EAST, SpecialLanternBlock.DONUT_LANTERN_SHAPE_NORTH));
+        registry.register(names[2].replace("%", block), () -> new SpecialLanternBlock(createProperties(Blocks.LANTERN), SpecialLanternBlock.TALL_LANTERN_SHAPE));
+        registry.register(names[3].replace("%", block), () -> new SpecialLanternBlock(createProperties(Blocks.LANTERN), SpecialLanternBlock.THICC_LANTERN_SHAPE));
         ModItems.createItemRegistry(registry, BlockItem::new);
         return registry;
+    }
+
+    private static BlockBehaviour.Properties createProperties(Block ref) {
+        return BlockBehaviour.Properties.copy(ref).noLootTable();
     }
 }

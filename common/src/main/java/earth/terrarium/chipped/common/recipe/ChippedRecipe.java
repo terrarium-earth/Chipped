@@ -1,9 +1,8 @@
 package earth.terrarium.chipped.common.recipe;
 
-import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
+import earth.terrarium.chipped.common.util.ModUtils;
 import net.minecraft.MethodsReturnNonnullByDefault;
-import net.minecraft.core.Holder;
 import net.minecraft.core.HolderSet;
 import net.minecraft.core.Registry;
 import net.minecraft.network.FriendlyByteBuf;
@@ -16,32 +15,27 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Recipe;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.item.crafting.RecipeType;
-import net.minecraft.world.item.crafting.SimpleRecipeSerializer;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Supplier;
 import java.util.stream.Stream;
+import java.util.stream.StreamSupport;
 
 @MethodsReturnNonnullByDefault
 public record ChippedRecipe(
         Serializer serializer,
         ResourceLocation id,
         String group,
-        List<HolderSet<Item>> tags,
+        List<? extends HolderSet<Item>> tags,
         Block icon
 ) implements Recipe<Container> {
+
     @Override
     public boolean matches(Container container, Level level) {
         ItemStack stack = container.getItem(0);
-        return !stack.isEmpty() && this.tags.stream().anyMatch(tag -> tagIs(stack, tag));
-    }
-
-    @SuppressWarnings("deprecation")
-    private static boolean tagIs(ItemStack stack, HolderSet<Item> tag) {
-        return tag.contains(stack.getItem().builtInRegistryHolder());
+        return !stack.isEmpty() && this.tags.stream().anyMatch(tag -> stack.is(tag::contains));
     }
 
     public Stream<ItemStack> getResults(Container container) {
@@ -49,8 +43,8 @@ public record ChippedRecipe(
         if (!current.isEmpty()) {
             Item item = current.getItem();
             return this.tags.stream()
-                    .filter(tag -> tagIs(current, tag))
-                    .flatMap(tag -> tag.stream().filter(Holder::isBound).map(Holder::value))
+                    .filter(set -> current.is(set::contains))
+                    .flatMap(ModUtils::streamHolderSet)
                     .filter(value -> value != item)
                     .map(ItemStack::new);
         }
@@ -59,7 +53,7 @@ public record ChippedRecipe(
 
     @Override
     public ItemStack assemble(Container container) {
-        return getResultItem();
+        return ItemStack.EMPTY;
     }
 
     @Override
@@ -102,50 +96,32 @@ public record ChippedRecipe(
         return serializer.type.get();
     }
 
-    public static class Serializer extends SimpleRecipeSerializer<ChippedRecipe> {
-
-        public final Supplier<RecipeType<ChippedRecipe>> type;
-        public final Supplier<Block> icon;
-
-        public Serializer(Supplier<RecipeType<ChippedRecipe>> type, Supplier<Block> icon) {
-            super(p -> null);
-            this.type = type;
-            this.icon = icon;
-        }
+    public record Serializer(Supplier<RecipeType<ChippedRecipe>> type,
+                             Supplier<Block> icon) implements RecipeSerializer<ChippedRecipe> {
 
         @Override
-        public ChippedRecipe fromJson(ResourceLocation recipeId, JsonObject json) {
-            String s = GsonHelper.getAsString(json, "group", "");
-            List<HolderSet<Item>> tags = new ArrayList<>();
-            JsonArray tagArray = GsonHelper.getAsJsonArray(json, "tags");
-            for (int i = 0; i < tagArray.size(); ++i) {
-                String tagName = GsonHelper.convertToString(tagArray.get(i), "tags[" + i + "]");
-                var tag = TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation(tagName));
-                tags.add(Registry.ITEM.getOrCreateTag(tag));
-            }
-            return new ChippedRecipe(this, recipeId, s, tags, this.icon.get());
+        public ChippedRecipe fromJson(ResourceLocation id, JsonObject json) {
+            String group = GsonHelper.getAsString(json, "group", "");
+            List<? extends HolderSet<Item>> tags = StreamSupport.stream(GsonHelper.getAsJsonArray(json, "tags").spliterator(), false)
+                    .map(ModUtils::expectResourcelocation)
+                    .map(tag -> TagKey.create(Registry.ITEM_REGISTRY, tag))
+                    .map(Registry.ITEM::getOrCreateTag)
+                    .toList();
+            return new ChippedRecipe(this, id, group, tags, this.icon.get());
         }
 
         @SuppressWarnings("deprecation")
         @Override
         public ChippedRecipe fromNetwork(ResourceLocation recipeId, FriendlyByteBuf buffer) {
-            String s = buffer.readUtf(32767);
-            int tagCount = buffer.readVarInt();
-            List<HolderSet<Item>> tags = new ArrayList<>(tagCount);
-            for (int i = 0; i < tagCount; i++) {
-                tags.add(HolderSet.direct(Item::builtInRegistryHolder, buffer.readList(buf -> Item.byId(buf.readVarInt()))));
-            }
-            return new ChippedRecipe(this, recipeId, s, tags, this.icon.get());
+            String group = buffer.readUtf();
+            var holders = buffer.readList(holderBuf -> HolderSet.direct(Item::builtInRegistryHolder, buffer.readList(ModUtils::readItem)));
+            return new ChippedRecipe(this, recipeId, group, holders, this.icon.get());
         }
 
         @Override
         public void toNetwork(FriendlyByteBuf buffer, ChippedRecipe recipe) {
             buffer.writeUtf(recipe.group);
-            buffer.writeVarInt(recipe.tags.size());
-            for (HolderSet<Item> tag : recipe.tags) {
-                List<Item> items = tag.stream().filter(Holder::isBound).map(Holder::value).toList();
-                buffer.writeCollection(items, (buf, item) -> buf.writeVarInt(Item.getId(item)));
-            }
+            buffer.writeCollection(recipe.tags, (buf, tag) -> buf.writeCollection(ModUtils.fromHolderSet(tag), ModUtils::writeItem));
         }
     }
 }
