@@ -44,7 +44,7 @@ public class REIChippedPlugin implements REIClientPlugin {
         assert client.level != null;
         RecipeManager recipeManager = client.level.getRecipeManager();
         registerRecipes(recipeManager, registry, ModRecipeTypes.BOTANIST_WORKBENCH_TYPE.get(), ModBlocks.BOTANIST_WORKBENCH.get());
-        registerRecipes(recipeManager, registry, ModRecipeTypes.GLASSBLOWER_TYPE.get(), ModBlocks.BOTANIST_WORKBENCH.get());
+        registerRecipes(recipeManager, registry, ModRecipeTypes.GLASSBLOWER_TYPE.get(), ModBlocks.GLASSBLOWER.get());
         registerRecipes(recipeManager, registry, ModRecipeTypes.CARPENTERS_TABLE_TYPE.get(), ModBlocks.CARPENTERS_TABLE.get());
         registerRecipes(recipeManager, registry, ModRecipeTypes.LOOM_TABLE_TYPE.get(), ModBlocks.LOOM_TABLE.get());
         registerRecipes(recipeManager, registry, ModRecipeTypes.MASON_TABLE_TYPE.get(), ModBlocks.MASON_TABLE.get());

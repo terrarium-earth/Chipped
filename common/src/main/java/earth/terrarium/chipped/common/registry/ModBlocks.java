@@ -14,6 +14,8 @@ import net.minecraft.core.Registry;
 import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.data.worldgen.features.TreeFeatures;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.PlaceOnWaterBlockItem;
@@ -29,6 +31,9 @@ public class ModBlocks {
 
     public static final ResourcefulRegistry<Block> BLOCKS = ResourcefulRegistries.create(Registry.BLOCK, Chipped.MOD_ID);
     public static final ResourcefulRegistry<Block> BENCHES = ResourcefulRegistries.create(BLOCKS);
+
+    public static final TagKey<Block> SOUL_SAND_TAG = TagKey.create(Registry.BLOCK_REGISTRY, new ResourceLocation(Chipped.MOD_ID, "soul_sand"));
+    public static final TagKey<Block> BOOKSHELF_TAG = TagKey.create(Registry.BLOCK_REGISTRY, new ResourceLocation(Chipped.MOD_ID, "bookshelf"));
 
     public static final RegistryEntry<Block> BOTANIST_WORKBENCH = BENCHES.register("botanist_workbench", () -> new WorkbenchBlock((id, inventory, access) -> new ChippedMenu(id, inventory, access, ModMenus.BOTANIST_WORKBENCH.get(), ModRecipeTypes.BOTANIST_WORKBENCH_TYPE.get(), ModBlocks.BOTANIST_WORKBENCH.get()), BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).noOcclusion()));
     public static final RegistryEntry<Block> GLASSBLOWER = BENCHES.register("glassblower", () -> new WorkbenchBlock((id, inventory, access) -> new ChippedMenu(id, inventory, access, ModMenus.GLASSBLOWER.get(), ModRecipeTypes.GLASSBLOWER_TYPE.get(), ModBlocks.GLASSBLOWER.get()), BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).noOcclusion()));

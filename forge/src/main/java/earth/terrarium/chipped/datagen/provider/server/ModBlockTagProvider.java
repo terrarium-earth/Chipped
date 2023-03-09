@@ -435,6 +435,7 @@ public class ModBlockTagProvider extends TagsProvider<Block> {
         createVanillaSet(ModBlocks.RED_WOOL, BlockTags.WOOL);
         createVanillaSet(ModBlocks.WHITE_WOOL, BlockTags.WOOL);
         createVanillaSet(ModBlocks.YELLOW_WOOL, BlockTags.WOOL);
+        createVanillaSet(ModBlocks.SOUL_SAND, BlockTags.SOUL_SPEED_BLOCKS);
 
         ModBlocks.BLOCKS.stream().forEach(b -> {
             Material material = b.get().defaultBlockState().getMaterial();
