@@ -93,7 +93,7 @@ publishing {
                 builtBy remapSourcesJar
             }
 
-            artifactId = "$rootProject.mod_id-forge-$rootProject.minecraft_version"
+            artifactId = "$rootProject.mod_id-fabric-$rootProject.minecraft_version"
 
             pom {
                 name = 'Chipped'
