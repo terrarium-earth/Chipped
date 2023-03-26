@@ -102,13 +102,13 @@ subprojects {
                     required.project "ctm-refabricated"
                     required.project "resourceful-lib"
                     optional.project "jei"
-                    optional.project "roughly-enough-items"
+                    optional.project "rei"
                 }
             } else {
                 dependencies {
                     required.project "resourceful-lib"
                     optional.project "jei"
-                    optional.project "roughly-enough-items"
+                    optional.project "rei"
                 }
             }
         }
