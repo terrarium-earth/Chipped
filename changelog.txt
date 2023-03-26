@@ -1,7 +1,5 @@
-- fixed chipped bookshelves not being able to be used to increase enchantability in the enchantment table (#180)
-- fixed not being able to place nether wart on chipped soul sand (#181)
-- fixed broken glassblower in REI (#183)
-- chipped soul sand now increases the speed with soul speed
-- Added system property to disable datafixers (-Dchipped.datafixers=false)
-- Changed loottables to be in code with compat for if a json exists for the block it will use that.
-- Changed the recipe to be a record and remove the parent class as every method was overriden and changed the serialize methods to be more readable
+- fixed glass occlusion
+- fixed ice melting
+- fixed extra hexagon texture
+- fixed incorrect red nether brick, nether brick and mossy stone brick ctm for one of the blocks
+- fixed 32x32 runic crying obsidian and blue ice textures
