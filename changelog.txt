@@ -1,5 +1,2 @@
-- fixed glass occlusion
-- fixed ice melting
-- fixed extra hexagon texture
-- fixed incorrect red nether brick, nether brick and mossy stone brick ctm for one of the blocks
-- fixed 32x32 runic crying obsidian and blue ice textures
+- fixed clear leaded glass ctm
+- made ctm optional on fabric

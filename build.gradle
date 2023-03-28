@@ -2,7 +2,7 @@ import groovy.json.JsonOutput
 
 plugins {
     id "architectury-plugin" version "3.4-SNAPSHOT"
-    id "dev.architectury.loom" version "1.0-SNAPSHOT" apply false
+    id "dev.architectury.loom" version "1.1-SNAPSHOT" apply false
 
     id "com.modrinth.minotaur" version "2.+"
     id "com.matthewprenger.cursegradle" version "1.4.0" // literally never gonna update
@@ -64,14 +64,44 @@ tasks.register("generateDiscordEmbed") {
     }
 }
 
+allprojects {
+    apply plugin: "java"
+    apply plugin: "architectury-plugin"
+
+    archivesBaseName = rootProject.archives_base_name
+    version = rootProject.mod_version
+    group = rootProject.maven_group
+
+    repositories {
+        maven {
+            url "https://cursemaven.com"
+            content {
+                includeGroup "curse.maven"
+            }
+        }
+        maven { url = "https://maven.resourcefulbees.com/repository/maven-public/" }
+    }
+
+    tasks.withType(JavaCompile).tap {
+        configureEach {
+            options.encoding = "UTF-8"
+            options.release = 17
+        }
+    }
+
+    java {
+        withSourcesJar()
+    }
+}
+
 subprojects {
     apply plugin: "dev.architectury.loom"
     apply plugin: "com.modrinth.minotaur"
     apply plugin: "com.matthewprenger.cursegradle"
+    apply plugin: "maven-publish"
 
     loom {
         silentMojangMappingsLicense()
-        setEnableTransitiveAccessWideners(true)
     }
 
     dependencies {
@@ -90,7 +120,7 @@ subprojects {
 
     if (env.MODRINTH_TOKEN) {
         modrinth {
-            projectId = env.MODRINTH_PROJECT
+            projectId = modrinth_id
             uploadFile = tasks.remapJar
             gameVersions = [minecraft_version]
             loaders = [modLoader]
@@ -99,10 +129,11 @@ subprojects {
             if (modLoader == "fabric") {
                 dependencies {
                     required.project "fabric-api"
-                    required.project "ctm-refabricated"
                     required.project "resourceful-lib"
+                    optional.project "modmenu"
                     optional.project "jei"
                     optional.project "rei"
+                    optional.project "ctm-refabricated"
                 }
             } else {
                 dependencies {
@@ -118,7 +149,7 @@ subprojects {
         curseforge {
             apiKey = env.CURSE_TOKEN
             project {
-                id = env.CURSE_PROJECT
+                id = curse_id
                 changelog = changelogText
                 releaseType = 'release'
                 addGameVersion minecraft_version
@@ -129,51 +160,60 @@ subprojects {
                 if (modLoader == "fabric") {
                     relations {
                         requiredDependency "fabric-api"
-                        requiredDependency "ctm-refabricated"
                         requiredDependency "resourceful-lib"
+                        optionalDependency "modmenu"
                         optionalDependency "jei"
                         optionalDependency "roughly-enough-items"
+                        optionalDependency "ctm-refabricated"
                     }
                 } else {
                     relations {
-                        requiredDependency "ctm"
                         requiredDependency "resourceful-lib"
                         optionalDependency "jei"
-                        optionalDependency "roughly-enough-items"
+                        requiredDependency "ctm"
                     }
                 }
             }
         }
     }
-}
 
-allprojects {
-    apply plugin: "java"
-    apply plugin: "architectury-plugin"
-    apply plugin: "maven-publish"
+    publishing {
+        publications {
+            mavenJava(MavenPublication) {
+                artifact remapJar
+                artifact(sourcesJar) {
+                    builtBy remapSourcesJar
+                }
 
-    archivesBaseName = rootProject.archives_base_name
-    version = rootProject.mod_version
-    group = rootProject.maven_group
+                artifactId = "$rootProject.mod_id-$modLoader-$rootProject.minecraft_version"
 
-    repositories {
-        maven {
-            url "https://cursemaven.com"
-            content {
-                includeGroup "curse.maven"
+                pom {
+                    name = github_name
+                    description = ''
+                    url = "https://github.com/terrarium-earth/$github_name"
+
+                    scm {
+                        connection = "git:https://github.com/terrarium-earth/${github_name}.git"
+                        developerConnection = "git:https://github.com/terrarium-earth/${github_name}.git"
+                        url = "https://github.com/terrarium-earth/$github_name"
+                    }
+
+                    licenses {
+                        license {
+                            name = 'https://gist.github.com/CodexAdrian/4bb2a1868bb2d2a91ca74ea40424e69d'
+                        }
+                    }
+                }
             }
         }
-        maven { url = "https://nexus.resourcefulbees.com/repository/maven-public/" }
-    }
-
-    tasks.withType(JavaCompile).tap {
-        configureEach {
-            options.encoding = "UTF-8"
-            options.release = 17
+        repositories {
+            maven {
+                url = "https://maven.resourcefulbees.com/repository/terrarium/"
+                credentials {
+                    username env.MAVEN_USER
+                    password env.MAVEN_PASS
+                }
+            }
         }
-    }
-
-    java {
-        withSourcesJar()
     }
 }

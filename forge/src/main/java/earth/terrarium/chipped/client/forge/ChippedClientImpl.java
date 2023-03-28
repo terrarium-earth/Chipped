@@ -13,6 +13,7 @@ import net.minecraft.world.level.block.Block;
 import java.util.function.Supplier;
 
 public class ChippedClientImpl {
+    @SuppressWarnings("removal")
     public static void registerBlockRenderType(RenderType type, Supplier<Block> block) {
         ItemBlockRenderTypes.setRenderLayer(block.get(), type);
     }

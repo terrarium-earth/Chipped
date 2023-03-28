@@ -1,7 +1,7 @@
 modLoader = "javafml"
 loaderVersion = "[43,)"
 license = "Terrarium Licence"
-issueTrackerURL = "https://github.com/terrarium-earth/Chipped/issues"
+issueTrackerURL = "https://github.com/terrarium-earth/${github_name}/issues"
 [[mods]]
 modId = "chipped"
 version = "${version}"

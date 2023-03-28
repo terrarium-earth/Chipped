@@ -31,38 +31,40 @@ dependencies {
     common(project(path: ":common", configuration: "namedElements")) { transitive false }
     shadowCommon(project(path: ":common", configuration: "transformProductionFabric")) { transitive false }
 
-    modImplementation "me.codexadrian:ctm-refabricated:1.0.0+1.19"
-    modApi "com.teamresourceful.resourcefullib:resourcefullib-fabric-$rootProject.minecraft_version:$rootProject.resourcefullib_version"
-
     modApi "com.terraformersmc:modmenu:$rootProject.modmenu_version"
 
     modRuntimeOnly "me.shedaniel:RoughlyEnoughItems-fabric:$rootProject.rei_version"
     modCompileOnly "me.shedaniel:RoughlyEnoughItems-api-fabric:$rootProject.rei_version"
     modCompileOnly "me.shedaniel:RoughlyEnoughItems-default-plugin-fabric:$rootProject.rei_version"
-    modApi "dev.architectury:architectury-fabric:$rootProject.architectury_version"
+    modLocalRuntime "dev.architectury:architectury-fabric:6.5.69"
+
+    modApi "com.teamresourceful.resourcefullib:resourcefullib-fabric-$rootProject.minecraft_version:$rootProject.resourcefullib_version"
+//    modImplementation "me.codexadrian:ctm-refabricated:1.0.0+1.19"
 }
 
 processResources {
     duplicatesStrategy = DuplicatesStrategy.EXCLUDE
-    inputs.property "fabric_loader_version", rootProject.fabric_loader_version
     filesMatching("fabric.mod.json") {
-        expand "version": rootProject.version, "fabric_loader_version": rootProject.fabric_loader_version, "resourcefullib_version": rootProject.resourcefullib_version
+        expand "version": rootProject.version,
+                "fabric_loader_version": rootProject.fabric_loader_version,
+                "github_name": rootProject.github_name,
+                "resourcefullib_version": rootProject.resourcefullib_version
     }
 }
 
 shadowJar {
     configurations = [project.configurations.shadowCommon]
-    classifier "dev-shadow"
+    archiveClassifier.set "dev-shadow"
 }
 
 remapJar {
     input.set shadowJar.archiveFile
     dependsOn shadowJar
-    classifier null
+    archiveClassifier.set null
 }
 
 jar {
-    classifier "dev"
+    archiveClassifier.set "dev"
     archivesBaseName = "$mod_id-fabric-$minecraft_version"
 }
 
@@ -76,51 +78,5 @@ sourcesJar {
 components.java {
     withVariantsFromConfiguration(project.configurations.shadowRuntimeElements) {
         skip()
-    }
-}
-
-repositories {
-    maven { url "https://maven.terraformersmc.com" }
-}
-
-def ENV = System.getenv()
-
-publishing {
-    publications {
-        mavenJava(MavenPublication) {
-            artifact remapJar
-            artifact(sourcesJar) {
-                builtBy remapSourcesJar
-            }
-
-            artifactId = "$rootProject.mod_id-fabric-$rootProject.minecraft_version"
-
-            pom {
-                name = 'Chipped'
-                description = 'Every block needs a friend!'
-                url = 'https://github.com/terrarium-earth/Chipped'
-
-                scm {
-                    connection = 'git:https://github.com/terrarium-earth/Chipped.git'
-                    developerConnection = 'git:https://github.com/terrarium-earth/Chipped.git'
-                    url = 'https://github.com/terrarium-earth/Chipped'
-                }
-
-                licenses {
-                    license {
-                        name = 'Terrarium Licence'
-                    }
-                }
-            }
-        }
-    }
-    repositories {
-        maven {
-            url = "https://maven.resourcefulbees.com/repository/terrarium/"
-            credentials {
-                username ENV.MAVEN_USER
-                password ENV.MAVEN_PASS
-            }
-        }
     }
 }
