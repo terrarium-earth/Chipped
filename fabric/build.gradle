@@ -39,7 +39,7 @@ dependencies {
     modLocalRuntime "dev.architectury:architectury-fabric:6.5.69"
 
     modApi "com.teamresourceful.resourcefullib:resourcefullib-fabric-$rootProject.minecraft_version:$rootProject.resourcefullib_version"
-//    modImplementation "me.codexadrian:ctm-refabricated:1.0.0+1.19"
+    modImplementation "me.codexadrian:ctm-refabricated:1.0.0+1.19"
 }
 
 processResources {
