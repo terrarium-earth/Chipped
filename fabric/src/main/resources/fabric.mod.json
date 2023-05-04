@@ -33,6 +33,9 @@
     ],
     "jei_mod_plugin": [
       "earth.terrarium.chipped.common.compat.jei.JEIPlugin"
+    ],
+    "emi": [
+      "earth.terrarium.chipped.common.fabric.compat.emi.EMIChippedPlugin"
     ]
   },
   "mixins": [

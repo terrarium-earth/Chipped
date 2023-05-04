@@ -40,6 +40,10 @@ dependencies {
 
     modApi "com.teamresourceful.resourcefullib:resourcefullib-fabric-$rootProject.minecraft_version:$rootProject.resourcefullib_version"
     modImplementation "me.codexadrian:ctm-refabricated:1.0.0+1.19"
+
+    modCompileOnly "dev.emi:emi:$rootProject.emi_version+$rootProject.minecraft_version:api"
+    // uncomment to test emi
+//    modLocalRuntime "dev.emi:emi:$rootProject.emi_version+$rootProject.minecraft_version"
 }
 
 processResources {
