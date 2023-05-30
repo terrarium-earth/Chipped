@@ -1,2 +1,3 @@
-- fixed clear leaded glass ctm
-- made ctm optional on fabric
+- fixed big lanterns being uncrafteable
+- fixed the stiped bug
+- made the mechanist table recipe use any wood type instead of specifically requiring oak and spruce

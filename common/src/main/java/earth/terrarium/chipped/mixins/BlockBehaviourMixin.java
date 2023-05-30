@@ -24,13 +24,13 @@ import java.util.List;
 public abstract class BlockBehaviourMixin {
 
     @Inject(
-            method = "getDrops",
-            at = @At(
-                    value = "INVOKE",
-                    target = "Ljava/util/Collections;emptyList()Ljava/util/List;",
-                    ordinal = 0
-            ),
-            cancellable = true
+        method = "getDrops",
+        at = @At(
+            value = "INVOKE",
+            target = "Ljava/util/Collections;emptyList()Ljava/util/List;",
+            ordinal = 0
+        ),
+        cancellable = true
     )
     private void chipped$getDrops(BlockState state, LootContext.Builder builder, CallbackInfoReturnable<List<ItemStack>> cir) {
         //noinspection ConstantValue

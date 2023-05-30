@@ -75,8 +75,8 @@ public class WorkbenchBlock extends Block {
     @Override
     public MenuProvider getMenuProvider(@NotNull BlockState state, @NotNull Level level, @NotNull BlockPos pos) {
         return new SimpleMenuProvider(
-                (id, inventory, player) -> factory.create(id, inventory, ContainerLevelAccess.create(level, pos)),
-                containerName.get()
+            (id, inventory, player) -> factory.create(id, inventory, ContainerLevelAccess.create(level, pos)),
+            containerName.get()
         );
     }
 

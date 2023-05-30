@@ -5,10 +5,8 @@
     "chipped:sea_lantern",
     "chipped:redstone_lamp",
     "chipped:redstone_block",
+    "chipped:redstone_torch",
     "chipped:lantern",
-    "chipped:soul_lantern",
-    "chipped:special_lantern",
-    "chipped:special_soul_lantern",
-    "chipped:redstone_torch"
+    "chipped:soul_lantern"
   ]
 }

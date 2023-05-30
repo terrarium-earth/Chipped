@@ -339,50 +339,50 @@ public class ModBlockStateProvider extends BlockStateProvider {
             BlockModelBuilder upTip = createChildModel(extend(texture, "_up_tip"), new ResourceLocation("block/pointed_dripstone"), extend(texture, "_up_tip"), "cross");
 
             getVariantBuilder(block)
-                    .forAllStates(state -> {
-                        DripstoneThickness thickness = state.getValue(PointedDripstoneBlock.THICKNESS);
-                        Direction dir = state.getValue(PointedDripstoneBlock.TIP_DIRECTION);
+                .forAllStates(state -> {
+                    DripstoneThickness thickness = state.getValue(PointedDripstoneBlock.THICKNESS);
+                    Direction dir = state.getValue(PointedDripstoneBlock.TIP_DIRECTION);
 
-                        return ConfiguredModel.builder()
-                                .modelFile(switch (thickness) {
-                                    case TIP_MERGE -> {
-                                        if (dir == Direction.DOWN) {
-                                            yield downTipMerge;
-                                        } else {
-                                            yield upTipMerge;
-                                        }
-                                    }
-                                    case TIP -> {
-                                        if (dir == Direction.DOWN) {
-                                            yield downTip;
-                                        } else {
-                                            yield upTip;
-                                        }
-                                    }
-                                    case FRUSTUM -> {
-                                        if (dir == Direction.DOWN) {
-                                            yield downFrustum;
-                                        } else {
-                                            yield upFrustum;
-                                        }
-                                    }
-                                    case MIDDLE -> {
-                                        if (dir == Direction.DOWN) {
-                                            yield downMiddle;
-                                        } else {
-                                            yield upMiddle;
-                                        }
-                                    }
-                                    case BASE -> {
-                                        if (dir == Direction.DOWN) {
-                                            yield downBase;
-                                        } else {
-                                            yield upBase;
-                                        }
-                                    }
-                                })
-                                .build();
-                    });
+                    return ConfiguredModel.builder()
+                        .modelFile(switch (thickness) {
+                            case TIP_MERGE -> {
+                                if (dir == Direction.DOWN) {
+                                    yield downTipMerge;
+                                } else {
+                                    yield upTipMerge;
+                                }
+                            }
+                            case TIP -> {
+                                if (dir == Direction.DOWN) {
+                                    yield downTip;
+                                } else {
+                                    yield upTip;
+                                }
+                            }
+                            case FRUSTUM -> {
+                                if (dir == Direction.DOWN) {
+                                    yield downFrustum;
+                                } else {
+                                    yield upFrustum;
+                                }
+                            }
+                            case MIDDLE -> {
+                                if (dir == Direction.DOWN) {
+                                    yield downMiddle;
+                                } else {
+                                    yield upMiddle;
+                                }
+                            }
+                            case BASE -> {
+                                if (dir == Direction.DOWN) {
+                                    yield downBase;
+                                } else {
+                                    yield upBase;
+                                }
+                            }
+                        })
+                        .build();
+                });
         });
     }
 
@@ -412,14 +412,14 @@ public class ModBlockStateProvider extends BlockStateProvider {
         createSet(registry, (block, i) -> {
             ResourceLocation texture = customTexture(block, folder);
             simpleBlock(block, models().getBuilder(name(block))
-                    .texture("particle", texture)
-                    .texture("down", extend(texture, "_top"))
-                    .texture("up", extend(texture, "_top"))
-                    .texture("north", texture)
-                    .texture("east", texture)
-                    .texture("south", texture)
-                    .texture("west", texture)
-                    .parent(models().getExistingFile(new ResourceLocation("block/dried_kelp_block"))));
+                .texture("particle", texture)
+                .texture("down", extend(texture, "_top"))
+                .texture("up", extend(texture, "_top"))
+                .texture("north", texture)
+                .texture("east", texture)
+                .texture("south", texture)
+                .texture("west", texture)
+                .parent(models().getExistingFile(new ResourceLocation("block/dried_kelp_block"))));
         });
     }
 
@@ -427,9 +427,9 @@ public class ModBlockStateProvider extends BlockStateProvider {
         createSet(registry, -1, false, (block, i) -> {
             ResourceLocation texture = customTexture(block, folder);
             simpleBlock(block, models().getBuilder(name(block))
-                    .texture("particle", texture)
-                    .texture("texture", texture)
-                    .parent(models().getExistingFile(new ResourceLocation("block/lily_pad"))));
+                .texture("particle", texture)
+                .texture("texture", texture)
+                .parent(models().getExistingFile(new ResourceLocation("block/lily_pad"))));
         });
     }
 
@@ -458,30 +458,30 @@ public class ModBlockStateProvider extends BlockStateProvider {
     private void createCarvedPumpkinBlock(Block block, String folder, ResourceLocation top, ResourceLocation bottom, ResourceLocation side) {
         ResourceLocation texture = customTexture(block, folder);
         BlockModelBuilder model = models().getBuilder(name(block))
-                .texture("down", bottom)
-                .texture("east", texture)
-                .texture("north", side)
-                .texture("particle", texture)
-                .texture("south", side)
-                .texture("up", top)
-                .texture("west", side)
-                .parent(models().getExistingFile(new ResourceLocation("block/cube")));
+            .texture("down", bottom)
+            .texture("east", texture)
+            .texture("north", side)
+            .texture("particle", texture)
+            .texture("south", side)
+            .texture("up", top)
+            .texture("west", side)
+            .parent(models().getExistingFile(new ResourceLocation("block/cube")));
 
         getVariantBuilder(block)
-                .forAllStates(state -> {
-                    Direction dir = state.getValue(CarvedPumpkinBlock.FACING);
-                    return ConfiguredModel.builder()
-                            .modelFile(model)
-                            .rotationY(dir.getAxis().isVertical() ? 0 : (((int) dir.toYRot()) + 90) % 360)
-                            .build();
-                });
+            .forAllStates(state -> {
+                Direction dir = state.getValue(CarvedPumpkinBlock.FACING);
+                return ConfiguredModel.builder()
+                    .modelFile(model)
+                    .rotationY(dir.getAxis().isVertical() ? 0 : (((int) dir.toYRot()) + 90) % 360)
+                    .build();
+            });
     }
 
     private void createLanternSet(ResourcefulRegistry<Block> registry) {
         createSet(registry, -1, false, (block, i) -> getVariantBuilder(block)
-                .forAllStates(state -> ConfiguredModel.builder()
-                        .modelFile(state.getValue(LanternBlock.HANGING) ? new ModelFile.UncheckedModelFile(extend(blockTexture(block), "_hanging")) : new ModelFile.UncheckedModelFile(blockTexture(block)))
-                        .build()));
+            .forAllStates(state -> ConfiguredModel.builder()
+                .modelFile(state.getValue(LanternBlock.HANGING) ? new ModelFile.UncheckedModelFile(extend(blockTexture(block), "_hanging")) : new ModelFile.UncheckedModelFile(blockTexture(block)))
+                .build()));
 
     }
 
@@ -489,8 +489,8 @@ public class ModBlockStateProvider extends BlockStateProvider {
         createSet(registry.getFirst(), -1, false, (block, i) -> {
             ResourceLocation texture = customTexture(block, folder);
             BlockModelBuilder model = models().getBuilder(name(block))
-                    .texture("torch", texture)
-                    .parent(models().getExistingFile(new ResourceLocation("block/template_torch")));
+                .texture("torch", texture)
+                .parent(models().getExistingFile(new ResourceLocation("block/template_torch")));
 
             simpleBlock(block, model);
         });
@@ -498,18 +498,18 @@ public class ModBlockStateProvider extends BlockStateProvider {
         createSet(registry.getSecond(), (block, i) -> {
             ResourceLocation texture = new ResourceLocation(Chipped.MOD_ID, customTexture(block, folder).getPath().replace("_wall", ""));
             BlockModelBuilder model = models().getBuilder(name(block))
-                    .texture("torch", texture)
-                    .parent(models().getExistingFile(new ResourceLocation("block/template_torch_wall")));
+                .texture("torch", texture)
+                .parent(models().getExistingFile(new ResourceLocation("block/template_torch_wall")));
 
 
             getVariantBuilder(block)
-                    .forAllStates(state -> {
-                        Direction dir = state.getValue(WallTorchBlock.FACING);
-                        return ConfiguredModel.builder()
-                                .modelFile(model)
-                                .rotationY(dir.getAxis().isVertical() ? 0 : (((int) dir.toYRot()) + 90) % 360)
-                                .build();
-                    });
+                .forAllStates(state -> {
+                    Direction dir = state.getValue(WallTorchBlock.FACING);
+                    return ConfiguredModel.builder()
+                        .modelFile(model)
+                        .rotationY(dir.getAxis().isVertical() ? 0 : (((int) dir.toYRot()) + 90) % 360)
+                        .build();
+                });
         });
     }
 
@@ -517,39 +517,39 @@ public class ModBlockStateProvider extends BlockStateProvider {
         createSet(registry.getFirst(), -1, false, (block, i) -> {
             ResourceLocation texture1 = customTexture(block, folder);
             BlockModelBuilder model1 = models().getBuilder(name(block))
-                    .texture("torch", texture1)
-                    .parent(models().getExistingFile(new ResourceLocation("block/template_torch")));
+                .texture("torch", texture1)
+                .parent(models().getExistingFile(new ResourceLocation("block/template_torch")));
 
 
             ResourceLocation texture2 = customTexture(block, folder);
             BlockModelBuilder model2 = models().getBuilder(name(block))
-                    .texture("torch", texture2)
-                    .parent(models().getExistingFile(new ResourceLocation("block/template_torch")));
+                .texture("torch", texture2)
+                .parent(models().getExistingFile(new ResourceLocation("block/template_torch")));
 
             getVariantBuilder(block)
-                    .forAllStates(state -> ConfiguredModel.builder()
-                            .modelFile(state.getValue(RedstoneTorchBlock.LIT) ? model1 : model2)
-                            .build());
+                .forAllStates(state -> ConfiguredModel.builder()
+                    .modelFile(state.getValue(RedstoneTorchBlock.LIT) ? model1 : model2)
+                    .build());
         });
 
         createSet(registry.getSecond(), (block, i) -> {
             ResourceLocation texture = new ResourceLocation(Chipped.MOD_ID, customTexture(block, folder).getPath().replace("_wall", ""));
             BlockModelBuilder model1 = models().getBuilder(name(block))
-                    .texture("torch", extend(texture, "_on"))
-                    .parent(models().getExistingFile(new ResourceLocation("block/template_torch_wall")));
+                .texture("torch", extend(texture, "_on"))
+                .parent(models().getExistingFile(new ResourceLocation("block/template_torch_wall")));
 
             BlockModelBuilder model2 = models().getBuilder(name(block))
-                    .texture("torch", texture)
-                    .parent(models().getExistingFile(new ResourceLocation("block/template_torch_wall")));
+                .texture("torch", texture)
+                .parent(models().getExistingFile(new ResourceLocation("block/template_torch_wall")));
 
             getVariantBuilder(block)
-                    .forAllStates(state -> {
-                        Direction dir = state.getValue(RedstoneWallTorchBlock.FACING);
-                        return ConfiguredModel.builder()
-                                .modelFile(state.getValue(RedstoneWallTorchBlock.LIT) ? model1 : model2)
-                                .rotationY(dir.getAxis().isVertical() ? 0 : (((int) dir.toYRot()) + 90) % 360)
-                                .build();
-                    });
+                .forAllStates(state -> {
+                    Direction dir = state.getValue(RedstoneWallTorchBlock.FACING);
+                    return ConfiguredModel.builder()
+                        .modelFile(state.getValue(RedstoneWallTorchBlock.LIT) ? model1 : model2)
+                        .rotationY(dir.getAxis().isVertical() ? 0 : (((int) dir.toYRot()) + 90) % 360)
+                        .build();
+                });
         });
     }
 
@@ -559,13 +559,13 @@ public class ModBlockStateProvider extends BlockStateProvider {
             BlockModelBuilder model = createChildModel(block, new ResourceLocation("block/ladder"), customTexture(block, folder), "texture", folder);
 
             getVariantBuilder(block)
-                    .forAllStates(state -> {
-                        Direction dir = state.getValue(LadderBlock.FACING);
-                        return ConfiguredModel.builder()
-                                .modelFile(model)
-                                .rotationY(dir.getAxis().isVertical() ? 0 : (((int) dir.toYRot()) + 180) % 360)
-                                .build();
-                    });
+                .forAllStates(state -> {
+                    Direction dir = state.getValue(LadderBlock.FACING);
+                    return ConfiguredModel.builder()
+                        .modelFile(model)
+                        .rotationY(dir.getAxis().isVertical() ? 0 : (((int) dir.toYRot()) + 180) % 360)
+                        .build();
+                });
         });
     }
 
@@ -605,14 +605,14 @@ public class ModBlockStateProvider extends BlockStateProvider {
             ModelFile openModel = isCrate ? model : models().getBuilder(name(block) + "_open").texture("bottom", extend(customTexture(block, folder), "_bottom")).texture("side", extend(customTexture(block, folder), "_side")).texture("top", extend(customTexture(block, folder), "_top_open")).parent(models().getExistingFile(new ResourceLocation("block/cube_bottom_top")));
 
             getVariantBuilder(block)
-                    .forAllStates(state -> {
-                        Direction dir = state.getValue(BarrelBlock.FACING);
-                        return ConfiguredModel.builder()
-                                .modelFile(state.getValue(BarrelBlock.OPEN) ? openModel : model)
-                                .rotationX(dir == Direction.DOWN ? 180 : dir.getAxis().isHorizontal() ? 90 : 0)
-                                .rotationY(dir.getAxis().isVertical() ? 0 : (((int) dir.toYRot()) + 180) % 360)
-                                .build();
-                    });
+                .forAllStates(state -> {
+                    Direction dir = state.getValue(BarrelBlock.FACING);
+                    return ConfiguredModel.builder()
+                        .modelFile(state.getValue(BarrelBlock.OPEN) ? openModel : model)
+                        .rotationX(dir == Direction.DOWN ? 180 : dir.getAxis().isHorizontal() ? 90 : 0)
+                        .rotationY(dir.getAxis().isVertical() ? 0 : (((int) dir.toYRot()) + 180) % 360)
+                        .build();
+                });
         });
     }
 
@@ -623,9 +623,9 @@ public class ModBlockStateProvider extends BlockStateProvider {
             ModelFile modelOn = models().cubeAll(name(block) + "_on", extend(customTexture(block, folder), "_on"));
 
             getVariantBuilder(block)
-                    .forAllStates(state -> ConfiguredModel.builder()
-                            .modelFile(state.getValue(RedstoneLampBlock.LIT) ? modelOn : model)
-                            .build());
+                .forAllStates(state -> ConfiguredModel.builder()
+                    .modelFile(state.getValue(RedstoneLampBlock.LIT) ? modelOn : model)
+                    .build());
         });
     }
 

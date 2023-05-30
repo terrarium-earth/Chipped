@@ -1,5 +1,6 @@
 package earth.terrarium.chipped.datagen.provider.server;
 
+import com.teamresourceful.resourcefullib.common.registry.RegistryEntry;
 import com.teamresourceful.resourcefullib.common.registry.ResourcefulRegistry;
 import earth.terrarium.chipped.Chipped;
 import earth.terrarium.chipped.common.registry.ModBlocks;
@@ -15,6 +16,7 @@ import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.ForgeRegistries;
 
+import java.util.Collection;
 import java.util.Objects;
 
 public class ModItemTagProvider extends TagsProvider<Item> {
@@ -25,6 +27,7 @@ public class ModItemTagProvider extends TagsProvider<Item> {
     @Override
     protected void addTags() {
         ModBlockTagProvider.registerTags(this::createSet);
+        ModBlockTagProvider.registerSpecial(this::createSet);
         addVanillaTags();
     }
 
@@ -109,10 +112,14 @@ public class ModItemTagProvider extends TagsProvider<Item> {
     }
 
     private void createSet(Block block, ResourcefulRegistry<Block> registry, String tag, TagKey<Item> workbench) {
+        createSet(block, registry.getEntries(), tag, workbench);
+    }
+
+    private void createSet(Block block, Collection<RegistryEntry<Block>> registry, String tag, TagKey<Item> workbench) {
         var tagKey = TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation(Chipped.MOD_ID, tag));
         if (block != null) {
             tag(tagKey).add(TagEntry.element(Objects.requireNonNull(ForgeRegistries.BLOCKS.getKey(block))));
         }
-        registry.stream().forEach(b -> tag(tagKey).add(TagEntry.element(b.getId())));
+        registry.forEach(b -> tag(tagKey).add(TagEntry.element(b.getId())));
     }
 }

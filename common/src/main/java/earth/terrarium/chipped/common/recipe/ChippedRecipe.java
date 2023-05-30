@@ -25,11 +25,11 @@ import java.util.stream.StreamSupport;
 
 @MethodsReturnNonnullByDefault
 public record ChippedRecipe(
-        Serializer serializer,
-        ResourceLocation id,
-        String group,
-        List<? extends HolderSet<Item>> tags,
-        Block icon
+    Serializer serializer,
+    ResourceLocation id,
+    String group,
+    List<? extends HolderSet<Item>> tags,
+    Block icon
 ) implements Recipe<Container> {
 
     @Override
@@ -43,10 +43,10 @@ public record ChippedRecipe(
         if (!current.isEmpty()) {
             Item item = current.getItem();
             return this.tags.stream()
-                    .filter(set -> current.is(set::contains))
-                    .flatMap(ModUtils::streamHolderSet)
-                    .filter(value -> value != item)
-                    .map(ItemStack::new);
+                .filter(set -> current.is(set::contains))
+                .flatMap(ModUtils::streamHolderSet)
+                .filter(value -> value != item)
+                .map(ItemStack::new);
         }
         return Stream.empty();
     }
@@ -103,10 +103,10 @@ public record ChippedRecipe(
         public ChippedRecipe fromJson(ResourceLocation id, JsonObject json) {
             String group = GsonHelper.getAsString(json, "group", "");
             List<? extends HolderSet<Item>> tags = StreamSupport.stream(GsonHelper.getAsJsonArray(json, "tags").spliterator(), false)
-                    .map(ModUtils::expectResourcelocation)
-                    .map(tag -> TagKey.create(Registry.ITEM_REGISTRY, tag))
-                    .map(Registry.ITEM::getOrCreateTag)
-                    .toList();
+                .map(ModUtils::expectResourcelocation)
+                .map(tag -> TagKey.create(Registry.ITEM_REGISTRY, tag))
+                .map(Registry.ITEM::getOrCreateTag)
+                .toList();
             return new ChippedRecipe(this, id, group, tags, this.icon.get());
         }
 

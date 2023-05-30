@@ -58,13 +58,13 @@ public class JEIPlugin implements IModPlugin {
     public void registerCategories(IRecipeCategoryRegistration registry) {
         IGuiHelper helper = registry.getJeiHelpers().getGuiHelper();
         registry.addRecipeCategories(
-                new ChippedRecipeCategory(ModBlocks.BOTANIST_WORKBENCH.get().asItem(),  ChippedRecipeCategory.BOTANIST_WORKBENCH_RECIPE, helper),
-                new ChippedRecipeCategory(ModBlocks.GLASSBLOWER.get().asItem(), ChippedRecipeCategory.GLASSBLOWER_RECIPE, helper),
-                new ChippedRecipeCategory(ModBlocks.CARPENTERS_TABLE.get().asItem(), ChippedRecipeCategory.CARPENTERS_TABLE_RECIPE, helper),
-                new ChippedRecipeCategory(ModBlocks.LOOM_TABLE.get().asItem(), ChippedRecipeCategory.LOOM_TABLE_RECIPE, helper),
-                new ChippedRecipeCategory(ModBlocks.MASON_TABLE.get().asItem(), ChippedRecipeCategory.MASON_TABLE_RECIPE, helper),
-                new ChippedRecipeCategory(ModBlocks.ALCHEMY_BENCH.get().asItem(), ChippedRecipeCategory.ALCHEMY_BENCH_RECIPE, helper),
-                new ChippedRecipeCategory(ModBlocks.TINKERING_TABLE.get().asItem(), ChippedRecipeCategory.TINKERING_TABLE_RECIPE, helper)
+            new ChippedRecipeCategory(ModBlocks.BOTANIST_WORKBENCH.get().asItem(), ChippedRecipeCategory.BOTANIST_WORKBENCH_RECIPE, helper),
+            new ChippedRecipeCategory(ModBlocks.GLASSBLOWER.get().asItem(), ChippedRecipeCategory.GLASSBLOWER_RECIPE, helper),
+            new ChippedRecipeCategory(ModBlocks.CARPENTERS_TABLE.get().asItem(), ChippedRecipeCategory.CARPENTERS_TABLE_RECIPE, helper),
+            new ChippedRecipeCategory(ModBlocks.LOOM_TABLE.get().asItem(), ChippedRecipeCategory.LOOM_TABLE_RECIPE, helper),
+            new ChippedRecipeCategory(ModBlocks.MASON_TABLE.get().asItem(), ChippedRecipeCategory.MASON_TABLE_RECIPE, helper),
+            new ChippedRecipeCategory(ModBlocks.ALCHEMY_BENCH.get().asItem(), ChippedRecipeCategory.ALCHEMY_BENCH_RECIPE, helper),
+            new ChippedRecipeCategory(ModBlocks.TINKERING_TABLE.get().asItem(), ChippedRecipeCategory.TINKERING_TABLE_RECIPE, helper)
 
         );
     }

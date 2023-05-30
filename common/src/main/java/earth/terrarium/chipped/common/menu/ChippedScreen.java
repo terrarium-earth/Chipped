@@ -119,9 +119,9 @@ public class ChippedScreen extends AbstractContainerScreen<ChippedMenu> {
                 double d0 = mouseX - (double) (i + i1 % 4 * 16);
                 double d1 = mouseY - (double) (j + i1 / 4 * 18);
                 if (d0 >= 0.0D && d1 >= 0.0D && d0 < 16.0D && d1 < 18.0D
-                        && this.menu.clickMenuButton(this.minecraft.player, l)) {
+                    && this.menu.clickMenuButton(this.minecraft.player, l)) {
                     Minecraft.getInstance().getSoundManager()
-                            .play(SimpleSoundInstance.forUI(SoundEvents.UI_STONECUTTER_SELECT_RECIPE, 1.0F));
+                        .play(SimpleSoundInstance.forUI(SoundEvents.UI_STONECUTTER_SELECT_RECIPE, 1.0F));
                     this.minecraft.gameMode.handleInventoryButtonClick((this.menu).containerId, l);
                     return true;
                 }
@@ -130,7 +130,7 @@ public class ChippedScreen extends AbstractContainerScreen<ChippedMenu> {
             i = this.leftPos + 119;
             j = this.topPos + 9;
             if (mouseX >= (double) i && mouseX < (double) (i + 12) && mouseY >= (double) j
-                    && mouseY < (double) (j + 54)) {
+                && mouseY < (double) (j + 54)) {
                 this.scrolling = true;
             }
         }

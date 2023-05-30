@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "chipped:block/cyan_stained_glass/vertical_striped_cyan_stained_glass"
+  }
+}

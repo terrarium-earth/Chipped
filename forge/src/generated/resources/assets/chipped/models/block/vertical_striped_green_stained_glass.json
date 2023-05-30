@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "chipped:block/green_stained_glass/vertical_striped_green_stained_glass"
+  }
+}

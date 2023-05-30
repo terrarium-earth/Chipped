@@ -1,4 +1,4 @@
-// 1.19.2	2023-02-22T22:49:07.103192	Recipes
+// 1.19.2	2023-05-30T04:11:22.157903	Recipes
 d0e8684e84e976f39ec319950d5e4d6642ecc9e1 data/chipped/advancements/recipes/alchemy_bench.json
 a7cb09e3bd74b8b946acc34b9dda9c5a1e564034 data/chipped/advancements/recipes/botanist_workbench.json
 4ba4acfecfab9831e2cf40cd6793de17bdc34a45 data/chipped/advancements/recipes/carpenters_table.json
@@ -12,4 +12,4 @@ c3ac493aac03dea257e485215937a3466bccf748 data/chipped/recipes/carpenters_table.j
 97b50188765e87d1c7f05e3f615840915346a9d9 data/chipped/recipes/glassblower.json
 79d17bd5aa4e08eb535877de56eb59be51ed83c0 data/chipped/recipes/loom_table.json
 e0d3e60263948bc09734d20cb7c0330a8c708eff data/chipped/recipes/mason_table.json
-337cba373f4c763fc35164ec68461b60fec2764f data/chipped/recipes/tinkering_table.json
+a43acc2955387d8ef5b94e4fc2ac90c98a75a6b6 data/chipped/recipes/tinkering_table.json

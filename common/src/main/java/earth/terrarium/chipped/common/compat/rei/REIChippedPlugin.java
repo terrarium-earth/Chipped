@@ -27,13 +27,13 @@ public class REIChippedPlugin implements REIClientPlugin {
     @Override
     public void registerCategories(CategoryRegistry registry) {
         registry.add(
-                new ChippedRecipeCategory(ModBlocks.BOTANIST_WORKBENCH.get()),
-                new ChippedRecipeCategory(ModBlocks.GLASSBLOWER.get()),
-                new ChippedRecipeCategory(ModBlocks.CARPENTERS_TABLE.get()),
-                new ChippedRecipeCategory(ModBlocks.LOOM_TABLE.get()),
-                new ChippedRecipeCategory(ModBlocks.MASON_TABLE.get()),
-                new ChippedRecipeCategory(ModBlocks.ALCHEMY_BENCH.get()),
-                new ChippedRecipeCategory(ModBlocks.TINKERING_TABLE.get())
+            new ChippedRecipeCategory(ModBlocks.BOTANIST_WORKBENCH.get()),
+            new ChippedRecipeCategory(ModBlocks.GLASSBLOWER.get()),
+            new ChippedRecipeCategory(ModBlocks.CARPENTERS_TABLE.get()),
+            new ChippedRecipeCategory(ModBlocks.LOOM_TABLE.get()),
+            new ChippedRecipeCategory(ModBlocks.MASON_TABLE.get()),
+            new ChippedRecipeCategory(ModBlocks.ALCHEMY_BENCH.get()),
+            new ChippedRecipeCategory(ModBlocks.TINKERING_TABLE.get())
         );
     }
 

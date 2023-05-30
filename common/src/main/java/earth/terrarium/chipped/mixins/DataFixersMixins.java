@@ -21,8 +21,8 @@ public class DataFixersMixins {
     private static BiFunction<Integer, Schema, Schema> SAME_NAMESPACED;
 
     @Inject(
-            method = "addFixers",
-            at = @At("TAIL")
+        method = "addFixers",
+        at = @At("TAIL")
     )
     private static void chipped$addDataFixers(DataFixerBuilder builder, CallbackInfo ci) {
         Schema schema = builder.addSchema(3120, SAME_NAMESPACED);

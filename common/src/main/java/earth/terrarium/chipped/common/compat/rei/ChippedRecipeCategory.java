@@ -65,9 +65,9 @@ public class ChippedRecipeCategory implements DisplayCategory<ChippedRecipeCateg
     }
 
     public record FlattenedRecipe(
-            Ingredient tag,
-            ItemStack result,
-            CategoryIdentifier<FlattenedRecipe> category
+        Ingredient tag,
+        ItemStack result,
+        CategoryIdentifier<FlattenedRecipe> category
     ) implements Display {
         @Override
         public List<EntryIngredient> getInputEntries() {

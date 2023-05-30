@@ -55,25 +55,25 @@ public class ChippedRecipeBuilder implements RecipeBuilder {
             throw new IllegalStateException("No way of obtaining recipe " + id);
         }
         this.advancement.parent(ROOT_RECIPE_ADVANCEMENT)
-                .addCriterion("has_the_recipe", RecipeUnlockedTrigger.unlocked(id))
-                .rewards(net.minecraft.advancements.AdvancementRewards.Builder.recipe(id))
-                .requirements(RequirementsStrategy.OR);
+            .addCriterion("has_the_recipe", RecipeUnlockedTrigger.unlocked(id))
+            .rewards(net.minecraft.advancements.AdvancementRewards.Builder.recipe(id))
+            .requirements(RequirementsStrategy.OR);
 
         consumer.accept(new Result(
-                id,
-                serializer,
-                workbench,
-                this.tags,
-                this.advancement, new ResourceLocation(id.getNamespace(), "recipes/" + id.getPath()))
+            id,
+            serializer,
+            workbench,
+            this.tags,
+            this.advancement, new ResourceLocation(id.getNamespace(), "recipes/" + id.getPath()))
         );
     }
 
     public record Result(
-            ResourceLocation id,
-            RecipeSerializer<ChippedRecipe> serializer,
-            Item workbench,
-            List<String> tags,
-            Advancement.Builder advancement, ResourceLocation advancementId
+        ResourceLocation id,
+        RecipeSerializer<ChippedRecipe> serializer,
+        Item workbench,
+        List<String> tags,
+        Advancement.Builder advancement, ResourceLocation advancementId
     ) implements FinishedRecipe {
 
         @Override

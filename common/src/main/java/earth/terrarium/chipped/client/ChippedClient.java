@@ -14,7 +14,7 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.MenuType;
-import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.block.Block;
 import org.apache.commons.lang3.NotImplementedException;
 
 import java.util.function.Supplier;

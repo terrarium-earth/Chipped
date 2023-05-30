@@ -79,7 +79,7 @@ public class ChippedMenu extends AbstractContainerMenu {
                     long l = p_216954_1_.getGameTime();
                     if (ChippedMenu.this.lastSoundTime != l) {
                         p_216954_1_.playSound(null, p_216954_2_, SoundEvents.UI_STONECUTTER_TAKE_RESULT,
-                                SoundSource.BLOCKS, 1.0F, 1.0F);
+                            SoundSource.BLOCKS, 1.0F, 1.0F);
                         ChippedMenu.this.lastSoundTime = l;
                     }
 
@@ -199,7 +199,7 @@ public class ChippedMenu extends AbstractContainerMenu {
                     return ItemStack.EMPTY;
                 }
             } else if (this.level.getRecipeManager().getRecipeFor(recipeType, new SimpleContainer(itemstack1), this.level)
-                    .isPresent()) {
+                .isPresent()) {
                 if (!this.moveItemStackTo(itemstack1, 0, 1, false)) {
                     return ItemStack.EMPTY;
                 }

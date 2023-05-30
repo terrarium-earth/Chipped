@@ -32,13 +32,18 @@ public class ModRecipeProvider extends RecipeProvider {
             tags.add(name);
             workbenchTags.put(workbench, tags);
         });
+        ModBlockTagProvider.registerSpecial((block, registry, name, workbench) -> {
+            List<String> tags = workbenchTags.getOrDefault(workbench, new ArrayList<>());
+            tags.add(name);
+            workbenchTags.put(workbench, tags);
+        });
         workbenchTags.forEach((tag, blocks) -> createSimpleChippedRecipe(consumer, (RecipeSerializer<ChippedRecipe>) ForgeRegistries.RECIPE_SERIALIZERS.getValue(tag.location()), Objects.requireNonNull(ForgeRegistries.ITEMS.getValue(tag.location())), blocks));
     }
 
     public static void createSimpleChippedRecipe(Consumer<FinishedRecipe> consumer, RecipeSerializer<ChippedRecipe> serializer, Item workbench, List<String> tags) {
         ResourceLocation id = Objects.requireNonNull(ForgeRegistries.ITEMS.getKey(workbench.asItem()));
         ChippedRecipeBuilder builder = new ChippedRecipeBuilder(serializer, workbench, tags)
-                .unlockedBy("has_" + id.getPath(), has(workbench));
+            .unlockedBy("has_" + id.getPath(), has(workbench));
         builder.save(consumer, new ResourceLocation(id.getNamespace(), id.getPath()));
     }
 }
