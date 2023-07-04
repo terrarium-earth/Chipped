@@ -4,6 +4,7 @@ import earth.terrarium.chipped.Chipped;
 import earth.terrarium.chipped.common.registry.ModBlocks;
 import earth.terrarium.chipped.common.registry.ModItems;
 import net.minecraft.data.DataGenerator;
+import net.minecraft.data.PackOutput;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.level.block.RedstoneWallTorchBlock;
 import net.minecraft.world.level.block.WallSignBlock;
@@ -14,7 +15,7 @@ import org.codehaus.plexus.util.StringUtils;
 import java.util.Objects;
 
 public class ModLangProvider extends LanguageProvider {
-    public ModLangProvider(DataGenerator pGenerator) {
+    public ModLangProvider(PackOutput pGenerator) {
         super(pGenerator, Chipped.MOD_ID, "en_us");
     }
 

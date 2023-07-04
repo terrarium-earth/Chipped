@@ -4,11 +4,8 @@
     "chipped:barky_magenta_wool",
     "chipped:blocky_magenta_wool",
     "chipped:bundled_magenta_wool",
-    "chipped:cornered_magenta_wool",
-    "chipped:crafted_magenta_wool",
     "chipped:cross_haired_magenta_wool",
     "chipped:cubed_magenta_wool",
-    "chipped:harsh_quilted_magenta_wool",
     "chipped:knitted_magenta_wool",
     "chipped:patched_magenta_wool",
     "chipped:rectangle_magenta_wool",
@@ -20,6 +17,9 @@
     "chipped:tripped_magenta_wool",
     "chipped:wickered_magenta_wool",
     "chipped:windmill_magenta_wool",
-    "chipped:woved_magenta_wool"
+    "chipped:woved_magenta_wool",
+    "chipped:cornered_magenta_wool",
+    "chipped:crafted_magenta_wool",
+    "chipped:harsh_quilted_magenta_wool"
   ]
 }

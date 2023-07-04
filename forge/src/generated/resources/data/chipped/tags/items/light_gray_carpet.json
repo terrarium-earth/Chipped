@@ -4,11 +4,8 @@
     "chipped:barky_light_gray_carpet",
     "chipped:blocky_light_gray_carpet",
     "chipped:bundled_light_gray_carpet",
-    "chipped:cornered_light_gray_carpet",
-    "chipped:crafted_light_gray_carpet",
     "chipped:cross_haired_light_gray_carpet",
     "chipped:cubed_light_gray_carpet",
-    "chipped:harsh_quilted_light_gray_carpet",
     "chipped:knitted_light_gray_carpet",
     "chipped:patched_light_gray_carpet",
     "chipped:rectangle_light_gray_carpet",
@@ -20,6 +17,9 @@
     "chipped:tripped_light_gray_carpet",
     "chipped:wickered_light_gray_carpet",
     "chipped:windmill_light_gray_carpet",
-    "chipped:woved_light_gray_carpet"
+    "chipped:woved_light_gray_carpet",
+    "chipped:cornered_light_gray_carpet",
+    "chipped:crafted_light_gray_carpet",
+    "chipped:harsh_quilted_light_gray_carpet"
   ]
 }

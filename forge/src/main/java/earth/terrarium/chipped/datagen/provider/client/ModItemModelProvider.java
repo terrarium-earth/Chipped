@@ -6,6 +6,7 @@ import com.teamresourceful.resourcefullib.common.registry.ResourcefulRegistry;
 import earth.terrarium.chipped.Chipped;
 import earth.terrarium.chipped.common.registry.ModBlocks;
 import net.minecraft.data.DataGenerator;
+import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
@@ -19,7 +20,7 @@ import java.util.Objects;
 
 public class ModItemModelProvider extends ItemModelProvider {
 
-    public ModItemModelProvider(DataGenerator output, ExistingFileHelper exFileHelper) {
+    public ModItemModelProvider(PackOutput output, ExistingFileHelper exFileHelper) {
         super(output, Chipped.MOD_ID, exFileHelper);
     }
 

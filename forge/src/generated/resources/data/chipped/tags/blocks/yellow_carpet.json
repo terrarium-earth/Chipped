@@ -4,11 +4,8 @@
     "chipped:barky_yellow_carpet",
     "chipped:blocky_yellow_carpet",
     "chipped:bundled_yellow_carpet",
-    "chipped:cornered_yellow_carpet",
-    "chipped:crafted_yellow_carpet",
     "chipped:cross_haired_yellow_carpet",
     "chipped:cubed_yellow_carpet",
-    "chipped:harsh_quilted_yellow_carpet",
     "chipped:knitted_yellow_carpet",
     "chipped:patched_yellow_carpet",
     "chipped:rectangle_yellow_carpet",
@@ -20,6 +17,9 @@
     "chipped:tripped_yellow_carpet",
     "chipped:wickered_yellow_carpet",
     "chipped:windmill_yellow_carpet",
-    "chipped:woved_yellow_carpet"
+    "chipped:woved_yellow_carpet",
+    "chipped:cornered_yellow_carpet",
+    "chipped:crafted_yellow_carpet",
+    "chipped:harsh_quilted_yellow_carpet"
   ]
 }

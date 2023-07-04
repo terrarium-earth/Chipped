@@ -31,10 +31,9 @@ dependencies {
     common(project(path: ":common", configuration: "namedElements")) { transitive false }
     shadowCommon(project(path: ":common", configuration: "transformProductionFabric")) { transitive false }
 
-    modImplementation "me.codexadrian:ctm-refabricated:1.0.0+1.19"
     modApi "com.teamresourceful.resourcefullib:resourcefullib-fabric-$rootProject.minecraft_version:$rootProject.resourcefullib_version"
-
-    modApi "com.terraformersmc:modmenu:$rootProject.modmenu_version"
+    modApi "earth.terrarium:stitch-fabric-$rootProject.minecraft_version:$rootProject.stitch_version"
+    //modApi "com.terraformersmc:modmenu:$rootProject.modmenu_version"
 
     modRuntimeOnly "me.shedaniel:RoughlyEnoughItems-fabric:$rootProject.rei_version"
     modCompileOnly "me.shedaniel:RoughlyEnoughItems-api-fabric:$rootProject.rei_version"

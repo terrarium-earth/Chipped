@@ -4,11 +4,8 @@
     "chipped:barky_black_wool",
     "chipped:blocky_black_wool",
     "chipped:bundled_black_wool",
-    "chipped:cornered_black_wool",
-    "chipped:crafted_black_wool",
     "chipped:cross_haired_black_wool",
     "chipped:cubed_black_wool",
-    "chipped:harsh_quilted_black_wool",
     "chipped:knitted_black_wool",
     "chipped:patched_black_wool",
     "chipped:rectangle_black_wool",
@@ -20,6 +17,9 @@
     "chipped:tripped_black_wool",
     "chipped:wickered_black_wool",
     "chipped:windmill_black_wool",
-    "chipped:woved_black_wool"
+    "chipped:woved_black_wool",
+    "chipped:cornered_black_wool",
+    "chipped:crafted_black_wool",
+    "chipped:harsh_quilted_black_wool"
   ]
 }

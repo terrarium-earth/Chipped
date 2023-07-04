@@ -14,7 +14,7 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.MenuType;
-import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.block.Block;
 import org.apache.commons.lang3.NotImplementedException;
 
 import java.util.function.Supplier;
@@ -24,7 +24,6 @@ public class ChippedClient {
 
     public static void init() {
         registerRenderTypes();
-
         register(ModMenus.ALCHEMY_BENCH.get(), ChippedScreen::new);
         register(ModMenus.BOTANIST_WORKBENCH.get(), ChippedScreen::new);
         register(ModMenus.CARPENTERS_TABLE.get(), ChippedScreen::new);
@@ -36,6 +35,8 @@ public class ChippedClient {
 
     private static void registerRenderTypes() {
         createSetRenderType(ModBlocks.BENCHES, RenderType.cutout());
+
+        createSetRenderType(ModBlocks.ICE, RenderType.translucent());
 
         createSetRenderType(ModBlocks.GLASS, RenderType.translucent());
         createSetRenderType(ModBlocks.GLASS_PANE, RenderType.translucent());

@@ -78,7 +78,13 @@ subprojects {
         minecraft "com.mojang:minecraft:${rootProject.minecraft_version}"
         mappings loom.layered() {
             officialMojangMappings()
-            parchment("org.parchmentmc.data:parchment-$rootProject.minecraft_version:$rootProject.parchment_version@zip")
+            //parchment("org.parchmentmc.data:parchment-$rootProject.minecraft_version:$rootProject.parchment_version@zip")
+        }
+    }
+
+    remapJar {
+        processResources {
+            exclude("**/ctm/*.png")
         }
     }
 
@@ -99,7 +105,7 @@ subprojects {
             if (modLoader == "fabric") {
                 dependencies {
                     required.project "fabric-api"
-                    required.project "ctm-refabricated"
+                    required.project "stitch"
                     required.project "resourceful-lib"
                     optional.project "jei"
                     optional.project "roughly-enough-items"
@@ -107,6 +113,7 @@ subprojects {
             } else {
                 dependencies {
                     required.project "resourceful-lib"
+                    required.project "stitch"
                     optional.project "jei"
                     optional.project "roughly-enough-items"
                 }
@@ -129,14 +136,14 @@ subprojects {
                 if (modLoader == "fabric") {
                     relations {
                         requiredDependency "fabric-api"
-                        requiredDependency "ctm-refabricated"
+                        requiredDependency "stitch"
                         requiredDependency "resourceful-lib"
                         optionalDependency "jei"
                         optionalDependency "roughly-enough-items"
                     }
                 } else {
                     relations {
-                        requiredDependency "ctm"
+                        requiredDependency "stitch"
                         requiredDependency "resourceful-lib"
                         optionalDependency "jei"
                         optionalDependency "roughly-enough-items"
@@ -157,13 +164,16 @@ allprojects {
     group = rootProject.maven_group
 
     repositories {
+        mavenLocal()
         maven {
             url "https://cursemaven.com"
             content {
                 includeGroup "curse.maven"
             }
         }
-        maven { url = "https://nexus.resourcefulbees.com/repository/maven-public/" }
+        maven {
+            url = "https://nexus.resourcefulbees.com/repository/maven-public/"
+        }
     }
 
     tasks.withType(JavaCompile).tap {

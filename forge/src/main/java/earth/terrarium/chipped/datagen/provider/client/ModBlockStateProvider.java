@@ -4,9 +4,12 @@ import com.mojang.datafixers.util.Pair;
 import com.teamresourceful.resourcefullib.common.registry.RegistryEntry;
 import com.teamresourceful.resourcefullib.common.registry.ResourcefulRegistry;
 import earth.terrarium.chipped.Chipped;
+import earth.terrarium.chipped.common.palette.IdType;
 import earth.terrarium.chipped.common.registry.ModBlocks;
+import earth.terrarium.chipped.common.registry.base.ChippedPaletteRegistry;
 import net.minecraft.core.Direction;
-import net.minecraft.data.DataGenerator;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.packs.PackType;
 import net.minecraft.world.level.block.*;
@@ -21,7 +24,7 @@ import java.util.function.BiConsumer;
 public class ModBlockStateProvider extends BlockStateProvider {
     private final ExistingFileHelper exFileHelper;
 
-    public ModBlockStateProvider(DataGenerator output, ExistingFileHelper exFileHelper) {
+    public ModBlockStateProvider(PackOutput output, ExistingFileHelper exFileHelper) {
         super(output, Chipped.MOD_ID, exFileHelper);
         this.exFileHelper = exFileHelper;
     }
@@ -485,7 +488,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
     }
 
-    private void createTorchSet(Pair<ResourcefulRegistry<Block>, ResourcefulRegistry<Block>> registry, String folder) {
+    private void createTorchSet(Pair<? extends ResourcefulRegistry<Block>, ? extends ResourcefulRegistry<Block>> registry, String folder) {
         createSet(registry.getFirst(), -1, false, (block, i) -> {
             ResourceLocation texture = customTexture(block, folder);
             BlockModelBuilder model = models().getBuilder(name(block))
@@ -513,7 +516,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
         });
     }
 
-    private void createRedstoneTorchSet(Pair<ResourcefulRegistry<Block>, ResourcefulRegistry<Block>> registry, String folder) {
+    private void createRedstoneTorchSet(Pair<? extends ResourcefulRegistry<Block>, ? extends ResourcefulRegistry<Block>> registry, String folder) {
         createSet(registry.getFirst(), -1, false, (block, i) -> {
             ResourceLocation texture1 = customTexture(block, folder);
             BlockModelBuilder model1 = models().getBuilder(name(block))
@@ -640,16 +643,30 @@ public class ModBlockStateProvider extends BlockStateProvider {
         createSet(registry, (block, i) -> axisBlock((RotatedPillarBlock) block, customTexture(block, folder), extend(customTexture(block, folder), "_top")));
     }
 
-    private void createGlassPaneSet(ResourcefulRegistry<Block> registry, String folder) {
-        createSet(registry, -1, false, (block, i) -> {
-            ResourceLocation paneTopTexture;
-            if (exFileHelper.exists(customTexture(block, folder), PackType.CLIENT_RESOURCES, ".png", "textures/block")) {
-                paneTopTexture = extend(customTexture(block, folder), "_top");
+    private void createGlassPaneSet(ChippedPaletteRegistry<Block> registry, String folder) {
+        final String id = BuiltInRegistries.BLOCK.getKey(registry.getBase()).getPath();
+        for (var entry : registry.getPalette().ids()) {
+            final var blockId = new ResourceLocation(Chipped.MOD_ID, entry.getSecond().replace("%", id));
+            final var block = BuiltInRegistries.BLOCK.get(blockId);
+
+            final var pane = blockId.getPath().replace("_pane", "");
+
+            if (entry.getFirst() == IdType.NONE) {
+                ResourceLocation paneTopTexture;
+                if (exFileHelper.exists(customTexture(block, folder), PackType.CLIENT_RESOURCES, ".png", "textures/block")) {
+                    paneTopTexture = extend(customTexture(block, folder), "_top");
+                } else {
+                    paneTopTexture = extend(blockTexture(Blocks.GLASS_PANE), "_top");
+                }
+                paneBlock((IronBarsBlock) block, pane, new ResourceLocation(Chipped.MOD_ID, customTexture(block, folder).getPath().replace("_pane", "")), paneTopTexture);
             } else {
-                paneTopTexture = extend(blockTexture(Blocks.GLASS_PANE), "_top");
+                final var iddahdahdahblahblahblah = new ResourceLocation(Chipped.MOD_ID, "block/" + id.replace("_pane", "") + "/" + pane);
+                simpleBlock(block, models().cubeAll(blockId.getPath(), iddahdahdahblahblahblah));
+                itemModels().getBuilder(blockId.toString())
+                        .parent(new ModelFile.UncheckedModelFile("item/generated"))
+                        .texture("layer0", iddahdahdahblahblahblah);
             }
-            paneBlock((IronBarsBlock) block, key(block).getPath().replace("_pane", ""), new ResourceLocation(Chipped.MOD_ID, customTexture(block, folder).getPath().replace("_pane", "")), paneTopTexture);
-        });
+        }
     }
 
     private void createIronBarsSet(ResourcefulRegistry<Block> registry, String folder) {

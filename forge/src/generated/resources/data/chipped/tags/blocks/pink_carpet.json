@@ -4,11 +4,8 @@
     "chipped:barky_pink_carpet",
     "chipped:blocky_pink_carpet",
     "chipped:bundled_pink_carpet",
-    "chipped:cornered_pink_carpet",
-    "chipped:crafted_pink_carpet",
     "chipped:cross_haired_pink_carpet",
     "chipped:cubed_pink_carpet",
-    "chipped:harsh_quilted_pink_carpet",
     "chipped:knitted_pink_carpet",
     "chipped:patched_pink_carpet",
     "chipped:rectangle_pink_carpet",
@@ -20,6 +17,9 @@
     "chipped:tripped_pink_carpet",
     "chipped:wickered_pink_carpet",
     "chipped:windmill_pink_carpet",
-    "chipped:woved_pink_carpet"
+    "chipped:woved_pink_carpet",
+    "chipped:cornered_pink_carpet",
+    "chipped:crafted_pink_carpet",
+    "chipped:harsh_quilted_pink_carpet"
   ]
 }

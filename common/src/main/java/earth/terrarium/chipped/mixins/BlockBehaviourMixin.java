@@ -2,6 +2,7 @@ package earth.terrarium.chipped.mixins;
 
 import earth.terrarium.chipped.Chipped;
 import net.minecraft.core.Registry;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.Block;
@@ -35,7 +36,7 @@ public abstract class BlockBehaviourMixin {
     private void chipped$getDrops(BlockState state, LootContext.Builder builder, CallbackInfoReturnable<List<ItemStack>> cir) {
         //noinspection ConstantValue
         if (((Object) this) instanceof Block block) {
-            final var blockId = Registry.BLOCK.getKey(block);
+            final var blockId = BuiltInRegistries.BLOCK.getKey(block);
             if (blockId.getNamespace().equals(Chipped.MOD_ID)) {
                 final var id = new ResourceLocation(blockId.getNamespace(), "blocks/" + blockId.getPath());
                 final var table = builder.getLevel().getServer().getLootTables().get(id);

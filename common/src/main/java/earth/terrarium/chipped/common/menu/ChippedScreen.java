@@ -51,7 +51,7 @@ public class ChippedScreen extends AbstractContainerScreen<ChippedMenu> {
         int i1 = this.topPos + 14;
         int j1 = this.startIndex + 12;
         this.renderButtons(poseStack, mouseY, partialTick, l, i1, j1);
-        this.renderRecipes(l, i1, j1);
+        this.renderRecipes(poseStack, l, i1, j1);
     }
 
     @Override
@@ -93,7 +93,7 @@ public class ChippedScreen extends AbstractContainerScreen<ChippedMenu> {
 
     }
 
-    private void renderRecipes(int p_214142_1_, int p_214142_2_, int p_214142_3_) {
+    private void renderRecipes(PoseStack poseStack, int p_214142_1_, int p_214142_2_, int p_214142_3_) {
         List<ItemStack> list = this.menu.getResults();
 
         for (int i = this.startIndex; i < p_214142_3_ && i < list.size(); ++i) {
@@ -101,7 +101,7 @@ public class ChippedScreen extends AbstractContainerScreen<ChippedMenu> {
             int k = p_214142_1_ + j % 4 * 16;
             int l = j / 4;
             int i1 = p_214142_2_ + l * 18 + 2;
-            this.minecraft.getItemRenderer().renderAndDecorateItem(list.get(i), k, i1);
+            this.minecraft.getItemRenderer().renderAndDecorateItem(poseStack, list.get(i), k, i1);
         }
 
     }

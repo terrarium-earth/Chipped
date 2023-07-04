@@ -41,7 +41,6 @@
   "depends": {
     "fabric": "*",
     "minecraft": ">=1.19",
-    "ctm" : "*",
     "resourcefullib": ">=${resourcefullib_version}"
   }
 }

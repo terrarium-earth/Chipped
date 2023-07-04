@@ -4,11 +4,8 @@
     "chipped:barky_light_blue_wool",
     "chipped:blocky_light_blue_wool",
     "chipped:bundled_light_blue_wool",
-    "chipped:cornered_light_blue_wool",
-    "chipped:crafted_light_blue_wool",
     "chipped:cross_haired_light_blue_wool",
     "chipped:cubed_light_blue_wool",
-    "chipped:harsh_quilted_light_blue_wool",
     "chipped:knitted_light_blue_wool",
     "chipped:patched_light_blue_wool",
     "chipped:rectangle_light_blue_wool",
@@ -20,6 +17,9 @@
     "chipped:tripped_light_blue_wool",
     "chipped:wickered_light_blue_wool",
     "chipped:windmill_light_blue_wool",
-    "chipped:woved_light_blue_wool"
+    "chipped:woved_light_blue_wool",
+    "chipped:cornered_light_blue_wool",
+    "chipped:crafted_light_blue_wool",
+    "chipped:harsh_quilted_light_blue_wool"
   ]
 }

@@ -1,5 +1,13 @@
 {
   "parent": "minecraft:block/cube_all",
+  "ctm_textures": {
+    "bottom": "chipped:block/netherrack/ctm/curly_netherrack_pillar/3",
+    "center": "chipped:block/netherrack/ctm/curly_netherrack_pillar/2",
+    "particle": "chipped:block/netherrack/curly_netherrack_pillar",
+    "self": "chipped:block/netherrack/ctm/curly_netherrack_pillar/0",
+    "top": "chipped:block/netherrack/ctm/curly_netherrack_pillar/1"
+  },
+  "stitch:loader": "stitch:pillar",
   "textures": {
     "all": "chipped:block/netherrack/curly_netherrack_pillar"
   }

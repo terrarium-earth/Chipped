@@ -4,11 +4,8 @@
     "chipped:barky_orange_carpet",
     "chipped:blocky_orange_carpet",
     "chipped:bundled_orange_carpet",
-    "chipped:cornered_orange_carpet",
-    "chipped:crafted_orange_carpet",
     "chipped:cross_haired_orange_carpet",
     "chipped:cubed_orange_carpet",
-    "chipped:harsh_quilted_orange_carpet",
     "chipped:knitted_orange_carpet",
     "chipped:patched_orange_carpet",
     "chipped:rectangle_orange_carpet",
@@ -20,6 +17,9 @@
     "chipped:tripped_orange_carpet",
     "chipped:wickered_orange_carpet",
     "chipped:windmill_orange_carpet",
-    "chipped:woved_orange_carpet"
+    "chipped:woved_orange_carpet",
+    "chipped:cornered_orange_carpet",
+    "chipped:crafted_orange_carpet",
+    "chipped:harsh_quilted_orange_carpet"
   ]
 }

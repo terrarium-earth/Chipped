@@ -9,6 +9,7 @@ import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.tags.FluidTags;
 import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.damagesource.DamageSources;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntitySelector;
 import net.minecraft.world.entity.item.FallingBlockEntity;
@@ -107,7 +108,7 @@ public class SpecialPointedDripstoneBlock extends Block implements Fallable, Sim
 
     public void fallOn(Level level, BlockState state, BlockPos pos, Entity entity, float fallDistance) {
         if (state.getValue(TIP_DIRECTION) == Direction.UP && state.getValue(THICKNESS) == DripstoneThickness.TIP) {
-            entity.causeFallDamage(fallDistance + 2.0F, 2.0F, DamageSource.STALAGMITE);
+            entity.causeFallDamage(fallDistance + 2.0F, 2.0F, level.damageSources().stalagmite());
         } else {
             super.fallOn(level, state, pos, entity, fallDistance);
         }
@@ -243,10 +244,6 @@ public class SpecialPointedDripstoneBlock extends Block implements Fallable, Sim
             level.levelEvent(1045, pos, 0);
         }
 
-    }
-
-    public @NotNull DamageSource getFallDamageSource() {
-        return DamageSource.FALLING_STALACTITE;
     }
 
     public @NotNull Predicate<Entity> getHurtsEntitySelector() {

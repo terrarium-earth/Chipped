@@ -5,6 +5,9 @@ import earth.terrarium.chipped.common.util.ModUtils;
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.core.HolderSet;
 import net.minecraft.core.Registry;
+import net.minecraft.core.RegistryAccess;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
@@ -52,7 +55,7 @@ public record ChippedRecipe(
     }
 
     @Override
-    public ItemStack assemble(Container container) {
+    public ItemStack assemble(Container container, RegistryAccess registryAccess) {
         return ItemStack.EMPTY;
     }
 
@@ -62,7 +65,7 @@ public record ChippedRecipe(
     }
 
     @Override
-    public ItemStack getResultItem() {
+    public ItemStack getResultItem(RegistryAccess registryAccess) {
         return ItemStack.EMPTY;
     }
 
@@ -104,8 +107,8 @@ public record ChippedRecipe(
             String group = GsonHelper.getAsString(json, "group", "");
             List<? extends HolderSet<Item>> tags = StreamSupport.stream(GsonHelper.getAsJsonArray(json, "tags").spliterator(), false)
                     .map(ModUtils::expectResourcelocation)
-                    .map(tag -> TagKey.create(Registry.ITEM_REGISTRY, tag))
-                    .map(Registry.ITEM::getOrCreateTag)
+                    .map(tag -> TagKey.create(Registries.ITEM, tag))
+                    .map(BuiltInRegistries.ITEM::getOrCreateTag)
                     .toList();
             return new ChippedRecipe(this, id, group, tags, this.icon.get());
         }

@@ -3,8 +3,13 @@ package earth.terrarium.chipped.datagen.provider.server;
 import com.teamresourceful.resourcefullib.common.registry.ResourcefulRegistry;
 import earth.terrarium.chipped.Chipped;
 import earth.terrarium.chipped.common.registry.ModBlocks;
+import net.minecraft.core.HolderLookup;
 import net.minecraft.core.Registry;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.data.DataGenerator;
+import net.minecraft.data.PackOutput;
+import net.minecraft.data.tags.IntrinsicHolderTagsProvider;
+import net.minecraft.data.tags.ItemTagsProvider;
 import net.minecraft.data.tags.TagsProvider;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
@@ -14,16 +19,19 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.ForgeRegistries;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.Objects;
+import java.util.concurrent.CompletableFuture;
 
-public class ModItemTagProvider extends TagsProvider<Item> {
-    public ModItemTagProvider(DataGenerator gen, ExistingFileHelper exFileHelper) {
-        super(gen, Registry.ITEM, Chipped.MOD_ID, exFileHelper);
+public class ModItemTagProvider extends ItemTagsProvider {
+
+    public ModItemTagProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider, CompletableFuture<TagLookup<Block>> blockTagProvider, ExistingFileHelper existingFileHelper) {
+        super(output, lookupProvider, blockTagProvider, Chipped.MOD_ID, existingFileHelper);
     }
 
     @Override
-    protected void addTags() {
+    protected void addTags(HolderLookup.Provider provider) {
         ModBlockTagProvider.registerTags(this::createSet);
         addVanillaTags();
     }
@@ -109,7 +117,7 @@ public class ModItemTagProvider extends TagsProvider<Item> {
     }
 
     private void createSet(Block block, ResourcefulRegistry<Block> registry, String tag, TagKey<Item> workbench) {
-        var tagKey = TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation(Chipped.MOD_ID, tag));
+        var tagKey = TagKey.create(Registries.ITEM, new ResourceLocation(Chipped.MOD_ID, tag));
         if (block != null) {
             tag(tagKey).add(TagEntry.element(Objects.requireNonNull(ForgeRegistries.BLOCKS.getKey(block))));
         }

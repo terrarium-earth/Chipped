@@ -1,5 +1,13 @@
 {
   "parent": "minecraft:block/cube_all",
+  "ctm_textures": {
+    "bottom": "chipped:block/andesite/ctm/ornate_andesite_pillar/3",
+    "center": "chipped:block/andesite/ctm/ornate_andesite_pillar/2",
+    "particle": "chipped:block/andesite/ornate_andesite_pillar",
+    "self": "chipped:block/andesite/ctm/ornate_andesite_pillar/0",
+    "top": "chipped:block/andesite/ctm/ornate_andesite_pillar/1"
+  },
+  "stitch:loader": "stitch:pillar",
   "textures": {
     "all": "chipped:block/andesite/ornate_andesite_pillar"
   }

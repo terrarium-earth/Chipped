@@ -1,5 +1,13 @@
 {
   "parent": "minecraft:block/cube_all",
+  "ctm_textures": {
+    "center": "chipped:block/raw_iron_block/ctm/overlapping_raw_iron_block_tiles_ctm/3",
+    "empty": "chipped:block/raw_iron_block/ctm/overlapping_raw_iron_block_tiles_ctm/0",
+    "horizontal": "chipped:block/raw_iron_block/ctm/overlapping_raw_iron_block_tiles_ctm/2",
+    "particle": "chipped:block/raw_iron_block/overlapping_raw_iron_block_tiles",
+    "vertical": "chipped:block/raw_iron_block/ctm/overlapping_raw_iron_block_tiles_ctm/1"
+  },
+  "stitch:loader": "stitch:ctm",
   "textures": {
     "all": "chipped:block/raw_iron_block/overlapping_raw_iron_block_tiles"
   }

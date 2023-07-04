@@ -10,7 +10,7 @@ import me.shedaniel.rei.api.common.category.CategoryIdentifier;
 import net.minecraft.client.Minecraft;
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderSet;
-import net.minecraft.core.Registry;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -53,7 +53,7 @@ public class REIChippedPlugin implements REIClientPlugin {
     }
 
     private void registerRecipes(RecipeManager recipeManager, DisplayRegistry registry, RecipeType<ChippedRecipe> type, Block block) {
-        final ResourceLocation category = Registry.BLOCK.getKey(block);
+        final ResourceLocation category = BuiltInRegistries.BLOCK.getKey(block);
         for (ChippedRecipeCategory.FlattenedRecipe recipe : flatten(recipeManager.getAllRecipesFor(type), CategoryIdentifier.of(category))) {
             registry.add(recipe);
         }

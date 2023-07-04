@@ -4,11 +4,8 @@
     "chipped:barky_pink_wool",
     "chipped:blocky_pink_wool",
     "chipped:bundled_pink_wool",
-    "chipped:cornered_pink_wool",
-    "chipped:crafted_pink_wool",
     "chipped:cross_haired_pink_wool",
     "chipped:cubed_pink_wool",
-    "chipped:harsh_quilted_pink_wool",
     "chipped:knitted_pink_wool",
     "chipped:patched_pink_wool",
     "chipped:rectangle_pink_wool",
@@ -20,6 +17,9 @@
     "chipped:tripped_pink_wool",
     "chipped:wickered_pink_wool",
     "chipped:windmill_pink_wool",
-    "chipped:woved_pink_wool"
+    "chipped:woved_pink_wool",
+    "chipped:cornered_pink_wool",
+    "chipped:crafted_pink_wool",
+    "chipped:harsh_quilted_pink_wool"
   ]
 }

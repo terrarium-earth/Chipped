@@ -4,11 +4,8 @@
     "chipped:barky_orange_wool",
     "chipped:blocky_orange_wool",
     "chipped:bundled_orange_wool",
-    "chipped:cornered_orange_wool",
-    "chipped:crafted_orange_wool",
     "chipped:cross_haired_orange_wool",
     "chipped:cubed_orange_wool",
-    "chipped:harsh_quilted_orange_wool",
     "chipped:knitted_orange_wool",
     "chipped:patched_orange_wool",
     "chipped:rectangle_orange_wool",
@@ -20,6 +17,9 @@
     "chipped:tripped_orange_wool",
     "chipped:wickered_orange_wool",
     "chipped:windmill_orange_wool",
-    "chipped:woved_orange_wool"
+    "chipped:woved_orange_wool",
+    "chipped:cornered_orange_wool",
+    "chipped:crafted_orange_wool",
+    "chipped:harsh_quilted_orange_wool"
   ]
 }

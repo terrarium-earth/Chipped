@@ -1,5 +1,13 @@
 {
   "parent": "minecraft:block/cube_all",
+  "ctm_textures": {
+    "bottom": "chipped:block/smooth_stone/ctm/simple_smooth_stone_pillar/3",
+    "center": "chipped:block/smooth_stone/ctm/simple_smooth_stone_pillar/2",
+    "particle": "chipped:block/smooth_stone/simple_smooth_stone_pillar",
+    "self": "chipped:block/smooth_stone/ctm/simple_smooth_stone_pillar/0",
+    "top": "chipped:block/smooth_stone/ctm/simple_smooth_stone_pillar/1"
+  },
+  "stitch:loader": "stitch:pillar",
   "textures": {
     "all": "chipped:block/smooth_stone/simple_smooth_stone_pillar"
   }

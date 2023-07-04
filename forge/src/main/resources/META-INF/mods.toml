@@ -27,13 +27,6 @@ ordering = "NONE"
 side = "BOTH"
 
 [[dependencies.chipped]]
-modId = "ctm"
-mandatory = true
-versionRange = "[0,)"
-ordering = "NONE"
-side = "CLIENT"
-
-[[dependencies.chipped]]
 modId = "resourcefullib"
 mandatory = true
 versionRange = "[${resourcefullib_version},)"

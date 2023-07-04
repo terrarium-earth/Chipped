@@ -1,5 +1,13 @@
 {
   "parent": "minecraft:block/cube_all",
+  "ctm_textures": {
+    "bottom": "chipped:block/gray_terracotta/ctm/gray_terracotta_column/3",
+    "center": "chipped:block/gray_terracotta/ctm/gray_terracotta_column/2",
+    "particle": "chipped:block/gray_terracotta/gray_terracotta_column",
+    "self": "chipped:block/gray_terracotta/ctm/gray_terracotta_column/0",
+    "top": "chipped:block/gray_terracotta/ctm/gray_terracotta_column/1"
+  },
+  "stitch:loader": "stitch:pillar",
   "textures": {
     "all": "chipped:block/gray_terracotta/gray_terracotta_column"
   }

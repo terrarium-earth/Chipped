@@ -1,5 +1,13 @@
 {
   "parent": "minecraft:block/cube_all",
+  "ctm_textures": {
+    "bottom": "chipped:block/gray_stained_glass/ctm/arched_gray_stained_glass_pillar/3",
+    "center": "chipped:block/gray_stained_glass/ctm/arched_gray_stained_glass_pillar/2",
+    "particle": "chipped:block/gray_stained_glass/arched_gray_stained_glass_pillar",
+    "self": "chipped:block/gray_stained_glass/ctm/arched_gray_stained_glass_pillar/0",
+    "top": "chipped:block/gray_stained_glass/ctm/arched_gray_stained_glass_pillar/1"
+  },
+  "stitch:loader": "stitch:limited_pillar",
   "textures": {
     "all": "chipped:block/gray_stained_glass/arched_gray_stained_glass_pillar"
   }

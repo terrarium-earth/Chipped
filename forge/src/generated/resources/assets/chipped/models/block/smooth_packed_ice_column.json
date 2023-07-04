@@ -1,5 +1,13 @@
 {
   "parent": "minecraft:block/cube_all",
+  "ctm_textures": {
+    "center": "chipped:block/packed_ice/ctm/smooth_packed_ice_column_ctm/3",
+    "empty": "chipped:block/packed_ice/ctm/smooth_packed_ice_column_ctm/0",
+    "horizontal": "chipped:block/packed_ice/ctm/smooth_packed_ice_column_ctm/2",
+    "particle": "chipped:block/packed_ice/smooth_packed_ice_column",
+    "vertical": "chipped:block/packed_ice/ctm/smooth_packed_ice_column_ctm/1"
+  },
+  "stitch:loader": "stitch:ctm",
   "textures": {
     "all": "chipped:block/packed_ice/smooth_packed_ice_column"
   }

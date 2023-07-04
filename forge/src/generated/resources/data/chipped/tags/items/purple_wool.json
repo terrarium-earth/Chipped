@@ -4,11 +4,8 @@
     "chipped:barky_purple_wool",
     "chipped:blocky_purple_wool",
     "chipped:bundled_purple_wool",
-    "chipped:cornered_purple_wool",
-    "chipped:crafted_purple_wool",
     "chipped:cross_haired_purple_wool",
     "chipped:cubed_purple_wool",
-    "chipped:harsh_quilted_purple_wool",
     "chipped:knitted_purple_wool",
     "chipped:patched_purple_wool",
     "chipped:rectangle_purple_wool",
@@ -20,6 +17,9 @@
     "chipped:tripped_purple_wool",
     "chipped:wickered_purple_wool",
     "chipped:windmill_purple_wool",
-    "chipped:woved_purple_wool"
+    "chipped:woved_purple_wool",
+    "chipped:cornered_purple_wool",
+    "chipped:crafted_purple_wool",
+    "chipped:harsh_quilted_purple_wool"
   ]
 }

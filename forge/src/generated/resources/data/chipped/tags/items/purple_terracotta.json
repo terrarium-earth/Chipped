@@ -2,21 +2,21 @@
   "values": [
     "minecraft:purple_terracotta",
     "chipped:purple_terracotta_bricks",
-    "chipped:purple_terracotta_column",
-    "chipped:purple_terracotta_pillar",
     "chipped:purple_terracotta_tile",
     "chipped:purple_terracotta_tiles",
     "chipped:chiseled_purple_terracotta",
-    "chipped:circular_purple_terracotta",
     "chipped:crossed_purple_terracotta",
-    "chipped:curled_purple_terracotta",
     "chipped:cut_purple_terracotta",
     "chipped:decorated_purple_terracotta",
+    "chipped:layered_purple_terracotta",
+    "chipped:triangular_purple_terracotta",
+    "chipped:purple_terracotta_column",
+    "chipped:purple_terracotta_pillar",
+    "chipped:small_purple_terracotta_tiles",
+    "chipped:circular_purple_terracotta",
     "chipped:hexagonical_purple_terracotta",
     "chipped:inscribed_purple_terracotta",
-    "chipped:layered_purple_terracotta",
-    "chipped:small_purple_terracotta_tiles",
     "chipped:starry_purple_terracotta",
-    "chipped:triangular_purple_terracotta"
+    "chipped:curled_purple_terracotta"
   ]
 }

@@ -13,6 +13,7 @@ import me.shedaniel.rei.api.common.entry.EntryIngredient;
 import me.shedaniel.rei.api.common.entry.EntryStack;
 import me.shedaniel.rei.api.common.entry.type.VanillaEntryTypes;
 import net.minecraft.core.Registry;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
@@ -28,7 +29,7 @@ public class ChippedRecipeCategory implements DisplayCategory<ChippedRecipeCateg
     private final ItemStack icon;
 
     public ChippedRecipeCategory(Block block) {
-        this.id = CategoryIdentifier.of(Registry.BLOCK.getKey(block));
+        this.id = CategoryIdentifier.of(BuiltInRegistries.BLOCK.getKey(block));
         this.icon = new ItemStack(block);
     }
 

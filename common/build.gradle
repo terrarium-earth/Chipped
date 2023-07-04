@@ -6,9 +6,9 @@ dependencies {
     modImplementation "net.fabricmc:fabric-loader:$rootProject.fabric_loader_version"
 
     modApi "com.teamresourceful.resourcefullib:resourcefullib-common-$rootProject.minecraft_version:$rootProject.resourcefullib_version"
-
-    modCompileOnly "mezz.jei:jei-$rootProject.minecraft_version-common-api:$rootProject.jei_version"
-    modRuntimeOnly "mezz.jei:jei-$rootProject.minecraft_version-common:$rootProject.jei_version"
+    modApi "earth.terrarium:stitch-common-$rootProject.minecraft_version:$rootProject.stitch_version"
+    //modCompileOnly "mezz.jei:jei-$rootProject.minecraft_version-common-api:$rootProject.jei_version"
+    //modRuntimeOnly "mezz.jei:jei-$rootProject.minecraft_version-common:$rootProject.jei_version"
     modCompileOnly "me.shedaniel:RoughlyEnoughItems-api:$rootProject.rei_version"
     modCompileOnly "me.shedaniel:RoughlyEnoughItems-default-plugin:$rootProject.rei_version"
 }

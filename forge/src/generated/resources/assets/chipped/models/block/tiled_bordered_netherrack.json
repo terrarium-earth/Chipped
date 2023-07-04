@@ -1,5 +1,13 @@
 {
   "parent": "minecraft:block/cube_all",
+  "ctm_textures": {
+    "center": "chipped:block/netherrack/ctm/tiled_bordered_netherrack_ctm/3",
+    "empty": "chipped:block/netherrack/ctm/tiled_bordered_netherrack_ctm/0",
+    "horizontal": "chipped:block/netherrack/ctm/tiled_bordered_netherrack_ctm/2",
+    "particle": "chipped:block/netherrack/tiled_bordered_netherrack",
+    "vertical": "chipped:block/netherrack/ctm/tiled_bordered_netherrack_ctm/1"
+  },
+  "stitch:loader": "stitch:ctm",
   "textures": {
     "all": "chipped:block/netherrack/tiled_bordered_netherrack"
   }

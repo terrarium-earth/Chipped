@@ -3,9 +3,9 @@ package earth.terrarium.chipped.datagen.provider.server;
 import com.teamresourceful.resourcefullib.common.registry.ResourcefulRegistry;
 import earth.terrarium.chipped.Chipped;
 import earth.terrarium.chipped.common.registry.ModBlocks;
-import net.minecraft.core.Registry;
-import net.minecraft.data.DataGenerator;
-import net.minecraft.data.tags.TagsProvider;
+import net.minecraft.core.HolderLookup;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.TagEntry;
@@ -14,24 +14,27 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.material.Material;
+import net.minecraftforge.common.data.BlockTagsProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.ForgeRegistries;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.Objects;
+import java.util.concurrent.CompletableFuture;
 
 
-public class ModBlockTagProvider extends TagsProvider<Block> {
+public class ModBlockTagProvider extends BlockTagsProvider {
 
-    public static final TagKey<Item> ALCHEMY_BENCH_TAG = TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation(Chipped.MOD_ID, "alchemy_bench"));
-    public static final TagKey<Item> BOTANIST_WORKBENCH_TAG = TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation(Chipped.MOD_ID, "botanist_workbench"));
-    public static final TagKey<Item> CARPENTERS_TABLE_TAG = TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation(Chipped.MOD_ID, "carpenters_table"));
-    public static final TagKey<Item> GLASSBLOWER_TAG = TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation(Chipped.MOD_ID, "glassblower"));
-    public static final TagKey<Item> LOOM_TABLE_TAG = TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation(Chipped.MOD_ID, "loom_table"));
-    public static final TagKey<Item> MASON_TABLE_TAG = TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation(Chipped.MOD_ID, "mason_table"));
-    public static final TagKey<Item> TINKERING_TABLE_TAG = TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation(Chipped.MOD_ID, "tinkering_table"));
+    public static final TagKey<Item> ALCHEMY_BENCH_TAG = TagKey.create(Registries.ITEM, new ResourceLocation(Chipped.MOD_ID, "alchemy_bench"));
+    public static final TagKey<Item> BOTANIST_WORKBENCH_TAG = TagKey.create(Registries.ITEM, new ResourceLocation(Chipped.MOD_ID, "botanist_workbench"));
+    public static final TagKey<Item> CARPENTERS_TABLE_TAG = TagKey.create(Registries.ITEM, new ResourceLocation(Chipped.MOD_ID, "carpenters_table"));
+    public static final TagKey<Item> GLASSBLOWER_TAG = TagKey.create(Registries.ITEM, new ResourceLocation(Chipped.MOD_ID, "glassblower"));
+    public static final TagKey<Item> LOOM_TABLE_TAG = TagKey.create(Registries.ITEM, new ResourceLocation(Chipped.MOD_ID, "loom_table"));
+    public static final TagKey<Item> MASON_TABLE_TAG = TagKey.create(Registries.ITEM, new ResourceLocation(Chipped.MOD_ID, "mason_table"));
+    public static final TagKey<Item> TINKERING_TABLE_TAG = TagKey.create(Registries.ITEM, new ResourceLocation(Chipped.MOD_ID, "tinkering_table"));
 
-    public ModBlockTagProvider(DataGenerator gen, ExistingFileHelper exFileHelper) {
-        super(gen, Registry.BLOCK, Chipped.MOD_ID, exFileHelper);
+    public ModBlockTagProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider, @Nullable ExistingFileHelper existingFileHelper) {
+        super(output, lookupProvider, Chipped.MOD_ID, existingFileHelper);
     }
 
     public static void registerTags(QuadConsumer<Block, ResourcefulRegistry<Block>, String, TagKey<Item>> consumer) {
@@ -312,7 +315,7 @@ public class ModBlockTagProvider extends TagsProvider<Block> {
     }
 
     @Override
-    protected void addTags() {
+    protected void addTags(HolderLookup.Provider arg) {
         registerTags(this::createSet);
         addVanillaTags();
     }
@@ -388,8 +391,6 @@ public class ModBlockTagProvider extends TagsProvider<Block> {
         createVanillaSet(ModBlocks.SPRUCE_LEAVES, BlockTags.LEAVES);
         createVanillaSet(ModBlocks.OBSIDIAN, BlockTags.NEEDS_DIAMOND_TOOL);
         createVanillaSet(ModBlocks.CRYING_OBSIDIAN, BlockTags.NEEDS_DIAMOND_TOOL);
-        createVanillaSet(ModBlocks.CRIMSON_PLANKS, BlockTags.NON_FLAMMABLE_WOOD);
-        createVanillaSet(ModBlocks.WARPED_PLANKS, BlockTags.NON_FLAMMABLE_WOOD);
         createVanillaSet(ModBlocks.SOUL_LANTERN, BlockTags.PIGLIN_REPELLENTS);
         createVanillaSet(ModBlocks.ACACIA_PLANKS, BlockTags.PLANKS);
         createVanillaSet(ModBlocks.BIRCH_PLANKS, BlockTags.PLANKS);
@@ -460,7 +461,7 @@ public class ModBlockTagProvider extends TagsProvider<Block> {
     }
 
     private void createSet(Block block, ResourcefulRegistry<Block> registry, ResourceLocation tag, TagKey<Item> workbench) {
-        var tagKey = TagKey.create(Registry.BLOCK_REGISTRY, tag);
+        var tagKey = TagKey.create(Registries.BLOCK, tag);
         if (block != null) {
             tag(tagKey).add(TagEntry.element(Objects.requireNonNull(ForgeRegistries.BLOCKS.getKey(block))));
         }

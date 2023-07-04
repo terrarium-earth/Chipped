@@ -5,13 +5,14 @@ import com.teamresourceful.resourcefullib.common.registry.ResourcefulRegistry;
 import earth.terrarium.chipped.Chipped;
 import earth.terrarium.chipped.common.recipe.ChippedRecipe;
 import net.minecraft.core.Registry;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.item.crafting.Recipe;
 import net.minecraft.world.item.crafting.RecipeType;
 
 import java.util.function.Supplier;
 
 public class ModRecipeTypes {
-    public static final ResourcefulRegistry<RecipeType<?>> RECIPE_TYPES = ResourcefulRegistries.create(Registry.RECIPE_TYPE, Chipped.MOD_ID);
+    public static final ResourcefulRegistry<RecipeType<?>> RECIPE_TYPES = ResourcefulRegistries.create(BuiltInRegistries.RECIPE_TYPE, Chipped.MOD_ID);
 
     public static final Supplier<RecipeType<ChippedRecipe>> BOTANIST_WORKBENCH_TYPE = register("botanist_workbench");
     public static final Supplier<RecipeType<ChippedRecipe>> GLASSBLOWER_TYPE = register("glassblower");

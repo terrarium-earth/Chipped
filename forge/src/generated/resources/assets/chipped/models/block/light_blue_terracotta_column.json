@@ -1,5 +1,13 @@
 {
   "parent": "minecraft:block/cube_all",
+  "ctm_textures": {
+    "bottom": "chipped:block/light_blue_terracotta/ctm/light_blue_terracotta_column/3",
+    "center": "chipped:block/light_blue_terracotta/ctm/light_blue_terracotta_column/2",
+    "particle": "chipped:block/light_blue_terracotta/light_blue_terracotta_column",
+    "self": "chipped:block/light_blue_terracotta/ctm/light_blue_terracotta_column/0",
+    "top": "chipped:block/light_blue_terracotta/ctm/light_blue_terracotta_column/1"
+  },
+  "stitch:loader": "stitch:pillar",
   "textures": {
     "all": "chipped:block/light_blue_terracotta/light_blue_terracotta_column"
   }
