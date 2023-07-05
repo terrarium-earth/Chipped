@@ -5,7 +5,6 @@ import com.teamresourceful.resourcefullib.common.registry.RegistryEntry;
 import com.teamresourceful.resourcefullib.common.registry.ResourcefulRegistry;
 import earth.terrarium.chipped.Chipped;
 import earth.terrarium.chipped.common.registry.ModBlocks;
-import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
@@ -88,8 +87,8 @@ public class ModItemModelProvider extends ItemModelProvider {
 
     public void basicBlockItem(Block path, ResourceLocation item, String folder) {
         getBuilder(Objects.requireNonNull(ForgeRegistries.BLOCKS.getKey(path)).toString())
-                .parent(new ModelFile.UncheckedModelFile("item/generated"))
-                .texture("layer0", customTexture(item, folder, true));
+            .parent(new ModelFile.UncheckedModelFile("item/generated"))
+            .texture("layer0", customTexture(item, folder, true));
     }
 
     private void createItemSet(ResourcefulRegistry<Block> registry, String folder) {
@@ -105,8 +104,8 @@ public class ModItemModelProvider extends ItemModelProvider {
 
     public void basicItem(ResourceLocation item, String folder) {
         getBuilder(item.toString())
-                .parent(new ModelFile.UncheckedModelFile("item/generated"))
-                .texture("layer0", customTexture(item, folder, false));
+            .parent(new ModelFile.UncheckedModelFile("item/generated"))
+            .texture("layer0", customTexture(item, folder, false));
     }
 
     public ResourceLocation customTexture(ResourceLocation name, String folder, boolean blockFolder) {

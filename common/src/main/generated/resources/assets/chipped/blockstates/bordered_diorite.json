@@ -1,0 +1,14 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "athena:loader": "athena:ctm",
+  "ctm_textures": {
+    "center": "chipped:block/diorite/ctm/bordered_diorite_ctm/3",
+    "empty": "chipped:block/diorite/ctm/bordered_diorite_ctm/0",
+    "horizontal": "chipped:block/diorite/ctm/bordered_diorite_ctm/2",
+    "particle": "chipped:block/diorite/bordered_diorite",
+    "vertical": "chipped:block/diorite/ctm/bordered_diorite_ctm/1"
+  },
+  "textures": {
+    "all": "chipped:block/diorite/bordered_diorite"
+  }
+}

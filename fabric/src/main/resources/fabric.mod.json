@@ -1,46 +1,48 @@
 {
-  "schemaVersion": 1,
-  "id": "chipped",
-  "version": "${version}",
-  "name": "Chipped",
-  "description": "Every block needs a friend!",
-  "authors": [
-    "Alex Nijjar",
-    "CodexAdrian",
-    "Grimbop",
-    "Kekie6",
-    "Marc-IceBlade",
-    "MsRandom",
-    "ThatGravyBoat"
-  ],
-  "contact": {
-    "homepage": "https://modrinth.com/mod/chipped",
-    "sources": "https://github.com/terrarium-earth/Chipped",
-    "issues": "https://github.com/terrarium-earth/Chipped/issues"
-  },
-  "license": "Terrarium Licence",
-  "icon": "icon.png",
-  "environment": "*",
-  "entrypoints": {
-    "main": [
-      "earth.terrarium.chipped.fabric.ChippedFabric"
+    "schemaVersion": 1,
+    "id": "chipped",
+    "version": "${version}",
+    "name": "Chipped",
+    "description": "Every block needs a friend!",
+    "authors": [
+        "Alex Nijjar",
+        "Grimbop",
+        "Kekie6"
     ],
-    "client": [
-      "earth.terrarium.chipped.client.fabric.ChippedClientFabric"
+    "contributors": [
+        "CodexAdrian",
+        "Facu",
+        "Marc-IceBlade",
+        "MsRandom",
+        "ThatGravyBoat"
     ],
-    "rei_client": [
-      "earth.terrarium.chipped.common.compat.rei.REIChippedPlugin"
+    "contact": {
+        "website": "https://modrinth.com/mod/chipped",
+        "repo": "https://github.com/terrarium-earth/chipped",
+        "issues": "https://github.com/terrarium-earth/chipped/issues"
+    },
+    "license": "Terrarium Licence",
+    "icon": "icon.png",
+    "environment": "*",
+    "entrypoints": {
+        "main": [
+            "earth.terrarium.chipped.fabric.ChippedFabric"
+        ],
+        "client": [
+            "earth.terrarium.chipped.client.fabric.ChippedClientFabric"
+        ],
+        "jei_mod_plugin": [
+            "earth.terrarium.chipped.common.compat.jei.JEIPlugin"
+        ]
+    },
+    "mixins": [
+        "chipped-common.mixins.json"
     ],
-    "jei_mod_plugin": [
-      "earth.terrarium.chipped.common.compat.jei.JEIPlugin"
-    ]
-  },
-  "mixins": [
-    "chipped.mixins.json"
-  ],
-  "depends": {
-    "fabric": "*",
-    "minecraft": ">=1.19",
-    "resourcefullib": ">=${resourcefullib_version}"
-  }
+    "depends": {
+        "fabric": "*",
+        "minecraft": ">=1.20",
+        "java": ">=17",
+        "resourcefullib": ">=2.1.1",
+        "athena": ">=3.0.0"
+    }
 }

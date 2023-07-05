@@ -1,0 +1,14 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "athena:loader": "athena:ctm",
+  "ctm_textures": {
+    "center": "chipped:block/sandstone/ctm/overlapping_sandstone_tiles_ctm/3",
+    "empty": "chipped:block/sandstone/ctm/overlapping_sandstone_tiles_ctm/0",
+    "horizontal": "chipped:block/sandstone/ctm/overlapping_sandstone_tiles_ctm/2",
+    "particle": "chipped:block/sandstone/overlapping_sandstone_tiles",
+    "vertical": "chipped:block/sandstone/ctm/overlapping_sandstone_tiles_ctm/1"
+  },
+  "textures": {
+    "all": "chipped:block/sandstone/overlapping_sandstone_tiles"
+  }
+}

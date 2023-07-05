@@ -1,0 +1,14 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "athena:loader": "athena:pillar",
+  "ctm_textures": {
+    "bottom": "chipped:block/packed_ice/ctm/fine_packed_ice_pillar/3",
+    "center": "chipped:block/packed_ice/ctm/fine_packed_ice_pillar/2",
+    "particle": "chipped:block/packed_ice/fine_packed_ice_pillar",
+    "self": "chipped:block/packed_ice/ctm/fine_packed_ice_pillar/0",
+    "top": "chipped:block/packed_ice/ctm/fine_packed_ice_pillar/1"
+  },
+  "textures": {
+    "all": "chipped:block/packed_ice/fine_packed_ice_pillar"
+  }
+}

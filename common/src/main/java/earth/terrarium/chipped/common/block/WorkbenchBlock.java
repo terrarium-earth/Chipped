@@ -1,11 +1,8 @@
 package earth.terrarium.chipped.common.block;
 
-import net.fabricmc.api.EnvType;
-import net.fabricmc.api.Environment;
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.util.LazyLoadedValue;
@@ -29,7 +26,6 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.level.block.state.properties.EnumProperty;
-import net.minecraft.world.level.material.PushReaction;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
@@ -76,8 +72,8 @@ public class WorkbenchBlock extends Block {
     @Override
     public MenuProvider getMenuProvider(@NotNull BlockState state, @NotNull Level level, @NotNull BlockPos pos) {
         return new SimpleMenuProvider(
-                (id, inventory, player) -> factory.create(id, inventory, ContainerLevelAccess.create(level, pos)),
-                containerName.get()
+            (id, inventory, player) -> factory.create(id, inventory, ContainerLevelAccess.create(level, pos)),
+            containerName.get()
         );
     }
 
@@ -130,12 +126,6 @@ public class WorkbenchBlock extends Block {
         }
     }
 
-    @Deprecated
-    @Override
-    public PushReaction getPistonPushReaction(BlockState state) {
-        return PushReaction.BLOCK;
-    }
-
     @Override
     public VoxelShape getBlockSupportShape(BlockState state, BlockGetter reader, BlockPos pos) {
         return Shapes.empty();
@@ -165,11 +155,9 @@ public class WorkbenchBlock extends Block {
     @Override
     public boolean canSurvive(BlockState state, LevelReader level, BlockPos pos) {
         BlockPos otherpos = pos.relative(state.getValue(FACING).getClockWise());
-        return level.getBlockState(otherpos).getMaterial().isReplaceable();
+        return level.getBlockState(otherpos).canBeReplaced();
     }
 
-    @Deprecated
-    @Environment(EnvType.CLIENT)
     @Override
     public float getShadeBrightness(BlockState state, BlockGetter level, BlockPos pos) {
         return 1;

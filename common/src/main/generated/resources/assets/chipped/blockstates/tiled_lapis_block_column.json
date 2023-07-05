@@ -1,0 +1,14 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "athena:loader": "athena:ctm",
+  "ctm_textures": {
+    "center": "chipped:block/lapis_block/ctm/tiled_lapis_block_column_ctm/3",
+    "empty": "chipped:block/lapis_block/ctm/tiled_lapis_block_column_ctm/0",
+    "horizontal": "chipped:block/lapis_block/ctm/tiled_lapis_block_column_ctm/2",
+    "particle": "chipped:block/lapis_block/tiled_lapis_block_column",
+    "vertical": "chipped:block/lapis_block/ctm/tiled_lapis_block_column_ctm/1"
+  },
+  "textures": {
+    "all": "chipped:block/lapis_block/tiled_lapis_block_column"
+  }
+}

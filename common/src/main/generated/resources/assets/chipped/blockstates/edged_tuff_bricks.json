@@ -1,0 +1,14 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "athena:loader": "athena:ctm",
+  "ctm_textures": {
+    "center": "chipped:block/tuff/ctm/edged_tuff_bricks_ctm/3",
+    "empty": "chipped:block/tuff/ctm/edged_tuff_bricks_ctm/0",
+    "horizontal": "chipped:block/tuff/ctm/edged_tuff_bricks_ctm/2",
+    "particle": "chipped:block/tuff/edged_tuff_bricks",
+    "vertical": "chipped:block/tuff/ctm/edged_tuff_bricks_ctm/1"
+  },
+  "textures": {
+    "all": "chipped:block/tuff/edged_tuff_bricks"
+  }
+}

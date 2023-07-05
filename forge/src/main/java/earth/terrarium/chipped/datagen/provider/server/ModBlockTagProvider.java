@@ -13,7 +13,7 @@ import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.material.Material;
+import net.minecraft.world.level.material.MapColor;
 import net.minecraftforge.common.data.BlockTagsProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -401,7 +401,7 @@ public class ModBlockTagProvider extends BlockTagsProvider {
         createVanillaSet(ModBlocks.SPRUCE_PLANKS, BlockTags.PLANKS);
         createVanillaSet(ModBlocks.CRIMSON_PLANKS, BlockTags.PLANKS);
         createVanillaSet(ModBlocks.WARPED_PLANKS, BlockTags.PLANKS);
-        createVanillaSet(ModBlocks.VINE, BlockTags.REPLACEABLE_PLANTS);
+        createVanillaSet(ModBlocks.VINE, BlockTags.REPLACEABLE_BY_TREES);
         createVanillaSet(ModBlocks.SAND, BlockTags.SAND);
         createVanillaSet(ModBlocks.SNOW_BLOCK, BlockTags.SNOW);
         createVanillaSet(ModBlocks.SOUL_SAND, BlockTags.SOUL_FIRE_BASE_BLOCKS);
@@ -439,14 +439,14 @@ public class ModBlockTagProvider extends BlockTagsProvider {
         createVanillaSet(ModBlocks.SOUL_SAND, BlockTags.SOUL_SPEED_BLOCKS);
 
         ModBlocks.BLOCKS.stream().forEach(b -> {
-            Material material = b.get().defaultBlockState().getMaterial();
-            if (material == Material.STONE || material == Material.METAL || material == Material.AMETHYST || material == Material.HEAVY_METAL) {
+            MapColor material = b.get().defaultMapColor();
+            if (material == MapColor.STONE || material == MapColor.DEEPSLATE || material == MapColor.METAL || material == MapColor.COLOR_PURPLE || material == MapColor.DIAMOND || material == MapColor.LAPIS || material == MapColor.EMERALD || material == MapColor.GOLD || material == MapColor.QUARTZ) {
                 tag(BlockTags.MINEABLE_WITH_PICKAXE).add(TagEntry.element(b.getId()));
             }
-            if (material == Material.WOOD || material == Material.NETHER_WOOD || material == Material.CACTUS) {
+            if (material == MapColor.WOOD || material == MapColor.WARPED_STEM || material == MapColor.CRIMSON_STEM) {
                 tag(BlockTags.MINEABLE_WITH_AXE).add(TagEntry.element(b.getId()));
             }
-            if (material == Material.SAND || material == Material.SNOW || material == Material.GRASS || material == Material.DIRT || material == Material.CLAY) {
+            if (material == MapColor.SAND || material == MapColor.SNOW || material == MapColor.GRASS || material == MapColor.DIRT || material == MapColor.CLAY) {
                 tag(BlockTags.MINEABLE_WITH_SHOVEL).add(TagEntry.element(b.getId()));
             }
         });

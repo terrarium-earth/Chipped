@@ -1,12 +1,11 @@
 package earth.terrarium.chipped.client;
 
+import com.teamresourceful.resourcefullib.common.exceptions.NotImplementedException;
 import com.teamresourceful.resourcefullib.common.registry.ResourcefulRegistry;
 import dev.architectury.injectables.annotations.ExpectPlatform;
 import earth.terrarium.chipped.common.menu.ChippedScreen;
 import earth.terrarium.chipped.common.registry.ModBlocks;
 import earth.terrarium.chipped.common.registry.ModMenus;
-import net.fabricmc.api.EnvType;
-import net.fabricmc.api.Environment;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.client.gui.screens.inventory.MenuAccess;
 import net.minecraft.client.renderer.RenderType;
@@ -15,11 +14,9 @@ import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.MenuType;
 import net.minecraft.world.level.block.Block;
-import org.apache.commons.lang3.NotImplementedException;
 
 import java.util.function.Supplier;
 
-@Environment(EnvType.CLIENT)
 public class ChippedClient {
 
     public static void init() {
@@ -142,7 +139,6 @@ public class ChippedClient {
         throw new NotImplementedException();
     }
 
-    @Environment(EnvType.CLIENT)
     public interface ScreenConstructor<T extends AbstractContainerMenu, U extends Screen & MenuAccess<T>> {
         U create(T abstractContainerMenu, Inventory inventory, Component component);
     }

@@ -21,7 +21,7 @@ public class ModLootTableProvider extends LootTableProvider {
 
     public ModLootTableProvider(PackOutput output) {
         super(output, Set.of(), List.of(
-                new LootTableProvider.SubProviderEntry(BlockLootTables::new, LootContextParamSets.BLOCK)
+            new LootTableProvider.SubProviderEntry(BlockLootTables::new, LootContextParamSets.BLOCK)
         ));
     }
 

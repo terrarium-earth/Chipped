@@ -2,8 +2,6 @@ package earth.terrarium.chipped.common.menu;
 
 import com.google.common.base.Suppliers;
 import earth.terrarium.chipped.common.recipe.ChippedRecipe;
-import net.fabricmc.api.EnvType;
-import net.fabricmc.api.Environment;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.Container;
@@ -60,7 +58,7 @@ public class ChippedMenu extends AbstractContainerMenu {
         super(container, id);
         containerType = container;
         this.access = posCallable;
-        this.level = inventory.player.level;
+        this.level = inventory.player.level();
         this.inputSlot = this.addSlot(new Slot(this.container, 0, 20, 33));
         this.resultSlot = this.addSlot(new Slot(this.resultContainer, 1, 143, 33) {
             public boolean mayPlace(@NotNull ItemStack stack) {
@@ -68,8 +66,8 @@ public class ChippedMenu extends AbstractContainerMenu {
             }
 
             public void onTake(@NotNull Player player, @NotNull ItemStack stack) {
-                stack.onCraftedBy(player.level, player, stack.getCount());
-                ChippedMenu.this.resultContainer.awardUsedRecipes(player);
+                stack.onCraftedBy(player.level(), player, stack.getCount());
+                ChippedMenu.this.resultContainer.awardUsedRecipes(player, this.getRelevantItems());
                 ItemStack itemstack = ChippedMenu.this.inputSlot.remove(1);
                 if (!itemstack.isEmpty()) {
                     ChippedMenu.this.setupResultSlot();
@@ -79,12 +77,16 @@ public class ChippedMenu extends AbstractContainerMenu {
                     long l = p_216954_1_.getGameTime();
                     if (ChippedMenu.this.lastSoundTime != l) {
                         p_216954_1_.playSound(null, p_216954_2_, SoundEvents.UI_STONECUTTER_TAKE_RESULT,
-                                SoundSource.BLOCKS, 1.0F, 1.0F);
+                            SoundSource.BLOCKS, 1.0F, 1.0F);
                         ChippedMenu.this.lastSoundTime = l;
                     }
 
                 });
                 super.onTake(player, stack);
+            }
+
+            private List<ItemStack> getRelevantItems() {
+                return List.of(ChippedMenu.this.inputSlot.getItem());
             }
         });
 
@@ -169,7 +171,6 @@ public class ChippedMenu extends AbstractContainerMenu {
         return containerType;
     }
 
-    @Environment(EnvType.CLIENT)
     public void registerUpdateListener(Runnable p_217071_1_) {
         this.slotUpdateListener = p_217071_1_;
     }
@@ -180,34 +181,34 @@ public class ChippedMenu extends AbstractContainerMenu {
     }
 
     @Override
-    public @NotNull ItemStack quickMoveStack(@NotNull Player player, int p_82846_2_) {
+    public @NotNull ItemStack quickMoveStack(Player player, int index) {
         ItemStack itemstack = ItemStack.EMPTY;
-        Slot slot = this.slots.get(p_82846_2_);
+        Slot slot = this.slots.get(index);
         if (slot.hasItem()) {
             ItemStack itemstack1 = slot.getItem();
             Item item = itemstack1.getItem();
             itemstack = itemstack1.copy();
-            if (p_82846_2_ == 1) {
-                item.onCraftedBy(itemstack1, player.level, player);
+            if (index == 1) {
+                item.onCraftedBy(itemstack1, player.level(), player);
                 if (!this.moveItemStackTo(itemstack1, 2, 38, true)) {
                     return ItemStack.EMPTY;
                 }
 
                 slot.onQuickCraft(itemstack1, itemstack);
-            } else if (p_82846_2_ == 0) {
+            } else if (index == 0) {
                 if (!this.moveItemStackTo(itemstack1, 2, 38, false)) {
                     return ItemStack.EMPTY;
                 }
             } else if (this.level.getRecipeManager().getRecipeFor(recipeType, new SimpleContainer(itemstack1), this.level)
-                    .isPresent()) {
+                .isPresent()) {
                 if (!this.moveItemStackTo(itemstack1, 0, 1, false)) {
                     return ItemStack.EMPTY;
                 }
-            } else if (p_82846_2_ < 29) {
+            } else if (index < 29) {
                 if (!this.moveItemStackTo(itemstack1, 29, 38, false)) {
                     return ItemStack.EMPTY;
                 }
-            } else if (p_82846_2_ < 38 && !this.moveItemStackTo(itemstack1, 2, 29, false)) {
+            } else if (index < 38 && !this.moveItemStackTo(itemstack1, 2, 29, false)) {
                 return ItemStack.EMPTY;
             }
 

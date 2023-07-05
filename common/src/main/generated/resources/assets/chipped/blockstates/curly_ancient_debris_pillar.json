@@ -1,0 +1,14 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "athena:loader": "athena:pillar",
+  "ctm_textures": {
+    "bottom": "chipped:block/ancient_debris/ctm/curly_ancient_debris_pillar/3",
+    "center": "chipped:block/ancient_debris/ctm/curly_ancient_debris_pillar/2",
+    "particle": "chipped:block/ancient_debris/curly_ancient_debris_pillar",
+    "self": "chipped:block/ancient_debris/ctm/curly_ancient_debris_pillar/0",
+    "top": "chipped:block/ancient_debris/ctm/curly_ancient_debris_pillar/1"
+  },
+  "textures": {
+    "all": "chipped:block/ancient_debris/curly_ancient_debris_pillar"
+  }
+}

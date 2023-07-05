@@ -1,0 +1,16 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "athena:loader": "athena:giant",
+  "ctm_textures": {
+    "1": "chipped:block/yellow_concrete/ctm/yellow_concrete_pillar/0",
+    "2": "chipped:block/yellow_concrete/ctm/yellow_concrete_pillar/1",
+    "3": "chipped:block/yellow_concrete/ctm/yellow_concrete_pillar/2",
+    "4": "chipped:block/yellow_concrete/ctm/yellow_concrete_pillar/3",
+    "particle": "chipped:block/yellow_concrete/yellow_concrete_pillar"
+  },
+  "height": 2,
+  "textures": {
+    "all": "chipped:block/yellow_concrete/yellow_concrete_pillar"
+  },
+  "width": 2
+}

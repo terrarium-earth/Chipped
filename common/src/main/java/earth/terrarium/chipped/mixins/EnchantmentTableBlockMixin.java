@@ -17,5 +17,5 @@ public class EnchantmentTableBlockMixin {
         if (level.getBlockState(blockPos.offset(blockPos2)).is(ModBlocks.BOOKSHELF_TAG)) {
             cir.setReturnValue(level.isEmptyBlock(blockPos.offset(blockPos2.getX() / 2, blockPos2.getY(), blockPos2.getZ() / 2)));
         }
-	}
+    }
 }

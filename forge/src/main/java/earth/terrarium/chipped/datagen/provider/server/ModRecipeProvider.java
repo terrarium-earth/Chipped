@@ -3,7 +3,6 @@ package earth.terrarium.chipped.datagen.provider.server;
 import earth.terrarium.chipped.common.recipe.ChippedRecipe;
 import earth.terrarium.chipped.datagen.builder.ChippedRecipeBuilder;
 import net.minecraft.MethodsReturnNonnullByDefault;
-import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.data.recipes.RecipeProvider;
@@ -26,7 +25,7 @@ public class ModRecipeProvider extends RecipeProvider {
     public static void createSimpleChippedRecipe(Consumer<FinishedRecipe> consumer, RecipeSerializer<ChippedRecipe> serializer, Item workbench, List<String> tags) {
         ResourceLocation id = Objects.requireNonNull(ForgeRegistries.ITEMS.getKey(workbench.asItem()));
         ChippedRecipeBuilder builder = new ChippedRecipeBuilder(serializer, workbench, tags)
-                .unlockedBy("has_" + id.getPath(), has(workbench));
+            .unlockedBy("has_" + id.getPath(), has(workbench));
         builder.save(consumer, new ResourceLocation(id.getNamespace(), id.getPath()));
     }
 

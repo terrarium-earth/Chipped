@@ -1,0 +1,14 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "athena:loader": "athena:pillar",
+  "ctm_textures": {
+    "bottom": "chipped:block/basalt/ctm/ornate_basalt_pillar/3",
+    "center": "chipped:block/basalt/ctm/ornate_basalt_pillar/2",
+    "particle": "chipped:block/basalt/ornate_basalt_pillar",
+    "self": "chipped:block/basalt/ctm/ornate_basalt_pillar/0",
+    "top": "chipped:block/basalt/ctm/ornate_basalt_pillar/1"
+  },
+  "textures": {
+    "all": "chipped:block/basalt/ornate_basalt_pillar"
+  }
+}

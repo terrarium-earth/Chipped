@@ -1,0 +1,14 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "athena:loader": "athena:pillar",
+  "ctm_textures": {
+    "bottom": "chipped:block/red_nether_bricks/ctm/fine_red_nether_bricks_pillar/3",
+    "center": "chipped:block/red_nether_bricks/ctm/fine_red_nether_bricks_pillar/2",
+    "particle": "chipped:block/red_nether_bricks/fine_red_nether_bricks_pillar",
+    "self": "chipped:block/red_nether_bricks/ctm/fine_red_nether_bricks_pillar/0",
+    "top": "chipped:block/red_nether_bricks/ctm/fine_red_nether_bricks_pillar/1"
+  },
+  "textures": {
+    "all": "chipped:block/red_nether_bricks/fine_red_nether_bricks_pillar"
+  }
+}

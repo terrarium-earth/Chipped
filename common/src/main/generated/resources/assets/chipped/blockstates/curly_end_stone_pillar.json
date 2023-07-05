@@ -1,0 +1,14 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "athena:loader": "athena:pillar",
+  "ctm_textures": {
+    "bottom": "chipped:block/end_stone/ctm/curly_end_stone_pillar/3",
+    "center": "chipped:block/end_stone/ctm/curly_end_stone_pillar/2",
+    "particle": "chipped:block/end_stone/curly_end_stone_pillar",
+    "self": "chipped:block/end_stone/ctm/curly_end_stone_pillar/0",
+    "top": "chipped:block/end_stone/ctm/curly_end_stone_pillar/1"
+  },
+  "textures": {
+    "all": "chipped:block/end_stone/curly_end_stone_pillar"
+  }
+}

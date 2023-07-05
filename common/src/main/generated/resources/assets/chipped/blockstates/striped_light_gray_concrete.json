@@ -1,0 +1,14 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "athena:loader": "athena:ctm",
+  "ctm_textures": {
+    "center": "chipped:block/light_gray_concrete/ctm/striped_light_gray_concrete_ctm/3",
+    "empty": "chipped:block/light_gray_concrete/ctm/striped_light_gray_concrete_ctm/0",
+    "horizontal": "chipped:block/light_gray_concrete/ctm/striped_light_gray_concrete_ctm/2",
+    "particle": "chipped:block/light_gray_concrete/striped_light_gray_concrete",
+    "vertical": "chipped:block/light_gray_concrete/ctm/striped_light_gray_concrete_ctm/1"
+  },
+  "textures": {
+    "all": "chipped:block/light_gray_concrete/striped_light_gray_concrete"
+  }
+}

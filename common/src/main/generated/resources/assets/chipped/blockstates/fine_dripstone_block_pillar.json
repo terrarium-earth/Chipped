@@ -1,0 +1,14 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "athena:loader": "athena:pillar",
+  "ctm_textures": {
+    "bottom": "chipped:block/dripstone_block/ctm/fine_dripstone_block_pillar/3",
+    "center": "chipped:block/dripstone_block/ctm/fine_dripstone_block_pillar/2",
+    "particle": "chipped:block/dripstone_block/fine_dripstone_block_pillar",
+    "self": "chipped:block/dripstone_block/ctm/fine_dripstone_block_pillar/0",
+    "top": "chipped:block/dripstone_block/ctm/fine_dripstone_block_pillar/1"
+  },
+  "textures": {
+    "all": "chipped:block/dripstone_block/fine_dripstone_block_pillar"
+  }
+}

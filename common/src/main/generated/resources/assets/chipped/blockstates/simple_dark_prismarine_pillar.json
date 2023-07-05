@@ -1,0 +1,14 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "athena:loader": "athena:pillar",
+  "ctm_textures": {
+    "bottom": "chipped:block/dark_prismarine/ctm/simple_dark_prismarine_pillar/3",
+    "center": "chipped:block/dark_prismarine/ctm/simple_dark_prismarine_pillar/2",
+    "particle": "chipped:block/dark_prismarine/simple_dark_prismarine_pillar",
+    "self": "chipped:block/dark_prismarine/ctm/simple_dark_prismarine_pillar/0",
+    "top": "chipped:block/dark_prismarine/ctm/simple_dark_prismarine_pillar/1"
+  },
+  "textures": {
+    "all": "chipped:block/dark_prismarine/simple_dark_prismarine_pillar"
+  }
+}

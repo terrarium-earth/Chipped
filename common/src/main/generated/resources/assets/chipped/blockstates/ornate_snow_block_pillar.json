@@ -1,0 +1,14 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "athena:loader": "athena:pillar",
+  "ctm_textures": {
+    "bottom": "chipped:block/snow_block/ctm/ornate_snow_block_pillar/3",
+    "center": "chipped:block/snow_block/ctm/ornate_snow_block_pillar/2",
+    "particle": "chipped:block/snow_block/ornate_snow_block_pillar",
+    "self": "chipped:block/snow_block/ctm/ornate_snow_block_pillar/0",
+    "top": "chipped:block/snow_block/ctm/ornate_snow_block_pillar/1"
+  },
+  "textures": {
+    "all": "chipped:block/snow_block/ornate_snow_block_pillar"
+  }
+}

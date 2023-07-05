@@ -6,17 +6,11 @@ import earth.terrarium.chipped.datagen.provider.server.ModBlockTagProvider;
 import earth.terrarium.chipped.datagen.provider.server.ModItemTagProvider;
 import earth.terrarium.chipped.datagen.provider.server.ModLootTableProvider;
 import earth.terrarium.chipped.datagen.provider.server.ModRecipeProvider;
-import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;
-import net.minecraft.data.PackOutput;
 import net.minecraftforge.common.data.ExistingFileHelper;
-import net.minecraftforge.common.data.ForgeBlockTagsProvider;
-import net.minecraftforge.common.data.ForgeItemTagsProvider;
 import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
-
-import java.util.concurrent.CompletableFuture;
 
 @Mod.EventBusSubscriber(modid = Chipped.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public final class ChippedDataGenerator {
@@ -33,7 +27,7 @@ public final class ChippedDataGenerator {
         generator.addProvider(event.includeClient(), new ModItemModelProvider(packOutput, existingFileHelper));
         generator.addProvider(event.includeClient(), new ModLangProvider(packOutput));
         generator.addProvider(event.includeClient(), new ModCtmTextureProvider(packOutput, existingFileHelper));
-        generator.addProvider(event.includeClient(), new ModCtmModelProvider(packOutput, stateProvider.models()));
+        generator.addProvider(event.includeClient(), new ModCtmModelProvider(packOutput, stateProvider));
 
         // Server
         generator.addProvider(event.includeServer(), new ModLootTableProvider(packOutput));

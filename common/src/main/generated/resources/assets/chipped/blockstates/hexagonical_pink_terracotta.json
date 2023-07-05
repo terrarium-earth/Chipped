@@ -1,0 +1,16 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "athena:loader": "athena:giant",
+  "ctm_textures": {
+    "1": "chipped:block/pink_terracotta/ctm/hexagonical_pink_terracotta/0",
+    "2": "chipped:block/pink_terracotta/ctm/hexagonical_pink_terracotta/1",
+    "3": "chipped:block/pink_terracotta/ctm/hexagonical_pink_terracotta/2",
+    "4": "chipped:block/pink_terracotta/ctm/hexagonical_pink_terracotta/3",
+    "particle": "chipped:block/pink_terracotta/hexagonical_pink_terracotta"
+  },
+  "height": 2,
+  "textures": {
+    "all": "chipped:block/pink_terracotta/hexagonical_pink_terracotta"
+  },
+  "width": 2
+}

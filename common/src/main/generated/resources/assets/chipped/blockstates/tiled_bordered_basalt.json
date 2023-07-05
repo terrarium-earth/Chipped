@@ -1,0 +1,14 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "athena:loader": "athena:ctm",
+  "ctm_textures": {
+    "center": "chipped:block/basalt/ctm/tiled_bordered_basalt_ctm/3",
+    "empty": "chipped:block/basalt/ctm/tiled_bordered_basalt_ctm/0",
+    "horizontal": "chipped:block/basalt/ctm/tiled_bordered_basalt_ctm/2",
+    "particle": "chipped:block/basalt/tiled_bordered_basalt",
+    "vertical": "chipped:block/basalt/ctm/tiled_bordered_basalt_ctm/1"
+  },
+  "textures": {
+    "all": "chipped:block/basalt/tiled_bordered_basalt"
+  }
+}

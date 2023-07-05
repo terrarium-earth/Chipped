@@ -1,0 +1,16 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "athena:loader": "athena:giant",
+  "ctm_textures": {
+    "1": "chipped:block/clay/ctm/massive_clay_bricks/0",
+    "2": "chipped:block/clay/ctm/massive_clay_bricks/1",
+    "3": "chipped:block/clay/ctm/massive_clay_bricks/2",
+    "4": "chipped:block/clay/ctm/massive_clay_bricks/3",
+    "particle": "chipped:block/clay/massive_clay_bricks"
+  },
+  "height": 2,
+  "textures": {
+    "all": "chipped:block/clay/massive_clay_bricks"
+  },
+  "width": 2
+}

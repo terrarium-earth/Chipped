@@ -1,0 +1,14 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "athena:loader": "athena:pane_pillar",
+  "ctm_textures": {
+    "bottom": "chipped:block/brown_stained_glass/ctm/arched_brown_stained_glass_pillar/3",
+    "center": "chipped:block/brown_stained_glass/ctm/arched_brown_stained_glass_pillar/2",
+    "particle": "chipped:block/brown_stained_glass/arched_brown_stained_glass_pillar",
+    "self": "chipped:block/brown_stained_glass/ctm/arched_brown_stained_glass_pillar/0",
+    "top": "chipped:block/brown_stained_glass/ctm/arched_brown_stained_glass_pillar/1"
+  },
+  "textures": {
+    "all": "chipped:block/brown_stained_glass/arched_brown_stained_glass_pillar"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "athena:loader": "athena:pillar",
+  "ctm_textures": {
+    "bottom": "chipped:block/terracotta/ctm/terracotta_pillar/3",
+    "center": "chipped:block/terracotta/ctm/terracotta_pillar/2",
+    "particle": "chipped:block/terracotta/terracotta_pillar",
+    "self": "chipped:block/terracotta/ctm/terracotta_pillar/0",
+    "top": "chipped:block/terracotta/ctm/terracotta_pillar/1"
+  },
+  "textures": {
+    "all": "chipped:block/terracotta/terracotta_pillar"
+  }
+}

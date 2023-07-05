@@ -1,0 +1,14 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "athena:loader": "athena:pillar",
+  "ctm_textures": {
+    "bottom": "chipped:block/raw_gold_block/ctm/curly_raw_gold_block_pillar/3",
+    "center": "chipped:block/raw_gold_block/ctm/curly_raw_gold_block_pillar/2",
+    "particle": "chipped:block/raw_gold_block/curly_raw_gold_block_pillar",
+    "self": "chipped:block/raw_gold_block/ctm/curly_raw_gold_block_pillar/0",
+    "top": "chipped:block/raw_gold_block/ctm/curly_raw_gold_block_pillar/1"
+  },
+  "textures": {
+    "all": "chipped:block/raw_gold_block/curly_raw_gold_block_pillar"
+  }
+}

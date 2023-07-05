@@ -1,0 +1,14 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "athena:loader": "athena:ctm",
+  "ctm_textures": {
+    "center": "chipped:block/red_nether_bricks/ctm/polished_red_nether_bricks_ctm/3",
+    "empty": "chipped:block/red_nether_bricks/ctm/polished_red_nether_bricks_ctm/0",
+    "horizontal": "chipped:block/red_nether_bricks/ctm/polished_red_nether_bricks_ctm/2",
+    "particle": "chipped:block/red_nether_bricks/polished_red_nether_bricks",
+    "vertical": "chipped:block/red_nether_bricks/ctm/polished_red_nether_bricks_ctm/1"
+  },
+  "textures": {
+    "all": "chipped:block/red_nether_bricks/polished_red_nether_bricks"
+  }
+}

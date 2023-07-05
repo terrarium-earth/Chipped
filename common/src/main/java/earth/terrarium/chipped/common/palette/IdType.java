@@ -33,22 +33,22 @@ public enum IdType {
     public List<IntObjectPair<String>> getTextureIds() {
         return switch (this) {
             case PILLAR, LIMITED_PILLAR, PANE_PILLAR -> List.of(
-                    IntObjectPair.of(0, "self"),
-                    IntObjectPair.of(1, "top"),
-                    IntObjectPair.of(2, "center"),
-                    IntObjectPair.of(3, "bottom")
+                IntObjectPair.of(0, "self"),
+                IntObjectPair.of(1, "top"),
+                IntObjectPair.of(2, "center"),
+                IntObjectPair.of(3, "bottom")
             );
             case CTM, CARPET_CTM, PANE_CTM -> List.of(
-                    IntObjectPair.of(0, "empty"),
-                    IntObjectPair.of(1, "vertical"),
-                    IntObjectPair.of(2, "horizontal"),
-                    IntObjectPair.of(3, "center")
+                IntObjectPair.of(0, "empty"),
+                IntObjectPair.of(1, "vertical"),
+                IntObjectPair.of(2, "horizontal"),
+                IntObjectPair.of(3, "center")
             );
             case GIANT -> List.of(
-                    IntObjectPair.of(0, "1"),
-                    IntObjectPair.of(1, "2"),
-                    IntObjectPair.of(2, "3"),
-                    IntObjectPair.of(3, "4")
+                IntObjectPair.of(0, "1"),
+                IntObjectPair.of(1, "2"),
+                IntObjectPair.of(2, "3"),
+                IntObjectPair.of(3, "4")
             );
             default -> List.of();
         };

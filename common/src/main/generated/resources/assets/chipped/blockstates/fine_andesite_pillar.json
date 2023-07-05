@@ -1,0 +1,14 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "athena:loader": "athena:pillar",
+  "ctm_textures": {
+    "bottom": "chipped:block/andesite/ctm/fine_andesite_pillar/3",
+    "center": "chipped:block/andesite/ctm/fine_andesite_pillar/2",
+    "particle": "chipped:block/andesite/fine_andesite_pillar",
+    "self": "chipped:block/andesite/ctm/fine_andesite_pillar/0",
+    "top": "chipped:block/andesite/ctm/fine_andesite_pillar/1"
+  },
+  "textures": {
+    "all": "chipped:block/andesite/fine_andesite_pillar"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "athena:loader": "athena:pillar",
+  "ctm_textures": {
+    "bottom": "chipped:block/lapis_block/ctm/fine_lapis_block_pillar/3",
+    "center": "chipped:block/lapis_block/ctm/fine_lapis_block_pillar/2",
+    "particle": "chipped:block/lapis_block/fine_lapis_block_pillar",
+    "self": "chipped:block/lapis_block/ctm/fine_lapis_block_pillar/0",
+    "top": "chipped:block/lapis_block/ctm/fine_lapis_block_pillar/1"
+  },
+  "textures": {
+    "all": "chipped:block/lapis_block/fine_lapis_block_pillar"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "parent": "minecraft:block/carpet",
+  "athena:loader": "athena:carpet_ctm",
+  "ctm_textures": {
+    "center": "chipped:block/purple_wool/ctm/crafted_purple_wool_ctm/3",
+    "empty": "chipped:block/purple_wool/ctm/crafted_purple_wool_ctm/0",
+    "horizontal": "chipped:block/purple_wool/ctm/crafted_purple_wool_ctm/2",
+    "particle": "chipped:block/purple_wool/crafted_purple_wool",
+    "vertical": "chipped:block/purple_wool/ctm/crafted_purple_wool_ctm/1"
+  },
+  "textures": {
+    "wool": "chipped:block/purple_wool/crafted_purple_wool"
+  }
+}

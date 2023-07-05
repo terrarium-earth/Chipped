@@ -1,0 +1,14 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "athena:loader": "athena:ctm",
+  "ctm_textures": {
+    "center": "chipped:block/yellow_concrete/ctm/pegged_yellow_concrete_ctm/3",
+    "empty": "chipped:block/yellow_concrete/ctm/pegged_yellow_concrete_ctm/0",
+    "horizontal": "chipped:block/yellow_concrete/ctm/pegged_yellow_concrete_ctm/2",
+    "particle": "chipped:block/yellow_concrete/pegged_yellow_concrete",
+    "vertical": "chipped:block/yellow_concrete/ctm/pegged_yellow_concrete_ctm/1"
+  },
+  "textures": {
+    "all": "chipped:block/yellow_concrete/pegged_yellow_concrete"
+  }
+}

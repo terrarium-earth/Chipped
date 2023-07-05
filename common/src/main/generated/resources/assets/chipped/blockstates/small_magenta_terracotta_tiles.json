@@ -1,0 +1,14 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "athena:loader": "athena:ctm",
+  "ctm_textures": {
+    "center": "chipped:block/magenta_terracotta/ctm/small_magenta_terracotta_tiles_ctm/3",
+    "empty": "chipped:block/magenta_terracotta/ctm/small_magenta_terracotta_tiles_ctm/0",
+    "horizontal": "chipped:block/magenta_terracotta/ctm/small_magenta_terracotta_tiles_ctm/2",
+    "particle": "chipped:block/magenta_terracotta/small_magenta_terracotta_tiles",
+    "vertical": "chipped:block/magenta_terracotta/ctm/small_magenta_terracotta_tiles_ctm/1"
+  },
+  "textures": {
+    "all": "chipped:block/magenta_terracotta/small_magenta_terracotta_tiles"
+  }
+}

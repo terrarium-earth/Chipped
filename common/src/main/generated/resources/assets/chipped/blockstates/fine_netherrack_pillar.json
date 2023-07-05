@@ -1,0 +1,14 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "athena:loader": "athena:pillar",
+  "ctm_textures": {
+    "bottom": "chipped:block/netherrack/ctm/fine_netherrack_pillar/3",
+    "center": "chipped:block/netherrack/ctm/fine_netherrack_pillar/2",
+    "particle": "chipped:block/netherrack/fine_netherrack_pillar",
+    "self": "chipped:block/netherrack/ctm/fine_netherrack_pillar/0",
+    "top": "chipped:block/netherrack/ctm/fine_netherrack_pillar/1"
+  },
+  "textures": {
+    "all": "chipped:block/netherrack/fine_netherrack_pillar"
+  }
+}

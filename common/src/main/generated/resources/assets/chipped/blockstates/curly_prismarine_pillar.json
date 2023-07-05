@@ -1,0 +1,14 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "athena:loader": "athena:pillar",
+  "ctm_textures": {
+    "bottom": "chipped:block/prismarine/ctm/curly_prismarine_pillar/3",
+    "center": "chipped:block/prismarine/ctm/curly_prismarine_pillar/2",
+    "particle": "chipped:block/prismarine/curly_prismarine_pillar",
+    "self": "chipped:block/prismarine/ctm/curly_prismarine_pillar/0",
+    "top": "chipped:block/prismarine/ctm/curly_prismarine_pillar/1"
+  },
+  "textures": {
+    "all": "chipped:block/prismarine/curly_prismarine_pillar"
+  }
+}

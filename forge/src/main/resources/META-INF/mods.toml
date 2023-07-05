@@ -1,34 +1,42 @@
 modLoader = "javafml"
-loaderVersion = "[43,)"
-license = "Terrarium Licence"
-issueTrackerURL = "https://github.com/terrarium-earth/Chipped/issues"
+loaderVersion = "[47,)"
+license = "Terrarium License"
+issueTrackerURL = "https://github.com/terrarium-earth/chipped/issues"
+
 [[mods]]
 modId = "chipped"
 version = "${version}"
 displayName = "Chipped"
+displayURL = "https://modrinth.com/mod/chipped"
 logoFile = "icon.png"
-authors = "Alex Nijjar, CodexAdrian, Grimbop, Kekie6, Marc-IceBlade, MsRandom, ThatGravyBoat"
-description = '''
-Every block needs a friend!
-'''
+authors = "Alex Nijjar, Grimbop, Kekie6"
+credits = "CodexAdrian, Facu, Marc-IceBlade, MsRandom, ThatGravyBoat"
+description = "Every block needs a friend!"
 
 [[dependencies.chipped]]
 modId = "forge"
 mandatory = true
-versionRange = "[43,)"
+versionRange = "[47,)"
 ordering = "NONE"
 side = "BOTH"
 
 [[dependencies.chipped]]
 modId = "minecraft"
 mandatory = true
-versionRange = "[1.19,)"
+versionRange = "[1.20,)"
 ordering = "NONE"
 side = "BOTH"
 
 [[dependencies.chipped]]
 modId = "resourcefullib"
 mandatory = true
-versionRange = "[${resourcefullib_version},)"
+versionRange = "[2.1.1,)"
 ordering = "NONE"
 side = "BOTH"
+
+[[dependencies.chipped]]
+modId = "athena"
+mandatory = true
+versionRange = "[3.0.0,)"
+ordering = "NONE"
+side = "CLIENT"

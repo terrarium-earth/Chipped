@@ -1,0 +1,14 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "athena:loader": "athena:pillar",
+  "ctm_textures": {
+    "bottom": "chipped:block/blackstone/ctm/simple_blackstone_pillar/3",
+    "center": "chipped:block/blackstone/ctm/simple_blackstone_pillar/2",
+    "particle": "chipped:block/blackstone/simple_blackstone_pillar",
+    "self": "chipped:block/blackstone/ctm/simple_blackstone_pillar/0",
+    "top": "chipped:block/blackstone/ctm/simple_blackstone_pillar/1"
+  },
+  "textures": {
+    "all": "chipped:block/blackstone/simple_blackstone_pillar"
+  }
+}

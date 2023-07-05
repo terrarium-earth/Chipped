@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "chipped:block/nether_bricks/overlapping_nether_bricks_tiles"
+  }
+}

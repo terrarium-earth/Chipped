@@ -1,0 +1,14 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "athena:loader": "athena:pillar",
+  "ctm_textures": {
+    "bottom": "chipped:block/orange_terracotta/ctm/orange_terracotta_column/3",
+    "center": "chipped:block/orange_terracotta/ctm/orange_terracotta_column/2",
+    "particle": "chipped:block/orange_terracotta/orange_terracotta_column",
+    "self": "chipped:block/orange_terracotta/ctm/orange_terracotta_column/0",
+    "top": "chipped:block/orange_terracotta/ctm/orange_terracotta_column/1"
+  },
+  "textures": {
+    "all": "chipped:block/orange_terracotta/orange_terracotta_column"
+  }
+}

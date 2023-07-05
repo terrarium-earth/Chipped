@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "chipped:block/amethyst_block/tiled_bordered_amethyst_block"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "athena:loader": "athena:ctm",
+  "ctm_textures": {
+    "center": "chipped:block/cobblestone/ctm/tiny_brick_bordered_cobblestone_ctm/3",
+    "empty": "chipped:block/cobblestone/ctm/tiny_brick_bordered_cobblestone_ctm/0",
+    "horizontal": "chipped:block/cobblestone/ctm/tiny_brick_bordered_cobblestone_ctm/2",
+    "particle": "chipped:block/cobblestone/tiny_brick_bordered_cobblestone",
+    "vertical": "chipped:block/cobblestone/ctm/tiny_brick_bordered_cobblestone_ctm/1"
+  },
+  "textures": {
+    "all": "chipped:block/cobblestone/tiny_brick_bordered_cobblestone"
+  }
+}

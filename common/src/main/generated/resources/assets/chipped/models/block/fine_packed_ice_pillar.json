@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "chipped:block/packed_ice/fine_packed_ice_pillar"
+  }
+}
