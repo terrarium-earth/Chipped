@@ -1,5 +1,4 @@
 {
-  "parent": "minecraft:block/cube_all",
   "athena:loader": "athena:giant",
   "ctm_textures": {
     "1": "chipped:block/netherrack/ctm/massive_netherrack_bricks/0",
@@ -9,8 +8,10 @@
     "particle": "chipped:block/netherrack/massive_netherrack_bricks"
   },
   "height": 2,
-  "textures": {
-    "all": "chipped:block/netherrack/massive_netherrack_bricks"
+  "variants": {
+    "": {
+      "model": "chipped:block/massive_netherrack_bricks"
+    }
   },
   "width": 2
 }

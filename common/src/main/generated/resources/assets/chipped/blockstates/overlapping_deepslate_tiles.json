@@ -1,5 +1,4 @@
 {
-  "parent": "minecraft:block/cube_all",
   "athena:loader": "athena:ctm",
   "ctm_textures": {
     "center": "chipped:block/deepslate/ctm/overlapping_deepslate_tiles_ctm/3",
@@ -8,7 +7,9 @@
     "particle": "chipped:block/deepslate/overlapping_deepslate_tiles",
     "vertical": "chipped:block/deepslate/ctm/overlapping_deepslate_tiles_ctm/1"
   },
-  "textures": {
-    "all": "chipped:block/deepslate/overlapping_deepslate_tiles"
+  "variants": {
+    "": {
+      "model": "chipped:block/overlapping_deepslate_tiles"
+    }
   }
 }

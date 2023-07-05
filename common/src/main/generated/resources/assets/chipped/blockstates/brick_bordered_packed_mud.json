@@ -1,5 +1,4 @@
 {
-  "parent": "minecraft:block/cube_all",
   "athena:loader": "athena:ctm",
   "ctm_textures": {
     "center": "chipped:block/packed_mud/ctm/brick_bordered_packed_mud_ctm/3",
@@ -8,7 +7,9 @@
     "particle": "chipped:block/packed_mud/brick_bordered_packed_mud",
     "vertical": "chipped:block/packed_mud/ctm/brick_bordered_packed_mud_ctm/1"
   },
-  "textures": {
-    "all": "chipped:block/packed_mud/brick_bordered_packed_mud"
+  "variants": {
+    "": {
+      "model": "chipped:block/brick_bordered_packed_mud"
+    }
   }
 }

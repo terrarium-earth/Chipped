@@ -19,6 +19,7 @@ import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.ForgeRegistries;
 
 import java.util.List;
+import java.util.Map;
 import java.util.function.BiConsumer;
 
 public class ModBlockStateProvider extends BlockStateProvider {
@@ -727,5 +728,9 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
     private BlockModelBuilder createChildModel(ResourceLocation model, ResourceLocation parent, ResourceLocation texture, String textureName) {
         return models().getBuilder(model.getPath()).texture(textureName, texture).texture("particle", texture).parent(models().getExistingFile(parent));
+    }
+
+    public Map<Block, IGeneratedBlockState> getGeneratedBlockStates() {
+        return registeredBlocks;
     }
 }

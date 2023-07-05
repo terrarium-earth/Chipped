@@ -1,5 +1,4 @@
 {
-  "parent": "minecraft:block/cube_all",
   "athena:loader": "athena:ctm",
   "ctm_textures": {
     "center": "chipped:block/crying_obsidian/ctm/smooth_crying_obsidian_column_ctm/3",
@@ -8,7 +7,9 @@
     "particle": "chipped:block/crying_obsidian/smooth_crying_obsidian_column",
     "vertical": "chipped:block/crying_obsidian/ctm/smooth_crying_obsidian_column_ctm/1"
   },
-  "textures": {
-    "all": "chipped:block/crying_obsidian/smooth_crying_obsidian_column"
+  "variants": {
+    "": {
+      "model": "chipped:block/smooth_crying_obsidian_column"
+    }
   }
 }

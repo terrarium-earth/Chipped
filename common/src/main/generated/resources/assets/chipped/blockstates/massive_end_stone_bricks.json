@@ -1,5 +1,4 @@
 {
-  "parent": "minecraft:block/cube_all",
   "athena:loader": "athena:giant",
   "ctm_textures": {
     "1": "chipped:block/end_stone/ctm/massive_end_stone_bricks/0",
@@ -9,8 +8,10 @@
     "particle": "chipped:block/end_stone/massive_end_stone_bricks"
   },
   "height": 2,
-  "textures": {
-    "all": "chipped:block/end_stone/massive_end_stone_bricks"
+  "variants": {
+    "": {
+      "model": "chipped:block/massive_end_stone_bricks"
+    }
   },
   "width": 2
 }

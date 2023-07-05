@@ -1,5 +1,4 @@
 {
-  "parent": "minecraft:block/cube_all",
   "athena:loader": "athena:ctm",
   "ctm_textures": {
     "center": "chipped:block/snow_block/ctm/polished_snow_block_ctm/3",
@@ -8,7 +7,9 @@
     "particle": "chipped:block/snow_block/polished_snow_block",
     "vertical": "chipped:block/snow_block/ctm/polished_snow_block_ctm/1"
   },
-  "textures": {
-    "all": "chipped:block/snow_block/polished_snow_block"
+  "variants": {
+    "": {
+      "model": "chipped:block/polished_snow_block"
+    }
   }
 }

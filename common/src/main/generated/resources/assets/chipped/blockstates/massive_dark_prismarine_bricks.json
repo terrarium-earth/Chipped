@@ -1,5 +1,4 @@
 {
-  "parent": "minecraft:block/cube_all",
   "athena:loader": "athena:giant",
   "ctm_textures": {
     "1": "chipped:block/dark_prismarine/ctm/massive_dark_prismarine_bricks/0",
@@ -9,8 +8,10 @@
     "particle": "chipped:block/dark_prismarine/massive_dark_prismarine_bricks"
   },
   "height": 2,
-  "textures": {
-    "all": "chipped:block/dark_prismarine/massive_dark_prismarine_bricks"
+  "variants": {
+    "": {
+      "model": "chipped:block/massive_dark_prismarine_bricks"
+    }
   },
   "width": 2
 }

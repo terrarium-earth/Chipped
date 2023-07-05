@@ -1,5 +1,4 @@
 {
-  "parent": "minecraft:block/cube_all",
   "athena:loader": "athena:ctm",
   "ctm_textures": {
     "center": "chipped:block/raw_iron_block/ctm/tiled_bordered_raw_iron_block_ctm/3",
@@ -8,7 +7,9 @@
     "particle": "chipped:block/raw_iron_block/tiled_bordered_raw_iron_block",
     "vertical": "chipped:block/raw_iron_block/ctm/tiled_bordered_raw_iron_block_ctm/1"
   },
-  "textures": {
-    "all": "chipped:block/raw_iron_block/tiled_bordered_raw_iron_block"
+  "variants": {
+    "": {
+      "model": "chipped:block/tiled_bordered_raw_iron_block"
+    }
   }
 }

@@ -1,16 +1,15 @@
 {
-  "parent": "minecraft:block/cube_all",
-  "athena:loader": "athena:giant",
+  "athena:loader": "athena:pillar",
   "ctm_textures": {
-    "1": "chipped:block/brown_concrete/ctm/brown_concrete_pillar/0",
-    "2": "chipped:block/brown_concrete/ctm/brown_concrete_pillar/1",
-    "3": "chipped:block/brown_concrete/ctm/brown_concrete_pillar/2",
-    "4": "chipped:block/brown_concrete/ctm/brown_concrete_pillar/3",
-    "particle": "chipped:block/brown_concrete/brown_concrete_pillar"
+    "bottom": "chipped:block/brown_concrete/ctm/brown_concrete_pillar/3",
+    "center": "chipped:block/brown_concrete/ctm/brown_concrete_pillar/2",
+    "particle": "chipped:block/brown_concrete/brown_concrete_pillar",
+    "self": "chipped:block/brown_concrete/ctm/brown_concrete_pillar/0",
+    "top": "chipped:block/brown_concrete/ctm/brown_concrete_pillar/1"
   },
-  "height": 2,
-  "textures": {
-    "all": "chipped:block/brown_concrete/brown_concrete_pillar"
-  },
-  "width": 2
+  "variants": {
+    "": {
+      "model": "chipped:block/brown_concrete_pillar"
+    }
+  }
 }

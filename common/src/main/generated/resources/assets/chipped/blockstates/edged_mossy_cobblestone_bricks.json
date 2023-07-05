@@ -1,5 +1,4 @@
 {
-  "parent": "minecraft:block/cube_all",
   "athena:loader": "athena:ctm",
   "ctm_textures": {
     "center": "chipped:block/mossy_cobblestone/ctm/edged_mossy_cobblestone_bricks_ctm/3",
@@ -8,7 +7,9 @@
     "particle": "chipped:block/mossy_cobblestone/edged_mossy_cobblestone_bricks",
     "vertical": "chipped:block/mossy_cobblestone/ctm/edged_mossy_cobblestone_bricks_ctm/1"
   },
-  "textures": {
-    "all": "chipped:block/mossy_cobblestone/edged_mossy_cobblestone_bricks"
+  "variants": {
+    "": {
+      "model": "chipped:block/edged_mossy_cobblestone_bricks"
+    }
   }
 }

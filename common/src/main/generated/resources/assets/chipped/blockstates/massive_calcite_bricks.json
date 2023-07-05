@@ -1,5 +1,4 @@
 {
-  "parent": "minecraft:block/cube_all",
   "athena:loader": "athena:giant",
   "ctm_textures": {
     "1": "chipped:block/calcite/ctm/massive_calcite_bricks/0",
@@ -9,8 +8,10 @@
     "particle": "chipped:block/calcite/massive_calcite_bricks"
   },
   "height": 2,
-  "textures": {
-    "all": "chipped:block/calcite/massive_calcite_bricks"
+  "variants": {
+    "": {
+      "model": "chipped:block/massive_calcite_bricks"
+    }
   },
   "width": 2
 }

@@ -1,5 +1,4 @@
 {
-  "parent": "minecraft:block/cube_all",
   "athena:loader": "athena:ctm",
   "ctm_textures": {
     "center": "chipped:block/ancient_debris/ctm/smooth_ancient_debris_column_ctm/3",
@@ -8,7 +7,9 @@
     "particle": "chipped:block/ancient_debris/smooth_ancient_debris_column",
     "vertical": "chipped:block/ancient_debris/ctm/smooth_ancient_debris_column_ctm/1"
   },
-  "textures": {
-    "all": "chipped:block/ancient_debris/smooth_ancient_debris_column"
+  "variants": {
+    "": {
+      "model": "chipped:block/smooth_ancient_debris_column"
+    }
   }
 }

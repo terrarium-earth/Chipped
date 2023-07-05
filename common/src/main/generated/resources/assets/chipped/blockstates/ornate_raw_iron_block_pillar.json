@@ -1,5 +1,4 @@
 {
-  "parent": "minecraft:block/cube_all",
   "athena:loader": "athena:pillar",
   "ctm_textures": {
     "bottom": "chipped:block/raw_iron_block/ctm/ornate_raw_iron_block_pillar/3",
@@ -8,7 +7,9 @@
     "self": "chipped:block/raw_iron_block/ctm/ornate_raw_iron_block_pillar/0",
     "top": "chipped:block/raw_iron_block/ctm/ornate_raw_iron_block_pillar/1"
   },
-  "textures": {
-    "all": "chipped:block/raw_iron_block/ornate_raw_iron_block_pillar"
+  "variants": {
+    "": {
+      "model": "chipped:block/ornate_raw_iron_block_pillar"
+    }
   }
 }

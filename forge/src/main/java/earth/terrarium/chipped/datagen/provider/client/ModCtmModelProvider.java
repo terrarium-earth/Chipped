@@ -1,6 +1,7 @@
 package earth.terrarium.chipped.datagen.provider.client;
 
 import com.google.gson.JsonObject;
+import earth.terrarium.athena.impl.client.DefaultModels;
 import earth.terrarium.chipped.Chipped;
 import earth.terrarium.chipped.common.registry.ModBlocks;
 import earth.terrarium.chipped.common.registry.base.ChippedPaletteRegistry;
@@ -12,7 +13,6 @@ import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.GsonHelper;
 import net.minecraft.world.level.block.Block;
-import net.minecraftforge.client.model.generators.BlockModelProvider;
 import org.jetbrains.annotations.NotNull;
 
 import java.nio.file.Path;
@@ -23,10 +23,10 @@ import java.util.concurrent.CompletableFuture;
 public class ModCtmModelProvider implements DataProvider {
 
     private final PackOutput output;
-    private final BlockModelProvider files;
+    private final ModBlockStateProvider files;
     private final List<ChippedPaletteRegistry<Block>> registries = new ArrayList<>();
 
-    public ModCtmModelProvider(PackOutput output, BlockModelProvider files) {
+    public ModCtmModelProvider(PackOutput output, ModBlockStateProvider files) {
         this.output = output;
         this.files = files;
         addRegistries();
@@ -194,11 +194,12 @@ public class ModCtmModelProvider implements DataProvider {
                 final String id = BuiltInRegistries.BLOCK.getKey(registry.getBase()).getPath();
                 for (var ctm : registry.getPalette().getSpecial()) {
                     final ResourceLocation blockLoc = new ResourceLocation(Chipped.MOD_ID, "block/" + ctm.getSecond().replace("%", id));
-                    final ResourceLocation location = new ResourceLocation(Chipped.MOD_ID, "models/block/" + ctm.getSecond().replace("%", id) + ".json");
+                    final ResourceLocation location = new ResourceLocation(Chipped.MOD_ID, "blockstates/" + ctm.getSecond().replace("%", id) + ".json");
                     Path path = this.output.getOutputFolder(PackOutput.Target.RESOURCE_PACK).resolve(location.getNamespace()).resolve(location.getPath());
                     try {
-                        var json = files.generatedModels.get(blockLoc).toJson();
-                        var textures = GsonHelper.getAsJsonObject(json, "textures");
+                        Block block = BuiltInRegistries.BLOCK.get(new ResourceLocation(Chipped.MOD_ID, ctm.getSecond().replace("%", id)));
+                        var json = files.getGeneratedBlockStates().get(block).toJson();
+                        var textures = GsonHelper.getAsJsonObject(files.models().generatedModels.get(blockLoc).toJson(), "textures");
                         var ctmTexture = getCommonTexture(textures);
 
                         JsonObject ctmTextures = new JsonObject();
@@ -209,9 +210,10 @@ public class ModCtmModelProvider implements DataProvider {
                         for (var entry : ctm.getFirst().getTextureIds()) {
                             ctmTextures.addProperty(entry.value(), main + "/ctm/" + blockName + suffix + "/" + entry.keyInt());
                         }
+
                         ctm.getFirst().addTextureInfo(json);
                         json.add("ctm_textures", ctmTextures);
-                        json.addProperty("stitch:loader", "stitch:" + ctm.getFirst().id());
+                        json.addProperty(new ResourceLocation(DefaultModels.MODID, "loader").toString(), new ResourceLocation(DefaultModels.MODID, ctm.getFirst().id()).toString());
                         DataProvider.saveStable(arg, json, path).join();
                     } catch (Exception e) {
                         System.out.println("Missing model: " + location);
@@ -234,6 +236,6 @@ public class ModCtmModelProvider implements DataProvider {
 
     @Override
     public @NotNull String getName() {
-        return "Chipped CTM Models";
+        return "Chipped CTM Blockstates";
     }
 }

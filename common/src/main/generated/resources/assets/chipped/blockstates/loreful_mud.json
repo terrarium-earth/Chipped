@@ -1,5 +1,4 @@
 {
-  "parent": "minecraft:block/cube_all",
   "athena:loader": "athena:giant",
   "ctm_textures": {
     "1": "chipped:block/mud/ctm/loreful_mud/0",
@@ -9,8 +8,10 @@
     "particle": "chipped:block/mud/loreful_mud"
   },
   "height": 2,
-  "textures": {
-    "all": "chipped:block/mud/loreful_mud"
+  "variants": {
+    "": {
+      "model": "chipped:block/loreful_mud"
+    }
   },
   "width": 2
 }

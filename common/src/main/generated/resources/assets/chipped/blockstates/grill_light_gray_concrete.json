@@ -1,5 +1,4 @@
 {
-  "parent": "minecraft:block/cube_all",
   "athena:loader": "athena:ctm",
   "ctm_textures": {
     "center": "chipped:block/light_gray_concrete/ctm/grill_light_gray_concrete_ctm/3",
@@ -8,7 +7,9 @@
     "particle": "chipped:block/light_gray_concrete/grill_light_gray_concrete",
     "vertical": "chipped:block/light_gray_concrete/ctm/grill_light_gray_concrete_ctm/1"
   },
-  "textures": {
-    "all": "chipped:block/light_gray_concrete/grill_light_gray_concrete"
+  "variants": {
+    "": {
+      "model": "chipped:block/grill_light_gray_concrete"
+    }
   }
 }

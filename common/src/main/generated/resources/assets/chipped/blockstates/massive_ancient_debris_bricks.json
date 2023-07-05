@@ -1,5 +1,4 @@
 {
-  "parent": "minecraft:block/cube_all",
   "athena:loader": "athena:giant",
   "ctm_textures": {
     "1": "chipped:block/ancient_debris/ctm/massive_ancient_debris_bricks/0",
@@ -9,8 +8,10 @@
     "particle": "chipped:block/ancient_debris/massive_ancient_debris_bricks"
   },
   "height": 2,
-  "textures": {
-    "all": "chipped:block/ancient_debris/massive_ancient_debris_bricks"
+  "variants": {
+    "": {
+      "model": "chipped:block/massive_ancient_debris_bricks"
+    }
   },
   "width": 2
 }

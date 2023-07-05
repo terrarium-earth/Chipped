@@ -1,5 +1,4 @@
 {
-  "parent": "minecraft:block/cube_all",
   "athena:loader": "athena:ctm",
   "ctm_textures": {
     "center": "chipped:block/deepslate/ctm/tiny_brick_bordered_deepslate_ctm/3",
@@ -8,7 +7,9 @@
     "particle": "chipped:block/deepslate/tiny_brick_bordered_deepslate",
     "vertical": "chipped:block/deepslate/ctm/tiny_brick_bordered_deepslate_ctm/1"
   },
-  "textures": {
-    "all": "chipped:block/deepslate/tiny_brick_bordered_deepslate"
+  "variants": {
+    "": {
+      "model": "chipped:block/tiny_brick_bordered_deepslate"
+    }
   }
 }

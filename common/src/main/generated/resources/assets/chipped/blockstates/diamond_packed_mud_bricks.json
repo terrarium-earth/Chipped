@@ -1,5 +1,4 @@
 {
-  "parent": "minecraft:block/cube_all",
   "athena:loader": "athena:giant",
   "ctm_textures": {
     "1": "chipped:block/packed_mud/ctm/diamond_packed_mud_bricks/0",
@@ -9,8 +8,10 @@
     "particle": "chipped:block/packed_mud/diamond_packed_mud_bricks"
   },
   "height": 2,
-  "textures": {
-    "all": "chipped:block/packed_mud/diamond_packed_mud_bricks"
+  "variants": {
+    "": {
+      "model": "chipped:block/diamond_packed_mud_bricks"
+    }
   },
   "width": 2
 }

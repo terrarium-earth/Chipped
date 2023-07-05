@@ -1,5 +1,4 @@
 {
-  "parent": "minecraft:block/cube_all",
   "athena:loader": "athena:ctm",
   "ctm_textures": {
     "center": "chipped:block/gilded_blackstone/ctm/tiny_brick_bordered_gilded_blackstone_ctm/3",
@@ -8,7 +7,9 @@
     "particle": "chipped:block/gilded_blackstone/tiny_brick_bordered_gilded_blackstone",
     "vertical": "chipped:block/gilded_blackstone/ctm/tiny_brick_bordered_gilded_blackstone_ctm/1"
   },
-  "textures": {
-    "all": "chipped:block/gilded_blackstone/tiny_brick_bordered_gilded_blackstone"
+  "variants": {
+    "": {
+      "model": "chipped:block/tiny_brick_bordered_gilded_blackstone"
+    }
   }
 }

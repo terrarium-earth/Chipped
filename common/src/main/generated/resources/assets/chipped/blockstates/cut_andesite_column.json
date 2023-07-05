@@ -1,5 +1,4 @@
 {
-  "parent": "minecraft:block/cube_all",
   "athena:loader": "athena:ctm",
   "ctm_textures": {
     "center": "chipped:block/andesite/ctm/cut_andesite_column_ctm/3",
@@ -8,7 +7,9 @@
     "particle": "chipped:block/andesite/cut_andesite_column",
     "vertical": "chipped:block/andesite/ctm/cut_andesite_column_ctm/1"
   },
-  "textures": {
-    "all": "chipped:block/andesite/cut_andesite_column"
+  "variants": {
+    "": {
+      "model": "chipped:block/cut_andesite_column"
+    }
   }
 }

@@ -1,5 +1,4 @@
 {
-  "parent": "minecraft:block/cube_all",
   "athena:loader": "athena:ctm",
   "ctm_textures": {
     "center": "chipped:block/crying_obsidian/ctm/bordered_crying_obsidian_ctm/3",
@@ -8,7 +7,9 @@
     "particle": "chipped:block/crying_obsidian/bordered_crying_obsidian",
     "vertical": "chipped:block/crying_obsidian/ctm/bordered_crying_obsidian_ctm/1"
   },
-  "textures": {
-    "all": "chipped:block/crying_obsidian/bordered_crying_obsidian"
+  "variants": {
+    "": {
+      "model": "chipped:block/bordered_crying_obsidian"
+    }
   }
 }

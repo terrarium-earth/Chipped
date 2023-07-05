@@ -1,5 +1,4 @@
 {
-  "parent": "minecraft:block/cube_all",
   "athena:loader": "athena:ctm",
   "ctm_textures": {
     "center": "chipped:block/quartz_block/ctm/edged_quartz_block_bricks_ctm/3",
@@ -8,7 +7,9 @@
     "particle": "chipped:block/quartz_block/edged_quartz_block_bricks",
     "vertical": "chipped:block/quartz_block/ctm/edged_quartz_block_bricks_ctm/1"
   },
-  "textures": {
-    "all": "chipped:block/quartz_block/edged_quartz_block_bricks"
+  "variants": {
+    "": {
+      "model": "chipped:block/edged_quartz_block_bricks"
+    }
   }
 }

@@ -1,5 +1,4 @@
 {
-  "parent": "minecraft:block/cube_all",
   "athena:loader": "athena:giant",
   "ctm_textures": {
     "1": "chipped:block/terracotta/ctm/curled_terracotta/0",
@@ -9,8 +8,10 @@
     "particle": "chipped:block/terracotta/curled_terracotta"
   },
   "height": 2,
-  "textures": {
-    "all": "chipped:block/terracotta/curled_terracotta"
+  "variants": {
+    "": {
+      "model": "chipped:block/curled_terracotta"
+    }
   },
   "width": 2
 }

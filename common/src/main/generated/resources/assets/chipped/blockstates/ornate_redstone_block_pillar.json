@@ -1,5 +1,4 @@
 {
-  "parent": "minecraft:block/cube_all",
   "athena:loader": "athena:pillar",
   "ctm_textures": {
     "bottom": "chipped:block/redstone_block/ctm/ornate_redstone_block_pillar/3",
@@ -8,7 +7,9 @@
     "self": "chipped:block/redstone_block/ctm/ornate_redstone_block_pillar/0",
     "top": "chipped:block/redstone_block/ctm/ornate_redstone_block_pillar/1"
   },
-  "textures": {
-    "all": "chipped:block/redstone_block/ornate_redstone_block_pillar"
+  "variants": {
+    "": {
+      "model": "chipped:block/ornate_redstone_block_pillar"
+    }
   }
 }

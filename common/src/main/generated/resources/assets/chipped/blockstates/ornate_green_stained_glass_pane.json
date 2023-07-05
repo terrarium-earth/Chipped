@@ -1,5 +1,4 @@
 {
-  "parent": "minecraft:block/cube_all",
   "athena:loader": "athena:pane_ctm",
   "ctm_textures": {
     "center": "chipped:block/green_stained_glass/ctm/ornate_green_stained_glass_ctm/3",
@@ -8,7 +7,9 @@
     "particle": "chipped:block/green_stained_glass/ornate_green_stained_glass",
     "vertical": "chipped:block/green_stained_glass/ctm/ornate_green_stained_glass_ctm/1"
   },
-  "textures": {
-    "all": "chipped:block/green_stained_glass/ornate_green_stained_glass"
+  "variants": {
+    "": {
+      "model": "chipped:block/ornate_green_stained_glass_pane"
+    }
   }
 }

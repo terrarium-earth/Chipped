@@ -1,5 +1,4 @@
 {
-  "parent": "minecraft:block/cube_all",
   "athena:loader": "athena:giant",
   "ctm_textures": {
     "1": "chipped:block/packed_mud/ctm/large_packed_mud_sigil/0",
@@ -9,8 +8,10 @@
     "particle": "chipped:block/packed_mud/large_packed_mud_sigil"
   },
   "height": 2,
-  "textures": {
-    "all": "chipped:block/packed_mud/large_packed_mud_sigil"
+  "variants": {
+    "": {
+      "model": "chipped:block/large_packed_mud_sigil"
+    }
   },
   "width": 2
 }

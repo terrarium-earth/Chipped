@@ -1,5 +1,4 @@
 {
-  "parent": "minecraft:block/cube_all",
   "athena:loader": "athena:ctm",
   "ctm_textures": {
     "center": "chipped:block/dirt/ctm/bordered_dirt_ctm/3",
@@ -8,7 +7,9 @@
     "particle": "chipped:block/dirt/bordered_dirt",
     "vertical": "chipped:block/dirt/ctm/bordered_dirt_ctm/1"
   },
-  "textures": {
-    "all": "chipped:block/dirt/bordered_dirt"
+  "variants": {
+    "": {
+      "model": "chipped:block/bordered_dirt"
+    }
   }
 }

@@ -1,5 +1,4 @@
 {
-  "parent": "minecraft:block/cube_all",
   "athena:loader": "athena:giant",
   "ctm_textures": {
     "1": "chipped:block/diorite/ctm/massive_diorite_bricks/0",
@@ -9,8 +8,10 @@
     "particle": "chipped:block/diorite/massive_diorite_bricks"
   },
   "height": 2,
-  "textures": {
-    "all": "chipped:block/diorite/massive_diorite_bricks"
+  "variants": {
+    "": {
+      "model": "chipped:block/massive_diorite_bricks"
+    }
   },
   "width": 2
 }

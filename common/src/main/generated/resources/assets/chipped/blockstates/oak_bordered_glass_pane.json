@@ -1,5 +1,4 @@
 {
-  "parent": "minecraft:block/cube_all",
   "athena:loader": "athena:pane_ctm",
   "ctm_textures": {
     "center": "chipped:block/glass/ctm/oak_bordered_glass_ctm/3",
@@ -8,7 +7,9 @@
     "particle": "chipped:block/glass/oak_bordered_glass",
     "vertical": "chipped:block/glass/ctm/oak_bordered_glass_ctm/1"
   },
-  "textures": {
-    "all": "chipped:block/glass/oak_bordered_glass"
+  "variants": {
+    "": {
+      "model": "chipped:block/oak_bordered_glass_pane"
+    }
   }
 }

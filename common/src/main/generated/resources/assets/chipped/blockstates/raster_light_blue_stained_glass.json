@@ -1,5 +1,4 @@
 {
-  "parent": "minecraft:block/cube_all",
   "athena:loader": "athena:ctm",
   "ctm_textures": {
     "center": "chipped:block/light_blue_stained_glass/ctm/raster_light_blue_stained_glass_ctm/3",
@@ -8,7 +7,9 @@
     "particle": "chipped:block/light_blue_stained_glass/raster_light_blue_stained_glass",
     "vertical": "chipped:block/light_blue_stained_glass/ctm/raster_light_blue_stained_glass_ctm/1"
   },
-  "textures": {
-    "all": "chipped:block/light_blue_stained_glass/raster_light_blue_stained_glass"
+  "variants": {
+    "": {
+      "model": "chipped:block/raster_light_blue_stained_glass"
+    }
   }
 }

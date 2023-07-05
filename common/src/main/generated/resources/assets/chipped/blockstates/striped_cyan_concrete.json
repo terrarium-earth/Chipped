@@ -1,5 +1,4 @@
 {
-  "parent": "minecraft:block/cube_all",
   "athena:loader": "athena:ctm",
   "ctm_textures": {
     "center": "chipped:block/cyan_concrete/ctm/striped_cyan_concrete_ctm/3",
@@ -8,7 +7,9 @@
     "particle": "chipped:block/cyan_concrete/striped_cyan_concrete",
     "vertical": "chipped:block/cyan_concrete/ctm/striped_cyan_concrete_ctm/1"
   },
-  "textures": {
-    "all": "chipped:block/cyan_concrete/striped_cyan_concrete"
+  "variants": {
+    "": {
+      "model": "chipped:block/striped_cyan_concrete"
+    }
   }
 }

@@ -1,5 +1,4 @@
 {
-  "parent": "minecraft:block/cube_all",
   "athena:loader": "athena:ctm",
   "ctm_textures": {
     "center": "chipped:block/blue_concrete/ctm/blue_concrete_panel_ctm/3",
@@ -8,7 +7,9 @@
     "particle": "chipped:block/blue_concrete/blue_concrete_panel",
     "vertical": "chipped:block/blue_concrete/ctm/blue_concrete_panel_ctm/1"
   },
-  "textures": {
-    "all": "chipped:block/blue_concrete/blue_concrete_panel"
+  "variants": {
+    "": {
+      "model": "chipped:block/blue_concrete_panel"
+    }
   }
 }

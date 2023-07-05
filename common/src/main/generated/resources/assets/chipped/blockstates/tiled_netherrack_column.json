@@ -1,5 +1,4 @@
 {
-  "parent": "minecraft:block/cube_all",
   "athena:loader": "athena:ctm",
   "ctm_textures": {
     "center": "chipped:block/netherrack/ctm/tiled_netherrack_column_ctm/3",
@@ -8,7 +7,9 @@
     "particle": "chipped:block/netherrack/tiled_netherrack_column",
     "vertical": "chipped:block/netherrack/ctm/tiled_netherrack_column_ctm/1"
   },
-  "textures": {
-    "all": "chipped:block/netherrack/tiled_netherrack_column"
+  "variants": {
+    "": {
+      "model": "chipped:block/tiled_netherrack_column"
+    }
   }
 }

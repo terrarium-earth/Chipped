@@ -1,5 +1,4 @@
 {
-  "parent": "minecraft:block/cube_all",
   "athena:loader": "athena:ctm",
   "ctm_textures": {
     "center": "chipped:block/smooth_stone/ctm/cut_smooth_stone_column_ctm/3",
@@ -8,7 +7,9 @@
     "particle": "chipped:block/smooth_stone/cut_smooth_stone_column",
     "vertical": "chipped:block/smooth_stone/ctm/cut_smooth_stone_column_ctm/1"
   },
-  "textures": {
-    "all": "chipped:block/smooth_stone/cut_smooth_stone_column"
+  "variants": {
+    "": {
+      "model": "chipped:block/cut_smooth_stone_column"
+    }
   }
 }

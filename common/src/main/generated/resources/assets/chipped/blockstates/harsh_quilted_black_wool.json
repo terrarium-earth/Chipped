@@ -1,5 +1,4 @@
 {
-  "parent": "minecraft:block/cube_all",
   "athena:loader": "athena:ctm",
   "ctm_textures": {
     "center": "chipped:block/black_wool/ctm/harsh_quilted_black_wool_ctm/3",
@@ -8,7 +7,9 @@
     "particle": "chipped:block/black_wool/harsh_quilted_black_wool",
     "vertical": "chipped:block/black_wool/ctm/harsh_quilted_black_wool_ctm/1"
   },
-  "textures": {
-    "all": "chipped:block/black_wool/harsh_quilted_black_wool"
+  "variants": {
+    "": {
+      "model": "chipped:block/harsh_quilted_black_wool"
+    }
   }
 }

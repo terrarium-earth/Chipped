@@ -1,5 +1,4 @@
 {
-  "parent": "minecraft:block/cube_all",
   "athena:loader": "athena:ctm",
   "ctm_textures": {
     "center": "chipped:block/packed_ice/ctm/thick_inlayed_packed_ice_ctm/3",
@@ -8,7 +7,9 @@
     "particle": "chipped:block/packed_ice/thick_inlayed_packed_ice",
     "vertical": "chipped:block/packed_ice/ctm/thick_inlayed_packed_ice_ctm/1"
   },
-  "textures": {
-    "all": "chipped:block/packed_ice/thick_inlayed_packed_ice"
+  "variants": {
+    "": {
+      "model": "chipped:block/thick_inlayed_packed_ice"
+    }
   }
 }

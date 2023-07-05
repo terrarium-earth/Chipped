@@ -1,5 +1,4 @@
 {
-  "parent": "minecraft:block/cube_all",
   "athena:loader": "athena:ctm",
   "ctm_textures": {
     "center": "chipped:block/packed_ice/ctm/smooth_packed_ice_column_ctm/3",
@@ -8,7 +7,9 @@
     "particle": "chipped:block/packed_ice/smooth_packed_ice_column",
     "vertical": "chipped:block/packed_ice/ctm/smooth_packed_ice_column_ctm/1"
   },
-  "textures": {
-    "all": "chipped:block/packed_ice/smooth_packed_ice_column"
+  "variants": {
+    "": {
+      "model": "chipped:block/smooth_packed_ice_column"
+    }
   }
 }

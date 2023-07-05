@@ -1,5 +1,4 @@
 {
-  "parent": "minecraft:block/cube_all",
   "athena:loader": "athena:ctm",
   "ctm_textures": {
     "center": "chipped:block/blue_ice/ctm/overlapping_blue_ice_tiles_ctm/3",
@@ -8,7 +7,9 @@
     "particle": "chipped:block/blue_ice/overlapping_blue_ice_tiles",
     "vertical": "chipped:block/blue_ice/ctm/overlapping_blue_ice_tiles_ctm/1"
   },
-  "textures": {
-    "all": "chipped:block/blue_ice/overlapping_blue_ice_tiles"
+  "variants": {
+    "": {
+      "model": "chipped:block/overlapping_blue_ice_tiles"
+    }
   }
 }

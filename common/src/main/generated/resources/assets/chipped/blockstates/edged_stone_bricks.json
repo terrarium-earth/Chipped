@@ -1,5 +1,4 @@
 {
-  "parent": "minecraft:block/cube_all",
   "athena:loader": "athena:ctm",
   "ctm_textures": {
     "center": "chipped:block/stone/ctm/edged_stone_bricks_ctm/3",
@@ -8,7 +7,9 @@
     "particle": "chipped:block/stone/edged_stone_bricks",
     "vertical": "chipped:block/stone/ctm/edged_stone_bricks_ctm/1"
   },
-  "textures": {
-    "all": "chipped:block/stone/edged_stone_bricks"
+  "variants": {
+    "": {
+      "model": "chipped:block/edged_stone_bricks"
+    }
   }
 }

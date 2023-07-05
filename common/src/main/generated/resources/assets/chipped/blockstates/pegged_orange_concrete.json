@@ -1,5 +1,4 @@
 {
-  "parent": "minecraft:block/cube_all",
   "athena:loader": "athena:ctm",
   "ctm_textures": {
     "center": "chipped:block/orange_concrete/ctm/pegged_orange_concrete_ctm/3",
@@ -8,7 +7,9 @@
     "particle": "chipped:block/orange_concrete/pegged_orange_concrete",
     "vertical": "chipped:block/orange_concrete/ctm/pegged_orange_concrete_ctm/1"
   },
-  "textures": {
-    "all": "chipped:block/orange_concrete/pegged_orange_concrete"
+  "variants": {
+    "": {
+      "model": "chipped:block/pegged_orange_concrete"
+    }
   }
 }

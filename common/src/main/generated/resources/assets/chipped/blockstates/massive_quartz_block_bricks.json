@@ -1,5 +1,4 @@
 {
-  "parent": "minecraft:block/cube_all",
   "athena:loader": "athena:giant",
   "ctm_textures": {
     "1": "chipped:block/quartz_block/ctm/massive_quartz_block_bricks/0",
@@ -9,8 +8,10 @@
     "particle": "chipped:block/quartz_block/massive_quartz_block_bricks"
   },
   "height": 2,
-  "textures": {
-    "all": "chipped:block/quartz_block/massive_quartz_block_bricks"
+  "variants": {
+    "": {
+      "model": "chipped:block/massive_quartz_block_bricks"
+    }
   },
   "width": 2
 }

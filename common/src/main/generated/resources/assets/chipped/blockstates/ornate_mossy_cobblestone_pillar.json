@@ -1,5 +1,4 @@
 {
-  "parent": "minecraft:block/cube_all",
   "athena:loader": "athena:pillar",
   "ctm_textures": {
     "bottom": "chipped:block/mossy_cobblestone/ctm/ornate_mossy_cobblestone_pillar/3",
@@ -8,7 +7,9 @@
     "self": "chipped:block/mossy_cobblestone/ctm/ornate_mossy_cobblestone_pillar/0",
     "top": "chipped:block/mossy_cobblestone/ctm/ornate_mossy_cobblestone_pillar/1"
   },
-  "textures": {
-    "all": "chipped:block/mossy_cobblestone/ornate_mossy_cobblestone_pillar"
+  "variants": {
+    "": {
+      "model": "chipped:block/ornate_mossy_cobblestone_pillar"
+    }
   }
 }

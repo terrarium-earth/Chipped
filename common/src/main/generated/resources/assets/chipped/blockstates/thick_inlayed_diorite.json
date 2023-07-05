@@ -1,5 +1,4 @@
 {
-  "parent": "minecraft:block/cube_all",
   "athena:loader": "athena:ctm",
   "ctm_textures": {
     "center": "chipped:block/diorite/ctm/thick_inlayed_diorite_ctm/3",
@@ -8,7 +7,9 @@
     "particle": "chipped:block/diorite/thick_inlayed_diorite",
     "vertical": "chipped:block/diorite/ctm/thick_inlayed_diorite_ctm/1"
   },
-  "textures": {
-    "all": "chipped:block/diorite/thick_inlayed_diorite"
+  "variants": {
+    "": {
+      "model": "chipped:block/thick_inlayed_diorite"
+    }
   }
 }

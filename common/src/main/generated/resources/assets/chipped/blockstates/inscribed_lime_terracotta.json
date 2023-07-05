@@ -1,5 +1,4 @@
 {
-  "parent": "minecraft:block/cube_all",
   "athena:loader": "athena:giant",
   "ctm_textures": {
     "1": "chipped:block/lime_terracotta/ctm/inscribed_lime_terracotta/0",
@@ -9,8 +8,10 @@
     "particle": "chipped:block/lime_terracotta/inscribed_lime_terracotta"
   },
   "height": 2,
-  "textures": {
-    "all": "chipped:block/lime_terracotta/inscribed_lime_terracotta"
+  "variants": {
+    "": {
+      "model": "chipped:block/inscribed_lime_terracotta"
+    }
   },
   "width": 2
 }

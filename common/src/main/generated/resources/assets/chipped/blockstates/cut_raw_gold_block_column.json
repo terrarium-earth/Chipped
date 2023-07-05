@@ -1,5 +1,4 @@
 {
-  "parent": "minecraft:block/cube_all",
   "athena:loader": "athena:ctm",
   "ctm_textures": {
     "center": "chipped:block/raw_gold_block/ctm/cut_raw_gold_block_column_ctm/3",
@@ -8,7 +7,9 @@
     "particle": "chipped:block/raw_gold_block/cut_raw_gold_block_column",
     "vertical": "chipped:block/raw_gold_block/ctm/cut_raw_gold_block_column_ctm/1"
   },
-  "textures": {
-    "all": "chipped:block/raw_gold_block/cut_raw_gold_block_column"
+  "variants": {
+    "": {
+      "model": "chipped:block/cut_raw_gold_block_column"
+    }
   }
 }

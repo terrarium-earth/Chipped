@@ -1,5 +1,4 @@
 {
-  "parent": "minecraft:block/cube_all",
   "athena:loader": "athena:pillar",
   "ctm_textures": {
     "bottom": "chipped:block/snow_block/ctm/fine_snow_block_pillar/3",
@@ -8,7 +7,9 @@
     "self": "chipped:block/snow_block/ctm/fine_snow_block_pillar/0",
     "top": "chipped:block/snow_block/ctm/fine_snow_block_pillar/1"
   },
-  "textures": {
-    "all": "chipped:block/snow_block/fine_snow_block_pillar"
+  "variants": {
+    "": {
+      "model": "chipped:block/fine_snow_block_pillar"
+    }
   }
 }

@@ -1,5 +1,4 @@
 {
-  "parent": "minecraft:block/cube_all",
   "athena:loader": "athena:ctm",
   "ctm_textures": {
     "center": "chipped:block/lodestone/ctm/tiled_bordered_lodestone_ctm/3",
@@ -8,7 +7,9 @@
     "particle": "chipped:block/lodestone/tiled_bordered_lodestone",
     "vertical": "chipped:block/lodestone/ctm/tiled_bordered_lodestone_ctm/1"
   },
-  "textures": {
-    "all": "chipped:block/lodestone/tiled_bordered_lodestone"
+  "variants": {
+    "": {
+      "model": "chipped:block/tiled_bordered_lodestone"
+    }
   }
 }

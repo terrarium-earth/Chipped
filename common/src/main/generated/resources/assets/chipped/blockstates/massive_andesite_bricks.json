@@ -1,5 +1,4 @@
 {
-  "parent": "minecraft:block/cube_all",
   "athena:loader": "athena:giant",
   "ctm_textures": {
     "1": "chipped:block/andesite/ctm/massive_andesite_bricks/0",
@@ -9,8 +8,10 @@
     "particle": "chipped:block/andesite/massive_andesite_bricks"
   },
   "height": 2,
-  "textures": {
-    "all": "chipped:block/andesite/massive_andesite_bricks"
+  "variants": {
+    "": {
+      "model": "chipped:block/massive_andesite_bricks"
+    }
   },
   "width": 2
 }

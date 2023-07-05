@@ -1,5 +1,4 @@
 {
-  "parent": "minecraft:block/carpet",
   "athena:loader": "athena:carpet_ctm",
   "ctm_textures": {
     "center": "chipped:block/pink_wool/ctm/harsh_quilted_pink_wool_ctm/3",
@@ -8,7 +7,9 @@
     "particle": "chipped:block/pink_wool/harsh_quilted_pink_wool",
     "vertical": "chipped:block/pink_wool/ctm/harsh_quilted_pink_wool_ctm/1"
   },
-  "textures": {
-    "wool": "chipped:block/pink_wool/harsh_quilted_pink_wool"
+  "variants": {
+    "": {
+      "model": "chipped:block/harsh_quilted_pink_carpet"
+    }
   }
 }

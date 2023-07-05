@@ -1,5 +1,4 @@
 {
-  "parent": "minecraft:block/cube_all",
   "athena:loader": "athena:ctm",
   "ctm_textures": {
     "center": "chipped:block/lodestone/ctm/overlapping_lodestone_tiles_ctm/3",
@@ -8,7 +7,9 @@
     "particle": "chipped:block/lodestone/overlapping_lodestone_tiles",
     "vertical": "chipped:block/lodestone/ctm/overlapping_lodestone_tiles_ctm/1"
   },
-  "textures": {
-    "all": "chipped:block/lodestone/overlapping_lodestone_tiles"
+  "variants": {
+    "": {
+      "model": "chipped:block/overlapping_lodestone_tiles"
+    }
   }
 }

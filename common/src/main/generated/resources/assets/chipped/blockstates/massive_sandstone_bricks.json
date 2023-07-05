@@ -1,5 +1,4 @@
 {
-  "parent": "minecraft:block/cube_all",
   "athena:loader": "athena:giant",
   "ctm_textures": {
     "1": "chipped:block/sandstone/ctm/massive_sandstone_bricks/0",
@@ -9,8 +8,10 @@
     "particle": "chipped:block/sandstone/massive_sandstone_bricks"
   },
   "height": 2,
-  "textures": {
-    "all": "chipped:block/sandstone/massive_sandstone_bricks"
+  "variants": {
+    "": {
+      "model": "chipped:block/massive_sandstone_bricks"
+    }
   },
   "width": 2
 }

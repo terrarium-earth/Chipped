@@ -1,5 +1,4 @@
 {
-  "parent": "minecraft:block/cube_all",
   "athena:loader": "athena:ctm",
   "ctm_textures": {
     "center": "chipped:block/granite/ctm/overlapping_granite_tiles_ctm/3",
@@ -8,7 +7,9 @@
     "particle": "chipped:block/granite/overlapping_granite_tiles",
     "vertical": "chipped:block/granite/ctm/overlapping_granite_tiles_ctm/1"
   },
-  "textures": {
-    "all": "chipped:block/granite/overlapping_granite_tiles"
+  "variants": {
+    "": {
+      "model": "chipped:block/overlapping_granite_tiles"
+    }
   }
 }

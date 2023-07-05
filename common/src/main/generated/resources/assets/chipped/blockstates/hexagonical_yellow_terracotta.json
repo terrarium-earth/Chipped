@@ -1,5 +1,4 @@
 {
-  "parent": "minecraft:block/cube_all",
   "athena:loader": "athena:giant",
   "ctm_textures": {
     "1": "chipped:block/yellow_terracotta/ctm/hexagonical_yellow_terracotta/0",
@@ -9,8 +8,10 @@
     "particle": "chipped:block/yellow_terracotta/hexagonical_yellow_terracotta"
   },
   "height": 2,
-  "textures": {
-    "all": "chipped:block/yellow_terracotta/hexagonical_yellow_terracotta"
+  "variants": {
+    "": {
+      "model": "chipped:block/hexagonical_yellow_terracotta"
+    }
   },
   "width": 2
 }

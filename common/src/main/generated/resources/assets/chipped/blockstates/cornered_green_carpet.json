@@ -1,5 +1,4 @@
 {
-  "parent": "minecraft:block/carpet",
   "athena:loader": "athena:carpet_ctm",
   "ctm_textures": {
     "center": "chipped:block/green_wool/ctm/cornered_green_wool_ctm/3",
@@ -8,7 +7,9 @@
     "particle": "chipped:block/green_wool/cornered_green_wool",
     "vertical": "chipped:block/green_wool/ctm/cornered_green_wool_ctm/1"
   },
-  "textures": {
-    "wool": "chipped:block/green_wool/cornered_green_wool"
+  "variants": {
+    "": {
+      "model": "chipped:block/cornered_green_carpet"
+    }
   }
 }

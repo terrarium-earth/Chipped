@@ -1,5 +1,4 @@
 {
-  "parent": "minecraft:block/cube_all",
   "athena:loader": "athena:ctm",
   "ctm_textures": {
     "center": "chipped:block/granite/ctm/thick_inlayed_granite_ctm/3",
@@ -8,7 +7,9 @@
     "particle": "chipped:block/granite/thick_inlayed_granite",
     "vertical": "chipped:block/granite/ctm/thick_inlayed_granite_ctm/1"
   },
-  "textures": {
-    "all": "chipped:block/granite/thick_inlayed_granite"
+  "variants": {
+    "": {
+      "model": "chipped:block/thick_inlayed_granite"
+    }
   }
 }

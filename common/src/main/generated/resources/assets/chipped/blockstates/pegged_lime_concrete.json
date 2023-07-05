@@ -1,5 +1,4 @@
 {
-  "parent": "minecraft:block/cube_all",
   "athena:loader": "athena:ctm",
   "ctm_textures": {
     "center": "chipped:block/lime_concrete/ctm/pegged_lime_concrete_ctm/3",
@@ -8,7 +7,9 @@
     "particle": "chipped:block/lime_concrete/pegged_lime_concrete",
     "vertical": "chipped:block/lime_concrete/ctm/pegged_lime_concrete_ctm/1"
   },
-  "textures": {
-    "all": "chipped:block/lime_concrete/pegged_lime_concrete"
+  "variants": {
+    "": {
+      "model": "chipped:block/pegged_lime_concrete"
+    }
   }
 }

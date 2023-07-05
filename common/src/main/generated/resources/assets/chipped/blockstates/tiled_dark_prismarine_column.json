@@ -1,5 +1,4 @@
 {
-  "parent": "minecraft:block/cube_all",
   "athena:loader": "athena:ctm",
   "ctm_textures": {
     "center": "chipped:block/dark_prismarine/ctm/tiled_dark_prismarine_column_ctm/3",
@@ -8,7 +7,9 @@
     "particle": "chipped:block/dark_prismarine/tiled_dark_prismarine_column",
     "vertical": "chipped:block/dark_prismarine/ctm/tiled_dark_prismarine_column_ctm/1"
   },
-  "textures": {
-    "all": "chipped:block/dark_prismarine/tiled_dark_prismarine_column"
+  "variants": {
+    "": {
+      "model": "chipped:block/tiled_dark_prismarine_column"
+    }
   }
 }

@@ -1,5 +1,4 @@
 {
-  "parent": "minecraft:block/cube_all",
   "athena:loader": "athena:pillar",
   "ctm_textures": {
     "bottom": "chipped:block/sandstone/ctm/curly_sandstone_pillar/3",
@@ -8,7 +7,9 @@
     "self": "chipped:block/sandstone/ctm/curly_sandstone_pillar/0",
     "top": "chipped:block/sandstone/ctm/curly_sandstone_pillar/1"
   },
-  "textures": {
-    "all": "chipped:block/sandstone/curly_sandstone_pillar"
+  "variants": {
+    "": {
+      "model": "chipped:block/curly_sandstone_pillar"
+    }
   }
 }

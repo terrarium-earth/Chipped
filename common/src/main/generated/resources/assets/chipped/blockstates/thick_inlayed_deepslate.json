@@ -1,5 +1,4 @@
 {
-  "parent": "minecraft:block/cube_all",
   "athena:loader": "athena:ctm",
   "ctm_textures": {
     "center": "chipped:block/deepslate/ctm/thick_inlayed_deepslate_ctm/3",
@@ -8,7 +7,9 @@
     "particle": "chipped:block/deepslate/thick_inlayed_deepslate",
     "vertical": "chipped:block/deepslate/ctm/thick_inlayed_deepslate_ctm/1"
   },
-  "textures": {
-    "all": "chipped:block/deepslate/thick_inlayed_deepslate"
+  "variants": {
+    "": {
+      "model": "chipped:block/thick_inlayed_deepslate"
+    }
   }
 }

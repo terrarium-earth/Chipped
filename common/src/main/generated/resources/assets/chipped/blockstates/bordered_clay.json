@@ -1,5 +1,4 @@
 {
-  "parent": "minecraft:block/cube_all",
   "athena:loader": "athena:ctm",
   "ctm_textures": {
     "center": "chipped:block/clay/ctm/bordered_clay_ctm/3",
@@ -8,7 +7,9 @@
     "particle": "chipped:block/clay/bordered_clay",
     "vertical": "chipped:block/clay/ctm/bordered_clay_ctm/1"
   },
-  "textures": {
-    "all": "chipped:block/clay/bordered_clay"
+  "variants": {
+    "": {
+      "model": "chipped:block/bordered_clay"
+    }
   }
 }

@@ -1,5 +1,4 @@
 {
-  "parent": "minecraft:block/cube_all",
   "athena:loader": "athena:ctm",
   "ctm_textures": {
     "center": "chipped:block/sandstone/ctm/tiny_brick_bordered_sandstone_ctm/3",
@@ -8,7 +7,9 @@
     "particle": "chipped:block/sandstone/tiny_brick_bordered_sandstone",
     "vertical": "chipped:block/sandstone/ctm/tiny_brick_bordered_sandstone_ctm/1"
   },
-  "textures": {
-    "all": "chipped:block/sandstone/tiny_brick_bordered_sandstone"
+  "variants": {
+    "": {
+      "model": "chipped:block/tiny_brick_bordered_sandstone"
+    }
   }
 }

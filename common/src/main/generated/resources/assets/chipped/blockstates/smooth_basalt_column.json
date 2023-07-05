@@ -1,5 +1,4 @@
 {
-  "parent": "minecraft:block/cube_all",
   "athena:loader": "athena:ctm",
   "ctm_textures": {
     "center": "chipped:block/basalt/ctm/smooth_basalt_column_ctm/3",
@@ -8,7 +7,9 @@
     "particle": "chipped:block/basalt/smooth_basalt_column",
     "vertical": "chipped:block/basalt/ctm/smooth_basalt_column_ctm/1"
   },
-  "textures": {
-    "all": "chipped:block/basalt/smooth_basalt_column"
+  "variants": {
+    "": {
+      "model": "chipped:block/smooth_basalt_column"
+    }
   }
 }

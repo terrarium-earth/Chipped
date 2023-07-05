@@ -1,5 +1,4 @@
 {
-  "parent": "minecraft:block/cube_all",
   "athena:loader": "athena:ctm",
   "ctm_textures": {
     "center": "chipped:block/mossy_stone_bricks/ctm/tiled_mossy_stone_bricks_column_ctm/3",
@@ -8,7 +7,9 @@
     "particle": "chipped:block/mossy_stone_bricks/tiled_mossy_stone_bricks_column",
     "vertical": "chipped:block/mossy_stone_bricks/ctm/tiled_mossy_stone_bricks_column_ctm/1"
   },
-  "textures": {
-    "all": "chipped:block/mossy_stone_bricks/tiled_mossy_stone_bricks_column"
+  "variants": {
+    "": {
+      "model": "chipped:block/tiled_mossy_stone_bricks_column"
+    }
   }
 }

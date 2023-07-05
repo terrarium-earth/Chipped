@@ -1,5 +1,4 @@
 {
-  "parent": "minecraft:block/cube_all",
   "athena:loader": "athena:pillar",
   "ctm_textures": {
     "bottom": "chipped:block/calcite/ctm/fine_calcite_pillar/3",
@@ -8,7 +7,9 @@
     "self": "chipped:block/calcite/ctm/fine_calcite_pillar/0",
     "top": "chipped:block/calcite/ctm/fine_calcite_pillar/1"
   },
-  "textures": {
-    "all": "chipped:block/calcite/fine_calcite_pillar"
+  "variants": {
+    "": {
+      "model": "chipped:block/fine_calcite_pillar"
+    }
   }
 }

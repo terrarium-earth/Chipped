@@ -1,5 +1,4 @@
 {
-  "parent": "minecraft:block/cube_all",
   "athena:loader": "athena:ctm",
   "ctm_textures": {
     "center": "chipped:block/raw_gold_block/ctm/overlapping_raw_gold_block_tiles_ctm/3",
@@ -8,7 +7,9 @@
     "particle": "chipped:block/raw_gold_block/overlapping_raw_gold_block_tiles",
     "vertical": "chipped:block/raw_gold_block/ctm/overlapping_raw_gold_block_tiles_ctm/1"
   },
-  "textures": {
-    "all": "chipped:block/raw_gold_block/overlapping_raw_gold_block_tiles"
+  "variants": {
+    "": {
+      "model": "chipped:block/overlapping_raw_gold_block_tiles"
+    }
   }
 }

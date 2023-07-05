@@ -1,5 +1,4 @@
 {
-  "parent": "minecraft:block/carpet",
   "athena:loader": "athena:carpet_ctm",
   "ctm_textures": {
     "center": "chipped:block/brown_wool/ctm/crafted_brown_wool_ctm/3",
@@ -8,7 +7,9 @@
     "particle": "chipped:block/brown_wool/crafted_brown_wool",
     "vertical": "chipped:block/brown_wool/ctm/crafted_brown_wool_ctm/1"
   },
-  "textures": {
-    "wool": "chipped:block/brown_wool/crafted_brown_wool"
+  "variants": {
+    "": {
+      "model": "chipped:block/crafted_brown_carpet"
+    }
   }
 }

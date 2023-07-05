@@ -1,5 +1,4 @@
 {
-  "parent": "minecraft:block/cube_all",
   "athena:loader": "athena:pillar",
   "ctm_textures": {
     "bottom": "chipped:block/smooth_stone/ctm/fine_smooth_stone_pillar/3",
@@ -8,7 +7,9 @@
     "self": "chipped:block/smooth_stone/ctm/fine_smooth_stone_pillar/0",
     "top": "chipped:block/smooth_stone/ctm/fine_smooth_stone_pillar/1"
   },
-  "textures": {
-    "all": "chipped:block/smooth_stone/fine_smooth_stone_pillar"
+  "variants": {
+    "": {
+      "model": "chipped:block/fine_smooth_stone_pillar"
+    }
   }
 }

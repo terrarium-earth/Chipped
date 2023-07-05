@@ -1,5 +1,4 @@
 {
-  "parent": "minecraft:block/cube_all",
   "athena:loader": "athena:ctm",
   "ctm_textures": {
     "center": "chipped:block/pink_concrete/ctm/smooth_pink_concrete_ctm/3",
@@ -8,7 +7,9 @@
     "particle": "chipped:block/pink_concrete/smooth_pink_concrete",
     "vertical": "chipped:block/pink_concrete/ctm/smooth_pink_concrete_ctm/1"
   },
-  "textures": {
-    "all": "chipped:block/pink_concrete/smooth_pink_concrete"
+  "variants": {
+    "": {
+      "model": "chipped:block/smooth_pink_concrete"
+    }
   }
 }

@@ -1,5 +1,4 @@
 {
-  "parent": "minecraft:block/cube_all",
   "athena:loader": "athena:ctm",
   "ctm_textures": {
     "center": "chipped:block/purple_terracotta/ctm/small_purple_terracotta_tiles_ctm/3",
@@ -8,7 +7,9 @@
     "particle": "chipped:block/purple_terracotta/small_purple_terracotta_tiles",
     "vertical": "chipped:block/purple_terracotta/ctm/small_purple_terracotta_tiles_ctm/1"
   },
-  "textures": {
-    "all": "chipped:block/purple_terracotta/small_purple_terracotta_tiles"
+  "variants": {
+    "": {
+      "model": "chipped:block/small_purple_terracotta_tiles"
+    }
   }
 }
