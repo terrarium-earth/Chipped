@@ -2,7 +2,7 @@
   "athena:loader": "athena:ctm",
   "ctm_textures": {
     "center": "chipped:block/basalt/ctm/thick_inlayed_basalt_ctm/3",
-    "empty": "chipped:block/basalt/ctm/thick_inlayed_basalt_ctm/0",
+    "empty": "chipped:block/basalt/ctm/common_textures/1",
     "horizontal": "chipped:block/basalt/ctm/thick_inlayed_basalt_ctm/2",
     "particle": "chipped:block/basalt/thick_inlayed_basalt",
     "vertical": "chipped:block/basalt/ctm/thick_inlayed_basalt_ctm/1"

@@ -2,7 +2,7 @@
   "athena:loader": "athena:pillar",
   "ctm_textures": {
     "bottom": "chipped:block/lodestone/ctm/fine_lodestone_pillar/3",
-    "center": "chipped:block/lodestone/ctm/fine_lodestone_pillar/2",
+    "center": "chipped:block/lodestone/ctm/common_textures/3",
     "particle": "chipped:block/lodestone/fine_lodestone_pillar",
     "self": "chipped:block/lodestone/ctm/fine_lodestone_pillar/0",
     "top": "chipped:block/lodestone/ctm/fine_lodestone_pillar/1"

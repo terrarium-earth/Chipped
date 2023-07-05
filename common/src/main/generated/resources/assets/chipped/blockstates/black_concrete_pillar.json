@@ -2,7 +2,7 @@
   "athena:loader": "athena:pillar",
   "ctm_textures": {
     "bottom": "chipped:block/black_concrete/ctm/black_concrete_pillar/3",
-    "center": "chipped:block/black_concrete/ctm/black_concrete_pillar/2",
+    "center": "chipped:block/black_concrete/ctm/common_textures/0",
     "particle": "chipped:block/black_concrete/black_concrete_pillar",
     "self": "chipped:block/black_concrete/ctm/black_concrete_pillar/0",
     "top": "chipped:block/black_concrete/ctm/black_concrete_pillar/1"

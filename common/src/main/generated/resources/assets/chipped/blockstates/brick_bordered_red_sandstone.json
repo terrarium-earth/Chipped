@@ -2,7 +2,7 @@
   "athena:loader": "athena:ctm",
   "ctm_textures": {
     "center": "chipped:block/red_sandstone/ctm/brick_bordered_red_sandstone_ctm/3",
-    "empty": "chipped:block/red_sandstone/ctm/brick_bordered_red_sandstone_ctm/0",
+    "empty": "chipped:block/red_sandstone/ctm/common_textures/0",
     "horizontal": "chipped:block/red_sandstone/ctm/brick_bordered_red_sandstone_ctm/2",
     "particle": "chipped:block/red_sandstone/brick_bordered_red_sandstone",
     "vertical": "chipped:block/red_sandstone/ctm/brick_bordered_red_sandstone_ctm/1"

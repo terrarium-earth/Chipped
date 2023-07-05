@@ -2,7 +2,7 @@
   "athena:loader": "athena:pillar",
   "ctm_textures": {
     "bottom": "chipped:block/diorite/ctm/fine_diorite_pillar/3",
-    "center": "chipped:block/diorite/ctm/fine_diorite_pillar/2",
+    "center": "chipped:block/diorite/ctm/common_textures/3",
     "particle": "chipped:block/diorite/fine_diorite_pillar",
     "self": "chipped:block/diorite/ctm/fine_diorite_pillar/0",
     "top": "chipped:block/diorite/ctm/fine_diorite_pillar/1"

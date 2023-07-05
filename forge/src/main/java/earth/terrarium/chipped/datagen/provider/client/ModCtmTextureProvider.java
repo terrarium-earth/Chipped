@@ -19,12 +19,13 @@ import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.NotNull;
 
+import java.awt.*;
 import java.io.IOException;
 import java.nio.file.Path;
-import java.util.ArrayList;
+import java.util.*;
 import java.util.List;
-import java.util.NoSuchElementException;
 import java.util.concurrent.CompletableFuture;
+import java.util.stream.Collectors;
 
 public class ModCtmTextureProvider implements DataProvider {
 
@@ -33,6 +34,7 @@ public class ModCtmTextureProvider implements DataProvider {
     private final PackOutput output;
     private final ExistingFileHelper files;
     private final List<ChippedPaletteRegistry<Block>> registries = new ArrayList<>();
+    private final Map<ResourceLocation, ResourceLocation> commonTextures = new HashMap<>();
 
     public ModCtmTextureProvider(PackOutput output, ExistingFileHelper files) {
         this.output = output;
@@ -162,20 +164,22 @@ public class ModCtmTextureProvider implements DataProvider {
 
     @Override
     public @NotNull CompletableFuture<?> run(@NotNull CachedOutput output) {
-        List<CompletableFuture<?>> futures = new ArrayList<>();
+        List<CompletableFuture<Map<ResourceLocation, ResourceLocation>>> futures = new ArrayList<>();
 
         for (ChippedPaletteRegistry<Block> registry : registries) {
-            futures.add(CompletableFuture.runAsync(() -> {
+            futures.add(CompletableFuture.supplyAsync(() -> {
+                final Map<ImageData, List<ResourceLocation>> images = new LinkedHashMap<>();
                 final String id = BuiltInRegistries.BLOCK.getKey(registry.getBase()).getPath();
                 for (var ctm : registry.getPalette().getSpecial()) {
                     final String suffix = ctm.getFirst().suffix().length() > 0 ? "_" + ctm.getFirst().suffix() : "";
                     final ResourceLocation location = new ResourceLocation(Chipped.MOD_ID, "textures/block/" + id + "/ctm/" + ctm.getSecond().replace("%", id) + suffix);
-                    Path path = this.output.getOutputFolder(PackOutput.Target.RESOURCE_PACK).resolve(location.getNamespace()).resolve(location.getPath());
                     try {
                         Resource resource = files.getResource(new ResourceLocation(location.getNamespace(), location.getPath() + ".png"), PackType.CLIENT_RESOURCES);
-                        for (int i : split(path, resource, output)) {
-                            files.trackGenerated(new ResourceLocation(location.getNamespace(), "block/" + id + "/ctm/" + ctm.getSecond().replace("%", id) + "/" + i), TEXTURE);
-                        }
+
+                        split(new ResourceLocation(location.getNamespace(), "block/" + id + "/ctm/"), ctm.getSecond().replace("%", id) + suffix, resource, output)
+                                .forEach((key, value) ->
+                                    images.computeIfAbsent(key, data -> new ArrayList<>()).addAll(value)
+                                );
                     } catch (NoSuchElementException e) {
                         System.out.println("Missing CTM texture: " + location);
                         throw e;
@@ -183,9 +187,54 @@ public class ModCtmTextureProvider implements DataProvider {
                         throw new RuntimeException(e);
                     }
                 }
+                try {
+                    Map<ResourceLocation, ResourceLocation> commons = new LinkedHashMap<>();
+                    int commonIndex = 0;
+                    for (var entry : images.entrySet()) {
+                        if (entry.getValue().isEmpty()) continue;
+                        if (entry.getValue().size() == 1) {
+                            Path path = this.output.getOutputFolder(PackOutput.Target.RESOURCE_PACK)
+                                    .resolve(entry.getValue().get(0).getNamespace())
+                                    .resolve("textures")
+                                    .resolve(entry.getValue().get(0).getPath());
+                            output.writeIfNeeded(path, entry.getKey().bytes(), entry.getKey().code());
+                            files.trackGenerated(entry.getValue().get(0), TEXTURE);
+                        } else {
+                            ResourceLocation newPath = entry.getKey().loc().withSuffix("common_textures/" + commonIndex);
+                            Path path = this.output.getOutputFolder(PackOutput.Target.RESOURCE_PACK)
+                                    .resolve(newPath.getNamespace())
+                                    .resolve("textures")
+                                    .resolve(newPath.getPath() + ".png");
+                            output.writeIfNeeded(path, entry.getKey().bytes(), entry.getKey().code());
+                            files.trackGenerated(newPath, TEXTURE);
+                            for (ResourceLocation resourceLocation : entry.getValue()) {
+                                ResourceLocation key = new ResourceLocation(resourceLocation.getNamespace(), resourceLocation.getPath().substring(0, resourceLocation.getPath().length() - 4));
+                                commons.put(key, newPath);
+                            }
+                            commonIndex++;
+                        }
+                    }
+                    return commons;
+                }catch (Exception e) {
+                    throw new RuntimeException(e);
+                }
             }, Util.backgroundExecutor()));
         }
-        return CompletableFuture.allOf(futures.toArray(new CompletableFuture[0]));
+        return allOf(futures).thenAccept(commons -> {
+            for (Map<ResourceLocation, ResourceLocation> common : commons) {
+                commonTextures.putAll(common);
+            }
+        });
+    }
+
+    public <T> CompletableFuture<List<T>> allOf(List<CompletableFuture<T>> futuresList) {
+        CompletableFuture<Void> allFuturesResult =
+                CompletableFuture.allOf(futuresList.toArray(new CompletableFuture[0]));
+        return allFuturesResult.thenApply(v ->
+                futuresList.stream().
+                        map(CompletableFuture::join).
+                        collect(Collectors.<T>toList())
+        );
     }
 
     @Override
@@ -193,8 +242,8 @@ public class ModCtmTextureProvider implements DataProvider {
         return "Chipped CTM Texture Provider";
     }
 
-    private static IntList split(Path path, Resource resource, CachedOutput output) throws IOException {
-        final IntList generated = new IntArrayList();
+    private static Map<ImageData, List<ResourceLocation>> split(ResourceLocation path, String suffix, Resource resource, CachedOutput output) throws IOException {
+        Map<ImageData, List<ResourceLocation>> paths = new LinkedHashMap<>();
         var read = NativeImage.read(resource.open());
         var width = read.getWidth();
         var height = read.getHeight();
@@ -212,17 +261,40 @@ public class ModCtmTextureProvider implements DataProvider {
                         image.setPixelRGBA(i, j, read.getPixelRGBA(x + i, y + j));
                     }
                 }
+
                 byte[] bytes = image.asByteArray();
-                output.writeIfNeeded(path.resolve(index + ".png"), bytes, HashCode.fromBytes(bytes));
+                paths.computeIfAbsent(new ImageData(bytes, HashCode.fromBytes(bytes), path), ignored -> new ArrayList<>())
+                    .add(path.withSuffix(suffix + "/" + index + ".png"));
                 image.close();
                 x += 16;
-                generated.add(index);
                 index++;
             }
             x = 0;
             y += 16;
         }
         read.close();
-        return generated;
+        return paths;
+    }
+
+    private record ImageData(byte[] bytes, HashCode code, ResourceLocation loc){
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj == this) return true;
+            if (obj instanceof ImageData data) {
+                return data.code().equals(code);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return code.hashCode();
+        }
+    }
+
+    public String getTexture(String texture) {
+        ResourceLocation location = new ResourceLocation(texture);
+        return this.commonTextures.getOrDefault(location, location).toString();
     }
 }

@@ -1,11 +1,11 @@
 {
   "athena:loader": "athena:ctm",
   "ctm_textures": {
-    "center": "chipped:block/yellow_wool/ctm/harsh_quilted_yellow_wool_ctm/3",
+    "center": "chipped:block/yellow_wool/ctm/common_textures/1",
     "empty": "chipped:block/yellow_wool/ctm/harsh_quilted_yellow_wool_ctm/0",
-    "horizontal": "chipped:block/yellow_wool/ctm/harsh_quilted_yellow_wool_ctm/2",
+    "horizontal": "chipped:block/yellow_wool/ctm/common_textures/1",
     "particle": "chipped:block/yellow_wool/harsh_quilted_yellow_wool",
-    "vertical": "chipped:block/yellow_wool/ctm/harsh_quilted_yellow_wool_ctm/1"
+    "vertical": "chipped:block/yellow_wool/ctm/common_textures/1"
   },
   "variants": {
     "": {

@@ -2,7 +2,7 @@
   "athena:loader": "athena:pillar",
   "ctm_textures": {
     "bottom": "chipped:block/netherrack/ctm/fine_netherrack_pillar/3",
-    "center": "chipped:block/netherrack/ctm/fine_netherrack_pillar/2",
+    "center": "chipped:block/netherrack/ctm/common_textures/3",
     "particle": "chipped:block/netherrack/fine_netherrack_pillar",
     "self": "chipped:block/netherrack/ctm/fine_netherrack_pillar/0",
     "top": "chipped:block/netherrack/ctm/fine_netherrack_pillar/1"

@@ -2,7 +2,7 @@
   "athena:loader": "athena:ctm",
   "ctm_textures": {
     "center": "chipped:block/cyan_wool/ctm/cornered_cyan_wool_ctm/3",
-    "empty": "chipped:block/cyan_wool/ctm/cornered_cyan_wool_ctm/0",
+    "empty": "chipped:block/cyan_wool/ctm/common_textures/0",
     "horizontal": "chipped:block/cyan_wool/ctm/cornered_cyan_wool_ctm/2",
     "particle": "chipped:block/cyan_wool/cornered_cyan_wool",
     "vertical": "chipped:block/cyan_wool/ctm/cornered_cyan_wool_ctm/1"

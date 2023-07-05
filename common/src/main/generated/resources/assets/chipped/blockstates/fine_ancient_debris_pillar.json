@@ -2,7 +2,7 @@
   "athena:loader": "athena:pillar",
   "ctm_textures": {
     "bottom": "chipped:block/ancient_debris/ctm/fine_ancient_debris_pillar/3",
-    "center": "chipped:block/ancient_debris/ctm/fine_ancient_debris_pillar/2",
+    "center": "chipped:block/ancient_debris/ctm/common_textures/3",
     "particle": "chipped:block/ancient_debris/fine_ancient_debris_pillar",
     "self": "chipped:block/ancient_debris/ctm/fine_ancient_debris_pillar/0",
     "top": "chipped:block/ancient_debris/ctm/fine_ancient_debris_pillar/1"

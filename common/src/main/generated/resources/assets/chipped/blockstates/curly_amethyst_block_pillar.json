@@ -2,7 +2,7 @@
   "athena:loader": "athena:pillar",
   "ctm_textures": {
     "bottom": "chipped:block/amethyst_block/ctm/curly_amethyst_block_pillar/3",
-    "center": "chipped:block/amethyst_block/ctm/curly_amethyst_block_pillar/2",
+    "center": "chipped:block/amethyst_block/ctm/common_textures/3",
     "particle": "chipped:block/amethyst_block/curly_amethyst_block_pillar",
     "self": "chipped:block/amethyst_block/ctm/curly_amethyst_block_pillar/0",
     "top": "chipped:block/amethyst_block/ctm/curly_amethyst_block_pillar/1"

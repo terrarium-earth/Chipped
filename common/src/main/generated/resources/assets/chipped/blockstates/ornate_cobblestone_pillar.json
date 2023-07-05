@@ -2,7 +2,7 @@
   "athena:loader": "athena:pillar",
   "ctm_textures": {
     "bottom": "chipped:block/cobblestone/ctm/ornate_cobblestone_pillar/3",
-    "center": "chipped:block/cobblestone/ctm/ornate_cobblestone_pillar/2",
+    "center": "chipped:block/cobblestone/ctm/common_textures/3",
     "particle": "chipped:block/cobblestone/ornate_cobblestone_pillar",
     "self": "chipped:block/cobblestone/ctm/ornate_cobblestone_pillar/0",
     "top": "chipped:block/cobblestone/ctm/ornate_cobblestone_pillar/1"

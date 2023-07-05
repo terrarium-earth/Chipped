@@ -2,7 +2,7 @@
   "athena:loader": "athena:pillar",
   "ctm_textures": {
     "bottom": "chipped:block/red_nether_bricks/ctm/curly_red_nether_bricks_pillar/3",
-    "center": "chipped:block/red_nether_bricks/ctm/curly_red_nether_bricks_pillar/2",
+    "center": "chipped:block/red_nether_bricks/ctm/common_textures/3",
     "particle": "chipped:block/red_nether_bricks/curly_red_nether_bricks_pillar",
     "self": "chipped:block/red_nether_bricks/ctm/curly_red_nether_bricks_pillar/0",
     "top": "chipped:block/red_nether_bricks/ctm/curly_red_nether_bricks_pillar/1"

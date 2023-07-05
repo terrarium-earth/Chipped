@@ -2,7 +2,7 @@
   "athena:loader": "athena:ctm",
   "ctm_textures": {
     "center": "chipped:block/gilded_blackstone/ctm/thick_inlayed_gilded_blackstone_ctm/3",
-    "empty": "chipped:block/gilded_blackstone/ctm/thick_inlayed_gilded_blackstone_ctm/0",
+    "empty": "chipped:block/gilded_blackstone/ctm/common_textures/1",
     "horizontal": "chipped:block/gilded_blackstone/ctm/thick_inlayed_gilded_blackstone_ctm/2",
     "particle": "chipped:block/gilded_blackstone/thick_inlayed_gilded_blackstone",
     "vertical": "chipped:block/gilded_blackstone/ctm/thick_inlayed_gilded_blackstone_ctm/1"

@@ -2,8 +2,8 @@
   "athena:loader": "athena:ctm",
   "ctm_textures": {
     "center": "chipped:block/white_concrete/ctm/smooth_white_concrete_ctm/3",
-    "empty": "chipped:block/white_concrete/ctm/smooth_white_concrete_ctm/0",
-    "horizontal": "chipped:block/white_concrete/ctm/smooth_white_concrete_ctm/2",
+    "empty": "chipped:block/white_concrete/ctm/common_textures/0",
+    "horizontal": "chipped:block/white_concrete/ctm/common_textures/1",
     "particle": "chipped:block/white_concrete/smooth_white_concrete",
     "vertical": "chipped:block/white_concrete/ctm/smooth_white_concrete_ctm/1"
   },

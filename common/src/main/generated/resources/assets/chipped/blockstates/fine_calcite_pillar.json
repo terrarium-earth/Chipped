@@ -2,7 +2,7 @@
   "athena:loader": "athena:pillar",
   "ctm_textures": {
     "bottom": "chipped:block/calcite/ctm/fine_calcite_pillar/3",
-    "center": "chipped:block/calcite/ctm/fine_calcite_pillar/2",
+    "center": "chipped:block/calcite/ctm/common_textures/3",
     "particle": "chipped:block/calcite/fine_calcite_pillar",
     "self": "chipped:block/calcite/ctm/fine_calcite_pillar/0",
     "top": "chipped:block/calcite/ctm/fine_calcite_pillar/1"

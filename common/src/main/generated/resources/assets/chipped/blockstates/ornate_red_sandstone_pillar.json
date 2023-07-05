@@ -2,7 +2,7 @@
   "athena:loader": "athena:pillar",
   "ctm_textures": {
     "bottom": "chipped:block/red_sandstone/ctm/ornate_red_sandstone_pillar/3",
-    "center": "chipped:block/red_sandstone/ctm/ornate_red_sandstone_pillar/2",
+    "center": "chipped:block/red_sandstone/ctm/common_textures/3",
     "particle": "chipped:block/red_sandstone/ornate_red_sandstone_pillar",
     "self": "chipped:block/red_sandstone/ctm/ornate_red_sandstone_pillar/0",
     "top": "chipped:block/red_sandstone/ctm/ornate_red_sandstone_pillar/1"

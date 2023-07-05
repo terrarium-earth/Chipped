@@ -2,7 +2,7 @@
   "athena:loader": "athena:pillar",
   "ctm_textures": {
     "bottom": "chipped:block/snow_block/ctm/simple_snow_block_pillar/3",
-    "center": "chipped:block/snow_block/ctm/simple_snow_block_pillar/2",
+    "center": "chipped:block/snow_block/ctm/common_textures/3",
     "particle": "chipped:block/snow_block/simple_snow_block_pillar",
     "self": "chipped:block/snow_block/ctm/simple_snow_block_pillar/0",
     "top": "chipped:block/snow_block/ctm/simple_snow_block_pillar/1"

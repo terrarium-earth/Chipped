@@ -24,11 +24,13 @@ public class ModCtmModelProvider implements DataProvider {
 
     private final PackOutput output;
     private final ModBlockStateProvider files;
+    private final ModCtmTextureProvider textures;
     private final List<ChippedPaletteRegistry<Block>> registries = new ArrayList<>();
 
-    public ModCtmModelProvider(PackOutput output, ModBlockStateProvider files) {
+    public ModCtmModelProvider(PackOutput output, ModBlockStateProvider files, ModCtmTextureProvider textures) {
         this.output = output;
         this.files = files;
+        this.textures = textures;
         addRegistries();
     }
 
@@ -208,7 +210,7 @@ public class ModCtmModelProvider implements DataProvider {
                         String blockName = ctmTexture.substring(ctmTexture.lastIndexOf("/") + 1);
                         String suffix = ctm.getFirst().suffix().length() > 0 ? "_" + ctm.getFirst().suffix() : "";
                         for (var entry : ctm.getFirst().getTextureIds()) {
-                            ctmTextures.addProperty(entry.value(), main + "/ctm/" + blockName + suffix + "/" + entry.keyInt());
+                            ctmTextures.addProperty(entry.value(), this.textures.getTexture(main + "/ctm/" + blockName + suffix + "/" + entry.keyInt()));
                         }
 
                         ctm.getFirst().addTextureInfo(json);

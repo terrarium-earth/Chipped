@@ -2,7 +2,7 @@
   "athena:loader": "athena:pillar",
   "ctm_textures": {
     "bottom": "chipped:block/bricks/ctm/simple_bricks_pillar/3",
-    "center": "chipped:block/bricks/ctm/simple_bricks_pillar/2",
+    "center": "chipped:block/bricks/ctm/common_textures/2",
     "particle": "chipped:block/bricks/simple_bricks_pillar",
     "self": "chipped:block/bricks/ctm/simple_bricks_pillar/0",
     "top": "chipped:block/bricks/ctm/simple_bricks_pillar/1"

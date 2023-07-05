@@ -2,7 +2,7 @@
   "athena:loader": "athena:pillar",
   "ctm_textures": {
     "bottom": "chipped:block/mud/ctm/fine_mud_pillar/3",
-    "center": "chipped:block/mud/ctm/fine_mud_pillar/2",
+    "center": "chipped:block/mud/ctm/common_textures/1",
     "particle": "chipped:block/mud/fine_mud_pillar",
     "self": "chipped:block/mud/ctm/fine_mud_pillar/0",
     "top": "chipped:block/mud/ctm/fine_mud_pillar/1"

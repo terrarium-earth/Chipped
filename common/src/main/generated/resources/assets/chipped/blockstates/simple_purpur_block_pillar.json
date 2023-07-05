@@ -2,7 +2,7 @@
   "athena:loader": "athena:pillar",
   "ctm_textures": {
     "bottom": "chipped:block/purpur_block/ctm/simple_purpur_block_pillar/3",
-    "center": "chipped:block/purpur_block/ctm/simple_purpur_block_pillar/2",
+    "center": "chipped:block/purpur_block/ctm/common_textures/3",
     "particle": "chipped:block/purpur_block/simple_purpur_block_pillar",
     "self": "chipped:block/purpur_block/ctm/simple_purpur_block_pillar/0",
     "top": "chipped:block/purpur_block/ctm/simple_purpur_block_pillar/1"

@@ -26,8 +26,9 @@ public final class ChippedDataGenerator {
         generator.addProvider(event.includeClient(), stateProvider);
         generator.addProvider(event.includeClient(), new ModItemModelProvider(packOutput, existingFileHelper));
         generator.addProvider(event.includeClient(), new ModLangProvider(packOutput));
-        generator.addProvider(event.includeClient(), new ModCtmTextureProvider(packOutput, existingFileHelper));
-        generator.addProvider(event.includeClient(), new ModCtmModelProvider(packOutput, stateProvider));
+        ModCtmTextureProvider textures = new ModCtmTextureProvider(packOutput, existingFileHelper);
+        generator.addProvider(event.includeClient(), textures);
+        generator.addProvider(event.includeClient(), new ModCtmModelProvider(packOutput, stateProvider, textures));
 
         // Server
         generator.addProvider(event.includeServer(), new ModLootTableProvider(packOutput));
