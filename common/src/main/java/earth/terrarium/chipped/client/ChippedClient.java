@@ -7,11 +7,7 @@ import earth.terrarium.chipped.common.menu.ChippedScreen;
 import earth.terrarium.chipped.common.registry.ModBlocks;
 import earth.terrarium.chipped.common.registry.ModMenus;
 import net.minecraft.client.gui.screens.MenuScreens;
-import net.minecraft.client.gui.screens.Screen;
-import net.minecraft.client.gui.screens.inventory.MenuAccess;
 import net.minecraft.client.renderer.RenderType;
-import net.minecraft.world.inventory.AbstractContainerMenu;
-import net.minecraft.world.inventory.MenuType;
 import net.minecraft.world.level.block.Block;
 
 import java.util.function.Supplier;
@@ -20,13 +16,13 @@ public class ChippedClient {
 
     public static void init() {
         registerRenderTypes();
-        register(ModMenus.ALCHEMY_BENCH.get(), ChippedScreen::new);
-        register(ModMenus.BOTANIST_WORKBENCH.get(), ChippedScreen::new);
-        register(ModMenus.CARPENTERS_TABLE.get(), ChippedScreen::new);
-        register(ModMenus.GLASSBLOWER.get(), ChippedScreen::new);
-        register(ModMenus.LOOM_TABLE.get(), ChippedScreen::new);
-        register(ModMenus.MASON_TABLE.get(), ChippedScreen::new);
-        register(ModMenus.TINKERING_TABLE.get(), ChippedScreen::new);
+        MenuScreens.register(ModMenus.ALCHEMY_BENCH.get(), ChippedScreen::new);
+        MenuScreens.register(ModMenus.BOTANIST_WORKBENCH.get(), ChippedScreen::new);
+        MenuScreens.register(ModMenus.CARPENTERS_TABLE.get(), ChippedScreen::new);
+        MenuScreens.register(ModMenus.GLASSBLOWER.get(), ChippedScreen::new);
+        MenuScreens.register(ModMenus.LOOM_TABLE.get(), ChippedScreen::new);
+        MenuScreens.register(ModMenus.MASON_TABLE.get(), ChippedScreen::new);
+        MenuScreens.register(ModMenus.TINKERING_TABLE.get(), ChippedScreen::new);
     }
 
     private static void registerRenderTypes() {
@@ -131,9 +127,5 @@ public class ChippedClient {
     @ExpectPlatform
     public static void registerBlockRenderType(RenderType type, Supplier<Block> block) {
         throw new NotImplementedException();
-    }
-
-    public static <M extends AbstractContainerMenu, U extends Screen & MenuAccess<M>> void register(MenuType<? extends M> type, MenuScreens.ScreenConstructor<M, U> factory) {
-        MenuScreens.register(type, factory);
     }
 }

@@ -7,14 +7,14 @@
     "authors": [
         "Alex Nijjar",
         "Grimbop",
-        "Kekie6"
+        "Kekie6",
+        "ThatGravyBoat"
     ],
     "contributors": [
         "CodexAdrian",
         "Facu",
         "Marc-IceBlade",
-        "MsRandom",
-        "ThatGravyBoat"
+        "MsRandom"
     ],
     "contact": {
         "website": "https://modrinth.com/mod/chipped",
@@ -39,12 +39,11 @@
         ]
     },
     "mixins": [
-        "chipped-common.mixins.json"
+        "chipped.mixins.json"
     ],
     "depends": {
         "fabric": "*",
         "minecraft": ">=1.20",
-        "java": ">=17",
         "resourcefullib": ">=2.1.1",
         "athena": ">=3.0.0"
     }

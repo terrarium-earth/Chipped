@@ -4,7 +4,7 @@ architectury {
 
 loom {
     forge {
-        mixinConfig("chipped-common.mixins.json")
+        mixinConfig("chipped.mixins.json")
     }
     runs {
         create("data") {

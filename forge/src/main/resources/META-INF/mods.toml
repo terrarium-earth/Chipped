@@ -9,8 +9,8 @@ version = "${version}"
 displayName = "Chipped"
 displayURL = "https://modrinth.com/mod/chipped"
 logoFile = "icon.png"
-authors = "Alex Nijjar, Grimbop, Kekie6"
-credits = "CodexAdrian, Facu, Marc-IceBlade, MsRandom, ThatGravyBoat"
+authors = "Alex Nijjar, Grimbop, Kekie6, ThatGravyBoat"
+credits = "CodexAdrian, Facu, Marc-IceBlade, MsRandom"
 description = "Every block needs a friend!"
 
 [[dependencies.chipped]]

@@ -6,6 +6,7 @@ import earth.terrarium.chipped.Chipped;
 import earth.terrarium.chipped.common.registry.ModBlocks;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.data.CachedOutput;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
 import net.minecraft.resources.ResourceLocation;
@@ -16,6 +17,8 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.ForgeRegistries;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.Collection;
 import java.util.Objects;
@@ -114,15 +117,20 @@ public class ModItemTagProvider extends ItemTagsProvider {
         registry.stream().forEach(b -> tag(tag).add(TagEntry.element(b.getId())));
     }
 
-    private void createSet(Block block, ResourcefulRegistry<Block> registry, String tag, TagKey<Item> workbench) {
-        createSet(block, registry.getEntries(), tag, workbench);
+    private void createSet(Block block, ResourcefulRegistry<Block> registry, String tag, TagKey<Item> workbench, @Nullable TagKey<Block> ignored) {
+        createSet(block, registry.getEntries(), tag, workbench, null);
     }
 
-    private void createSet(Block block, Collection<RegistryEntry<Block>> registry, String tag, TagKey<Item> workbench) {
+    private void createSet(Block block, Collection<RegistryEntry<Block>> registry, String tag, TagKey<Item> workbench, @Nullable TagKey<Block> ignored) {
         var tagKey = TagKey.create(Registries.ITEM, new ResourceLocation(Chipped.MOD_ID, tag));
         if (block != null) {
             tag(tagKey).add(TagEntry.element(Objects.requireNonNull(ForgeRegistries.BLOCKS.getKey(block))));
         }
         registry.forEach(b -> tag(tagKey).add(TagEntry.element(b.getId())));
+    }
+
+    @Override
+    public @NotNull CompletableFuture<?> run(@NotNull CachedOutput output) {
+        return super.run(new MinifiedTagOutput(output));
     }
 }

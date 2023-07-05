@@ -34,7 +34,7 @@ public class ModRecipeProvider extends RecipeProvider {
     protected void buildRecipes(@NotNull Consumer<FinishedRecipe> consumer) {
         Map<TagKey<Item>, List<String>> workbenchTags = new HashMap<>();
 
-        ModBlockTagProvider.registerTags((block, registry, name, workbench) -> {
+        ModBlockTagProvider.registerTags((block, registry, name, workbench, mineableTag) -> {
             List<String> tags = workbenchTags.getOrDefault(workbench, new ArrayList<>());
             tags.add(name);
             workbenchTags.put(workbench, tags);

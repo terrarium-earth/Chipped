@@ -30,7 +30,7 @@ subprojects {
     val isCommon = modLoader == rootProject.projects.common.name
 
     base {
-        archivesName.set("$rootProject.name-$modLoader-$minecraftVersion")
+        archivesName.set("$modId-$modLoader-$minecraftVersion")
     }
 
     configure<LoomGradleExtensionAPI> {
@@ -95,6 +95,10 @@ subprojects {
             "shadowJar"(ShadowJar::class) {
                 archiveClassifier.set("dev-shadow")
                 configurations = listOf(shadowCommon)
+
+                exclude("**/ctm/*.png") //Remove CTM textures from jar.
+                exclude(".cache/**") //Remove datagen cache from jar.
+                exclude("**/chipped/datagen/**") //Remove data gen code from jar.
             }
 
             "remapJar"(RemapJarTask::class) {
