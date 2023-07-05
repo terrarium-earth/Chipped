@@ -1,4 +1,4 @@
-// 1.20.1	2023-07-05T01:06:18.4975068	Tags for minecraft:item mod id chipped
+// 1.20.1	2023-07-05T05:11:18.091252	Tags for minecraft:item mod id chipped
 f55698e86bf8eb7dc61471e74f85b1b13446a082 data/chipped/tags/items/acacia_door.json
 ac0fa9b67679bd0084affa25fd559a143f8c6c58 data/chipped/tags/items/acacia_leaves.json
 9e1b1b880d14b737d6a6c079f3813fe35834fff8 data/chipped/tags/items/acacia_log.json
@@ -14,7 +14,6 @@ c65ff65b86c2dabe0b7549962454bfe73d536f5b data/chipped/tags/items/birch_door.json
 25587d277deecce8fdee1f54395311e31519fa79 data/chipped/tags/items/birch_log.json
 e6ae64537eeecc767c0da0476afd56aed88d92d6 data/chipped/tags/items/birch_planks.json
 e8c287617197a626f264e28cb103586fc4999554 data/chipped/tags/items/birch_trapdoor.json
-cc7e57f823145535f429bb0f416fa71b1b62485e data/chipped/tags/items/blackstone.json
 4a561a8ce9fc1f1fafcd78f7957bcde65a22320a data/chipped/tags/items/black_carpet.json
 def95c91880e07c6cfa9f6138b27e22abab13afb data/chipped/tags/items/black_concrete.json
 a083838bfa4840e142d27896e48d1116d6b54ae1 data/chipped/tags/items/black_glazed_terracotta.json
@@ -22,6 +21,7 @@ a083838bfa4840e142d27896e48d1116d6b54ae1 data/chipped/tags/items/black_glazed_te
 741613d88cfb3e6a27a9a9fd34820321fc70c6ec data/chipped/tags/items/black_stained_glass_pane.json
 549634c6047f3834bcf833db169f4fbf96e7b937 data/chipped/tags/items/black_terracotta.json
 1c2c737c83c17733bb9e7353dabdb1ba35a71181 data/chipped/tags/items/black_wool.json
+cc7e57f823145535f429bb0f416fa71b1b62485e data/chipped/tags/items/blackstone.json
 a17ad417fce7eb5dd9e198e232e2b00689bc6a1d data/chipped/tags/items/blue_carpet.json
 98d9da0eddcd203160056adb677ee388672f227b data/chipped/tags/items/blue_concrete.json
 ad1586c1511e693d1aa3ac0941e7d4efc1a953a5 data/chipped/tags/items/blue_glazed_terracotta.json
@@ -108,7 +108,7 @@ aaf10c06b98b5820ac673c4ed5ea7a2ac223691a data/chipped/tags/items/jungle_leaves.j
 3e7552912a433fae0e88defc72e727fcae779177 data/chipped/tags/items/jungle_planks.json
 5920c03b7bd7f3e12ab7b55e30560faf66265b58 data/chipped/tags/items/jungle_trapdoor.json
 48a495f53c30846e36cf6df74499c303f7725216 data/chipped/tags/items/ladder.json
-b8b745efe687787c110b5fba4632dd6e88fdf92d data/chipped/tags/items/lantern.json
+149f081b7f0db101a0e350c9c011ce33021797b1 data/chipped/tags/items/lantern.json
 c35db82e84dbcd684663204b4d563113a5e83bfe data/chipped/tags/items/lapis_block.json
 78ead3ea9ecfdc8dd85f41eb67a7e38b9555999a data/chipped/tags/items/light_blue_carpet.json
 845735dc5c12995a8fc3de63f10ae6e59a09fa68 data/chipped/tags/items/light_blue_concrete.json
@@ -147,17 +147,17 @@ c7767829082e65e4e457f83301c2931c944111e0 data/chipped/tags/items/magenta_glazed_
 078dcc84eb809cbf152f38ae7821f0d1c5ac736e data/chipped/tags/items/mangrove_roots.json
 08510db2f1d5e7ef194be32cef976bf59d36b8f5 data/chipped/tags/items/mangrove_trapdoor.json
 364bb2ad0dd8149e6c6202fbe122b4eaf7e64644 data/chipped/tags/items/melon.json
+2b0c97217db377650164fcbd3c9f03c7651dcb84 data/chipped/tags/items/moss_block.json
 6e4fbac6f2c348459f9202c331825428daf4549f data/chipped/tags/items/mossy_cobblestone.json
 95597e970d16fe8ba0bd20b87cce66da329d5ae0 data/chipped/tags/items/mossy_stone_bricks.json
-2b0c97217db377650164fcbd3c9f03c7651dcb84 data/chipped/tags/items/moss_block.json
 06f30d63db60dd2f9222a01f9be8ebbc2f6632f7 data/chipped/tags/items/mud.json
 0b05ac91ed3bbf11e4d3f1dffc3a45bfd0ff4776 data/chipped/tags/items/mud_bricks.json
 218dd92d81133b7a694d081fc34c8403be9dd111 data/chipped/tags/items/mushroom_stem.json
-30c57b4efec66ac18360e4e3a52d33e4223000e6 data/chipped/tags/items/netherite_block.json
-77ab946a4ab631c87b322aea31403b67cb0fa4b3 data/chipped/tags/items/netherrack.json
 1456d6418100ff9b12422b614061f35b16d2ef83 data/chipped/tags/items/nether_bricks.json
 b76791510f33fa12b515deabbc17a6d35810ab16 data/chipped/tags/items/nether_sprouts.json
 01f03df4898f7908b0203d9a56e00f0e295535ac data/chipped/tags/items/nether_wart_block.json
+30c57b4efec66ac18360e4e3a52d33e4223000e6 data/chipped/tags/items/netherite_block.json
+77ab946a4ab631c87b322aea31403b67cb0fa4b3 data/chipped/tags/items/netherrack.json
 ad92ae884c6669edc3a39e536af0c0943cda3c55 data/chipped/tags/items/oak_door.json
 7efa43acb99f1f8a5eee2c1c9cb632c9aae8fae9 data/chipped/tags/items/oak_leaves.json
 01db6878a00e9ec5143f76ea2139c16ac57f7d3d data/chipped/tags/items/oak_log.json
@@ -197,9 +197,6 @@ af0502fc15f7a2f4ac3ae1dd03a65a8b7cc19c22 data/chipped/tags/items/quartz_block.js
 2aedb9d59c675db194eeacba3d626329b06a83e4 data/chipped/tags/items/raw_copper_block.json
 2add8843d6ec8af0555b859b2f554a87071e3c09 data/chipped/tags/items/raw_gold_block.json
 1f7b059eae0c40c9270a67c479a83648992bacdc data/chipped/tags/items/raw_iron_block.json
-62cb8f1bd32cafa5db6c19464d0aa5ddbb2552a4 data/chipped/tags/items/redstone_block.json
-d0055b1fb5f35e74df97625a0571ebd054f10494 data/chipped/tags/items/redstone_lamp.json
-b85c39a1b234e2bec1b1c87663f3626ac429744a data/chipped/tags/items/redstone_torch.json
 067f6ef9dbb4fde8e9d47cad599626af13d70223 data/chipped/tags/items/red_carpet.json
 bece6d65beb7d1a91b9e96ac3438ca33af1f8a4c data/chipped/tags/items/red_concrete.json
 d931ec11522c05113f3d2bc0356b1b761b5983a0 data/chipped/tags/items/red_glazed_terracotta.json
@@ -211,13 +208,16 @@ ebbd9c22244b5865ac3a04ab170be1b3fe13eb37 data/chipped/tags/items/red_stained_gla
 acbfa527590a0c2a769821f9094046e105d5517f data/chipped/tags/items/red_stained_glass_pane.json
 cd2398a61469611b3e820b08ebcfce135467dccc data/chipped/tags/items/red_terracotta.json
 ab5e659b13226978a669a6a541a5251fa34053b7 data/chipped/tags/items/red_wool.json
+62cb8f1bd32cafa5db6c19464d0aa5ddbb2552a4 data/chipped/tags/items/redstone_block.json
+d0055b1fb5f35e74df97625a0571ebd054f10494 data/chipped/tags/items/redstone_lamp.json
+b85c39a1b234e2bec1b1c87663f3626ac429744a data/chipped/tags/items/redstone_torch.json
 740d7a1c3f51e5c5364173895b5be0f003e7d79d data/chipped/tags/items/sand.json
 45e68a946ad6f33e78ff6852b208702e2b3b9a90 data/chipped/tags/items/sandstone.json
 fc73a3c99ffb60a3d1c9f22eb0f546af99d5aed1 data/chipped/tags/items/sea_lantern.json
 b6d4a90cee2b01e596c2f6daa5dc84a72888ff65 data/chipped/tags/items/shroomlight.json
 f2114bc7308460bbe95fc3d286b18441a7e7c835 data/chipped/tags/items/smooth_stone.json
 7449bcad844de66705614d75d5306553edf4e5e1 data/chipped/tags/items/snow_block.json
-5e402dac63640548b0281f95b3be867f811680ea data/chipped/tags/items/soul_lantern.json
+3522490d65727f65a43124e208c10f890215ba92 data/chipped/tags/items/soul_lantern.json
 be3b8ce87a1f986d46811a41e6f84b9160c09382 data/chipped/tags/items/soul_sand.json
 5a15bcaf90d9dbab6f1c5a97b34951af6db5b811 data/chipped/tags/items/special_lantern.json
 f9f24e058a00fe9ff0ee5b4090b8bbb5e135272c data/chipped/tags/items/special_soul_lantern.json

@@ -31,6 +31,9 @@
         "client": [
             "earth.terrarium.chipped.client.fabric.ChippedClientFabric"
         ],
+        "rei_client": [
+            "earth.terrarium.chipped.common.compat.rei.REIChippedPlugin"
+        ],
         "jei_mod_plugin": [
             "earth.terrarium.chipped.common.compat.jei.JEIPlugin"
         ]

@@ -5,7 +5,6 @@
   "minVersion": "0.8.5",
   "mixins": [
     "BlockBehaviourMixin",
-    "EnchantmentTableBlockMixin",
     "NetherWartBlockMixin"
   ],
   "injectors": {

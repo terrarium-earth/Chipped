@@ -42,7 +42,6 @@ public class ModBlocks {
     public static final ResourcefulRegistry<Block> BENCHES = ResourcefulRegistries.create(BLOCKS);
 
     public static final TagKey<Block> SOUL_SAND_TAG = TagKey.create(Registries.BLOCK, new ResourceLocation(Chipped.MOD_ID, "soul_sand"));
-    public static final TagKey<Block> BOOKSHELF_TAG = TagKey.create(Registries.BLOCK, new ResourceLocation(Chipped.MOD_ID, "bookshelf"));
 
     public static final RegistryEntry<Block> BOTANIST_WORKBENCH = BENCHES.register("botanist_workbench", () -> new WorkbenchBlock((id, inventory, access) -> new ChippedMenu(id, inventory, access, ModMenus.BOTANIST_WORKBENCH.get(), ModRecipeTypes.BOTANIST_WORKBENCH_TYPE.get(), ModBlocks.BOTANIST_WORKBENCH.get()), BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).noOcclusion()));
     public static final RegistryEntry<Block> GLASSBLOWER = BENCHES.register("glassblower", () -> new WorkbenchBlock((id, inventory, access) -> new ChippedMenu(id, inventory, access, ModMenus.GLASSBLOWER.get(), ModRecipeTypes.GLASSBLOWER_TYPE.get(), ModBlocks.GLASSBLOWER.get()), BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).noOcclusion()));
@@ -77,13 +76,13 @@ public class ModBlocks {
     public static final ChippedPaletteRegistry<Block> CLAY = createRegistry(Blocks.CLAY, Palettes.CLAY);
     public static final ChippedPaletteRegistry<Block> MUD = createRegistry(Blocks.MUD, Palettes.MUD);
     public static final ChippedPaletteRegistry<Block> PACKED_MUD = createRegistry(Blocks.PACKED_MUD, Palettes.MUD);
-    public static final ChippedPaletteRegistry<Block> ACACIA_LEAVES = createRegistry(Blocks.ACACIA_LEAVES, Palettes.LEAVES);
-    public static final ChippedPaletteRegistry<Block> BIRCH_LEAVES = createRegistry(Blocks.BIRCH_LEAVES, Palettes.LEAVES);
-    public static final ChippedPaletteRegistry<Block> DARK_OAK_LEAVES = createRegistry(Blocks.DARK_OAK_LEAVES, Palettes.LEAVES);
-    public static final ChippedPaletteRegistry<Block> JUNGLE_LEAVES = createRegistry(Blocks.JUNGLE_LEAVES, Palettes.LEAVES);
-    public static final ChippedPaletteRegistry<Block> MANGROVE_ROOTS = createRegistry(Blocks.MANGROVE_ROOTS, Palettes.ROOTS);
-    public static final ChippedPaletteRegistry<Block> OAK_LEAVES = createRegistry(Blocks.OAK_LEAVES, Palettes.LEAVES);
-    public static final ChippedPaletteRegistry<Block> SPRUCE_LEAVES = createRegistry(Blocks.SPRUCE_LEAVES, Palettes.LEAVES);
+    public static final ChippedPaletteRegistry<Block> ACACIA_LEAVES = createRegistry(Blocks.ACACIA_LEAVES, Palettes.LEAVES, LeavesBlock::new);
+    public static final ChippedPaletteRegistry<Block> BIRCH_LEAVES = createRegistry(Blocks.BIRCH_LEAVES, Palettes.LEAVES, LeavesBlock::new);
+    public static final ChippedPaletteRegistry<Block> DARK_OAK_LEAVES = createRegistry(Blocks.DARK_OAK_LEAVES, Palettes.LEAVES, LeavesBlock::new);
+    public static final ChippedPaletteRegistry<Block> JUNGLE_LEAVES = createRegistry(Blocks.JUNGLE_LEAVES, Palettes.LEAVES, LeavesBlock::new);
+    public static final ChippedPaletteRegistry<Block> MANGROVE_ROOTS = createRegistry(Blocks.MANGROVE_ROOTS, Palettes.ROOTS, MangroveRootsBlock::new);
+    public static final ChippedPaletteRegistry<Block> OAK_LEAVES = createRegistry(Blocks.OAK_LEAVES, Palettes.LEAVES, LeavesBlock::new);
+    public static final ChippedPaletteRegistry<Block> SPRUCE_LEAVES = createRegistry(Blocks.SPRUCE_LEAVES, Palettes.LEAVES, LeavesBlock::new);
     public static final ChippedPaletteRegistry<Block> OCHRE_FROGLIGHT = createRegistry(Blocks.OCHRE_FROGLIGHT, Palettes.FROGLIGHT);
     public static final ChippedPaletteRegistry<Block> PEARLESCENT_FROGLIGHT = createRegistry(Blocks.PEARLESCENT_FROGLIGHT, Palettes.FROGLIGHT);
     public static final ChippedPaletteRegistry<Block> VERDANT_FROGLIGHT = createRegistry(Blocks.VERDANT_FROGLIGHT, Palettes.FROGLIGHT);

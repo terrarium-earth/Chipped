@@ -21,6 +21,4 @@ public class ModMenus {
     public static final Supplier<MenuType<ChippedMenu>> MASON_TABLE = MENUS.register("mason_table", () -> new MenuType<>((id, inventory) -> new ChippedMenu(id, inventory, ContainerLevelAccess.NULL, ModMenus.MASON_TABLE.get(), ModRecipeTypes.MASON_TABLE_TYPE.get(), ModBlocks.MASON_TABLE.get()), FeatureFlags.VANILLA_SET));
     public static final Supplier<MenuType<ChippedMenu>> ALCHEMY_BENCH = MENUS.register("alchemy_bench", () -> new MenuType<>((id, inventory) -> new ChippedMenu(id, inventory, ContainerLevelAccess.NULL, ModMenus.ALCHEMY_BENCH.get(), ModRecipeTypes.ALCHEMY_BENCH_TYPE.get(), ModBlocks.ALCHEMY_BENCH.get()), FeatureFlags.VANILLA_SET));
     public static final Supplier<MenuType<ChippedMenu>> TINKERING_TABLE = MENUS.register("tinkering_table", () -> new MenuType<>((id, inventory) -> new ChippedMenu(id, inventory, ContainerLevelAccess.NULL, ModMenus.TINKERING_TABLE.get(), ModRecipeTypes.TINKERING_TABLE_TYPE.get(), ModBlocks.TINKERING_TABLE.get()), FeatureFlags.VANILLA_SET));
-
-
 }
