@@ -1,6 +1,1 @@
-{
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "chipped:block/gray_stained_glass/circular_gray_stained_glass"
-  }
-}
+{"parent":"minecraft:block/cube_all","textures":{"all":"chipped:block/gray_stained_glass/circular_gray_stained_glass"}}

@@ -1,6 +1,1 @@
-{
-  "parent": "minecraft:block/template_glass_pane_noside",
-  "textures": {
-    "pane": "chipped:block/iron_bars/bolted_iron_bars"
-  }
-}
+{"parent":"minecraft:block/template_glass_pane_noside","textures":{"pane":"chipped:block/iron_bars/bolted_iron_bars"}}

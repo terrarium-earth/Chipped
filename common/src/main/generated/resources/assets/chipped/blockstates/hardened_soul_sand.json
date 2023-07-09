@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/hardened_soul_sand"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/hardened_soul_sand"}}}

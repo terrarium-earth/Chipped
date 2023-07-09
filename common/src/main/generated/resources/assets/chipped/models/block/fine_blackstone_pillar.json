@@ -1,6 +1,1 @@
-{
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "chipped:block/blackstone/fine_blackstone_pillar"
-  }
-}
+{"parent":"minecraft:block/cube_all","textures":{"all":"chipped:block/blackstone/fine_blackstone_pillar"}}

@@ -1,6 +1,1 @@
-{
-  "parent": "minecraft:block/cross",
-  "textures": {
-    "cross": "chipped:block/red_mushroom/red_mushroom_bulb"
-  }
-}
+{"parent":"minecraft:block/cross","textures":{"cross":"chipped:block/red_mushroom/red_mushroom_bulb"}}

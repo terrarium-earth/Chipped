@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/basket_woven_dark_oak_planks"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/basket_woven_dark_oak_planks"}}}

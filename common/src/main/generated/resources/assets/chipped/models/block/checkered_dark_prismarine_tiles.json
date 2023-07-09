@@ -1,6 +1,1 @@
-{
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "chipped:block/dark_prismarine/checkered_dark_prismarine_tiles"
-  }
-}
+{"parent":"minecraft:block/cube_all","textures":{"all":"chipped:block/dark_prismarine/checkered_dark_prismarine_tiles"}}

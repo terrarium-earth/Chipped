@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/prismal_purpur_block_remnants"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/prismal_purpur_block_remnants"}}}

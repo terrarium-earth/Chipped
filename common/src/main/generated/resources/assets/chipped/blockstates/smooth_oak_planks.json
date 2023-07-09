@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/smooth_oak_planks"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/smooth_oak_planks"}}}

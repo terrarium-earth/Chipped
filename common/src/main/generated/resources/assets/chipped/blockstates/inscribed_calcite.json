@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/inscribed_calcite"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/inscribed_calcite"}}}

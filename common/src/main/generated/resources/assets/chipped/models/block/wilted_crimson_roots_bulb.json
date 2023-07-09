@@ -1,6 +1,1 @@
-{
-  "parent": "minecraft:block/cross",
-  "textures": {
-    "cross": "chipped:block/crimson_roots/wilted_crimson_roots_bulb"
-  }
-}
+{"parent":"minecraft:block/cross","textures":{"cross":"chipped:block/crimson_roots/wilted_crimson_roots_bulb"}}

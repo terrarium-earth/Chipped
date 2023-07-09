@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/smooth_ringed_basalt"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/smooth_ringed_basalt"}}}

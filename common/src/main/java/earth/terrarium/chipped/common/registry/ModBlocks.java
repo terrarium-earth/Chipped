@@ -123,6 +123,7 @@ public class ModBlocks {
     public static final ChippedPaletteRegistry<Block> SPRUCE_PLANKS = createRegistry(Blocks.SPRUCE_PLANKS, Palettes.PLANKS);
     public static final ChippedPaletteRegistry<Block> CRIMSON_PLANKS = createRegistry(Blocks.CRIMSON_PLANKS, Palettes.PLANKS);
     public static final ChippedPaletteRegistry<Block> WARPED_PLANKS = createRegistry(Blocks.WARPED_PLANKS, Palettes.PLANKS);
+    public static final ChippedPaletteRegistry<Block> CHERRY_PLANKS = createRegistry(Blocks.CHERRY_PLANKS, Palettes.PLANKS);
     public static final ChippedPaletteRegistry<Block> ACACIA_LOG = createRegistry(Blocks.ACACIA_LOG, Palettes.LOG, RotatedPillarBlock::new);
     public static final ChippedPaletteRegistry<Block> BIRCH_LOG = createRegistry(Blocks.BIRCH_LOG, Palettes.LOG, RotatedPillarBlock::new);
     public static final ChippedPaletteRegistry<Block> DARK_OAK_LOG = createRegistry(Blocks.DARK_OAK_LOG, Palettes.LOG, RotatedPillarBlock::new);

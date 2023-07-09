@@ -1,6 +1,1 @@
-{
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "chipped:block/basalt/prismal_basalt_remnants"
-  }
-}
+{"parent":"minecraft:block/cube_all","textures":{"all":"chipped:block/basalt/prismal_basalt_remnants"}}

@@ -1,6 +1,1 @@
-{
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "chipped:block/blue_ice/blue_ice_scales"
-  }
-}
+{"parent":"minecraft:block/cube_all","textures":{"all":"chipped:block/blue_ice/blue_ice_scales"}}

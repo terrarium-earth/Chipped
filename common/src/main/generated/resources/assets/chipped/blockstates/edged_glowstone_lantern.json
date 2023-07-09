@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/edged_glowstone_lantern"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/edged_glowstone_lantern"}}}

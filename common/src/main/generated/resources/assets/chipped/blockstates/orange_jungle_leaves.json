@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/orange_jungle_leaves"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/orange_jungle_leaves"}}}

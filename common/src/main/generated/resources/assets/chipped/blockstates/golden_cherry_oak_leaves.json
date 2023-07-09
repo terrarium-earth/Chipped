@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/golden_cherry_oak_leaves"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/golden_cherry_oak_leaves"}}}

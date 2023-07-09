@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/smooth_sea_lantern"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/smooth_sea_lantern"}}}

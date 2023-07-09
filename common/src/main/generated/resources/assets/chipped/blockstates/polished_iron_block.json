@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/polished_iron_block"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/polished_iron_block"}}}

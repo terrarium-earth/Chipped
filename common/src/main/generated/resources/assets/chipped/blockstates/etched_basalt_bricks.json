@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/etched_basalt_bricks"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/etched_basalt_bricks"}}}

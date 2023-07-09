@@ -1,6 +1,1 @@
-{
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "chipped:block/end_stone/fine_end_stone_pillar"
-  }
-}
+{"parent":"minecraft:block/cube_all","textures":{"all":"chipped:block/end_stone/fine_end_stone_pillar"}}

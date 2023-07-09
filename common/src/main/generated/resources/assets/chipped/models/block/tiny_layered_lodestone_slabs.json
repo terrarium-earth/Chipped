@@ -1,6 +1,1 @@
-{
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "chipped:block/lodestone/tiny_layered_lodestone_slabs"
-  }
-}
+{"parent":"minecraft:block/cube_all","textures":{"all":"chipped:block/lodestone/tiny_layered_lodestone_slabs"}}

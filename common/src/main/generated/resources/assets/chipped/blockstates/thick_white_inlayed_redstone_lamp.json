@@ -1,10 +1,1 @@
-{
-  "variants": {
-    "lit=false": {
-      "model": "chipped:block/thick_white_inlayed_redstone_lamp"
-    },
-    "lit=true": {
-      "model": "chipped:block/thick_white_inlayed_redstone_lamp_on"
-    }
-  }
-}
+{"variants":{"lit=false":{"model":"chipped:block/thick_white_inlayed_redstone_lamp"},"lit=true":{"model":"chipped:block/thick_white_inlayed_redstone_lamp_on"}}}

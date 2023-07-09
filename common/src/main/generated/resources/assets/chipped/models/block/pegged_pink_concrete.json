@@ -1,6 +1,1 @@
-{
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "chipped:block/pink_concrete/pegged_pink_concrete"
-  }
-}
+{"parent":"minecraft:block/cube_all","textures":{"all":"chipped:block/pink_concrete/pegged_pink_concrete"}}

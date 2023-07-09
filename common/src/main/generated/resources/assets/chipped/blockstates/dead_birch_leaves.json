@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/dead_birch_leaves"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/dead_birch_leaves"}}}

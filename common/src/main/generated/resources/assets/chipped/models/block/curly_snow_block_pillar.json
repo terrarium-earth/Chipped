@@ -1,6 +1,1 @@
-{
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "chipped:block/snow_block/curly_snow_block_pillar"
-  }
-}
+{"parent":"minecraft:block/cube_all","textures":{"all":"chipped:block/snow_block/curly_snow_block_pillar"}}

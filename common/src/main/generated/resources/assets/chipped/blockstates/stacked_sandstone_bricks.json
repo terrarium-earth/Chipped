@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/stacked_sandstone_bricks"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/stacked_sandstone_bricks"}}}

@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/eroded_sandstone"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/eroded_sandstone"}}}

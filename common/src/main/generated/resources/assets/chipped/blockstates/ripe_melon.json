@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/ripe_melon"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/ripe_melon"}}}

@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/cut_blank_andesite"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/cut_blank_andesite"}}}

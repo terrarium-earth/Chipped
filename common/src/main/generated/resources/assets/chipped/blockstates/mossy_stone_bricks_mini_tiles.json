@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/mossy_stone_bricks_mini_tiles"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/mossy_stone_bricks_mini_tiles"}}}

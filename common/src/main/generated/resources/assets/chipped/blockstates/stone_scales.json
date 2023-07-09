@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/stone_scales"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/stone_scales"}}}

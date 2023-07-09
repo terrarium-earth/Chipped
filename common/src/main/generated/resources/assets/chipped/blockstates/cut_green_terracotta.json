@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/cut_green_terracotta"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/cut_green_terracotta"}}}

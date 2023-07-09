@@ -1,6 +1,1 @@
-{
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "chipped:block/netherrack/fine_netherrack_pillar"
-  }
-}
+{"parent":"minecraft:block/cube_all","textures":{"all":"chipped:block/netherrack/fine_netherrack_pillar"}}

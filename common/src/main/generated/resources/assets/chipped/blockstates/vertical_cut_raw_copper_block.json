@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/vertical_cut_raw_copper_block"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/vertical_cut_raw_copper_block"}}}

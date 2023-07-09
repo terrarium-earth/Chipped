@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/engraved_dark_prismarine"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/engraved_dark_prismarine"}}}

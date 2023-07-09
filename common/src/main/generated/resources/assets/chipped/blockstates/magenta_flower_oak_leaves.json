@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/magenta_flower_oak_leaves"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/magenta_flower_oak_leaves"}}}

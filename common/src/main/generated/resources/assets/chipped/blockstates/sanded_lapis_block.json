@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/sanded_lapis_block"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/sanded_lapis_block"}}}

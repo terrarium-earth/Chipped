@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/prismal_diorite_remnants"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/prismal_diorite_remnants"}}}

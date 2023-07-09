@@ -1,6 +1,1 @@
-{
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "chipped:block/pink_wool/windmill_pink_wool"
-  }
-}
+{"parent":"minecraft:block/cube_all","textures":{"all":"chipped:block/pink_wool/windmill_pink_wool"}}

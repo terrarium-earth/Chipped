@@ -1,6 +1,1 @@
-{
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "chipped:block/netherrack/unamused_netherrack"
-  }
-}
+{"parent":"minecraft:block/cube_all","textures":{"all":"chipped:block/netherrack/unamused_netherrack"}}

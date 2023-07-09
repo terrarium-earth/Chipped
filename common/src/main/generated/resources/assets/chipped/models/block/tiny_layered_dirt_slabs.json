@@ -1,6 +1,1 @@
-{
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "chipped:block/dirt/tiny_layered_dirt_slabs"
-  }
-}
+{"parent":"minecraft:block/cube_all","textures":{"all":"chipped:block/dirt/tiny_layered_dirt_slabs"}}

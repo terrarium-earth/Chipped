@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/flimsy_nether_sprouts"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/flimsy_nether_sprouts"}}}

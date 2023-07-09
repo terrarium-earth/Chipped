@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/corrupted_nether_sprouts"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/corrupted_nether_sprouts"}}}

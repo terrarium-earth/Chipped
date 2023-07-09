@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/spiraled_granite"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/spiraled_granite"}}}

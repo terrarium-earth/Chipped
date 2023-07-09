@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/trodden_dripstone_block"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/trodden_dripstone_block"}}}

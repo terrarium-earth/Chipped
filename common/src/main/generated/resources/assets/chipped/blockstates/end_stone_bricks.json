@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/end_stone_bricks"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/end_stone_bricks"}}}

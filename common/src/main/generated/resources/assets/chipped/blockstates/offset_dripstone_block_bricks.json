@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/offset_dripstone_block_bricks"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/offset_dripstone_block_bricks"}}}

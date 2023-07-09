@@ -1,6 +1,1 @@
-{
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "chipped:block/crying_obsidian/checkered_crying_obsidian_tiles"
-  }
-}
+{"parent":"minecraft:block/cube_all","textures":{"all":"chipped:block/crying_obsidian/checkered_crying_obsidian_tiles"}}

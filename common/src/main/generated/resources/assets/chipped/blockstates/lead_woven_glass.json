@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/lead_woven_glass"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/lead_woven_glass"}}}

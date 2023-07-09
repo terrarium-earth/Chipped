@@ -82,6 +82,7 @@ public class ModItemTagProvider extends ItemTagsProvider {
         createVanillaSet(ModBlocks.SPRUCE_PLANKS, ItemTags.PLANKS);
         createVanillaSet(ModBlocks.CRIMSON_PLANKS, ItemTags.PLANKS);
         createVanillaSet(ModBlocks.WARPED_PLANKS, ItemTags.PLANKS);
+        createVanillaSet(ModBlocks.CHERRY_PLANKS, ItemTags.PLANKS);
         createVanillaSet(ModBlocks.SAND, ItemTags.SAND);
         createVanillaSet(ModBlocks.SOUL_SAND, ItemTags.SOUL_FIRE_BASE_BLOCKS);
         createVanillaSet(ModBlocks.ACACIA_TRAPDOOR, ItemTags.TRAPDOORS);

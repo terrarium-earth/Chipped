@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/runic_carved_diorite"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/runic_carved_diorite"}}}

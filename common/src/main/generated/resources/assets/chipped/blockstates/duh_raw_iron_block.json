@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/duh_raw_iron_block"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/duh_raw_iron_block"}}}

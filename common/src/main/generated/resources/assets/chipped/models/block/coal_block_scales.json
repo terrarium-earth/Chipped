@@ -1,6 +1,1 @@
-{
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "chipped:block/coal_block/coal_block_scales"
-  }
-}
+{"parent":"minecraft:block/cube_all","textures":{"all":"chipped:block/coal_block/coal_block_scales"}}

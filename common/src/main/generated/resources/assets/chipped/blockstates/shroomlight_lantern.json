@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/shroomlight_lantern"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/shroomlight_lantern"}}}

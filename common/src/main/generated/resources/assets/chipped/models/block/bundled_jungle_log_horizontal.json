@@ -1,7 +1,1 @@
-{
-  "parent": "minecraft:block/cube_column_horizontal",
-  "textures": {
-    "end": "chipped:block/jungle_log/bundled_jungle_log_top",
-    "side": "chipped:block/jungle_log/bundled_jungle_log"
-  }
-}
+{"parent":"minecraft:block/cube_column_horizontal","textures":{"end":"chipped:block/jungle_log/bundled_jungle_log_top","side":"chipped:block/jungle_log/bundled_jungle_log"}}

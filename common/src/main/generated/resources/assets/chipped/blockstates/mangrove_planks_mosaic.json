@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/mangrove_planks_mosaic"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/mangrove_planks_mosaic"}}}

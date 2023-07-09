@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/shimmering_glowstone"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/shimmering_glowstone"}}}

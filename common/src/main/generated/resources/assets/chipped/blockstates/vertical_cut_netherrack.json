@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/vertical_cut_netherrack"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/vertical_cut_netherrack"}}}

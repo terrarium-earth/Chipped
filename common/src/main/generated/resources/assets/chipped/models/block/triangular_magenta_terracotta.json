@@ -1,6 +1,1 @@
-{
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "chipped:block/magenta_terracotta/triangular_magenta_terracotta"
-  }
-}
+{"parent":"minecraft:block/cube_all","textures":{"all":"chipped:block/magenta_terracotta/triangular_magenta_terracotta"}}

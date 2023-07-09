@@ -1,6 +1,1 @@
-{
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "chipped:block/lime_concrete/wired_lime_concrete"
-  }
-}
+{"parent":"minecraft:block/cube_all","textures":{"all":"chipped:block/lime_concrete/wired_lime_concrete"}}

@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/red_terracotta_tile"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/red_terracotta_tile"}}}

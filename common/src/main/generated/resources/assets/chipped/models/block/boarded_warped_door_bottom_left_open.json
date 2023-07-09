@@ -1,7 +1,1 @@
-{
-  "parent": "minecraft:block/door_bottom_left_open",
-  "textures": {
-    "bottom": "chipped:block/warped_door/boarded_warped_door_bottom",
-    "top": "chipped:block/warped_door/boarded_warped_door_top"
-  }
-}
+{"parent":"minecraft:block/door_bottom_left_open","textures":{"bottom":"chipped:block/warped_door/boarded_warped_door_bottom","top":"chipped:block/warped_door/boarded_warped_door_top"}}

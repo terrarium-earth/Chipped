@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/soft_sponge"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/soft_sponge"}}}

@@ -1,6 +1,1 @@
-{
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "chipped:block/torch/crimson_torch"
-  }
-}
+{"parent":"minecraft:item/generated","textures":{"layer0":"chipped:block/torch/crimson_torch"}}

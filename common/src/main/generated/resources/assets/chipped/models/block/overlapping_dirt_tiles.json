@@ -1,6 +1,1 @@
-{
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "chipped:block/dirt/overlapping_dirt_tiles"
-  }
-}
+{"parent":"minecraft:block/cube_all","textures":{"all":"chipped:block/dirt/overlapping_dirt_tiles"}}

@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/granite_pillar"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/granite_pillar"}}}

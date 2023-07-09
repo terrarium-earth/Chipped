@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/hanging_broken_cobweb"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/hanging_broken_cobweb"}}}

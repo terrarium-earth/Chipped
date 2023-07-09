@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/oak_planks_shavings"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/oak_planks_shavings"}}}

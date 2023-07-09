@@ -1,6 +1,1 @@
-{
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "chipped:block/mud/thick_inlayed_mud"
-  }
-}
+{"parent":"minecraft:block/cube_all","textures":{"all":"chipped:block/mud/thick_inlayed_mud"}}

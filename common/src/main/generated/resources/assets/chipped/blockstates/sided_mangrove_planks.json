@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/sided_mangrove_planks"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/sided_mangrove_planks"}}}

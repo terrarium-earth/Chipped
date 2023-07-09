@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/cubed_oak_webbed_bookshelf"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/cubed_oak_webbed_bookshelf"}}}

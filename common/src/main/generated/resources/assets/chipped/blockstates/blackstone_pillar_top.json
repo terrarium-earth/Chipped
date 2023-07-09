@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/blackstone_pillar_top"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/blackstone_pillar_top"}}}

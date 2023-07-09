@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/shuttered_gold_block"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/shuttered_gold_block"}}}

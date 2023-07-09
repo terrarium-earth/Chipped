@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/glad_redstone_block"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/glad_redstone_block"}}}

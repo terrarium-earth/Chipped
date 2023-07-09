@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/glad_packed_mud"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/glad_packed_mud"}}}

@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/layed_calcite_bricks"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/layed_calcite_bricks"}}}

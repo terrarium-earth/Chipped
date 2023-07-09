@@ -1,6 +1,1 @@
-{
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "chipped:block/granite/brick_bordered_granite"
-  }
-}
+{"parent":"minecraft:block/cube_all","textures":{"all":"chipped:block/granite/brick_bordered_granite"}}

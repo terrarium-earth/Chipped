@@ -1,6 +1,1 @@
-{
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "chipped:block/glowstone/bulbed_glowstone"
-  }
-}
+{"parent":"minecraft:block/cube_all","textures":{"all":"chipped:block/glowstone/bulbed_glowstone"}}

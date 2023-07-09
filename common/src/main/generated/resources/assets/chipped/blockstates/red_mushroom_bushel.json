@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/red_mushroom_bushel"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/red_mushroom_bushel"}}}

@@ -1,6 +1,1 @@
-{
-  "parent": "minecraft:block/cross",
-  "textures": {
-    "cross": "chipped:block/cobweb/hanging_cobweb"
-  }
-}
+{"parent":"minecraft:block/cross","textures":{"cross":"chipped:block/cobweb/hanging_cobweb"}}

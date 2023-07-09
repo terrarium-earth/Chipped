@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/patched_magenta_carpet"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/patched_magenta_carpet"}}}

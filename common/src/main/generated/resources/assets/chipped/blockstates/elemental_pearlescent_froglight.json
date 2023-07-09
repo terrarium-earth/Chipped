@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/elemental_pearlescent_froglight"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/elemental_pearlescent_froglight"}}}

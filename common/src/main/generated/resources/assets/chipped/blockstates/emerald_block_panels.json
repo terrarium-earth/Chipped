@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/emerald_block_panels"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/emerald_block_panels"}}}

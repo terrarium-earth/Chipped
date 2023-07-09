@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/tropics_melon"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/tropics_melon"}}}

@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/loded_basalt"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/loded_basalt"}}}

@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/angry_clay"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/angry_clay"}}}

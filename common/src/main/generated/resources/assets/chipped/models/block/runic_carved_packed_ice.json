@@ -1,6 +1,1 @@
-{
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "chipped:block/packed_ice/runic_carved_packed_ice"
-  }
-}
+{"parent":"minecraft:block/cube_all","textures":{"all":"chipped:block/packed_ice/runic_carved_packed_ice"}}

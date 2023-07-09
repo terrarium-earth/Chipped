@@ -1,6 +1,1 @@
-{
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "chipped:block/magenta_wool/tripped_magenta_wool"
-  }
-}
+{"parent":"minecraft:block/cube_all","textures":{"all":"chipped:block/magenta_wool/tripped_magenta_wool"}}

@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/warning_gray_concrete"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/warning_gray_concrete"}}}

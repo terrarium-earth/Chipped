@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/tiled_red_nether_bricks"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/tiled_red_nether_bricks"}}}

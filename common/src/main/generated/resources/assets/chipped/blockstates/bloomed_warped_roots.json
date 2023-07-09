@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/bloomed_warped_roots"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/bloomed_warped_roots"}}}

@@ -1,6 +1,1 @@
-{
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "chipped:block/magenta_concrete/magenta_concrete_tiles"
-  }
-}
+{"parent":"minecraft:block/cube_all","textures":{"all":"chipped:block/magenta_concrete/magenta_concrete_tiles"}}

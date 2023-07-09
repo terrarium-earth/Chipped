@@ -1,6 +1,1 @@
-{
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "chipped:block/stone/vertical_cut_stone"
-  }
-}
+{"parent":"minecraft:block/cube_all","textures":{"all":"chipped:block/stone/vertical_cut_stone"}}

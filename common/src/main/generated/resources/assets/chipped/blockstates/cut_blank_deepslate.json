@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/cut_blank_deepslate"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/cut_blank_deepslate"}}}

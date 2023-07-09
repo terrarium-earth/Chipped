@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/leaning_mud"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/leaning_mud"}}}

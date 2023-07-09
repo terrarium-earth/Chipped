@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/layed_andesite_bricks"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/layed_andesite_bricks"}}}

@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/bulby_sponge"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/bulby_sponge"}}}

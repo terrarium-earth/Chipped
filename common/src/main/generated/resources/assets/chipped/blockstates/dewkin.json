@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/dewkin"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/dewkin"}}}

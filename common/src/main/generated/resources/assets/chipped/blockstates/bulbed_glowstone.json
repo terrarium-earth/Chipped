@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/bulbed_glowstone"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/bulbed_glowstone"}}}

@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/magenta_concrete_tiles"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/magenta_concrete_tiles"}}}

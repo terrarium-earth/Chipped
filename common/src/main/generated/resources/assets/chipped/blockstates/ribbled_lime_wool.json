@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/ribbled_lime_wool"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/ribbled_lime_wool"}}}

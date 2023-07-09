@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/jungle_torch"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/jungle_torch"}}}

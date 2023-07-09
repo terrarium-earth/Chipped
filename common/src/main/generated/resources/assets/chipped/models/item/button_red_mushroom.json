@@ -1,6 +1,1 @@
-{
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "chipped:block/red_mushroom/button_red_mushroom"
-  }
-}
+{"parent":"minecraft:item/generated","textures":{"layer0":"chipped:block/red_mushroom/button_red_mushroom"}}

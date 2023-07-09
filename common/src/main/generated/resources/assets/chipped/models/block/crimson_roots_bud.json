@@ -1,6 +1,1 @@
-{
-  "parent": "minecraft:block/cross",
-  "textures": {
-    "cross": "chipped:block/crimson_roots/crimson_roots_bud"
-  }
-}
+{"parent":"minecraft:block/cross","textures":{"cross":"chipped:block/crimson_roots/crimson_roots_bud"}}

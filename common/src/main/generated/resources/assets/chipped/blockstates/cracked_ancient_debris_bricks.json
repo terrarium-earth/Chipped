@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/cracked_ancient_debris_bricks"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/cracked_ancient_debris_bricks"}}}

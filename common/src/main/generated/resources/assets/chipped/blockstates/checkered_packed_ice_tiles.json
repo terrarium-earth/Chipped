@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/checkered_packed_ice_tiles"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/checkered_packed_ice_tiles"}}}

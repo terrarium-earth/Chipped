@@ -1,6 +1,1 @@
-{
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "chipped:block/mossy_cobblestone/overlapping_mossy_cobblestone_tiles"
-  }
-}
+{"parent":"minecraft:block/cube_all","textures":{"all":"chipped:block/mossy_cobblestone/overlapping_mossy_cobblestone_tiles"}}

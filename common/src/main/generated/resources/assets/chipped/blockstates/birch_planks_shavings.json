@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/birch_planks_shavings"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/birch_planks_shavings"}}}

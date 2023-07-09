@@ -1,6 +1,1 @@
-{
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "chipped:block/calcite/cut_blank_calcite"
-  }
-}
+{"parent":"minecraft:block/cube_all","textures":{"all":"chipped:block/calcite/cut_blank_calcite"}}

@@ -1,7 +1,1 @@
-{
-  "parent": "minecraft:block/cube_column_horizontal",
-  "textures": {
-    "end": "chipped:block/birch_log/overgrown_birch_log_top",
-    "side": "chipped:block/birch_log/overgrown_birch_log"
-  }
-}
+{"parent":"minecraft:block/cube_column_horizontal","textures":{"end":"chipped:block/birch_log/overgrown_birch_log_top","side":"chipped:block/birch_log/overgrown_birch_log"}}

@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/shifted_jungle_planks"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/shifted_jungle_planks"}}}

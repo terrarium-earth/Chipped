@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/tiled_sea_lantern_pillar"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/tiled_sea_lantern_pillar"}}}

@@ -1,6 +1,1 @@
-{
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "chipped:block/acacia_leaves/golden_cherry_acacia_leaves"
-  }
-}
+{"parent":"minecraft:block/cube_all","textures":{"all":"chipped:block/acacia_leaves/golden_cherry_acacia_leaves"}}

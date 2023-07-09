@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/sigil_mud"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/sigil_mud"}}}

@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/tuff_pillar"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/tuff_pillar"}}}

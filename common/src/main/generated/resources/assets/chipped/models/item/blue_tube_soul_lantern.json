@@ -1,6 +1,1 @@
-{
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "chipped:item/soul_lantern/blue_tube_soul_lantern"
-  }
-}
+{"parent":"minecraft:item/generated","textures":{"layer0":"chipped:item/soul_lantern/blue_tube_soul_lantern"}}

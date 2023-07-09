@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/glow_torch"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/glow_torch"}}}

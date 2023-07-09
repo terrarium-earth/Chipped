@@ -1,6 +1,1 @@
-{
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "chipped:block/raw_copper_block/cut_blank_raw_copper_block"
-  }
-}
+{"parent":"minecraft:block/cube_all","textures":{"all":"chipped:block/raw_copper_block/cut_blank_raw_copper_block"}}

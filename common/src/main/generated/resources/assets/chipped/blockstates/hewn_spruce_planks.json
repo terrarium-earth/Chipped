@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/hewn_spruce_planks"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/hewn_spruce_planks"}}}

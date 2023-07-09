@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/offset_andesite_bricks"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/offset_andesite_bricks"}}}

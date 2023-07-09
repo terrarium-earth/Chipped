@@ -1,6 +1,1 @@
-{
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "chipped:block/lodestone/ring_lodestone_side"
-  }
-}
+{"parent":"minecraft:block/cube_all","textures":{"all":"chipped:block/lodestone/ring_lodestone_side"}}

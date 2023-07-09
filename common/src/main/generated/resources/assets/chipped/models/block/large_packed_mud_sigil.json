@@ -1,6 +1,1 @@
-{
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "chipped:block/packed_mud/large_packed_mud_sigil"
-  }
-}
+{"parent":"minecraft:block/cube_all","textures":{"all":"chipped:block/packed_mud/large_packed_mud_sigil"}}

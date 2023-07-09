@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/dark_prismarine_scales"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/dark_prismarine_scales"}}}

@@ -1,6 +1,1 @@
-{
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "chipped:block/stone/spider_stone_carving"
-  }
-}
+{"parent":"minecraft:block/cube_all","textures":{"all":"chipped:block/stone/spider_stone_carving"}}

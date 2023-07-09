@@ -1,6 +1,1 @@
-{
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "chipped:block/coal_block/blank_coal_block_carving"
-  }
-}
+{"parent":"minecraft:block/cube_all","textures":{"all":"chipped:block/coal_block/blank_coal_block_carving"}}

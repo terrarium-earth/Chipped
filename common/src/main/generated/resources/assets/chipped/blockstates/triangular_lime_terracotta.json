@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/triangular_lime_terracotta"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/triangular_lime_terracotta"}}}

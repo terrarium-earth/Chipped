@@ -1,6 +1,1 @@
-{
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "chipped:block/end_stone/cracked_disordered_end_stone_bricks"
-  }
-}
+{"parent":"minecraft:block/cube_all","textures":{"all":"chipped:block/end_stone/cracked_disordered_end_stone_bricks"}}

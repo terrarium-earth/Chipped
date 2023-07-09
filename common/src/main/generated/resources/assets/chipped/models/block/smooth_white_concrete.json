@@ -1,6 +1,1 @@
-{
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "chipped:block/white_concrete/smooth_white_concrete"
-  }
-}
+{"parent":"minecraft:block/cube_all","textures":{"all":"chipped:block/white_concrete/smooth_white_concrete"}}

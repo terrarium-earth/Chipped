@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/pink_concrete_bricks"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/pink_concrete_bricks"}}}

@@ -1,6 +1,1 @@
-{
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "chipped:block/ochre_froglight/elemental_ochre_froglight"
-  }
-}
+{"parent":"minecraft:block/cube_all","textures":{"all":"chipped:block/ochre_froglight/elemental_ochre_froglight"}}

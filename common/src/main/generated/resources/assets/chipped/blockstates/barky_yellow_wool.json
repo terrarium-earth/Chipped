@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/barky_yellow_wool"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/barky_yellow_wool"}}}

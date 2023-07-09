@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/vertical_cut_mossy_stone_bricks"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/vertical_cut_mossy_stone_bricks"}}}

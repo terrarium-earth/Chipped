@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/rought_gravel"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/rought_gravel"}}}

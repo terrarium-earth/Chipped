@@ -1,6 +1,1 @@
-{
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "chipped:block/mangrove_planks/crossed_mangrove_planks"
-  }
-}
+{"parent":"minecraft:block/cube_all","textures":{"all":"chipped:block/mangrove_planks/crossed_mangrove_planks"}}

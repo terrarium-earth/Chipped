@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/crossed_purple_terracotta"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/crossed_purple_terracotta"}}}

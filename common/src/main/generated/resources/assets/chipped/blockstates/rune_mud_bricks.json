@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/rune_mud_bricks"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/rune_mud_bricks"}}}

@@ -1,6 +1,1 @@
-{
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "chipped:block/dark_oak_leaves/apple_dark_oak_leaves"
-  }
-}
+{"parent":"minecraft:block/cube_all","textures":{"all":"chipped:block/dark_oak_leaves/apple_dark_oak_leaves"}}

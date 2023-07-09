@@ -1,6 +1,1 @@
-{
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "chipped:block/mud/creeper_mud_carving"
-  }
-}
+{"parent":"minecraft:block/cube_all","textures":{"all":"chipped:block/mud/creeper_mud_carving"}}

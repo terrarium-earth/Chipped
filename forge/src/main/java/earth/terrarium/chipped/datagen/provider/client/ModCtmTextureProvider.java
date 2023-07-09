@@ -108,6 +108,17 @@ public class ModCtmTextureProvider implements DataProvider {
         registries.add(ModBlocks.RED_WOOL);
         registries.add(ModBlocks.YELLOW_WOOL);
 
+        registries.add(ModBlocks.ACACIA_PLANKS);
+        registries.add(ModBlocks.BIRCH_PLANKS);
+        registries.add(ModBlocks.DARK_OAK_PLANKS);
+        registries.add(ModBlocks.JUNGLE_PLANKS);
+        registries.add(ModBlocks.MANGROVE_PLANKS);
+        registries.add(ModBlocks.OAK_PLANKS);
+        registries.add(ModBlocks.SPRUCE_PLANKS);
+        registries.add(ModBlocks.CRIMSON_PLANKS);
+        registries.add(ModBlocks.WARPED_PLANKS);
+        registries.add(ModBlocks.CHERRY_PLANKS);
+
         registries.add(ModBlocks.TERRACOTTA);
         registries.add(ModBlocks.WHITE_TERRACOTTA);
         registries.add(ModBlocks.BLACK_TERRACOTTA);

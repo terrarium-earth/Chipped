@@ -1,7 +1,1 @@
-{
-  "parent": "minecraft:block/cube_column",
-  "textures": {
-    "end": "chipped:block/bone_block/weaved_bone_block_top",
-    "side": "chipped:block/bone_block/weaved_bone_block"
-  }
-}
+{"parent":"minecraft:block/cube_column","textures":{"end":"chipped:block/bone_block/weaved_bone_block_top","side":"chipped:block/bone_block/weaved_bone_block"}}

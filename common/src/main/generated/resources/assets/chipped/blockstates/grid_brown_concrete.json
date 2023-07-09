@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/grid_brown_concrete"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/grid_brown_concrete"}}}

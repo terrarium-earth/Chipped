@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/duh_packed_ice"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/duh_packed_ice"}}}

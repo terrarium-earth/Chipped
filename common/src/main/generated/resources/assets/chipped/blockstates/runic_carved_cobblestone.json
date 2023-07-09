@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/runic_carved_cobblestone"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/runic_carved_cobblestone"}}}

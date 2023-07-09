@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/checkered_prismarine_tiles"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/checkered_prismarine_tiles"}}}

@@ -1,6 +1,1 @@
-{
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "chipped:block/red_nether_bricks/fine_red_nether_bricks_pillar"
-  }
-}
+{"parent":"minecraft:block/cube_all","textures":{"all":"chipped:block/red_nether_bricks/fine_red_nether_bricks_pillar"}}

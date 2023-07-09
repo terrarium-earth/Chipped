@@ -1,6 +1,1 @@
-{
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "chipped:block/gilded_blackstone/layed_gilded_blackstone_bricks"
-  }
-}
+{"parent":"minecraft:block/cube_all","textures":{"all":"chipped:block/gilded_blackstone/layed_gilded_blackstone_bricks"}}

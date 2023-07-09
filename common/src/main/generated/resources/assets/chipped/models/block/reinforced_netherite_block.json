@@ -1,6 +1,1 @@
-{
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "chipped:block/netherite_block/reinforced_netherite_block"
-  }
-}
+{"parent":"minecraft:block/cube_all","textures":{"all":"chipped:block/netherite_block/reinforced_netherite_block"}}

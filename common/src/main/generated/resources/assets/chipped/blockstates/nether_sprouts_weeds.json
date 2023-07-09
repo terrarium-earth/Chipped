@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/nether_sprouts_weeds"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/nether_sprouts_weeds"}}}

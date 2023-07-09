@@ -1,6 +1,1 @@
-{
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "chipped:block/shroomlight/double_inlayed_shroomlight"
-  }
-}
+{"parent":"minecraft:block/cube_all","textures":{"all":"chipped:block/shroomlight/double_inlayed_shroomlight"}}

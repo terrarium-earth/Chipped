@@ -1,6 +1,1 @@
-{
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "chipped:block/mud/crying_mud"
-  }
-}
+{"parent":"minecraft:block/cube_all","textures":{"all":"chipped:block/mud/crying_mud"}}

@@ -1,6 +1,1 @@
-{
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "chipped:block/ancient_debris/spider_ancient_debris_carving"
-  }
-}
+{"parent":"minecraft:block/cube_all","textures":{"all":"chipped:block/ancient_debris/spider_ancient_debris_carving"}}

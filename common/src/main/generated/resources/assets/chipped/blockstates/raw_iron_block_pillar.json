@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/raw_iron_block_pillar"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/raw_iron_block_pillar"}}}

@@ -1,6 +1,1 @@
-{
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "chipped:block/iron_bars/barbed_iron_bars"
-  }
-}
+{"parent":"minecraft:item/generated","textures":{"layer0":"chipped:block/iron_bars/barbed_iron_bars"}}

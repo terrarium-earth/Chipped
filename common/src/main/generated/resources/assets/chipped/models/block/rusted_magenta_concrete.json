@@ -1,6 +1,1 @@
-{
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "chipped:block/magenta_concrete/rusted_magenta_concrete"
-  }
-}
+{"parent":"minecraft:block/cube_all","textures":{"all":"chipped:block/magenta_concrete/rusted_magenta_concrete"}}

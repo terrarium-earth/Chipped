@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/prismal_coal_block_remnants"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/prismal_coal_block_remnants"}}}

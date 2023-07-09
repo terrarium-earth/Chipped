@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/stop_lime_concrete"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/stop_lime_concrete"}}}

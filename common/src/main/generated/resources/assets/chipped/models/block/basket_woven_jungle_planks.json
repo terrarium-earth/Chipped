@@ -1,6 +1,1 @@
-{
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "chipped:block/jungle_planks/basket_woven_jungle_planks"
-  }
-}
+{"parent":"minecraft:block/cube_all","textures":{"all":"chipped:block/jungle_planks/basket_woven_jungle_planks"}}

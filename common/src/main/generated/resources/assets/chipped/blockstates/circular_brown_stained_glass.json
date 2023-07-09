@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/circular_brown_stained_glass"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/circular_brown_stained_glass"}}}

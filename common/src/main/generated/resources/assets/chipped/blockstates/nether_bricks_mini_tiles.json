@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/nether_bricks_mini_tiles"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/nether_bricks_mini_tiles"}}}

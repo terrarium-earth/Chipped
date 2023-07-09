@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/crimson_dried_kelp_block"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/crimson_dried_kelp_block"}}}

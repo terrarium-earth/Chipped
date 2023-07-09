@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/reinforced_waxed_oxidized_copper"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/reinforced_waxed_oxidized_copper"}}}

@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/layed_diorite_bricks"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/layed_diorite_bricks"}}}

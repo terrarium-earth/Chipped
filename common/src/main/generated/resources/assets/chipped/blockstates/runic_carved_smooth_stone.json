@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/runic_carved_smooth_stone"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/runic_carved_smooth_stone"}}}

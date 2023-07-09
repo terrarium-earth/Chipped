@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/layered_black_terracotta"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/layered_black_terracotta"}}}

@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/tripped_cyan_carpet"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/tripped_cyan_carpet"}}}

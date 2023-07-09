@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/layed_smooth_stone_bricks"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/layed_smooth_stone_bricks"}}}

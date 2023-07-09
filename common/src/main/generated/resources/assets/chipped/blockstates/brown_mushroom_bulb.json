@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/brown_mushroom_bulb"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/brown_mushroom_bulb"}}}

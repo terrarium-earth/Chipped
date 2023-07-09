@@ -1,6 +1,1 @@
-{
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "chipped:block/netherrack/tiled_netherrack_column"
-  }
-}
+{"parent":"minecraft:block/cube_all","textures":{"all":"chipped:block/netherrack/tiled_netherrack_column"}}

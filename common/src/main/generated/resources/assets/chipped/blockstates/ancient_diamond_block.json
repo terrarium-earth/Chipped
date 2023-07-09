@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/ancient_diamond_block"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/ancient_diamond_block"}}}

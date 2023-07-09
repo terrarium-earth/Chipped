@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/angry_gilded_blackstone"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/angry_gilded_blackstone"}}}

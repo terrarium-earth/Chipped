@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/ancient_debris_scales"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/ancient_debris_scales"}}}

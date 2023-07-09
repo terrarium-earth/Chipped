@@ -1,7 +1,1 @@
-{
-  "parent": "minecraft:block/mangrove_roots",
-  "textures": {
-    "side": "chipped:block/mangrove_roots/lush_mangrove_roots",
-    "top": "chipped:block/mangrove_roots/lush_mangrove_roots_top"
-  }
-}
+{"parent":"minecraft:block/mangrove_roots","textures":{"side":"chipped:block/mangrove_roots/lush_mangrove_roots","top":"chipped:block/mangrove_roots/lush_mangrove_roots_top"}}

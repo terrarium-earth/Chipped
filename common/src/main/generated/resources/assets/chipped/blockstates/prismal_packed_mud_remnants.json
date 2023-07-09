@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/prismal_packed_mud_remnants"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/prismal_packed_mud_remnants"}}}

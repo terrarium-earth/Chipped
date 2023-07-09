@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/dirty_gravel"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/dirty_gravel"}}}

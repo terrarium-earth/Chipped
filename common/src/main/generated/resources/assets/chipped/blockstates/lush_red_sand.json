@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/lush_red_sand"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/lush_red_sand"}}}

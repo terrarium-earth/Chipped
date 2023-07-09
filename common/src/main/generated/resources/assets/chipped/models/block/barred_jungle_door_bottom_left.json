@@ -1,7 +1,1 @@
-{
-  "parent": "minecraft:block/door_bottom_left",
-  "textures": {
-    "bottom": "chipped:block/jungle_door/barred_jungle_door_bottom",
-    "top": "chipped:block/jungle_door/barred_jungle_door_top"
-  }
-}
+{"parent":"minecraft:block/door_bottom_left","textures":{"bottom":"chipped:block/jungle_door/barred_jungle_door_bottom","top":"chipped:block/jungle_door/barred_jungle_door_top"}}

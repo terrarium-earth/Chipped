@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/offset_basalt_bricks"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/offset_basalt_bricks"}}}

@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/inscribed_sandstone"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/inscribed_sandstone"}}}

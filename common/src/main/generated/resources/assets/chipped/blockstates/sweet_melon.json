@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/sweet_melon"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/sweet_melon"}}}

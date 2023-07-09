@@ -1,6 +1,1 @@
-{
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "chipped:item/jungle_door/dual_paneled_jungle_door"
-  }
-}
+{"parent":"minecraft:item/generated","textures":{"layer0":"chipped:item/jungle_door/dual_paneled_jungle_door"}}

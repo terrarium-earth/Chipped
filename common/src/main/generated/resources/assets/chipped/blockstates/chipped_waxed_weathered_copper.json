@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/chipped_waxed_weathered_copper"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/chipped_waxed_weathered_copper"}}}

@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/loded_tuff"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/loded_tuff"}}}

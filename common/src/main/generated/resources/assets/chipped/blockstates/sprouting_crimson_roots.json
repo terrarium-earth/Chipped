@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/sprouting_crimson_roots"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/sprouting_crimson_roots"}}}

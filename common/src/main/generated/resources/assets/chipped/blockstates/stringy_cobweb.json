@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/stringy_cobweb"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/stringy_cobweb"}}}

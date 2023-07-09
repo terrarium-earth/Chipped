@@ -1,6 +1,1 @@
-{
-  "parent": "minecraft:block/template_glass_pane_noside_alt",
-  "textures": {
-    "pane": "chipped:block/cyan_stained_glass/square_cyan_stained_glass"
-  }
-}
+{"parent":"minecraft:block/template_glass_pane_noside_alt","textures":{"pane":"chipped:block/cyan_stained_glass/square_cyan_stained_glass"}}

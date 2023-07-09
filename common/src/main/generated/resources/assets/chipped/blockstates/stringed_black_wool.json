@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/stringed_black_wool"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/stringed_black_wool"}}}

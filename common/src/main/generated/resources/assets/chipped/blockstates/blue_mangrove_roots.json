@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/blue_mangrove_roots"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/blue_mangrove_roots"}}}

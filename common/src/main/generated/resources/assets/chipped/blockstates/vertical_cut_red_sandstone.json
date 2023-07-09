@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/vertical_cut_red_sandstone"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/vertical_cut_red_sandstone"}}}

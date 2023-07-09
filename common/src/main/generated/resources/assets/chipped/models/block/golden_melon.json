@@ -1,8 +1,1 @@
-{
-  "parent": "minecraft:block/cube_bottom_top",
-  "textures": {
-    "bottom": "chipped:block/melon/golden_melon_bottom",
-    "side": "chipped:block/melon/golden_melon",
-    "top": "chipped:block/melon/golden_melon_top"
-  }
-}
+{"parent":"minecraft:block/cube_bottom_top","textures":{"bottom":"chipped:block/melon/golden_melon_bottom","side":"chipped:block/melon/golden_melon","top":"chipped:block/melon/golden_melon_top"}}

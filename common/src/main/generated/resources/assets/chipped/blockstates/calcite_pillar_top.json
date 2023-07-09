@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/calcite_pillar_top"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/calcite_pillar_top"}}}

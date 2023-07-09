@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/full_bookshelf"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/full_bookshelf"}}}

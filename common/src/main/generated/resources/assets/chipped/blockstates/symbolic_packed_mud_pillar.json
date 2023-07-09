@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/symbolic_packed_mud_pillar"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/symbolic_packed_mud_pillar"}}}

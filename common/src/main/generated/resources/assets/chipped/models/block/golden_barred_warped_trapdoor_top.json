@@ -1,6 +1,1 @@
-{
-  "parent": "minecraft:block/template_trapdoor_top",
-  "textures": {
-    "texture": "chipped:block/warped_trapdoor/golden_barred_warped_trapdoor"
-  }
-}
+{"parent":"minecraft:block/template_trapdoor_top","textures":{"texture":"chipped:block/warped_trapdoor/golden_barred_warped_trapdoor"}}

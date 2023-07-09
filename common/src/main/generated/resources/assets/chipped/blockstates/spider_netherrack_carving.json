@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/spider_netherrack_carving"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/spider_netherrack_carving"}}}

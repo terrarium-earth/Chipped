@@ -1,6 +1,1 @@
-{
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "chipped:block/mossy_stone_bricks/ornate_mossy_stone_bricks_pillar"
-  }
-}
+{"parent":"minecraft:block/cube_all","textures":{"all":"chipped:block/mossy_stone_bricks/ornate_mossy_stone_bricks_pillar"}}

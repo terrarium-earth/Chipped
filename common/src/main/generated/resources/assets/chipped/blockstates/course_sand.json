@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/course_sand"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/course_sand"}}}

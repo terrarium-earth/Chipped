@@ -1,6 +1,1 @@
-{
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "chipped:block/spruce_leaves/magenta_flower_spruce_leaves"
-  }
-}
+{"parent":"minecraft:block/cube_all","textures":{"all":"chipped:block/spruce_leaves/magenta_flower_spruce_leaves"}}

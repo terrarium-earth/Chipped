@@ -1,6 +1,1 @@
-{
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "chipped:item/dark_oak_door/pressed_dark_oak_door"
-  }
-}
+{"parent":"minecraft:item/generated","textures":{"layer0":"chipped:item/dark_oak_door/pressed_dark_oak_door"}}

@@ -1,7 +1,1 @@
-{
-  "parent": "minecraft:block/template_glazed_terracotta",
-  "textures": {
-    "particle": "chipped:block/white_glazed_terracotta/white_glazed_terracotta_pillar_sides",
-    "pattern": "chipped:block/white_glazed_terracotta/white_glazed_terracotta_pillar_sides"
-  }
-}
+{"parent":"minecraft:block/template_glazed_terracotta","textures":{"particle":"chipped:block/white_glazed_terracotta/white_glazed_terracotta_pillar_sides","pattern":"chipped:block/white_glazed_terracotta/white_glazed_terracotta_pillar_sides"}}

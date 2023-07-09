@@ -1,6 +1,1 @@
-{
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "chipped:block/mossy_cobblestone/blank_mossy_cobblestone_carving"
-  }
-}
+{"parent":"minecraft:block/cube_all","textures":{"all":"chipped:block/mossy_cobblestone/blank_mossy_cobblestone_carving"}}

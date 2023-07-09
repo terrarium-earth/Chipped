@@ -171,6 +171,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
         createSet(ModBlocks.SPRUCE_PLANKS, "spruce_planks");
         createSet(ModBlocks.CRIMSON_PLANKS, "crimson_planks");
         createSet(ModBlocks.WARPED_PLANKS, "warped_planks");
+        createSet(ModBlocks.CHERRY_PLANKS, "cherry_planks");
 
         createSet(ModBlocks.BRICKS, "bricks");
         createSet(ModBlocks.MUD, "mud");

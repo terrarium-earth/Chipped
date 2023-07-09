@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/dirty_goldkin"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/dirty_goldkin"}}}

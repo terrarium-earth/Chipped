@@ -1,6 +1,1 @@
-{
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "chipped:block/yellow_terracotta/hexagonical_yellow_terracotta"
-  }
-}
+{"parent":"minecraft:block/cube_all","textures":{"all":"chipped:block/yellow_terracotta/hexagonical_yellow_terracotta"}}

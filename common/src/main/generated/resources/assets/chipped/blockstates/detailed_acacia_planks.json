@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/detailed_acacia_planks"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/detailed_acacia_planks"}}}

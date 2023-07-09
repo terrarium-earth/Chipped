@@ -1,6 +1,1 @@
-{
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "chipped:block/soul_sand/lauching_soul_sand"
-  }
-}
+{"parent":"minecraft:block/cube_all","textures":{"all":"chipped:block/soul_sand/lauching_soul_sand"}}

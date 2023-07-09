@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/creeper_pink_concrete"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/creeper_pink_concrete"}}}

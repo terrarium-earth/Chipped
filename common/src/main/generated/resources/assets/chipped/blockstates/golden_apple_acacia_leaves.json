@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/golden_apple_acacia_leaves"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/golden_apple_acacia_leaves"}}}

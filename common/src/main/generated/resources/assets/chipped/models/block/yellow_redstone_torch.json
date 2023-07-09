@@ -1,6 +1,1 @@
-{
-  "parent": "minecraft:block/template_torch",
-  "textures": {
-    "torch": "chipped:block/redstone_torch/yellow_redstone_torch"
-  }
-}
+{"parent":"minecraft:block/template_torch","textures":{"torch":"chipped:block/redstone_torch/yellow_redstone_torch"}}

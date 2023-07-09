@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/rough_granite"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/rough_granite"}}}

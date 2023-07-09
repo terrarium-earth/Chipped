@@ -1,6 +1,1 @@
-{
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "chipped:block/cobweb/cobweb_floor"
-  }
-}
+{"parent":"minecraft:item/generated","textures":{"layer0":"chipped:block/cobweb/cobweb_floor"}}

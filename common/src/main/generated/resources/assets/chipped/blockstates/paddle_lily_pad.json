@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/paddle_lily_pad"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/paddle_lily_pad"}}}

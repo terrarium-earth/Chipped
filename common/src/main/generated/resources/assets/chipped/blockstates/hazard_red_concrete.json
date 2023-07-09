@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/hazard_red_concrete"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/hazard_red_concrete"}}}

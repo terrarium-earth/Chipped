@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/bricks_scales"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/bricks_scales"}}}

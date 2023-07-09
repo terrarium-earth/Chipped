@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/prismal_basalt_remnants"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/prismal_basalt_remnants"}}}

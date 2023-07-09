@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/square_leaded_glass"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/square_leaded_glass"}}}

@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/sad_ice"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/sad_ice"}}}

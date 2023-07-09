@@ -1,6 +1,1 @@
-{
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "chipped:block/glass/oak_horizontal_lined_glass"
-  }
-}
+{"parent":"minecraft:block/cube_all","textures":{"all":"chipped:block/glass/oak_horizontal_lined_glass"}}

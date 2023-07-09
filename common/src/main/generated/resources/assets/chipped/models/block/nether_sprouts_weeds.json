@@ -1,6 +1,1 @@
-{
-  "parent": "minecraft:block/cross",
-  "textures": {
-    "cross": "chipped:block/nether_sprouts/nether_sprouts_weeds"
-  }
-}
+{"parent":"minecraft:block/cross","textures":{"cross":"chipped:block/nether_sprouts/nether_sprouts_weeds"}}

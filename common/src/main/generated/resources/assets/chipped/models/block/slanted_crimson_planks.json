@@ -1,6 +1,1 @@
-{
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "chipped:block/crimson_planks/slanted_crimson_planks"
-  }
-}
+{"parent":"minecraft:block/cube_all","textures":{"all":"chipped:block/crimson_planks/slanted_crimson_planks"}}

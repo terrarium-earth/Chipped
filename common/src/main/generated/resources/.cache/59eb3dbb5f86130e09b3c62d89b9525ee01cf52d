@@ -1,8 +1,8 @@
-// 1.20.1	2023-07-05T05:11:18.092251	Loot Tables
-f08d26a21fb6a0b53ad5fa607ca04e0fc441f0da data/chipped/loot_tables/blocks/alchemy_bench.json
-c650ab225a040c5c904071a1a4128bc4453f05e2 data/chipped/loot_tables/blocks/botanist_workbench.json
-9d783ba6b838ad78b23379f7ccf4ada94f697e4f data/chipped/loot_tables/blocks/carpenters_table.json
-0d4d0c4065a99c2da3d31e2bf2b666ba438b8d2f data/chipped/loot_tables/blocks/glassblower.json
-b68df20c8dce71544caa3eff4e29f2c8c654ae2a data/chipped/loot_tables/blocks/loom_table.json
-31a2751bd3d754564b43e2b772c5182e084bc970 data/chipped/loot_tables/blocks/mason_table.json
-76ea08d7d293cce542517538bb665a75e5987879 data/chipped/loot_tables/blocks/tinkering_table.json
+// 1.20.1	2023-07-08T22:00:59.167522	Loot Tables
+7d3c5951c31a27dea9ce60688a408f01814dc46c data/chipped/loot_tables/blocks/alchemy_bench.json
+348725815b4fdb1649533b203ee89e9a9dc7597f data/chipped/loot_tables/blocks/botanist_workbench.json
+22dd3c100e6e857879563c7f972ff04c5843e84a data/chipped/loot_tables/blocks/carpenters_table.json
+4f7548122dc75bd53354590a8943bdc5cf09107c data/chipped/loot_tables/blocks/glassblower.json
+a0d75ef28da3e5defbb23ff4e1c205bdb1b740a3 data/chipped/loot_tables/blocks/loom_table.json
+3b516b39522c81cec363d9ba7c9864e80adcf607 data/chipped/loot_tables/blocks/mason_table.json
+0f2856578393049b9af8d6e76eab5abae60a7a9b data/chipped/loot_tables/blocks/tinkering_table.json

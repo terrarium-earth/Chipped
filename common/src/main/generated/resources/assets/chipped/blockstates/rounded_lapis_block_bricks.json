@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/rounded_lapis_block_bricks"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/rounded_lapis_block_bricks"}}}

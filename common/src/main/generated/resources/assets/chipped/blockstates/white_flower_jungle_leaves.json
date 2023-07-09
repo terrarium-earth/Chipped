@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/white_flower_jungle_leaves"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/white_flower_jungle_leaves"}}}

@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/prismal_red_nether_bricks_remnants"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/prismal_red_nether_bricks_remnants"}}}

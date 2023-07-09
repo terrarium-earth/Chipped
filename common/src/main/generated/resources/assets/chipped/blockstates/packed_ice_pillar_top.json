@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/packed_ice_pillar_top"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/packed_ice_pillar_top"}}}

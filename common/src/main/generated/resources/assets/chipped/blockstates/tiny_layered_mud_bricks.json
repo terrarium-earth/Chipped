@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/tiny_layered_mud_bricks"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/tiny_layered_mud_bricks"}}}

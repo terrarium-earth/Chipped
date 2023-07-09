@@ -1,6 +1,1 @@
-{
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "chipped:block/packed_ice/cobbled_packed_ice"
-  }
-}
+{"parent":"minecraft:block/cube_all","textures":{"all":"chipped:block/packed_ice/cobbled_packed_ice"}}

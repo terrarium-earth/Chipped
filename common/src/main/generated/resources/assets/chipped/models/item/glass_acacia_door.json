@@ -1,6 +1,1 @@
-{
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "chipped:item/acacia_door/glass_acacia_door"
-  }
-}
+{"parent":"minecraft:item/generated","textures":{"layer0":"chipped:item/acacia_door/glass_acacia_door"}}

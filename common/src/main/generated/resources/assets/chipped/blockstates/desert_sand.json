@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/desert_sand"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/desert_sand"}}}

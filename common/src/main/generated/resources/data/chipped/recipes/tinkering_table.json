@@ -1,14 +1,1 @@
-{
-  "type": "chipped:tinkering_table",
-  "tags": [
-    "chipped:iron_bars",
-    "chipped:sea_lantern",
-    "chipped:redstone_lamp",
-    "chipped:redstone_block",
-    "chipped:lantern",
-    "chipped:soul_lantern",
-    "chipped:special_lantern",
-    "chipped:special_soul_lantern",
-    "chipped:redstone_torch"
-  ]
-}
+{"type":"chipped:tinkering_table","tags":["chipped:iron_bars","chipped:sea_lantern","chipped:redstone_lamp","chipped:redstone_block","chipped:lantern","chipped:soul_lantern","chipped:special_lantern","chipped:special_soul_lantern","chipped:redstone_torch"]}

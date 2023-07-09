@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/pimpkin"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/pimpkin"}}}

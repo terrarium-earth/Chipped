@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/trodden_crying_obsidian"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/trodden_crying_obsidian"}}}

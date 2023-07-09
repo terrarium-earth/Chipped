@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/vertical_cut_magma_block"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/vertical_cut_magma_block"}}}

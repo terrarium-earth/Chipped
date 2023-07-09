@@ -1,6 +1,1 @@
-{
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "chipped:item/lantern/wooden_cage_lantern"
-  }
-}
+{"parent":"minecraft:item/generated","textures":{"layer0":"chipped:item/lantern/wooden_cage_lantern"}}

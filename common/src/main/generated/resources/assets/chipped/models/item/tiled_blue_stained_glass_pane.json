@@ -1,6 +1,1 @@
-{
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "chipped:block/blue_stained_glass/tiled_blue_stained_glass"
-  }
-}
+{"parent":"minecraft:item/generated","textures":{"layer0":"chipped:block/blue_stained_glass/tiled_blue_stained_glass"}}

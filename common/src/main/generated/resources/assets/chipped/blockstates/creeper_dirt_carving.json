@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/creeper_dirt_carving"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/creeper_dirt_carving"}}}

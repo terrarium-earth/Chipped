@@ -1,6 +1,1 @@
-{
-  "parent": "minecraft:block/carpet",
-  "textures": {
-    "wool": "chipped:block/black_wool/bundled_black_wool"
-  }
-}
+{"parent":"minecraft:block/carpet","textures":{"wool":"chipped:block/black_wool/bundled_black_wool"}}

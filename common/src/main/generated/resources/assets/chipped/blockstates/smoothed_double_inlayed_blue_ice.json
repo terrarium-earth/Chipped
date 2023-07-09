@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/smoothed_double_inlayed_blue_ice"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/smoothed_double_inlayed_blue_ice"}}}

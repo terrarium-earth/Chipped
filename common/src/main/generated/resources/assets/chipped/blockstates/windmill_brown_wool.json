@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/windmill_brown_wool"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/windmill_brown_wool"}}}

@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/duh_mud"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/duh_mud"}}}

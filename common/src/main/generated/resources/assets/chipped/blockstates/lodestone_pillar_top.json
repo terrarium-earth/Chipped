@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/lodestone_pillar_top"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/lodestone_pillar_top"}}}

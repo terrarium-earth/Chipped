@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/micro_lily_pads"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/micro_lily_pads"}}}

@@ -1,6 +1,1 @@
-{
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "chipped:block/orange_terracotta/curled_orange_terracotta"
-  }
-}
+{"parent":"minecraft:block/cube_all","textures":{"all":"chipped:block/orange_terracotta/curled_orange_terracotta"}}

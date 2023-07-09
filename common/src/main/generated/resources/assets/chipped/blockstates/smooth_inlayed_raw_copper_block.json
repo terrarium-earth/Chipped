@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/smooth_inlayed_raw_copper_block"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/smooth_inlayed_raw_copper_block"}}}

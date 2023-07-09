@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/warm_mushroom_stem"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/warm_mushroom_stem"}}}

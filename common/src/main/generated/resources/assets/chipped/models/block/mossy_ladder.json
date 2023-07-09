@@ -1,7 +1,1 @@
-{
-  "parent": "minecraft:block/ladder",
-  "textures": {
-    "particle": "chipped:block/ladder/mossy_ladder",
-    "texture": "chipped:block/ladder/mossy_ladder"
-  }
-}
+{"parent":"minecraft:block/ladder","textures":{"particle":"chipped:block/ladder/mossy_ladder","texture":"chipped:block/ladder/mossy_ladder"}}

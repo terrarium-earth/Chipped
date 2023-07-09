@@ -1,6 +1,1 @@
-{
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "chipped:block/diorite/tiny_brick_bordered_diorite"
-  }
-}
+{"parent":"minecraft:block/cube_all","textures":{"all":"chipped:block/diorite/tiny_brick_bordered_diorite"}}

@@ -1,6 +1,1 @@
-{
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "chipped:item/crimson_door/dual_paneled_crimson_door"
-  }
-}
+{"parent":"minecraft:item/generated","textures":{"layer0":"chipped:item/crimson_door/dual_paneled_crimson_door"}}

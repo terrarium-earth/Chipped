@@ -1,15 +1,1 @@
-{
-  "athena:loader": "athena:ctm",
-  "ctm_textures": {
-    "center": "chipped:block/mossy_cobblestone/ctm/edged_mossy_cobblestone_bricks_ctm/3",
-    "empty": "chipped:block/mossy_cobblestone/ctm/edged_mossy_cobblestone_bricks_ctm/0",
-    "horizontal": "chipped:block/mossy_cobblestone/ctm/edged_mossy_cobblestone_bricks_ctm/2",
-    "particle": "chipped:block/mossy_cobblestone/edged_mossy_cobblestone_bricks",
-    "vertical": "chipped:block/mossy_cobblestone/ctm/edged_mossy_cobblestone_bricks_ctm/1"
-  },
-  "variants": {
-    "": {
-      "model": "chipped:block/edged_mossy_cobblestone_bricks"
-    }
-  }
-}
+{"athena:loader":"athena:ctm","ctm_textures":{"center":"chipped:block/mossy_cobblestone/ctm/edged_mossy_cobblestone_bricks_ctm/3","empty":"chipped:block/mossy_cobblestone/ctm/edged_mossy_cobblestone_bricks_ctm/0","horizontal":"chipped:block/mossy_cobblestone/ctm/edged_mossy_cobblestone_bricks_ctm/2","particle":"chipped:block/mossy_cobblestone/edged_mossy_cobblestone_bricks","vertical":"chipped:block/mossy_cobblestone/ctm/edged_mossy_cobblestone_bricks_ctm/1"},"variants":{"":{"model":"chipped:block/edged_mossy_cobblestone_bricks"}}}

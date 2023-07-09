@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/dripstone_block_scales"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/dripstone_block_scales"}}}

@@ -1,6 +1,1 @@
-{
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "chipped:block/blackstone/smooth_inlayed_blackstone"
-  }
-}
+{"parent":"minecraft:block/cube_all","textures":{"all":"chipped:block/blackstone/smooth_inlayed_blackstone"}}

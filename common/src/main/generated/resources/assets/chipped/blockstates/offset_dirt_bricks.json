@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/offset_dirt_bricks"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/offset_dirt_bricks"}}}

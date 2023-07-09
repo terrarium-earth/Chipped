@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/prismal_ancient_debris_remnants"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/prismal_ancient_debris_remnants"}}}

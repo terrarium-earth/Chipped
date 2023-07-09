@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/detailed_crimson_planks"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/detailed_crimson_planks"}}}

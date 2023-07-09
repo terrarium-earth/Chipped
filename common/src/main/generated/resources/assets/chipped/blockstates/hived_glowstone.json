@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/hived_glowstone"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/hived_glowstone"}}}

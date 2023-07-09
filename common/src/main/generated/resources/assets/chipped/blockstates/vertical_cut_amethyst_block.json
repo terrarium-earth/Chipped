@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/vertical_cut_amethyst_block"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/vertical_cut_amethyst_block"}}}

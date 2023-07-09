@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/engraved_lapis_block"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/engraved_lapis_block"}}}

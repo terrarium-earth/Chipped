@@ -1,6 +1,1 @@
-{
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "chipped:block/light_gray_terracotta/inscribed_light_gray_terracotta"
-  }
-}
+{"parent":"minecraft:block/cube_all","textures":{"all":"chipped:block/light_gray_terracotta/inscribed_light_gray_terracotta"}}

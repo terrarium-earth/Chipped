@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/etched_gilded_blackstone_bricks"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/etched_gilded_blackstone_bricks"}}}

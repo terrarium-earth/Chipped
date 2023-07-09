@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/double_herringbone_crimson_planks"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/double_herringbone_crimson_planks"}}}

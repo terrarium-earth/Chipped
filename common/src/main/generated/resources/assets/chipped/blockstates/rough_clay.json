@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/rough_clay"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/rough_clay"}}}

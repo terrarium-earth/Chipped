@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/frosted_birch_leaves"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/frosted_birch_leaves"}}}

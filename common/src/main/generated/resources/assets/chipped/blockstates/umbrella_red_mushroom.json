@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/umbrella_red_mushroom"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/umbrella_red_mushroom"}}}

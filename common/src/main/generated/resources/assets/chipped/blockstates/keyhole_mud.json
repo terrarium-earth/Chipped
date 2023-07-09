@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/keyhole_mud"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/keyhole_mud"}}}

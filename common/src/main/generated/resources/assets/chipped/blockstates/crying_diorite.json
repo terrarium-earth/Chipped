@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/crying_diorite"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/crying_diorite"}}}

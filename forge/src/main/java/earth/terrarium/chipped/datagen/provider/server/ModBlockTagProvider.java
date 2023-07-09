@@ -115,6 +115,7 @@ public class ModBlockTagProvider extends BlockTagsProvider {
         registry.register(Blocks.SPRUCE_PLANKS, ModBlocks.SPRUCE_PLANKS, "spruce_planks", CARPENTERS_TABLE_TAG, BlockTags.MINEABLE_WITH_AXE);
         registry.register(Blocks.CRIMSON_PLANKS, ModBlocks.CRIMSON_PLANKS, "crimson_planks", CARPENTERS_TABLE_TAG, BlockTags.MINEABLE_WITH_AXE);
         registry.register(Blocks.WARPED_PLANKS, ModBlocks.WARPED_PLANKS, "warped_planks", CARPENTERS_TABLE_TAG, BlockTags.MINEABLE_WITH_AXE);
+        registry.register(Blocks.CHERRY_PLANKS, ModBlocks.CHERRY_PLANKS, "cherry_planks", CARPENTERS_TABLE_TAG, BlockTags.MINEABLE_WITH_AXE);
         registry.register(Blocks.ACACIA_LOG, ModBlocks.ACACIA_LOG, "acacia_log", CARPENTERS_TABLE_TAG, BlockTags.MINEABLE_WITH_AXE);
         registry.register(Blocks.BIRCH_LOG, ModBlocks.BIRCH_LOG, "birch_log", CARPENTERS_TABLE_TAG, BlockTags.MINEABLE_WITH_AXE);
         registry.register(Blocks.DARK_OAK_LOG, ModBlocks.DARK_OAK_LOG, "dark_oak_log", CARPENTERS_TABLE_TAG, BlockTags.MINEABLE_WITH_AXE);
@@ -415,6 +416,7 @@ public class ModBlockTagProvider extends BlockTagsProvider {
         createVanillaSet(ModBlocks.SPRUCE_PLANKS, BlockTags.PLANKS);
         createVanillaSet(ModBlocks.CRIMSON_PLANKS, BlockTags.PLANKS);
         createVanillaSet(ModBlocks.WARPED_PLANKS, BlockTags.PLANKS);
+        createVanillaSet(ModBlocks.CHERRY_PLANKS, BlockTags.PLANKS);
         createVanillaSet(ModBlocks.VINE, BlockTags.REPLACEABLE_BY_TREES);
         createVanillaSet(ModBlocks.SAND, BlockTags.SAND);
         createVanillaSet(ModBlocks.SNOW_BLOCK, BlockTags.SNOW);

@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/tall_shroomy_nether_sprouts"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/tall_shroomy_nether_sprouts"}}}

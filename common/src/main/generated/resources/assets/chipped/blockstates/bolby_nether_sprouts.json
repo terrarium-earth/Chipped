@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/bolby_nether_sprouts"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/bolby_nether_sprouts"}}}

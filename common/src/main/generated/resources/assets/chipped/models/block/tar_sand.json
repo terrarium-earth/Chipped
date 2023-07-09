@@ -1,6 +1,1 @@
-{
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "chipped:block/sand/tar_sand"
-  }
-}
+{"parent":"minecraft:block/cube_all","textures":{"all":"chipped:block/sand/tar_sand"}}

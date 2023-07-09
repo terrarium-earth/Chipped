@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/hooded_crimson_fungus"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/hooded_crimson_fungus"}}}

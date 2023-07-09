@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/packed_ice_scales"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/packed_ice_scales"}}}

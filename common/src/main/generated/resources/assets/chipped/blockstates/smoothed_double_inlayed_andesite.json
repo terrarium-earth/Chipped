@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/smoothed_double_inlayed_andesite"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/smoothed_double_inlayed_andesite"}}}

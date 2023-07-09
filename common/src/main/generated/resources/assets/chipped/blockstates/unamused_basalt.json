@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/unamused_basalt"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/unamused_basalt"}}}

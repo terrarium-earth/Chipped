@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/scaled_nether_wart_block"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/scaled_nether_wart_block"}}}

@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/oak_lighted_bookshelf"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/oak_lighted_bookshelf"}}}

@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/deepslate_pillar"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/deepslate_pillar"}}}

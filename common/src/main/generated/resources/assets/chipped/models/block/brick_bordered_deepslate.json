@@ -1,6 +1,1 @@
-{
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "chipped:block/deepslate/brick_bordered_deepslate"
-  }
-}
+{"parent":"minecraft:block/cube_all","textures":{"all":"chipped:block/deepslate/brick_bordered_deepslate"}}

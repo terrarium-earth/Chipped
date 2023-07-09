@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/boxed_warped_planks"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/boxed_warped_planks"}}}

@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/watching_lodestone"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/watching_lodestone"}}}

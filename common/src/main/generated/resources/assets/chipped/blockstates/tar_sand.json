@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/tar_sand"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/tar_sand"}}}

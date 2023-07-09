@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/prismal_clay_remnants"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/prismal_clay_remnants"}}}

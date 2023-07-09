@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/bulbed_warped_fungus"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/bulbed_warped_fungus"}}}

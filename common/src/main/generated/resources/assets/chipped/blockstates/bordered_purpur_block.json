@@ -1,15 +1,1 @@
-{
-  "athena:loader": "athena:ctm",
-  "ctm_textures": {
-    "center": "chipped:block/purpur_block/ctm/bordered_purpur_block_ctm/3",
-    "empty": "chipped:block/purpur_block/ctm/bordered_purpur_block_ctm/0",
-    "horizontal": "chipped:block/purpur_block/ctm/bordered_purpur_block_ctm/2",
-    "particle": "chipped:block/purpur_block/bordered_purpur_block",
-    "vertical": "chipped:block/purpur_block/ctm/bordered_purpur_block_ctm/1"
-  },
-  "variants": {
-    "": {
-      "model": "chipped:block/bordered_purpur_block"
-    }
-  }
-}
+{"athena:loader":"athena:ctm","ctm_textures":{"center":"chipped:block/purpur_block/ctm/bordered_purpur_block_ctm/3","empty":"chipped:block/purpur_block/ctm/bordered_purpur_block_ctm/0","horizontal":"chipped:block/purpur_block/ctm/bordered_purpur_block_ctm/2","particle":"chipped:block/purpur_block/bordered_purpur_block","vertical":"chipped:block/purpur_block/ctm/bordered_purpur_block_ctm/1"},"variants":{"":{"model":"chipped:block/bordered_purpur_block"}}}

@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/lush_sponge"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/lush_sponge"}}}

@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/etched_dripstone_block_bricks"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/etched_dripstone_block_bricks"}}}

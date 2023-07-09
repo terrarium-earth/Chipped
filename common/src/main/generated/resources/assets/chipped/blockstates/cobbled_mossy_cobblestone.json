@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/cobbled_mossy_cobblestone"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/cobbled_mossy_cobblestone"}}}

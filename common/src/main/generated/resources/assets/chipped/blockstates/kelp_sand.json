@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/kelp_sand"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/kelp_sand"}}}

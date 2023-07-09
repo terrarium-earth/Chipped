@@ -1,6 +1,1 @@
-{
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "chipped:block/pointed_dripstone/stone_pointed_dripstone"
-  }
-}
+{"parent":"minecraft:item/generated","textures":{"layer0":"chipped:block/pointed_dripstone/stone_pointed_dripstone"}}

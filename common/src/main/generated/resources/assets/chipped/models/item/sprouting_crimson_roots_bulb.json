@@ -1,6 +1,1 @@
-{
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "chipped:block/crimson_roots/sprouting_crimson_roots_bulb"
-  }
-}
+{"parent":"minecraft:item/generated","textures":{"layer0":"chipped:block/crimson_roots/sprouting_crimson_roots_bulb"}}

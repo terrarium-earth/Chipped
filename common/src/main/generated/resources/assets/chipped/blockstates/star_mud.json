@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/star_mud"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/star_mud"}}}

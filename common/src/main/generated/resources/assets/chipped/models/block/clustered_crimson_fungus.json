@@ -1,6 +1,1 @@
-{
-  "parent": "minecraft:block/cross",
-  "textures": {
-    "cross": "chipped:block/crimson_fungus/clustered_crimson_fungus"
-  }
-}
+{"parent":"minecraft:block/cross","textures":{"cross":"chipped:block/crimson_fungus/clustered_crimson_fungus"}}

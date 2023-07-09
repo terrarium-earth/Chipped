@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/cyan_terracotta_bricks"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/cyan_terracotta_bricks"}}}

@@ -1,6 +1,1 @@
-{
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "chipped:block/warped_wart_block/erratic_warped_wart_block"
-  }
-}
+{"parent":"minecraft:block/cube_all","textures":{"all":"chipped:block/warped_wart_block/erratic_warped_wart_block"}}

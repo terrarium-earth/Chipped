@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/unamused_red_sandstone"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/unamused_red_sandstone"}}}

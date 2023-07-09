@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/crimson_torch"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/crimson_torch"}}}

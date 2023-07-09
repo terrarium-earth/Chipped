@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/weathered_magma_block"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/weathered_magma_block"}}}

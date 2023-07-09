@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/inscribed_netherrack"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/inscribed_netherrack"}}}

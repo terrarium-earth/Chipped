@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/tiny_obsidian_bricks"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/tiny_obsidian_bricks"}}}

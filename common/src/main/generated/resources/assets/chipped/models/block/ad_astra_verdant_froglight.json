@@ -1,6 +1,1 @@
-{
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "chipped:block/verdant_froglight/ad_astra_verdant_froglight"
-  }
-}
+{"parent":"minecraft:block/cube_all","textures":{"all":"chipped:block/verdant_froglight/ad_astra_verdant_froglight"}}

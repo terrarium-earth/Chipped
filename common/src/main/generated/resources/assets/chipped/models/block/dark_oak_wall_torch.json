@@ -1,6 +1,1 @@
-{
-  "parent": "minecraft:block/template_torch_wall",
-  "textures": {
-    "torch": "chipped:block/torch/dark_oak_torch"
-  }
-}
+{"parent":"minecraft:block/template_torch_wall","textures":{"torch":"chipped:block/torch/dark_oak_torch"}}

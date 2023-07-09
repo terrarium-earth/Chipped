@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/stacked_dark_prismarine_bricks"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/stacked_dark_prismarine_bricks"}}}

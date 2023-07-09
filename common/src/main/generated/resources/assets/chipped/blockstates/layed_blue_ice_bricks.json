@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/layed_blue_ice_bricks"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/layed_blue_ice_bricks"}}}

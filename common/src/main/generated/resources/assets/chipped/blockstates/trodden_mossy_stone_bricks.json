@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "chipped:block/trodden_mossy_stone_bricks"
-    }
-  }
-}
+{"variants":{"":{"model":"chipped:block/trodden_mossy_stone_bricks"}}}

@@ -21,9 +21,8 @@ You are free to use this mod in your modpacks! Please just provide credit :3
 
 ## Important Notes
 
-With the release of our newest update 2.0.0, the new age of Chipped has begun! To have connected textures work in-game,
-please download the mod [Connected Textures Mod](https://www.curseforge.com/minecraft/mc-mods/ctm), or for fabric
-users [Connected Textures Refabricated Mod](https://www.curseforge.com/minecraft/texture-packs/ctp). We plan to keep
+With the release of our newest update 3.0.0, the new age of Chipped has begun! To have connected textures work in-game,
+please download the mod [Athena](https://modrinth.com/mod/athena-ctm). We plan to keep
 releasing more cool blocks in future updates so stay tuned!!!
 We also want to give a special shoutout to all the people who have been with us for over a year since we started working
 on chipped. It is so good to see people enjoying the mod we put so much time into!! We love you all <3
@@ -52,8 +51,6 @@ Artists:
 - Valila
 - ArtistMonster
 
-Would you also like to contribute to our mod? Simply message us on discord to apply for the Terrarium Team! ;)
-
 ## Social Media
 
 [![Discord](https://cdn.discordapp.com/attachments/721407493351407646/841063759078096966/discordlogo.png)](https://discord.gg/terrarium "Discord")
@@ -70,18 +67,3 @@ Would you also like to contribute to our mod? Simply message us on discord to ap
 ![](https://cdn.discordapp.com/attachments/843362690088042506/848395257087262760/blanklogo.png)
 [![Paypal](https://cdn.discordapp.com/attachments/721407493351407646/841072837102927883/paypallogo.png)](https://www.paypal.com/paypalme/technomages?locale.x=en_US "Paypal")
 ![](https://cdn.discordapp.com/attachments/843362690088042506/848395257087262760/blanklogo.png)
-
-## Our Other Projects
-
-- [Ad-Astra](https://www.curseforge.com/minecraft/mc-mods/ad-astra)
-- [CTM Refabricated](https://www.curseforge.com/minecraft/mc-mods/ctm-refabricated)
-- [Colorful Azaleas](https://www.curseforge.com/minecraft/mc-mods/colorfulazaleas)
-- [Handcrafted](https://www.curseforge.com/minecraft/mc-mods/handcrafted)
-- [Lil'Wings](https://www.curseforge.com/minecraft/mc-mods/lil-wings)
-- [Reaper (A submod for Spirit)](https://www.curseforge.com/minecraft/mc-mods/reaper)
-- [Spirit](https://www.curseforge.com/minecraft/mc-mods/spirit)
-- [Storage Overhaul](https://www.curseforge.com/minecraft/mc-mods/storage-overhaul)
-- [Super Ores](https://www.curseforge.com/minecraft/mc-mods/super-ores)
-- [Tempad](https://www.curseforge.com/minecraft/mc-mods/tempad)
-- [Vitalize (A submod for Spirit)](https://www.curseforge.com/minecraft/mc-mods/vitalize)
-

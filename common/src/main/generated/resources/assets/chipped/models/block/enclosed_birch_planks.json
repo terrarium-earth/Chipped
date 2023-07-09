@@ -1,6 +1,1 @@
-{
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "chipped:block/birch_planks/enclosed_birch_planks"
-  }
-}
+{"parent":"minecraft:block/cube_all","textures":{"all":"chipped:block/birch_planks/enclosed_birch_planks"}}
