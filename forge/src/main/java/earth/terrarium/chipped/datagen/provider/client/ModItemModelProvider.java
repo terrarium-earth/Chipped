@@ -60,6 +60,8 @@ public class ModItemModelProvider extends ItemModelProvider {
         createItemSet(ModBlocks.SPRUCE_DOOR, "spruce_door");
         createItemSet(ModBlocks.CRIMSON_DOOR, "crimson_door");
         createItemSet(ModBlocks.WARPED_DOOR, "warped_door");
+        createItemSet(ModBlocks.CHERRY_DOOR, "cherry_door");
+        createItemSet(ModBlocks.BAMBOO_DOOR, "bamboo_door");
 
         createBlockSet(ModBlocks.BROWN_MUSHROOM, "brown_mushroom");
         createBlockSet(ModBlocks.RED_MUSHROOM, "red_mushroom");

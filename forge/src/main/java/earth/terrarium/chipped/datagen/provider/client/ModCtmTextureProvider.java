@@ -5,8 +5,6 @@ import com.mojang.blaze3d.platform.NativeImage;
 import earth.terrarium.chipped.Chipped;
 import earth.terrarium.chipped.common.registry.ModBlocks;
 import earth.terrarium.chipped.common.registry.base.ChippedPaletteRegistry;
-import it.unimi.dsi.fastutil.ints.IntArrayList;
-import it.unimi.dsi.fastutil.ints.IntList;
 import net.minecraft.Util;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.CachedOutput;
@@ -19,11 +17,9 @@ import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.NotNull;
 
-import java.awt.*;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.util.*;
-import java.util.List;
 import java.util.concurrent.CompletableFuture;
 import java.util.stream.Collectors;
 
@@ -90,6 +86,7 @@ public class ModCtmTextureProvider implements DataProvider {
         registries.add(ModBlocks.PACKED_MUD);
         registries.add(ModBlocks.CLAY);
         registries.add(ModBlocks.BRICKS);
+        registries.add(ModBlocks.BORDERLESS_BRICKS);
         registries.add(ModBlocks.WHITE_WOOL);
         registries.add(ModBlocks.BLACK_WOOL);
         registries.add(ModBlocks.BLUE_WOOL);
@@ -118,6 +115,7 @@ public class ModCtmTextureProvider implements DataProvider {
         registries.add(ModBlocks.CRIMSON_PLANKS);
         registries.add(ModBlocks.WARPED_PLANKS);
         registries.add(ModBlocks.CHERRY_PLANKS);
+        registries.add(ModBlocks.BAMBOO_PLANKS);
 
         registries.add(ModBlocks.TERRACOTTA);
         registries.add(ModBlocks.WHITE_TERRACOTTA);
@@ -180,7 +178,7 @@ public class ModCtmTextureProvider implements DataProvider {
         for (ChippedPaletteRegistry<Block> registry : registries) {
             futures.add(CompletableFuture.supplyAsync(() -> {
                 final Map<ImageData, List<ResourceLocation>> images = new LinkedHashMap<>();
-                final String id = BuiltInRegistries.BLOCK.getKey(registry.getBase()).getPath();
+                final String id = registry.getCustomBase().orElse(BuiltInRegistries.BLOCK.getKey(registry.getBase()).getPath());
                 for (var ctm : registry.getPalette().getSpecial()) {
                     final String suffix = ctm.getFirst().suffix().length() > 0 ? "_" + ctm.getFirst().suffix() : "";
                     final ResourceLocation location = new ResourceLocation(Chipped.MOD_ID, "textures/block/" + id + "/ctm/" + ctm.getSecond().replace("%", id) + suffix);
@@ -188,9 +186,9 @@ public class ModCtmTextureProvider implements DataProvider {
                         Resource resource = files.getResource(new ResourceLocation(location.getNamespace(), location.getPath() + ".png"), PackType.CLIENT_RESOURCES);
 
                         split(new ResourceLocation(location.getNamespace(), "block/" + id + "/ctm/"), ctm.getSecond().replace("%", id) + suffix, resource, output)
-                                .forEach((key, value) ->
-                                    images.computeIfAbsent(key, data -> new ArrayList<>()).addAll(value)
-                                );
+                            .forEach((key, value) ->
+                                images.computeIfAbsent(key, data -> new ArrayList<>()).addAll(value)
+                            );
                     } catch (NoSuchElementException e) {
                         System.out.println("Missing CTM texture: " + location);
                         throw e;
@@ -205,17 +203,17 @@ public class ModCtmTextureProvider implements DataProvider {
                         if (entry.getValue().isEmpty()) continue;
                         if (entry.getValue().size() == 1) {
                             Path path = this.output.getOutputFolder(PackOutput.Target.RESOURCE_PACK)
-                                    .resolve(entry.getValue().get(0).getNamespace())
-                                    .resolve("textures")
-                                    .resolve(entry.getValue().get(0).getPath());
+                                .resolve(entry.getValue().get(0).getNamespace())
+                                .resolve("textures")
+                                .resolve(entry.getValue().get(0).getPath());
                             output.writeIfNeeded(path, entry.getKey().bytes(), entry.getKey().code());
                             files.trackGenerated(entry.getValue().get(0), TEXTURE);
                         } else {
                             ResourceLocation newPath = entry.getKey().loc().withSuffix("common_textures/" + commonIndex);
                             Path path = this.output.getOutputFolder(PackOutput.Target.RESOURCE_PACK)
-                                    .resolve(newPath.getNamespace())
-                                    .resolve("textures")
-                                    .resolve(newPath.getPath() + ".png");
+                                .resolve(newPath.getNamespace())
+                                .resolve("textures")
+                                .resolve(newPath.getPath() + ".png");
                             output.writeIfNeeded(path, entry.getKey().bytes(), entry.getKey().code());
                             files.trackGenerated(newPath, TEXTURE);
                             for (ResourceLocation resourceLocation : entry.getValue()) {
@@ -226,7 +224,7 @@ public class ModCtmTextureProvider implements DataProvider {
                         }
                     }
                     return commons;
-                }catch (Exception e) {
+                } catch (Exception e) {
                     throw new RuntimeException(e);
                 }
             }, Util.backgroundExecutor()));
@@ -240,11 +238,11 @@ public class ModCtmTextureProvider implements DataProvider {
 
     public <T> CompletableFuture<List<T>> allOf(List<CompletableFuture<T>> futuresList) {
         CompletableFuture<Void> allFuturesResult =
-                CompletableFuture.allOf(futuresList.toArray(new CompletableFuture[0]));
+            CompletableFuture.allOf(futuresList.toArray(new CompletableFuture[0]));
         return allFuturesResult.thenApply(v ->
-                futuresList.stream().
-                        map(CompletableFuture::join).
-                        collect(Collectors.<T>toList())
+            futuresList.stream().
+                map(CompletableFuture::join).
+                collect(Collectors.<T>toList())
         );
     }
 
@@ -287,7 +285,7 @@ public class ModCtmTextureProvider implements DataProvider {
         return paths;
     }
 
-    private record ImageData(byte[] bytes, HashCode code, ResourceLocation loc){
+    private record ImageData(byte[] bytes, HashCode code, ResourceLocation loc) {
 
         @Override
         public boolean equals(Object obj) {

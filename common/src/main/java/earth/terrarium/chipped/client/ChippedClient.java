@@ -89,6 +89,8 @@ public class ChippedClient {
         createSetRenderType(ModBlocks.SPRUCE_DOOR, RenderType.cutout());
         createSetRenderType(ModBlocks.CRIMSON_DOOR, RenderType.cutout());
         createSetRenderType(ModBlocks.WARPED_DOOR, RenderType.cutout());
+        createSetRenderType(ModBlocks.CHERRY_DOOR, RenderType.cutout());
+        createSetRenderType(ModBlocks.BAMBOO_DOOR, RenderType.cutout());
 
         createSetRenderType(ModBlocks.ACACIA_TRAPDOOR, RenderType.cutout());
         createSetRenderType(ModBlocks.BIRCH_TRAPDOOR, RenderType.cutout());
@@ -99,6 +101,8 @@ public class ChippedClient {
         createSetRenderType(ModBlocks.SPRUCE_TRAPDOOR, RenderType.cutout());
         createSetRenderType(ModBlocks.CRIMSON_TRAPDOOR, RenderType.cutout());
         createSetRenderType(ModBlocks.WARPED_TRAPDOOR, RenderType.cutout());
+        createSetRenderType(ModBlocks.CHERRY_TRAPDOOR, RenderType.cutout());
+        createSetRenderType(ModBlocks.BAMBOO_TRAPDOOR, RenderType.cutout());
 
         createSetRenderType(ModBlocks.CRIMSON_ROOTS, RenderType.cutout());
         createSetRenderType(ModBlocks.WARPED_ROOTS, RenderType.cutout());

@@ -124,6 +124,7 @@ public class ModBlocks {
     public static final ChippedPaletteRegistry<Block> CRIMSON_PLANKS = createRegistry(Blocks.CRIMSON_PLANKS, Palettes.PLANKS);
     public static final ChippedPaletteRegistry<Block> WARPED_PLANKS = createRegistry(Blocks.WARPED_PLANKS, Palettes.PLANKS);
     public static final ChippedPaletteRegistry<Block> CHERRY_PLANKS = createRegistry(Blocks.CHERRY_PLANKS, Palettes.PLANKS);
+    public static final ChippedPaletteRegistry<Block> BAMBOO_PLANKS = createRegistry(Blocks.BAMBOO_PLANKS, Palettes.BAMBOO_PLANKS);
     public static final ChippedPaletteRegistry<Block> ACACIA_LOG = createRegistry(Blocks.ACACIA_LOG, Palettes.LOG, RotatedPillarBlock::new);
     public static final ChippedPaletteRegistry<Block> BIRCH_LOG = createRegistry(Blocks.BIRCH_LOG, Palettes.LOG, RotatedPillarBlock::new);
     public static final ChippedPaletteRegistry<Block> DARK_OAK_LOG = createRegistry(Blocks.DARK_OAK_LOG, Palettes.LOG, RotatedPillarBlock::new);
@@ -133,6 +134,7 @@ public class ModBlocks {
     public static final ChippedPaletteRegistry<Block> SPRUCE_LOG = createRegistry(Blocks.SPRUCE_LOG, Palettes.LOG, RotatedPillarBlock::new);
     public static final ChippedPaletteRegistry<Block> CRIMSON_STEM = createRegistry(Blocks.CRIMSON_STEM, Palettes.CRIMSON_STEM, RotatedPillarBlock::new);
     public static final ChippedPaletteRegistry<Block> WARPED_STEM = createRegistry(Blocks.WARPED_STEM, Palettes.WARPED_STEM, RotatedPillarBlock::new);
+    public static final ChippedPaletteRegistry<Block> CHERRY_LOG = createRegistry(Blocks.CHERRY_LOG, Palettes.LOG, RotatedPillarBlock::new);
     public static final ChippedPaletteRegistry<Block> BARREL = createRegistry(Blocks.BARREL, Palettes.BARREL, BarrelBlock::new);
     public static final ChippedPaletteRegistry<Block> BOOKSHELF = createRegistry(Blocks.BOOKSHELF, Palettes.BOOKSHELF);
     public static final ChippedPaletteRegistry<Block> LADDER = createRegistry(Blocks.LADDER, Palettes.LADDER, LadderBlock::new);
@@ -145,6 +147,7 @@ public class ModBlocks {
     public static final ChippedPaletteRegistry<Block> STRIPPED_SPRUCE_LOG = createRegistry(Blocks.STRIPPED_SPRUCE_LOG, Palettes.STRIPPED_LOG, RotatedPillarBlock::new);
     public static final ChippedPaletteRegistry<Block> STRIPPED_WARPED_STEM = createRegistry(Blocks.STRIPPED_WARPED_STEM, Palettes.STRIPPED_LOG, RotatedPillarBlock::new);
     public static final ChippedPaletteRegistry<Block> STRIPPED_CRIMSON_STEM = createRegistry(Blocks.STRIPPED_CRIMSON_STEM, Palettes.STRIPPED_LOG, RotatedPillarBlock::new);
+    public static final ChippedPaletteRegistry<Block> STRIPPED_CHERRY_LOG = createRegistry(Blocks.STRIPPED_CHERRY_LOG, Palettes.STRIPPED_LOG, RotatedPillarBlock::new);
     public static final ChippedPaletteRegistry<Block> ACACIA_DOOR = createRegistry(Blocks.ACACIA_DOOR, Palettes.ACACIA_DOOR, props -> new DoorBlock(props, BlockSetType.ACACIA));
     public static final ChippedPaletteRegistry<Block> BIRCH_DOOR = createRegistry(Blocks.BIRCH_DOOR, Palettes.BIRCH_DOOR, props -> new DoorBlock(props, BlockSetType.BIRCH));
     public static final ChippedPaletteRegistry<Block> DARK_OAK_DOOR = createRegistry(Blocks.DARK_OAK_DOOR, Palettes.DARK_OAK_DOOR, props -> new DoorBlock(props, BlockSetType.DARK_OAK));
@@ -154,6 +157,8 @@ public class ModBlocks {
     public static final ChippedPaletteRegistry<Block> SPRUCE_DOOR = createRegistry(Blocks.SPRUCE_DOOR, Palettes.SPRUCE_DOOR, props -> new DoorBlock(props, BlockSetType.SPRUCE));
     public static final ChippedPaletteRegistry<Block> CRIMSON_DOOR = createRegistry(Blocks.CRIMSON_DOOR, Palettes.CRIMSON_DOOR, props -> new DoorBlock(props, BlockSetType.CRIMSON));
     public static final ChippedPaletteRegistry<Block> WARPED_DOOR = createRegistry(Blocks.WARPED_DOOR, Palettes.WARPED_DOOR, props -> new DoorBlock(props, BlockSetType.WARPED));
+    public static final ChippedPaletteRegistry<Block> CHERRY_DOOR = createRegistry(Blocks.CHERRY_DOOR, Palettes.CHERRY_DOOR, props -> new DoorBlock(props, BlockSetType.CHERRY));
+    public static final ChippedPaletteRegistry<Block> BAMBOO_DOOR = createRegistry(Blocks.BAMBOO_DOOR, Palettes.BAMBOO_DOOR, props -> new DoorBlock(props, BlockSetType.BAMBOO));
     public static final ChippedPaletteRegistry<Block> ACACIA_TRAPDOOR = createRegistry(Blocks.ACACIA_TRAPDOOR, Palettes.ACACIA_TRAPDOOR, props -> new TrapDoorBlock(props, BlockSetType.ACACIA));
     public static final ChippedPaletteRegistry<Block> BIRCH_TRAPDOOR = createRegistry(Blocks.BIRCH_TRAPDOOR, Palettes.TRAPDOOR, props -> new TrapDoorBlock(props, BlockSetType.BIRCH));
     public static final ChippedPaletteRegistry<Block> DARK_OAK_TRAPDOOR = createRegistry(Blocks.DARK_OAK_TRAPDOOR, Palettes.TRAPDOOR, props -> new TrapDoorBlock(props, BlockSetType.DARK_OAK));
@@ -163,6 +168,8 @@ public class ModBlocks {
     public static final ChippedPaletteRegistry<Block> SPRUCE_TRAPDOOR = createRegistry(Blocks.SPRUCE_TRAPDOOR, Palettes.SPRUCE_TRAPDOOR, props -> new TrapDoorBlock(props, BlockSetType.SPRUCE));
     public static final ChippedPaletteRegistry<Block> CRIMSON_TRAPDOOR = createRegistry(Blocks.CRIMSON_TRAPDOOR, Palettes.CRIMSON_TRAPDOOR, props -> new TrapDoorBlock(props, BlockSetType.CRIMSON));
     public static final ChippedPaletteRegistry<Block> WARPED_TRAPDOOR = createRegistry(Blocks.WARPED_TRAPDOOR, Palettes.WARPED_TRAPDOOR, props -> new TrapDoorBlock(props, BlockSetType.WARPED));
+    public static final ChippedPaletteRegistry<Block> CHERRY_TRAPDOOR = createRegistry(Blocks.CHERRY_TRAPDOOR, Palettes.CHERRY_TRAPDOOR, props -> new TrapDoorBlock(props, BlockSetType.CHERRY));
+    public static final ChippedPaletteRegistry<Block> BAMBOO_TRAPDOOR = createRegistry(Blocks.BAMBOO_TRAPDOOR, Palettes.BAMBOO_TRAPDOOR, props -> new TrapDoorBlock(props, BlockSetType.BAMBOO));
     public static final Pair<ChippedPaletteRegistry<Block>, ChippedPaletteRegistry<Block>> TORCH = createTorchRegistry(Blocks.TORCH, Blocks.WALL_TORCH, Palettes.TORCH, TorchBlock::new, WallTorchBlock::new);
 
     public static final ChippedPaletteRegistry<Block> GLASS = createRegistry(Blocks.GLASS, Palettes.GLASS, GlassBlock::new);
@@ -314,6 +321,7 @@ public class ModBlocks {
     public static final ChippedPaletteRegistry<Block> WHITE_CONCRETE = createRegistry(Blocks.WHITE_CONCRETE, Palettes.CONCRETE);
     public static final ChippedPaletteRegistry<Block> YELLOW_CONCRETE = createRegistry(Blocks.YELLOW_CONCRETE, Palettes.CONCRETE);
     public static final ChippedPaletteRegistry<Block> BRICKS = createRegistry(Blocks.BRICKS, Palettes.BRICKS);
+    public static final ChippedPaletteRegistry<Block> BORDERLESS_BRICKS = registerBorderlessBricks("borderless_bricks", Palettes.BRICKS);
     public static final ChippedPaletteRegistry<Block> MUD_BRICKS = createRegistry(Blocks.MUD_BRICKS, Palettes.MUD);
     public static final ChippedPaletteRegistry<Block> POINTED_DRIPSTONE = createRegistry(Blocks.POINTED_DRIPSTONE, Palettes.POINTED_DRIPSTONE, SpecialPointedDripstoneBlock::new);
 
@@ -378,6 +386,20 @@ public class ModBlocks {
         registry.register(palette.get(1).replace("%", block), () -> new SpecialLanternBlock(createProperties(Blocks.LANTERN), SpecialLanternBlock.DONUT_LANTERN_SHAPE_EAST, SpecialLanternBlock.DONUT_LANTERN_SHAPE_NORTH));
         registry.register(palette.get(2).replace("%", block), () -> new SpecialLanternBlock(createProperties(Blocks.LANTERN), SpecialLanternBlock.TALL_LANTERN_SHAPE));
         registry.register(palette.get(3).replace("%", block), () -> new SpecialLanternBlock(createProperties(Blocks.LANTERN), SpecialLanternBlock.THICC_LANTERN_SHAPE));
+        ModItems.createItemRegistry(registry, BlockItem::new);
+        return registry;
+    }
+
+    public static ChippedPaletteRegistry<Block> registerBorderlessBricks(String block, Palette palette) {
+        var registry = new ChippedPaletteRegistry<>(ResourcefulRegistries.create(BLOCKS), Blocks.BRICKS, block, palette);
+        for (var entry : palette.ids()) {
+            String id = entry.getSecond().replace("%", block);
+            if (Objects.requireNonNull(entry.getFirst()) == IdType.PILLAR) {
+                registry.register(id, () -> new RotatedPillarBlock(createProperties(Blocks.BRICKS)));
+            } else {
+                registry.register(id, () -> new Block(createProperties(Blocks.BRICKS)));
+            }
+        }
         ModItems.createItemRegistry(registry, BlockItem::new);
         return registry;
     }

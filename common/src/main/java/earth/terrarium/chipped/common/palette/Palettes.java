@@ -231,6 +231,11 @@ public class Palettes {
         .ctm("bricked_%", "cornered_%", "crated_%", "enclosed_%", "framed_%", "%_panel", "natural_%", "pegged_%")
         .build();
 
+    public static final Palette BAMBOO_PLANKS = PaletteBuilder.create()
+        .add("%_fine_mosaic", "%_shavings", "basket_woven_%", "boxed_%", "brick_bond_%", "bricky_%", "cross_laced_%", "crossed_%", "detailed_%", "diagonal_%", "diamond_%", "double_herringbone_%", "fine_%", "fine_vertical_%", "herringbone_%", "hewn_%", "laced_%", "reinforced_%", "polished_%", "railed_%", "shifted_%", "slanted_%", "smooth_%", "stacked_%", "thin_%", "tiled_%", "versailles_%", "vertical_%", "vertically_railed_%", "wickered_%")
+        .ctm("%_panel", "cornered_%", "crated_%", "enclosed_%", "framed_%", "natural_%", "tied_%", "whirlwind_%")
+        .build();
+
     public static final Palette LOG = PaletteBuilder.create()
         .add("bundled_%", "center_cut_%", "damaged_%", "edge_cut_%", "firewood_%", "flowering_%", "mixed_%", "nailed_%", "overgrown_%", "planked_%", "reinforced_%")
         .build();
@@ -349,8 +354,13 @@ public class Palettes {
     public static final Palette ACACIA_TRAPDOOR = PaletteBuilder.create(TRAPDOOR, "airy_%")
         .build();
 
-    public static final Palette MANGROVE_TRAPDOOR = PaletteBuilder.create()
-        .add("barred_%", "classic_%", "classic_windowed_%", "distorted_%", "fancy_%", "golden_barred_%", "heavy_%", "iron_barred_%", "screened_%", "solid_%", "suspicious_%", "windowed_%")
+    public static final Palette CHERRY_TRAPDOOR = PaletteBuilder.create(TRAPDOOR, "airy_%")
+        .build();
+
+    public static final Palette BAMBOO_TRAPDOOR = PaletteBuilder.create(TRAPDOOR, "airy_%")
+        .build();
+
+    public static final Palette MANGROVE_TRAPDOOR = PaletteBuilder.create(TRAPDOOR, "distorted_%", "fancy_%")
         .build();
 
     public static final Palette DOOR = PaletteBuilder.create()
@@ -378,8 +388,13 @@ public class Palettes {
     public static final Palette WARPED_DOOR = PaletteBuilder.create(DOOR, "overgrown_%", "sliding_%")
         .build();
 
-    public static final Palette MANGROVE_DOOR = PaletteBuilder.create()
-        .add("barred_%", "beach_%", "boarded_%", "cut_%", "dual_paneled_%", "fortified_%", "gated_%", "glass_%", "heavy_%", "modern_%", "overgrown_%", "paneled_%", "paper_%", "pressed_%", "reinforced_%", "secret_%", "sliding_%", "supported_%", "tile_windowed_%", "windowed_%")
+    public static final Palette CHERRY_DOOR = PaletteBuilder.create(DOOR, "windowed_%")
+        .build();
+
+    public static final Palette BAMBOO_DOOR = PaletteBuilder.create(DOOR, "windowed_%")
+        .build();
+
+    public static final Palette MANGROVE_DOOR = PaletteBuilder.create(DOOR, "screen_%", "shack_%", "tiled_%")
         .build();
 
 }

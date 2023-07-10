@@ -116,6 +116,7 @@ public class ModBlockTagProvider extends BlockTagsProvider {
         registry.register(Blocks.CRIMSON_PLANKS, ModBlocks.CRIMSON_PLANKS, "crimson_planks", CARPENTERS_TABLE_TAG, BlockTags.MINEABLE_WITH_AXE);
         registry.register(Blocks.WARPED_PLANKS, ModBlocks.WARPED_PLANKS, "warped_planks", CARPENTERS_TABLE_TAG, BlockTags.MINEABLE_WITH_AXE);
         registry.register(Blocks.CHERRY_PLANKS, ModBlocks.CHERRY_PLANKS, "cherry_planks", CARPENTERS_TABLE_TAG, BlockTags.MINEABLE_WITH_AXE);
+        registry.register(Blocks.BAMBOO_PLANKS, ModBlocks.BAMBOO_PLANKS, "bamboo_planks", CARPENTERS_TABLE_TAG, BlockTags.MINEABLE_WITH_AXE);
         registry.register(Blocks.ACACIA_LOG, ModBlocks.ACACIA_LOG, "acacia_log", CARPENTERS_TABLE_TAG, BlockTags.MINEABLE_WITH_AXE);
         registry.register(Blocks.BIRCH_LOG, ModBlocks.BIRCH_LOG, "birch_log", CARPENTERS_TABLE_TAG, BlockTags.MINEABLE_WITH_AXE);
         registry.register(Blocks.DARK_OAK_LOG, ModBlocks.DARK_OAK_LOG, "dark_oak_log", CARPENTERS_TABLE_TAG, BlockTags.MINEABLE_WITH_AXE);
@@ -125,6 +126,7 @@ public class ModBlockTagProvider extends BlockTagsProvider {
         registry.register(Blocks.SPRUCE_LOG, ModBlocks.SPRUCE_LOG, "spruce_log", CARPENTERS_TABLE_TAG, BlockTags.MINEABLE_WITH_AXE);
         registry.register(Blocks.CRIMSON_STEM, ModBlocks.CRIMSON_STEM, "crimson_stem", CARPENTERS_TABLE_TAG, BlockTags.MINEABLE_WITH_AXE);
         registry.register(Blocks.WARPED_STEM, ModBlocks.WARPED_STEM, "warped_stem", CARPENTERS_TABLE_TAG, BlockTags.MINEABLE_WITH_AXE);
+        registry.register(Blocks.CHERRY_LOG, ModBlocks.CHERRY_LOG, "cherry_log", CARPENTERS_TABLE_TAG, BlockTags.MINEABLE_WITH_AXE);
         registry.register(Blocks.BARREL, ModBlocks.BARREL, "barrel", CARPENTERS_TABLE_TAG, BlockTags.MINEABLE_WITH_AXE);
         registry.register(Blocks.BOOKSHELF, ModBlocks.BOOKSHELF, "bookshelf", CARPENTERS_TABLE_TAG, BlockTags.MINEABLE_WITH_AXE);
         registry.register(Blocks.LADDER, ModBlocks.LADDER, "ladder", CARPENTERS_TABLE_TAG, BlockTags.MINEABLE_WITH_AXE);
@@ -137,6 +139,7 @@ public class ModBlockTagProvider extends BlockTagsProvider {
         registry.register(Blocks.STRIPPED_SPRUCE_LOG, ModBlocks.STRIPPED_SPRUCE_LOG, "stripped_spruce_log", CARPENTERS_TABLE_TAG, BlockTags.MINEABLE_WITH_AXE);
         registry.register(Blocks.STRIPPED_WARPED_STEM, ModBlocks.STRIPPED_WARPED_STEM, "stripped_warped_stem", CARPENTERS_TABLE_TAG, BlockTags.MINEABLE_WITH_AXE);
         registry.register(Blocks.STRIPPED_CRIMSON_STEM, ModBlocks.STRIPPED_CRIMSON_STEM, "stripped_crimson_stem", CARPENTERS_TABLE_TAG, BlockTags.MINEABLE_WITH_AXE);
+        registry.register(Blocks.STRIPPED_CHERRY_LOG, ModBlocks.STRIPPED_CHERRY_LOG, "stripped_cherry_log", CARPENTERS_TABLE_TAG, BlockTags.MINEABLE_WITH_AXE);
         registry.register(Blocks.ACACIA_DOOR, ModBlocks.ACACIA_DOOR, "acacia_door", CARPENTERS_TABLE_TAG, BlockTags.MINEABLE_WITH_AXE);
         registry.register(Blocks.BIRCH_DOOR, ModBlocks.BIRCH_DOOR, "birch_door", CARPENTERS_TABLE_TAG, BlockTags.MINEABLE_WITH_AXE);
         registry.register(Blocks.DARK_OAK_DOOR, ModBlocks.DARK_OAK_DOOR, "dark_oak_door", CARPENTERS_TABLE_TAG, BlockTags.MINEABLE_WITH_AXE);
@@ -146,6 +149,8 @@ public class ModBlockTagProvider extends BlockTagsProvider {
         registry.register(Blocks.SPRUCE_DOOR, ModBlocks.SPRUCE_DOOR, "spruce_door", CARPENTERS_TABLE_TAG, BlockTags.MINEABLE_WITH_AXE);
         registry.register(Blocks.CRIMSON_DOOR, ModBlocks.CRIMSON_DOOR, "crimson_door", CARPENTERS_TABLE_TAG, BlockTags.MINEABLE_WITH_AXE);
         registry.register(Blocks.WARPED_DOOR, ModBlocks.WARPED_DOOR, "warped_door", CARPENTERS_TABLE_TAG, BlockTags.MINEABLE_WITH_AXE);
+        registry.register(Blocks.CHERRY_DOOR, ModBlocks.CHERRY_DOOR, "cherry_door", CARPENTERS_TABLE_TAG, BlockTags.MINEABLE_WITH_AXE);
+        registry.register(Blocks.BAMBOO_DOOR, ModBlocks.BAMBOO_DOOR, "bamboo_door", CARPENTERS_TABLE_TAG, BlockTags.MINEABLE_WITH_AXE);
         registry.register(Blocks.ACACIA_TRAPDOOR, ModBlocks.ACACIA_TRAPDOOR, "acacia_trapdoor", CARPENTERS_TABLE_TAG, BlockTags.MINEABLE_WITH_AXE);
         registry.register(Blocks.BIRCH_TRAPDOOR, ModBlocks.BIRCH_TRAPDOOR, "birch_trapdoor", CARPENTERS_TABLE_TAG, BlockTags.MINEABLE_WITH_AXE);
         registry.register(Blocks.DARK_OAK_TRAPDOOR, ModBlocks.DARK_OAK_TRAPDOOR, "dark_oak_trapdoor", CARPENTERS_TABLE_TAG, BlockTags.MINEABLE_WITH_AXE);
@@ -155,6 +160,8 @@ public class ModBlockTagProvider extends BlockTagsProvider {
         registry.register(Blocks.SPRUCE_TRAPDOOR, ModBlocks.SPRUCE_TRAPDOOR, "spruce_trapdoor", CARPENTERS_TABLE_TAG, BlockTags.MINEABLE_WITH_AXE);
         registry.register(Blocks.CRIMSON_TRAPDOOR, ModBlocks.CRIMSON_TRAPDOOR, "crimson_trapdoor", CARPENTERS_TABLE_TAG, BlockTags.MINEABLE_WITH_AXE);
         registry.register(Blocks.WARPED_TRAPDOOR, ModBlocks.WARPED_TRAPDOOR, "warped_trapdoor", CARPENTERS_TABLE_TAG, BlockTags.MINEABLE_WITH_AXE);
+        registry.register(Blocks.CHERRY_TRAPDOOR, ModBlocks.CHERRY_TRAPDOOR, "cherry_trapdoor", CARPENTERS_TABLE_TAG, BlockTags.MINEABLE_WITH_AXE);
+        registry.register(Blocks.BAMBOO_TRAPDOOR, ModBlocks.BAMBOO_TRAPDOOR, "bamboo_trapdoor", CARPENTERS_TABLE_TAG, BlockTags.MINEABLE_WITH_AXE);
         registry.register(Blocks.TORCH, ModBlocks.TORCH.getFirst(), "torch", CARPENTERS_TABLE_TAG);
 
         registry.register(Blocks.GLASS, ModBlocks.GLASS, "glass", GLASSBLOWER_TAG);
@@ -306,6 +313,7 @@ public class ModBlockTagProvider extends BlockTagsProvider {
         registry.register(Blocks.WHITE_CONCRETE, ModBlocks.WHITE_CONCRETE, "white_concrete", MASON_TABLE_TAG, BlockTags.MINEABLE_WITH_PICKAXE);
         registry.register(Blocks.YELLOW_CONCRETE, ModBlocks.YELLOW_CONCRETE, "yellow_concrete", MASON_TABLE_TAG, BlockTags.MINEABLE_WITH_PICKAXE);
         registry.register(Blocks.BRICKS, ModBlocks.BRICKS, "bricks", MASON_TABLE_TAG, BlockTags.MINEABLE_WITH_PICKAXE);
+        registry.register(Blocks.BRICKS, ModBlocks.BORDERLESS_BRICKS, "borderless_bricks", MASON_TABLE_TAG, BlockTags.MINEABLE_WITH_PICKAXE);
         registry.register(Blocks.MUD_BRICKS, ModBlocks.MUD_BRICKS, "mud_bricks", MASON_TABLE_TAG, BlockTags.MINEABLE_WITH_PICKAXE);
         registry.register(Blocks.POINTED_DRIPSTONE, ModBlocks.POINTED_DRIPSTONE, "pointed_dripstone", MASON_TABLE_TAG, BlockTags.MINEABLE_WITH_PICKAXE);
 
@@ -364,6 +372,8 @@ public class ModBlockTagProvider extends BlockTagsProvider {
         createVanillaSet(ModBlocks.SPRUCE_DOOR, BlockTags.WOODEN_DOORS);
         createVanillaSet(ModBlocks.CRIMSON_DOOR, BlockTags.WOODEN_DOORS);
         createVanillaSet(ModBlocks.WARPED_DOOR, BlockTags.WOODEN_DOORS);
+        createVanillaSet(ModBlocks.CHERRY_DOOR, BlockTags.WOODEN_DOORS);
+        createVanillaSet(ModBlocks.BAMBOO_DOOR, BlockTags.WOODEN_DOORS);
         createVanillaSet(ModBlocks.OBSIDIAN, BlockTags.DRAGON_IMMUNE);
         createVanillaSet(ModBlocks.CRYING_OBSIDIAN, BlockTags.DRAGON_IMMUNE);
         createVanillaSet(ModBlocks.CLAY, BlockTags.ENDERMAN_HOLDABLE);
@@ -417,6 +427,7 @@ public class ModBlockTagProvider extends BlockTagsProvider {
         createVanillaSet(ModBlocks.CRIMSON_PLANKS, BlockTags.PLANKS);
         createVanillaSet(ModBlocks.WARPED_PLANKS, BlockTags.PLANKS);
         createVanillaSet(ModBlocks.CHERRY_PLANKS, BlockTags.PLANKS);
+        createVanillaSet(ModBlocks.BAMBOO_PLANKS, BlockTags.PLANKS);
         createVanillaSet(ModBlocks.VINE, BlockTags.REPLACEABLE_BY_TREES);
         createVanillaSet(ModBlocks.SAND, BlockTags.SAND);
         createVanillaSet(ModBlocks.SNOW_BLOCK, BlockTags.SNOW);
@@ -431,6 +442,8 @@ public class ModBlockTagProvider extends BlockTagsProvider {
         createVanillaSet(ModBlocks.SPRUCE_TRAPDOOR, BlockTags.TRAPDOORS);
         createVanillaSet(ModBlocks.CRIMSON_TRAPDOOR, BlockTags.TRAPDOORS);
         createVanillaSet(ModBlocks.WARPED_TRAPDOOR, BlockTags.TRAPDOORS);
+        createVanillaSet(ModBlocks.CHERRY_TRAPDOOR, BlockTags.TRAPDOORS);
+        createVanillaSet(ModBlocks.BAMBOO_TRAPDOOR, BlockTags.TRAPDOORS);
         createVanillaSet(ModBlocks.TORCH.getFirst(), BlockTags.WALL_POST_OVERRIDE);
         createVanillaSet(ModBlocks.REDSTONE_TORCH.getFirst(), BlockTags.WALL_POST_OVERRIDE);
         createVanillaSet(ModBlocks.NETHER_WART_BLOCK, BlockTags.WART_BLOCKS);
@@ -493,6 +506,7 @@ public class ModBlockTagProvider extends BlockTagsProvider {
             register(block, registry, id, tag, null);
         }
     }
+
     @FunctionalInterface
     public interface SpecialBlockRegistry {
         void register(Block block, Collection<RegistryEntry<Block>> registry, String id, TagKey<Item> tag, @Nullable TagKey<Block> mineable);

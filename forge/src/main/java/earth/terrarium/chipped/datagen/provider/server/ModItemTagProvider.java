@@ -64,6 +64,8 @@ public class ModItemTagProvider extends ItemTagsProvider {
         createVanillaSet(ModBlocks.SPRUCE_DOOR, ItemTags.WOODEN_DOORS);
         createVanillaSet(ModBlocks.CRIMSON_DOOR, ItemTags.WOODEN_DOORS);
         createVanillaSet(ModBlocks.WARPED_DOOR, ItemTags.WOODEN_DOORS);
+        createVanillaSet(ModBlocks.CHERRY_DOOR, ItemTags.WOODEN_DOORS);
+        createVanillaSet(ModBlocks.BAMBOO_DOOR, ItemTags.WOODEN_DOORS);
         createVanillaSet(ModBlocks.ACACIA_LEAVES, ItemTags.LEAVES);
         createVanillaSet(ModBlocks.BIRCH_LEAVES, ItemTags.LEAVES);
         createVanillaSet(ModBlocks.DARK_OAK_LEAVES, ItemTags.LEAVES);
@@ -83,6 +85,7 @@ public class ModItemTagProvider extends ItemTagsProvider {
         createVanillaSet(ModBlocks.CRIMSON_PLANKS, ItemTags.PLANKS);
         createVanillaSet(ModBlocks.WARPED_PLANKS, ItemTags.PLANKS);
         createVanillaSet(ModBlocks.CHERRY_PLANKS, ItemTags.PLANKS);
+        createVanillaSet(ModBlocks.BAMBOO_PLANKS, ItemTags.PLANKS);
         createVanillaSet(ModBlocks.SAND, ItemTags.SAND);
         createVanillaSet(ModBlocks.SOUL_SAND, ItemTags.SOUL_FIRE_BASE_BLOCKS);
         createVanillaSet(ModBlocks.ACACIA_TRAPDOOR, ItemTags.TRAPDOORS);
@@ -94,6 +97,8 @@ public class ModItemTagProvider extends ItemTagsProvider {
         createVanillaSet(ModBlocks.SPRUCE_TRAPDOOR, ItemTags.TRAPDOORS);
         createVanillaSet(ModBlocks.CRIMSON_TRAPDOOR, ItemTags.TRAPDOORS);
         createVanillaSet(ModBlocks.WARPED_TRAPDOOR, ItemTags.TRAPDOORS);
+        createVanillaSet(ModBlocks.CHERRY_TRAPDOOR, ItemTags.TRAPDOORS);
+        createVanillaSet(ModBlocks.BAMBOO_TRAPDOOR, ItemTags.TRAPDOORS);
         createVanillaSet(ModBlocks.NETHER_WART_BLOCK, ItemTags.WART_BLOCKS);
         createVanillaSet(ModBlocks.WARPED_WART_BLOCK, ItemTags.WART_BLOCKS);
         createVanillaSet(ModBlocks.BLACK_WOOL, ItemTags.WOOL);

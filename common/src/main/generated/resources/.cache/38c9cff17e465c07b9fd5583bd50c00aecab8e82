@@ -1,4 +1,4 @@
-// 1.20.1	2023-07-08T22:00:59.166703	Tags for minecraft:item mod id chipped
+// 1.20.1	2023-07-09T21:05:30.086693	Tags for minecraft:item mod id chipped
 8b8d4b22d6e197dd9cd0413a09913d8ff719ec56 data/chipped/tags/items/acacia_door.json
 cfe7ea1fbe1452cd3b8e8ff3623e48f6cab9b991 data/chipped/tags/items/acacia_leaves.json
 98694fd0286312b5965e227c5e11570202bdfae2 data/chipped/tags/items/acacia_log.json
@@ -7,6 +7,9 @@ abcb625d360583fa9db651423f235f4106237170 data/chipped/tags/items/acacia_trapdoor
 5dfbf619e00e6ade2ab7cf55d032c4648ced885a data/chipped/tags/items/amethyst_block.json
 c136dbcda2aafc02935c402af3a1a9599b6963d6 data/chipped/tags/items/ancient_debris.json
 d94a8eac68242b60064b316e20bb97af227e50fa data/chipped/tags/items/andesite.json
+fed1cc0abf5a1b22c9af5329d68eeed4dab30093 data/chipped/tags/items/bamboo_door.json
+5175dcc812b9626888d8e0c2f690e057be8b28a3 data/chipped/tags/items/bamboo_planks.json
+5678cfd49515cbe2aac7bc2215db131841e0aec5 data/chipped/tags/items/bamboo_trapdoor.json
 6e88edcfb6cf126b9ee79c529c9cb9bcda67f190 data/chipped/tags/items/barrel.json
 7736a98c37e2120ea7cf3fdcf4727f137c5f7188 data/chipped/tags/items/basalt.json
 233dd1bee12a4b26a45c87e007662ce2292e6735 data/chipped/tags/items/birch_door.json
@@ -32,6 +35,7 @@ b521e6ad6e93d90f9b40ea6c22c16298022d9a45 data/chipped/tags/items/blue_stained_gl
 e891e5e6944e65bdc32f83bf2bb31aea42466c0d data/chipped/tags/items/blue_wool.json
 af91c9ff4cd3f9e9a26d1878b5b68e5658a46fb4 data/chipped/tags/items/bone_block.json
 6352132cc998d31a7594d14937e31c66d6e7aaf2 data/chipped/tags/items/bookshelf.json
+9a65581cf7193c6ead17a2186e0a8c642f4b6d4f data/chipped/tags/items/borderless_bricks.json
 f90f28c70c231f2cdfd59e277fbf5b94fb24b980 data/chipped/tags/items/bricks.json
 1042b8dc6a46ba78e613685df078697a8557b7eb data/chipped/tags/items/brown_carpet.json
 9b3bb8e7af677fd5a2d287ac1c74977068ef03dd data/chipped/tags/items/brown_concrete.json
@@ -44,7 +48,10 @@ ab228c9caa54ea9f1eadc61cdec076a8ae7b9b33 data/chipped/tags/items/brown_terracott
 ecc900233d05eeac4431f1efb259e270df94d215 data/chipped/tags/items/brown_wool.json
 2be80f9c9d33a3c0bf66bea30f086ddc62849d82 data/chipped/tags/items/calcite.json
 44fa66adb464191ddf09166183a1623033f16679 data/chipped/tags/items/carved_pumpkin.json
+98cce3eb18581299a427ceab383f98eae6b12551 data/chipped/tags/items/cherry_door.json
+f6418a8f6f82bc8407b9b3cfdd832b4a7faff86d data/chipped/tags/items/cherry_log.json
 ef8293fe36c4d22a0d54ef2b2a3c60e89aa2ae0b data/chipped/tags/items/cherry_planks.json
+dc080b7a4eb7f6c9e904e929dabe965aa7497ebc data/chipped/tags/items/cherry_trapdoor.json
 476c1a3b2f0042035939d0220cc2879a56f91b87 data/chipped/tags/items/clay.json
 8ef0d4b0944cb38281a444e948d6be7bf4ff7aac data/chipped/tags/items/coal_block.json
 e1d014bbb014e4e9a69ae78493e3f371badf8692 data/chipped/tags/items/cobblestone.json
@@ -142,11 +149,11 @@ d4e5e376a1c781c9465577b3ac55668543fd0729 data/chipped/tags/items/magenta_glazed_
 c9ebc95e1eacc3f60a1fe571ec3ef8a76cf25dcf data/chipped/tags/items/magenta_terracotta.json
 ddb366e431833ff050296aebc501c29b8cd0c5a5 data/chipped/tags/items/magenta_wool.json
 193be2decc865f861b7138e70b06b7ceb8c35c2d data/chipped/tags/items/magma_block.json
-b07d71f8001a533a1cadd3f021973b1e1b5d78cf data/chipped/tags/items/mangrove_door.json
+83f2978a3d4cf7e0b2aed876f5ed4495f94f3eeb data/chipped/tags/items/mangrove_door.json
 e640ca844969fbd8a87a9fc53a1a2489065758b4 data/chipped/tags/items/mangrove_log.json
 f70f82ba6a4c0c08aea3c10cb7426312bb4549a1 data/chipped/tags/items/mangrove_planks.json
 a2d2b479c052c6cd66ce67594f75619fe297616a data/chipped/tags/items/mangrove_roots.json
-16931fbe9aeeb7e5c2cd54af53657044e706f364 data/chipped/tags/items/mangrove_trapdoor.json
+bfc305605571e54e30640490752739792809c922 data/chipped/tags/items/mangrove_trapdoor.json
 bf14626d424565ca6de4a8d38bdf6b673d8dfffe data/chipped/tags/items/melon.json
 55fa5ce9e0c0ffe7ca050f4b64e456d1241f0caa data/chipped/tags/items/moss_block.json
 0be626b4fa2ebb322a720622151182757902fdc9 data/chipped/tags/items/mossy_cobblestone.json
@@ -231,6 +238,7 @@ dc72aef1329353bc547b60d2beeeeac582434b26 data/chipped/tags/items/spruce_planks.j
 defd38ac78c71dfb41f79b3ae5af0ecbb5ecd6ac data/chipped/tags/items/stone.json
 983545dda7727cb91fe7f63ebaf3fe3c2bb3e7ce data/chipped/tags/items/stripped_acacia_log.json
 18d8a77b13c3250a2e25edc9edbd612196424ba5 data/chipped/tags/items/stripped_birch_log.json
+824a8a8230f275fbe9cec6ddaf05796cf83a8691 data/chipped/tags/items/stripped_cherry_log.json
 58402b049211a1642af4e09b3ec12ef8f23a23f5 data/chipped/tags/items/stripped_crimson_stem.json
 526302ae2bcf6f9cd5515615d6dabaa3f6b3b7db data/chipped/tags/items/stripped_dark_oak_log.json
 c91158beeb3129628c1f04e5e21007d6e6433f7c data/chipped/tags/items/stripped_jungle_log.json
@@ -272,11 +280,11 @@ e3f70cffc2b788a14218ea01468bda5370336823 data/chipped/tags/items/white_stained_g
 a47429c19b028b6cc80d46b44ad2557584c253ec data/minecraft/tags/items/leaves.json
 c5aa5f411e836185a8d1075d52ed6f3c386e62ee data/minecraft/tags/items/non_flammable_wood.json
 e509706e4803585c8af0ef25c92f8390c1c11a08 data/minecraft/tags/items/piglin_repellents.json
-9ca40a4d0ecced6eaa5b60c89abadbc01b2a88be data/minecraft/tags/items/planks.json
+931d4ecbac055429c36d094a964cbbfef276647b data/minecraft/tags/items/planks.json
 88d66bdeaff1273eb11e6169915643b5c83a3034 data/minecraft/tags/items/sand.json
 0b6426d9da5bb70ad55777fe66abc564a2d0762c data/minecraft/tags/items/soul_fire_base_blocks.json
-908d2f16ffca9c6a7ae838924d4c3ae0fdc1c5e5 data/minecraft/tags/items/trapdoors.json
+5b3c695dcbbe61528e42117bfa3d365c1873d8f2 data/minecraft/tags/items/trapdoors.json
 ea1442883b46aa1cc3d661a0e6dff5137aa8ab2b data/minecraft/tags/items/wart_blocks.json
-b621161688e9f9569efa65c4f5a0c1e16f7cb55e data/minecraft/tags/items/wooden_doors.json
+af0e3072d8c6f57e384af1588a39f993755a97e2 data/minecraft/tags/items/wooden_doors.json
 813fc5ffde5d9aed514ae51f3c4e9119f217043f data/minecraft/tags/items/wool.json
 2ef0503cc4a4342c5b72d0f5ea623c34104c60f5 data/minecraft/tags/items/wool_carpets.json

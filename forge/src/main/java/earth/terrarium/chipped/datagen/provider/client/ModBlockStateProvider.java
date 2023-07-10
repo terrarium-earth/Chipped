@@ -172,12 +172,13 @@ public class ModBlockStateProvider extends BlockStateProvider {
         createSet(ModBlocks.CRIMSON_PLANKS, "crimson_planks");
         createSet(ModBlocks.WARPED_PLANKS, "warped_planks");
         createSet(ModBlocks.CHERRY_PLANKS, "cherry_planks");
+        createSet(ModBlocks.BAMBOO_PLANKS, "bamboo_planks");
 
         createSet(ModBlocks.BRICKS, "bricks");
+        createSet(ModBlocks.BORDERLESS_BRICKS, "borderless_bricks");
         createSet(ModBlocks.MUD, "mud");
         createSet(ModBlocks.PACKED_MUD, "packed_mud");
         createSet(ModBlocks.MUD_BRICKS, "mud_bricks");
-
 
         createLogSet(ModBlocks.ACACIA_LOG, "acacia_log");
         createLogSet(ModBlocks.BIRCH_LOG, "birch_log");
@@ -188,6 +189,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
         createLogSet(ModBlocks.SPRUCE_LOG, "spruce_log");
         createLogSet(ModBlocks.CRIMSON_STEM, "crimson_stem");
         createLogSet(ModBlocks.WARPED_STEM, "warped_stem");
+        createLogSet(ModBlocks.CHERRY_LOG, "cherry_log");
 
         createSet(ModBlocks.GLASS, "glass");
         createGlassPaneSet(ModBlocks.GLASS_PANE, "glass_pane");
@@ -286,6 +288,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
         createStrippedLogSet(ModBlocks.STRIPPED_SPRUCE_LOG, "stripped_spruce_log");
         createStrippedLogSet(ModBlocks.STRIPPED_WARPED_STEM, "stripped_warped_stem");
         createStrippedLogSet(ModBlocks.STRIPPED_CRIMSON_STEM, "stripped_crimson_stem");
+        createStrippedLogSet(ModBlocks.STRIPPED_CHERRY_LOG, "stripped_cherry_log");
 
         createDoorSet(ModBlocks.ACACIA_DOOR, "acacia_door");
         createDoorSet(ModBlocks.BIRCH_DOOR, "birch_door");
@@ -296,6 +299,8 @@ public class ModBlockStateProvider extends BlockStateProvider {
         createDoorSet(ModBlocks.SPRUCE_DOOR, "spruce_door");
         createDoorSet(ModBlocks.CRIMSON_DOOR, "crimson_door");
         createDoorSet(ModBlocks.WARPED_DOOR, "warped_door");
+        createDoorSet(ModBlocks.CHERRY_DOOR, "cherry_door");
+        createDoorSet(ModBlocks.BAMBOO_DOOR, "bamboo_door");
 
         createTrapdoorSet(ModBlocks.ACACIA_TRAPDOOR, "acacia_trapdoor");
         createTrapdoorSet(ModBlocks.BIRCH_TRAPDOOR, "birch_trapdoor");
@@ -306,6 +311,8 @@ public class ModBlockStateProvider extends BlockStateProvider {
         createTrapdoorSet(ModBlocks.SPRUCE_TRAPDOOR, "spruce_trapdoor");
         createTrapdoorSet(ModBlocks.CRIMSON_TRAPDOOR, "crimson_trapdoor");
         createTrapdoorSet(ModBlocks.WARPED_TRAPDOOR, "warped_trapdoor");
+        createTrapdoorSet(ModBlocks.CHERRY_TRAPDOOR, "cherry_trapdoor");
+        createTrapdoorSet(ModBlocks.BAMBOO_TRAPDOOR, "bamboo_trapdoor");
 
         createCross(ModBlocks.CRIMSON_ROOTS, "crimson_roots");
         createCross(ModBlocks.WARPED_ROOTS, "warped_roots");
@@ -646,7 +653,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
     }
 
     private void createGlassPaneSet(ChippedPaletteRegistry<Block> registry, String folder) {
-        final String id = BuiltInRegistries.BLOCK.getKey(registry.getBase()).getPath();
+        final String id = registry.getCustomBase().orElse(BuiltInRegistries.BLOCK.getKey(registry.getBase()).getPath());
         for (var entry : registry.getPalette().ids()) {
             final var blockId = new ResourceLocation(Chipped.MOD_ID, entry.getSecond().replace("%", id));
             final var block = BuiltInRegistries.BLOCK.get(blockId);

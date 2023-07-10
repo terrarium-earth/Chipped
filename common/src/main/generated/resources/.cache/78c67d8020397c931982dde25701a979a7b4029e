@@ -1,4 +1,4 @@
-// 1.20.1	2023-07-08T22:00:59.110973	Tags for minecraft:block mod id chipped
+// 1.20.1	2023-07-09T21:05:30.06995	Tags for minecraft:block mod id chipped
 8b8d4b22d6e197dd9cd0413a09913d8ff719ec56 data/chipped/tags/blocks/acacia_door.json
 cfe7ea1fbe1452cd3b8e8ff3623e48f6cab9b991 data/chipped/tags/blocks/acacia_leaves.json
 98694fd0286312b5965e227c5e11570202bdfae2 data/chipped/tags/blocks/acacia_log.json
@@ -7,6 +7,9 @@ abcb625d360583fa9db651423f235f4106237170 data/chipped/tags/blocks/acacia_trapdoo
 5dfbf619e00e6ade2ab7cf55d032c4648ced885a data/chipped/tags/blocks/amethyst_block.json
 c136dbcda2aafc02935c402af3a1a9599b6963d6 data/chipped/tags/blocks/ancient_debris.json
 d94a8eac68242b60064b316e20bb97af227e50fa data/chipped/tags/blocks/andesite.json
+fed1cc0abf5a1b22c9af5329d68eeed4dab30093 data/chipped/tags/blocks/bamboo_door.json
+5175dcc812b9626888d8e0c2f690e057be8b28a3 data/chipped/tags/blocks/bamboo_planks.json
+5678cfd49515cbe2aac7bc2215db131841e0aec5 data/chipped/tags/blocks/bamboo_trapdoor.json
 6e88edcfb6cf126b9ee79c529c9cb9bcda67f190 data/chipped/tags/blocks/barrel.json
 7736a98c37e2120ea7cf3fdcf4727f137c5f7188 data/chipped/tags/blocks/basalt.json
 233dd1bee12a4b26a45c87e007662ce2292e6735 data/chipped/tags/blocks/birch_door.json
@@ -32,6 +35,7 @@ b521e6ad6e93d90f9b40ea6c22c16298022d9a45 data/chipped/tags/blocks/blue_stained_g
 e891e5e6944e65bdc32f83bf2bb31aea42466c0d data/chipped/tags/blocks/blue_wool.json
 af91c9ff4cd3f9e9a26d1878b5b68e5658a46fb4 data/chipped/tags/blocks/bone_block.json
 6352132cc998d31a7594d14937e31c66d6e7aaf2 data/chipped/tags/blocks/bookshelf.json
+9a65581cf7193c6ead17a2186e0a8c642f4b6d4f data/chipped/tags/blocks/borderless_bricks.json
 f90f28c70c231f2cdfd59e277fbf5b94fb24b980 data/chipped/tags/blocks/bricks.json
 1042b8dc6a46ba78e613685df078697a8557b7eb data/chipped/tags/blocks/brown_carpet.json
 9b3bb8e7af677fd5a2d287ac1c74977068ef03dd data/chipped/tags/blocks/brown_concrete.json
@@ -44,7 +48,10 @@ ab228c9caa54ea9f1eadc61cdec076a8ae7b9b33 data/chipped/tags/blocks/brown_terracot
 ecc900233d05eeac4431f1efb259e270df94d215 data/chipped/tags/blocks/brown_wool.json
 2be80f9c9d33a3c0bf66bea30f086ddc62849d82 data/chipped/tags/blocks/calcite.json
 44fa66adb464191ddf09166183a1623033f16679 data/chipped/tags/blocks/carved_pumpkin.json
+98cce3eb18581299a427ceab383f98eae6b12551 data/chipped/tags/blocks/cherry_door.json
+f6418a8f6f82bc8407b9b3cfdd832b4a7faff86d data/chipped/tags/blocks/cherry_log.json
 ef8293fe36c4d22a0d54ef2b2a3c60e89aa2ae0b data/chipped/tags/blocks/cherry_planks.json
+dc080b7a4eb7f6c9e904e929dabe965aa7497ebc data/chipped/tags/blocks/cherry_trapdoor.json
 476c1a3b2f0042035939d0220cc2879a56f91b87 data/chipped/tags/blocks/clay.json
 8ef0d4b0944cb38281a444e948d6be7bf4ff7aac data/chipped/tags/blocks/coal_block.json
 e1d014bbb014e4e9a69ae78493e3f371badf8692 data/chipped/tags/blocks/cobblestone.json
@@ -142,11 +149,11 @@ d4e5e376a1c781c9465577b3ac55668543fd0729 data/chipped/tags/blocks/magenta_glazed
 c9ebc95e1eacc3f60a1fe571ec3ef8a76cf25dcf data/chipped/tags/blocks/magenta_terracotta.json
 ddb366e431833ff050296aebc501c29b8cd0c5a5 data/chipped/tags/blocks/magenta_wool.json
 193be2decc865f861b7138e70b06b7ceb8c35c2d data/chipped/tags/blocks/magma_block.json
-b07d71f8001a533a1cadd3f021973b1e1b5d78cf data/chipped/tags/blocks/mangrove_door.json
+83f2978a3d4cf7e0b2aed876f5ed4495f94f3eeb data/chipped/tags/blocks/mangrove_door.json
 e640ca844969fbd8a87a9fc53a1a2489065758b4 data/chipped/tags/blocks/mangrove_log.json
 f70f82ba6a4c0c08aea3c10cb7426312bb4549a1 data/chipped/tags/blocks/mangrove_planks.json
 a2d2b479c052c6cd66ce67594f75619fe297616a data/chipped/tags/blocks/mangrove_roots.json
-16931fbe9aeeb7e5c2cd54af53657044e706f364 data/chipped/tags/blocks/mangrove_trapdoor.json
+bfc305605571e54e30640490752739792809c922 data/chipped/tags/blocks/mangrove_trapdoor.json
 bf14626d424565ca6de4a8d38bdf6b673d8dfffe data/chipped/tags/blocks/melon.json
 55fa5ce9e0c0ffe7ca050f4b64e456d1241f0caa data/chipped/tags/blocks/moss_block.json
 0be626b4fa2ebb322a720622151182757902fdc9 data/chipped/tags/blocks/mossy_cobblestone.json
@@ -231,6 +238,7 @@ dc72aef1329353bc547b60d2beeeeac582434b26 data/chipped/tags/blocks/spruce_planks.
 defd38ac78c71dfb41f79b3ae5af0ecbb5ecd6ac data/chipped/tags/blocks/stone.json
 983545dda7727cb91fe7f63ebaf3fe3c2bb3e7ce data/chipped/tags/blocks/stripped_acacia_log.json
 18d8a77b13c3250a2e25edc9edbd612196424ba5 data/chipped/tags/blocks/stripped_birch_log.json
+824a8a8230f275fbe9cec6ddaf05796cf83a8691 data/chipped/tags/blocks/stripped_cherry_log.json
 58402b049211a1642af4e09b3ec12ef8f23a23f5 data/chipped/tags/blocks/stripped_crimson_stem.json
 526302ae2bcf6f9cd5515615d6dabaa3f6b3b7db data/chipped/tags/blocks/stripped_dark_oak_log.json
 c91158beeb3129628c1f04e5e21007d6e6433f7c data/chipped/tags/blocks/stripped_jungle_log.json
@@ -278,23 +286,23 @@ a3814725c57eb39c455473b79b9253347e4f1aca data/minecraft/tags/blocks/ice.json
 413b0462cd9cd7be3ffb74301dccfbc40febab2d data/minecraft/tags/blocks/impermeable.json
 98fea77bb9c6dc319e7dda3452cefb7ac5dd3e51 data/minecraft/tags/blocks/infiniburn_overworld.json
 a47429c19b028b6cc80d46b44ad2557584c253ec data/minecraft/tags/blocks/leaves.json
-8aeeea140c963f40a2172919e4a9e8fab12400b4 data/minecraft/tags/blocks/mineable/axe.json
+ec337314cccf477372cc35196b05d4e862182aa1 data/minecraft/tags/blocks/mineable/axe.json
 92ab09db07f31dfcb380b7e4265ba39650b7a0a3 data/minecraft/tags/blocks/mineable/hoe.json
-ad33b9573d35c80374fab2c3b823d470db8e5f65 data/minecraft/tags/blocks/mineable/pickaxe.json
+a826e464c77bfaa898f084967e654c26313df799 data/minecraft/tags/blocks/mineable/pickaxe.json
 128ae9ec3927319929d05543f577a5e388f69922 data/minecraft/tags/blocks/mineable/shovel.json
 30ce11d6b5efd52f295d156a1d162bb919787cbb data/minecraft/tags/blocks/needs_diamond_tool.json
 e509706e4803585c8af0ef25c92f8390c1c11a08 data/minecraft/tags/blocks/piglin_repellents.json
-9ca40a4d0ecced6eaa5b60c89abadbc01b2a88be data/minecraft/tags/blocks/planks.json
+931d4ecbac055429c36d094a964cbbfef276647b data/minecraft/tags/blocks/planks.json
 499ee5f339899e12c7e40ada5d68a74e7ac1096f data/minecraft/tags/blocks/replaceable_by_trees.json
 88d66bdeaff1273eb11e6169915643b5c83a3034 data/minecraft/tags/blocks/sand.json
 133767bbd501f25ecdeda387179692b1cecb3607 data/minecraft/tags/blocks/snow.json
 0b6426d9da5bb70ad55777fe66abc564a2d0762c data/minecraft/tags/blocks/soul_fire_base_blocks.json
 32ca41ce62f4ae307a93cd5192db16f42f166406 data/minecraft/tags/blocks/soul_speed_blocks.json
 b8aa4698b7a62f18e57f8b2052c7fbea8f9ab730 data/minecraft/tags/blocks/sword_efficient.json
-908d2f16ffca9c6a7ae838924d4c3ae0fdc1c5e5 data/minecraft/tags/blocks/trapdoors.json
+5b3c695dcbbe61528e42117bfa3d365c1873d8f2 data/minecraft/tags/blocks/trapdoors.json
 1c025db810605255b8fb22fed0b5695a525278d1 data/minecraft/tags/blocks/wall_post_override.json
 ea1442883b46aa1cc3d661a0e6dff5137aa8ab2b data/minecraft/tags/blocks/wart_blocks.json
 0b6426d9da5bb70ad55777fe66abc564a2d0762c data/minecraft/tags/blocks/wither_summon_base_blocks.json
-b621161688e9f9569efa65c4f5a0c1e16f7cb55e data/minecraft/tags/blocks/wooden_doors.json
+af0e3072d8c6f57e384af1588a39f993755a97e2 data/minecraft/tags/blocks/wooden_doors.json
 813fc5ffde5d9aed514ae51f3c4e9119f217043f data/minecraft/tags/blocks/wool.json
 2ef0503cc4a4342c5b72d0f5ea623c34104c60f5 data/minecraft/tags/blocks/wool_carpets.json

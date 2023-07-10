@@ -82,6 +82,7 @@ public class ModCtmModelProvider implements DataProvider {
         registries.add(ModBlocks.PACKED_MUD);
         registries.add(ModBlocks.CLAY);
         registries.add(ModBlocks.BRICKS);
+        registries.add(ModBlocks.BORDERLESS_BRICKS);
         registries.add(ModBlocks.WHITE_WOOL);
         registries.add(ModBlocks.BLACK_WOOL);
         registries.add(ModBlocks.BLUE_WOOL);
@@ -125,6 +126,7 @@ public class ModCtmModelProvider implements DataProvider {
         registries.add(ModBlocks.CRIMSON_PLANKS);
         registries.add(ModBlocks.WARPED_PLANKS);
         registries.add(ModBlocks.CHERRY_PLANKS);
+        registries.add(ModBlocks.BAMBOO_PLANKS);
 
         registries.add(ModBlocks.TERRACOTTA);
         registries.add(ModBlocks.WHITE_TERRACOTTA);
@@ -204,7 +206,7 @@ public class ModCtmModelProvider implements DataProvider {
 
         for (ChippedPaletteRegistry<Block> registry : registries) {
             futures.add(CompletableFuture.runAsync(() -> {
-                final String id = BuiltInRegistries.BLOCK.getKey(registry.getBase()).getPath();
+                final String id = registry.getCustomBase().orElse(BuiltInRegistries.BLOCK.getKey(registry.getBase()).getPath());
                 for (var ctm : registry.getPalette().getSpecial()) {
                     final ResourceLocation blockLoc = new ResourceLocation(Chipped.MOD_ID, "block/" + ctm.getSecond().replace("%", id));
                     final ResourceLocation location = new ResourceLocation(Chipped.MOD_ID, "blockstates/" + ctm.getSecond().replace("%", id) + ".json");
