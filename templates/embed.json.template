@@ -1,0 +1,32 @@
+{
+    "embeds": [
+        {
+            "title": "Chipped",
+            "description": "**Changelog:**\\n${changelog}",
+            "color": 4558670,
+            "fields": [
+                {
+                    "name": "Minecraft Version",
+                    "value": "${minecraft}"
+                },
+                {
+                    "name": "Mod Version",
+                    "value": "${version}"
+                },
+                {
+                    "name": "Download",
+                    "value": "<:modrinth:1083795635414773760> [Modrinth](https://modrinth.com/mod/chipped)\\n<:curseforge:978684543026462790> [Curseforge](https://www.curseforge.com/minecraft/mc-mods/chipped)"
+                }
+            ],
+            "footer": {
+                "text": "Want to support us? Check out our Ko-fi! http://kofi.terrarium.earth",
+                "icon_url": "https://media.discordapp.net/attachments/881367981463072809/1044025688719626250/61e1116779fc0a9bd5bdbcc7_Frame_6.png"
+            },
+            "thumbnail": {
+                "url": "https://cdn-raw.modrinth.com/data/BAscRYKm/574857523e21b5c9f896601c26cb36e7e06bdcad.gif"
+            }
+        }
+    ],
+    "username": "Terrarium Releases",
+    "avatar_url": "https://cdn.discordapp.com/avatars/955572264823300096/3c226580b871a57b6da095fea1cccf1e.webp"
+}
