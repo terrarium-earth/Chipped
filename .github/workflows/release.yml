@@ -82,4 +82,4 @@ jobs:
         uses: tsickert/discord-webhook@v5.3.0
         with:
           webhook-url: ${{ secrets.WEBHOOK_URL }}
-          raw-data: ./build/release_embed.json
+          raw-data: ./build/embed.json
