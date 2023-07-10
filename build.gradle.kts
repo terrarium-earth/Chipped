@@ -99,6 +99,7 @@ subprojects {
                 exclude("**/ctm/*.png") //Remove CTM textures from jar.
                 exclude(".cache/**") //Remove datagen cache from jar.
                 exclude("**/chipped/datagen/**") //Remove data gen code from jar.
+                isZip64 = true
             }
 
             "remapJar"(RemapJarTask::class) {
