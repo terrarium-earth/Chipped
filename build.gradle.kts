@@ -75,6 +75,7 @@ subprojects {
 
     tasks.jar {
         archiveClassifier.set("dev")
+        isZip64 = true
     }
 
     tasks.named<RemapJarTask>("remapJar") {
