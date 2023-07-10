@@ -106,8 +106,8 @@ public class ChippedClient {
 
         createSetRenderType(ModBlocks.CRIMSON_ROOTS, RenderType.cutout());
         createSetRenderType(ModBlocks.WARPED_ROOTS, RenderType.cutout());
-        createSetRenderType(ModBlocks.LANTERN, RenderType.cutout());
-        createSetRenderType(ModBlocks.SOUL_LANTERN, RenderType.cutout());
+        createSetRenderType(ModBlocks.LANTERN, RenderType.translucent());
+        createSetRenderType(ModBlocks.SOUL_LANTERN, RenderType.translucent());
         createSetRenderType(ModBlocks.SPECIAL_LANTERN, RenderType.cutout());
         createSetRenderType(ModBlocks.SPECIAL_SOUL_LANTERN, RenderType.cutout());
         createSetRenderType(ModBlocks.LILY_PAD, RenderType.cutout());
