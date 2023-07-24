@@ -205,7 +205,7 @@ public class Palettes {
     public static final Palette QUARTZ_BLOCK = PaletteBuilder.create(STONE, "carved_%", "offset_%_bricks", "%_pillar_top", "spiraled_%")
         .build();
 
-    public static final Palette BASE_STONE = PaletteBuilder.create(STONE, "%_bricks", "cracked_%_bricks", "curly_%_pillar", "eroded_%", "fine_%_pillar", "ornate_%_pillar", "simple_%_pillar", "smooth_ringed_%", "%_mini_tiles")
+    public static final Palette BASE_STONE = PaletteBuilder.create(STONE, "%_bricks", "cracked_%_bricks", "eroded_%", "smooth_ringed_%")
         .build();
 
     public static final Palette CLAY = PaletteBuilder.create(STONE, "eroded_%")
@@ -287,8 +287,8 @@ public class Palettes {
     public static final Palette TERRACOTTA = PaletteBuilder.create()
         .add("%_bricks", "%_tile", "%_tiles", "chiseled_%", "crossed_%", "cut_%", "decorated_%", "layered_%", "triangular_%")
         .pillar("%_column", "%_pillar")
-        .ctm("small_%_tiles")
-        .giant("circular_%", "hexagonical_%", "inscribed_%", "starry_%", "curled_%")
+        .ctm("small_%_tiles",  "curled_%", "hexagonical_%")
+        .giant("circular_%", "inscribed_%", "starry_%")
         .build();
 
     public static final Palette GLAZED_TERRACOTTA = PaletteBuilder.create()
