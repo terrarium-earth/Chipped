@@ -396,5 +396,4 @@ public class Palettes {
 
     public static final Palette MANGROVE_DOOR = PaletteBuilder.create(DOOR, "screen_%", "shack_%", "tiled_%")
         .build();
-
 }
