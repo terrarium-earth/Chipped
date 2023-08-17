@@ -56,6 +56,9 @@ jobs:
           game-versions: ${{ steps.properties.outputs.minecraftVersion }}
           version-resolver: exact
 
+          dependencies: |
+            resourceful-lib | depends | *
+
       - name: Upload Fabric Releases (Curse/Modrinth/Github)
         if: contains(steps.properties.outputs.enabledPlatforms, 'fabric')
         uses: Kir-Antipov/mc-publish@v3.2
@@ -74,6 +77,10 @@ jobs:
           loaders: fabric
           game-versions: ${{ steps.properties.outputs.minecraftVersion }}
           version-resolver: exact
+
+          dependencies: |
+            fabric-api | depends | *
+            resourceful-lib | depends | *
 
       - name: Generate Discord Embed
         run: ./gradlew injectEmbed

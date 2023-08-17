@@ -1,1 +1,1 @@
-{"parent":"minecraft:block/cube_all","textures":{"all":"chipped:block/mud/simple_mud_pillar"}}
+{"parent":"minecraft:block/cube_column","textures":{"end":"chipped:block/mud/polished_mud","particle":"chipped:block/mud/simple_mud_pillar","side":"chipped:block/mud/simple_mud_pillar"}}

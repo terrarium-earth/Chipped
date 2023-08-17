@@ -21,7 +21,7 @@ public class ChippedPaletteRegistry<T> implements ResourcefulRegistry<T> {
         this(registry, base, null, palette);
     }
 
-    public ChippedPaletteRegistry(ResourcefulRegistry<T> registry, T base, String customBase, Palette palette) {
+    public ChippedPaletteRegistry(ResourcefulRegistry<T> registry, T base, @Nullable String customBase, Palette palette) {
         this.registry = registry;
         this.base = base;
         this.palette = palette;

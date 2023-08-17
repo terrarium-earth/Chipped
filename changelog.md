@@ -1,2 +1,1 @@
-# -----{ 3.0.2 }-----
-- Fix a bunch of textures, specifically, single pillar blocks, terracotta, mud, stones, among many others.
+- Fix lanterns not using mcmeta files and some lanterns having incorrect models

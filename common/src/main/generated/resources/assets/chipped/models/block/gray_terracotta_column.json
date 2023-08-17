@@ -1,1 +1,1 @@
-{"parent":"minecraft:block/cube_all","textures":{"all":"chipped:block/gray_terracotta/gray_terracotta_column"}}
+{"parent":"minecraft:block/cube_column","textures":{"end":"chipped:block/gray_terracotta/gray_terracotta_tile","particle":"chipped:block/gray_terracotta/gray_terracotta_column","side":"chipped:block/gray_terracotta/gray_terracotta_column"}}

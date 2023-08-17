@@ -1,1 +1,1 @@
-{"parent":"minecraft:block/cube_all","textures":{"all":"chipped:block/nether_bricks/fine_nether_bricks_pillar"}}
+{"parent":"minecraft:block/cube_column","textures":{"end":"chipped:block/nether_bricks/polished_nether_bricks","particle":"chipped:block/nether_bricks/fine_nether_bricks_pillar","side":"chipped:block/nether_bricks/fine_nether_bricks_pillar"}}

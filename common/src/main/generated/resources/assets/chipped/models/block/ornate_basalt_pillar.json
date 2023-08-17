@@ -1,1 +1,1 @@
-{"parent":"minecraft:block/cube_all","textures":{"all":"chipped:block/basalt/ornate_basalt_pillar"}}
+{"parent":"minecraft:block/cube_column","textures":{"end":"chipped:block/basalt/polished_basalt","particle":"chipped:block/basalt/ornate_basalt_pillar","side":"chipped:block/basalt/ornate_basalt_pillar"}}

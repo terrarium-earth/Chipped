@@ -404,12 +404,36 @@ public class ModBlockStateProvider extends BlockStateProvider {
         simpleBlockItem(block, model);
     }
 
-    private void createSet(ResourcefulRegistry<Block> registry, String folder) {
+    private void createSet(ChippedPaletteRegistry<Block> registry, String folder) {
         createSet(registry, folder, -1);
     }
 
-    private void createSet(ResourcefulRegistry<Block> registry, String folder, int exclude) {
-        createSet(registry, exclude, (block, i) -> simpleBlock(block, models().cubeAll(name(block), customTexture(block, folder))));
+    private void createSet(ChippedPaletteRegistry<Block> registry, String folder, int exclude) {
+        createSet(registry, exclude, (block, i) -> {
+            if (block instanceof RotatedPillarBlock) {
+                ResourceLocation side = customTexture(block, folder);
+                ResourceLocation end = new ResourceLocation(key(block).getNamespace(), ModelProvider.BLOCK_FOLDER + "/" + folder + "/polished_" + name(registry.getBase()));
+                if (!exFileHelper.exists(end, new ExistingFileHelper.ResourceType(PackType.CLIENT_RESOURCES, ".png", "textures"))) {
+                    end = new ResourceLocation(key(block).getNamespace(), ModelProvider.BLOCK_FOLDER + "/" + folder + "/" + name(registry.getBase()) + "_tile");
+                }
+                if (!exFileHelper.exists(end, new ExistingFileHelper.ResourceType(PackType.CLIENT_RESOURCES, ".png", "textures"))) {
+                    end = new ResourceLocation(key(block).getNamespace(), ModelProvider.BLOCK_FOLDER + "/" + folder + "/smooth_" + name(registry.getBase()));
+                }
+                if (!exFileHelper.exists(end, new ExistingFileHelper.ResourceType(PackType.CLIENT_RESOURCES, ".png", "textures"))) {
+                    end = new ResourceLocation(key(block).getNamespace(), ModelProvider.BLOCK_FOLDER + "/" + folder + "/smooth_" + name(registry.getBase()));
+                }
+                if (registry.getCustomBase().isPresent() && registry.getCustomBase().get().equals("borderless_bricks")) {
+                    end = new ResourceLocation(key(block).getNamespace(), ModelProvider.BLOCK_FOLDER + "/" + folder + "/polished_borderless_bricks");
+                }
+                simpleBlock(block, models().getBuilder(name(block))
+                    .parent(models().getExistingFile(new ResourceLocation("block/cube_column")))
+                    .texture("side", side)
+                    .texture("end", end)
+                    .texture("particle", side));
+            } else {
+                simpleBlock(block, models().cubeAll(name(block), customTexture(block, folder)));
+            }
+        });
     }
 
     private void createCross(ResourcefulRegistry<Block> registry, String folder) {

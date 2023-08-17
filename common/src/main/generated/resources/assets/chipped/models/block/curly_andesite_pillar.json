@@ -1,1 +1,1 @@
-{"parent":"minecraft:block/cube_all","textures":{"all":"chipped:block/andesite/curly_andesite_pillar"}}
+{"parent":"minecraft:block/cube_column","textures":{"end":"chipped:block/andesite/polished_andesite","particle":"chipped:block/andesite/curly_andesite_pillar","side":"chipped:block/andesite/curly_andesite_pillar"}}
