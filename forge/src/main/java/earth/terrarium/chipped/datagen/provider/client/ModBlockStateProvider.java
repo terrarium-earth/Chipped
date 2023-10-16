@@ -32,6 +32,8 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
     @Override
     protected void registerStatesAndModels() {
+        ModBlocks.BENCHES.stream().forEach(b -> horizontalBlock(b.get(), models().getExistingFile(new ResourceLocation(Chipped.MOD_ID, "block/" + name(b.get())))));
+
         createSet(ModBlocks.AMETHYST_BLOCK, "amethyst_block");
         createSet(ModBlocks.ANCIENT_DEBRIS, "ancient_debris");
         createSet(ModBlocks.ANDESITE, "andesite");

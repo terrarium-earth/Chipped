@@ -1,0 +1,56 @@
+{
+  "variants": {
+    "facing=east,model=main": {
+      "highlight": "chipped:shapes/alchemy_bench",
+      "rotation": {
+        "y": 90
+      }
+    },
+    "facing=north,model=main": {
+      "highlight": "chipped:shapes/alchemy_bench",
+      "rotation": {
+        "y": 0
+      }
+    },
+    "facing=south,model=main": {
+      "highlight": "chipped:shapes/alchemy_bench",
+      "rotation": {
+        "y": 180
+      }
+    },
+    "facing=west,model=main": {
+      "highlight": "chipped:shapes/alchemy_bench",
+      "rotation": {
+        "y": 270
+      }
+    },
+    "facing=east,model=side": {
+      "highlight": "chipped:shapes/alchemy_bench",
+      "rotation": {
+        "y": 90
+      },
+      "translation": [0, 0, -1]
+    },
+    "facing=north,model=side": {
+      "highlight": "chipped:shapes/alchemy_bench",
+      "rotation": {
+        "y": 0
+      },
+      "translation": [-1, 0, 0]
+    },
+    "facing=south,model=side": {
+      "highlight": "chipped:shapes/alchemy_bench",
+      "rotation": {
+        "y": 180
+      },
+      "translation": [1, 0, 0]
+    },
+    "facing=west,model=side": {
+      "highlight": "chipped:shapes/alchemy_bench",
+      "rotation": {
+        "y": 270
+      },
+      "translation": [0, 0, 1]
+    }
+  }
+}

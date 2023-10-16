@@ -24,12 +24,8 @@ import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
-import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.phys.BlockHitResult;
-import net.minecraft.world.phys.shapes.CollisionContext;
-import net.minecraft.world.phys.shapes.Shapes;
-import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -37,13 +33,8 @@ import java.util.Locale;
 
 @MethodsReturnNonnullByDefault
 @SuppressWarnings("deprecation")
-public class WorkbenchBlock extends Block {
-    public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
+public class WorkbenchBlock extends HorizontalDirectionalBlock {
     public static final EnumProperty<WorkbenchModelType> MODEL_TYPE = EnumProperty.create("model", WorkbenchModelType.class);
-    protected static final VoxelShape WORKBENCH_NORTH_SHAPE = Block.box(0.0D, 0.0D, 0.0D, 16.0D, 16.0D, 16.0D);
-    protected static final VoxelShape WORKBENCH_EAST_SHAPE = Block.box(0.0D, 0.0D, 0.0D, 16.0D, 16.0D, 16.0D);
-    protected static final VoxelShape WORKBENCH_WEST_SHAPE = Block.box(0.0D, 0.0D, 0.0D, 16.0D, 16.0D, 16.0D);
-    protected static final VoxelShape WORKBENCH_SOUTH_SHAPE = Block.box(0.0D, 0.0D, 0.0D, 16.0D, 16.0D, 16.0D);
     private final ContainerFactory factory;
     private final LazyLoadedValue<Component> containerName;
 
@@ -51,24 +42,28 @@ public class WorkbenchBlock extends Block {
         super(properties);
         this.factory = factory;
         containerName = new LazyLoadedValue<>(() -> Component.translatable("container.chipped." + BuiltInRegistries.BLOCK.getKey(WorkbenchBlock.this).getPath()));
-        this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH).setValue(MODEL_TYPE, WorkbenchModelType.MAIN));
+        this.registerDefaultState(this.stateDefinition.any()
+            .setValue(FACING, Direction.NORTH)
+            .setValue(MODEL_TYPE, WorkbenchModelType.MAIN));
     }
 
+    @Override
+    protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
+        builder.add(FACING, MODEL_TYPE);
+    }
+
+    @Override
     public BlockState getStateForPlacement(BlockPlaceContext context) {
         return this.defaultBlockState().setValue(FACING, context.getHorizontalDirection().getOpposite());
     }
 
     @Override
     public @NotNull InteractionResult use(@NotNull BlockState state, Level level, @NotNull BlockPos pos, @NotNull Player player, @NotNull InteractionHand handIn, @NotNull BlockHitResult hit) {
-        if (level.isClientSide) {
-            return InteractionResult.SUCCESS;
-        } else {
-            player.openMenu(state.getMenuProvider(level, pos));
-            return InteractionResult.CONSUME;
-        }
+        if (level.isClientSide) return InteractionResult.SUCCESS;
+        player.openMenu(state.getMenuProvider(level, pos));
+        return InteractionResult.CONSUME;
     }
 
-    @Nullable
     @Override
     public MenuProvider getMenuProvider(@NotNull BlockState state, @NotNull Level level, @NotNull BlockPos pos) {
         return new SimpleMenuProvider(
@@ -79,23 +74,26 @@ public class WorkbenchBlock extends Block {
 
     @Override
     public void playerWillDestroy(Level level, BlockPos pos, BlockState state, Player player) {
-        if (!level.isClientSide) {
-            WorkbenchModelType workbenchModel = state.getValue(MODEL_TYPE);
-            if (workbenchModel == WorkbenchModelType.MAIN) {
-                BlockPos otherpos = pos.relative(state.getValue(FACING).getClockWise());
-                BlockState otherstate = level.getBlockState(otherpos);
-                if (otherstate.getBlock() == this) {
-                    level.setBlock(otherpos, Blocks.AIR.defaultBlockState(), Block.UPDATE_ALL);
-                    level.levelEvent(player, LevelEvent.PARTICLES_DESTROY_BLOCK, otherpos, Block.getId(otherstate));
-                }
+        if (level.isClientSide) {
+            super.playerWillDestroy(level, pos, state, player);
+            return;
+        }
+
+        WorkbenchModelType workbenchModel = state.getValue(MODEL_TYPE);
+        if (workbenchModel == WorkbenchModelType.MAIN) {
+            BlockPos otherpos = pos.relative(state.getValue(FACING).getClockWise());
+            BlockState otherstate = level.getBlockState(otherpos);
+            if (otherstate.getBlock() == this) {
+                level.setBlock(otherpos, Blocks.AIR.defaultBlockState(), Block.UPDATE_ALL);
+                level.levelEvent(player, LevelEvent.PARTICLES_DESTROY_BLOCK, otherpos, Block.getId(otherstate));
             }
-            if (workbenchModel == WorkbenchModelType.SIDE) {
-                BlockPos otherpos = pos.relative(state.getValue(FACING).getCounterClockWise());
-                BlockState otherstate = level.getBlockState(otherpos);
-                if (otherstate.getBlock() == this) {
-                    level.setBlock(otherpos, Blocks.AIR.defaultBlockState(), Block.UPDATE_ALL);
-                    level.levelEvent(player, LevelEvent.PARTICLES_DESTROY_BLOCK, otherpos, Block.getId(otherstate));
-                }
+        }
+        if (workbenchModel == WorkbenchModelType.SIDE) {
+            BlockPos otherpos = pos.relative(state.getValue(FACING).getCounterClockWise());
+            BlockState otherstate = level.getBlockState(otherpos);
+            if (otherstate.getBlock() == this) {
+                level.setBlock(otherpos, Blocks.AIR.defaultBlockState(), Block.UPDATE_ALL);
+                level.levelEvent(player, LevelEvent.PARTICLES_DESTROY_BLOCK, otherpos, Block.getId(otherstate));
             }
         }
         super.playerWillDestroy(level, pos, state, player);
@@ -113,54 +111,14 @@ public class WorkbenchBlock extends Block {
     }
 
     @Override
-    public VoxelShape getShape(BlockState state, @NotNull BlockGetter level, @NotNull BlockPos pos, @NotNull CollisionContext context) {
-        switch (state.getValue(FACING)) {
-            case NORTH:
-                return WORKBENCH_NORTH_SHAPE;
-            case SOUTH:
-                return WORKBENCH_SOUTH_SHAPE;
-            case WEST:
-                return WORKBENCH_WEST_SHAPE;
-            default:
-                return WORKBENCH_EAST_SHAPE;
-        }
-    }
-
-    @Override
-    public VoxelShape getBlockSupportShape(BlockState state, BlockGetter reader, BlockPos pos) {
-        return Shapes.empty();
-    }
-
-    @Override
-    public boolean useShapeForLightOcclusion(BlockState state) {
-        return true;
-    }
-
-    @Override
     public RenderShape getRenderShape(BlockState state) {
-        return RenderShape.MODEL;
-    }
-
-    @Override
-    public BlockState rotate(BlockState state, Rotation rot) {
-        return state.setValue(FACING, rot.rotate(state.getValue(FACING)));
-    }
-
-    @Override
-    protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
-        builder.add(FACING, MODEL_TYPE);
+        return state.getValue(MODEL_TYPE) == WorkbenchModelType.MAIN ? RenderShape.MODEL : RenderShape.INVISIBLE;
     }
 
     @Deprecated
     @Override
     public boolean canSurvive(BlockState state, LevelReader level, BlockPos pos) {
-        BlockPos otherpos = pos.relative(state.getValue(FACING).getClockWise());
-        return level.getBlockState(otherpos).canBeReplaced();
-    }
-
-    @Override
-    public float getShadeBrightness(BlockState state, BlockGetter level, BlockPos pos) {
-        return 1;
+        return level.getBlockState(pos.relative(state.getValue(FACING).getClockWise())).canBeReplaced();
     }
 
     public enum WorkbenchModelType implements StringRepresentable {

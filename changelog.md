@@ -1,1 +1,3 @@
-- Fix lanterns not using mcmeta files and some lanterns having incorrect models
+- Fix type with coarse sand
+- Fix the alchemy bench having the wrong title in the GUI
+- Add highlight support to the workbenches. This makes their hitboxes perfect

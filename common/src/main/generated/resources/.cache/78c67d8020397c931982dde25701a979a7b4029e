@@ -1,4 +1,4 @@
-// 1.20.1	2023-07-26T11:59:23.545393	Tags for minecraft:block mod id chipped
+// 1.20.1	2023-10-16T10:58:44.758664	Tags for minecraft:block mod id chipped
 8b8d4b22d6e197dd9cd0413a09913d8ff719ec56 data/chipped/tags/blocks/acacia_door.json
 cfe7ea1fbe1452cd3b8e8ff3623e48f6cab9b991 data/chipped/tags/blocks/acacia_leaves.json
 98694fd0286312b5965e227c5e11570202bdfae2 data/chipped/tags/blocks/acacia_log.json
@@ -219,7 +219,7 @@ e156c2850405a40fba2a32f1c84fbf1f48f35b35 data/chipped/tags/blocks/red_mushroom_b
 e7e2b1f7a144178fa369d009f22cb3ee8335fe42 data/chipped/tags/blocks/redstone_block.json
 c180419dc4ffcade86a0d28b875491250f6fd94a data/chipped/tags/blocks/redstone_lamp.json
 d93715564631f03bc64b4f803f7cc041a93b9ece data/chipped/tags/blocks/redstone_torch.json
-0ef519e2a7246c4533fa3dff222a495d2e059663 data/chipped/tags/blocks/sand.json
+24b55e30c2ce1d9b2b45e21b2ae0e8ea9dc53f11 data/chipped/tags/blocks/sand.json
 f1d16700564d754bd60c809e25541cda759596da data/chipped/tags/blocks/sandstone.json
 aec53808fcff732c45cb549c8b7442b9b72de683 data/chipped/tags/blocks/sea_lantern.json
 eed7349df6f1d28bb8487954aee648ad01e72f62 data/chipped/tags/blocks/shroomlight.json
@@ -294,7 +294,7 @@ a826e464c77bfaa898f084967e654c26313df799 data/minecraft/tags/blocks/mineable/pic
 e509706e4803585c8af0ef25c92f8390c1c11a08 data/minecraft/tags/blocks/piglin_repellents.json
 931d4ecbac055429c36d094a964cbbfef276647b data/minecraft/tags/blocks/planks.json
 499ee5f339899e12c7e40ada5d68a74e7ac1096f data/minecraft/tags/blocks/replaceable_by_trees.json
-88d66bdeaff1273eb11e6169915643b5c83a3034 data/minecraft/tags/blocks/sand.json
+e971e7311ca29a5167b374235171daf2b2eebe67 data/minecraft/tags/blocks/sand.json
 133767bbd501f25ecdeda387179692b1cecb3607 data/minecraft/tags/blocks/snow.json
 0b6426d9da5bb70ad55777fe66abc564a2d0762c data/minecraft/tags/blocks/soul_fire_base_blocks.json
 32ca41ce62f4ae307a93cd5192db16f42f166406 data/minecraft/tags/blocks/soul_speed_blocks.json
