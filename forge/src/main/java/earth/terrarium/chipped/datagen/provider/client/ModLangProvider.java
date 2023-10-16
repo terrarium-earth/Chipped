@@ -30,7 +30,7 @@ public class ModLangProvider extends LanguageProvider {
         add("container.chipped.carpenters_table", "Carpenter's Workbench");
         add("container.chipped.loom_table", "Shepherd's Workbench");
         add("container.chipped.mason_table", "Mason's Workbench");
-        add("container.chipped.alchemy_bench", "Philosopher's Workbench");
+        add("container.chipped.alchemy_bench", "Alchemy Bench");
         add("container.chipped.tinkering_table", "Tinkering Table");
     }
 }

@@ -94,7 +94,7 @@ public class Palettes {
         .build();
 
     public static final Palette SAND = PaletteBuilder.create()
-        .add("ash_%", "course_%", "desert_%", "kelp_%", "lush_red_%", "overgrown_%", "pearl_%", "soft_%", "tar_%", "wet_%", "wet_red_%", "white_%")
+        .add("ash_%", "coarse_%", "desert_%", "kelp_%", "lush_red_%", "overgrown_%", "pearl_%", "soft_%", "tar_%", "wet_%", "wet_red_%", "white_%")
         .build();
 
     public static final Palette SOUL_SAND = PaletteBuilder.create()
