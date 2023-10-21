@@ -1,7 +1,7 @@
 package earth.terrarium.chipped.common.recipe;
 
 import com.google.gson.JsonObject;
-import earth.terrarium.chipped.common.util.ModUtils;
+import earth.terrarium.chipped.common.utils.ModUtils;
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.core.HolderSet;
 import net.minecraft.core.RegistryAccess;

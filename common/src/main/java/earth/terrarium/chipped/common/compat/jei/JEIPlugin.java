@@ -48,12 +48,6 @@ public class JEIPlugin implements IModPlugin {
         return UID;
     }
 
-    /*
-     * Registering workbenches under JEI
-     * 1. Create a new RecipeCategory in this::registerCategories
-     * 2. Add the recipe in this::registerRecipes
-     * 3. Add the recipe catalyst in this::registerRecipeCatalysts
-     */
     @Override
     public void registerCategories(IRecipeCategoryRegistration registry) {
         IGuiHelper helper = registry.getJeiHelpers().getGuiHelper();
@@ -72,13 +66,13 @@ public class JEIPlugin implements IModPlugin {
     @Override
     public void registerRecipes(IRecipeRegistration registration) {
         RecipeManager recipeManager = Minecraft.getInstance().level.getRecipeManager();
-        registration.addRecipes(ChippedRecipeCategory.BOTANIST_WORKBENCH_RECIPE, flatten(recipeManager.getAllRecipesFor(ModRecipeTypes.BOTANIST_WORKBENCH_TYPE.get())));
-        registration.addRecipes(ChippedRecipeCategory.GLASSBLOWER_RECIPE, flatten(recipeManager.getAllRecipesFor(ModRecipeTypes.GLASSBLOWER_TYPE.get())));
-        registration.addRecipes(ChippedRecipeCategory.CARPENTERS_TABLE_RECIPE, flatten(recipeManager.getAllRecipesFor(ModRecipeTypes.CARPENTERS_TABLE_TYPE.get())));
-        registration.addRecipes(ChippedRecipeCategory.LOOM_TABLE_RECIPE, flatten(recipeManager.getAllRecipesFor(ModRecipeTypes.LOOM_TABLE_TYPE.get())));
-        registration.addRecipes(ChippedRecipeCategory.MASON_TABLE_RECIPE, flatten(recipeManager.getAllRecipesFor(ModRecipeTypes.MASON_TABLE_TYPE.get())));
-        registration.addRecipes(ChippedRecipeCategory.ALCHEMY_BENCH_RECIPE, flatten(recipeManager.getAllRecipesFor(ModRecipeTypes.ALCHEMY_BENCH_TYPE.get())));
-        registration.addRecipes(ChippedRecipeCategory.TINKERING_TABLE_RECIPE, flatten(recipeManager.getAllRecipesFor(ModRecipeTypes.TINKERING_TABLE_TYPE.get())));
+        registration.addRecipes(ChippedRecipeCategory.BOTANIST_WORKBENCH_RECIPE, flatten(recipeManager.getAllRecipesFor(ModRecipeTypes.BOTANIST_WORKBENCH.get())));
+        registration.addRecipes(ChippedRecipeCategory.GLASSBLOWER_RECIPE, flatten(recipeManager.getAllRecipesFor(ModRecipeTypes.GLASSBLOWER.get())));
+        registration.addRecipes(ChippedRecipeCategory.CARPENTERS_TABLE_RECIPE, flatten(recipeManager.getAllRecipesFor(ModRecipeTypes.CARPENTERS_TABLE.get())));
+        registration.addRecipes(ChippedRecipeCategory.LOOM_TABLE_RECIPE, flatten(recipeManager.getAllRecipesFor(ModRecipeTypes.LOOM_TABLE.get())));
+        registration.addRecipes(ChippedRecipeCategory.MASON_TABLE_RECIPE, flatten(recipeManager.getAllRecipesFor(ModRecipeTypes.MASON_TABLE.get())));
+        registration.addRecipes(ChippedRecipeCategory.ALCHEMY_BENCH_RECIPE, flatten(recipeManager.getAllRecipesFor(ModRecipeTypes.ALCHEMY_BENCH.get())));
+        registration.addRecipes(ChippedRecipeCategory.TINKERING_TABLE_RECIPE, flatten(recipeManager.getAllRecipesFor(ModRecipeTypes.TINKERING_TABLE.get())));
     }
 
     @Override

@@ -1,27 +1,27 @@
 package earth.terrarium.chipped.common.block;
 
+import earth.terrarium.chipped.common.recipe.ChippedRecipe;
+import earth.terrarium.chipped.common.utils.ModUtils;
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.network.chat.Component;
-import net.minecraft.util.LazyLoadedValue;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.util.StringRepresentable;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.MenuProvider;
-import net.minecraft.world.SimpleMenuProvider;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.inventory.AbstractContainerMenu;
-import net.minecraft.world.inventory.ContainerLevelAccess;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.BlockPlaceContext;
-import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraft.world.level.block.entity.BlockEntityTicker;
+import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.EnumProperty;
@@ -33,15 +33,13 @@ import java.util.Locale;
 
 @MethodsReturnNonnullByDefault
 @SuppressWarnings("deprecation")
-public class WorkbenchBlock extends HorizontalDirectionalBlock {
+public class WorkbenchBlock extends HorizontalDirectionalBlock implements EntityBlock {
     public static final EnumProperty<WorkbenchModelType> MODEL_TYPE = EnumProperty.create("model", WorkbenchModelType.class);
-    private final ContainerFactory factory;
-    private final LazyLoadedValue<Component> containerName;
+    private final RecipeType<ChippedRecipe> recipeType;
 
-    public WorkbenchBlock(ContainerFactory factory, Properties properties) {
+    public WorkbenchBlock(RecipeType<ChippedRecipe> recipeType, Properties properties) {
         super(properties);
-        this.factory = factory;
-        containerName = new LazyLoadedValue<>(() -> Component.translatable("container.chipped." + BuiltInRegistries.BLOCK.getKey(WorkbenchBlock.this).getPath()));
+        this.recipeType = recipeType;
         this.registerDefaultState(this.stateDefinition.any()
             .setValue(FACING, Direction.NORTH)
             .setValue(MODEL_TYPE, WorkbenchModelType.MAIN));
@@ -60,16 +58,11 @@ public class WorkbenchBlock extends HorizontalDirectionalBlock {
     @Override
     public @NotNull InteractionResult use(@NotNull BlockState state, Level level, @NotNull BlockPos pos, @NotNull Player player, @NotNull InteractionHand handIn, @NotNull BlockHitResult hit) {
         if (level.isClientSide) return InteractionResult.SUCCESS;
-        player.openMenu(state.getMenuProvider(level, pos));
+        BlockPos containerPos = state.getValue(MODEL_TYPE) == WorkbenchModelType.MAIN ? pos : pos.relative(state.getValue(FACING).getCounterClockWise());
+        if (level.getBlockEntity(containerPos) instanceof MenuProvider provider) {
+            ModUtils.openMenu((ServerPlayer) player, containerPos, provider);
+        }
         return InteractionResult.CONSUME;
-    }
-
-    @Override
-    public MenuProvider getMenuProvider(@NotNull BlockState state, @NotNull Level level, @NotNull BlockPos pos) {
-        return new SimpleMenuProvider(
-            (id, inventory, player) -> factory.create(id, inventory, ContainerLevelAccess.create(level, pos)),
-            containerName.get()
-        );
     }
 
     @Override
@@ -121,6 +114,27 @@ public class WorkbenchBlock extends HorizontalDirectionalBlock {
         return level.getBlockState(pos.relative(state.getValue(FACING).getClockWise())).canBeReplaced();
     }
 
+    @Nullable
+    @Override
+    public BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
+        return state.getValue(MODEL_TYPE) == WorkbenchModelType.MAIN ? new WorkbenchBlockEntity(pos, state) : null;
+    }
+
+    @Override
+    public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level, BlockState state, BlockEntityType<T> type) {
+        return (entityLevel, pos, entityState, entity) -> {
+            if (entity instanceof WorkbenchBlockEntity machine) {
+                if (!level.isClientSide()) {
+                    machine.serverTick((ServerLevel) level, pos, state);
+                }
+            }
+        };
+    }
+
+    public RecipeType<ChippedRecipe> recipeType() {
+        return recipeType;
+    }
+
     public enum WorkbenchModelType implements StringRepresentable {
         MAIN, SIDE;
 
@@ -133,10 +147,5 @@ public class WorkbenchBlock extends HorizontalDirectionalBlock {
         public String toString() {
             return getSerializedName();
         }
-    }
-
-    @FunctionalInterface
-    public interface ContainerFactory {
-        AbstractContainerMenu create(int windowId, Inventory inventory, ContainerLevelAccess position);
     }
 }

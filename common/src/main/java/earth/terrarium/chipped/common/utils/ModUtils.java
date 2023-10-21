@@ -1,11 +1,16 @@
-package earth.terrarium.chipped.common.util;
+package earth.terrarium.chipped.common.utils;
 
 import com.google.gson.JsonElement;
 import com.google.gson.JsonSyntaxException;
+import com.teamresourceful.resourcefullib.common.exceptions.NotImplementedException;
+import dev.architectury.injectables.annotations.ExpectPlatform;
+import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderSet;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.world.MenuProvider;
 import net.minecraft.world.item.Item;
 
 import java.util.List;
@@ -38,5 +43,10 @@ public final class ModUtils {
             return rl;
         }
         throw new JsonSyntaxException("Expected resourcelocation, got " + element);
+    }
+
+    @ExpectPlatform
+    public static void openMenu(ServerPlayer player, BlockPos pos, MenuProvider provider) {
+        throw new NotImplementedException();
     }
 }

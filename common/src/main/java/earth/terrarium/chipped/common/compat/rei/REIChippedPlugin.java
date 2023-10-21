@@ -43,13 +43,13 @@ public class REIChippedPlugin implements REIClientPlugin {
         Minecraft client = Minecraft.getInstance();
         assert client.level != null;
         RecipeManager recipeManager = client.level.getRecipeManager();
-        registerRecipes(recipeManager, registry, ModRecipeTypes.BOTANIST_WORKBENCH_TYPE.get(), ModBlocks.BOTANIST_WORKBENCH.get());
-        registerRecipes(recipeManager, registry, ModRecipeTypes.GLASSBLOWER_TYPE.get(), ModBlocks.GLASSBLOWER.get());
-        registerRecipes(recipeManager, registry, ModRecipeTypes.CARPENTERS_TABLE_TYPE.get(), ModBlocks.CARPENTERS_TABLE.get());
-        registerRecipes(recipeManager, registry, ModRecipeTypes.LOOM_TABLE_TYPE.get(), ModBlocks.LOOM_TABLE.get());
-        registerRecipes(recipeManager, registry, ModRecipeTypes.MASON_TABLE_TYPE.get(), ModBlocks.MASON_TABLE.get());
-        registerRecipes(recipeManager, registry, ModRecipeTypes.ALCHEMY_BENCH_TYPE.get(), ModBlocks.ALCHEMY_BENCH.get());
-        registerRecipes(recipeManager, registry, ModRecipeTypes.TINKERING_TABLE_TYPE.get(), ModBlocks.TINKERING_TABLE.get());
+        registerRecipes(recipeManager, registry, ModRecipeTypes.BOTANIST_WORKBENCH.get(), ModBlocks.BOTANIST_WORKBENCH.get());
+        registerRecipes(recipeManager, registry, ModRecipeTypes.GLASSBLOWER.get(), ModBlocks.GLASSBLOWER.get());
+        registerRecipes(recipeManager, registry, ModRecipeTypes.CARPENTERS_TABLE.get(), ModBlocks.CARPENTERS_TABLE.get());
+        registerRecipes(recipeManager, registry, ModRecipeTypes.LOOM_TABLE.get(), ModBlocks.LOOM_TABLE.get());
+        registerRecipes(recipeManager, registry, ModRecipeTypes.MASON_TABLE.get(), ModBlocks.MASON_TABLE.get());
+        registerRecipes(recipeManager, registry, ModRecipeTypes.ALCHEMY_BENCH.get(), ModBlocks.ALCHEMY_BENCH.get());
+        registerRecipes(recipeManager, registry, ModRecipeTypes.TINKERING_TABLE.get(), ModBlocks.TINKERING_TABLE.get());
     }
 
     private void registerRecipes(RecipeManager recipeManager, DisplayRegistry registry, RecipeType<ChippedRecipe> type, Block block) {

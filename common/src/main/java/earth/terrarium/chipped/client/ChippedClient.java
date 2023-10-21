@@ -3,9 +3,9 @@ package earth.terrarium.chipped.client;
 import com.teamresourceful.resourcefullib.common.exceptions.NotImplementedException;
 import com.teamresourceful.resourcefullib.common.registry.ResourcefulRegistry;
 import dev.architectury.injectables.annotations.ExpectPlatform;
-import earth.terrarium.chipped.common.menu.ChippedScreen;
+import earth.terrarium.chipped.common.menu.WorkbenchScreen;
 import earth.terrarium.chipped.common.registry.ModBlocks;
-import earth.terrarium.chipped.common.registry.ModMenus;
+import earth.terrarium.chipped.common.registry.ModMenuTypes;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.world.level.block.Block;
@@ -16,13 +16,14 @@ public class ChippedClient {
 
     public static void init() {
         registerRenderTypes();
-        MenuScreens.register(ModMenus.ALCHEMY_BENCH.get(), ChippedScreen::new);
-        MenuScreens.register(ModMenus.BOTANIST_WORKBENCH.get(), ChippedScreen::new);
-        MenuScreens.register(ModMenus.CARPENTERS_TABLE.get(), ChippedScreen::new);
-        MenuScreens.register(ModMenus.GLASSBLOWER.get(), ChippedScreen::new);
-        MenuScreens.register(ModMenus.LOOM_TABLE.get(), ChippedScreen::new);
-        MenuScreens.register(ModMenus.MASON_TABLE.get(), ChippedScreen::new);
-        MenuScreens.register(ModMenus.TINKERING_TABLE.get(), ChippedScreen::new);
+        MenuScreens.register(ModMenuTypes.WORKBENCH.get(), WorkbenchScreen::new);
+//        MenuScreens.register(ModMenuTypes.ALCHEMY_BENCH.get(), WorkbenchScreen::new);
+//        MenuScreens.register(ModMenuTypes.BOTANIST_WORKBENCH.get(), WorkbenchScreen::new);
+//        MenuScreens.register(ModMenuTypes.CARPENTERS_TABLE.get(), WorkbenchScreen::new);
+//        MenuScreens.register(ModMenuTypes.GLASSBLOWER.get(), WorkbenchScreen::new);
+//        MenuScreens.register(ModMenuTypes.LOOM_TABLE.get(), WorkbenchScreen::new);
+//        MenuScreens.register(ModMenuTypes.MASON_TABLE.get(), WorkbenchScreen::new);
+//        MenuScreens.register(ModMenuTypes.TINKERING_TABLE.get(), WorkbenchScreen::new); //TODO
     }
 
     private static void registerRenderTypes() {
