@@ -38,6 +38,7 @@ jobs:
           MAVEN_PASS: ${{ secrets.MAVEN_PASSWORD }}
 
       - name: Upload Forge Releases (Curse/Modrinth/Github)
+        id: forge_release
         if: contains(steps.properties.outputs.enabledPlatforms, 'forge')
         uses: Kir-Antipov/mc-publish@v3.2
         with:
@@ -60,6 +61,7 @@ jobs:
             resourceful-lib | depends | *
 
       - name: Upload Fabric Releases (Curse/Modrinth/Github)
+        id: fabric_release
         if: contains(steps.properties.outputs.enabledPlatforms, 'fabric')
         uses: Kir-Antipov/mc-publish@v3.2
         with:
@@ -84,6 +86,9 @@ jobs:
 
       - name: Generate Discord Embed
         run: ./gradlew injectEmbed
+        env:
+          FORGE_RELEASE_URL: ${{ steps.forge_release.outputs.modrinth-url }}
+          FABRIC_RELEASE_URL: ${{ steps.fabric_release.outputs.modrinth-url }}
 
       - name: Upload Discord Embed
         uses: tsickert/discord-webhook@v5.3.0
