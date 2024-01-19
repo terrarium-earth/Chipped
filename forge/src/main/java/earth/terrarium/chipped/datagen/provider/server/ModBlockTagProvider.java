@@ -341,6 +341,7 @@ public class ModBlockTagProvider extends BlockTagsProvider {
         registerTags(this::createSet);
         registerSpecial(this::createSet);
         addVanillaTags();
+        createVanillaSet(ModBlocks.BENCHES, BlockTags.MINEABLE_WITH_AXE);
     }
 
     private void addVanillaTags() {
@@ -499,7 +500,6 @@ public class ModBlockTagProvider extends BlockTagsProvider {
 
     @FunctionalInterface
     public interface BlockRegistry {
-
         void register(Block block, ResourcefulRegistry<Block> registry, String id, TagKey<Item> tag, @Nullable TagKey<Block> mineable);
 
         default void register(Block block, ResourcefulRegistry<Block> registry, String id, TagKey<Item> tag) {
@@ -510,6 +510,5 @@ public class ModBlockTagProvider extends BlockTagsProvider {
     @FunctionalInterface
     public interface SpecialBlockRegistry {
         void register(Block block, Collection<RegistryEntry<Block>> registry, String id, TagKey<Item> tag, @Nullable TagKey<Block> mineable);
-
     }
 }

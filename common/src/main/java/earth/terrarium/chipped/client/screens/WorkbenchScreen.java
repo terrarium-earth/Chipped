@@ -1,7 +1,8 @@
-package earth.terrarium.chipped.common.menu;
+package earth.terrarium.chipped.client.screens;
 
 import com.teamresourceful.resourcefullib.client.utils.RenderUtils;
 import earth.terrarium.chipped.Chipped;
+import earth.terrarium.chipped.common.menus.WorkbenchMenu;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.EditBox;

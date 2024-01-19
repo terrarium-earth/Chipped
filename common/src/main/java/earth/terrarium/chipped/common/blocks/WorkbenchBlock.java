@@ -1,6 +1,8 @@
-package earth.terrarium.chipped.common.block;
+package earth.terrarium.chipped.common.blocks;
 
-import earth.terrarium.chipped.common.recipe.ChippedRecipe;
+import com.teamresourceful.resourcefullib.common.registry.RegistryEntry;
+import earth.terrarium.chipped.common.blockentities.WorkbenchBlockEntity;
+import earth.terrarium.chipped.common.recipes.ChippedRecipe;
 import earth.terrarium.chipped.common.utils.ModUtils;
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.core.BlockPos;
@@ -35,9 +37,9 @@ import java.util.Locale;
 @SuppressWarnings("deprecation")
 public class WorkbenchBlock extends HorizontalDirectionalBlock implements EntityBlock {
     public static final EnumProperty<WorkbenchModelType> MODEL_TYPE = EnumProperty.create("model", WorkbenchModelType.class);
-    private final RecipeType<ChippedRecipe> recipeType;
+    private final RegistryEntry<RecipeType<ChippedRecipe>> recipeType;
 
-    public WorkbenchBlock(RecipeType<ChippedRecipe> recipeType, Properties properties) {
+    public WorkbenchBlock(RegistryEntry<RecipeType<ChippedRecipe>> recipeType, Properties properties) {
         super(properties);
         this.recipeType = recipeType;
         this.registerDefaultState(this.stateDefinition.any()
@@ -132,7 +134,7 @@ public class WorkbenchBlock extends HorizontalDirectionalBlock implements Entity
     }
 
     public RecipeType<ChippedRecipe> recipeType() {
-        return recipeType;
+        return recipeType.get();
     }
 
     public enum WorkbenchModelType implements StringRepresentable {

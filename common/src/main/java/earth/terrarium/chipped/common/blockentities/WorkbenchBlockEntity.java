@@ -1,6 +1,8 @@
-package earth.terrarium.chipped.common.block;
+package earth.terrarium.chipped.common.blockentities;
 
-import earth.terrarium.chipped.common.menu.WorkbenchMenu;
+import earth.terrarium.chipped.common.blockentities.base.BasicContainer;
+import earth.terrarium.chipped.common.blocks.WorkbenchBlock;
+import earth.terrarium.chipped.common.menus.WorkbenchMenu;
 import earth.terrarium.chipped.common.registry.ModBlockEntityTypes;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;

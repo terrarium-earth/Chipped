@@ -1,4 +1,4 @@
-package earth.terrarium.chipped.common.block;
+package earth.terrarium.chipped.common.blocks;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;

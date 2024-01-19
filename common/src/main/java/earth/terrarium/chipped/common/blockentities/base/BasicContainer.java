@@ -1,4 +1,4 @@
-package earth.terrarium.chipped.common.block;
+package earth.terrarium.chipped.common.blockentities.base;
 
 import net.minecraft.core.NonNullList;
 import net.minecraft.world.Container;

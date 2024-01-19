@@ -1,7 +1,7 @@
 package earth.terrarium.chipped.common.compat.jei;
 
 import earth.terrarium.chipped.Chipped;
-import earth.terrarium.chipped.common.recipe.ChippedRecipe;
+import earth.terrarium.chipped.common.recipes.ChippedRecipe;
 import earth.terrarium.chipped.common.registry.ModBlocks;
 import earth.terrarium.chipped.common.registry.ModRecipeTypes;
 import mezz.jei.api.IModPlugin;
@@ -25,7 +25,7 @@ import java.util.Collection;
 import java.util.List;
 
 @JeiPlugin
-public class JEIPlugin implements IModPlugin {
+public class ChippedJeiPlugin implements IModPlugin {
 
     private static final ResourceLocation UID = new ResourceLocation(Chipped.MOD_ID, "chipped");
 

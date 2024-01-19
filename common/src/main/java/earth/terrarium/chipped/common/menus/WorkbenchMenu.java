@@ -1,8 +1,8 @@
-package earth.terrarium.chipped.common.menu;
+package earth.terrarium.chipped.common.menus;
 
-import earth.terrarium.chipped.common.block.WorkbenchBlock;
-import earth.terrarium.chipped.common.block.WorkbenchBlockEntity;
-import earth.terrarium.chipped.common.recipe.ChippedRecipe;
+import earth.terrarium.chipped.common.blocks.WorkbenchBlock;
+import earth.terrarium.chipped.common.blockentities.WorkbenchBlockEntity;
+import earth.terrarium.chipped.common.recipes.ChippedRecipe;
 import earth.terrarium.chipped.common.registry.ModMenuTypes;
 import earth.terrarium.chipped.common.utils.WorldUtils;
 import net.minecraft.network.FriendlyByteBuf;

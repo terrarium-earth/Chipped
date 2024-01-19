@@ -3,7 +3,7 @@ package earth.terrarium.chipped.datagen.builder;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import earth.terrarium.chipped.Chipped;
-import earth.terrarium.chipped.common.recipe.ChippedRecipe;
+import earth.terrarium.chipped.common.recipes.ChippedRecipe;
 import net.minecraft.advancements.Advancement;
 import net.minecraft.advancements.CriterionTriggerInstance;
 import net.minecraft.advancements.RequirementsStrategy;

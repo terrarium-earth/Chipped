@@ -1,6 +1,6 @@
 package earth.terrarium.chipped.datagen.provider.server;
 
-import earth.terrarium.chipped.common.recipe.ChippedRecipe;
+import earth.terrarium.chipped.common.recipes.ChippedRecipe;
 import earth.terrarium.chipped.datagen.builder.ChippedRecipeBuilder;
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.data.PackOutput;

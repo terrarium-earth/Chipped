@@ -1,4 +1,4 @@
-package earth.terrarium.chipped.common.recipe;
+package earth.terrarium.chipped.common.recipes;
 
 import com.google.gson.JsonObject;
 import earth.terrarium.chipped.common.utils.ModUtils;

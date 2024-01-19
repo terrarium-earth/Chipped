@@ -5,9 +5,9 @@ import com.teamresourceful.resourcefullib.common.registry.RegistryEntry;
 import com.teamresourceful.resourcefullib.common.registry.ResourcefulRegistries;
 import com.teamresourceful.resourcefullib.common.registry.ResourcefulRegistry;
 import earth.terrarium.chipped.Chipped;
-import earth.terrarium.chipped.common.block.SpecialLanternBlock;
-import earth.terrarium.chipped.common.block.SpecialPointedDripstoneBlock;
-import earth.terrarium.chipped.common.block.WorkbenchBlock;
+import earth.terrarium.chipped.common.blocks.SpecialLanternBlock;
+import earth.terrarium.chipped.common.blocks.SpecialPointedDripstoneBlock;
+import earth.terrarium.chipped.common.blocks.WorkbenchBlock;
 import earth.terrarium.chipped.common.palette.IdType;
 import earth.terrarium.chipped.common.palette.Palette;
 import earth.terrarium.chipped.common.palette.Palettes;
@@ -42,13 +42,13 @@ public class ModBlocks {
 
     public static final TagKey<Block> SOUL_SAND_TAG = TagKey.create(Registries.BLOCK, new ResourceLocation(Chipped.MOD_ID, "soul_sand"));
 
-    public static final RegistryEntry<Block> BOTANIST_WORKBENCH = BENCHES.register("botanist_workbench", () -> new WorkbenchBlock(ModRecipeTypes.BOTANIST_WORKBENCH.get(), BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).noOcclusion()));
-    public static final RegistryEntry<Block> GLASSBLOWER = BENCHES.register("glassblower", () -> new WorkbenchBlock(ModRecipeTypes.GLASSBLOWER.get(), BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).noOcclusion()));
-    public static final RegistryEntry<Block> CARPENTERS_TABLE = BENCHES.register("carpenters_table", () -> new WorkbenchBlock(ModRecipeTypes.CARPENTERS_TABLE.get(), BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).noOcclusion()));
-    public static final RegistryEntry<Block> LOOM_TABLE = BENCHES.register("loom_table", () -> new WorkbenchBlock(ModRecipeTypes.LOOM_TABLE.get(), BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).noOcclusion()));
-    public static final RegistryEntry<Block> MASON_TABLE = BENCHES.register("mason_table", () -> new WorkbenchBlock(ModRecipeTypes.MASON_TABLE.get(), BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).noOcclusion()));
-    public static final RegistryEntry<Block> ALCHEMY_BENCH = BENCHES.register("alchemy_bench", () -> new WorkbenchBlock(ModRecipeTypes.ALCHEMY_BENCH.get(), BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).noOcclusion()));
-    public static final RegistryEntry<Block> TINKERING_TABLE = BENCHES.register("tinkering_table", () -> new WorkbenchBlock(ModRecipeTypes.TINKERING_TABLE.get(), BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).noOcclusion()));
+    public static final RegistryEntry<Block> BOTANIST_WORKBENCH = BENCHES.register("botanist_workbench", () -> new WorkbenchBlock(ModRecipeTypes.BOTANIST_WORKBENCH, BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).noOcclusion()));
+    public static final RegistryEntry<Block> GLASSBLOWER = BENCHES.register("glassblower", () -> new WorkbenchBlock(ModRecipeTypes.GLASSBLOWER, BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).noOcclusion()));
+    public static final RegistryEntry<Block> CARPENTERS_TABLE = BENCHES.register("carpenters_table", () -> new WorkbenchBlock(ModRecipeTypes.CARPENTERS_TABLE, BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).noOcclusion()));
+    public static final RegistryEntry<Block> LOOM_TABLE = BENCHES.register("loom_table", () -> new WorkbenchBlock(ModRecipeTypes.LOOM_TABLE, BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).noOcclusion()));
+    public static final RegistryEntry<Block> MASON_TABLE = BENCHES.register("mason_table", () -> new WorkbenchBlock(ModRecipeTypes.MASON_TABLE, BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).noOcclusion()));
+    public static final RegistryEntry<Block> ALCHEMY_BENCH = BENCHES.register("alchemy_bench", () -> new WorkbenchBlock(ModRecipeTypes.ALCHEMY_BENCH, BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).noOcclusion()));
+    public static final RegistryEntry<Block> TINKERING_TABLE = BENCHES.register("tinkering_table", () -> new WorkbenchBlock(ModRecipeTypes.TINKERING_TABLE, BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).noOcclusion()));
 
     public static final ChippedPaletteRegistry<Block> AMETHYST_BLOCK = createRegistry(Blocks.AMETHYST_BLOCK, Palettes.STONE);
     public static final ChippedPaletteRegistry<Block> COAL_BLOCK = createRegistry(Blocks.COAL_BLOCK, Palettes.STONE);

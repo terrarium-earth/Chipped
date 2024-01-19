@@ -3,7 +3,7 @@ package earth.terrarium.chipped.client;
 import com.teamresourceful.resourcefullib.common.exceptions.NotImplementedException;
 import com.teamresourceful.resourcefullib.common.registry.ResourcefulRegistry;
 import dev.architectury.injectables.annotations.ExpectPlatform;
-import earth.terrarium.chipped.common.menu.WorkbenchScreen;
+import earth.terrarium.chipped.client.screens.WorkbenchScreen;
 import earth.terrarium.chipped.common.registry.ModBlocks;
 import earth.terrarium.chipped.common.registry.ModMenuTypes;
 import net.minecraft.client.gui.screens.MenuScreens;

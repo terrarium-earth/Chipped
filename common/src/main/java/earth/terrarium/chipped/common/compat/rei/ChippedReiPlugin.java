@@ -1,6 +1,6 @@
 package earth.terrarium.chipped.common.compat.rei;
 
-import earth.terrarium.chipped.common.recipe.ChippedRecipe;
+import earth.terrarium.chipped.common.recipes.ChippedRecipe;
 import earth.terrarium.chipped.common.registry.ModBlocks;
 import earth.terrarium.chipped.common.registry.ModRecipeTypes;
 import me.shedaniel.rei.api.client.plugins.REIClientPlugin;
@@ -23,7 +23,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
-public class REIChippedPlugin implements REIClientPlugin {
+public class ChippedReiPlugin implements REIClientPlugin {
     @Override
     public void registerCategories(CategoryRegistry registry) {
         registry.add(
