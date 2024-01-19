@@ -64,7 +64,11 @@ subprojects {
         "modApi"(group = "earth.terrarium.athena", name = "athena-$modLoader-$minecraftVersion", version = athenaVersion)
         if (isCommon) {
             "modApi"(group = "mezz.jei", name = "jei-$minecraftVersion-common-api", version = jeiVersion)
-            "modApi"(group = "me.shedaniel", name = "RoughlyEnoughItems-api", version = reiVersion)
+            "modCompileOnly"(group = "me.shedaniel", name = "RoughlyEnoughItems-api", version = reiVersion)
+            "modCompileOnly"(group = "me.shedaniel", name = "RoughlyEnoughItems-default-plugin", version = reiVersion)
+        } else {
+            "modCompileOnly"(group = "me.shedaniel", name = "RoughlyEnoughItems-api-$modLoader", version = reiVersion)
+            "modCompileOnly"(group = "me.shedaniel", name = "RoughlyEnoughItems-default-plugin-$modLoader", version = reiVersion)
         }
     }
 

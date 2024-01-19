@@ -28,9 +28,6 @@ dependencies {
     val reiVersion: String by project
 
     forge(group = "net.minecraftforge", name = "forge", version = "$minecraftVersion-$forgeVersion")
-    modLocalRuntime(group = "me.shedaniel", name = "RoughlyEnoughItems-forge", version = reiVersion)
-    modCompileOnly(group = "me.shedaniel", name = "RoughlyEnoughItems-api-forge", version = reiVersion)
-    modCompileOnly(group = "me.shedaniel", name = "RoughlyEnoughItems-default-plugin", version = reiVersion)
 
     common(project(":common", configuration = "namedElements")) {
         isTransitive = false
