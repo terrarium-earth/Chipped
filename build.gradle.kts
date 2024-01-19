@@ -8,7 +8,7 @@ plugins {
     java
     id("maven-publish")
     id("com.teamresourceful.resourcefulgradle") version "0.0.+"
-    id("dev.architectury.loom") version "1.2-SNAPSHOT" apply false
+    id("dev.architectury.loom") version "1.4-SNAPSHOT" apply false
     id("architectury-plugin") version "3.4-SNAPSHOT"
     id("com.github.johnrengelman.shadow") version "7.1.2" apply false
 }
@@ -39,7 +39,7 @@ subprojects {
     repositories {
         maven(url = "https://maven.architectury.dev/")
         maven(url = "https://maven.minecraftforge.net/")
-        maven(url = "https://maven.resourcefulbees.com/repository/maven-public/")
+        maven(url = "https://maven.teamresourceful.com/repository/maven-public/")
     }
 
     dependencies {
@@ -63,7 +63,7 @@ subprojects {
         "modApi"(group = "com.teamresourceful.resourcefullib", name = "resourcefullib-$modLoader-$minecraftVersion", version = resourcefulLibVersion)
         "modApi"(group = "earth.terrarium.athena", name = "athena-$modLoader-$minecraftVersion", version = athenaVersion)
         if (isCommon) {
-            "modApi"(group = "mezz.jei", name = "jei-$minecraftVersion-$modLoader-api", version = jeiVersion)
+            "modApi"(group = "mezz.jei", name = "jei-$minecraftVersion-common-api", version = jeiVersion)
             "modApi"(group = "me.shedaniel", name = "RoughlyEnoughItems-api", version = reiVersion)
         }
     }

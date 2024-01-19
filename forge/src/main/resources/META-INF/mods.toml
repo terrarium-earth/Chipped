@@ -23,20 +23,20 @@ side = "BOTH"
 [[dependencies.chipped]]
 modId = "minecraft"
 mandatory = true
-versionRange = "[1.20,)"
+versionRange = "[1.20.1,)"
 ordering = "NONE"
 side = "BOTH"
 
 [[dependencies.chipped]]
 modId = "resourcefullib"
 mandatory = true
-versionRange = "[2.1.1,)"
+versionRange = "[2.1.20,)"
 ordering = "NONE"
 side = "BOTH"
 
 [[dependencies.chipped]]
 modId = "athena"
 mandatory = true
-versionRange = "[3.0.0,)"
+versionRange = "[3.1.1,)"
 ordering = "NONE"
 side = "CLIENT"

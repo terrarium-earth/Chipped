@@ -1,3 +1,7 @@
 - Fix type with coarse sand
 - Fix the alchemy bench having the wrong title in the GUI
 - Add highlight support to the workbenches. This makes their hitboxes perfect
+- Add search bar to workbench GUI
+- Workbenches now keep their item in the workbench
+- Fix workbenches not breaking faster with an axe
+- Fix REI not registering on Forge

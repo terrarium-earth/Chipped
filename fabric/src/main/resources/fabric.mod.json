@@ -32,19 +32,19 @@
             "earth.terrarium.chipped.client.fabric.ChippedClientFabric"
         ],
         "rei_client": [
-            "earth.terrarium.chipped.common.compat.rei.REIChippedPlugin"
+            "earth.terrarium.chipped.common.compat.rei.ChippedReiPlugin"
         ],
         "jei_mod_plugin": [
-            "earth.terrarium.chipped.common.compat.jei.JEIPlugin"
+            "earth.terrarium.chipped.common.compat.jei.ChippedJeiPlugin"
         ]
     },
     "mixins": [
         "chipped.mixins.json"
     ],
     "depends": {
-        "fabric": "*",
-        "minecraft": ">=1.20",
-        "resourcefullib": ">=2.1.1",
-        "athena": ">=3.0.0"
+        "fabric-api": "*",
+        "minecraft": ">=1.20.1",
+        "resourcefullib": ">=2.1.20",
+        "athena": ">=3.1.1"
     }
 }
