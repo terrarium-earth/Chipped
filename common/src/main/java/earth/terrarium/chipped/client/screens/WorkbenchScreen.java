@@ -3,6 +3,8 @@ package earth.terrarium.chipped.client.screens;
 import com.teamresourceful.resourcefullib.client.utils.RenderUtils;
 import earth.terrarium.chipped.Chipped;
 import earth.terrarium.chipped.common.menus.WorkbenchMenu;
+import earth.terrarium.chipped.common.network.NetworkHandler;
+import earth.terrarium.chipped.common.network.ServerboundFixedContainerButtonClickPacket;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.EditBox;
@@ -136,7 +138,7 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
     }
 
     private void clickRecipe(int index) {
-        Objects.requireNonNull(Objects.requireNonNull(minecraft).gameMode).handleInventoryButtonClick(menu.containerId, index);
+        NetworkHandler.CHANNEL.sendToServer(new ServerboundFixedContainerButtonClickPacket(menu.containerId, index));
     }
 
     @Override
