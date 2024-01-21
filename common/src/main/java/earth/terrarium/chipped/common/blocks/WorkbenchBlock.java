@@ -1,29 +1,28 @@
 package earth.terrarium.chipped.common.blocks;
 
 import com.teamresourceful.resourcefullib.common.registry.RegistryEntry;
-import earth.terrarium.chipped.common.blockentities.WorkbenchBlockEntity;
+import earth.terrarium.chipped.common.menus.WorkbenchMenu;
 import earth.terrarium.chipped.common.recipes.ChippedRecipe;
 import earth.terrarium.chipped.common.utils.ModUtils;
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.server.level.ServerLevel;
+import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.util.StringRepresentable;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.MenuProvider;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.*;
-import net.minecraft.world.level.block.entity.BlockEntity;
-import net.minecraft.world.level.block.entity.BlockEntityTicker;
-import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.EnumProperty;
@@ -35,7 +34,7 @@ import java.util.Locale;
 
 @MethodsReturnNonnullByDefault
 @SuppressWarnings("deprecation")
-public class WorkbenchBlock extends HorizontalDirectionalBlock implements EntityBlock {
+public class WorkbenchBlock extends HorizontalDirectionalBlock {
     public static final EnumProperty<WorkbenchModelType> MODEL_TYPE = EnumProperty.create("model", WorkbenchModelType.class);
     private final RegistryEntry<RecipeType<ChippedRecipe>> recipeType;
 
@@ -61,9 +60,7 @@ public class WorkbenchBlock extends HorizontalDirectionalBlock implements Entity
     public @NotNull InteractionResult use(@NotNull BlockState state, Level level, @NotNull BlockPos pos, @NotNull Player player, @NotNull InteractionHand handIn, @NotNull BlockHitResult hit) {
         if (level.isClientSide) return InteractionResult.SUCCESS;
         BlockPos containerPos = state.getValue(MODEL_TYPE) == WorkbenchModelType.MAIN ? pos : pos.relative(state.getValue(FACING).getCounterClockWise());
-        if (level.getBlockEntity(containerPos) instanceof MenuProvider provider) {
-            ModUtils.openMenu((ServerPlayer) player, containerPos, provider);
-        }
+        ModUtils.openMenu((ServerPlayer) player, containerPos, new WorkbenchMenuProvider());
         return InteractionResult.CONSUME;
     }
 
@@ -116,23 +113,6 @@ public class WorkbenchBlock extends HorizontalDirectionalBlock implements Entity
         return level.getBlockState(pos.relative(state.getValue(FACING).getClockWise())).canBeReplaced();
     }
 
-    @Nullable
-    @Override
-    public BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
-        return state.getValue(MODEL_TYPE) == WorkbenchModelType.MAIN ? new WorkbenchBlockEntity(pos, state) : null;
-    }
-
-    @Override
-    public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level, BlockState state, BlockEntityType<T> type) {
-        return (entityLevel, pos, entityState, entity) -> {
-            if (entity instanceof WorkbenchBlockEntity machine) {
-                if (!level.isClientSide()) {
-                    machine.serverTick((ServerLevel) level, pos, state);
-                }
-            }
-        };
-    }
-
     public RecipeType<ChippedRecipe> recipeType() {
         return recipeType.get();
     }
@@ -148,6 +128,18 @@ public class WorkbenchBlock extends HorizontalDirectionalBlock implements Entity
         @Override
         public String toString() {
             return getSerializedName();
+        }
+    }
+
+    public class WorkbenchMenuProvider implements MenuProvider {
+        @Override
+        public Component getDisplayName() {
+            return getName();
+        }
+
+        @Override
+        public AbstractContainerMenu createMenu(int id, Inventory inventory, Player player) {
+            return new WorkbenchMenu(id, inventory, recipeType());
         }
     }
 }

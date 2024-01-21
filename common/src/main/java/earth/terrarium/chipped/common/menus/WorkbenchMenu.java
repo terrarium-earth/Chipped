@@ -1,9 +1,8 @@
 package earth.terrarium.chipped.common.menus;
 
-import earth.terrarium.chipped.common.blockentities.WorkbenchBlockEntity;
+import earth.terrarium.chipped.common.blocks.WorkbenchBlock;
 import earth.terrarium.chipped.common.recipes.ChippedRecipe;
 import earth.terrarium.chipped.common.registry.ModMenuTypes;
-import earth.terrarium.chipped.common.utils.WorldUtils;
 import net.minecraft.Util;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.Container;
@@ -16,6 +15,7 @@ import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Block;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -24,7 +24,6 @@ import java.util.List;
 import java.util.Locale;
 
 public class WorkbenchMenu extends AbstractContainerMenu {
-    protected final WorkbenchBlockEntity entity;
     protected final Inventory inventory;
     protected final Player player;
     protected final Level level;
@@ -38,16 +37,15 @@ public class WorkbenchMenu extends AbstractContainerMenu {
     private final List<ItemStack> results = new ArrayList<>();
 
     public WorkbenchMenu(int containerId, Inventory inventory, FriendlyByteBuf buf) {
-        this(containerId, inventory, getBlockEntityFromBuf(inventory.player.level(), buf));
+        this(containerId, inventory, getRecipeFromBuf(inventory.player.level(), buf));
     }
 
-    public WorkbenchMenu(int containerId, Inventory inventory, WorkbenchBlockEntity entity) {
+    public WorkbenchMenu(int containerId, Inventory inventory, RecipeType<ChippedRecipe> recipeType) {
         super(ModMenuTypes.WORKBENCH.get(), containerId);
-        this.entity = entity;
         this.inventory = inventory;
         this.player = inventory.player;
         this.level = player.level();
-        this.recipeType = entity.getRecipeType();
+        this.recipeType = recipeType;
         addPlayerInvSlots();
     }
 
@@ -58,7 +56,7 @@ public class WorkbenchMenu extends AbstractContainerMenu {
 
     @Override
     public boolean stillValid(Player player) {
-        return this.entity.stillValid(player);
+        return true;
     }
 
     protected void addPlayerInvSlots() {
@@ -172,10 +170,14 @@ public class WorkbenchMenu extends AbstractContainerMenu {
         this.filter = filter;
     }
 
-    protected static WorkbenchBlockEntity getBlockEntityFromBuf(Level level, FriendlyByteBuf buf) {
+    protected static RecipeType<ChippedRecipe> getRecipeFromBuf(Level level, FriendlyByteBuf buf) {
         if (buf == null) return null;
         if (!level.isClientSide) return null;
-        return WorldUtils.getTileEntity(WorkbenchBlockEntity.class, level, buf.readBlockPos());
+        Block block = level.getBlockState(buf.readBlockPos()).getBlock();
+        if (block instanceof WorkbenchBlock workbench) {
+            return workbench.recipeType();
+        }
+        return null;
     }
 
     private static class InventorySlot extends Slot {
