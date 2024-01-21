@@ -3,6 +3,7 @@ package earth.terrarium.chipped.common.blockentities;
 import earth.terrarium.chipped.common.blockentities.base.BasicContainer;
 import earth.terrarium.chipped.common.blocks.WorkbenchBlock;
 import earth.terrarium.chipped.common.menus.WorkbenchMenu;
+import earth.terrarium.chipped.common.recipes.ChippedRecipe;
 import earth.terrarium.chipped.common.registry.ModBlockEntityTypes;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -17,6 +18,7 @@ import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import org.jetbrains.annotations.NotNull;
@@ -43,9 +45,6 @@ public class WorkbenchBlockEntity extends BlockEntity implements BasicContainer,
 
     public void serverTick(ServerLevel level, BlockPos pos, BlockState state) {
         var recipeType = ((WorkbenchBlock) state.getBlock()).recipeType();
-        level.getRecipeManager().getRecipeFor(recipeType, this, this.level).ifPresent(recipe -> {
-
-        });
     }
 
     @Override
@@ -81,5 +80,9 @@ public class WorkbenchBlockEntity extends BlockEntity implements BasicContainer,
     @Override
     public boolean canTakeItemThroughFace(int index, ItemStack stack, Direction direction) {
         return index == 1;
+    }
+
+    public RecipeType<ChippedRecipe> getRecipeType() {
+        return ((WorkbenchBlock) getBlockState().getBlock()).recipeType();
     }
 }

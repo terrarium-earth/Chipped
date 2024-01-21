@@ -1,232 +1,191 @@
 package earth.terrarium.chipped.common.menus;
 
-import earth.terrarium.chipped.common.blocks.WorkbenchBlock;
 import earth.terrarium.chipped.common.blockentities.WorkbenchBlockEntity;
 import earth.terrarium.chipped.common.recipes.ChippedRecipe;
 import earth.terrarium.chipped.common.registry.ModMenuTypes;
 import earth.terrarium.chipped.common.utils.WorldUtils;
+import net.minecraft.Util;
 import net.minecraft.network.FriendlyByteBuf;
-import net.minecraft.sounds.SoundEvents;
-import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.Container;
+import net.minecraft.world.SimpleContainer;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.inventory.*;
+import net.minecraft.world.inventory.AbstractContainerMenu;
+import net.minecraft.world.inventory.ClickType;
+import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 public class WorkbenchMenu extends AbstractContainerMenu {
-    private final WorkbenchBlockEntity entity;
+    protected final WorkbenchBlockEntity entity;
     protected final Inventory inventory;
     protected final Player player;
     protected final Level level;
-    private final RecipeType<ChippedRecipe> recipeType;
+    protected final RecipeType<ChippedRecipe> recipeType;
 
-    private final ResultContainer resultContainer;
+    private int selectedStackId;
+    private ItemStack selectedStack = ItemStack.EMPTY;
+    private ItemStack chosenStack = ItemStack.EMPTY;
+    @Nullable
+    private String filter;
     private final List<ItemStack> results = new ArrayList<>();
 
-    private ItemStack input = ItemStack.EMPTY;
-    private long lastSoundTime;
-    private int selectedIndex = -1;
-
-    public WorkbenchMenu(int id, Inventory inventory, FriendlyByteBuf buf) {
-        this(id, inventory, getBlockEntityFromBuf(inventory.player.level(), buf));
+    public WorkbenchMenu(int containerId, Inventory inventory, FriendlyByteBuf buf) {
+        this(containerId, inventory, getBlockEntityFromBuf(inventory.player.level(), buf));
     }
 
-    public WorkbenchMenu(int id, Inventory inventory, WorkbenchBlockEntity entity) {
-        super(ModMenuTypes.WORKBENCH.get(), id);
-
+    public WorkbenchMenu(int containerId, Inventory inventory, WorkbenchBlockEntity entity) {
+        super(ModMenuTypes.WORKBENCH.get(), containerId);
         this.entity = entity;
         this.inventory = inventory;
         this.player = inventory.player;
         this.level = player.level();
-        this.resultContainer = new ResultContainer();
-        recipeType = ((WorkbenchBlock) entity.getBlockState().getBlock()).recipeType();
-
-        addMenuSlots();
+        this.recipeType = entity.getRecipeType();
         addPlayerInvSlots();
-        slotsChanged(entity);
-    }
-
-    protected int getContainerInputEnd() {
-        return 1;
-    }
-
-    protected int getInventoryStart() {
-        return 1;
-    }
-
-    protected int startIndex() {
-        return 0;
-    }
-
-    public int getPlayerInvXOffset() {
-        return 8;
-    }
-
-    public int getPlayerInvYOffset() {
-        return 98;
-    }
-
-    protected void addMenuSlots() {
-        addSlot(new Slot(entity, 0, 20, 47) {
-            @Override
-            public void setChanged() {
-                super.setChanged();
-                slotsChanged(this.container);
-            }
-        });
-        addSlot(new FurnaceResultSlot(player, resultContainer, 1, 143, 47) {
-            @Override
-            public void onTake(Player player, ItemStack stack) {
-                stack.onCraftedBy(player.level(), player, stack.getCount());
-                ItemStack input = slots.get(0).remove(1);
-                if (!input.isEmpty()) {
-                    setupResultSlot();
-                }
-
-                long time = level.getGameTime();
-                if (lastSoundTime != time) {
-                    level.playSound(null, entity.getBlockPos(), SoundEvents.UI_STONECUTTER_TAKE_RESULT, SoundSource.BLOCKS, 1.0F, 1.0F);
-                    lastSoundTime = time;
-                }
-
-                super.onTake(player, stack);
-            }
-        });
-    }
-
-    @Override
-    public boolean stillValid(@NotNull Player player) {
-        return true;
     }
 
     @Override
     public @NotNull ItemStack quickMoveStack(@NotNull Player player, int index) {
-        ItemStack itemStack = ItemStack.EMPTY;
-        Slot slot = slots.get(index);
-        if (slot.hasItem()) {
-            ItemStack slotItem = slot.getItem();
-            itemStack = slotItem.copy();
+        return ItemStack.EMPTY;
+    }
 
-            if (index == 1) {
-                slotItem.getItem().onCraftedBy(slotItem, player.level(), player);
-				if (!this.moveItemStackTo(slotItem, 2, 38, true)) {
-					return ItemStack.EMPTY;
-				}
-
-				slot.onQuickCraft(slotItem, itemStack);
-
-                if (slotItem.isEmpty()) {
-                    slot.setByPlayer(ItemStack.EMPTY);
-                }
-
-                slot.setChanged();
-                if (slotItem.getCount() == itemStack.getCount()) {
-                    return ItemStack.EMPTY;
-                }
-
-                slot.onTake(player, slotItem);
-                this.broadcastChanges();
-
-                return itemStack;
-            }
-
-            if (index < getInventoryStart()) {
-                if (!moveItemStackTo(slotItem, getInventoryStart(), slots.size(), true)) {
-                    return ItemStack.EMPTY;
-                }
-            } else if (!moveItemStackTo(slotItem, startIndex(), getContainerInputEnd(), false)) {
-                return ItemStack.EMPTY;
-            }
-
-            if (slotItem.isEmpty()) {
-                slot.set(ItemStack.EMPTY);
-            } else {
-                slot.setChanged();
-            }
-        }
-        return itemStack;
+    @Override
+    public boolean stillValid(Player player) {
+        return this.entity.stillValid(player);
     }
 
     protected void addPlayerInvSlots() {
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 9; j++) {
-                addSlot(new Slot(inventory, j + i * 9 + 9, getPlayerInvXOffset() + j * 18, getPlayerInvYOffset() + i * 18));
+                addSlot(new InventorySlot(inventory, j + i * 9 + 9, getPlayerInvXOffset() + j * 18, getPlayerInvYOffset() + i * 18));
             }
         }
 
         for (int i = 0; i < 9; i++) {
-            addSlot(new Slot(inventory, i, getPlayerInvXOffset() + i * 18, getPlayerInvYOffset() + 58));
+            addSlot(new InventorySlot(inventory, i, getPlayerInvXOffset() + i * 18, getPlayerInvYOffset() + 58));
         }
     }
+
+    public int getPlayerInvXOffset() {
+        return 86;
+    }
+
+    public int getPlayerInvYOffset() {
+        return 167;
+    }
+
 
     @Override
-    public void slotsChanged(Container container) {
-        super.slotsChanged(container);
-        ItemStack inputStack = slots.get(0).getItem();
-        if (!inputStack.is(input.getItem())) {
-            input = inputStack.copy();
-            updateResults(container, inputStack);
-            selectedIndex = -1;
+    public void clicked(int slotId, int button, ClickType clickType, Player player) {
+        selectStack(slotId);
+        super.clicked(slotId, button, clickType, player);
+    }
+
+    public void selectStack(int slotId) {
+        if (slotId < 0 || slotId >= slots.size()) return;
+        selectedStackId = slots.get(slotId).getContainerSlot();
+        selectedStack = slots.get(slotId).getItem();
+        chosenStack = selectedStack;
+        updateResults(filter);
+    }
+
+    public void updateResults(@Nullable String filter) {
+        if (selectedStack.isEmpty()) return;
+        this.filter = filter;
+        SimpleContainer container = new SimpleContainer(selectedStack);
+        var selectedRecipe = level.getRecipeManager().getRecipeFor(recipeType, container, level).orElse(null);
+        results.clear();
+        if (selectedRecipe != null) {
+            selectedRecipe.getResults(container).forEach(result -> {
+                if (filter == null || Util.isBlank(filter)) {
+                    results.add(result);
+                } else if (result.getDisplayName().getString().toLowerCase(Locale.ROOT).contains(filter.toLowerCase(Locale.ROOT))) {
+                    results.add(result);
+                }
+            });
         }
     }
 
-    private void updateResults(Container container, ItemStack stack) {
-        results.clear();
-        slots.get(1).set(ItemStack.EMPTY);
+    public void craft(ItemStack stack, boolean replaceAll) {
         if (stack.isEmpty()) return;
-        level.getRecipeManager().getRecipeFor(recipeType, container, this.level).ifPresent(recipe ->
-            recipe.getResults(container).forEach(results::add));
+
+        boolean canCraft = false;
+        for (var result : results) {
+            if (ItemStack.isSameItem(result, stack)) {
+                canCraft = true;
+                break;
+            }
+        }
+        if (!canCraft) return;
+
+        inventory.setItem(selectedStackId, stack.copyWithCount(inventory.getItem(selectedStackId).getCount()));
+        if (replaceAll) {
+            for (int i = 0; i < inventory.getContainerSize(); i++) {
+                if (ItemStack.isSameItem(inventory.getItem(i), selectedStack)) {
+                    inventory.setItem(i, stack.copyWithCount(inventory.getItem(i).getCount()));
+                }
+            }
+        }
+
+        reset();
+    }
+
+    public void reset() {
+        selectedStackId = 0;
+        selectedStack = ItemStack.EMPTY;
+        chosenStack = ItemStack.EMPTY;
+        results.clear();
+    }
+
+    public ItemStack selectedStack() {
+        return selectedStack;
+    }
+
+    public ItemStack chosenStack() {
+        return chosenStack;
+    }
+
+    public void setChosenStack(ItemStack stack) {
+        chosenStack = stack;
     }
 
     public List<ItemStack> results() {
         return results;
     }
 
-    @Override
-    public void clicked(int slotIndex, int button, @NotNull ClickType actionType, @NotNull Player player) {
-        super.clicked(slotIndex, button, actionType, player);
-        broadcastFullState();
+    public Player player() {
+        return player;
     }
 
-    @Override
-    public void removed(Player player) {
-        super.removed(player);
-        this.resultContainer.removeItemNoUpdate(1);
+    public Level level() {
+        return level;
     }
 
-    @Override
-    public boolean canTakeItemForPickAll(ItemStack stack, Slot slot) {
-        return slot.container != resultContainer && super.canTakeItemForPickAll(stack, slot);
-    }
-
-    @Override
-    public boolean clickMenuButton(Player player, int id) {
-        selectedIndex = id;
-        setupResultSlot();
-        return true;
-    }
-
-    private void setupResultSlot() {
-        if (selectedIndex == -1 || slots.get(0).getItem().isEmpty()) {
-            slots.get(1).set(ItemStack.EMPTY);
-        } else if (results.size() > selectedIndex) {
-            ItemStack stack = results.get(selectedIndex);
-            if (!stack.isEmpty()) {
-                slots.get(1).set(stack.copy());
-            }
-        }
+    public void setFilter(@Nullable String filter) {
+        this.filter = filter;
     }
 
     protected static WorkbenchBlockEntity getBlockEntityFromBuf(Level level, FriendlyByteBuf buf) {
         if (buf == null) return null;
         if (!level.isClientSide) return null;
         return WorldUtils.getTileEntity(WorkbenchBlockEntity.class, level, buf.readBlockPos());
+    }
+
+    private static class InventorySlot extends Slot {
+        public InventorySlot(Container container, int slot, int x, int y) {
+            super(container, slot, x, y);
+        }
+
+        @Override
+        public boolean mayPickup(Player player) {
+            return false;
+        }
     }
 }

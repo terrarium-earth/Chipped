@@ -32,5 +32,12 @@ public class ModLangProvider extends LanguageProvider {
         add("container.chipped.mason_table", "Mason's Workbench");
         add("container.chipped.alchemy_bench", "Alchemy Bench");
         add("container.chipped.tinkering_table", "Tinkering Table");
+
+        add("text.chipped.preview", "Preview");
+        add("text.chipped.craft", "Craft");
+        add("text.chipped.single", "Single");
+        add("text.chipped.horizontal", "Horizontal");
+        add("text.chipped.vertical", "Vertical");
+        add("text.chipped.two_by_two", "Two by Two");
     }
 }

@@ -1,4 +1,4 @@
-// 1.20.1	2023-10-16T10:58:44.758664	Tags for minecraft:block mod id chipped
+// 1.20.1	2024-01-19T13:00:45.791777	Tags for minecraft:block mod id chipped
 8b8d4b22d6e197dd9cd0413a09913d8ff719ec56 data/chipped/tags/blocks/acacia_door.json
 cfe7ea1fbe1452cd3b8e8ff3623e48f6cab9b991 data/chipped/tags/blocks/acacia_leaves.json
 98694fd0286312b5965e227c5e11570202bdfae2 data/chipped/tags/blocks/acacia_log.json
@@ -286,7 +286,7 @@ a3814725c57eb39c455473b79b9253347e4f1aca data/minecraft/tags/blocks/ice.json
 413b0462cd9cd7be3ffb74301dccfbc40febab2d data/minecraft/tags/blocks/impermeable.json
 98fea77bb9c6dc319e7dda3452cefb7ac5dd3e51 data/minecraft/tags/blocks/infiniburn_overworld.json
 a47429c19b028b6cc80d46b44ad2557584c253ec data/minecraft/tags/blocks/leaves.json
-ec337314cccf477372cc35196b05d4e862182aa1 data/minecraft/tags/blocks/mineable/axe.json
+46d62ea69d60926fd88194adbcc9bd5e7f0881dc data/minecraft/tags/blocks/mineable/axe.json
 92ab09db07f31dfcb380b7e4265ba39650b7a0a3 data/minecraft/tags/blocks/mineable/hoe.json
 a826e464c77bfaa898f084967e654c26313df799 data/minecraft/tags/blocks/mineable/pickaxe.json
 128ae9ec3927319929d05543f577a5e388f69922 data/minecraft/tags/blocks/mineable/shovel.json
