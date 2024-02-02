@@ -21,6 +21,7 @@ import net.minecraft.world.inventory.ClickType;
 import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.IronBarsBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import org.lwjgl.glfw.GLFW;
 
@@ -54,7 +55,7 @@ public class WorkbenchScreen extends AbstractContainerCursorScreen<WorkbenchMenu
 
     protected GridLayout grid;
     protected final List<SlotWidget> slotWidgets = new ArrayList<>();
-    protected RenderWindowWidget.Mode mode = RenderWindowWidget.Mode.SINGLE_BLOCK;
+    protected RenderWindowWidget.Mode mode = RenderWindowWidget.Mode.TWO_BY_TWO;
 
     public WorkbenchScreen(WorkbenchMenu container, Inventory inventory, Component title) {
         super(container, inventory, title);
@@ -250,7 +251,13 @@ public class WorkbenchScreen extends AbstractContainerCursorScreen<WorkbenchMenu
     }
 
     public BlockState state() {
-        BlockState state = Block.byItem(menu.chosenStack().getItem()).defaultBlockState();
+        Block block = Block.byItem(menu.chosenStack().getItem());
+        if (block instanceof IronBarsBlock) {
+            return block.defaultBlockState()
+                .setValue(IronBarsBlock.NORTH, true)
+                .setValue(IronBarsBlock.SOUTH, true);
+        }
+        BlockState state = block.defaultBlockState();
         return state.isAir() ? null : state;
     }
 }

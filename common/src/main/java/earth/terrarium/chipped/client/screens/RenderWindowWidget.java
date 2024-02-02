@@ -7,7 +7,9 @@ import net.minecraft.client.gui.components.AbstractWidget;
 import net.minecraft.client.gui.narration.NarrationElementOutput;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.CommonComponents;
+import net.minecraft.world.level.block.DoorBlock;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.Set;
@@ -35,10 +37,16 @@ public class RenderWindowWidget extends AbstractWidget {
         Mode mode = this.mode.get();
         BlockState state = this.state.get();
         if (state == null) return;
+        boolean isDoor = state.getBlock() instanceof DoorBlock;
 
         try (var pose = new CloseablePoseStack(graphics)) {
-            pose.translate(getX() + mode.xOffset, getY() + mode.yOffset, 100);
+            pose.translate(getX(), getY(), 100);
             pose.translate(46, 46, 0);
+            if (!isDoor) {
+                pose.translate(mode.xOffset, mode.yOffset, 0);
+            } else {
+                pose.translate(5, 12, 0);
+            }
             pose.scale(-20, -20, -20);
 
             pose.translate(0.5, 0.5, 0.5);
@@ -46,8 +54,13 @@ public class RenderWindowWidget extends AbstractWidget {
             pose.mulPose(Axis.YP.rotationDegrees(45));
             pose.translate(-0.5, -0.5, -0.5);
 
-            FakeLevel level = new FakeLevel(state, mode.positions);
-            level.renderBlock(pose);
+            if (isDoor) {
+                new FakeLevel(state, Set.of(ORIGIN)).renderBlock(pose);
+                new FakeLevel(state.setValue(DoorBlock.HALF, DoubleBlockHalf.UPPER), Set.of(UP)).renderBlock(pose);
+            } else {
+                FakeLevel level = new FakeLevel(state, mode.positions);
+                level.renderBlock(pose);
+            }
         }
     }
 
