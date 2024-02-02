@@ -1,0 +1,106 @@
+package earth.terrarium.chipped.client.screens;
+
+import com.mojang.blaze3d.platform.Lighting;
+import com.mojang.blaze3d.systems.RenderSystem;
+import com.mojang.blaze3d.vertex.PoseStack;
+import com.mojang.blaze3d.vertex.VertexConsumer;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.ItemBlockRenderTypes;
+import net.minecraft.client.renderer.MultiBufferSource;
+import net.minecraft.client.renderer.block.BlockRenderDispatcher;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
+import net.minecraft.world.level.BlockAndTintGetter;
+import net.minecraft.world.level.ColorResolver;
+import net.minecraft.world.level.LightLayer;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.lighting.LevelLightEngine;
+import net.minecraft.world.level.material.FluidState;
+import org.jetbrains.annotations.Nullable;
+import org.joml.Vector3f;
+
+import java.util.Objects;
+import java.util.Set;
+
+public record FakeLevel(BlockState state, Set<BlockPos> positions) implements BlockAndTintGetter {
+    public static final Vector3f SCENE_LIGHT_1 = new Vector3f(1, 0, 1);
+    public static final Vector3f SCENE_LIGHT_2 = new Vector3f(-1, 1, -1);
+
+    @Override
+    public float getShade(Direction direction, boolean shade) {
+        return 1;
+    }
+
+    @Override
+    public LevelLightEngine getLightEngine() {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override
+    public int getBlockTint(BlockPos blockPos, ColorResolver colorResolver) {
+        return 0;
+    }
+
+    @Override
+    public int getBrightness(LightLayer lightType, BlockPos blockPos) {
+        return 15;
+    }
+
+    @Override
+    public int getRawBrightness(BlockPos blockPos, int amount) {
+        return 15;
+    }
+
+    @Nullable
+    @Override
+    public BlockEntity getBlockEntity(BlockPos pos) {
+        return null;
+    }
+
+    @Override
+    public BlockState getBlockState(BlockPos pos) {
+        return positions.contains(pos) ? state : Blocks.AIR.defaultBlockState();
+    }
+
+    @Override
+    public FluidState getFluidState(BlockPos pos) {
+        return Blocks.AIR.defaultBlockState().getFluidState();
+    }
+
+    @Override
+    public int getHeight() {
+        return 0;
+    }
+
+    @Override
+    public int getMinBuildHeight() {
+        return 0;
+    }
+
+    public void renderBlock(PoseStack poseStack) {
+        Minecraft mc = Minecraft.getInstance();
+        BlockRenderDispatcher dispatcher = mc.getBlockRenderer();
+        MultiBufferSource.BufferSource bufferSource = mc.renderBuffers().bufferSource();
+        VertexConsumer consumer = bufferSource.getBuffer(ItemBlockRenderTypes.getRenderType(state, false));
+
+        RenderSystem.setupGui3DDiffuseLighting(SCENE_LIGHT_1, SCENE_LIGHT_2);
+
+        positions.forEach(pos -> {
+            poseStack.pushPose();
+            poseStack.translate(pos.getX(), pos.getY(), pos.getZ());
+            dispatcher.renderBatched(
+                state,
+                pos,
+                this,
+                poseStack,
+                consumer,
+                true,
+                Objects.requireNonNull(mc.level).random);
+            poseStack.popPose();
+        });
+        bufferSource.endBatch();
+        Lighting.setupFor3DItems();
+    }
+}

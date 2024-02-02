@@ -35,6 +35,7 @@ public class ModLangProvider extends LanguageProvider {
 
         add("text.chipped.preview", "Preview");
         add("text.chipped.craft", "Craft");
+        add("text.chipped.craft_all", "Craft All");
         add("text.chipped.single", "Single");
         add("text.chipped.horizontal", "Horizontal");
         add("text.chipped.vertical", "Vertical");

@@ -57,8 +57,10 @@ public class SlotWidget extends AbstractWidget {
 
     @Override
     public boolean mouseClicked(double mouseX, double mouseY, int button) {
-        if (stack.isEmpty() || mouseY < minY || mouseY > maxY) return false;
-        menu.setChosenStack(stack);
+        if (this.clicked(mouseX, mouseY)) {
+            if (stack.isEmpty() || mouseY < minY || mouseY > maxY) return false;
+            menu.setChosenStack(stack);
+        }
         return super.mouseClicked(mouseX, mouseY, button);
     }
 }

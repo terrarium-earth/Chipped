@@ -1,6 +1,5 @@
 package earth.terrarium.chipped.client.screens;
 
-import com.mojang.blaze3d.vertex.PoseStack;
 import com.teamresourceful.resourcefullib.client.screens.AbstractContainerCursorScreen;
 import com.teamresourceful.resourcefullib.client.utils.RenderUtils;
 import earth.terrarium.chipped.Chipped;
@@ -38,11 +37,12 @@ public class WorkbenchScreen extends AbstractContainerCursorScreen<WorkbenchMenu
     private static final ResourceLocation TWO_BY_TWO_BUTTON = new ResourceLocation(Chipped.MOD_ID, "textures/gui/sprites/two_by_two_button.png");
     private static final ResourceLocation BUTTON = new ResourceLocation(Chipped.MOD_ID, "textures/gui/sprites/button.png");
 
-    public static final int YELLOW = 0xFFFFFF00;
-    public static final int BLUE = 0xFF0000FF;
+    public static final int YELLOW = 0x70FFFF00;
+    public static final int BLUE = 0x700000FF;
 
     private static final Component PREVIEW_TEXT = Component.translatable("text.chipped.preview");
     private static final Component CRAFT_TEXT = Component.translatable("text.chipped.craft");
+    private static final Component CRAFT_ALL_TEXT = Component.translatable("text.chipped.craft_all");
     private static final Component SINGLE_TEXT = Component.translatable("text.chipped.single");
     private static final Component HORIZONTAL_TEXT = Component.translatable("text.chipped.horizontal");
     private static final Component VERTICAL_TEXT = Component.translatable("text.chipped.vertical");
@@ -50,11 +50,11 @@ public class WorkbenchScreen extends AbstractContainerCursorScreen<WorkbenchMenu
 
     protected EditBox searchBox;
     protected double scrollAmount;
-
+    protected RenderWindowWidget renderWindow;
 
     protected GridLayout grid;
     protected final List<SlotWidget> slotWidgets = new ArrayList<>();
-    protected Mode mode = Mode.SINGLE_BLOCK;
+    protected RenderWindowWidget.Mode mode = RenderWindowWidget.Mode.SINGLE_BLOCK;
 
     public WorkbenchScreen(WorkbenchMenu container, Inventory inventory, Component title) {
         super(container, inventory, title);
@@ -84,38 +84,38 @@ public class WorkbenchScreen extends AbstractContainerCursorScreen<WorkbenchMenu
             18, 18,
             0, 0, 18,
             SINGLE_BLOCK_BUTTON, 18, 36,
-            button -> mode = Mode.SINGLE_BLOCK)).setTooltip(Tooltip.create(SINGLE_TEXT));
+            button -> mode = RenderWindowWidget.Mode.SINGLE_BLOCK)).setTooltip(Tooltip.create(SINGLE_TEXT));
         addRenderableWidget(new ImageButton(leftPos + 27, topPos + 121,
             18, 18,
             0, 0, 18,
             HORIZONTAL_BLOCKS_BUTTON, 18, 36,
-            button -> mode = Mode.HORIZONTAL_BLOCK)).setTooltip(Tooltip.create(HORIZONTAL_TEXT));
+            button -> mode = RenderWindowWidget.Mode.HORIZONTAL_BLOCK)).setTooltip(Tooltip.create(HORIZONTAL_TEXT));
         addRenderableWidget(new ImageButton(leftPos + 45, topPos + 121,
             18, 18,
             0, 0, 18,
             VERTICAL_BLOCKS_BUTTON, 18, 36,
-            button -> mode = Mode.VERTICAL_BLOCK)).setTooltip(Tooltip.create(VERTICAL_TEXT));
+            button -> mode = RenderWindowWidget.Mode.VERTICAL_BLOCK)).setTooltip(Tooltip.create(VERTICAL_TEXT));
         addRenderableWidget(new ImageButton(leftPos + 63, topPos + 121,
             18, 18,
             0, 0, 18,
             TWO_BY_TWO_BUTTON, 18, 36,
-            button -> mode = Mode.TWO_BY_TWO)).setTooltip(Tooltip.create(TWO_BY_TWO_TEXT));
+            button -> mode = RenderWindowWidget.Mode.TWO_BY_TWO)).setTooltip(Tooltip.create(TWO_BY_TWO_TEXT));
 
         addRenderableWidget(new ImageButton(leftPos + 9, topPos + 101,
             72, 18,
             0, 0, 18,
             BUTTON, 72, 36,
-            button -> {
-                if (!menu.selectedStack().isEmpty()) {
-                    NetworkHandler.CHANNEL.sendToServer(new ServerboundCraftPacket(menu.chosenStack(), hasShiftDown()));
-                    minecraft.getSoundManager().play(SimpleSoundInstance.forUI(SoundEvents.UI_STONECUTTER_TAKE_RESULT, 1, 1));
-                    menu.reset();
-                    addSlotWidgets();
-                    scrollAmount = 0;
-                }
-            }));
+            button -> craft()));
 
         addSlotWidgets();
+
+        renderWindow = addRenderableWidget(new RenderWindowWidget(
+            leftPos + 9,
+            topPos + 26,
+            72,
+            72,
+            this::mode,
+            this::state));
     }
 
     private void addSlotWidgets() {
@@ -166,19 +166,18 @@ public class WorkbenchScreen extends AbstractContainerCursorScreen<WorkbenchMenu
         int top = (height - imageHeight) / 2;
         graphics.blit(TEXTURE, left, top, 0, 0, imageWidth, imageHeight, imageWidth, imageHeight);
         graphics.drawString(font, PREVIEW_TEXT, left + 11, top + 14, 0x404040, false);
-        graphics.drawCenteredString(font, CRAFT_TEXT, left + 45, top + 106, 0x404040);
+        graphics.drawCenteredString(font, hasShiftDown() ? CRAFT_ALL_TEXT : CRAFT_TEXT, left + 45, top + 106, 0x404040);
 
         var stack = menu.chosenStack();
         if (stack.isEmpty()) return;
-        renderBlock(graphics, stack);
 
         var selectedStack = menu.selectedStack();
         if (selectedStack.isEmpty()) return;
         for (var slot : menu.slots) {
             if (selectedStack.equals(slot.getItem()) || (ItemStack.isSameItem(selectedStack, slot.getItem()) && hasShiftDown())) {
-                graphics.renderOutline(slot.x + left - 1, slot.y + 6, 18, 18, YELLOW);
+                graphics.fill(slot.x + left - 1, slot.y + 6, slot.x + left + 17, slot.y + 24, YELLOW);
             } else if (ItemStack.isSameItem(selectedStack, slot.getItem())) {
-                graphics.renderOutline(slot.x + left - 1, slot.y + 6, 18, 18, BLUE);
+                graphics.fill(slot.x + left - 1, slot.y + 6, slot.x + left + 17, slot.y + 24, BLUE);
             }
         }
     }
@@ -236,34 +235,22 @@ public class WorkbenchScreen extends AbstractContainerCursorScreen<WorkbenchMenu
         scrollAmount = Mth.clamp(amount, 0, rows * 18 - 100);
     }
 
-    private void renderBlock(GuiGraphics graphics, ItemStack stack) {
-        int left = (width - imageWidth) / 2;
-        int top = (height - imageHeight) / 2;
-
-        BlockState state = Block.byItem(stack.getItem()).defaultBlockState();
-        if (state.isAir()) return;
-        PoseStack poseStack = graphics.pose();
-
-        switch (mode) {
-            case SINGLE_BLOCK -> renderSingleBlock(poseStack, state, left, top);
-            case HORIZONTAL_BLOCK -> renderHorizontalBlocks(poseStack, state, left, top);
-            case VERTICAL_BLOCK -> renderVerticalBlocks(poseStack, state, left, top);
-            case TWO_BY_TWO -> renderTwoByTwo(poseStack, state, left, top);
+    public void craft() {
+        if (!menu.selectedStack().isEmpty()) {
+            NetworkHandler.CHANNEL.sendToServer(new ServerboundCraftPacket(menu.chosenStack(), hasShiftDown()));
+            Objects.requireNonNull(minecraft).getSoundManager().play(SimpleSoundInstance.forUI(SoundEvents.UI_STONECUTTER_TAKE_RESULT, 1, 1));
+            menu.reset();
+            addSlotWidgets();
+            scrollAmount = 0;
         }
     }
 
-    private void renderSingleBlock(PoseStack poseStack, BlockState state, int left, int top) {} // TODO
+    public RenderWindowWidget.Mode mode() {
+        return mode;
+    }
 
-    private void renderHorizontalBlocks(PoseStack poseStack, BlockState state, int left, int top) {} // TODO
-
-    private void renderVerticalBlocks(PoseStack poseStack, BlockState state, int left, int top) {} // TODO
-
-    private void renderTwoByTwo(PoseStack poseStack, BlockState state, int left, int top) {} // TODO
-
-    protected enum Mode {
-        SINGLE_BLOCK,
-        HORIZONTAL_BLOCK,
-        VERTICAL_BLOCK,
-        TWO_BY_TWO,
+    public BlockState state() {
+        BlockState state = Block.byItem(menu.chosenStack().getItem()).defaultBlockState();
+        return state.isAir() ? null : state;
     }
 }
