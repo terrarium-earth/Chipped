@@ -4,12 +4,16 @@ import com.mojang.blaze3d.platform.Lighting;
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
+import com.teamresourceful.resourcefullib.common.exceptions.NotImplementedException;
+import dev.architectury.injectables.annotations.ExpectPlatform;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.MultiBufferSource;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.block.BlockRenderDispatcher;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.BlockAndTintGetter;
 import net.minecraft.world.level.ColorResolver;
 import net.minecraft.world.level.LightLayer;
@@ -83,24 +87,33 @@ public record FakeLevel(BlockState state, Set<BlockPos> positions) implements Bl
         Minecraft mc = Minecraft.getInstance();
         BlockRenderDispatcher dispatcher = mc.getBlockRenderer();
         MultiBufferSource.BufferSource bufferSource = mc.renderBuffers().bufferSource();
-        VertexConsumer consumer = bufferSource.getBuffer(ItemBlockRenderTypes.getRenderType(state, false));
+        RenderType renderType = ItemBlockRenderTypes.getRenderType(state, false);
+        VertexConsumer consumer = bufferSource.getBuffer(renderType);
 
         RenderSystem.setupGui3DDiffuseLighting(SCENE_LIGHT_1, SCENE_LIGHT_2);
 
         positions.forEach(pos -> {
             poseStack.pushPose();
             poseStack.translate(pos.getX(), pos.getY(), pos.getZ());
-            dispatcher.renderBatched(
+            renderBatched(
+                dispatcher,
                 state,
                 pos,
                 this,
                 poseStack,
                 consumer,
                 true,
-                Objects.requireNonNull(mc.level).random);
+                Objects.requireNonNull(mc.level).random,
+                renderType
+            );
             poseStack.popPose();
         });
         bufferSource.endBatch();
         Lighting.setupFor3DItems();
+    }
+
+    @ExpectPlatform
+    public static void renderBatched(BlockRenderDispatcher dispatcher, BlockState state, BlockPos pos, BlockAndTintGetter level, PoseStack poseStack, VertexConsumer consumer, boolean checkSides, RandomSource random, RenderType type) {
+        throw new NotImplementedException();
     }
 }

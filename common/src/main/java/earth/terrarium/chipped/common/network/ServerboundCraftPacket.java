@@ -1,11 +1,14 @@
 package earth.terrarium.chipped.common.network;
 
+import com.teamresourceful.bytecodecs.base.ByteCodec;
+import com.teamresourceful.bytecodecs.base.object.ObjectByteCodec;
+import com.teamresourceful.resourcefullib.common.bytecodecs.ExtraByteCodecs;
+import com.teamresourceful.resourcefullib.common.networking.base.CodecPacketHandler;
 import com.teamresourceful.resourcefullib.common.networking.base.Packet;
 import com.teamresourceful.resourcefullib.common.networking.base.PacketContext;
 import com.teamresourceful.resourcefullib.common.networking.base.PacketHandler;
 import earth.terrarium.chipped.Chipped;
 import earth.terrarium.chipped.common.menus.WorkbenchMenu;
-import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
 
@@ -26,17 +29,13 @@ public record ServerboundCraftPacket(
         return HANDLER;
     }
 
-    private static class Handler implements PacketHandler<ServerboundCraftPacket> {
-
-        @Override
-        public void encode(ServerboundCraftPacket message, FriendlyByteBuf buffer) {
-            buffer.writeItem(message.stack);
-            buffer.writeBoolean(message.replaceAll);
-        }
-
-        @Override
-        public ServerboundCraftPacket decode(FriendlyByteBuf buffer) {
-            return new ServerboundCraftPacket(buffer.readItem(), buffer.readBoolean());
+    private static class Handler extends CodecPacketHandler<ServerboundCraftPacket> {
+        public Handler() {
+            super(ObjectByteCodec.create(
+                ExtraByteCodecs.ITEM_STACK.fieldOf(ServerboundCraftPacket::stack),
+                ByteCodec.BOOLEAN.fieldOf(ServerboundCraftPacket::replaceAll),
+                ServerboundCraftPacket::new
+            ));
         }
 
         @Override
