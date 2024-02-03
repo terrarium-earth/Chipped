@@ -28,7 +28,12 @@ import org.joml.Vector3f;
 import java.util.Objects;
 import java.util.Set;
 
-public record FakeLevel(BlockState state, Set<BlockPos> positions) implements BlockAndTintGetter {
+public class FakeLevel implements BlockAndTintGetter {
+    @Nullable
+    private BlockState state;
+    @Nullable
+    private Set<BlockPos> positions;
+
     public static final Vector3f SCENE_LIGHT_1 = new Vector3f(1, 0, 1);
     public static final Vector3f SCENE_LIGHT_2 = new Vector3f(-1, 1, -1);
 
@@ -66,7 +71,7 @@ public record FakeLevel(BlockState state, Set<BlockPos> positions) implements Bl
 
     @Override
     public BlockState getBlockState(BlockPos pos) {
-        return positions.contains(pos) ? state : Blocks.AIR.defaultBlockState();
+        return (state != null && positions != null && positions.contains(pos)) ? state : Blocks.AIR.defaultBlockState();
     }
 
     @Override
@@ -84,7 +89,16 @@ public record FakeLevel(BlockState state, Set<BlockPos> positions) implements Bl
         return 0;
     }
 
+    public void setState(BlockState state) {
+        this.state = state;
+    }
+
+    public void setPositions(Set<BlockPos> positions) {
+        this.positions = positions;
+    }
+
     public void renderBlock(PoseStack poseStack) {
+        if (state == null || positions == null) return;
         Minecraft mc = Minecraft.getInstance();
         BlockRenderDispatcher dispatcher = mc.getBlockRenderer();
         MultiBufferSource.BufferSource bufferSource = mc.renderBuffers().bufferSource();

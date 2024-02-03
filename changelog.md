@@ -1,11 +1,1 @@
-- 1.20.4 Port.
-- All workbenches can now be used to craft all blocks. Specific recipes are no longer bound to specific workbenches.
-- Fixed tinted blocks like leaves having no light in the preview window.
-- Added item tag translations.
-- The following concrete blocks are now rotatable:
-  - Bolted Concrete
-  - Hazard Concrete
-  - Railed Concrete
-  - Reinforced Concrete
-  - Rusted Concrete
-  - Warning Concrete
+- Cleaned up GUI.

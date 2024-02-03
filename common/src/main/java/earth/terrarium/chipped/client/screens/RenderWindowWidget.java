@@ -2,6 +2,8 @@ package earth.terrarium.chipped.client.screens;
 
 import com.mojang.math.Axis;
 import com.teamresourceful.resourcefullib.client.CloseablePoseStack;
+import com.teamresourceful.resourcefullib.client.components.CursorWidget;
+import com.teamresourceful.resourcefullib.client.screens.CursorScreen;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.AbstractWidget;
 import net.minecraft.client.gui.narration.NarrationElementOutput;
@@ -15,16 +17,19 @@ import org.jetbrains.annotations.Nullable;
 import java.util.Set;
 import java.util.function.Supplier;
 
-public class RenderWindowWidget extends AbstractWidget {
+public class RenderWindowWidget extends AbstractWidget implements CursorWidget {
     public static final BlockPos ORIGIN = BlockPos.ZERO;
     public static final BlockPos NORTH = BlockPos.ZERO.north();
     public static final BlockPos NORTH_UP = BlockPos.ZERO.north().above();
     public static final BlockPos SOUTH = BlockPos.ZERO.south();
     public static final BlockPos UP = BlockPos.ZERO.above();
     public static final BlockPos DOWN = BlockPos.ZERO.below();
+    private static final Set<BlockPos> DOOR_POSITIONS_BOTTOM = Set.of(ORIGIN);
+    private static final Set<BlockPos> DOOR_POSITIONS_TOP = Set.of(UP);
 
     private final Supplier<Mode> mode;
     private final Supplier<@Nullable BlockState> state;
+    private final FakeLevel fakeLevel = new FakeLevel();
 
     public RenderWindowWidget(int x, int y, int width, int height, Supplier<Mode> mode, Supplier<BlockState> state) {
         super(x, y, width, height, CommonComponents.EMPTY);
@@ -54,12 +59,16 @@ public class RenderWindowWidget extends AbstractWidget {
             pose.mulPose(Axis.YP.rotationDegrees(45));
             pose.translate(-0.5, -0.5, -0.5);
 
+            fakeLevel.setState(state);
             if (isDoor) {
-                new FakeLevel(state, Set.of(ORIGIN)).renderBlock(pose);
-                new FakeLevel(state.setValue(DoorBlock.HALF, DoubleBlockHalf.UPPER), Set.of(UP)).renderBlock(pose);
+                fakeLevel.setPositions(DOOR_POSITIONS_BOTTOM);
+                fakeLevel.renderBlock(pose);
+                fakeLevel.setState(state.setValue(DoorBlock.HALF, DoubleBlockHalf.UPPER));
+                fakeLevel.setPositions(DOOR_POSITIONS_TOP);
+                fakeLevel.renderBlock(pose);
             } else {
-                FakeLevel level = new FakeLevel(state, mode.positions);
-                level.renderBlock(pose);
+                fakeLevel.setPositions(mode.positions);
+                fakeLevel.renderBlock(pose);
             }
         }
     }
@@ -71,6 +80,11 @@ public class RenderWindowWidget extends AbstractWidget {
 
     @Override
     protected void updateWidgetNarration(NarrationElementOutput narrationElementOutput) {}
+
+    @Override
+    public CursorScreen.Cursor getCursor() {
+        return CursorScreen.Cursor.DEFAULT;
+    }
 
     public enum Mode {
         SINGLE_BLOCK(0, 0, ORIGIN),

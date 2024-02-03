@@ -21,7 +21,6 @@ import java.util.Locale;
 
 public class WorkbenchMenu extends AbstractContainerMenu {
     protected final Inventory inventory;
-    protected final Player player;
     protected final Level level;
 
     private int selectedStackId;
@@ -34,8 +33,7 @@ public class WorkbenchMenu extends AbstractContainerMenu {
     public WorkbenchMenu(int containerId, Inventory inventory) {
         super(ModMenuTypes.WORKBENCH.get(), containerId);
         this.inventory = inventory;
-        this.player = inventory.player;
-        this.level = player.level();
+        this.level = inventory.player.level();
         addPlayerInvSlots();
     }
 
@@ -89,7 +87,7 @@ public class WorkbenchMenu extends AbstractContainerMenu {
         this.filter = filter;
         SimpleContainer container = new SimpleContainer(selectedStack);
         level.getRecipeManager()
-            .getRecipeFor(ModRecipeTypes.WORKBENCH.get(), container, level).ifPresent(recipe -> {
+            .getRecipeFor(ModRecipeTypes.WORKBENCH.get(), container, level).ifPresentOrElse(recipe -> {
                 results.clear();
                 recipe.value().getResults(container.getItem(0)).forEach(result -> {
                     if (filter == null
@@ -98,7 +96,7 @@ public class WorkbenchMenu extends AbstractContainerMenu {
                         results.add(result);
                     }
                 });
-            });
+            }, this::reset);
     }
 
     public void craft(ItemStack stack, boolean replaceAll) {
@@ -146,10 +144,6 @@ public class WorkbenchMenu extends AbstractContainerMenu {
 
     public List<ItemStack> results() {
         return results;
-    }
-
-    public Player player() {
-        return player;
     }
 
     public Level level() {
