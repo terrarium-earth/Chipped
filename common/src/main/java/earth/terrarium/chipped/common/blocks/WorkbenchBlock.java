@@ -1,9 +1,8 @@
 package earth.terrarium.chipped.common.blocks;
 
-import com.teamresourceful.resourcefullib.common.registry.RegistryEntry;
+import com.mojang.serialization.MapCodec;
 import earth.terrarium.chipped.common.menus.WorkbenchMenu;
-import earth.terrarium.chipped.common.recipes.ChippedRecipe;
-import earth.terrarium.chipped.common.utils.ModUtils;
+import earth.terrarium.chipped.common.registry.ModMenuTypes;
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -19,7 +18,6 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.BlockPlaceContext;
-import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.*;
@@ -35,12 +33,12 @@ import java.util.Locale;
 @MethodsReturnNonnullByDefault
 @SuppressWarnings("deprecation")
 public class WorkbenchBlock extends HorizontalDirectionalBlock {
-    public static final EnumProperty<WorkbenchModelType> MODEL_TYPE = EnumProperty.create("model", WorkbenchModelType.class);
-    private final RegistryEntry<RecipeType<ChippedRecipe>> recipeType;
+    public static final MapCodec<WorkbenchBlock> CODEC = simpleCodec(WorkbenchBlock::new);
 
-    public WorkbenchBlock(RegistryEntry<RecipeType<ChippedRecipe>> recipeType, Properties properties) {
+    public static final EnumProperty<WorkbenchModelType> MODEL_TYPE = EnumProperty.create("model", WorkbenchModelType.class);
+
+    public WorkbenchBlock(Properties properties) {
         super(properties);
-        this.recipeType = recipeType;
         this.registerDefaultState(this.stateDefinition.any()
             .setValue(FACING, Direction.NORTH)
             .setValue(MODEL_TYPE, WorkbenchModelType.MAIN));
@@ -60,15 +58,15 @@ public class WorkbenchBlock extends HorizontalDirectionalBlock {
     public @NotNull InteractionResult use(@NotNull BlockState state, Level level, @NotNull BlockPos pos, @NotNull Player player, @NotNull InteractionHand handIn, @NotNull BlockHitResult hit) {
         if (level.isClientSide) return InteractionResult.SUCCESS;
         BlockPos containerPos = state.getValue(MODEL_TYPE) == WorkbenchModelType.MAIN ? pos : pos.relative(state.getValue(FACING).getCounterClockWise());
-        ModUtils.openMenu((ServerPlayer) player, containerPos, new WorkbenchMenuProvider());
+        ModMenuTypes.openMenu((ServerPlayer) player, containerPos, new WorkbenchMenuProvider());
         return InteractionResult.CONSUME;
     }
 
     @Override
-    public void playerWillDestroy(Level level, BlockPos pos, BlockState state, Player player) {
+    public BlockState playerWillDestroy(Level level, BlockPos pos, BlockState state, Player player) {
         if (level.isClientSide) {
             super.playerWillDestroy(level, pos, state, player);
-            return;
+            return state;
         }
 
         WorkbenchModelType workbenchModel = state.getValue(MODEL_TYPE);
@@ -88,7 +86,7 @@ public class WorkbenchBlock extends HorizontalDirectionalBlock {
                 level.levelEvent(player, LevelEvent.PARTICLES_DESTROY_BLOCK, otherpos, Block.getId(otherstate));
             }
         }
-        super.playerWillDestroy(level, pos, state, player);
+        return super.playerWillDestroy(level, pos, state, player);
     }
 
     @Override
@@ -113,8 +111,9 @@ public class WorkbenchBlock extends HorizontalDirectionalBlock {
         return level.getBlockState(pos.relative(state.getValue(FACING).getClockWise())).canBeReplaced();
     }
 
-    public RecipeType<ChippedRecipe> recipeType() {
-        return recipeType.get();
+    @Override
+    protected MapCodec<? extends HorizontalDirectionalBlock> codec() {
+        return CODEC;
     }
 
     public enum WorkbenchModelType implements StringRepresentable {
@@ -139,7 +138,7 @@ public class WorkbenchBlock extends HorizontalDirectionalBlock {
 
         @Override
         public AbstractContainerMenu createMenu(int id, Inventory inventory, Player player) {
-            return new WorkbenchMenu(id, inventory, recipeType());
+            return new WorkbenchMenu(id, inventory, WorkbenchBlock.this);
         }
     }
 }

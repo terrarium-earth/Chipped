@@ -1,1 +1,53 @@
-{"type":"chipped:alchemy_bench","tags":["chipped:amethyst_block","chipped:coal_block","chipped:crying_obsidian","chipped:lodestone","chipped:lapis_block","chipped:diamond_block","chipped:emerald_block","chipped:gold_block","chipped:iron_block","chipped:netherite_block","chipped:sponge","chipped:glowstone","chipped:waxed_copper_block","chipped:waxed_exposed_copper_block","chipped:waxed_weathered_copper","chipped:waxed_oxidized_copper"]}
+{
+    "type": "chipped:workbench",
+    "ingredients": [
+        {
+            "tag": "chipped:amethyst_block"
+        },
+        {
+            "tag": "chipped:coal_block"
+        },
+        {
+            "tag": "chipped:crying_obsidian"
+        },
+        {
+            "tag": "chipped:lodestone"
+        },
+        {
+            "tag": "chipped:lapis_block"
+        },
+        {
+            "tag": "chipped:diamond_block"
+        },
+        {
+            "tag": "chipped:emerald_block"
+        },
+        {
+            "tag": "chipped:gold_block"
+        },
+        {
+            "tag": "chipped:iron_block"
+        },
+        {
+            "tag": "chipped:netherite_block"
+        },
+        {
+            "tag": "chipped:sponge"
+        },
+        {
+            "tag": "chipped:glowstone"
+        },
+        {
+            "tag": "chipped:waxed_copper_block"
+        },
+        {
+            "tag": "chipped:waxed_exposed_copper_block"
+        },
+        {
+            "tag": "chipped:waxed_weathered_copper"
+        },
+        {
+            "tag": "chipped:waxed_oxidized_copper"
+        }
+    ]
+}

@@ -17,13 +17,6 @@ public class ChippedClient {
     public static void init() {
         registerRenderTypes();
         MenuScreens.register(ModMenuTypes.WORKBENCH.get(), WorkbenchScreen::new);
-//        MenuScreens.register(ModMenuTypes.ALCHEMY_BENCH.get(), WorkbenchScreen::new);
-//        MenuScreens.register(ModMenuTypes.BOTANIST_WORKBENCH.get(), WorkbenchScreen::new);
-//        MenuScreens.register(ModMenuTypes.CARPENTERS_TABLE.get(), WorkbenchScreen::new);
-//        MenuScreens.register(ModMenuTypes.GLASSBLOWER.get(), WorkbenchScreen::new);
-//        MenuScreens.register(ModMenuTypes.LOOM_TABLE.get(), WorkbenchScreen::new);
-//        MenuScreens.register(ModMenuTypes.MASON_TABLE.get(), WorkbenchScreen::new);
-//        MenuScreens.register(ModMenuTypes.TINKERING_TABLE.get(), WorkbenchScreen::new); //TODO
     }
 
     private static void registerRenderTypes() {

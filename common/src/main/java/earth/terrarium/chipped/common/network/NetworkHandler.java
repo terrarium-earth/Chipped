@@ -1,14 +1,14 @@
 package earth.terrarium.chipped.common.network;
 
-import com.teamresourceful.resourcefullib.common.networking.NetworkChannel;
-import com.teamresourceful.resourcefullib.common.networking.base.NetworkDirection;
+import com.teamresourceful.resourcefullib.common.network.Network;
 import earth.terrarium.chipped.Chipped;
+import net.minecraft.resources.ResourceLocation;
 
 public class NetworkHandler {
 
-    public static final NetworkChannel CHANNEL = new NetworkChannel(Chipped.MOD_ID, 1, "main");
+    public static final Network CHANNEL = new Network(new ResourceLocation(Chipped.MOD_ID, "main"), 1);
 
     public static void init() {
-        CHANNEL.registerPacket(NetworkDirection.CLIENT_TO_SERVER, ServerboundCraftPacket.ID, ServerboundCraftPacket.HANDLER, ServerboundCraftPacket.class);
+        CHANNEL.register(ServerboundCraftPacket.TYPE);
     }
 }

@@ -1,1 +1,32 @@
-{"type":"chipped:tinkering_table","tags":["chipped:iron_bars","chipped:sea_lantern","chipped:redstone_lamp","chipped:redstone_block","chipped:lantern","chipped:soul_lantern","chipped:special_lantern","chipped:special_soul_lantern","chipped:redstone_torch"]}
+{
+    "type": "chipped:workbench",
+    "ingredients": [
+        {
+            "tag": "chipped:iron_bars"
+        },
+        {
+            "tag": "chipped:sea_lantern"
+        },
+        {
+            "tag": "chipped:redstone_lamp"
+        },
+        {
+            "tag": "chipped:redstone_block"
+        },
+        {
+            "tag": "chipped:lantern"
+        },
+        {
+            "tag": "chipped:soul_lantern"
+        },
+        {
+            "tag": "chipped:special_lantern"
+        },
+        {
+            "tag": "chipped:special_soul_lantern"
+        },
+        {
+            "tag": "chipped:redstone_torch"
+        }
+    ]
+}

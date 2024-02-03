@@ -6,8 +6,11 @@ import com.teamresourceful.resourcefullib.common.registry.ResourcefulRegistry;
 import dev.architectury.injectables.annotations.ExpectPlatform;
 import earth.terrarium.chipped.Chipped;
 import earth.terrarium.chipped.common.menus.WorkbenchMenu;
+import net.minecraft.core.BlockPos;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.FriendlyByteBuf;
+import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.world.MenuProvider;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.MenuType;
@@ -26,5 +29,10 @@ public class ModMenuTypes {
     @FunctionalInterface
     public interface MenuFactory<T extends AbstractContainerMenu> {
         T create(int id, Inventory inventory, FriendlyByteBuf buf);
+    }
+
+    @ExpectPlatform
+    public static void openMenu(ServerPlayer player, BlockPos pos, MenuProvider provider) {
+        throw new com.teamresourceful.resourcefullib.common.exceptions.NotImplementedException();
     }
 }

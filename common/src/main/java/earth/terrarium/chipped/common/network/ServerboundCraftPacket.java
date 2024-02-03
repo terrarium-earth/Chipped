@@ -3,44 +3,46 @@ package earth.terrarium.chipped.common.network;
 import com.teamresourceful.bytecodecs.base.ByteCodec;
 import com.teamresourceful.bytecodecs.base.object.ObjectByteCodec;
 import com.teamresourceful.resourcefullib.common.bytecodecs.ExtraByteCodecs;
-import com.teamresourceful.resourcefullib.common.networking.base.CodecPacketHandler;
-import com.teamresourceful.resourcefullib.common.networking.base.Packet;
-import com.teamresourceful.resourcefullib.common.networking.base.PacketContext;
-import com.teamresourceful.resourcefullib.common.networking.base.PacketHandler;
+import com.teamresourceful.resourcefullib.common.network.Packet;
+import com.teamresourceful.resourcefullib.common.network.base.PacketType;
+import com.teamresourceful.resourcefullib.common.network.base.ServerboundPacketType;
+import com.teamresourceful.resourcefullib.common.network.defaults.CodecPacketType;
 import earth.terrarium.chipped.Chipped;
 import earth.terrarium.chipped.common.menus.WorkbenchMenu;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
+
+import java.util.function.Consumer;
 
 public record ServerboundCraftPacket(
     ItemStack stack, boolean replaceAll
 ) implements Packet<ServerboundCraftPacket> {
 
-    public static final ResourceLocation ID = new ResourceLocation(Chipped.MOD_ID, "craft");
-    public static final PacketHandler<ServerboundCraftPacket> HANDLER = new Handler();
+    public static final ServerboundPacketType<ServerboundCraftPacket> TYPE = new Type();
 
     @Override
-    public ResourceLocation getID() {
-        return ID;
+    public PacketType<ServerboundCraftPacket> type() {
+        return TYPE;
     }
 
-    @Override
-    public PacketHandler<ServerboundCraftPacket> getHandler() {
-        return HANDLER;
-    }
+    private static class Type extends CodecPacketType<ServerboundCraftPacket> implements ServerboundPacketType<ServerboundCraftPacket> {
 
-    private static class Handler extends CodecPacketHandler<ServerboundCraftPacket> {
-        public Handler() {
-            super(ObjectByteCodec.create(
-                ExtraByteCodecs.ITEM_STACK.fieldOf(ServerboundCraftPacket::stack),
-                ByteCodec.BOOLEAN.fieldOf(ServerboundCraftPacket::replaceAll),
-                ServerboundCraftPacket::new
-            ));
+        public Type() {
+            super(
+                ServerboundCraftPacket.class,
+                new ResourceLocation(Chipped.MOD_ID, "craft"),
+                ObjectByteCodec.create(
+                    ExtraByteCodecs.ITEM_STACK.fieldOf(ServerboundCraftPacket::stack),
+                    ByteCodec.BOOLEAN.fieldOf(ServerboundCraftPacket::replaceAll),
+                    ServerboundCraftPacket::new
+                )
+            );
         }
 
         @Override
-        public PacketContext handle(ServerboundCraftPacket message) {
-            return (player, level) -> {
+        public Consumer<Player> handle(ServerboundCraftPacket message) {
+            return player -> {
                 if (player.containerMenu instanceof WorkbenchMenu menu) {
                     menu.craft(message.stack, message.replaceAll);
                     player.containerMenu.broadcastChanges();

@@ -10,6 +10,7 @@ import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.EditBox;
 import net.minecraft.client.gui.components.ImageButton;
 import net.minecraft.client.gui.components.Tooltip;
+import net.minecraft.client.gui.components.WidgetSprites;
 import net.minecraft.client.gui.layouts.GridLayout;
 import net.minecraft.client.resources.sounds.SimpleSoundInstance;
 import net.minecraft.network.chat.Component;
@@ -32,11 +33,30 @@ import java.util.Objects;
 public class WorkbenchScreen extends AbstractContainerCursorScreen<WorkbenchMenu> {
     private static final ResourceLocation TEXTURE = new ResourceLocation(Chipped.MOD_ID, "textures/gui/container/workbench.png");
 
-    private static final ResourceLocation SINGLE_BLOCK_BUTTON = new ResourceLocation(Chipped.MOD_ID, "textures/gui/sprites/single_block_button.png");
-    private static final ResourceLocation HORIZONTAL_BLOCKS_BUTTON = new ResourceLocation(Chipped.MOD_ID, "textures/gui/sprites/horizontal_blocks_button.png");
-    private static final ResourceLocation VERTICAL_BLOCKS_BUTTON = new ResourceLocation(Chipped.MOD_ID, "textures/gui/sprites/vertical_blocks_button.png");
-    private static final ResourceLocation TWO_BY_TWO_BUTTON = new ResourceLocation(Chipped.MOD_ID, "textures/gui/sprites/two_by_two_button.png");
-    private static final ResourceLocation BUTTON = new ResourceLocation(Chipped.MOD_ID, "textures/gui/sprites/button.png");
+    public static final WidgetSprites SINGLE_BLOCK_BUTTON_SPRITES = new WidgetSprites(
+        new ResourceLocation(Chipped.MOD_ID, "single_block_button"),
+        new ResourceLocation(Chipped.MOD_ID, "single_block_button_highlighted")
+    );
+
+    public static final WidgetSprites HORIZONTAL_BLOCKS_BUTTON_SPRITES = new WidgetSprites(
+        new ResourceLocation(Chipped.MOD_ID, "horizontal_blocks_button"),
+        new ResourceLocation(Chipped.MOD_ID, "horizontal_blocks_button_highlighted")
+    );
+
+    public static final WidgetSprites VERTICAL_BLOCKS_BUTTON_SPRITES = new WidgetSprites(
+        new ResourceLocation(Chipped.MOD_ID, "vertical_blocks_button"),
+        new ResourceLocation(Chipped.MOD_ID, "vertical_blocks_button_highlighted")
+    );
+
+    public static final WidgetSprites TWO_BY_TWO_BUTTON_SPRITES = new WidgetSprites(
+        new ResourceLocation(Chipped.MOD_ID, "two_by_two_button"),
+        new ResourceLocation(Chipped.MOD_ID, "two_by_two_button_highlighted")
+    );
+
+    public static final WidgetSprites BUTTON_SPRITES = new WidgetSprites(
+        new ResourceLocation(Chipped.MOD_ID, "button"),
+        new ResourceLocation(Chipped.MOD_ID, "button_highlighted")
+    );
 
     public static final int YELLOW = 0x70FFFF00;
     public static final int BLUE = 0x700000FF;
@@ -83,29 +103,24 @@ public class WorkbenchScreen extends AbstractContainerCursorScreen<WorkbenchMenu
 
         addRenderableWidget(new ImageButton(leftPos + 9, topPos + 121,
             18, 18,
-            0, 0, 18,
-            SINGLE_BLOCK_BUTTON, 18, 36,
+            SINGLE_BLOCK_BUTTON_SPRITES,
             button -> mode = RenderWindowWidget.Mode.SINGLE_BLOCK)).setTooltip(Tooltip.create(SINGLE_TEXT));
         addRenderableWidget(new ImageButton(leftPos + 27, topPos + 121,
             18, 18,
-            0, 0, 18,
-            HORIZONTAL_BLOCKS_BUTTON, 18, 36,
+            HORIZONTAL_BLOCKS_BUTTON_SPRITES,
             button -> mode = RenderWindowWidget.Mode.HORIZONTAL_BLOCK)).setTooltip(Tooltip.create(HORIZONTAL_TEXT));
         addRenderableWidget(new ImageButton(leftPos + 45, topPos + 121,
             18, 18,
-            0, 0, 18,
-            VERTICAL_BLOCKS_BUTTON, 18, 36,
+            VERTICAL_BLOCKS_BUTTON_SPRITES,
             button -> mode = RenderWindowWidget.Mode.VERTICAL_BLOCK)).setTooltip(Tooltip.create(VERTICAL_TEXT));
         addRenderableWidget(new ImageButton(leftPos + 63, topPos + 121,
             18, 18,
-            0, 0, 18,
-            TWO_BY_TWO_BUTTON, 18, 36,
+            TWO_BY_TWO_BUTTON_SPRITES,
             button -> mode = RenderWindowWidget.Mode.TWO_BY_TWO)).setTooltip(Tooltip.create(TWO_BY_TWO_TEXT));
 
         addRenderableWidget(new ImageButton(leftPos + 9, topPos + 101,
             72, 18,
-            0, 0, 18,
-            BUTTON, 72, 36,
+            BUTTON_SPRITES,
             button -> craft()));
 
         addSlotWidgets();
@@ -142,9 +157,13 @@ public class WorkbenchScreen extends AbstractContainerCursorScreen<WorkbenchMenu
 
     @Override
     public void render(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
-        renderBackground(graphics);
         super.render(graphics, mouseX, mouseY, partialTick);
+        renderTooltip(graphics, mouseX, mouseY);
+    }
 
+    @Override
+    public void renderBackground(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
+        super.renderBackground(graphics, mouseX, mouseY, partialTick);
         int left = (width - imageWidth) / 2;
         int top = (height - imageHeight) / 2;
         grid.setY(top + 41 - (int) scrollAmount);
@@ -157,8 +176,6 @@ public class WorkbenchScreen extends AbstractContainerCursorScreen<WorkbenchMenu
         for (var widget : slotWidgets) {
             widget.renderTooltip(graphics, font, mouseX, mouseY);
         }
-
-        renderTooltip(graphics, mouseX, mouseY);
     }
 
     @Override
@@ -199,12 +216,6 @@ public class WorkbenchScreen extends AbstractContainerCursorScreen<WorkbenchMenu
     }
 
     @Override
-    public void containerTick() {
-        super.containerTick();
-        searchBox.tick();
-    }
-
-    @Override
     public boolean keyPressed(int keyCode, int scanCode, int modifiers) {
         if (keyCode == GLFW.GLFW_KEY_ESCAPE) {
             menu.player().closeContainer();
@@ -225,9 +236,9 @@ public class WorkbenchScreen extends AbstractContainerCursorScreen<WorkbenchMenu
     }
 
     @Override
-    public boolean mouseScrolled(double mouseX, double mouseY, double delta) {
+    public boolean mouseScrolled(double mouseX, double mouseY, double scrollX, double scrollY) {
         if (menu.results().size() <= 54) return false;
-        setScrollAmount(scrollAmount - delta * 16 / 2f);
+        setScrollAmount(scrollAmount - scrollY * 16 / 2f);
         return true;
     }
 

@@ -39,12 +39,12 @@
         ]
     },
     "mixins": [
-        "chipped.mixins.json"
+        "chipped-common.mixins.json"
     ],
     "depends": {
         "fabric-api": "*",
-        "minecraft": ">=1.20.1",
-        "resourcefullib": ">=2.1.20",
-        "athena": ">=3.1.1"
+        "minecraft": ">=1.20.4",
+        "resourcefullib": ">=2.4.6",
+        "athena": ">=3.3.0"
     }
 }

@@ -1,1 +1,101 @@
-{"type":"chipped:loom_table","tags":["chipped:black_wool","chipped:blue_wool","chipped:brown_wool","chipped:cyan_wool","chipped:gray_wool","chipped:green_wool","chipped:light_blue_wool","chipped:light_gray_wool","chipped:lime_wool","chipped:magenta_wool","chipped:orange_wool","chipped:pink_wool","chipped:purple_wool","chipped:red_wool","chipped:white_wool","chipped:yellow_wool","chipped:black_carpet","chipped:blue_carpet","chipped:brown_carpet","chipped:cyan_carpet","chipped:gray_carpet","chipped:green_carpet","chipped:light_blue_carpet","chipped:light_gray_carpet","chipped:lime_carpet","chipped:magenta_carpet","chipped:orange_carpet","chipped:pink_carpet","chipped:purple_carpet","chipped:red_carpet","chipped:white_carpet","chipped:yellow_carpet"]}
+{
+    "type": "chipped:workbench",
+    "ingredients": [
+        {
+            "tag": "chipped:black_wool"
+        },
+        {
+            "tag": "chipped:blue_wool"
+        },
+        {
+            "tag": "chipped:brown_wool"
+        },
+        {
+            "tag": "chipped:cyan_wool"
+        },
+        {
+            "tag": "chipped:gray_wool"
+        },
+        {
+            "tag": "chipped:green_wool"
+        },
+        {
+            "tag": "chipped:light_blue_wool"
+        },
+        {
+            "tag": "chipped:light_gray_wool"
+        },
+        {
+            "tag": "chipped:lime_wool"
+        },
+        {
+            "tag": "chipped:magenta_wool"
+        },
+        {
+            "tag": "chipped:orange_wool"
+        },
+        {
+            "tag": "chipped:pink_wool"
+        },
+        {
+            "tag": "chipped:purple_wool"
+        },
+        {
+            "tag": "chipped:red_wool"
+        },
+        {
+            "tag": "chipped:white_wool"
+        },
+        {
+            "tag": "chipped:yellow_wool"
+        },
+        {
+            "tag": "chipped:black_carpet"
+        },
+        {
+            "tag": "chipped:blue_carpet"
+        },
+        {
+            "tag": "chipped:brown_carpet"
+        },
+        {
+            "tag": "chipped:cyan_carpet"
+        },
+        {
+            "tag": "chipped:gray_carpet"
+        },
+        {
+            "tag": "chipped:green_carpet"
+        },
+        {
+            "tag": "chipped:light_blue_carpet"
+        },
+        {
+            "tag": "chipped:light_gray_carpet"
+        },
+        {
+            "tag": "chipped:lime_carpet"
+        },
+        {
+            "tag": "chipped:magenta_carpet"
+        },
+        {
+            "tag": "chipped:orange_carpet"
+        },
+        {
+            "tag": "chipped:pink_carpet"
+        },
+        {
+            "tag": "chipped:purple_carpet"
+        },
+        {
+            "tag": "chipped:red_carpet"
+        },
+        {
+            "tag": "chipped:white_carpet"
+        },
+        {
+            "tag": "chipped:yellow_carpet"
+        }
+    ]
+}
