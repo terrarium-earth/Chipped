@@ -287,7 +287,7 @@ public class Palettes {
     public static final Palette TERRACOTTA = PaletteBuilder.create()
         .add("%_bricks", "%_tile", "%_tiles", "chiseled_%", "crossed_%", "cut_%", "decorated_%", "layered_%", "triangular_%")
         .pillar("%_column", "%_pillar")
-        .ctm("small_%_tiles",  "curled_%", "hexagonical_%")
+        .ctm("small_%_tiles", "curled_%", "hexagonical_%")
         .giant("circular_%", "inscribed_%", "starry_%")
         .build();
 

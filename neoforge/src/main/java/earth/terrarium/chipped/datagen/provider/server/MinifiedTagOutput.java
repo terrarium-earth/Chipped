@@ -22,32 +22,32 @@ import java.nio.file.Path;
 public class MinifiedTagOutput extends MinifiedProvider.MinifiedOutput {
 
     private static final Codec<ExtraCodecs.TagOrElementLocation> TAG_OR_ELEMENT_ID = Codec.STRING.comapFlatMap(
-            (string) -> string.startsWith("#") ?
-                    ResourceLocation.read(string.substring(1)).map((arg) -> new ExtraCodecs.TagOrElementLocation(arg, true)) :
-                    ResourceLocation.read(string).map((arg) -> new ExtraCodecs.TagOrElementLocation(arg, false)),
-            element -> element.tag() ? "#" + toMinifiedString(element.id()) : toMinifiedString(element.id())
+        (string) -> string.startsWith("#") ?
+            ResourceLocation.read(string.substring(1)).map((arg) -> new ExtraCodecs.TagOrElementLocation(arg, true)) :
+            ResourceLocation.read(string).map((arg) -> new ExtraCodecs.TagOrElementLocation(arg, false)),
+        element -> element.tag() ? "#" + toMinifiedString(element.id()) : toMinifiedString(element.id())
     );
 
     private static final Codec<TagEntry> FULL_CODEC = RecordCodecBuilder.create((instance) -> instance.group(
-                    TAG_OR_ELEMENT_ID.fieldOf("id").forGetter(arg -> new ExtraCodecs.TagOrElementLocation(arg.getId(), arg.isTag())),
-                    Codec.BOOL.optionalFieldOf("required", true).forGetter(TagEntry::isRequired))
-            .apply(instance, (element, required) -> {
-                if (required) {
-                    return element.tag() ? TagEntry.tag(element.id()) : TagEntry.element(element.id());
-                }
-                return element.tag() ? TagEntry.optionalTag(element.id()) : TagEntry.optionalElement(element.id());
-            }));
+            TAG_OR_ELEMENT_ID.fieldOf("id").forGetter(arg -> new ExtraCodecs.TagOrElementLocation(arg.getId(), arg.isTag())),
+            Codec.BOOL.optionalFieldOf("required", true).forGetter(TagEntry::isRequired))
+        .apply(instance, (element, required) -> {
+            if (required) {
+                return element.tag() ? TagEntry.tag(element.id()) : TagEntry.element(element.id());
+            }
+            return element.tag() ? TagEntry.optionalTag(element.id()) : TagEntry.optionalElement(element.id());
+        }));
 
     private static final Codec<TagEntry> ENTRY_CODEC = Codec.either(TAG_OR_ELEMENT_ID, FULL_CODEC).xmap((either) ->
-                    either.map(
-                            (arg) -> arg.tag() ? TagEntry.tag(arg.id()) : TagEntry.element(arg.id()),
-                            (arg) -> arg
-                    )
-            , (arg) -> arg.isRequired() ? Either.left(new ExtraCodecs.TagOrElementLocation(arg.getId(), arg.isTag())) : Either.right(arg));
+            either.map(
+                (arg) -> arg.tag() ? TagEntry.tag(arg.id()) : TagEntry.element(arg.id()),
+                (arg) -> arg
+            )
+        , (arg) -> arg.isRequired() ? Either.left(new ExtraCodecs.TagOrElementLocation(arg.getId(), arg.isTag())) : Either.right(arg));
 
     private static final Codec<TagFile> BETTER_CODEC = RecordCodecBuilder.create((instance) -> instance.group(
-            ENTRY_CODEC.listOf().fieldOf("values").forGetter(TagFile::entries),
-            Codec.BOOL.optionalFieldOf("replace", false).forGetter(TagFile::replace)
+        ENTRY_CODEC.listOf().fieldOf("values").forGetter(TagFile::entries),
+        Codec.BOOL.optionalFieldOf("replace", false).forGetter(TagFile::replace)
     ).apply(instance, TagFile::new));
 
     public MinifiedTagOutput(CachedOutput parent) {
@@ -61,7 +61,7 @@ public class MinifiedTagOutput extends MinifiedProvider.MinifiedOutput {
             TagFile file = TagFile.CODEC.parse(JsonOps.INSTANCE, element).getOrThrow(false, System.err::println);
             element = BETTER_CODEC.encodeStart(JsonOps.INSTANCE, file).getOrThrow(false, System.err::println);
             writeMinifiedJson(this.parent, path, element);
-        } else{
+        } else {
             this.parent.writeIfNeeded(path, data, hashCode);
         }
     }

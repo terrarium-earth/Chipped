@@ -3,9 +3,6 @@ package earth.terrarium.chipped.common.menus;
 import earth.terrarium.chipped.common.registry.ModMenuTypes;
 import earth.terrarium.chipped.common.registry.ModRecipeTypes;
 import net.minecraft.Util;
-import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.network.FriendlyByteBuf;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.Container;
 import net.minecraft.world.SimpleContainer;
 import net.minecraft.world.entity.player.Inventory;
@@ -15,7 +12,6 @@ import net.minecraft.world.inventory.ClickType;
 import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.Block;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -27,7 +23,6 @@ public class WorkbenchMenu extends AbstractContainerMenu {
     protected final Inventory inventory;
     protected final Player player;
     protected final Level level;
-    protected final Block workbench;
 
     private int selectedStackId;
     private ItemStack selectedStack = ItemStack.EMPTY;
@@ -36,16 +31,11 @@ public class WorkbenchMenu extends AbstractContainerMenu {
     private String filter;
     private final List<ItemStack> results = new ArrayList<>();
 
-    public WorkbenchMenu(int containerId, Inventory inventory, FriendlyByteBuf buf) {
-        this(containerId, inventory, getBlockFromBuf(inventory.player.level(), buf));
-    }
-
-    public WorkbenchMenu(int containerId, Inventory inventory, Block workbench) {
+    public WorkbenchMenu(int containerId, Inventory inventory) {
         super(ModMenuTypes.WORKBENCH.get(), containerId);
         this.inventory = inventory;
         this.player = inventory.player;
         this.level = player.level();
-        this.workbench = workbench;
         addPlayerInvSlots();
     }
 
@@ -101,7 +91,6 @@ public class WorkbenchMenu extends AbstractContainerMenu {
         level.getRecipeManager()
             .getRecipeFor(ModRecipeTypes.WORKBENCH.get(), container, level).ifPresent(recipe -> {
                 results.clear();
-                if (!isCorrectWorkbench(recipe.id())) return;
                 recipe.value().getResults(container.getItem(0)).forEach(result -> {
                     if (filter == null
                         || Util.isBlank(filter)
@@ -110,10 +99,6 @@ public class WorkbenchMenu extends AbstractContainerMenu {
                     }
                 });
             });
-    }
-
-    public boolean isCorrectWorkbench(ResourceLocation id) {
-        return BuiltInRegistries.BLOCK.getKey(workbench).equals(id);
     }
 
     public void craft(ItemStack stack, boolean replaceAll) {
@@ -173,12 +158,6 @@ public class WorkbenchMenu extends AbstractContainerMenu {
 
     public void setFilter(@Nullable String filter) {
         this.filter = filter;
-    }
-
-    protected static Block getBlockFromBuf(Level level, FriendlyByteBuf buf) {
-        if (buf == null) return null;
-        if (!level.isClientSide) return null;
-        return level.getBlockState(buf.readBlockPos()).getBlock();
     }
 
     private static class InventorySlot extends Slot {

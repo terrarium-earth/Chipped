@@ -2,12 +2,10 @@ package earth.terrarium.chipped.common.blocks;
 
 import com.mojang.serialization.MapCodec;
 import earth.terrarium.chipped.common.menus.WorkbenchMenu;
-import earth.terrarium.chipped.common.registry.ModMenuTypes;
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.network.chat.Component;
-import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.util.StringRepresentable;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
@@ -56,10 +54,8 @@ public class WorkbenchBlock extends HorizontalDirectionalBlock {
 
     @Override
     public @NotNull InteractionResult use(@NotNull BlockState state, Level level, @NotNull BlockPos pos, @NotNull Player player, @NotNull InteractionHand handIn, @NotNull BlockHitResult hit) {
-        if (level.isClientSide) return InteractionResult.SUCCESS;
-        BlockPos containerPos = state.getValue(MODEL_TYPE) == WorkbenchModelType.MAIN ? pos : pos.relative(state.getValue(FACING).getCounterClockWise());
-        ModMenuTypes.openMenu((ServerPlayer) player, containerPos, new WorkbenchMenuProvider());
-        return InteractionResult.CONSUME;
+        player.openMenu(new WorkbenchMenuProvider());
+        return InteractionResult.sidedSuccess(level.isClientSide);
     }
 
     @Override
@@ -138,7 +134,7 @@ public class WorkbenchBlock extends HorizontalDirectionalBlock {
 
         @Override
         public AbstractContainerMenu createMenu(int id, Inventory inventory, Player player) {
-            return new WorkbenchMenu(id, inventory, WorkbenchBlock.this);
+            return new WorkbenchMenu(id, inventory);
         }
     }
 }

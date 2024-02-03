@@ -1,3 +1,4 @@
 - 1.20.4 Port.
+- All workbenches can now be used to craft all blocks. Specific recipes are no longer bound to specific workbenches.
 - Fixed tinted blocks like leaves having no light in the preview window.
 - Added item tag translations.

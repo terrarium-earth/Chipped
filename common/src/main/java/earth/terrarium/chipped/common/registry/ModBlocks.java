@@ -1,6 +1,7 @@
 package earth.terrarium.chipped.common.registry;
 
 import com.mojang.datafixers.util.Pair;
+import com.teamresourceful.resourcefullib.common.lib.Constants;
 import com.teamresourceful.resourcefullib.common.registry.RegistryEntry;
 import com.teamresourceful.resourcefullib.common.registry.ResourcefulRegistries;
 import com.teamresourceful.resourcefullib.common.registry.ResourcefulRegistry;
@@ -350,7 +351,7 @@ public class ModBlocks {
             String id = entry.getSecond().replace("%", BuiltInRegistries.BLOCK.getKey(ref).getPath().toLowerCase(Locale.ROOT));
             if (Objects.requireNonNull(entry.getFirst()) == IdType.PILLAR) {
                 if (blockType != DEFAULT_CREATOR) {
-                    Chipped.LOGGER.error("ID: " + id + ", Reference: " + BuiltInRegistries.BLOCK.getKey(ref).getPath() + ", Palette: " + palette);
+                    Constants.LOGGER.error("ID: " + id + ", Reference: " + BuiltInRegistries.BLOCK.getKey(ref).getPath() + ", Palette: " + palette);
                     throw new IllegalArgumentException("Cannot use custom block type with non-default id type");
                 }
                 registry.register(id, () -> new RotatedPillarBlock(createProperties(ref)));

@@ -1,6 +1,6 @@
 package earth.terrarium.chipped.common.registry;
 
-import com.teamresourceful.resourcefullib.common.item.tabs.ResourcefulCreativeTab;
+import com.teamresourceful.resourcefullib.common.item.tabs.ResourcefulCreativeModeTab;
 import com.teamresourceful.resourcefullib.common.registry.RegistryEntry;
 import com.teamresourceful.resourcefullib.common.registry.ResourcefulRegistries;
 import com.teamresourceful.resourcefullib.common.registry.ResourcefulRegistry;
@@ -8,21 +8,18 @@ import earth.terrarium.chipped.Chipped;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.BlockItem;
-import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 
 import java.util.function.BiFunction;
-import java.util.function.Supplier;
 
 public class ModItems {
     public static final ResourcefulRegistry<Item> ITEMS = ResourcefulRegistries.create(BuiltInRegistries.ITEM, Chipped.MOD_ID);
     public static final ResourcefulRegistry<Item> BENCHES = ResourcefulRegistries.create(ITEMS);
 
-    public static final Supplier<CreativeModeTab> ITEM_GROUP = new ResourcefulCreativeTab(new ResourceLocation(Chipped.MOD_ID, "main"))
+    public static final ResourcefulCreativeModeTab ITEM_GROUP = new ResourcefulCreativeModeTab(new ResourceLocation(Chipped.MOD_ID, "main"))
         .setItemIcon(ModBlocks.BOTANIST_WORKBENCH)
-        .addRegistry(ITEMS)
-        .build();
+        .addRegistry(ITEMS);
 
     public static final RegistryEntry<Item> BOTANIST_WORKBENCH = BENCHES.register("botanist_workbench", () -> new BlockItem(ModBlocks.BOTANIST_WORKBENCH.get(), new Item.Properties()));
     public static final RegistryEntry<Item> GLASSBLOWER = BENCHES.register("glassblower", () -> new BlockItem(ModBlocks.GLASSBLOWER.get(), new Item.Properties()));
@@ -34,8 +31,7 @@ public class ModItems {
 
     public static void createItemRegistry(ResourcefulRegistry<Block> blocks, BiFunction<Block, Item.Properties, BlockItem> itemType) {
         var registry = ResourcefulRegistries.create(ModItems.ITEMS);
-        blocks.stream().forEach(block -> {
-            registry.register(block.getId().getPath(), () -> itemType.apply(block.get(), new Item.Properties()));
-        });
+        blocks.stream().forEach(block ->
+            registry.register(block.getId().getPath(), () -> itemType.apply(block.get(), new Item.Properties())));
     }
 }

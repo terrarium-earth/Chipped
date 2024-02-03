@@ -44,7 +44,7 @@ public record MinifiedProvider(DataProvider provider) implements DataProvider {
             if (path.toString().endsWith(".json")) {
                 JsonElement element = Constants.GSON.fromJson(new String(data, StandardCharsets.UTF_8), JsonElement.class);
                 writeMinifiedJson(this.parent, path, element);
-            } else{
+            } else {
                 this.parent.writeIfNeeded(path, data, hashCode);
             }
         }
