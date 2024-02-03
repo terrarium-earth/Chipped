@@ -1,1 +1,2 @@
 - Fixed tinted blocks like leaves having no light in the preview window.
+- Added item tag translations.
