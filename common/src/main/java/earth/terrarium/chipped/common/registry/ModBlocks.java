@@ -6,6 +6,7 @@ import com.teamresourceful.resourcefullib.common.registry.RegistryEntry;
 import com.teamresourceful.resourcefullib.common.registry.ResourcefulRegistries;
 import com.teamresourceful.resourcefullib.common.registry.ResourcefulRegistry;
 import earth.terrarium.chipped.Chipped;
+import earth.terrarium.chipped.common.blocks.DirectionBlock;
 import earth.terrarium.chipped.common.blocks.SpecialLanternBlock;
 import earth.terrarium.chipped.common.blocks.SpecialPointedDripstoneBlock;
 import earth.terrarium.chipped.common.blocks.WorkbenchBlock;
@@ -240,7 +241,6 @@ public class ModBlocks {
     public static final ChippedPaletteRegistry<Block> RED_CARPET = createRegistry(Blocks.RED_CARPET, Palettes.CARPET, CarpetBlock::new);
     public static final ChippedPaletteRegistry<Block> WHITE_CARPET = createRegistry(Blocks.WHITE_CARPET, Palettes.CARPET, CarpetBlock::new);
     public static final ChippedPaletteRegistry<Block> YELLOW_CARPET = createRegistry(Blocks.YELLOW_CARPET, Palettes.CARPET, CarpetBlock::new);
-
     public static final ChippedPaletteRegistry<Block> ANCIENT_DEBRIS = createRegistry(Blocks.ANCIENT_DEBRIS, Palettes.STONE);
     public static final ChippedPaletteRegistry<Block> ANDESITE = createRegistry(Blocks.ANDESITE, Palettes.STONE);
     public static final ChippedPaletteRegistry<Block> BASALT = createRegistry(Blocks.BASALT, Palettes.BASALT);
@@ -321,6 +321,7 @@ public class ModBlocks {
     public static final ChippedPaletteRegistry<Block> RED_CONCRETE = createRegistry(Blocks.RED_CONCRETE, Palettes.CONCRETE);
     public static final ChippedPaletteRegistry<Block> WHITE_CONCRETE = createRegistry(Blocks.WHITE_CONCRETE, Palettes.CONCRETE);
     public static final ChippedPaletteRegistry<Block> YELLOW_CONCRETE = createRegistry(Blocks.YELLOW_CONCRETE, Palettes.CONCRETE);
+
     public static final ChippedPaletteRegistry<Block> BRICKS = createRegistry(Blocks.BRICKS, Palettes.BRICKS);
     public static final ChippedPaletteRegistry<Block> BORDERLESS_BRICKS = registerBorderlessBricks("borderless_bricks", Palettes.BRICKS);
     public static final ChippedPaletteRegistry<Block> MUD_BRICKS = createRegistry(Blocks.MUD_BRICKS, Palettes.MUD);
@@ -336,7 +337,6 @@ public class ModBlocks {
     public static final ChippedPaletteRegistry<Block> SPECIAL_SOUL_LANTERN = registerSpecialLanterns("special_soul_lantern", Palettes.SPECIAL_SOUL_LANTERN);
     public static final Pair<ChippedPaletteRegistry<Block>, ChippedPaletteRegistry<Block>> REDSTONE_TORCH = createTorchRegistry(Blocks.REDSTONE_TORCH, Blocks.REDSTONE_WALL_TORCH, Palettes.REDSTONE_TORCH, (o, p) -> new RedstoneTorchBlock(p), (o, p) -> new RedstoneWallTorchBlock(p));
 
-
     public static ChippedPaletteRegistry<Block> createRegistry(Block ref, Palette palette) {
         return createRegistry(ref, palette, DEFAULT_CREATOR);
     }
@@ -349,12 +349,15 @@ public class ModBlocks {
         var registry = new ChippedPaletteRegistry<>(ResourcefulRegistries.create(BLOCKS), ref, palette);
         for (var entry : palette.ids()) {
             String id = entry.getSecond().replace("%", BuiltInRegistries.BLOCK.getKey(ref).getPath().toLowerCase(Locale.ROOT));
-            if (Objects.requireNonNull(entry.getFirst()) == IdType.PILLAR) {
+            IdType type = Objects.requireNonNull(entry.getFirst());
+            if (type == IdType.PILLAR) {
                 if (blockType != DEFAULT_CREATOR) {
                     Constants.LOGGER.error("ID: " + id + ", Reference: " + BuiltInRegistries.BLOCK.getKey(ref).getPath() + ", Palette: " + palette);
                     throw new IllegalArgumentException("Cannot use custom block type with non-default id type");
                 }
                 registry.register(id, () -> new RotatedPillarBlock(createProperties(ref)));
+            } else if (type == IdType.DIRECTIONAL) {
+                registry.register(id, () -> new DirectionBlock(createProperties(ref)));
             } else {
                 registry.register(id, () -> blockType.apply(createProperties(ref)));
             }

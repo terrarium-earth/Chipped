@@ -52,6 +52,11 @@ public class PaletteBuilder {
         return this;
     }
 
+    public PaletteBuilder directional(String... ids) {
+        add(IdType.DIRECTIONAL, ids);
+        return this;
+    }
+
     public PaletteBuilder limitedPillar(String... ids) {
         add(IdType.LIMITED_PILLAR, ids);
         return this;

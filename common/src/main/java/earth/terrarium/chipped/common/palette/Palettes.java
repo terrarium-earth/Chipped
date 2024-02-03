@@ -327,9 +327,10 @@ public class Palettes {
 
 
     public static final Palette CONCRETE = PaletteBuilder.create()
-        .add("%_bricks", "%_tiles", "bolted_%", "creeper_%", "grid_%", "hazard_%", "mosaic_%", "railed_%", "reinforced_%", "rusted_%", "stacked_%", "stop_%", "warning_%")
+        .add("%_bricks", "%_tiles", "creeper_%", "grid_%", "mosaic_%", "stacked_%", "stop_%")
         .ctm("grill_%", "%_panel", "pegged_%", "smooth_%", "striped_%", "wired_%")
         .pillar("%_pillar")
+        .directional("bolted_%", "hazard_%", "railed_%", "reinforced_%", "rusted_%", "warning_%")
         .build();
 
     public static final Palette TRAPDOOR = PaletteBuilder.create()
