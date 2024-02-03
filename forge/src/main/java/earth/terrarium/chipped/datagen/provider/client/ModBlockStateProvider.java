@@ -4,6 +4,7 @@ import com.mojang.datafixers.util.Pair;
 import com.teamresourceful.resourcefullib.common.registry.RegistryEntry;
 import com.teamresourceful.resourcefullib.common.registry.ResourcefulRegistry;
 import earth.terrarium.chipped.Chipped;
+import earth.terrarium.chipped.common.blocks.DirectionBlock;
 import earth.terrarium.chipped.common.palette.IdType;
 import earth.terrarium.chipped.common.registry.ModBlocks;
 import earth.terrarium.chipped.common.registry.base.ChippedPaletteRegistry;
@@ -424,7 +425,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
                 if (!exFileHelper.exists(end, new ExistingFileHelper.ResourceType(PackType.CLIENT_RESOURCES, ".png", "textures"))) {
                     end = new ResourceLocation(key(block).getNamespace(), ModelProvider.BLOCK_FOLDER + "/" + folder + "/smooth_" + name(registry.getBase()));
                 }
-                if (registry.getCustomBase().isPresent() && registry.getCustomBase().get().equals("borderless_bricks")) {
+                if (registry.getCustomBase().isPresent() && "borderless_bricks".equals(registry.getCustomBase().get())) {
                     end = new ResourceLocation(key(block).getNamespace(), ModelProvider.BLOCK_FOLDER + "/" + folder + "/polished_borderless_bricks");
                 }
                 simpleBlock(block, models().getBuilder(name(block))
@@ -432,6 +433,8 @@ public class ModBlockStateProvider extends BlockStateProvider {
                     .texture("side", side)
                     .texture("end", end)
                     .texture("particle", side));
+            } else if (block instanceof DirectionBlock) {
+                horizontalBlock(block, models().cubeAll(name(block), customTexture(block, folder)));
             } else {
                 simpleBlock(block, models().cubeAll(name(block), customTexture(block, folder)));
             }

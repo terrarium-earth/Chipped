@@ -39,7 +39,7 @@
         ]
     },
     "mixins": [
-        "chipped.mixins.json"
+        "chipped-common.mixins.json"
     ],
     "depends": {
         "fabric-api": "*",

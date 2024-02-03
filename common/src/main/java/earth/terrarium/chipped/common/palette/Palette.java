@@ -21,7 +21,7 @@ public interface Palette extends Iterable<String> {
     }
 
     default List<Pair<IdType, String>> getSpecial() {
-        return ids().stream().filter(pair -> pair.getFirst() != IdType.NONE).toList();
+        return ids().stream().filter(pair -> pair.getFirst().isSpecial()).toList();
     }
 
 }

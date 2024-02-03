@@ -8,6 +8,7 @@ import java.util.Locale;
 
 public enum IdType {
     NONE(""),
+    DIRECTIONAL(""),
     PILLAR(""),
     LIMITED_PILLAR(""),
     PANE_PILLAR(""),
@@ -59,5 +60,9 @@ public enum IdType {
             json.addProperty("width", 2);
             json.addProperty("height", 2);
         }
+    }
+
+    public boolean isSpecial() {
+        return this != NONE && this != DIRECTIONAL;
     }
 }
