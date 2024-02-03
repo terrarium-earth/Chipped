@@ -40,6 +40,7 @@ public class WorkbenchScreen extends AbstractContainerCursorScreen<WorkbenchMenu
 
     public static final int YELLOW = 0x70FFFF00;
     public static final int BLUE = 0x700000FF;
+    public static final int DARK_GRAY = 0x70000000;
 
     private static final Component PREVIEW_TEXT = Component.translatable("text.chipped.preview");
     private static final Component CRAFT_TEXT = Component.translatable("text.chipped.craft");
@@ -71,7 +72,7 @@ public class WorkbenchScreen extends AbstractContainerCursorScreen<WorkbenchMenu
     protected void init() {
         super.init();
 
-        searchBox = addRenderableWidget(new EditBox(font, leftPos + 104, topPos + 27, 115, 11, Component.empty()));
+        searchBox = addRenderableWidget(new EditBox(font, leftPos + 105, topPos + 27, 115, 11, Component.empty()));
         searchBox.setCanLoseFocus(false);
         searchBox.setTextColor(-1);
         searchBox.setTextColorUneditable(-1);
@@ -176,9 +177,11 @@ public class WorkbenchScreen extends AbstractContainerCursorScreen<WorkbenchMenu
         if (selectedStack.isEmpty()) return;
         for (var slot : menu.slots) {
             if (selectedStack.equals(slot.getItem()) || (ItemStack.isSameItem(selectedStack, slot.getItem()) && hasShiftDown())) {
-                graphics.fill(slot.x + left - 1, slot.y + 6, slot.x + left + 17, slot.y + 24, YELLOW);
+                graphics.fill(slot.x + left - 1, slot.y + top - 1, slot.x + left + 17, slot.y + top + 17, YELLOW);
             } else if (ItemStack.isSameItem(selectedStack, slot.getItem())) {
-                graphics.fill(slot.x + left - 1, slot.y + 6, slot.x + left + 17, slot.y + 24, BLUE);
+                graphics.fill(slot.x + left - 1, slot.y + top - 1, slot.x + left + 17, slot.y + top + 17, BLUE);
+            } else {
+                graphics.fill(slot.x + left - 1, slot.y + top - 1, slot.x + left + 17, slot.y + top + 17, DARK_GRAY);
             }
         }
     }
@@ -207,7 +210,7 @@ public class WorkbenchScreen extends AbstractContainerCursorScreen<WorkbenchMenu
     @Override
     public boolean keyPressed(int keyCode, int scanCode, int modifiers) {
         if (keyCode == GLFW.GLFW_KEY_ESCAPE) {
-            menu.player().closeContainer();
+            onClose();
         }
 
         setFocused(searchBox);

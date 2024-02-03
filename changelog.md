@@ -1,9 +1,1 @@
-- Fixed tinted blocks like leaves having no light in the preview window.
-- Added item tag translations.
-- The following concrete blocks are now rotatable:
-  - Bolted Concrete
-  - Hazard Concrete
-  - Railed Concrete
-  - Reinforced Concrete
-  - Rusted Concrete
-  - Warning Concrete
+- Cleaned up GUI.

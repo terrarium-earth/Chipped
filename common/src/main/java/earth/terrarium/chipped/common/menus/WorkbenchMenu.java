@@ -25,7 +25,6 @@ import java.util.Locale;
 
 public class WorkbenchMenu extends AbstractContainerMenu {
     protected final Inventory inventory;
-    protected final Player player;
     protected final Level level;
     protected final RecipeType<ChippedRecipe> recipeType;
 
@@ -43,8 +42,7 @@ public class WorkbenchMenu extends AbstractContainerMenu {
     public WorkbenchMenu(int containerId, Inventory inventory, RecipeType<ChippedRecipe> recipeType) {
         super(ModMenuTypes.WORKBENCH.get(), containerId);
         this.inventory = inventory;
-        this.player = inventory.player;
-        this.level = player.level();
+        this.level = inventory.player.level();
         this.recipeType = recipeType;
         addPlayerInvSlots();
     }
@@ -98,17 +96,17 @@ public class WorkbenchMenu extends AbstractContainerMenu {
         if (selectedStack.isEmpty()) return;
         this.filter = filter;
         SimpleContainer container = new SimpleContainer(selectedStack);
-        var selectedRecipe = level.getRecipeManager().getRecipeFor(recipeType, container, level).orElse(null);
-        results.clear();
-        if (selectedRecipe != null) {
-            selectedRecipe.getResults(container).forEach(result -> {
-                if (filter == null || Util.isBlank(filter)) {
-                    results.add(result);
-                } else if (result.getDisplayName().getString().toLowerCase(Locale.ROOT).contains(filter.toLowerCase(Locale.ROOT))) {
-                    results.add(result);
-                }
-            });
-        }
+        level.getRecipeManager()
+            .getRecipeFor(recipeType, container, level).ifPresentOrElse(recipe -> {
+                results.clear();
+                recipe.getResults(container.getItem(0)).forEach(result -> {
+                    if (filter == null
+                        || Util.isBlank(filter)
+                        || result.getDisplayName().getString().toLowerCase(Locale.ROOT).contains(filter.toLowerCase(Locale.ROOT))) {
+                        results.add(result);
+                    }
+                });
+            }, this::reset);
     }
 
     public void craft(ItemStack stack, boolean replaceAll) {
@@ -156,10 +154,6 @@ public class WorkbenchMenu extends AbstractContainerMenu {
 
     public List<ItemStack> results() {
         return results;
-    }
-
-    public Player player() {
-        return player;
     }
 
     public Level level() {

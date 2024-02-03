@@ -40,12 +40,11 @@ public record ChippedRecipe(
         return !stack.isEmpty() && this.tags.stream().anyMatch(tag -> stack.is(tag::contains));
     }
 
-    public Stream<ItemStack> getResults(Container container) {
-        ItemStack current = container.getItem(0);
-        if (!current.isEmpty()) {
-            Item item = current.getItem();
+    public Stream<ItemStack> getResults(ItemStack stack) {
+        if (!stack.isEmpty()) {
+            Item item = stack.getItem();
             return this.tags.stream()
-                .filter(set -> current.is(set::contains))
+                .filter(set -> stack.is(set::contains))
                 .flatMap(ModUtils::streamHolderSet)
                 .filter(value -> value != item)
                 .map(ItemStack::new);
