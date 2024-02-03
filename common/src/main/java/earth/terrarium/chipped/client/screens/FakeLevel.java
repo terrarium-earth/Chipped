@@ -44,7 +44,8 @@ public record FakeLevel(BlockState state, Set<BlockPos> positions) implements Bl
 
     @Override
     public int getBlockTint(BlockPos blockPos, ColorResolver colorResolver) {
-        return 0;
+        return Objects.requireNonNull(Minecraft.getInstance().level)
+            .getBlockTint(blockPos, colorResolver);
     }
 
     @Override
