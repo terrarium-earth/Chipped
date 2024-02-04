@@ -5,6 +5,7 @@ import com.teamresourceful.resourcefullib.common.registry.RegistryEntry;
 import com.teamresourceful.resourcefullib.common.registry.ResourcefulRegistries;
 import com.teamresourceful.resourcefullib.common.registry.ResourcefulRegistry;
 import earth.terrarium.chipped.Chipped;
+import earth.terrarium.chipped.common.items.WorkbenchItem;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.BlockItem;
@@ -31,6 +32,13 @@ public class ModItems {
     public static final RegistryEntry<Item> MASON_TABLE = BENCHES.register("mason_table", () -> new BlockItem(ModBlocks.MASON_TABLE.get(), new Item.Properties()));
     public static final RegistryEntry<Item> ALCHEMY_BENCH = BENCHES.register("alchemy_bench", () -> new BlockItem(ModBlocks.ALCHEMY_BENCH.get(), new Item.Properties()));
     public static final RegistryEntry<Item> TINKERING_TABLE = BENCHES.register("tinkering_table", () -> new BlockItem(ModBlocks.TINKERING_TABLE.get(), new Item.Properties()));
+
+    public static final RegistryEntry<Item> WATERING_CAN = ITEMS.register("watering_can", () -> new WorkbenchItem(new Item.Properties()));
+    public static final RegistryEntry<Item> ALCHEMY_BOOK = ITEMS.register("alchemy_book", () -> new WorkbenchItem(new Item.Properties()));
+    public static final RegistryEntry<Item> SAW = ITEMS.register("saw", () -> new WorkbenchItem(new Item.Properties()));
+    public static final RegistryEntry<Item> NEEDLES = ITEMS.register("needles", () -> new WorkbenchItem(new Item.Properties()));
+    public static final RegistryEntry<Item> CHISEL = ITEMS.register("chisel", () -> new WorkbenchItem(new Item.Properties()));
+    public static final RegistryEntry<Item> MULTIMETER = ITEMS.register("multimeter", () -> new WorkbenchItem(new Item.Properties()));
 
     public static void createItemRegistry(ResourcefulRegistry<Block> blocks, BiFunction<Block, Item.Properties, BlockItem> itemType) {
         var registry = ResourcefulRegistries.create(ModItems.ITEMS);

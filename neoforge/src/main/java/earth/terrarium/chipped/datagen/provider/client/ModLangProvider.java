@@ -11,8 +11,6 @@ import net.minecraft.world.level.block.WallTorchBlock;
 import net.neoforged.neoforge.common.data.LanguageProvider;
 import org.codehaus.plexus.util.StringUtils;
 
-import java.util.Objects;
-
 public class ModLangProvider extends LanguageProvider {
     public ModLangProvider(PackOutput pGenerator) {
         super(pGenerator, Chipped.MOD_ID, "en_us");
@@ -22,8 +20,23 @@ public class ModLangProvider extends LanguageProvider {
     protected void addTranslations() {
         add("itemGroup.chipped.main", "Chipped");
 
-        ModBlocks.BLOCKS.stream().filter(e -> !(e.get() instanceof WallSignBlock || e.get() instanceof WallTorchBlock || e.get() instanceof RedstoneWallTorchBlock)).forEach(entry -> addBlock(entry, StringUtils.capitaliseAllWords(entry.getId().getPath().replace("_", " "))));
-        ModItems.ITEMS.stream().filter(e -> !(e.get() instanceof BlockItem)).forEach(entry -> addItem(entry, StringUtils.capitaliseAllWords(Objects.requireNonNull(entry.getId()).getPath().replace("_", " "))));
+        ModBlocks.BLOCKS.stream()
+            .filter(e -> !(e.get() instanceof WallSignBlock
+                || e.get() instanceof WallTorchBlock
+                || e.get() instanceof RedstoneWallTorchBlock))
+            .forEach(entry -> addBlock(entry,
+                StringUtils.capitaliseAllWords(entry
+                    .getId()
+                    .getPath()
+                    .replace("_", " "))));
+
+        ModItems.ITEMS.stream()
+            .filter(i -> !(i.get() instanceof BlockItem))
+            .forEach(entry -> addItem(entry,
+                StringUtils.capitaliseAllWords(entry
+                    .getId()
+                    .getPath()
+                    .replace("_", " "))));
 
         add("container.chipped.botanist_workbench", "Botanist's Workbench");
         add("container.chipped.glassblower", "Glassblower's Workbench");

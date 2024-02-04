@@ -1,2 +1,2 @@
-- Cleaned up GUI.
+- Added workbench items, allowing you to chip items without needing the workbench block.
 - Fixed crash on startup when Architectury API is not installed due to accessing protected TransparentBlock class.

@@ -5,6 +5,7 @@ import com.teamresourceful.resourcefullib.common.registry.RegistryEntry;
 import com.teamresourceful.resourcefullib.common.registry.ResourcefulRegistry;
 import earth.terrarium.chipped.Chipped;
 import earth.terrarium.chipped.common.registry.ModBlocks;
+import earth.terrarium.chipped.common.registry.ModItems;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
@@ -74,6 +75,12 @@ public class ModItemModelProvider extends ItemModelProvider {
 
         createBlockSet(ModBlocks.TORCH.getFirst(), "torch");
         createBlockSet(ModBlocks.REDSTONE_TORCH.getFirst(), "redstone_torch");
+
+        basicItem(ModItems.WATERING_CAN.get());
+        basicItem(ModItems.ALCHEMY_BOOK.get());
+        basicItem(ModItems.SAW.get());
+        basicItem(ModItems.NEEDLES.get());
+        basicItem(ModItems.MULTIMETER.get());
     }
 
     private void createBlockSet(ResourcefulRegistry<Block> registry, String folder) {

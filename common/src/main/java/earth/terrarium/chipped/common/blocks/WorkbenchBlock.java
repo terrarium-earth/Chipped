@@ -1,19 +1,15 @@
 package earth.terrarium.chipped.common.blocks;
 
 import com.mojang.serialization.MapCodec;
-import earth.terrarium.chipped.common.menus.WorkbenchMenu;
+import earth.terrarium.chipped.common.menus.WorkbenchMenuProvider;
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.network.chat.Component;
 import net.minecraft.util.StringRepresentable;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
-import net.minecraft.world.MenuProvider;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.Level;
@@ -54,7 +50,7 @@ public class WorkbenchBlock extends HorizontalDirectionalBlock {
 
     @Override
     public @NotNull InteractionResult use(@NotNull BlockState state, Level level, @NotNull BlockPos pos, @NotNull Player player, @NotNull InteractionHand handIn, @NotNull BlockHitResult hit) {
-        player.openMenu(new WorkbenchMenuProvider());
+        player.openMenu(new WorkbenchMenuProvider(getName()));
         return InteractionResult.sidedSuccess(level.isClientSide);
     }
 
@@ -123,18 +119,6 @@ public class WorkbenchBlock extends HorizontalDirectionalBlock {
         @Override
         public String toString() {
             return getSerializedName();
-        }
-    }
-
-    public class WorkbenchMenuProvider implements MenuProvider {
-        @Override
-        public Component getDisplayName() {
-            return getName();
-        }
-
-        @Override
-        public AbstractContainerMenu createMenu(int id, Inventory inventory, Player player) {
-            return new WorkbenchMenu(id, inventory);
         }
     }
 }
