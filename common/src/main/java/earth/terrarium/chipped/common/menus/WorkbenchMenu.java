@@ -100,7 +100,7 @@ public class WorkbenchMenu extends AbstractContainerMenu {
     }
 
     public void craft(ItemStack stack, boolean replaceAll) {
-        if (stack.isEmpty()) return;
+        if (stack.isEmpty() || getSlot(selectedStackId).getItem() != stack) return;
 
         boolean canCraft = false;
         for (var result : results) {
