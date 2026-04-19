@@ -1,13 +1,16 @@
 {
-  "required": true,
-  "package": "earth.terrarium.chipped.mixins",
-  "compatibilityLevel": "JAVA_21",
-  "minVersion": "0.8.5",
-  "mixins": [
-    "BlockBehaviourMixin",
-    "NetherWartBlockMixin"
-  ],
-  "injectors": {
-    "defaultRequire": 1
-  }
+    "required": true,
+    "package": "earth.terrarium.chipped.mixins",
+    "compatibilityLevel": "JAVA_21",
+    "minVersion": "0.8.5",
+    "mixins": [
+        "BlockBehaviourMixin",
+        "NetherWartBlockMixin"
+    ],
+    "injectors": {
+        "defaultRequire": 1
+    },
+    "client": [
+        "GuiGraphicsExtratorAccessor"
+    ]
 }

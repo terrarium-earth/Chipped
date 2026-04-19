@@ -1,0 +1,12 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "category": "misc",
+    "ingredients": [
+        "chipped:botanist_workbench",
+        "minecraft:bucket"
+    ],
+    "result": {
+        "count": 1,
+        "id": "chipped:watering_can"
+    }
+}

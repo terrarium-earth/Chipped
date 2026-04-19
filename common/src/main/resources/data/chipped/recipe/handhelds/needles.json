@@ -1,0 +1,12 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "category": "misc",
+    "ingredients": [
+        "chipped:loom_table",
+        "minecraft:stick"
+    ],
+    "result": {
+        "count": 1,
+        "id": "chipped:needles"
+    }
+}

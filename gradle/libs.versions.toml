@@ -1,0 +1,28 @@
+[versions]
+
+# Minecraft
+minecraft = "26.1.2"
+neoform = "26.1.2-1"
+fabric-api = "0.146.1+26.1.2"
+neoforge = "26.1.2.15-beta"
+
+# Libraries
+resourceful-lib = "4.0.1"
+athena = "4.7.2"
+resourceful-service-plugin = "1.1.0"
+
+# Compat
+jei = "29.5.0.26"
+
+# Plugins
+resourceful-minecraft = "2.0.0"
+resourceful-gradle = "0.0.6"
+
+[libraries]
+
+service-plugin = { module = "com.teamresourceful:resourceful-service-plugin", version.ref = "resourceful-service-plugin" }
+
+[plugins]
+
+resourceful-minecraft = { id = "com.teamresourceful.plugins.minecraft", version.ref = "resourceful-minecraft" }
+resourceful-gradle = { id = "com.teamresourceful.resourcefulgradle", version.ref = "resourceful-gradle" }

@@ -11,6 +11,6 @@ public class ChippedFabric implements ModInitializer {
     @Override
     public void onInitialize() {
         Chipped.init();
-        ModBlocks.BARREL.stream().map(RegistryEntry::get).forEach(((FabricBlockEntityType) BlockEntityType.BARREL)::addSupportedBlock);
+        ModBlocks.BARREL.stream().map(RegistryEntry::get).forEach(((FabricBlockEntityType) BlockEntityType.BARREL)::addValidBlock);
     }
 }

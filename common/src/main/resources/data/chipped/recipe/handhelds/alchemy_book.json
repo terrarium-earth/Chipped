@@ -1,0 +1,12 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "category": "misc",
+    "ingredients": [
+        "chipped:alchemy_bench",
+        "minecraft:book"
+    ],
+    "result": {
+        "count": 1,
+        "id": "chipped:alchemy_book"
+    }
+}

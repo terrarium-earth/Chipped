@@ -1,0 +1,19 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "category": "misc",
+    "key": {
+        "#": "minecraft:crafting_table",
+        "A": "minecraft:iron_axe",
+        "I": "minecraft:iron_ingot",
+        "P": "#minecraft:planks"
+    },
+    "pattern": [
+        "A I",
+        "P#P",
+        "PPP"
+    ],
+    "result": {
+        "count": 1,
+        "id": "chipped:carpenters_table"
+    }
+}

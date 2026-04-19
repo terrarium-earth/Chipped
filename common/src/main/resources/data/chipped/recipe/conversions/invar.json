@@ -1,0 +1,24 @@
+{
+    "neoforge:conditions": [
+        {
+            "type": "neoforge:not",
+            "value": {
+                "type": "neoforge:tag_empty",
+                "tag": "c:storage_blocks/invar"
+            }
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:tags_populated",
+            "registry": "minecraft:item",
+            "values": [
+                "c:storage_blocks/invar"
+            ]
+        }
+    ],
+    "type": "chipped:workbench",
+    "ingredients": [
+        "#c:storage_blocks/invar"
+    ]
+}

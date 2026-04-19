@@ -1,12 +1,12 @@
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 
-rootProject.name = "chipped"
+rootProject.name = "Chipped"
 
 pluginManagement {
     repositories {
-        maven(url = "https://maven.architectury.dev/")
-        maven(url = "https://maven.minecraftforge.net/")
-        maven(url = "https://maven.teamresourceful.com/repository/maven-public/")
+        maven("https://maven.fabricmc.net/")
+        maven("https://maven.architectury.dev/")
+        maven("https://maven.teamresourceful.com/repository/maven-public/")
         gradlePluginPortal()
     }
 }

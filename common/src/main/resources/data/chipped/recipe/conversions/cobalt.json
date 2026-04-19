@@ -1,0 +1,24 @@
+{
+    "neoforge:conditions": [
+        {
+            "type": "neoforge:not",
+            "value": {
+                "type": "neoforge:tag_empty",
+                "tag": "c:storage_blocks/cobalt"
+            }
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:tags_populated",
+            "registry": "minecraft:item",
+            "values": [
+                "c:storage_blocks/cobalt"
+            ]
+        }
+    ],
+    "type": "chipped:workbench",
+    "ingredients": [
+        "#c:storage_blocks/cobalt"
+    ]
+}

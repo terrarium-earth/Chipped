@@ -3,64 +3,60 @@ package earth.terrarium.chipped.client.screens;
 import earth.terrarium.chipped.Chipped;
 import earth.terrarium.chipped.common.menus.WorkbenchMenu;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.Font;
-import net.minecraft.client.gui.GuiGraphics;
+import net.minecraft.client.gui.GuiGraphicsExtractor;
 import net.minecraft.client.gui.components.AbstractWidget;
 import net.minecraft.client.gui.narration.NarrationElementOutput;
-import net.minecraft.client.gui.screens.Screen;
-import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
+import net.minecraft.client.input.MouseButtonEvent;
+import net.minecraft.client.renderer.RenderPipelines;
 import net.minecraft.network.chat.CommonComponents;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.world.item.ItemStack;
+import org.jspecify.annotations.NullMarked;
 
+@NullMarked
 public class SlotWidget extends AbstractWidget {
-    public static final ResourceLocation TEXTURE = ResourceLocation.fromNamespaceAndPath(Chipped.MOD_ID, "textures/gui/sprites/slot.png");
+    private static final Identifier TEXTURE = Chipped.id("textures/gui/sprites/slot.png");
+    private static final Identifier SLOT_HIGHLIGHT_BACK_SPRITE = Identifier.withDefaultNamespace("container/slot_highlight_back");
+    private static final Identifier SLOT_HIGHLIGHT_FRONT_SPRITE = Identifier.withDefaultNamespace("container/slot_highlight_front");
 
     private final ItemStack stack;
     private final WorkbenchMenu menu;
-    private final int minY;
-    private final int maxY;
 
-    public SlotWidget(ItemStack stack, WorkbenchMenu menu, int minY, int maxY) {
+    public SlotWidget(ItemStack stack, WorkbenchMenu menu) {
         super(0, 0, 18, 18, CommonComponents.EMPTY);
         this.stack = stack;
         this.menu = menu;
-        this.minY = minY;
-        this.maxY = maxY;
     }
 
     @Override
-    protected void renderWidget(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
-        graphics.blit(TEXTURE, getX(), getY(), 0, 0, 18, 18, 18, 18);
+    protected void extractWidgetRenderState(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float partialTicks) {
+        var isHovered = isMouseOver(mouseX, mouseY);
 
-        graphics.renderItem(stack, getX() + 1, getY() + 1);
-        if (isMouseOver(mouseX, mouseY)) {
-            AbstractContainerScreen.renderSlotHighlight(graphics, getX() + 1, getY() + 1, 0);
+        if (isHovered) {
+            graphics.blitSprite(RenderPipelines.GUI_TEXTURED, SLOT_HIGHLIGHT_BACK_SPRITE, getX() - 3, getY() - 3, 24, 24);
         }
-    }
 
-    public void renderTooltip(GuiGraphics graphics, Font font, int mouseX, int mouseY) {
-        if (isMouseOver(mouseX, mouseY)) {
-            if (!stack.isEmpty()) {
-                graphics.renderTooltip(font, Screen.getTooltipFromItem(Minecraft.getInstance(), stack), stack.getTooltipImage(), mouseX, mouseY);
-            }
+        graphics.blit(RenderPipelines.GUI_TEXTURED, TEXTURE, getX(), getY(), 0, 0, 18, 18, 18, 18);
+        graphics.item(this.stack, getX() + 1, getY() + 1);
+
+        if (isHovered) {
+            graphics.blitSprite(RenderPipelines.GUI_TEXTURED, SLOT_HIGHLIGHT_FRONT_SPRITE, getX() - 3, getY() - 3, 24, 24);
         }
-    }
 
-    @Override
-    public boolean isMouseOver(double mouseX, double mouseY) {
-        return super.isMouseOver(mouseX, mouseY) && mouseY >= minY && mouseY <= maxY;
+        if (isHoveredOrFocused() && !this.stack.isEmpty()) {
+            graphics.setTooltipForNextFrame(Minecraft.getInstance().font, this.stack, mouseX, mouseY);
+        }
     }
 
     @Override
     protected void updateWidgetNarration(NarrationElementOutput narrationElementOutput) {}
 
     @Override
-    public boolean mouseClicked(double mouseX, double mouseY, int button) {
-        if (this.clicked(mouseX, mouseY)) {
-            if (stack.isEmpty() || mouseY < minY || mouseY > maxY) return false;
-            menu.setChosenStack(stack);
+    public boolean mouseClicked(MouseButtonEvent event, boolean doubleClick) {
+        if (this.isMouseOver(event.x(), event.y()) && this.isActive()) {
+            if (this.stack.isEmpty()) return false;
+            this.menu.setSelectedOutput(this.stack);
         }
-        return super.mouseClicked(mouseX, mouseY, button);
+        return super.mouseClicked(event, doubleClick);
     }
 }

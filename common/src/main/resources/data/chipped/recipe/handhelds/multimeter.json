@@ -1,0 +1,12 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "category": "misc",
+    "ingredients": [
+        "chipped:tinkering_table",
+        "minecraft:redstone"
+    ],
+    "result": {
+        "count": 1,
+        "id": "chipped:multimeter"
+    }
+}

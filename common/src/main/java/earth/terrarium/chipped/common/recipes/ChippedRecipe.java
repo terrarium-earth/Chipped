@@ -2,56 +2,102 @@ package earth.terrarium.chipped.common.recipes;
 
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
-import com.teamresourceful.bytecodecs.base.ByteCodec;
-import com.teamresourceful.bytecodecs.base.object.ObjectByteCodec;
-import com.teamresourceful.resourcefullib.common.bytecodecs.ExtraByteCodecs;
-import com.teamresourceful.resourcefullib.common.recipe.CodecRecipe;
-import com.teamresourceful.resourcefullib.common.recipe.CodecRecipeSerializer;
 import earth.terrarium.chipped.common.registry.ModRecipeSerializers;
 import earth.terrarium.chipped.common.registry.ModRecipeTypes;
+import net.minecraft.core.Holder;
+import net.minecraft.core.HolderSet;
+import net.minecraft.core.RegistryCodecs;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.codec.ByteBufCodecs;
+import net.minecraft.network.codec.StreamCodec;
+import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.crafting.Ingredient;
-import net.minecraft.world.item.crafting.RecipeInput;
-import net.minecraft.world.item.crafting.RecipeType;
+import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.Level;
+import org.jspecify.annotations.NonNull;
 
+import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Stream;
 
-public record ChippedRecipe(
-    List<Ingredient> ingredients
-) implements CodecRecipe<RecipeInput> {
+public record ChippedRecipe(List<HolderSet<Item>> entries) implements Recipe<SingleRecipeInput> {
 
     public static final MapCodec<ChippedRecipe> CODEC = RecordCodecBuilder.mapCodec(
         instance -> instance.group(
-            Ingredient.CODEC.listOf().fieldOf("ingredients").forGetter(ChippedRecipe::ingredients)
+            RegistryCodecs.homogeneousList(Registries.ITEM).listOf().fieldOf("entries").forGetter(ChippedRecipe::entries)
         ).apply(instance, ChippedRecipe::new));
 
-    public static final ByteCodec<ChippedRecipe> NETWORK_CODEC = ObjectByteCodec.create(
-        ExtraByteCodecs.INGREDIENT.listOf().fieldOf(ChippedRecipe::ingredients),
-        ChippedRecipe::new
-    );
+    public static final StreamCodec<RegistryFriendlyByteBuf, ChippedRecipe> NETWORK_CODEC = ByteBufCodecs.holderSet(Registries.ITEM)
+        .apply(ByteBufCodecs.list())
+        .map(ChippedRecipe::new, ChippedRecipe::entries);
 
-    public Stream<ItemStack> getResults(ItemStack stack) {
-        return stack.isEmpty() ? Stream.empty() : this.ingredients.stream()
-            .filter(ingredient -> ingredient.test(stack))
-            .map(Ingredient::getItems)
-            .flatMap(Stream::of);
+    @Override
+    public boolean matches(SingleRecipeInput input, @NonNull Level level) {
+        return this.matches(input.item());
+    }
+
+    public boolean matches(ItemStack stack) {
+        return !stack.isEmpty() && this.entries.stream().anyMatch(stack::is);
     }
 
     @Override
-    public boolean matches(RecipeInput recipeInput, Level level) {
-        ItemStack stack = recipeInput.getItem(0);
-        return !stack.isEmpty() && this.ingredients.stream().anyMatch(ingredient -> ingredient.test(stack));
+    public @NonNull ItemStack assemble(@NonNull SingleRecipeInput input) {
+        return ItemStack.EMPTY;
     }
 
     @Override
-    public CodecRecipeSerializer<? extends CodecRecipe<RecipeInput>> serializer() {
+    public boolean showNotification() {
+        return false;
+    }
+
+    @Override
+    public @NonNull String group() {
+        return "";
+    }
+
+    @Override
+    public @NonNull RecipeSerializer<ChippedRecipe> getSerializer() {
         return ModRecipeSerializers.WORKBENCH.get();
     }
 
     @Override
-    public RecipeType<?> getType() {
+    public @NonNull RecipeType<ChippedRecipe> getType() {
         return ModRecipeTypes.WORKBENCH.get();
+    }
+
+    @Override
+    public boolean isSpecial() {
+        return true;
+    }
+
+    @Override
+    public @NonNull PlacementInfo placementInfo() {
+        return PlacementInfo.NOT_PLACEABLE;
+    }
+
+    @Override
+    public @NonNull RecipeBookCategory recipeBookCategory() {
+        return RecipeBookCategories.CRAFTING_MISC;
+    }
+
+    public static List<Holder<Item>> getResultsFor(ServerPlayer player, ItemStack stack) {
+        var level = player.level();
+        var item = stack.typeHolder();
+
+        var output = new ArrayList<Holder<Item>>();
+
+        for (var holder : level.recipeAccess().getRecipes()) {
+            if (!(holder.value() instanceof ChippedRecipe recipe)) continue;
+            if (!recipe.matches(stack)) continue;
+
+            for (var entry : recipe.entries()) {
+                if (!entry.contains(item)) continue;
+
+                entry.forEach(output::add);
+            }
+        }
+
+        return output;
     }
 }

@@ -1,44 +1,60 @@
 package earth.terrarium.chipped.common.menus;
 
+import earth.terrarium.chipped.common.network.ClientboundRecipesPacket;
+import earth.terrarium.chipped.common.network.NetworkHandler;
+import earth.terrarium.chipped.common.recipes.ChippedRecipe;
 import earth.terrarium.chipped.common.registry.ModMenuTypes;
-import earth.terrarium.chipped.common.registry.ModRecipeTypes;
-import net.minecraft.util.StringUtil;
+import net.minecraft.core.Holder;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.Container;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
-import net.minecraft.world.inventory.ClickType;
+import net.minecraft.world.inventory.ContainerInput;
 import net.minecraft.world.inventory.Slot;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.crafting.CraftingInput;
 import net.minecraft.world.level.Level;
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
+import org.jspecify.annotations.NullMarked;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Locale;
+import java.util.Optional;
 
+@NullMarked
 public class WorkbenchMenu extends AbstractContainerMenu {
+
+    private static final int PLAYER_X = 86;
+    private static final int PLAYER_Y = 167;
+
     protected final Inventory inventory;
     protected final Level level;
 
-    private int selectedStackId;
-    private ItemStack selectedStack = ItemStack.EMPTY;
-    private ItemStack chosenStack = ItemStack.EMPTY;
-    @Nullable
-    private String filter;
-    private final List<ItemStack> results = new ArrayList<>();
+    private List<Holder<Item>> results = new ArrayList<>();
 
-    public WorkbenchMenu(int containerId, Inventory inventory) {
+    private int slot;
+    private ItemStack input = ItemStack.EMPTY;
+    private ItemStack output = ItemStack.EMPTY;
+
+    @SuppressWarnings("OptionalUsedAsFieldOrParameterType")
+    public WorkbenchMenu(int containerId, Inventory inventory, Optional<WorkbenchMenuProvider.Content> content) {
         super(ModMenuTypes.WORKBENCH.get(), containerId);
         this.inventory = inventory;
         this.level = inventory.player.level();
-        addPlayerInvSlots();
+
+        for (int row = 0; row < 3; row++) {
+            for (int col = 0; col < 9; col++) {
+                addSlot(new InventorySlot(inventory, col + row * 9 + 9, PLAYER_X + col * 18, PLAYER_Y + row * 18));
+            }
+        }
+
+        for (int i = 0; i < 9; i++) {
+            addSlot(new InventorySlot(inventory, i, PLAYER_X + i * 18, PLAYER_Y + 58));
+        }
     }
 
     @Override
-    public @NotNull ItemStack quickMoveStack(@NotNull Player player, int index) {
+    public ItemStack quickMoveStack(Player player, int index) {
         return ItemStack.EMPTY;
     }
 
@@ -47,111 +63,69 @@ public class WorkbenchMenu extends AbstractContainerMenu {
         return true;
     }
 
-    protected void addPlayerInvSlots() {
-        for (int i = 0; i < 3; i++) {
-            for (int j = 0; j < 9; j++) {
-                addSlot(new InventorySlot(inventory, j + i * 9 + 9, getPlayerInvXOffset() + j * 18, getPlayerInvYOffset() + i * 18));
-            }
-        }
-
-        for (int i = 0; i < 9; i++) {
-            addSlot(new InventorySlot(inventory, i, getPlayerInvXOffset() + i * 18, getPlayerInvYOffset() + 58));
-        }
-    }
-
-    public int getPlayerInvXOffset() {
-        return 86;
-    }
-
-    public int getPlayerInvYOffset() {
-        return 167;
-    }
-
-
     @Override
-    public void clicked(int slotId, int button, ClickType clickType, Player player) {
-        selectStack(slotId);
-        super.clicked(slotId, button, clickType, player);
-    }
+    public void clicked(int slot, int buttonNum, ContainerInput input, Player player) {
+        if (slot >= 0 && slot < this.slots.size()) {
+            this.slot = this.slots.get(slot).getContainerSlot();
+            this.input = this.slots.get(slot).getItem();
+            this.output = this.input;
+            // reset search
 
-    public void selectStack(int slotId) {
-        if (slotId < 0 || slotId >= slots.size()) return;
-        selectedStackId = slots.get(slotId).getContainerSlot();
-        selectedStack = slots.get(slotId).getItem();
-        chosenStack = selectedStack;
-        updateResults(filter);
-    }
-
-    public void updateResults(@Nullable String filter) {
-        if (selectedStack.isEmpty()) return;
-        this.filter = filter;
-        CraftingInput craftingInput = CraftingInput.of(1, 1, List.of(selectedStack));
-        level.getRecipeManager()
-            .getRecipeFor(ModRecipeTypes.WORKBENCH.get(), craftingInput, level).ifPresentOrElse(recipe -> {
-                results.clear();
-                recipe.value().getResults(craftingInput.getItem(0)).forEach(result -> {
-                    if (filter == null
-                        || StringUtil.isBlank(filter)
-                        || result.getDisplayName().getString().toLowerCase(Locale.ROOT).contains(filter.toLowerCase(Locale.ROOT))) {
-                        results.add(result);
-                    }
-                });
-            }, this::reset);
-    }
-
-    public void craft(ItemStack stack, boolean replaceAll) {
-        if (stack.isEmpty() || getSlot(selectedStackId).getItem() != stack) return;
-
-        boolean canCraft = false;
-        for (var result : results) {
-            if (ItemStack.isSameItemSameComponents(result, stack)) {
-                canCraft = true;
-                break;
+            if (player instanceof ServerPlayer sp) {
+                this.setResults(ChippedRecipe.getResultsFor(sp, this.input));
+                NetworkHandler.CHANNEL.sendToPlayer(new ClientboundRecipesPacket(this.results, false), sp);
             }
         }
-        if (!canCraft) return;
+        super.clicked(slot, buttonNum, input, player);
+    }
 
-        inventory.setItem(selectedStackId, stack.copyWithCount(inventory.getItem(selectedStackId).getCount()));
-        if (replaceAll) {
-            for (int i = 0; i < inventory.getContainerSize(); i++) {
-                if (ItemStack.isSameItem(inventory.getItem(i), selectedStack)) {
-                    inventory.setItem(i, stack.copyWithCount(inventory.getItem(i).getCount()));
+    public void setResults(List<Holder<Item>> results) {
+        this.results = new ArrayList<>(results);
+    }
+
+    public void craft(Holder<Item> item, boolean replaceAll) {
+        if (this.results.contains(item)) {
+            if (replaceAll) {
+                for (int i = 0; i < this.inventory.getContainerSize(); i++) {
+                    var slot = this.inventory.getSlot(i);
+                    if (slot != null && slot.get().is(this.input.getItem())) {
+                        slot.set(slot.get().transmuteCopy(item.value()));
+                    }
+                }
+            } else if (this.slot != -1) {
+                var slot = this.inventory.getSlot(this.slot);
+                if (slot != null && slot.get().is(this.input.getItem())) {
+                    slot.set(slot.get().transmuteCopy(item.value()));
                 }
             }
+            this.broadcastChanges();
         }
 
-        reset();
+        this.reset();
+        NetworkHandler.CHANNEL.sendToPlayer(new ClientboundRecipesPacket(this.results, true), this.inventory.player);
     }
 
     public void reset() {
-        selectedStackId = 0;
-        selectedStack = ItemStack.EMPTY;
-        chosenStack = ItemStack.EMPTY;
-        results.clear();
+        this.slot = -1;
+        this.input = ItemStack.EMPTY;
+        this.output = ItemStack.EMPTY;
+        this.results.clear();
     }
 
-    public ItemStack selectedStack() {
-        return selectedStack;
+    public ItemStack getSelectedInput() {
+        return input;
     }
 
-    public ItemStack chosenStack() {
-        return chosenStack;
+    public ItemStack getSelectedOutput() {
+        return output;
     }
 
-    public void setChosenStack(ItemStack stack) {
-        chosenStack = stack;
+    public void setSelectedOutput(ItemStack stack) {
+        output = stack;
     }
 
-    public List<ItemStack> results() {
-        return results;
-    }
-
-    public Level level() {
-        return level;
-    }
-
-    public void setFilter(@Nullable String filter) {
-        this.filter = filter;
+    public List<Holder<Item>> getResults() {
+        return this.results;
     }
 
     private static class InventorySlot extends Slot {

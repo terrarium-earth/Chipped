@@ -1,9 +1,11 @@
 package earth.terrarium.chipped.common.blocks;
 
 import com.mojang.serialization.MapCodec;
+import com.teamresourceful.resourcefullib.common.menu.MenuContentHelper;
 import earth.terrarium.chipped.common.menus.WorkbenchMenuProvider;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.util.StringRepresentable;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.LivingEntity;
@@ -45,13 +47,15 @@ public class WorkbenchBlock extends HorizontalDirectionalBlock {
 
     @Override
     protected InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult hitResult) {
-        player.openMenu(new WorkbenchMenuProvider(getName()));
-        return InteractionResult.sidedSuccess(level.isClientSide);
+        if (player instanceof ServerPlayer sp) {
+            MenuContentHelper.open(sp, new WorkbenchMenuProvider(this));
+        }
+        return InteractionResult.SUCCESS;
     }
 
     @Override
     public BlockState playerWillDestroy(Level level, BlockPos pos, BlockState state, Player player) {
-        if (level.isClientSide) {
+        if (level.isClientSide()) {
             super.playerWillDestroy(level, pos, state, player);
             return state;
         }
@@ -79,10 +83,9 @@ public class WorkbenchBlock extends HorizontalDirectionalBlock {
     @Override
     public void setPlacedBy(Level level, BlockPos pos, BlockState state, @Nullable LivingEntity placer, ItemStack stack) {
         super.setPlacedBy(level, pos, state, placer, stack);
-        if (!level.isClientSide) {
+        if (!level.isClientSide()) {
             BlockPos blockpos = pos.relative(state.getValue(FACING).getClockWise());
             level.setBlock(blockpos, state.setValue(MODEL_TYPE, WorkbenchModelType.SIDE), Block.UPDATE_ALL);
-            level.blockUpdated(pos, Blocks.AIR);
             state.updateNeighbourShapes(level, pos, Block.UPDATE_ALL);
         }
     }

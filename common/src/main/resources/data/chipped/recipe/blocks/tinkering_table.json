@@ -1,0 +1,20 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "category": "misc",
+    "key": {
+        "#": "minecraft:crafting_table",
+        "I": "minecraft:iron_ingot",
+        "L": "#minecraft:logs",
+        "R": "minecraft:redstone",
+        "T": "minecraft:redstone_torch"
+    },
+    "pattern": [
+        "TRT",
+        "I#I",
+        "L L"
+    ],
+    "result": {
+        "count": 1,
+        "id": "chipped:tinkering_table"
+    }
+}
