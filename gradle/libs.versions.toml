@@ -8,7 +8,7 @@ neoforge = "26.1.2.15-beta"
 
 # Libraries
 resourceful-lib = "4.0.1"
-athena = "4.7.2"
+athena = "4.7.3"
 resourceful-service-plugin = "1.1.0"
 
 # Compat

@@ -16,21 +16,21 @@ import net.minecraft.world.item.Item;
 
 import java.util.function.Consumer;
 
-public record ServerboundCraftPacket(Holder<Item> item, boolean replaceAll) implements Packet<ServerboundCraftPacket> {
+public record ServerboundWorkbenchCraftPacket(Holder<Item> item, boolean replaceAll) implements Packet<ServerboundWorkbenchCraftPacket> {
 
-    public static final ServerboundPacketType<ServerboundCraftPacket> TYPE = new Type();
+    public static final ServerboundPacketType<ServerboundWorkbenchCraftPacket> TYPE = new Type();
 
     @Override
-    public PacketType<ServerboundCraftPacket> type() {
+    public PacketType<ServerboundWorkbenchCraftPacket> type() {
         return TYPE;
     }
 
-    private static class Type implements ServerboundPacketType<ServerboundCraftPacket> {
+    private static class Type implements ServerboundPacketType<ServerboundWorkbenchCraftPacket> {
 
-        private static final StreamCodec<RegistryFriendlyByteBuf, ServerboundCraftPacket> CODEC = StreamCodec.composite(
-            ByteBufCodecs.holderRegistry(Registries.ITEM), ServerboundCraftPacket::item,
-            ByteBufCodecs.BOOL, ServerboundCraftPacket::replaceAll,
-            ServerboundCraftPacket::new
+        private static final StreamCodec<RegistryFriendlyByteBuf, ServerboundWorkbenchCraftPacket> CODEC = StreamCodec.composite(
+            ByteBufCodecs.holderRegistry(Registries.ITEM), ServerboundWorkbenchCraftPacket::item,
+            ByteBufCodecs.BOOL, ServerboundWorkbenchCraftPacket::replaceAll,
+            ServerboundWorkbenchCraftPacket::new
         );
 
         @Override
@@ -39,17 +39,17 @@ public record ServerboundCraftPacket(Holder<Item> item, boolean replaceAll) impl
         }
 
         @Override
-        public void encode(ServerboundCraftPacket message, RegistryFriendlyByteBuf buffer) {
+        public void encode(ServerboundWorkbenchCraftPacket message, RegistryFriendlyByteBuf buffer) {
             CODEC.encode(buffer, message);
         }
 
         @Override
-        public ServerboundCraftPacket decode(RegistryFriendlyByteBuf buffer) {
+        public ServerboundWorkbenchCraftPacket decode(RegistryFriendlyByteBuf buffer) {
             return CODEC.decode(buffer);
         }
 
         @Override
-        public Consumer<Player> handle(ServerboundCraftPacket packet) {
+        public Consumer<Player> handle(ServerboundWorkbenchCraftPacket packet) {
             return player -> {
                 if (player.containerMenu instanceof WorkbenchMenu menu) {
                     menu.craft(packet.item, packet.replaceAll);

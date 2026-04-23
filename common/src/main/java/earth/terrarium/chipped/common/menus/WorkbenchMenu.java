@@ -1,6 +1,6 @@
 package earth.terrarium.chipped.common.menus;
 
-import earth.terrarium.chipped.common.network.ClientboundRecipesPacket;
+import earth.terrarium.chipped.common.network.ClientboundSetWorkbenchItemsPacket;
 import earth.terrarium.chipped.common.network.NetworkHandler;
 import earth.terrarium.chipped.common.recipes.ChippedRecipe;
 import earth.terrarium.chipped.common.registry.ModMenuTypes;
@@ -73,7 +73,7 @@ public class WorkbenchMenu extends AbstractContainerMenu {
 
             if (player instanceof ServerPlayer sp) {
                 this.setResults(ChippedRecipe.getResultsFor(sp, this.input));
-                NetworkHandler.CHANNEL.sendToPlayer(new ClientboundRecipesPacket(this.results, false), sp);
+                NetworkHandler.CHANNEL.sendToPlayer(new ClientboundSetWorkbenchItemsPacket(this.results, false), sp);
             }
         }
         super.clicked(slot, buttonNum, input, player);
@@ -102,7 +102,7 @@ public class WorkbenchMenu extends AbstractContainerMenu {
         }
 
         this.reset();
-        NetworkHandler.CHANNEL.sendToPlayer(new ClientboundRecipesPacket(this.results, true), this.inventory.player);
+        NetworkHandler.CHANNEL.sendToPlayer(new ClientboundSetWorkbenchItemsPacket(this.results, true), this.inventory.player);
     }
 
     public void reset() {

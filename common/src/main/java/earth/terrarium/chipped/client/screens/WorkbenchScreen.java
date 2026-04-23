@@ -3,7 +3,7 @@ package earth.terrarium.chipped.client.screens;
 import earth.terrarium.chipped.Chipped;
 import earth.terrarium.chipped.common.menus.WorkbenchMenu;
 import earth.terrarium.chipped.common.network.NetworkHandler;
-import earth.terrarium.chipped.common.network.ServerboundCraftPacket;
+import earth.terrarium.chipped.common.network.ServerboundWorkbenchCraftPacket;
 import net.minecraft.client.gui.GuiGraphicsExtractor;
 import net.minecraft.client.gui.components.EditBox;
 import net.minecraft.client.gui.components.ImageButton;
@@ -106,7 +106,7 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
             BUTTON_SPRITES,
             _ -> {
                 if (!this.menu.getSelectedInput().isEmpty()) {
-                    NetworkHandler.CHANNEL.sendToServer(new ServerboundCraftPacket(menu.getSelectedOutput().typeHolder(), this.minecraft.hasShiftDown()));
+                    NetworkHandler.CHANNEL.sendToServer(new ServerboundWorkbenchCraftPacket(menu.getSelectedOutput().typeHolder(), this.minecraft.hasShiftDown()));
                     this.minecraft.getSoundManager().play(SimpleSoundInstance.forUI(SoundEvents.UI_STONECUTTER_TAKE_RESULT, 1, 1));
                     this.menu.reset();
                     this.setResults(List.of());

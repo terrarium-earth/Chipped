@@ -46,7 +46,8 @@ subprojects {
 
         implementation("com.teamresourceful.resourcefullib:resourcefullib-${platform.id}-26.1:${rootProject.libs.versions.resourceful.lib.get()}")
         implementation("earth.terrarium.athena:athena-${platform.id}-26.1:${rootProject.libs.versions.athena.get()}")
-//        compileOnly("mezz.jei:jei-${rootProject.libs.versions.minecraft.get()}-${platform.id}-api:${rootProject.libs.versions.jei.get()}")
-//        runtimeOnly("mezz.jei:jei-${rootProject.libs.versions.minecraft.get()}-${platform.id}:${rootProject.libs.versions.jei.get()}")
+
+        compileOnly("mezz.jei:jei-${rootProject.libs.versions.minecraft.get()}-${platform.id}-api:${rootProject.libs.versions.jei.get()}")
+        runtimeOnly("mezz.jei:jei-${rootProject.libs.versions.minecraft.get()}-${platform.id}:${rootProject.libs.versions.jei.get()}")
     }
 }
