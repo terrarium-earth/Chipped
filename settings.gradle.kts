@@ -4,13 +4,8 @@ rootProject.name = "Chipped"
 
 pluginManagement {
     repositories {
-        maven("https://maven.fabricmc.net/")
-        maven("https://maven.architectury.dev/")
-        maven("https://maven.teamresourceful.com/repository/maven-public/")
+        maven(url = "https://maven.teamresourceful.com/repository/maven-public/")
+        maven(url = "https://maven.msrandom.net/repository/cloche")
         gradlePluginPortal()
     }
 }
-
-include("common")
-include("fabric")
-include("neoforge")

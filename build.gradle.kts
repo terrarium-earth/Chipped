@@ -1,53 +1,127 @@
-import com.teamresourceful.utils.Platform
-import com.teamresourceful.utils.getPlatform
+import earth.terrarium.cloche.api.metadata.CommonMetadata
+import groovy.json.StringEscapeUtils
 
 plugins {
     java
-    id("maven-publish")
-    alias(libs.plugins.resourceful.gradle)
-    alias(libs.plugins.resourceful.minecraft) apply false
+    `maven-publish`
+    id("com.teamresourceful.resourcefulgradle") version "0.0.+"
+    id("earth.terrarium.cloche") version "0.18.14"
 }
 
-subprojects {
-    apply(plugin = "maven-publish")
+base {
+    archivesName.set("chipped-26.1.2")
+}
 
-    val platform = getPlatform()
+repositories {
+    mavenCentral()
 
-    when (platform) {
-        Platform.COMMON -> {
-            apply(plugin = "com.teamresourceful.plugins.minecraft-platform-common")
-            sourceSets.main.get().resources.srcDir("src/main/generated/resources")
-        }
-        Platform.FABRIC -> apply(plugin = "com.teamresourceful.plugins.minecraft-platform-fabric")
-        Platform.NEOFORGE -> apply(plugin = "com.teamresourceful.plugins.minecraft-platform-neoforge")
+    cloche {
+        main()
+        mavenNeoforged()
+        mavenNeoforgedMeta()
+        mavenFabric()
     }
 
-    if (platform != Platform.COMMON) {
-        tasks.withType<JavaCompile> {
-            val serviceArgs = listOf(
-                "-Xplugin:ServicePlugin",
-                "--service-plugin-platform=$platform",
+    maven(url = "https://maven.teamresourceful.com/repository/maven-public/")
+    maven(url = "https://maven.firstdarkdev.xyz/snapshots")
+    maven(url = "https://maven.shedaniel.me")
+
+    maven {
+        url = uri("https://www.cursemaven.com")
+        content {
+            includeGroup("curse.maven")
+        }
+    }
+
+    exclusiveContent {
+        forRepository {
+            maven {
+                name = "Modrinth"
+                url = uri("https://api.modrinth.com/maven")
+            }
+        }
+        filter {
+            includeGroup("maven.modrinth")
+        }
+    }
+}
+
+cloche {
+    val emiVersion = "0.5.0"
+    minecraftVersion = "26.1.2"
+
+    metadata {
+        modId = "chipped"
+        name = "Chipped"
+        description = "A new friend for every block!"
+        author("CodexAdrian", "adrian@terrarium.earth")
+        author("ThatGravyBoat", "sophie@terrarium.earth")
+
+        contributor("Facu")
+        contributor("King")
+        contributor("Shrimp")
+        contributor("Jooosh")
+
+        require("athena", "4.7.3")
+        require("resourcefullib", "4.0.0")
+        require("resourcefulconfig", "4.0.0")
+    }
+
+    common {
+
+    }
+
+    neoforge {
+        loaderVersion = "26.1.2.76"
+
+        data()
+
+        dependencies {
+            legacyClasspath("com.teamresourceful:yabn:1.0.3")
+            legacyClasspath("com.teamresourceful:bytecodecs:1.0.2")
+        }
+    }
+
+    fabric {
+        loaderVersion = "0.19.3"
+        includedClient()
+
+        metadata {
+            dependency {
+                modId = "fabric-api"
+                type = CommonMetadata.Dependency.Type.Required
+            }
+        }
+
+        dependencies {
+            fabricApi("0.151.0")
+        }
+    }
+
+    targets.all {
+        datagenDirectory = file("src/main/generated/resources")
+        dependencies {
+            modApi(
+                module(
+                    group = "com.teamresourceful.resourcefullib",
+                    name = "resourcefullib-$loaderName-26.1",
+                    version = "4.0.1"
+                )
             )
-
-            options.encoding = "UTF-8"
-            options.compilerArgs.add(serviceArgs.joinToString(separator = " "))
+            modApi(
+                module(
+                    group = "com.teamresourceful.resourcefulconfig",
+                    name = "resourcefulconfig-$loaderName-26.1",
+                    version = "4.0.1"
+                )
+            )
+            modLocalRuntime(
+                module(
+                    group = "earth.terrarium.athena",
+                    name = "athena-$loaderName-26.1",
+                    version = "4.7.3"
+                )
+            )
         }
-    }
-
-    repositories {
-        mavenLocal()
-        maven("https://maven.blamejared.com/")
-    }
-
-    dependencies {
-        if (platform != Platform.COMMON) {
-            annotationProcessor(rootProject.libs.service.plugin)
-        }
-
-        implementation("com.teamresourceful.resourcefullib:resourcefullib-${platform.id}-26.1:${rootProject.libs.versions.resourceful.lib.get()}")
-        implementation("earth.terrarium.athena:athena-${platform.id}-26.1:${rootProject.libs.versions.athena.get()}")
-
-        compileOnly("mezz.jei:jei-${rootProject.libs.versions.minecraft.get()}-${platform.id}-api:${rootProject.libs.versions.jei.get()}")
-        runtimeOnly("mezz.jei:jei-${rootProject.libs.versions.minecraft.get()}-${platform.id}:${rootProject.libs.versions.jei.get()}")
     }
 }

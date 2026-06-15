@@ -2,19 +2,17 @@
     "schemaVersion": 1,
     "id": "chipped",
     "version": "${version}",
-    "name": "Chipped: Legacy",
+    "name": "Chipped",
     "description": "Every block needs a friend!",
     "authors": [
-        "Alex Nijjar",
-        "Grimbop",
-        "Kekie6",
-        "ThatGravyBoat"
+        "ThatGravyBoat",
+        "CodexAdrian"
     ],
     "contributors": [
-        "CodexAdrian",
         "Facu",
-        "Marc-IceBlade",
-        "MsRandom"
+        "NOT King",
+        "ShrimpPixels",
+        "Joosh"
     ],
     "contact": {
         "website": "https://modrinth.com/mod/chipped",
