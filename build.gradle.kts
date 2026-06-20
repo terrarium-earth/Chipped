@@ -68,7 +68,8 @@ cloche {
     }
 
     common {
-
+        mixins.from("src/main/chipped.mixins.json")
+        accessWideners.from("src/main/chipped.accesswidener")
     }
 
     neoforge {
@@ -87,6 +88,9 @@ cloche {
         includedClient()
 
         metadata {
+
+            entrypoint("main", "earth.terrarium.chipped.Chipped::init")
+
             dependency {
                 modId = "fabric-api"
                 type = CommonMetadata.Dependency.Type.Required
@@ -122,6 +126,10 @@ cloche {
                     version = "4.7.3"
                 )
             )
+        }
+
+        runs {
+            client()
         }
     }
 }
