@@ -1,10 +1,10 @@
 {
-    "minecraft:stone": [
-        "trodden",
-        "tiles",
-        "scales",
-        "rough",
-        "pillar",
-        "emote"
-    ]
+    "minecraft:stone": {
+        "trodden": "block",
+        "tiles": "block",
+        "scales": "block",
+        "rough": "block",
+        "pillar": "block",
+        "emoted": "block"
+    }
 }
