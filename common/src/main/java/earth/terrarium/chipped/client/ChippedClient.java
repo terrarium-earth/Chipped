@@ -20,8 +20,8 @@ public class ChippedClient {
 
         createSetRenderType(ModBlocks.ICE, RenderType.translucent());
 
-        createSetRenderType(ModBlocks.GLASS, RenderType.translucent());
-        createSetRenderType(ModBlocks.GLASS_PANE, RenderType.translucent());
+        createSetRenderType(ModBlocks.GLASS, RenderType.cutout());
+        createSetRenderType(ModBlocks.GLASS_PANE, RenderType.cutout());
         createSetRenderType(ModBlocks.BLACK_STAINED_GLASS, RenderType.translucent());
         createSetRenderType(ModBlocks.BLACK_STAINED_GLASS_PANE, RenderType.translucent());
         createSetRenderType(ModBlocks.BLUE_STAINED_GLASS, RenderType.translucent());
